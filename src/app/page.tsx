@@ -2,23 +2,20 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ACCREDITATIONS,
   CATEGORIES,
   CLIENTS,
   COMPANY,
+  CREDENTIALS,
   FAQS,
-  HERO_IMG,
-  IMG,
   POSTS,
   PROCESS_STEPS,
+  PROJECTS,
   STATS,
-  TESTIMONIALS,
-  avatarImg,
-  clientLogo,
 } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
-import { Faq, QuoteForm, Section } from "@/components/blocks";
+import { Faq, QuoteForm } from "@/components/blocks";
 import { ServiceBands } from "@/components/service-bands";
-import { ProjectShowcase } from "@/components/project-showcase";
 
 export const metadata: Metadata = {
   title: `${COMPANY.name} — Product Engineering, Design & AI Delivery`,
@@ -26,6 +23,105 @@ export const metadata: Metadata = {
     "Mobile and web product development, UI/UX, cloud, data, and AI delivery from Hyderabad. We scope honestly, ship in increments, and hand over something your team can run.",
   alternates: { canonical: "/" },
 };
+
+const SHELL = "mx-auto w-full max-w-[78rem] px-6 lg:px-10";
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <p className="label">{children}</p>;
+}
+
+/* Section wrapper local to the homepage. The shared `Section` in blocks.tsx
+   still carries the old tinted-card styling used by the inner routes; this
+   one is the ink/hairline treatment. */
+function Band({
+  id,
+  eyebrow,
+  title,
+  lead,
+  children,
+  tinted,
+  bordered = true,
+}: {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  lead?: string;
+  children: React.ReactNode;
+  tinted?: boolean;
+  bordered?: boolean;
+}) {
+  return (
+    <section
+      id={id}
+      className={[
+        tinted ? "bg-surface-2" : "bg-surface",
+        bordered ? "border-t border-line" : "",
+      ].join(" ")}
+    >
+      <div className={`${SHELL} py-20 lg:py-28`}>
+        {(eyebrow || title) && (
+          <header className="max-w-3xl">
+            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+            {title && (
+              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{title}</h2>
+            )}
+            {lead && (
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-3">
+                {lead}
+              </p>
+            )}
+          </header>
+        )}
+        <div className={eyebrow || title ? "mt-14" : undefined}>{children}</div>
+      </div>
+    </section>
+  );
+}
+
+const ArrowRight = ({ className = "size-4" }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M5 12h14m-6-6 6 6-6 6" />
+  </svg>
+);
+
+/* What we actually do with AI, stated as capabilities rather than adjectives.
+   No sparkle icons: on a page selling engineering, the credible way to look
+   AI-native is to name the systems, not to decorate the section. */
+const AI_WORK = [
+  {
+    t: "Retrieval over your own documents",
+    d: "Vector search across contracts, tickets, or manuals, with the source passage shown next to every answer so a wrong one is visible immediately.",
+  },
+  {
+    t: "Agents with bounded permissions",
+    d: "Multi-step agents that call your tools and APIs under an explicit allow-list, with a reviewable log of every action taken.",
+  },
+  {
+    t: "Extraction from messy input",
+    d: "Invoices, prescriptions, and handwritten forms turned into structured rows, with a confidence score and a human queue for the uncertain ones.",
+  },
+  {
+    t: "Voice and Indian languages",
+    d: "Speech in and out in Telugu, Hindi, and English, for users who will speak to a product but never type into one.",
+  },
+  {
+    t: "Evaluation before rollout",
+    d: "A scored test set per feature, so a prompt or model change is measured against previous behaviour rather than spot-checked.",
+  },
+  {
+    t: "Cost and latency budgets",
+    d: "Model routing, caching, and token budgets set per feature — the difference between a demo and something you can afford at volume.",
+  },
+];
 
 export default function Home() {
   const locations = CATEGORIES[4];
@@ -36,227 +132,292 @@ export default function Home() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-accent-soft to-white">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-32 -top-32 size-[30rem] rounded-full bg-accent/20 blur-3xl"
-          />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand/15 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand">
-                Product engineering from Hyderabad
-              </span>
-              <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-brand sm:text-5xl lg:text-6xl">
-                Software that ships.{" "}
-                <span className="text-accent">And keeps running.</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-                {COMPANY.name} designs and builds mobile and web products end to
-                end — discovery through launch and the maintenance afterwards. We
-                scope honestly, build in two-week increments, and hand over
-                something your own team can run.
+        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden bg-surface">
+          <div className={`${SHELL} pb-16 pt-16 lg:pb-24 lg:pt-28`}>
+            <div className="max-w-4xl">
+              <p className="flex items-center gap-3 text-2xs font-semibold uppercase tracking-[0.14em] text-ink-4">
+                <span
+                  aria-hidden="true"
+                  className="inline-block h-px w-8 bg-ink-4"
+                />
+                Product engineering · Hyderabad
               </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+
+              <h1 className="mt-8 text-4xl font-bold sm:text-5xl lg:text-6xl">
+                We build the software other
+                <br className="hidden sm:block" /> teams quote for and never
+                finish.
+              </h1>
+
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-3">
+                Mobile and web products taken end to end — discovery, design,
+                engineering, launch, and the maintenance nobody puts in the
+                proposal. We scope honestly, ship every two weeks, and hand over
+                something your own team can run without us.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-brand px-8 py-4 text-center text-base font-semibold text-white shadow-lg shadow-brand/20 transition-colors hover:bg-brand-soft"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-brand"
                 >
-                  Get a free quote
+                  Start a project
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="rounded-full border border-brand/20 bg-white px-8 py-4 text-center text-base font-semibold text-brand transition-colors hover:border-brand"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-8 py-4 text-base font-semibold text-ink transition-colors hover:border-ink"
                 >
-                  See our work
+                  See the work
                 </Link>
               </div>
+            </div>
 
-              <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
-                {STATS.map((s) => (
-                  <div key={s.label}>
-                    <dt className="text-2xl font-bold text-brand sm:text-3xl">
-                      {s.value}
-                    </dt>
-                    <dd className="mt-1 text-xs leading-snug text-ink-muted">
-                      {s.label}
+            {/* Credential strip — the reason to believe any of the above. */}
+            <div className="mt-20 border-t border-line pt-8">
+              <Eyebrow>The people doing the work have come from</Eyebrow>
+              <dl className="mt-6 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-5">
+                {CREDENTIALS.map((c) => (
+                  <div key={c.k}>
+                    <dt className="text-sm font-semibold text-ink">{c.k}</dt>
+                    <dd className="mt-1 text-sm text-ink-2">{c.v}</dd>
+                    <dd className="mt-0.5 text-xs leading-snug text-ink-4">
+                      {c.note}
                     </dd>
                   </div>
                 ))}
               </dl>
-
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <span className="text-xs font-semibold text-ink-muted">
-                  Follow us on
-                </span>
-                {[
-                  { label: "LinkedIn", href: "#" },
-                  { label: "Instagram", href: "#" },
-                  { label: "X", href: "#" },
-                  { label: "YouTube", href: "#" },
-                  {
-                    label: "WhatsApp",
-                    href: `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`,
-                  },
-                ].map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    className="rounded-full border border-brand/15 bg-white px-4 py-1.5 text-xs font-medium text-ink-muted transition-colors hover:border-brand hover:text-brand"
-                  >
-                    {s.label}
-                  </a>
-                ))}
-              </div>
             </div>
-
-            <Image
-              src={HERO_IMG}
-              alt="ElevateBox delivery workspace, dashboard, and mobile app"
-              width={780}
-              height={680}
-              priority
-              className="h-auto w-full max-w-[780px] lg:-mr-8 xl:-mr-16"
-            />
           </div>
         </section>
 
-        {/* Client marquee */}
-        <section className="border-y border-black/5 bg-white py-8">
-          <p className="mx-auto max-w-7xl px-5 text-center text-xs font-semibold uppercase tracking-wider text-ink-muted lg:px-8">
-            Trusted by teams across commerce, healthcare, AI, and the creator economy
-          </p>
-          <div className="mt-6 overflow-hidden">
-            <div className="marquee flex w-max items-center gap-10 pr-10">
-              {/* Repeat to fill the viewport, then duplicate — the -50%
-                  keyframe needs exactly two identical halves to loop seamlessly. */}
-              {Array.from({ length: 8 }, () => CLIENTS)
-                .flat()
-                .map((c, i) => (
+        {/* ── Clients ──────────────────────────────────────────────────
+            Wordmarks, not logos. The only real client mark on file is
+            8Meds; the other four "logos" in /assets were generated icons —
+            a plus sign, a briefcase, a sprout — which read as clipart next
+            to type this size. Names set in the page's own face are honest
+            and look deliberate. Swap in real SVG marks as clients supply
+            them, all five together or not at all. */}
+        <section className="border-y border-line bg-surface-2">
+          <div className={`${SHELL} py-12`}>
+            <p className="label text-center">
+              Products we designed, built, and still support
+            </p>
+            <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-5 sm:gap-x-16">
+              {CLIENTS.map((c) => (
+                <li
+                  key={c}
+                  className="text-lg font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink"
+                >
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Accreditation strip. Renders only when ACCREDITATIONS holds marks
+            the company genuinely has — see the note in content.ts. */}
+        {ACCREDITATIONS.length > 0 && (
+          <section className="border-b border-line bg-surface py-8">
+            <div
+              className={`${SHELL} flex flex-wrap items-center justify-center gap-x-14 gap-y-6`}
+            >
+              {ACCREDITATIONS.map((a) => (
+                <div key={a.name} className="flex items-center gap-3">
                   <Image
-                    key={`${c}-${i}`}
-                    src={clientLogo(c)}
-                    alt={c}
-                    width={IMG.client.w}
-                    height={IMG.client.h}
-                    className="h-[100px] w-[120px] shrink-0 opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+                    src={a.img}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="size-10 opacity-70"
                   />
-                ))}
+                  <div>
+                    <p className="text-sm font-semibold text-ink">{a.name}</p>
+                    <p className="font-mono text-xs text-ink-4">{a.id}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* About */}
-        <Section>
-          <div className="grid gap-14 lg:grid-cols-2">
+        {/* ── Positioning ──────────────────────────────────────────────── */}
+        <Band bordered={false}>
+          <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-                About {COMPANY.name}
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+              <Eyebrow>How we work</Eyebrow>
+              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
                 A delivery company, not a deck company
               </h2>
-              <p className="mt-6 leading-relaxed text-ink-muted">
+              <p className="mt-6 text-lg leading-relaxed text-ink-3">
                 Most project failures are scoping failures, not engineering
-                failures. So we spend the first weeks arguing about scope, write
-                the trade-offs down, and then build against a plan that survived
-                scrutiny.
+                failures. So we spend the first weeks arguing about scope,
+                write the trade-offs down, and then build against a plan that
+                survived scrutiny.
               </p>
-              <p className="mt-4 leading-relaxed text-ink-muted">
+              <p className="mt-4 leading-relaxed text-ink-3">
                 You own the repository, the cloud accounts, and the credentials
                 from the first commit. Leaving us should be easy — which is
                 exactly what keeps the work honest.
               </p>
               <Link
                 href="/about"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-soft"
+                className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand"
               >
                 More about how we work
-                <span aria-hidden="true">→</span>
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+
+            <dl className="grid grid-cols-2 border-l border-t border-line">
               {[
-                { t: "Honest scoping", d: "If a simpler build or no build serves you better, we say so during discovery." },
-                { t: "You own everything", d: "Repositories, infrastructure, and credentials in your name throughout." },
-                { t: "Increments, not demos", d: "Something on a real environment every two weeks, not a slide deck." },
-                { t: "Instrumented before launch", d: "Logging, tracing, and crash reporting wired in before release day." },
+                {
+                  t: "Honest scoping",
+                  d: "If a simpler build — or no build — serves you better, we say so during discovery.",
+                },
+                {
+                  t: "You own everything",
+                  d: "Repositories, infrastructure, and credentials in your name throughout.",
+                },
+                {
+                  t: "Increments, not demos",
+                  d: "Something on a real environment every two weeks, not a slide deck.",
+                },
+                {
+                  t: "Instrumented before launch",
+                  d: "Logging, tracing, and crash reporting wired in before release day.",
+                },
               ].map((c) => (
-                <div
-                  key={c.t}
-                  className="rounded-2xl border border-black/5 bg-[#F8FAFC] p-6"
-                >
-                  <h3 className="font-semibold text-brand">{c.t}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                <div key={c.t} className="border-b border-r border-line p-7">
+                  <dt className="font-semibold text-ink">{c.t}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-ink-3">
                     {c.d}
-                  </p>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
-        </Section>
+        </Band>
 
-        {/* Services — full-bleed accordion bands */}
+        {/* ── Commitments ──────────────────────────────────────────────── */}
+        <section className="border-y border-line bg-ink">
+          <div className={`${SHELL} py-14`}>
+            <dl className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {STATS.map((s) => (
+                <div key={s.label}>
+                  <dt className="text-3xl font-bold text-white">{s.value}</dt>
+                  <dd className="mt-2 text-sm leading-snug text-white/55">
+                    {s.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* ── Services ─────────────────────────────────────────────────── */}
         <ServiceBands />
 
-        <Section tinted>
-          <div className="flex flex-wrap justify-center gap-3">
-            {CATEGORIES.map((c) => (
-              <Link
-                key={c.key}
-                href={c.base}
-                className="rounded-full border border-brand/20 bg-white px-5 py-2.5 text-sm font-semibold text-brand transition-colors hover:border-brand"
+        {/* ── Selected work ────────────────────────────────────────────── */}
+        <Band
+          eyebrow="Selected work"
+          title="Five products, still in service"
+          lead="Every one of these was designed, built, and is still maintained by this team. No case study is written about a project we only advised on."
+        >
+          <ul className="border-t border-line">
+            {PROJECTS.map((p) => (
+              <li
+                key={p.slug}
+                className="group grid gap-4 border-b border-line py-8 lg:grid-cols-[14rem_1fr_9rem] lg:items-baseline lg:gap-10"
               >
-                All {c.label.toLowerCase()} ({c.items.length})
-              </Link>
+                <div>
+                  <h3 className="text-xl font-semibold text-ink">{p.name}</h3>
+                  <p className="mt-1 text-xs uppercase tracking-[0.1em] text-ink-4">
+                    {p.sector}
+                  </p>
+                </div>
+                <p className="leading-relaxed text-ink-3">{p.summary}</p>
+                <p className="font-mono text-xs text-ink-4 lg:text-right">
+                  {p.platforms.join(" · ")}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/portfolio"
+            className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-brand"
+          >
+            See the full portfolio
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </Band>
+
+        {/* ── AI capability ────────────────────────────────────────────── */}
+        <Band
+          tinted
+          eyebrow="AI delivery"
+          title="AI work that survives contact with real users"
+          lead="Anyone can wire a chat box to an API. The engineering is in what happens when the model is wrong, slow, or expensive — which is where most AI projects quietly die."
+        >
+          <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+            {AI_WORK.map((a) => (
+              <article key={a.t} className="bg-surface p-8">
+                <h3 className="font-semibold text-ink">{a.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-3">{a.d}</p>
+              </article>
             ))}
           </div>
-        </Section>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink-3">
+            If a rules engine or a spreadsheet solves your problem, we will
+            tell you that instead. It costs us the larger invoice and saves you
+            the rebuild.
+          </p>
+        </Band>
 
-        <ProjectShowcase />
-
-        {/* Process */}
-        <Section
-          tinted
+        {/* ── Process ──────────────────────────────────────────────────── */}
+        <Band
           eyebrow="Process"
           title="Nine steps from brief to support"
           lead="The same delivery model on every engagement. The specifics change; the discipline does not."
         >
-          <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {PROCESS_STEPS.map((s) => (
-              <li key={s.n} className="rounded-2xl bg-white p-6 shadow-sm">
-                <span className="text-sm font-bold text-accent">{s.n}</span>
-                <h3 className="mt-2 font-semibold text-brand">{s.t}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
-                  {s.d}
-                </p>
+              <li key={s.n} className="bg-surface p-8">
+                <span className="font-mono text-xs text-ink-4">{s.n}</span>
+                <h3 className="mt-3 font-semibold text-ink">{s.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-3">{s.d}</p>
               </li>
             ))}
           </ol>
-        </Section>
+        </Band>
 
-        {/* CTA band */}
-        <section className="bg-brand py-16 lg:py-20">
-          <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 text-center lg:flex-row lg:justify-between lg:px-8 lg:text-left">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Start work with us
+        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        <section className="border-t border-line bg-ink">
+          <div
+            className={`${SHELL} flex flex-col gap-10 py-20 lg:flex-row lg:items-end lg:justify-between`}
+          >
+            <div className="max-w-xl">
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                Send the brief, however rough
               </h2>
-              <p className="mt-3 max-w-xl text-white/75">
-                Send the brief, however rough. You get scope questions, an honest
-                range, and the parts we think you should cut.
+              <p className="mt-4 leading-relaxed text-white/60">
+                You get scope questions, an honest range, and the parts we think
+                you should cut. No sales sequence, no deck.
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="rounded-full bg-accent px-8 py-4 text-base font-semibold text-brand-dark transition-transform hover:scale-105"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-ink transition-colors hover:bg-white/90"
               >
-                Get a free quote
+                Start a project
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <a
                 href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
-                className="rounded-full border border-white/25 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white"
               >
                 WhatsApp us
               </a>
@@ -264,92 +425,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Locations */}
-        <Section
+        {/* ── Locations ────────────────────────────────────────────────── */}
+        <Band
           eyebrow="Where we deliver"
           title="Committed overlap hours, not a follow-the-sun promise"
           lead={locations.blurb}
         >
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {locations.items.map((l) => (
               <Link
                 key={l.slug}
                 href={`${locations.base}/${l.slug}`}
-                className="group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1"
+                className="group bg-surface p-7 transition-colors hover:bg-brand-wash"
               >
-                <h3 className="font-semibold text-brand">{l.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                <h3 className="font-semibold text-ink">{l.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-3">
                   {l.tagline}
                 </p>
               </Link>
             ))}
           </div>
-        </Section>
+        </Band>
 
-        {/* Testimonials */}
-        <Section
+        {/* ── Writing ──────────────────────────────────────────────────── */}
+        <Band
           tinted
-          eyebrow="Client feedback"
-          title="What clients say when we ask honestly"
+          eyebrow="Writing"
+          title="The decisions that change outcomes"
         >
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
-              <figure
-                key={t.name + t.role}
-                className="flex flex-col rounded-2xl bg-white p-7 shadow-sm"
-              >
-                <div className="flex gap-0.5 text-accent" aria-label="5 out of 5">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <span key={i} aria-hidden="true">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-5 flex items-center gap-3 border-t border-black/5 pt-4">
-                  <Image
-                    src={avatarImg(i)}
-                    alt=""
-                    width={160}
-                    height={160}
-                    className="size-10 shrink-0 rounded-full"
-                  />
-                  <span>
-                    <span className="block text-sm font-semibold text-brand">
-                      {t.name}
-                    </span>
-                    <span className="block text-xs text-ink-muted">{t.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </Section>
-
-        {/* Blog */}
-        <Section
-          eyebrow="From the blog"
-          title="Writing about the decisions that change outcomes"
-        >
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px border border-line bg-line lg:grid-cols-3">
             {recentPosts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/blogs/${p.slug}`}
-                className="group flex flex-col rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-transform duration-300 hover:-translate-y-1"
+                className="group flex flex-col bg-surface p-8 transition-colors hover:bg-brand-wash"
               >
-                <span className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  {p.category}
-                </span>
-                <h3 className="mt-3 flex-1 text-lg font-semibold leading-snug text-brand">
+                <span className="label">{p.category}</span>
+                <h3 className="mt-4 flex-1 text-lg font-semibold leading-snug text-ink">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                <p className="mt-3 text-sm leading-relaxed text-ink-3">
                   {p.excerpt}
                 </p>
-                <p className="mt-5 border-t border-black/5 pt-4 text-xs text-ink-muted">
+                <p className="mt-6 font-mono text-xs text-ink-4">
                   {p.readMins} min read
                 </p>
               </Link>
@@ -357,22 +475,22 @@ export default function Home() {
           </div>
           <Link
             href="/blogs"
-            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-soft"
+            className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-brand"
           >
             Read all {POSTS.length} articles
-            <span aria-hidden="true">→</span>
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
-        </Section>
+        </Band>
 
-        {/* FAQ + form */}
-        <Section tinted eyebrow="FAQ" title="Questions we get before the first call">
-          <div className="grid gap-12 lg:grid-cols-2">
+        {/* ── FAQ + form ───────────────────────────────────────────────── */}
+        <Band eyebrow="FAQ" title="Questions we get before the first call">
+          <div className="grid gap-16 lg:grid-cols-[1.15fr_1fr]">
             <Faq items={FAQS} />
             <div>
-              <h3 className="text-xl font-bold text-brand">
+              <h3 className="text-xl font-semibold text-ink">
                 Still have a question?
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+              <p className="mt-2 text-sm leading-relaxed text-ink-3">
                 Ask it here and a person who works on delivery will answer.
               </p>
               <div className="mt-6">
@@ -380,7 +498,24 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </Section>
+        </Band>
+
+        {/* Category index — kept for internal linking and crawl depth. */}
+        <section className="border-t border-line bg-surface-2">
+          <div
+            className={`${SHELL} flex flex-wrap justify-center gap-3 py-12`}
+          >
+            {CATEGORIES.map((c) => (
+              <Link
+                key={c.key}
+                href={c.base}
+                className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:border-ink hover:text-ink"
+              >
+                All {c.label.toLowerCase()} ({c.items.length})
+              </Link>
+            ))}
+          </div>
+        </section>
       </main>
 
       <Footer />

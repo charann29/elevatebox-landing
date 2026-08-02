@@ -1,42 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #013186;
-  --color-brand-dark: #001f57;
-  --color-brand-soft: #0145a6;
-  --color-accent: #3ec0dd;
-  --color-accent-soft: #f0fcff;
-  --color-ink: #263137;
-  --color-ink-muted: #353639;
-  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  /* Ink scale. Near-black rather than pure black — pure #000 on white reads
+     harsh at large sizes and is the single most common tell of an unconsidered
+     palette. */
+  --color-ink: #0a0a0a;
+  --color-ink-2: #3f3f46;
+  --color-ink-3: #71717a;
+  --color-ink-4: #a1a1aa;
 
-  /* Extra wide breakpoints, matching the reference layout's scale steps. */
+  /* Hairlines and surfaces. Borders carry the structure here, not shadows. */
+  --color-line: #e4e4e7;
+  --color-line-soft: #f1f1f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #fafafa;
+
+  /* Brand blue, kept as an accent. It should appear a handful of times per
+     page — links, one button state, the odd rule. When it is everywhere it
+     stops meaning anything. */
+  --color-brand: #013186;
+  --color-brand-soft: #0145a6;
+  --color-brand-wash: #f5f8ff;
+
+  /* Retained so existing routes that still reference the old tokens compile
+     until they are migrated. */
+  --color-brand-dark: #001f57;
+  --color-accent: #013186;
+  --color-accent-soft: #f5f8ff;
+  --color-ink-muted: #3f3f46;
+
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
   --breakpoint-3xl: 1800px;
   --breakpoint-5xl: 2400px;
 
-  /* Type scale measured off the reference layout (Urbanist, rem-based). */
-  --text-2xs: 0.7rem;
-  --text-2xs--line-height: 1.4;
-  --text-xs: 0.8rem;
-  --text-xs--line-height: 1.5;
-  --text-sm: 0.9rem;
+  /* Type scale. Display sizes get negative tracking — at 3rem+ the default
+     spacing of a geometric sans reads loose and cheap. */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1.45;
+  --text-2xs--letter-spacing: 0.08em;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.55;
+  --text-sm: 0.9375rem;
   --text-sm--line-height: 1.65;
-  --text-base: 1rem;
+  --text-base: 1.0625rem;
   --text-base--line-height: 1.7;
-  --text-lg: 1.2rem;
-  --text-lg--line-height: 1.55;
-  --text-xl: 1.4rem;
-  --text-xl--line-height: 1.4;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.45;
   --text-2xl: 1.75rem;
-  --text-2xl--line-height: 1.3;
-  --text-3xl: 2.1rem;
-  --text-3xl--line-height: 1.18;
-  --text-4xl: 2.5rem;
-  --text-4xl--line-height: 1.15;
-  --text-5xl: 3.5rem;
-  --text-5xl--line-height: 1.08;
-  --text-6xl: 4.2rem;
-  --text-6xl--line-height: 1.04;
+  --text-2xl--line-height: 1.25;
+  --text-2xl--letter-spacing: -0.015em;
+  --text-3xl: 2.25rem;
+  --text-3xl--line-height: 1.15;
+  --text-3xl--letter-spacing: -0.022em;
+  --text-4xl: 2.875rem;
+  --text-4xl--line-height: 1.1;
+  --text-4xl--letter-spacing: -0.028em;
+  --text-5xl: 3.75rem;
+  --text-5xl--line-height: 1.04;
+  --text-5xl--letter-spacing: -0.034em;
+  --text-6xl: 4.75rem;
+  --text-6xl--line-height: 1;
+  --text-6xl--letter-spacing: -0.038em;
 }
 
 html {
@@ -44,8 +72,34 @@ html {
 }
 
 body {
+  color: var(--color-ink-2);
+  background: var(--color-surface);
+  font-feature-settings: "cv11", "ss01";
+}
+
+h1,
+h2,
+h3,
+h4 {
   color: var(--color-ink);
-  background: #ffffff;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+/* One focus treatment everywhere, so keyboard users get the same affordance
+   on a link, a button, and a summary. */
+:where(a, button, summary, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 summary::-webkit-details-marker {
@@ -56,12 +110,21 @@ details[open] .chev {
   transform: rotate(180deg);
 }
 
+/* Small-caps label used above section headings and on the credential strip. */
+.label {
+  font-size: var(--text-2xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-ink-4);
+}
+
 /* Slim scrollbar inside the device frames, so the screen reads as an app
    rather than a browser pane. Still a real scrollbar — keyboard and trackpad
    scrolling both work. */
 .phone-screen {
   scrollbar-width: thin;
-  scrollbar-color: rgba(1, 49, 134, 0.35) transparent;
+  scrollbar-color: rgba(10, 10, 10, 0.28) transparent;
 }
 .phone-screen::-webkit-scrollbar {
   width: 4px;
@@ -70,11 +133,11 @@ details[open] .chev {
   background: transparent;
 }
 .phone-screen::-webkit-scrollbar-thumb {
-  background: rgba(1, 49, 134, 0.3);
+  background: rgba(10, 10, 10, 0.22);
   border-radius: 2px;
 }
 .phone-screen:hover::-webkit-scrollbar-thumb {
-  background: rgba(1, 49, 134, 0.55);
+  background: rgba(10, 10, 10, 0.45);
 }
 
 /* Hover-expand service bands.
@@ -114,7 +177,20 @@ details[open] .chev {
 }
 
 .marquee {
-  animation: marquee 32s linear infinite;
+  animation: marquee 42s linear infinite;
+}
+
+/* Hairline that fades at both ends — used under the hero and above the
+   footer so full-width rules do not terminate abruptly at the viewport edge. */
+.rule-fade {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line) 12%,
+    var(--color-line) 88%,
+    transparent
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,5 +199,11 @@ details[open] .chev {
   }
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

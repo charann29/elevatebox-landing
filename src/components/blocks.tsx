@@ -171,10 +171,10 @@ export function Faq({
   compact?: boolean;
 }) {
   return (
-    <div className={compact ? undefined : "lg:columns-1"}>
+    <div className={compact ? undefined : "border-t border-line"}>
       {items.map((f) => (
-        <details key={f.q} className="border-b border-black/10 py-5">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left font-semibold text-brand">
+        <details key={f.q} className="border-b border-line py-5">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left font-semibold text-ink">
             {f.q}
             <svg
               className="chev size-5 shrink-0 transition-transform"
@@ -188,7 +188,7 @@ export function Faq({
               <path d="m6 9 6 6 6-6" />
             </svg>
           </summary>
-          <p className="mt-3 pr-11 text-sm leading-relaxed text-ink-muted">
+          <p className="mt-3 pr-11 text-sm leading-relaxed text-ink-3">
             {f.a}
           </p>
         </details>
@@ -238,13 +238,13 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
   // ponytail: mailto action — no backend, no email provider, no spam handling.
   // Point `action` at a real endpoint when there is one.
   const field =
-    "w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm text-ink outline-none focus:border-brand";
+    "w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-sm text-ink outline-none focus:border-ink";
   return (
     <form
       action={`mailto:${COMPANY.email}`}
       method="post"
       encType="text/plain"
-      className={`grid gap-4 rounded-2xl p-6 ${dark ? "bg-white" : "border border-black/5 bg-white shadow-sm"}`}
+      className={`grid gap-5 rounded-2xl border border-line p-7 ${dark ? "bg-white" : "bg-surface"}`}
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="grid gap-1.5">
@@ -291,7 +291,7 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
       </div>
       <button
         type="submit"
-        className="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-soft"
+        className="rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand"
       >
         Request a quote
       </button>

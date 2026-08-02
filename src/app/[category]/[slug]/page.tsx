@@ -147,6 +147,7 @@ export default async function EntryPage({
           </ol>
         </Section>
 
+        {quotes.length > 0 && (
         <Section tinted eyebrow="Client feedback" title="What clients say">
           <div className="grid gap-5 lg:grid-cols-3">
             {quotes.map((t) => (
@@ -172,6 +173,7 @@ export default async function EntryPage({
             ))}
           </div>
         </Section>
+        )}
 
         <Section eyebrow="FAQ" title={`${entry.name} questions`}>
           <div className="grid gap-12 lg:grid-cols-2">

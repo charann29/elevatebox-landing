@@ -100,32 +100,23 @@ const PhoneIcon = ({ className = "size-4" }: { className?: string }) => (
 
 function TopBar() {
   return (
-    <div className="hidden border-b border-black/5 bg-[#F8FAFC] lg:block">
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between px-5 py-2 text-xs text-ink-muted lg:px-8">
-        <p className="flex items-center gap-2">
-          <span
-            aria-hidden="true"
-            className="size-2 rounded-full bg-emerald-500"
-          />
-          Timings : {COMPANY.timings}
-        </p>
-        <a
-          href={`mailto:${COMPANY.email}`}
-          className="flex items-center gap-2 transition-colors hover:text-brand"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            className="size-4"
-            aria-hidden="true"
+    <div className="hidden border-b border-line bg-surface-2 lg:block">
+      <div className="mx-auto flex max-w-[78rem] items-center justify-between px-6 py-2 text-xs text-ink-3 lg:px-10">
+        <p>{COMPANY.timings}</p>
+        <div className="flex items-center gap-6">
+          <a
+            href={`mailto:${COMPANY.email}`}
+            className="transition-colors hover:text-ink"
           >
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m2 7 10 6 10-6" />
-          </svg>
-          {COMPANY.email}
-        </a>
+            {COMPANY.email}
+          </a>
+          <a
+            href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+            className="transition-colors hover:text-ink"
+          >
+            {COMPANY.phone}
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -137,7 +128,7 @@ export function FloatingActions() {
       <a
         href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
         aria-label="Call us"
-        className="fixed bottom-6 left-6 z-40 grid size-12 place-items-center rounded-full bg-white text-brand shadow-lg ring-1 ring-black/5 transition-transform hover:scale-110"
+        className="fixed bottom-6 left-6 z-40 grid size-12 place-items-center rounded-full bg-ink text-white shadow-lg transition-transform hover:scale-110"
       >
         <PhoneIcon className="size-5" />
       </a>
@@ -154,9 +145,9 @@ export function FloatingActions() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-line bg-surface/85 backdrop-blur-md">
       <TopBar />
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-6 px-5 lg:px-8">
+      <div className="mx-auto flex max-w-[78rem] items-center justify-between gap-6 px-6 lg:px-10">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="py-2">
           <Logo className="h-auto w-[10rem] shrink-0 object-contain sm:w-[12rem] lg:w-[220px] 3xl:w-[300px]" />
         </Link>
@@ -190,30 +181,19 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-5 xl:flex">
-          <div className="text-right">
-            <p className="flex items-center justify-end gap-1.5 text-xs text-ink-muted">
-              <PhoneIcon className="size-3.5 text-brand" />
-              For Business :
-            </p>
-            <p className="mt-0.5 flex items-center gap-3 text-sm font-semibold text-brand">
-              {[COMPANY.phone, COMPANY.phone2].map((t) => (
-                <a
-                  key={t}
-                  href={`tel:${t.replace(/\s/g, "")}`}
-                  className="flex items-center gap-1 whitespace-nowrap transition-colors hover:text-brand-soft"
-                >
-                  <span aria-hidden="true">🇮🇳</span>
-                  {t}
-                </a>
-              ))}
-            </p>
-          </div>
+        <div className="hidden shrink-0 items-center gap-4 xl:flex">
+          <a
+            href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+            className="flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-ink-2 transition-colors hover:text-ink"
+          >
+            <PhoneIcon className="size-3.5" />
+            {COMPANY.phone}
+          </a>
           <Link
             href="/contact"
-            className="whitespace-nowrap rounded-lg bg-brand px-4 py-1.5 text-xs font-semibold text-white shadow-md transition-colors hover:bg-brand-soft 2xl:py-1 3xl:text-sm"
+            className="whitespace-nowrap rounded-full bg-ink px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand 3xl:text-sm"
           >
-            Free Quote
+            Start a project
           </Link>
         </div>
 
@@ -286,29 +266,25 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <div className="mt-4 space-y-2 border-t border-black/5 pt-4">
-              {[COMPANY.phone, COMPANY.phone2].map((t) => (
-                <a
-                  key={t}
-                  href={`tel:${t.replace(/\s/g, "")}`}
-                  className="flex items-center gap-2 text-sm font-semibold text-brand"
-                >
-                  <span aria-hidden="true">🇮🇳</span>
-                  {t}
-                </a>
-              ))}
+            <div className="mt-4 space-y-2 border-t border-line pt-4">
+              <a
+                href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+                className="block text-sm font-semibold text-ink"
+              >
+                {COMPANY.phone}
+              </a>
               <a
                 href={`mailto:${COMPANY.email}`}
-                className="block text-sm text-ink-muted"
+                className="block text-sm text-ink-3"
               >
                 {COMPANY.email}
               </a>
             </div>
             <Link
               href="/contact"
-              className="mt-4 block rounded-lg bg-brand px-5 py-3 text-center text-sm font-semibold text-white"
+              className="mt-4 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white"
             >
-              Free Quote
+              Start a project
             </Link>
           </div>
         </details>
@@ -320,54 +296,46 @@ export function Header() {
 export function Footer() {
   const recent = POSTS.slice(0, 4);
   return (
-    <footer className="bg-brand-dark text-white/75">
-      <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-6">
+    <footer className="bg-ink text-white/65">
+      <div className="mx-auto max-w-[78rem] px-6 py-20 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <div className="inline-flex rounded-xl bg-white px-3 py-2">
               <Logo className="h-8 w-auto" />
             </div>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed">
+            <p className="mt-6 max-w-sm text-sm leading-relaxed">
               {COMPANY.tagline} Product engineering, design, and AI delivery from
               Hyderabad for clients across India, the UAE, UK, Europe, and the US.
             </p>
-            <dl className="mt-6 space-y-2 text-sm">
-              <div className="flex gap-2">
-                <dt className="text-white/45">Email</dt>
+            <dl className="mt-7 space-y-2.5 text-sm">
+              <div className="flex gap-3">
+                <dt className="w-14 shrink-0 text-white/40">Email</dt>
                 <dd>
-                  <a className="hover:text-accent" href={`mailto:${COMPANY.email}`}>
+                  <a className="hover:text-white" href={`mailto:${COMPANY.email}`}>
                     {COMPANY.email}
                   </a>
                 </dd>
               </div>
-              <div className="flex gap-2">
-                <dt className="text-white/45">Phone</dt>
+              <div className="flex gap-3">
+                <dt className="w-14 shrink-0 text-white/40">Phone</dt>
                 <dd>
-                  <a className="hover:text-accent" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>
+                  <a className="hover:text-white" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>
                     {COMPANY.phone}
                   </a>
                 </dd>
               </div>
-              <div className="flex gap-2">
-                <dt className="text-white/45">Office</dt>
+              <div className="flex gap-3">
+                <dt className="w-14 shrink-0 text-white/40">Office</dt>
                 <dd>{COMPANY.address}</dd>
               </div>
-              <div className="flex gap-2">
-                <dt className="text-white/45">Hours</dt>
+              <div className="flex gap-3">
+                <dt className="w-14 shrink-0 text-white/40">Hours</dt>
                 <dd>{COMPANY.hours}</dd>
               </div>
             </dl>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["LinkedIn", "Instagram", "X", "YouTube"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium transition-colors hover:border-accent hover:text-accent"
-                >
-                  {s}
-                </a>
-              ))}
-            </div>
+            {/* Social pills removed — every one of them pointed at "#".
+                Add them back as real profile URLs; a dead link in the footer
+                undoes more trust than the icon row ever earned. */}
           </div>
 
           {CATEGORIES.slice(0, 3).map((c) => (
@@ -378,14 +346,14 @@ export function Footer() {
                   <li key={i.slug}>
                     <Link
                       href={`${c.base}/${i.slug}`}
-                      className="text-sm transition-colors hover:text-accent"
+                      className="text-sm transition-colors hover:text-white"
                     >
                       {i.name}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href={c.base} className="text-sm font-semibold text-accent">
+                  <Link href={c.base} className="text-sm font-semibold text-white/90">
                     View all →
                   </Link>
                 </li>
@@ -398,18 +366,18 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {[...FLAT_NAV, ...TAIL_NAV].map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="text-sm transition-colors hover:text-accent">
+                  <Link href={n.href} className="text-sm transition-colors hover:text-white">
                     {n.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/ai-solutions" className="text-sm transition-colors hover:text-accent">
+                <Link href="/ai-solutions" className="text-sm transition-colors hover:text-white">
                   AI Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/locations" className="text-sm transition-colors hover:text-accent">
+                <Link href="/locations" className="text-sm transition-colors hover:text-white">
                   Locations
                 </Link>
               </li>
@@ -421,7 +389,7 @@ export function Footer() {
                 <li key={p.slug}>
                   <Link
                     href={`/blogs/${p.slug}`}
-                    className="text-sm leading-snug transition-colors hover:text-accent"
+                    className="text-sm leading-snug transition-colors hover:text-white"
                   >
                     {p.title}
                   </Link>
@@ -431,21 +399,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/12 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {COMPANY.legal}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link className="hover:text-accent" href="/privacy-policy">
+            <Link className="hover:text-white" href="/privacy-policy">
               Privacy Policy
             </Link>
-            <Link className="hover:text-accent" href="/terms-and-conditions">
+            <Link className="hover:text-white" href="/terms-and-conditions">
               Terms &amp; Conditions
             </Link>
-            <Link className="hover:text-accent" href="/cancellation-and-refund">
+            <Link className="hover:text-white" href="/cancellation-and-refund">
               Cancellation &amp; Refund
             </Link>
-            <Link className="hover:text-accent" href="/sitemap-page">
+            <Link className="hover:text-white" href="/sitemap-page">
               Sitemap
             </Link>
           </div>

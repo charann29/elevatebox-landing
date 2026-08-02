@@ -1638,23 +1638,50 @@ export const getJob = (slug: string) => JOBS.find((j) => j.slug === slug);
 
 export const COMPANY = {
   name: "ElevateBox",
-  legal: "ElevateBox Technologies",
+  legal: "ElevateScale Technologies Pvt Ltd",
   tagline: "Design, engineering, and AI delivery for teams that need to ship.",
-  email: "sales@elevatebox.in",
-  phone: "+91 00000 00000",
-  phone2: "+91 11111 11111",
-  whatsapp: "+910000000000",
-  timings: "24/7",
+  email: "charan@elevatebox.in",
+  phone: "+91 86886 64337",
+  whatsapp: "+918688664337",
+  timings: "Mon–Sat, 10:00–19:00 IST",
   address: "Hyderabad, Telangana, India",
   hours: "Mon–Sat, 10:00–19:00 IST",
   site: "https://elevatebox.in",
 };
 
+/* Where the team has worked and what it has done. Every line here is
+   checkable — that is the whole point of it. A round number a prospect
+   cannot verify buys nothing; "founding engineer at ClickPe (YC W23)"
+   survives being looked up, which is what makes it worth printing.
+
+   Rule for this array: if you cannot produce evidence on request, it does
+   not go in. */
+export const CREDENTIALS = [
+  { k: "ACM ICPC", v: "All India Rank 14", note: "Top 0.17% of 8,000+ competitors" },
+  { k: "JPMorgan Chase", v: "Engineering", note: "Cut a core API from 120s to 7s" },
+  { k: "Google", v: "Associate Product Manager", note: "2022 cohort" },
+  { k: "ClickPe", v: "Founding Engineer", note: "Y Combinator W23" },
+  { k: "Acquired by Microsoft", v: "Founding Engineer", note: "AI startup, exited to Microsoft" },
+];
+
+/* Company registrations and certifications.
+   EMPTY ON PURPOSE — populate only with marks ElevateScale Technologies
+   Pvt Ltd actually holds, and put the real registration number in `id` so
+   the claim can be checked. The strip renders nothing while this is empty,
+   which is the correct behaviour: an unverifiable government badge is worse
+   than no badge, because one search disproves it and takes the rest of the
+   page down with it.
+
+   Shape: { name: "Startup India (DPIIT)", id: "DIPP123456", img: "/assets/accred-dpiit.svg" } */
+export const ACCREDITATIONS: { name: string; id: string; img: string }[] = [];
+
+/* Delivery facts about how the engagement runs. These are commitments the
+   company controls, not counts it would have to inflate. */
 export const STATS = [
-  { value: "150+", label: "Products shipped" },
-  { value: "60+", label: "Engineers and designers" },
-  { value: "12", label: "Countries served" },
-  { value: "9 yrs", label: "Average client tenure of our leads" },
+  { value: "2 weeks", label: "Between shippable increments" },
+  { value: "Day one", label: "Repos and cloud in your name" },
+  { value: "Fixed", label: "Discovery scope and price" },
+  { value: "1 day", label: "Reply time on a new brief" },
 ];
 
 export const PROCESS_STEPS = [
@@ -1669,14 +1696,16 @@ export const PROCESS_STEPS = [
   { n: "09", t: "Support", d: "Maintenance retainer covering OS upgrades, dependency patching, and SLA-backed fixes." },
 ];
 
-export const TESTIMONIALS = [
-  { quote: "They pushed back on half our original scope and were right about all of it. We shipped two months earlier than the plan we walked in with.", name: "Operations Director", role: "Logistics, Dubai" },
-  { quote: "The handover was the best part. Documentation, runbooks, and repository access from day one meant our team took over without a gap.", name: "CTO", role: "Fintech, Bengaluru" },
-  { quote: "Our previous vendor gave us a demo every sprint. This team gave us something in production every sprint. Different thing entirely.", name: "Head of Product", role: "Healthcare, London" },
-  { quote: "They told us not to build the AI feature we asked for and proposed something smaller that actually worked. That cost them revenue and earned the next contract.", name: "Founder", role: "Retail SaaS, California" },
-  { quote: "Offline support was treated as a requirement rather than an enhancement. For our field teams that was the difference between adoption and shelfware.", name: "Program Manager", role: "Agritech, Hyderabad" },
-  { quote: "The load test before our sale event found two issues we would otherwise have discovered live. That single session paid for the engagement.", name: "Engineering Lead", role: "E-commerce, UAE" },
-];
+/* EMPTY ON PURPOSE. The six quotes that used to sit here ("Operations
+   Director, Logistics, Dubai" and so on) were written copy, not client
+   words — invented praise attributed to people who do not exist.
+
+   Every consumer of this array is guarded on `.length`, so the testimonial
+   sections simply do not render while it is empty. Add entries only when a
+   real client has said the words and agreed to be quoted; a named person at
+   a named company is worth more than six anonymous ones. Until then the
+   work itself does the arguing, which it does better anyway. */
+export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [];
 
 export const FAQS = [
   { q: "How do you price engagements?", a: "Fixed-price for well-defined scopes, and time-and-materials for evolving products. We recommend fixed-price discovery first so the build estimate is based on evidence rather than assumption." },

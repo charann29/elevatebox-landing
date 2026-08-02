@@ -126,6 +126,7 @@ export default function AboutPage() {
           </div>
         </Section>
 
+        {TESTIMONIALS.length > 0 && (
         <Section eyebrow="Client feedback" title="What clients say">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
@@ -162,6 +163,7 @@ export default function AboutPage() {
             ))}
           </div>
         </Section>
+        )}
 
         <CtaBand />
       </main>
