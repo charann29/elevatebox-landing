@@ -56,6 +56,54 @@ details[open] .chev {
   transform: rotate(180deg);
 }
 
+/* Slim scrollbar inside the device frames, so the screen reads as an app
+   rather than a browser pane. Still a real scrollbar — keyboard and trackpad
+   scrolling both work. */
+.phone-screen {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(1, 49, 134, 0.35) transparent;
+}
+.phone-screen::-webkit-scrollbar {
+  width: 4px;
+}
+.phone-screen::-webkit-scrollbar-track {
+  background: transparent;
+}
+.phone-screen::-webkit-scrollbar-thumb {
+  background: rgba(1, 49, 134, 0.3);
+  border-radius: 2px;
+}
+.phone-screen:hover::-webkit-scrollbar-thumb {
+  background: rgba(1, 49, 134, 0.55);
+}
+
+/* Hover-expand service bands.
+   Collapsed height animates via grid-template-rows 0fr -> 1fr.
+   Gated on (hover: hover) so touch devices — where there is no hover — get
+   every band expanded instead of content they can never reach. */
+@media (hover: hover) and (pointer: fine) {
+  .band-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .band-body > * {
+    overflow: hidden;
+    min-height: 0;
+  }
+  .band:hover .band-body,
+  .band:focus-within .band-body {
+    grid-template-rows: 1fr;
+  }
+  .band .band-chev {
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .band:hover .band-chev,
+  .band:focus-within .band-chev {
+    transform: rotate(180deg);
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

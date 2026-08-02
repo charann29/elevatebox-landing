@@ -957,6 +957,12 @@ export const serviceIcon = (i: number) =>
   `/assets/icon-${ICON_NAMES[i % ICON_NAMES.length]}.svg`;
 export const HERO_IMG = "/assets/hero.svg";
 export const OG_IMG = "/assets/og.svg";
+export const FLAG_IN = "/assets/flag-in.svg";
+/** Blog cover, keyed by post category. */
+export const postCover = (category: string) =>
+  `/assets/cover-${assetSlug(category)}.svg`;
+/** Geometric avatar — 8 variants, no likeness of a real person. */
+export const avatarImg = (i: number) => `/assets/avatar-${(i % 8) + 1}.svg`;
 
 /** Slot dimensions, matching the reference layout. */
 export const IMG = {

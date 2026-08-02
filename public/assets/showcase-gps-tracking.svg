@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320" fill="none" role="img" aria-label="Fleet tracking dashboard"><defs>
+        <filter id="ss" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".22"/>
+        </filter>
+      </defs>
+  <g transform="translate(24 34)" filter="url(#ss)">
+    <rect width="472" height="252" rx="14" fill="#fff"/>
+    <rect width="472" height="26" rx="14" fill="#F3F6FA"/><rect y="14" width="472" height="12" fill="#F3F6FA"/>
+    <circle cx="16" cy="13" r="3.4" fill="#e05c4a"/><circle cx="28" cy="13" r="3.4" fill="#e8b53f"/>
+    <circle cx="40" cy="13" r="3.4" fill="#4caf7d"/>
+    <rect x="18" y="40" width="104" height="52" rx="10" fill="#013186"/>
+          <text x="32" y="68" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="start">100</text>
+          <text x="32" y="82" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#bcd0f5" text-anchor="start">Vehicles</text><rect x="132" y="40" width="104" height="52" rx="10" fill="#F3F6FA"/>
+          <text x="146" y="68" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="800" fill="#013186" text-anchor="start">65</text>
+          <text x="146" y="82" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#8b9aa5" text-anchor="start">Moving</text><rect x="246" y="40" width="104" height="52" rx="10" fill="#F3F6FA"/>
+          <text x="260" y="68" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="800" fill="#013186" text-anchor="start">12</text>
+          <text x="260" y="82" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#8b9aa5" text-anchor="start">Idle</text><rect x="360" y="40" width="104" height="52" rx="10" fill="#F3F6FA"/>
+          <text x="374" y="68" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="800" fill="#013186" text-anchor="start">485</text>
+          <text x="374" y="82" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#8b9aa5" text-anchor="start">Km today</text>
+    <rect x="18" y="104" width="290" height="132" rx="10" fill="#EAF1F8"/>
+    <path d="M40 210 Q90 150 140 178 T244 130 T292 156" stroke="#013186" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="40" cy="210" r="7" fill="#3EC0DD" opacity=".35"/><circle cx="40" cy="210" r="3.4" fill="#013186"/><circle cx="118" cy="168" r="7" fill="#3EC0DD" opacity=".35"/><circle cx="118" cy="168" r="3.4" fill="#013186"/><circle cx="196" cy="150" r="7" fill="#3EC0DD" opacity=".35"/><circle cx="196" cy="150" r="3.4" fill="#013186"/><circle cx="274" cy="160" r="7" fill="#3EC0DD" opacity=".35"/><circle cx="274" cy="160" r="3.4" fill="#013186"/>
+    <rect x="320" y="104" width="134" height="132" rx="10" fill="#F3F6FA"/>
+    <circle cx="387" cy="150" r="30" fill="none" stroke="#3EC0DD" stroke-width="9" opacity=".35"/>
+    <circle cx="387" cy="150" r="30" fill="none" stroke="#013186" stroke-width="9"
+            stroke-dasharray="126 190" stroke-linecap="round" transform="rotate(-90 387 150)"/>
+    <rect x="332" y="192" width="110" height="10" rx="5" fill="#fff"/>
+        <rect x="338" y="195" width="5" height="5" rx="2" fill="#3EC0DD"/>
+        <rect x="350" y="196" width="74" height="4" rx="2" fill="#263137" opacity=".18"/><rect x="332" y="207" width="110" height="10" rx="5" fill="#fff"/>
+        <rect x="338" y="210" width="5" height="5" rx="2" fill="#3EC0DD"/>
+        <rect x="350" y="211" width="58" height="4" rx="2" fill="#263137" opacity=".18"/><rect x="332" y="222" width="110" height="10" rx="5" fill="#fff"/>
+        <rect x="338" y="225" width="5" height="5" rx="2" fill="#3EC0DD"/>
+        <rect x="350" y="226" width="42" height="4" rx="2" fill="#263137" opacity=".18"/>
+  </g></svg>

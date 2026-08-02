@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320" fill="none" role="img" aria-label="Website layouts"><defs>
+        <filter id="ss" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".22"/>
+        </filter>
+      </defs>
+    <g transform="translate(30 40) rotate(-5)" filter="url(#ss)">
+      <rect width="250" height="170" rx="10" fill="#fff"/>
+      <rect width="250" height="20" rx="10" fill="#EDF1F6"/>
+      <rect y="12" width="250" height="8" fill="#EDF1F6"/>
+      <circle cx="12" cy="10" r="3" fill="#e05c4a"/><circle cx="22" cy="10" r="3" fill="#e8b53f"/>
+      <circle cx="32" cy="10" r="3" fill="#4caf7d"/>
+      <rect x="10" y="30" width="230" height="57.800000000000004" rx="7" fill="#3EC0DD" opacity=".8"/>
+      <rect x="10" y="97.80000000000001" width="68.66666666666667" height="37.4" rx="6" fill="#3EC0DD" opacity=".28"/><rect x="86.66666666666667" y="97.80000000000001" width="68.66666666666667" height="37.4" rx="6" fill="#3EC0DD" opacity=".28"/><rect x="163.33333333333334" y="97.80000000000001" width="68.66666666666667" height="37.4" rx="6" fill="#3EC0DD" opacity=".28"/>
+      <rect x="10" y="148" width="110" height="6" rx="3" fill="#263137" opacity=".18"/>
+    </g>
+    <g transform="translate(232 96) rotate(4)" filter="url(#ss)">
+      <rect width="262" height="184" rx="10" fill="#fff"/>
+      <rect width="262" height="20" rx="10" fill="#EDF1F6"/>
+      <rect y="12" width="262" height="8" fill="#EDF1F6"/>
+      <circle cx="12" cy="10" r="3" fill="#e05c4a"/><circle cx="22" cy="10" r="3" fill="#e8b53f"/>
+      <circle cx="32" cy="10" r="3" fill="#4caf7d"/>
+      <rect x="10" y="30" width="242" height="62.56" rx="7" fill="#013186" opacity=".8"/>
+      <rect x="10" y="102.56" width="72.66666666666667" height="40.48" rx="6" fill="#013186" opacity=".28"/><rect x="90.66666666666667" y="102.56" width="72.66666666666667" height="40.48" rx="6" fill="#013186" opacity=".28"/><rect x="171.33333333333334" y="102.56" width="72.66666666666667" height="40.48" rx="6" fill="#013186" opacity=".28"/>
+      <rect x="10" y="162" width="115.28" height="6" rx="3" fill="#263137" opacity=".18"/>
+    </g></svg>

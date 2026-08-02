@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320" fill="none" role="img" aria-label="AI agent console"><defs>
+        <filter id="ss" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".22"/>
+        </filter>
+      </defs>
+  <g transform="translate(40 40)" filter="url(#ss)">
+    <rect width="440" height="240" rx="14" fill="#14131f"/>
+    <text x="24" y="40" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" fill="#fff" text-anchor="start">Agent runs</text>
+    <text x="24" y="58" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="500" fill="#9a93c9" text-anchor="start">4 active · 128 tasks today</text>
+    
+      <rect x="24" y="78" width="240" height="30" rx="8" fill="#fff" fill-opacity=".06"/>
+      <circle cx="40" cy="93" r="4" fill="#4ade80"/>
+      <text x="54" y="97" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="start">Extract</text>
+      <rect x="180" y="88" width="70" height="10" rx="5" fill="#3EC0DD" opacity=".5"/>
+      <rect x="24" y="116" width="240" height="30" rx="8" fill="#fff" fill-opacity=".06"/>
+      <circle cx="40" cy="131" r="4" fill="#4ade80"/>
+      <text x="54" y="135" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="start">Classify</text>
+      <rect x="180" y="126" width="58" height="10" rx="5" fill="#3EC0DD" opacity=".5"/>
+      <rect x="24" y="154" width="240" height="30" rx="8" fill="#fff" fill-opacity=".06"/>
+      <circle cx="40" cy="169" r="4" fill="#fbbf24"/>
+      <text x="54" y="173" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="start">Enrich</text>
+      <rect x="180" y="164" width="46" height="10" rx="5" fill="#3EC0DD" opacity=".5"/>
+      <rect x="24" y="192" width="240" height="30" rx="8" fill="#fff" fill-opacity=".06"/>
+      <circle cx="40" cy="207" r="4" fill="#4ade80"/>
+      <text x="54" y="211" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="start">Summarise</text>
+      <rect x="180" y="202" width="34" height="10" rx="5" fill="#3EC0DD" opacity=".5"/>
+    <rect x="284" y="78" width="132" height="142" rx="10" fill="#fff" fill-opacity=".06"/>
+    <text x="298" y="100" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="600" fill="#9a93c9" text-anchor="start">Eval score</text>
+    <text x="298" y="126" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="800" fill="#fff" text-anchor="start">94%</text>
+    <rect x="298" y="166" width="12" height="30" rx="4" fill="#3EC0DD" opacity="0.45"/><rect x="320" y="152" width="12" height="44" rx="4" fill="#3EC0DD" opacity="0.56"/><rect x="342" y="170" width="12" height="26" rx="4" fill="#3EC0DD" opacity="0.67"/><rect x="364" y="144" width="12" height="52" rx="4" fill="#3EC0DD" opacity="0.78"/><rect x="386" y="156" width="12" height="40" rx="4" fill="#3EC0DD" opacity="0.89"/>
+  </g></svg>

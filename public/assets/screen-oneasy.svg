@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="1180" viewBox="0 0 260 1180" fill="none" role="img" aria-label="oneasy app screen"><rect width="260" height="1180" fill="#12111c"/>
+      <text x="16" y="50" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="800" fill="#fff" text-anchor="start">OnEasy</text>
+      <text x="16" y="68" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="500" fill="#9a93c9" text-anchor="start">Agents · 4 running</text>
+      <rect x="16" y="86" width="228" height="72" rx="12" fill="#fff" opacity="0.06"/>
+      <text x="32" y="112" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="600" fill="#9a93c9" text-anchor="start">Tasks completed today</text>
+      <text x="32" y="140" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="start">128</text>
+      <rect x="150" y="118" width="80" height="24" rx="12" fill="#3EC0DD" opacity="0.22"/>
+      <text x="190" y="134" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="800" fill="#3EC0DD" text-anchor="middle">+18%</text>
+      <text x="16" y="190" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Active agents</text>
+      
+      <rect x="16" y="204" width="228" height="56" rx="10" fill="#fff" opacity="0.06"/>
+      <circle cx="34" cy="232" r="4.5" fill="#4ade80"/>
+      <text x="50" y="228" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="start">Inbox Triage</text>
+      <text x="50" y="244" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="500" fill="#9a93c9" text-anchor="start">running · 42 today</text>
+      <rect x="160" y="226" width="68" height="12" rx="6" fill="#fff" opacity="0.08"/>
+      <rect x="160" y="226" width="58" height="12" rx="6" fill="#3EC0DD" opacity="0.75"/>
+      <rect x="16" y="270" width="228" height="56" rx="10" fill="#fff" opacity="0.06"/>
+      <circle cx="34" cy="298" r="4.5" fill="#4ade80"/>
+      <text x="50" y="294" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="start">Invoice Extract</text>
+      <text x="50" y="310" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="500" fill="#9a93c9" text-anchor="start">running · 31 today</text>
+      <rect x="160" y="292" width="68" height="12" rx="6" fill="#fff" opacity="0.08"/>
+      <rect x="160" y="292" width="44" height="12" rx="6" fill="#3EC0DD" opacity="0.75"/>
+      <rect x="16" y="336" width="228" height="56" rx="10" fill="#fff" opacity="0.06"/>
+      <circle cx="34" cy="364" r="4.5" fill="#fbbf24"/>
+      <text x="50" y="360" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="start">Lead Enrich</text>
+      <text x="50" y="376" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="500" fill="#9a93c9" text-anchor="start">queued</text>
+      <rect x="160" y="358" width="68" height="12" rx="6" fill="#fff" opacity="0.08"/>
+      <rect x="160" y="358" width="14" height="12" rx="6" fill="#3EC0DD" opacity="0.75"/>
+      <rect x="16" y="402" width="228" height="56" rx="10" fill="#fff" opacity="0.06"/>
+      <circle cx="34" cy="430" r="4.5" fill="#4ade80"/>
+      <text x="50" y="426" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="start">Report Digest</text>
+      <text x="50" y="442" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="500" fill="#9a93c9" text-anchor="start">running · 26 today</text>
+      <rect x="160" y="424" width="68" height="12" rx="6" fill="#fff" opacity="0.08"/>
+      <rect x="160" y="424" width="50" height="12" rx="6" fill="#3EC0DD" opacity="0.75"/>
+      <rect x="16" y="468" width="228" height="56" rx="10" fill="#fff" opacity="0.06"/>
+      <circle cx="34" cy="496" r="4.5" fill="#4ade80"/>
+      <text x="50" y="492" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#fff" text-anchor="start">Ticket Router</text>
+      <text x="50" y="508" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="500" fill="#9a93c9" text-anchor="start">running · 29 today</text>
+      <rect x="160" y="490" width="68" height="12" rx="6" fill="#fff" opacity="0.08"/>
+      <rect x="160" y="490" width="40" height="12" rx="6" fill="#3EC0DD" opacity="0.75"/>
+      <text x="16" y="566" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Tool calls</text>
+      <rect x="16" y="580" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="589" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="590" width="120" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="589" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/><rect x="16" y="610" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="619" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="620" width="108" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="619" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/><rect x="16" y="640" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="649" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="650" width="96" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="649" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/><rect x="16" y="670" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="679" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="680" width="84" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="679" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/><rect x="16" y="700" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="709" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="710" width="72" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="709" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/><rect x="16" y="730" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="739" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="740" width="60" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="739" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/><rect x="16" y="760" width="228" height="24" rx="6" fill="#fff" opacity="0.05"/>
+          <rect x="28" y="769" width="6" height="6" rx="2" fill="#3EC0DD" opacity="0.9"/>
+          <rect x="44" y="770" width="48" height="5" rx="2.5" fill="#fff" opacity="0.22"/>
+          <rect x="196" y="769" width="34" height="7" rx="3.5" fill="#4ade80" opacity="0.5"/>
+      <text x="16" y="816" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Evaluation</text>
+      <rect x="16" y="830" width="228" height="110" rx="12" fill="#fff" opacity="0.06"/>
+      <text x="32" y="858" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="600" fill="#9a93c9" text-anchor="start">Pass rate</text>
+      <text x="32" y="886" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="start">94%</text>
+      <rect x="32" y="898" width="16" height="26" rx="5" fill="#3EC0DD" opacity="0.4"/><rect x="66" y="886" width="16" height="38" rx="5" fill="#3EC0DD" opacity="0.5"/><rect x="100" y="902" width="16" height="22" rx="5" fill="#3EC0DD" opacity="0.6000000000000001"/><rect x="134" y="880" width="16" height="44" rx="5" fill="#3EC0DD" opacity="0.7000000000000001"/><rect x="168" y="890" width="16" height="34" rx="5" fill="#3EC0DD" opacity="0.8"/><rect x="202" y="876" width="16" height="48" rx="5" fill="#3EC0DD" opacity="0.9"/>
+      <text x="16" y="972" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Permissions</text>
+      <rect x="16" y="986" width="228" height="36" rx="8" fill="#fff" opacity="0.06"/>
+          <rect x="28" y="1000" width="90" height="6" rx="3" fill="#fff" opacity="0.2"/>
+          <rect x="198" y="997" width="32" height="14" rx="7" fill="#4ade80" opacity="0.35"/><rect x="16" y="1030" width="228" height="36" rx="8" fill="#fff" opacity="0.06"/>
+          <rect x="28" y="1044" width="76" height="6" rx="3" fill="#fff" opacity="0.2"/>
+          <rect x="198" y="1041" width="32" height="14" rx="7" fill="#4ade80" opacity="0.35"/><rect x="16" y="1074" width="228" height="36" rx="8" fill="#fff" opacity="0.06"/>
+          <rect x="28" y="1088" width="62" height="6" rx="3" fill="#fff" opacity="0.2"/>
+          <rect x="198" y="1085" width="32" height="14" rx="7" fill="#4ade80" opacity="0.35"/></svg>

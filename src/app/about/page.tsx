@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { CATEGORIES, COMPANY, PROCESS_STEPS, STATS, TESTIMONIALS } from "@/lib/content";
+import Image from "next/image";
+import {
+  CATEGORIES,
+  COMPANY,
+  PROCESS_STEPS,
+  STATS,
+  TESTIMONIALS,
+  avatarImg,
+} from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -120,7 +128,7 @@ export default function AboutPage() {
 
         <Section eyebrow="Client feedback" title="What clients say">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
+            {TESTIMONIALS.map((t, i) => (
               <figure
                 key={t.name + t.role}
                 className="flex flex-col rounded-2xl border border-black/5 bg-white p-7 shadow-sm"
@@ -135,9 +143,20 @@ export default function AboutPage() {
                 <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 border-t border-black/5 pt-4">
-                  <p className="text-sm font-semibold text-brand">{t.name}</p>
-                  <p className="text-xs text-ink-muted">{t.role}</p>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-black/5 pt-4">
+                  <Image
+                    src={avatarImg(i)}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="size-10 shrink-0 rounded-full"
+                  />
+                  <span>
+                    <span className="block text-sm font-semibold text-brand">
+                      {t.name}
+                    </span>
+                    <span className="block text-xs text-ink-muted">{t.role}</span>
+                  </span>
                 </figcaption>
               </figure>
             ))}

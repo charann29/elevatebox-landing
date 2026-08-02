@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="180" viewBox="0 0 480 180" fill="none" role="img" aria-label="Free consultation">
+  <rect width="480" height="180" rx="18" fill="#F0FCFF"/>
+  <circle cx="410" cy="40" r="70" fill="#0a6f85" opacity=".12"/>
+  <rect x="32" y="52" width="40" height="7" rx="3.5" fill="#0a6f85"/>
+  <text x="32" y="96" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="800" fill="#0a6f85" text-anchor="start">Free consultation</text>
+  <rect x="32" y="112" width="200" height="6" rx="3" fill="#263137" opacity=".18"/>
+  <rect x="32" y="130" width="112" height="26" rx="13" fill="#0a6f85" opacity=".9"/>
+  <rect x="58" y="141" width="60" height="5" rx="2.5" fill="#fff" opacity=".9"/></svg>

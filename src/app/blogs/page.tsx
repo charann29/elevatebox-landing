@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { COMPANY, POSTS, POST_CATEGORIES } from "@/lib/content";
+import { COMPANY, POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -51,8 +52,16 @@ export default function BlogIndex() {
                 {fmt(featured.date)} · {featured.readMins} min read
               </p>
             </div>
-            <div className="self-end">
-              <span className="inline-block font-semibold text-brand">
+            <div className="self-center">
+              <Image
+                src={postCover(featured.category)}
+                alt=""
+                width={600}
+                height={400}
+                priority
+                className="h-auto w-full rounded-2xl shadow-lg"
+              />
+              <span className="mt-6 inline-block font-semibold text-brand">
                 Read the article →
               </span>
             </div>
@@ -74,8 +83,16 @@ export default function BlogIndex() {
               <Link
                 key={p.slug}
                 href={`/blogs/${p.slug}`}
-                className="group flex flex-col rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-transform duration-300 hover:-translate-y-1"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <Image
+                  src={postCover(p.category)}
+                  alt=""
+                  width={600}
+                  height={400}
+                  className="h-44 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-7">
                 <span className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {p.category}
                 </span>
@@ -88,6 +105,7 @@ export default function BlogIndex() {
                 <p className="mt-5 border-t border-black/5 pt-4 text-xs text-ink-muted">
                   {fmt(p.date)} · {p.readMins} min read
                 </p>
+                </div>
               </Link>
             ))}
           </div>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320" fill="none" role="img" aria-label="Social campaign creative"><defs>
+        <filter id="ss" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".22"/>
+        </filter>
+      </defs><g transform="translate(22 42) rotate(-4)" filter="url(#ss)">
+        <rect width="108" height="212" rx="12" fill="#fff"/>
+        <rect x="8" y="8" width="92" height="92" rx="8" fill="#E7F7EE"/>
+        <circle cx="54" cy="54" r="24" fill="#2fa36b" opacity=".55"/>
+        <circle cx="16" cy="112" r="7" fill="#2fa36b" opacity=".8"/>
+        <rect x="30" y="108" width="46" height="5" rx="2.5" fill="#263137" opacity=".28"/>
+        <rect x="8" y="128" width="88" height="5" rx="2.5" fill="#263137" opacity="0.2"/><rect x="8" y="141" width="66" height="5" rx="2.5" fill="#263137" opacity="0.15000000000000002"/><rect x="8" y="154" width="44" height="5" rx="2.5" fill="#263137" opacity="0.1"/>
+        <rect x="8" y="176" width="34" height="16" rx="8" fill="#2fa36b" opacity=".9"/>
+        <rect x="48" y="176" width="34" height="16" rx="8" fill="#263137" opacity=".1"/>
+      </g><g transform="translate(144 68) rotate(4)" filter="url(#ss)">
+        <rect width="108" height="212" rx="12" fill="#fff"/>
+        <rect x="8" y="8" width="92" height="92" rx="8" fill="#FFEBE6"/>
+        <circle cx="54" cy="54" r="24" fill="#c0392b" opacity=".55"/>
+        <circle cx="16" cy="112" r="7" fill="#c0392b" opacity=".8"/>
+        <rect x="30" y="108" width="46" height="5" rx="2.5" fill="#263137" opacity=".28"/>
+        <rect x="8" y="128" width="88" height="5" rx="2.5" fill="#263137" opacity="0.2"/><rect x="8" y="141" width="66" height="5" rx="2.5" fill="#263137" opacity="0.15000000000000002"/><rect x="8" y="154" width="44" height="5" rx="2.5" fill="#263137" opacity="0.1"/>
+        <rect x="8" y="176" width="34" height="16" rx="8" fill="#c0392b" opacity=".9"/>
+        <rect x="48" y="176" width="34" height="16" rx="8" fill="#263137" opacity=".1"/>
+      </g><g transform="translate(266 42) rotate(-4)" filter="url(#ss)">
+        <rect width="108" height="212" rx="12" fill="#fff"/>
+        <rect x="8" y="8" width="92" height="92" rx="8" fill="#FFF6E9"/>
+        <circle cx="54" cy="54" r="24" fill="#8a5a12" opacity=".55"/>
+        <circle cx="16" cy="112" r="7" fill="#8a5a12" opacity=".8"/>
+        <rect x="30" y="108" width="46" height="5" rx="2.5" fill="#263137" opacity=".28"/>
+        <rect x="8" y="128" width="88" height="5" rx="2.5" fill="#263137" opacity="0.2"/><rect x="8" y="141" width="66" height="5" rx="2.5" fill="#263137" opacity="0.15000000000000002"/><rect x="8" y="154" width="44" height="5" rx="2.5" fill="#263137" opacity="0.1"/>
+        <rect x="8" y="176" width="34" height="16" rx="8" fill="#8a5a12" opacity=".9"/>
+        <rect x="48" y="176" width="34" height="16" rx="8" fill="#263137" opacity=".1"/>
+      </g><g transform="translate(388 68) rotate(4)" filter="url(#ss)">
+        <rect width="108" height="212" rx="12" fill="#fff"/>
+        <rect x="8" y="8" width="92" height="92" rx="8" fill="#EFEAFF"/>
+        <circle cx="54" cy="54" r="24" fill="#4335A7" opacity=".55"/>
+        <circle cx="16" cy="112" r="7" fill="#4335A7" opacity=".8"/>
+        <rect x="30" y="108" width="46" height="5" rx="2.5" fill="#263137" opacity=".28"/>
+        <rect x="8" y="128" width="88" height="5" rx="2.5" fill="#263137" opacity="0.2"/><rect x="8" y="141" width="66" height="5" rx="2.5" fill="#263137" opacity="0.15000000000000002"/><rect x="8" y="154" width="44" height="5" rx="2.5" fill="#263137" opacity="0.1"/>
+        <rect x="8" y="176" width="34" height="16" rx="8" fill="#4335A7" opacity=".9"/>
+        <rect x="48" y="176" width="34" height="16" rx="8" fill="#263137" opacity=".1"/>
+      </g></svg>

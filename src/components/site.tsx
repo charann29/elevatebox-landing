@@ -38,7 +38,7 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
     <li className="group relative">
       <NavLink
         href={cat.base}
-        className="flex cursor-pointer items-center gap-1 py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
+        className="flex cursor-pointer items-center gap-1 whitespace-nowrap py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
         idleClassName="text-ink-muted group-hover:text-brand"
       >
         {cat.label}
@@ -158,17 +158,17 @@ export function Header() {
       <TopBar />
       <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-6 px-5 lg:px-8">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="py-2">
-          <Logo className="h-auto w-[10rem] object-contain sm:w-[12rem] lg:w-[300px]" />
+          <Logo className="h-auto w-[10rem] shrink-0 object-contain sm:w-[12rem] lg:w-[220px] 3xl:w-[300px]" />
         </Link>
 
         <nav className="hidden xl:block" aria-label="Main">
-          <ul className="flex items-center gap-4 2xl:gap-5 3xl:gap-6">
+          <ul className="flex items-center gap-3 2xl:gap-4 3xl:gap-5">
             {FLAT_NAV.map((n) => (
               <li key={n.href}>
                 <NavLink
                   href={n.href}
                   exact={n.href === "/"}
-                  className="cursor-pointer py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
+                  className="block cursor-pointer whitespace-nowrap py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
                 >
                   {n.label}
                 </NavLink>
@@ -181,7 +181,7 @@ export function Header() {
               <li key={n.href}>
                 <NavLink
                   href={n.href}
-                  className="cursor-pointer py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
+                  className="block cursor-pointer whitespace-nowrap py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
                 >
                   {n.label}
                 </NavLink>

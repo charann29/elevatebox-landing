@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { COMPANY, POSTS, getPost } from "@/lib/content";
+import { COMPANY, POSTS, getPost, postCover } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -70,6 +71,14 @@ export default async function PostPage({
         <Section>
           <div className="grid gap-12 lg:grid-cols-3">
             <article className="lg:col-span-2">
+              <Image
+                src={postCover(p.category)}
+                alt=""
+                width={600}
+                height={400}
+                priority
+                className="mb-8 h-auto w-full rounded-2xl shadow-lg"
+              />
               <p className="text-xs text-ink-muted">
                 {fmt(p.date)} · {p.readMins} min read
               </p>

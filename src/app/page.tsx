@@ -10,15 +10,15 @@ import {
   IMG,
   POSTS,
   PROCESS_STEPS,
-  PROJECTS,
   STATS,
   TESTIMONIALS,
+  avatarImg,
   clientLogo,
-  projectImg,
-  serviceIcon,
 } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { Faq, QuoteForm, Section } from "@/components/blocks";
+import { ServiceBands } from "@/components/service-bands";
+import { ProjectShowcase } from "@/components/project-showcase";
 
 export const metadata: Metadata = {
   title: `${COMPANY.name} — Product Engineering, Design & AI Delivery`,
@@ -27,21 +27,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const TINTS = [
-  "bg-[#E3ECFF]",
-  "bg-[#F0FCFF]",
-  "bg-[#FFF6E9]",
-  "bg-[#EFEAFF]",
-  "bg-[#E7F7EE]",
-  "bg-[#FFEBE6]",
-];
-
 export default function Home() {
-  const services = CATEGORIES[0];
-  const featuredServices = services.items.slice(0, 6);
   const locations = CATEGORIES[4];
   const recentPosts = POSTS.slice(0, 3);
-  const featuredProjects = PROJECTS.slice(0, 6);
 
   return (
     <>
@@ -208,38 +196,11 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Services */}
-        <Section
-          tinted
-          eyebrow="Services"
-          title="What we build"
-          lead={services.blurb}
-        >
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredServices.map((s, n) => (
-              <Link
-                key={s.slug}
-                href={`${services.base}/${s.slug}`}
-                className={`group rounded-2xl ${TINTS[n % TINTS.length]} p-7 transition-transform duration-300 hover:-translate-y-1`}
-              >
-                <Image
-                  src={serviceIcon(n)}
-                  alt=""
-                  width={IMG.icon.w}
-                  height={IMG.icon.h}
-                  className="mb-5 h-[130px] w-[120px]"
-                />
-                <h3 className="text-lg font-semibold text-brand">{s.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                  {s.tagline}
-                </p>
-                <span className="mt-5 inline-block text-sm font-semibold text-brand opacity-0 transition-opacity group-hover:opacity-100">
-                  Learn more →
-                </span>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
+        {/* Services — full-bleed accordion bands */}
+        <ServiceBands />
+
+        <Section tinted>
+          <div className="flex flex-wrap justify-center gap-3">
             {CATEGORIES.map((c) => (
               <Link
                 key={c.key}
@@ -252,53 +213,7 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Projects */}
-        <Section
-          eyebrow="Featured work"
-          title="Products we shipped and still support"
-          lead="Each one described by what it does and what changed after launch."
-        >
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((p, n) => (
-              <article
-                key={p.slug}
-                className={`flex flex-col rounded-2xl ${TINTS[n % TINTS.length]} p-7`}
-              >
-                <Image
-                  src={projectImg(p.slug)}
-                  alt={`${p.name} app screens`}
-                  width={IMG.project.w}
-                  height={IMG.project.h}
-                  className="mx-auto mb-6 h-[520px] w-[260px] rounded-3xl object-cover shadow-lg"
-                />
-                <span className="text-xs font-semibold uppercase tracking-wide text-brand/60">
-                  {p.sector}
-                </span>
-                <h3 className="mt-2 text-xl font-bold text-brand">{p.name}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
-                  {p.summary}
-                </p>
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {p.platforms.map((x) => (
-                    <span
-                      key={x}
-                      className="rounded-full bg-white/70 px-2.5 py-1 text-xs font-medium text-brand"
-                    >
-                      {x}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-          <Link
-            href="/portfolio"
-            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-soft"
-          >
-            View the full portfolio
-            <span aria-hidden="true">→</span>
-          </Link>
-        </Section>
+        <ProjectShowcase />
 
         {/* Process */}
         <Section
@@ -378,7 +293,7 @@ export default function Home() {
           title="What clients say when we ask honestly"
         >
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
+            {TESTIMONIALS.map((t, i) => (
               <figure
                 key={t.name + t.role}
                 className="flex flex-col rounded-2xl bg-white p-7 shadow-sm"
@@ -393,9 +308,20 @@ export default function Home() {
                 <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 border-t border-black/5 pt-4">
-                  <p className="text-sm font-semibold text-brand">{t.name}</p>
-                  <p className="text-xs text-ink-muted">{t.role}</p>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-black/5 pt-4">
+                  <Image
+                    src={avatarImg(i)}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="size-10 shrink-0 rounded-full"
+                  />
+                  <span>
+                    <span className="block text-sm font-semibold text-brand">
+                      {t.name}
+                    </span>
+                    <span className="block text-xs text-ink-muted">{t.role}</span>
+                  </span>
                 </figcaption>
               </figure>
             ))}

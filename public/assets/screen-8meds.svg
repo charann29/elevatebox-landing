@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="1180" viewBox="0 0 260 1180" fill="none" role="img" aria-label="8meds app screen"><rect width="260" height="1180" fill="#F4F9FB"/>
+      <rect width="260" height="142" fill="#0a6f85"/>
+      <text x="16" y="50" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="800" fill="#fff" text-anchor="start">8Meds</text>
+      <text x="16" y="68" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="500" fill="#cbe7ef" text-anchor="start">Order from pharmacies near you</text>
+      <rect x="16" y="88" width="228" height="30" rx="15" fill="#fff" opacity="1"/>
+   <circle cx="36" cy="103" r="5.5" fill="none" stroke="#0a6f85" stroke-width="1.8"/>
+   <path d="M40 107 l4 4" stroke="#0a6f85" stroke-width="1.8" stroke-linecap="round"/>
+   <text x="52" y="107" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="500" fill="#8b9aa5" text-anchor="start">Search medicines</text>
+      <rect x="16" y="158" width="228" height="58" rx="12" fill="#fff" opacity="1"/>
+      <circle cx="46" cy="187" r="17" fill="#0a6f85" opacity=".16"/>
+      <path d="M46 179v16M38 187h16" stroke="#0a6f85" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="74" y="183" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#263137" text-anchor="start">Upload prescription</text>
+      <text x="74" y="198" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="500" fill="#8b9aa5" text-anchor="start">Pharmacist verified in 15 min</text>
+      <rect x="16" y="232" width="38.2" height="24" rx="12" fill="#0a6f85" opacity="1"/>
+        <text x="35.1" y="248" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#fff" text-anchor="middle">All</text><rect x="62.2" y="232" width="49" height="24" rx="12" fill="#fff" opacity="1"/>
+        <text x="86.7" y="248" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#263137" text-anchor="middle">Fever</text><rect x="119.2" y="232" width="65.2" height="24" rx="12" fill="#fff" opacity="1"/>
+        <text x="151.8" y="248" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#263137" text-anchor="middle">Diabetes</text><rect x="192.4" y="232" width="65.2" height="24" rx="12" fill="#fff" opacity="1"/>
+        <text x="225" y="248" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#263137" text-anchor="middle">Vitamins</text>
+      <text x="16" y="294" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Nearby pharmacies</text><text x="244" y="294" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#3EC0DD" text-anchor="end">Map</text>
+      <rect x="16" y="308" width="228" height="54" rx="10" fill="#fff" opacity="1"/>
+      <rect x="26" y="318" width="34" height="34" rx="8" fill="#F3F6FA" opacity="1"/><circle cx="43" cy="335" r="9" fill="#0a6f85" opacity=".35"/>
+      <rect x="70" y="323" width="108" height="6" rx="3" fill="#263137" opacity="0.24"/>
+      <rect x="70" y="337" width="72" height="5" rx="2.5" fill="#263137" opacity="0.14"/>
+      <rect x="206" y="328" width="28" height="14" rx="7" fill="#0a6f85" opacity="0.18"/><rect x="16" y="372" width="228" height="54" rx="10" fill="#fff" opacity="1"/>
+      <rect x="26" y="382" width="34" height="34" rx="8" fill="#F3F6FA" opacity="1"/><circle cx="43" cy="399" r="9" fill="#0a6f85" opacity=".35"/>
+      <rect x="70" y="387" width="100" height="6" rx="3" fill="#263137" opacity="0.24"/>
+      <rect x="70" y="401" width="66" height="5" rx="2.5" fill="#263137" opacity="0.14"/>
+      <rect x="206" y="392" width="28" height="14" rx="7" fill="#0a6f85" opacity="0.18"/><rect x="16" y="436" width="228" height="54" rx="10" fill="#fff" opacity="1"/>
+      <rect x="26" y="446" width="34" height="34" rx="8" fill="#F3F6FA" opacity="1"/><circle cx="43" cy="463" r="9" fill="#0a6f85" opacity=".35"/>
+      <rect x="70" y="451" width="92" height="6" rx="3" fill="#263137" opacity="0.24"/>
+      <rect x="70" y="465" width="60" height="5" rx="2.5" fill="#263137" opacity="0.14"/>
+      <rect x="206" y="456" width="28" height="14" rx="7" fill="#0a6f85" opacity="0.18"/><rect x="16" y="500" width="228" height="54" rx="10" fill="#fff" opacity="1"/>
+      <rect x="26" y="510" width="34" height="34" rx="8" fill="#F3F6FA" opacity="1"/><circle cx="43" cy="527" r="9" fill="#0a6f85" opacity=".35"/>
+      <rect x="70" y="515" width="84" height="6" rx="3" fill="#263137" opacity="0.24"/>
+      <rect x="70" y="529" width="54" height="5" rx="2.5" fill="#263137" opacity="0.14"/>
+      <rect x="206" y="520" width="28" height="14" rx="7" fill="#0a6f85" opacity="0.18"/>
+      <text x="16" y="578" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Frequently ordered</text>
+      <rect x="16" y="592" width="110" height="116" rx="12" fill="#fff" opacity="1"/>
+        <rect x="24" y="600" width="94" height="62" rx="9" fill="#F0FCFF" opacity="1"/>
+        <circle cx="71" cy="631" r="19" fill="#0a6f85" opacity=".3"/>
+        <text x="26" y="680" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Paracetamol</text>
+        <text x="26" y="696" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#0a6f85" text-anchor="start">₹40</text>
+        <rect x="94" y="686" width="22" height="14" rx="7" fill="#0a6f85" opacity="0.16"/><rect x="134" y="592" width="110" height="116" rx="12" fill="#fff" opacity="1"/>
+        <rect x="142" y="600" width="94" height="62" rx="9" fill="#F0FCFF" opacity="1"/>
+        <circle cx="189" cy="631" r="19" fill="#0a6f85" opacity=".3"/>
+        <text x="144" y="680" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Amoxicillin</text>
+        <text x="144" y="696" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#0a6f85" text-anchor="start">₹65</text>
+        <rect x="212" y="686" width="22" height="14" rx="7" fill="#0a6f85" opacity="0.16"/><rect x="16" y="720" width="110" height="116" rx="12" fill="#fff" opacity="1"/>
+        <rect x="24" y="728" width="94" height="62" rx="9" fill="#F0FCFF" opacity="1"/>
+        <circle cx="71" cy="759" r="19" fill="#0a6f85" opacity=".3"/>
+        <text x="26" y="808" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Vitamin D3</text>
+        <text x="26" y="824" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#0a6f85" text-anchor="start">₹90</text>
+        <rect x="94" y="814" width="22" height="14" rx="7" fill="#0a6f85" opacity="0.16"/><rect x="134" y="720" width="110" height="116" rx="12" fill="#fff" opacity="1"/>
+        <rect x="142" y="728" width="94" height="62" rx="9" fill="#F0FCFF" opacity="1"/>
+        <circle cx="189" cy="759" r="19" fill="#0a6f85" opacity=".3"/>
+        <text x="144" y="808" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Cough Syrup</text>
+        <text x="144" y="824" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#0a6f85" text-anchor="start">₹115</text>
+        <rect x="212" y="814" width="22" height="14" rx="7" fill="#0a6f85" opacity="0.16"/><rect x="16" y="848" width="110" height="116" rx="12" fill="#fff" opacity="1"/>
+        <rect x="24" y="856" width="94" height="62" rx="9" fill="#F0FCFF" opacity="1"/>
+        <circle cx="71" cy="887" r="19" fill="#0a6f85" opacity=".3"/>
+        <text x="26" y="936" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Antacid</text>
+        <text x="26" y="952" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#0a6f85" text-anchor="start">₹140</text>
+        <rect x="94" y="942" width="22" height="14" rx="7" fill="#0a6f85" opacity="0.16"/><rect x="134" y="848" width="110" height="116" rx="12" fill="#fff" opacity="1"/>
+        <rect x="142" y="856" width="94" height="62" rx="9" fill="#F0FCFF" opacity="1"/>
+        <circle cx="189" cy="887" r="19" fill="#0a6f85" opacity=".3"/>
+        <text x="144" y="936" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">ORS Pack</text>
+        <text x="144" y="952" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#0a6f85" text-anchor="start">₹165</text>
+        <rect x="212" y="942" width="22" height="14" rx="7" fill="#0a6f85" opacity="0.16"/>
+      <text x="16" y="988" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#263137" text-anchor="start">Your reminders</text>
+      <rect x="16" y="1002" width="228" height="54" rx="10" fill="#fff" opacity="1"/>
+      
+      <rect x="28" y="1017" width="108" height="6" rx="3" fill="#263137" opacity="0.24"/>
+      <rect x="28" y="1031" width="72" height="5" rx="2.5" fill="#263137" opacity="0.14"/>
+      <rect x="206" y="1022" width="28" height="14" rx="7" fill="#0a6f85" opacity="0.18"/><rect x="16" y="1066" width="228" height="54" rx="10" fill="#fff" opacity="1"/>
+      
+      <rect x="28" y="1081" width="100" height="6" rx="3" fill="#263137" opacity="0.24"/>
+      <rect x="28" y="1095" width="66" height="5" rx="2.5" fill="#263137" opacity="0.14"/>
+      <rect x="206" y="1086" width="28" height="14" rx="7" fill="#0a6f85" opacity="0.18"/>
+      
+  <rect x="0" y="1134" width="260" height="46" rx="0" fill="#fff" opacity="1"/>
+  <circle cx="42" cy="1153" r="7"
+        fill="#0a6f85"/>
+      <rect x="28" y="1166" width="28" height="4" rx="2" fill="#0a6f85" opacity="1"/><circle cx="102" cy="1153" r="7"
+        fill="#c9d3d9"/>
+      <rect x="88" y="1166" width="28" height="4" rx="2" fill="#d8e0e5" opacity="1"/><circle cx="162" cy="1153" r="7"
+        fill="#c9d3d9"/>
+      <rect x="148" y="1166" width="28" height="4" rx="2" fill="#d8e0e5" opacity="1"/><circle cx="222" cy="1153" r="7"
+        fill="#c9d3d9"/>
+      <rect x="208" y="1166" width="28" height="4" rx="2" fill="#d8e0e5" opacity="1"/></svg>
