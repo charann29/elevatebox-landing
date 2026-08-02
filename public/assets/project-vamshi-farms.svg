@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="520" viewBox="0 0 260 520" fill="none" role="img" aria-label="Vamshi Farms app">
+  <defs>
+    <clipPath id="scr"><rect x="14" y="14" width="232" height="492" rx="30"/></clipPath>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3440"/><stop offset="1" stop-color="#11161c"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="252" height="512" rx="40" fill="url(#bezel)"/>
+  <rect x="14" y="14" width="232" height="492" rx="30" fill="#F5F8F6"/>
+  <g clip-path="url(#scr)"><rect x="14" y="14" width="232" height="96" fill="#166b46"/>
+    <text x="34" y="62" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="start">Vamshi Farms</text>
+    <text x="34" y="80" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="500" fill="#fff" text-anchor="start">Fresh from the farm</text>
+    <rect x="34" y="92" width="192" height="26" rx="13" fill="#fff" opacity="1"/>
+    <text x="46" y="109" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="500" fill="#8b9aa5" text-anchor="start">Search produce</text><rect x="30" y="140" width="92" height="104" rx="12" fill="#fff" opacity="1"/>
+      <rect x="38" y="148" width="76" height="52" rx="8" fill="#E7F7EE" opacity="1"/>
+      <circle cx="76" cy="174" r="16" fill="#166b46" opacity=".28"/>
+      <text x="38" y="216" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Tomatoes</text>
+      <text x="38" y="230" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#166b46" text-anchor="start">₹40 / kg</text><rect x="134" y="140" width="92" height="104" rx="12" fill="#fff" opacity="1"/>
+      <rect x="142" y="148" width="76" height="52" rx="8" fill="#E7F7EE" opacity="1"/>
+      <circle cx="180" cy="174" r="16" fill="#166b46" opacity=".28"/>
+      <text x="142" y="216" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Spinach</text>
+      <text x="142" y="230" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#166b46" text-anchor="start">₹25 / bunch</text><rect x="30" y="256" width="92" height="104" rx="12" fill="#fff" opacity="1"/>
+      <rect x="38" y="264" width="76" height="52" rx="8" fill="#E7F7EE" opacity="1"/>
+      <circle cx="76" cy="290" r="16" fill="#166b46" opacity=".28"/>
+      <text x="38" y="332" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Mangoes</text>
+      <text x="38" y="346" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#166b46" text-anchor="start">₹120 / kg</text><rect x="134" y="256" width="92" height="104" rx="12" fill="#fff" opacity="1"/>
+      <rect x="142" y="264" width="76" height="52" rx="8" fill="#E7F7EE" opacity="1"/>
+      <circle cx="180" cy="290" r="16" fill="#166b46" opacity=".28"/>
+      <text x="142" y="332" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Onions</text>
+      <text x="142" y="346" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#166b46" text-anchor="start">₹35 / kg</text><rect x="30" y="372" width="92" height="104" rx="12" fill="#fff" opacity="1"/>
+      <rect x="38" y="380" width="76" height="52" rx="8" fill="#E7F7EE" opacity="1"/>
+      <circle cx="76" cy="406" r="16" fill="#166b46" opacity=".28"/>
+      <text x="38" y="448" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Carrots</text>
+      <text x="38" y="462" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#166b46" text-anchor="start">₹55 / kg</text><rect x="134" y="372" width="92" height="104" rx="12" fill="#fff" opacity="1"/>
+      <rect x="142" y="380" width="76" height="52" rx="8" fill="#E7F7EE" opacity="1"/>
+      <circle cx="180" cy="406" r="16" fill="#166b46" opacity=".28"/>
+      <text x="142" y="448" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Bananas</text>
+      <text x="142" y="462" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#166b46" text-anchor="start">₹60 / dz</text><rect x="14" y="464" width="232" height="42" rx="0" fill="#fff" opacity="1"/>
+    <rect x="34" y="478" width="40" height="5" rx="3" fill="#166b46" opacity="1"/><rect x="94" y="478" width="40" height="5" rx="3" fill="#c9d3d9" opacity="1"/>
+    <rect x="154" y="478" width="40" height="5" rx="3" fill="#c9d3d9" opacity="1"/></g>
+  <rect x="95" y="20" width="70" height="15" rx="7.5" fill="#11161c"/>
+  <rect x="14" y="14" width="232" height="492" rx="30" fill="none" stroke="#000" stroke-opacity=".12"/>
+  <rect x="98" y="492" width="64" height="4" rx="2" fill="#166b46" opacity=".5"/></svg>

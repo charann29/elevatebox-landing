@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="ElevateBox icon">
+  <rect width="512" height="512" rx="112" fill="#013186"/>
+  <path d="M256 128 150 340h72l34-72 34 72h72L256 128Z" fill="#3EC0DD"/>
+  <rect x="182" y="360" width="148" height="26" rx="13" fill="#fff" opacity=".9"/></svg>

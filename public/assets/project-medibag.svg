@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="520" viewBox="0 0 260 520" fill="none" role="img" aria-label="MediBag app">
+  <defs>
+    <clipPath id="scr"><rect x="14" y="14" width="232" height="492" rx="30"/></clipPath>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3440"/><stop offset="1" stop-color="#11161c"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="252" height="512" rx="40" fill="url(#bezel)"/>
+  <rect x="14" y="14" width="232" height="492" rx="30" fill="#F4F6FA"/>
+  <g clip-path="url(#scr)"><rect x="14" y="14" width="232" height="132" fill="#013186"/>
+    <text x="34" y="58" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800" fill="#fff" text-anchor="start">MediBag</text>
+    <text x="34" y="76" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="500" fill="#fff" text-anchor="start">Your health, organised</text>
+    <rect x="30" y="92" width="200" height="44" rx="10" fill="#fff" opacity="0.14"/>
+    <text x="44" y="112" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#cfe0ff" text-anchor="start">Next appointment</text>
+    <text x="44" y="127" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#fff" text-anchor="start">Dr. Rao · Tomorrow 10:30</text><rect x="30" y="162" width="92" height="66" rx="12" fill="#fff" opacity="1"/>
+      <circle cx="54" cy="188" r="12" fill="#3EC0DD" opacity=".3"/>
+      <text x="40" y="217" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Medicines</text><rect x="134" y="162" width="92" height="66" rx="12" fill="#fff" opacity="1"/>
+      <circle cx="158" cy="188" r="12" fill="#3EC0DD" opacity=".3"/>
+      <text x="144" y="217" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Lab Tests</text><rect x="30" y="240" width="92" height="66" rx="12" fill="#fff" opacity="1"/>
+      <circle cx="54" cy="266" r="12" fill="#3EC0DD" opacity=".3"/>
+      <text x="40" y="295" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Consult</text><rect x="134" y="240" width="92" height="66" rx="12" fill="#fff" opacity="1"/>
+      <circle cx="158" cy="266" r="12" fill="#3EC0DD" opacity=".3"/>
+      <text x="144" y="295" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">Records</text><text x="30" y="338" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-weight="800" fill="#263137" text-anchor="start">Recent orders</text><rect x="30" y="352" width="200" height="30" rx="8" fill="#fff" opacity="1"/>
+      <rect x="40" y="362" width="10" height="10" rx="3" fill="#013186" opacity="0.3"/>
+      <rect x="60" y="362" width="96" height="5" rx="2.5" fill="#d5dde3" opacity="1"/>
+      <rect x="60" y="371" width="60" height="4" rx="2" fill="#e4eaee" opacity="1"/><rect x="30" y="390" width="200" height="30" rx="8" fill="#fff" opacity="1"/>
+      <rect x="40" y="400" width="10" height="10" rx="3" fill="#013186" opacity="0.3"/>
+      <rect x="60" y="400" width="96" height="5" rx="2.5" fill="#d5dde3" opacity="1"/>
+      <rect x="60" y="409" width="60" height="4" rx="2" fill="#e4eaee" opacity="1"/><rect x="30" y="428" width="200" height="30" rx="8" fill="#fff" opacity="1"/>
+      <rect x="40" y="438" width="10" height="10" rx="3" fill="#013186" opacity="0.3"/>
+      <rect x="60" y="438" width="96" height="5" rx="2.5" fill="#d5dde3" opacity="1"/>
+      <rect x="60" y="447" width="60" height="4" rx="2" fill="#e4eaee" opacity="1"/><rect x="14" y="464" width="232" height="42" rx="0" fill="#fff" opacity="1"/><rect x="34" y="478" width="40" height="5" rx="3" fill="#013186" opacity="1"/>
+    <rect x="94" y="478" width="40" height="5" rx="3" fill="#c9d3d9" opacity="1"/><rect x="154" y="478" width="40" height="5" rx="3" fill="#c9d3d9" opacity="1"/></g>
+  <rect x="95" y="20" width="70" height="15" rx="7.5" fill="#11161c"/>
+  <rect x="14" y="14" width="232" height="492" rx="30" fill="none" stroke="#000" stroke-opacity=".12"/>
+  <rect x="98" y="492" width="64" height="4" rx="2" fill="#013186" opacity=".5"/></svg>

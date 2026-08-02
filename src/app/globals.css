@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand: #013186;
+  --color-brand-dark: #001f57;
+  --color-brand-soft: #0145a6;
+  --color-accent: #3ec0dd;
+  --color-accent-soft: #f0fcff;
+  --color-ink: #263137;
+  --color-ink-muted: #353639;
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+
+  /* Extra wide breakpoints, matching the reference layout's scale steps. */
+  --breakpoint-3xl: 1800px;
+  --breakpoint-5xl: 2400px;
+
+  /* Type scale measured off the reference layout (Urbanist, rem-based). */
+  --text-2xs: 0.7rem;
+  --text-2xs--line-height: 1.4;
+  --text-xs: 0.8rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.9rem;
+  --text-sm--line-height: 1.65;
+  --text-base: 1rem;
+  --text-base--line-height: 1.7;
+  --text-lg: 1.2rem;
+  --text-lg--line-height: 1.55;
+  --text-xl: 1.4rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 2.1rem;
+  --text-3xl--line-height: 1.18;
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 1.15;
+  --text-5xl: 3.5rem;
+  --text-5xl--line-height: 1.08;
+  --text-6xl: 4.2rem;
+  --text-6xl--line-height: 1.04;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-ink);
+  background: #ffffff;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .chev {
+  transform: rotate(180deg);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

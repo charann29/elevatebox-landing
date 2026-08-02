@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="520" viewBox="0 0 260 520" fill="none" role="img" aria-label="Creator Chart">
+  <defs>
+    <clipPath id="scr"><rect x="14" y="14" width="232" height="492" rx="30"/></clipPath>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3440"/><stop offset="1" stop-color="#11161c"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="252" height="512" rx="40" fill="url(#bezel)"/>
+  <rect x="14" y="14" width="232" height="492" rx="30" fill="#FAF6F5"/>
+  <g clip-path="url(#scr)"><rect x="14" y="14" width="232" height="92" fill="#1b1416"/>
+    <text x="34" y="60" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="800" fill="#fff" text-anchor="start">Creator Chart</text>
+    <text x="34" y="78" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="500" fill="#c7a99f" text-anchor="start">Top creators this week</text><rect x="30" y="120" width="200" height="92" rx="12" fill="#fff" opacity="1"/><circle cx="44" cy="124" r="2.6" fill="#a63b23"/><circle cx="73" cy="142" r="2.6" fill="#a63b23"/><circle cx="102" cy="130" r="2.6" fill="#a63b23"/><circle cx="131" cy="156" r="2.6" fill="#a63b23"/><circle cx="160" cy="148" r="2.6" fill="#a63b23"/><circle cx="189" cy="168" r="2.6" fill="#a63b23"/><circle cx="218" cy="162" r="2.6" fill="#a63b23"/><path d="M44 124 L73 142 L102 130 L131 156 L160 148 L189 168 L218 162 " stroke="#a63b23" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="30" y="232" width="200" height="46" rx="10" fill="#fff" opacity="1"/>
+      <text x="46" y="261" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#a63b23" text-anchor="start">1</text>
+      <circle cx="76" cy="255" r="13" fill="#a63b23" opacity=".18"/>
+      <text x="98" y="253" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">@studioline</text>
+      <text x="98" y="266" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="500" fill="#8b9aa5" text-anchor="start">followers</text>
+      <text x="220" y="260" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="800" fill="#263137" text-anchor="end">1.2M</text><rect x="30" y="288" width="200" height="46" rx="10" fill="#fff" opacity="1"/>
+      <text x="46" y="317" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#a63b23" text-anchor="start">2</text>
+      <circle cx="76" cy="311" r="13" fill="#a63b23" opacity=".18"/>
+      <text x="98" y="309" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">@fieldnotes</text>
+      <text x="98" y="322" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="500" fill="#8b9aa5" text-anchor="start">followers</text>
+      <text x="220" y="316" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="800" fill="#263137" text-anchor="end">940K</text><rect x="30" y="344" width="200" height="46" rx="10" fill="#fff" opacity="1"/>
+      <text x="46" y="373" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#a63b23" text-anchor="start">3</text>
+      <circle cx="76" cy="367" r="13" fill="#a63b23" opacity=".18"/>
+      <text x="98" y="365" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">@northbeam</text>
+      <text x="98" y="378" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="500" fill="#8b9aa5" text-anchor="start">followers</text>
+      <text x="220" y="372" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="800" fill="#263137" text-anchor="end">770K</text><rect x="30" y="400" width="200" height="46" rx="10" fill="#fff" opacity="1"/>
+      <text x="46" y="429" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" fill="#a63b23" text-anchor="start">4</text>
+      <circle cx="76" cy="423" r="13" fill="#a63b23" opacity=".18"/>
+      <text x="98" y="421" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#263137" text-anchor="start">@quietloop</text>
+      <text x="98" y="434" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="500" fill="#8b9aa5" text-anchor="start">followers</text>
+      <text x="220" y="428" font-family="Urbanist, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="800" fill="#263137" text-anchor="end">612K</text><rect x="14" y="464" width="232" height="42" rx="0" fill="#fff" opacity="1"/><rect x="34" y="478" width="40" height="5" rx="3" fill="#a63b23" opacity="1"/>
+    <rect x="94" y="478" width="40" height="5" rx="3" fill="#c9d3d9" opacity="1"/><rect x="154" y="478" width="40" height="5" rx="3" fill="#c9d3d9" opacity="1"/></g>
+  <rect x="95" y="20" width="70" height="15" rx="7.5" fill="#11161c"/>
+  <rect x="14" y="14" width="232" height="492" rx="30" fill="none" stroke="#000" stroke-opacity=".12"/>
+  <rect x="98" y="492" width="64" height="4" rx="2" fill="#a63b23" opacity=".5"/></svg>
