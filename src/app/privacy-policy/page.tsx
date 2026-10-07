@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy | ${COMPANY.name}`,
+  title: `Privacy Policy`,
   description: "How we collect, use, store, and delete personal information.",
   alternates: { canonical: "/privacy-policy" },
 };
@@ -12,7 +12,6 @@ export default function Page() {
   return (
     <LegalPage
       title="Privacy Policy"
-      crumb="Privacy Policy"
       updated="2 August 2026"
       intro={`This policy explains what personal information ${COMPANY.legal} collects through this website and our client engagements, why we collect it, how long we keep it, and the choices you have.`}
       sections={[

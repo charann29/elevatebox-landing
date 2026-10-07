@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
 export const metadata: Metadata = {
-  title: `Terms & Conditions | ${COMPANY.name}`,
+  title: `Terms & Conditions`,
   description: "The terms governing use of this website and our services.",
   alternates: { canonical: "/terms-and-conditions" },
 };
@@ -12,7 +12,6 @@ export default function Page() {
   return (
     <LegalPage
       title="Terms & Conditions"
-      crumb="Terms & Conditions"
       updated="2 August 2026"
       intro={`These terms govern your use of this website and, where no separate signed agreement exists, our provision of services. Where a signed master services agreement or statement of work exists, that document takes precedence over these terms.`}
       sections={[
@@ -77,7 +76,7 @@ export default function Page() {
         {
           h: "Governing law",
           p: [
-            `These terms are governed by the laws of India, and the courts at ${COMPANY.address.split(",")[0]} have exclusive jurisdiction, unless a signed agreement specifies otherwise.`,
+            `These terms are governed by the laws of India, and the courts at ${COMPANY.city.split(",")[0]} have exclusive jurisdiction, unless a signed agreement specifies otherwise.`,
           ],
         },
       ]}

@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
 export const metadata: Metadata = {
-  title: `Cancellation & Refund Policy | ${COMPANY.name}`,
+  title: `Cancellation & Refund Policy`,
   description: "How cancellations, refunds, and paused engagements are handled.",
   alternates: { canonical: "/cancellation-and-refund" },
 };
@@ -12,7 +12,6 @@ export default function Page() {
   return (
     <LegalPage
       title="Cancellation & Refund Policy"
-      crumb="Cancellation & Refund"
       updated="2 August 2026"
       intro="This policy explains how cancellations, pauses, and refunds are handled across our engagement types. Where a signed statement of work specifies different terms, that document takes precedence."
       sections={[
