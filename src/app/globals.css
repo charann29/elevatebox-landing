@@ -77,12 +77,15 @@ body {
   font-feature-settings: "cv11", "ss01";
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: var(--color-ink);
-  text-wrap: balance;
+/* Layered, so a heading's own colour utility (white on a navy hero) wins. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
 }
 
 p {

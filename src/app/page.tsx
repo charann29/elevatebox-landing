@@ -33,6 +33,8 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 /* Section wrapper local to the homepage. The shared `Section` in blocks.tsx
    still carries the old tinted-card styling used by the inner routes; this
    one is the ink/hairline treatment. */
+const COUNT_WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+
 function Band({
   id,
   eyebrow,
@@ -323,7 +325,7 @@ export default function Home() {
         {/* ── Selected work ────────────────────────────────────────────── */}
         <Band
           eyebrow="Selected work"
-          title="Five products, still in service"
+          title={`${COUNT_WORDS[PROJECTS.length] ?? PROJECTS.length} products, still in service`}
           lead="Every one of these was designed, built, and is still maintained by this team. No case study is written about a project we only advised on."
         >
           <ul className="border-t border-line">
@@ -333,7 +335,15 @@ export default function Home() {
                 className="group grid gap-4 border-b border-line py-8 lg:grid-cols-[14rem_1fr_9rem] lg:items-baseline lg:gap-10"
               >
                 <div>
-                  <h3 className="text-xl font-semibold text-ink">{p.name}</h3>
+                  <h3 className="text-xl font-semibold text-ink">
+                    {p.href ? (
+                      <Link href={p.href} className="hover:text-brand">
+                        {p.name}
+                      </Link>
+                    ) : (
+                      p.name
+                    )}
+                  </h3>
                   <p className="mt-1 text-xs uppercase tracking-[0.1em] text-ink-4">
                     {p.sector}
                   </p>

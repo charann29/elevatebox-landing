@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
   CLIENTS,
   COMPANY,
@@ -15,7 +16,7 @@ import { CtaBand, PageHero, Section } from "@/components/blocks";
 export const metadata: Metadata = {
   title: `Portfolio | ${COMPANY.name}`,
   description:
-    "Selected product work across logistics, healthcare, commerce, fintech, education, and media.",
+    "Selected product work across AI calling, healthcare, commerce, AI automation, and media — including Voice by ElevateBox, our own product.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -68,7 +69,15 @@ export default function PortfolioPage() {
                 <span className="text-xs font-semibold uppercase tracking-wide text-brand/60">
                   {p.sector}
                 </span>
-                <h2 className="mt-2 text-xl font-bold text-brand">{p.name}</h2>
+                <h2 className="mt-2 text-xl font-bold text-brand">
+                  {p.href ? (
+                    <Link href={p.href} className="hover:underline">
+                      {p.name}
+                    </Link>
+                  ) : (
+                    p.name
+                  )}
+                </h2>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
                   {p.summary}
                 </p>
@@ -93,6 +102,14 @@ export default function PortfolioPage() {
                     <span className="font-semibold text-brand">Outcome:</span>{" "}
                     {p.outcome}
                   </p>
+                )}
+                {p.href && (
+                  <Link
+                    href={p.href}
+                    className="mt-5 inline-flex text-sm font-semibold text-brand hover:underline"
+                  >
+                    {`See ${p.name} →`}
+                  </Link>
                 )}
               </article>
             ))}

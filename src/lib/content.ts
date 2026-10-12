@@ -989,12 +989,23 @@ export type Project = {
   stack?: string[];
   /** Fill in per project — real, verifiable results only. Rendered only when present. */
   outcome?: string;
+  /** Our own product page on this site, when the project has one. */
+  href?: string;
 };
 
 // Real client work. `summary` describes scope only — add `stack` and `outcome`
 // per project once you have details you can stand behind publicly.
 // Confirm each client is happy to be named before this goes live.
 export const PROJECTS: Project[] = [
+  {
+    slug: "voice",
+    name: "Voice by ElevateBox",
+    sector: "Our product / AI calling",
+    summary:
+      "AI phone calls for Indian businesses — calls every new lead within seconds in Telugu, Hindi or English, writes down what was said, and books the next step.",
+    platforms: ["Web", "Phone"],
+    href: "/voice",
+  },
   {
     slug: "vamshi-farms",
     name: "Vamshi Farms",
@@ -1635,6 +1646,9 @@ export const getJob = (slug: string) => JOBS.find((j) => j.slug === slug);
 /* ------------------------------------------------------------------ */
 /* SHARED SITE CONTENT                                                 */
 /* ------------------------------------------------------------------ */
+
+/* Voice by ElevateBox — the product app. Links point only at routes that are live there. */
+export const VOICE_APP = "https://elevatebox.up.railway.app";
 
 export const COMPANY = {
   name: "ElevateBox",

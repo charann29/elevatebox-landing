@@ -7,7 +7,7 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
     <nav aria-label="Breadcrumb" className="text-xs text-white/60">
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
-          <Link href="/" className="hover:text-accent">
+          <Link href="/" className="hover:text-white">
             Home
           </Link>
         </li>
@@ -15,7 +15,7 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
           <li key={i.label} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
             {i.href ? (
-              <Link href={i.href} className="hover:text-accent">
+              <Link href={i.href} className="hover:text-white">
                 {i.label}
               </Link>
             ) : (
@@ -48,7 +48,7 @@ export function PageHero({
       <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
         {crumbs && <Crumbs items={crumbs} />}
         {eyebrow && (
-          <p className="mt-6 text-sm font-semibold uppercase tracking-wider text-accent">
+          <p className="mt-6 text-sm font-semibold uppercase tracking-wider text-white/70">
             {eyebrow}
           </p>
         )}
@@ -218,13 +218,13 @@ export function CtaBand({
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
           <Link
             href="/contact"
-            className="rounded-full bg-accent px-8 py-4 text-base font-semibold text-brand-dark transition-transform hover:scale-105"
+            className="rounded-full bg-white px-8 py-4 text-base font-semibold text-brand transition-transform hover:scale-105"
           >
             {cta}
           </Link>
           <a
             href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-            className="rounded-full border border-white/25 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-accent hover:text-accent"
+            className="rounded-full border border-white/25 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white"
           >
             Call us
           </a>
