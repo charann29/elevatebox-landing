@@ -2,528 +2,361 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ACCREDITATIONS,
   CATEGORIES,
-  CLIENTS,
   COMPANY,
   CREDENTIALS,
   FAQS,
-  POSTS,
-  PROCESS_STEPS,
   PROJECTS,
   STATS,
+  TESTIMONIALS,
 } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
-import { Faq, QuoteForm } from "@/components/blocks";
+import { QuoteForm } from "@/components/blocks";
+import { ProcessCarousel } from "@/components/process-carousel";
+import { ProjectShowcase } from "@/components/project-showcase";
 import { ServiceBands } from "@/components/service-bands";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.name} — Product Engineering, Design & AI Delivery`,
+  title: `${COMPANY.name} — Mobile App, Web & AI Development Company in Hyderabad`,
   description:
-    "Mobile and web product development, UI/UX, cloud, data, and AI delivery from Hyderabad. We scope honestly, ship in increments, and hand over something your team can run.",
+    "ElevateBox builds mobile apps, websites and AI products from Hyderabad — and runs its own AI calling product, Voice. Honest scoping, two-week increments, and code in your name from day one.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: `${COMPANY.name} — Mobile App, Web & AI Development Company in Hyderabad`,
+    description:
+      "Mobile apps, websites and AI products, built in Hyderabad and kept running after launch.",
+    url: "/",
+    type: "website",
+  },
 };
 
-const SHELL = "mx-auto w-full max-w-[78rem] px-6 lg:px-10";
+// Section rhythm of the reference layout: full-bleed, 90rem shell.
+const SHELL = "mx-auto w-full max-w-[90rem] px-5 lg:px-8";
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="label">{children}</p>;
-}
+/* What every engagement guarantees. Each tile is a commitment the company
+   controls — nothing here is a count that would need inflating. */
+const GUARANTEES = [
+  { t: "Confidentiality with NDA", d: "Signed before the first workshop, on your paper or ours.", tint: "bg-[#E3ECFF]", icon: "M7 11V7a5 5 0 0 1 10 0v4M5 11h14v10H5z" },
+  { t: "Code in your name", d: "Repository, cloud and credentials are yours from the first commit.", tint: "bg-[#EFEAFF]", icon: "M4 7h16M4 12h16M4 17h10" },
+  { t: "Fixed discovery price", d: "Scope and price agreed before the build starts.", tint: "bg-[#FFF6E9]", icon: "M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+  { t: "Something live every two weeks", d: "Increments on a real environment, not a slide deck.", tint: "bg-[#E7F7EE]", icon: "M5 12l5 5L20 7" },
+  { t: "Instrumented before launch", d: "Logging, tracing and crash reports in before release day.", tint: "bg-[#FFEBE6]", icon: "M3 12h4l3 8 4-16 3 8h4" },
+  { t: "A reply within one day", d: "Every new brief gets a real answer by the next working day.", tint: "bg-[#F0FCFF]", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
+];
 
-/* Section wrapper local to the homepage. The shared `Section` in blocks.tsx
-   still carries the old tinted-card styling used by the inner routes; this
-   one is the ink/hairline treatment. */
-const COUNT_WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+const LOCATIONS = CATEGORIES.find((c) => c.key === "locations")!;
 
-function Band({
-  id,
-  eyebrow,
-  title,
-  lead,
-  children,
-  tinted,
-  bordered = true,
-}: {
-  id?: string;
-  eyebrow?: string;
-  title?: string;
-  lead?: string;
-  children: React.ReactNode;
-  tinted?: boolean;
-  bordered?: boolean;
-}) {
-  return (
-    <section
-      id={id}
-      className={[
-        tinted ? "bg-surface-2" : "bg-surface",
-        bordered ? "border-t border-line" : "",
-      ].join(" ")}
-    >
-      <div className={`${SHELL} py-20 lg:py-28`}>
-        {(eyebrow || title) && (
-          <header className="max-w-3xl">
-            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-            {title && (
-              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{title}</h2>
-            )}
-            {lead && (
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-3">
-                {lead}
-              </p>
-            )}
-          </header>
-        )}
-        <div className={eyebrow || title ? "mt-14" : undefined}>{children}</div>
-      </div>
-    </section>
-  );
-}
-
-const ArrowRight = ({ className = "size-4" }: { className?: string }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden="true"
-  >
-    <path d="M5 12h14m-6-6 6 6-6 6" />
+const Icon = ({ d, className = "size-5" }: { d: string; className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <path d={d} />
   </svg>
 );
 
-/* What we actually do with AI, stated as capabilities rather than adjectives.
-   No sparkle icons: on a page selling engineering, the credible way to look
-   AI-native is to name the systems, not to decorate the section. */
-const AI_WORK = [
-  {
-    t: "Retrieval over your own documents",
-    d: "Vector search across contracts, tickets, or manuals, with the source passage shown next to every answer so a wrong one is visible immediately.",
-  },
-  {
-    t: "Agents with bounded permissions",
-    d: "Multi-step agents that call your tools and APIs under an explicit allow-list, with a reviewable log of every action taken.",
-  },
-  {
-    t: "Extraction from messy input",
-    d: "Invoices, prescriptions, and handwritten forms turned into structured rows, with a confidence score and a human queue for the uncertain ones.",
-  },
-  {
-    t: "Voice and Indian languages",
-    d: "Speech in and out in Telugu, Hindi, and English, for users who will speak to a product but never type into one.",
-  },
-  {
-    t: "Evaluation before rollout",
-    d: "A scored test set per feature, so a prompt or model change is measured against previous behaviour rather than spot-checked.",
-  },
-  {
-    t: "Cost and latency budgets",
-    d: "Model routing, caching, and token budgets set per feature — the difference between a demo and something you can afford at volume.",
-  },
-];
+const ARROW = "M5 12h14m-6-6 6 6-6 6";
+const WHATSAPP = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
+const TEL = `tel:${COMPANY.phone.replace(/\s/g, "")}`;
 
 export default function Home() {
-  const locations = CATEGORIES[4];
-  const recentPosts = POSTS.slice(0, 3);
-
   return (
     <>
       <Header />
 
       <main className="flex-1">
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-surface">
-          <div className={`${SHELL} pb-16 pt-16 lg:pb-24 lg:pt-28`}>
-            <div className="max-w-4xl">
-              <p className="flex items-center gap-3 text-2xs font-semibold uppercase tracking-[0.14em] text-ink-4">
-                <span
-                  aria-hidden="true"
-                  className="inline-block h-px w-8 bg-ink-4"
-                />
-                Product engineering · Hyderabad
-              </p>
-
-              <h1 className="mt-8 text-4xl font-bold sm:text-5xl lg:text-6xl">
-                We build the software other
-                <br className="hidden sm:block" /> teams quote for and never
-                finish.
+        {/* ── Hero: headline and about on the left, product collage on the right ── */}
+        <section className="bg-[#FAFBFF]">
+          <div className={`${SHELL} grid items-center gap-12 py-14 lg:grid-cols-[1.1fr_1fr] lg:py-20`}>
+            <div>
+              <h1 className="text-4xl font-bold leading-[1.12] sm:text-5xl lg:text-6xl">
+                <span className="bg-linear-to-r from-brand to-[#3a7bd5] bg-clip-text text-transparent">
+                  Mobile App &amp; AI
+                </span>
+                <br />
+                Development Company in Hyderabad
               </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-3">
-                Mobile and web products taken end to end — discovery, design,
-                engineering, launch, and the maintenance nobody puts in the
-                proposal. We scope honestly, ship every two weeks, and hand over
-                something your own team can run without us.
+              <h2 className="mt-8 text-xs font-bold uppercase tracking-[0.14em] text-ink-2">
+                About our company
+              </h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-ink-3">
+                {COMPANY.name} designs and builds mobile apps, websites and AI products for
+                businesses in India and abroad — discovery, design, engineering, launch, and the
+                maintenance afterwards. We also build and run our own product,{" "}
+                <Link href="/voice" className="font-semibold text-brand hover:underline">
+                  Voice by ElevateBox
+                </Link>
+                , which calls leads in Telugu, Hindi and English.
               </p>
 
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              {/* Where the badges sit in the reference: our people's track record,
+                  every line of which can be checked. */}
+              <ul className="mt-7 flex flex-wrap gap-2">
+                {CREDENTIALS.map((c) => (
+                  <li
+                    key={c.k}
+                    title={c.note}
+                    className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs text-ink-2 shadow-sm"
+                  >
+                    <span className="font-semibold text-ink">{c.k}</span>
+                    {` · ${c.v}`}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-brand"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-semibold text-white shadow-md transition-colors hover:bg-brand-soft"
                 >
-                  Start a project
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  Get a free quote
+                  <Icon d={ARROW} className="size-4" />
                 </Link>
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-8 py-4 text-base font-semibold text-ink transition-colors hover:border-ink"
+                <a
+                  href={WHATSAPP}
+                  className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-7 py-3.5 font-semibold text-ink transition-colors hover:border-ink"
                 >
-                  See the work
-                </Link>
+                  WhatsApp us
+                </a>
               </div>
             </div>
 
-            {/* Credential strip — the reason to believe any of the above. */}
-            <div className="mt-20 border-t border-line pt-8">
-              <Eyebrow>The people doing the work have come from</Eyebrow>
-              <dl className="mt-6 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-5">
-                {CREDENTIALS.map((c) => (
-                  <div key={c.k}>
-                    <dt className="text-sm font-semibold text-ink">{c.k}</dt>
-                    <dd className="mt-1 text-sm text-ink-2">{c.v}</dd>
-                    <dd className="mt-0.5 text-xs leading-snug text-ink-4">
-                      {c.note}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+            {/* Collage: a live product in the middle, true delivery facts around it. */}
+            <div className="relative mx-auto h-[520px] w-full max-w-[520px]" aria-hidden="true">
+              <div className="absolute inset-x-8 inset-y-6 rounded-[2.5rem] bg-linear-to-br/srgb from-[#E3ECFF] to-[#F0FCFF]" />
+              <Image
+                src="/assets/project-voice.svg"
+                alt=""
+                width={260}
+                height={520}
+                priority
+                className="absolute left-1/2 top-0 h-[520px] w-[260px] -translate-x-1/2 drop-shadow-2xl"
+              />
+              {STATS.slice(0, 4).map((s, k) => (
+                <div
+                  key={s.label}
+                  className={`absolute w-40 rounded-2xl bg-white p-4 shadow-xl ring-1 ring-black/5 ${
+                    ["left-0 top-12 -rotate-3", "right-0 top-24 rotate-3", "left-2 bottom-24 rotate-2", "right-2 bottom-10 -rotate-2"][k]
+                  }`}
+                >
+                  <p className="text-xl font-bold text-brand">{s.value}</p>
+                  <p className="mt-1 text-xs leading-snug text-ink-3">{s.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ── Clients ──────────────────────────────────────────────────
-            Wordmarks, not logos. The only real client mark on file is
-            8Meds; the other four "logos" in /assets were generated icons —
-            a plus sign, a briefcase, a sprout — which read as clipart next
-            to type this size. Names set in the page's own face are honest
-            and look deliberate. Swap in real SVG marks as clients supply
-            them, all five together or not at all. */}
-        <section className="border-y border-line bg-surface-2">
-          <div className={`${SHELL} py-12`}>
-            <p className="label text-center">
-              Products we designed, built, and still support
+        {/* ── Services We Provide ── */}
+        <ServiceBands />
+
+        {/* ── Our Featured Projects ── */}
+        <ProjectShowcase />
+
+        {/* ── Intro and guarantees ── */}
+        <section className="bg-white">
+          <div className={`${SHELL} py-16 lg:py-20`}>
+            <h2 className="text-2xl font-bold text-brand sm:text-3xl">
+              {`${COMPANY.name} — Mobile App, Web and AI Development in Hyderabad`}
+            </h2>
+            <p className="mt-5 max-w-5xl leading-relaxed text-ink-3">
+              We take products from the first workshop to the app store and keep them running
+              afterwards. {PROJECTS.length} products we designed and built are live and still
+              maintained by this team, across AI calling, healthcare, commerce, agriculture, AI automation and
+              the creator economy.
             </p>
-            <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-5 sm:gap-x-16">
-              {CLIENTS.map((c) => (
-                <li
-                  key={c}
-                  className="text-lg font-semibold tracking-[-0.01em] text-ink-3 transition-colors hover:text-ink"
-                >
-                  {c}
+            <p className="mt-4 max-w-5xl leading-relaxed text-ink-3">
+              We scope honestly — if a simpler build serves you better, we say so during discovery
+              — and we ship something you can click on every two weeks.
+            </p>
+
+            <h3 className="mt-12 text-center text-xl font-bold text-brand">
+              {`${COMPANY.name} guarantees the following :`}
+            </h3>
+            <ul className="mx-auto mt-8 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {GUARANTEES.map((g) => (
+                <li key={g.t} className={`rounded-xl ${g.tint} px-6 py-5 text-center`}>
+                  <p className="flex items-center justify-center gap-2.5 font-semibold text-brand">
+                    <Icon d={g.icon} />
+                    {g.t}
+                  </p>
+                  <p className="mt-1.5 text-sm text-ink-3">{g.d}</p>
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        {/* Accreditation strip. Renders only when ACCREDITATIONS holds marks
-            the company genuinely has — see the note in content.ts. */}
-        {ACCREDITATIONS.length > 0 && (
-          <section className="border-b border-line bg-surface py-8">
-            <div
-              className={`${SHELL} flex flex-wrap items-center justify-center gap-x-14 gap-y-6`}
-            >
-              {ACCREDITATIONS.map((a) => (
-                <div key={a.name} className="flex items-center gap-3">
-                  <Image
-                    src={a.img}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="size-10 opacity-70"
-                  />
-                  <div>
-                    <p className="text-sm font-semibold text-ink">{a.name}</p>
-                    <p className="font-mono text-xs text-ink-4">{a.id}</p>
-                  </div>
-                </div>
+        {/* ── Our Process ── */}
+        <section className="bg-[#0c1a38]">
+          <div className={`${SHELL} py-16 lg:py-20`}>
+            <h2 className="mb-8 text-center text-4xl font-semibold text-white/90 sm:text-5xl">
+              Our Process
+            </h2>
+            <ProcessCarousel />
+          </div>
+        </section>
+
+        {/* ── Start Work With Us ── */}
+        <section className="bg-white">
+          <div className={`${SHELL} py-14`}>
+            <h2 className="inline-block border-b-4 border-brand pb-2 text-xl font-bold">
+              Start Work With Us
+            </h2>
+            <h3 className="mt-6 text-2xl font-bold text-brand">
+              Send the brief, however rough.
+            </h3>
+            <p className="mt-4 max-w-5xl leading-relaxed text-ink-3">
+              Tell us what you want to build. Within a working day you get scope questions, an
+              honest range, and the parts we think you should cut. Discovery is fixed in scope and
+              price, so the build estimate rests on evidence rather than a guess.
+            </p>
+            <p className="mt-4 max-w-5xl leading-relaxed text-ink-3">
+              {`Call ${COMPANY.phone}, write to ${COMPANY.email}, or use the form at the bottom of this page — ${COMPANY.hours}.`}
+            </p>
+          </div>
+        </section>
+
+        {/* ── Locations band ── */}
+        <section className="bg-[#0c1a38]">
+          <div className={`${SHELL} py-12`}>
+            <h2 className="text-center text-2xl font-bold text-white">
+              Our Services Extend to These Locations
+            </h2>
+            <ul className="mx-auto mt-8 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {LOCATIONS.items.map((l) => (
+                <li key={l.slug}>
+                  <Link
+                    href={`${LOCATIONS.base}/${l.slug}`}
+                    className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm text-white/85 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    {`App development in ${l.name}`}
+                    <span className="grid size-6 place-items-center rounded-full bg-white text-[#0c1a38]">
+                      <Icon d={ARROW} className="size-3.5" />
+                    </span>
+                  </Link>
+                </li>
               ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ── Testimonials: only real, permissioned quotes, so hidden while empty ── */}
+        {TESTIMONIALS.length > 0 && (
+          <section className="bg-white">
+            <div className={`${SHELL} py-16`}>
+              <h2 className="text-center text-3xl font-bold">Our Testimonials</h2>
+              <ul className="mt-10 grid gap-5 md:grid-cols-3">
+                {TESTIMONIALS.map((t) => (
+                  <li key={t.name} className="rounded-xl bg-[#E3ECFF] p-6">
+                    <p className="leading-relaxed text-ink-2">{`“${t.quote}”`}</p>
+                    <p className="mt-5 font-semibold text-ink">{t.name}</p>
+                    <p className="text-sm text-ink-3">{t.role}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         )}
 
-        {/* ── Positioning ──────────────────────────────────────────────── */}
-        <Band bordered={false}>
-          <div className="grid gap-16 lg:grid-cols-[1fr_1.05fr]">
+        {/* ── Book a free call ── */}
+        <section className="relative overflow-hidden bg-linear-to-br/srgb from-[#0c1a38] to-[#013186]">
+          <div className={`${SHELL} grid items-center gap-10 py-16 lg:grid-cols-[1.4fr_1fr] lg:py-20`}>
             <div>
-              <Eyebrow>How we work</Eyebrow>
-              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
-                A delivery company, not a deck company
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-ink-3">
-                Most project failures are scoping failures, not engineering
-                failures. So we spend the first weeks arguing about scope,
-                write the trade-offs down, and then build against a plan that
-                survived scrutiny.
+              <h2 className="text-4xl font-bold text-white sm:text-5xl">Book a call for free.</h2>
+              <p className="mt-3 text-lg font-semibold text-[#8FC7FF]">
+                Talk to the people who will build it, not a sales desk.
               </p>
-              <p className="mt-4 leading-relaxed text-ink-3">
-                You own the repository, the cloud accounts, and the credentials
-                from the first commit. Leaving us should be easy — which is
-                exactly what keeps the work honest.
+              <p className="mt-5 max-w-2xl leading-relaxed text-white/80">
+                Thirty minutes on what you want to build, what it should cost, and what to leave
+                out. No obligation, and no sales sequence afterwards.
               </p>
-              <Link
-                href="/about"
-                className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand"
-              >
-                More about how we work
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </div>
-
-            <dl className="grid grid-cols-2 border-l border-t border-line">
-              {[
-                {
-                  t: "Honest scoping",
-                  d: "If a simpler build — or no build — serves you better, we say so during discovery.",
-                },
-                {
-                  t: "You own everything",
-                  d: "Repositories, infrastructure, and credentials in your name throughout.",
-                },
-                {
-                  t: "Increments, not demos",
-                  d: "Something on a real environment every two weeks, not a slide deck.",
-                },
-                {
-                  t: "Instrumented before launch",
-                  d: "Logging, tracing, and crash reporting wired in before release day.",
-                },
-              ].map((c) => (
-                <div key={c.t} className="border-b border-r border-line p-7">
-                  <dt className="font-semibold text-ink">{c.t}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-ink-3">
-                    {c.d}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </Band>
-
-        {/* ── Commitments ──────────────────────────────────────────────── */}
-        <section className="border-y border-line bg-ink">
-          <div className={`${SHELL} py-14`}>
-            <dl className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              {STATS.map((s) => (
-                <div key={s.label}>
-                  <dt className="text-3xl font-bold text-white">{s.value}</dt>
-                  <dd className="mt-2 text-sm leading-snug text-white/55">
-                    {s.label}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
-
-        {/* ── Services ─────────────────────────────────────────────────── */}
-        <ServiceBands />
-
-        {/* ── Selected work ────────────────────────────────────────────── */}
-        <Band
-          eyebrow="Selected work"
-          title={`${COUNT_WORDS[PROJECTS.length] ?? PROJECTS.length} products, still in service`}
-          lead="Every one of these was designed, built, and is still maintained by this team. No case study is written about a project we only advised on."
-        >
-          <ul className="border-t border-line">
-            {PROJECTS.map((p) => (
-              <li
-                key={p.slug}
-                className="group grid gap-4 border-b border-line py-8 lg:grid-cols-[14rem_1fr_9rem] lg:items-baseline lg:gap-10"
-              >
-                <div>
-                  <h3 className="text-xl font-semibold text-ink">
-                    {p.href ? (
-                      <Link href={p.href} className="hover:text-brand">
-                        {p.name}
-                      </Link>
-                    ) : (
-                      p.name
-                    )}
-                  </h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.1em] text-ink-4">
-                    {p.sector}
-                  </p>
-                </div>
-                <p className="leading-relaxed text-ink-3">{p.summary}</p>
-                <p className="font-mono text-xs text-ink-4 lg:text-right">
-                  {p.platforms.join(" · ")}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/portfolio"
-            className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-brand"
-          >
-            See the full portfolio
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
-        </Band>
-
-        {/* ── AI capability ────────────────────────────────────────────── */}
-        <Band
-          tinted
-          eyebrow="AI delivery"
-          title="AI work that survives contact with real users"
-          lead="Anyone can wire a chat box to an API. The engineering is in what happens when the model is wrong, slow, or expensive — which is where most AI projects quietly die."
-        >
-          <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {AI_WORK.map((a) => (
-              <article key={a.t} className="bg-surface p-8">
-                <h3 className="font-semibold text-ink">{a.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-3">{a.d}</p>
-              </article>
-            ))}
-          </div>
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink-3">
-            If a rules engine or a spreadsheet solves your problem, we will
-            tell you that instead. It costs us the larger invoice and saves you
-            the rebuild.
-          </p>
-        </Band>
-
-        {/* ── Process ──────────────────────────────────────────────────── */}
-        <Band
-          eyebrow="Process"
-          title="Nine steps from brief to support"
-          lead="The same delivery model on every engagement. The specifics change; the discipline does not."
-        >
-          <ol className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {PROCESS_STEPS.map((s) => (
-              <li key={s.n} className="bg-surface p-8">
-                <span className="font-mono text-xs text-ink-4">{s.n}</span>
-                <h3 className="mt-3 font-semibold text-ink">{s.t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-3">{s.d}</p>
-              </li>
-            ))}
-          </ol>
-        </Band>
-
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
-        <section className="border-t border-line bg-ink">
-          <div
-            className={`${SHELL} flex flex-col gap-10 py-20 lg:flex-row lg:items-end lg:justify-between`}
-          >
-            <div className="max-w-xl">
-              <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                Send the brief, however rough
-              </h2>
-              <p className="mt-4 leading-relaxed text-white/60">
-                You get scope questions, an honest range, and the parts we think
-                you should cut. No sales sequence, no deck.
-              </p>
-            </div>
-            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-ink transition-colors hover:bg-white/90"
-              >
-                Start a project
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <a
-                href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white"
-              >
-                WhatsApp us
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Locations ────────────────────────────────────────────────── */}
-        <Band
-          eyebrow="Where we deliver"
-          title="Committed overlap hours, not a follow-the-sun promise"
-          lead={locations.blurb}
-        >
-          <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-            {locations.items.map((l) => (
-              <Link
-                key={l.slug}
-                href={`${locations.base}/${l.slug}`}
-                className="group bg-surface p-7 transition-colors hover:bg-brand-wash"
-              >
-                <h3 className="font-semibold text-ink">{l.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-3">
-                  {l.tagline}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </Band>
-
-        {/* ── Writing ──────────────────────────────────────────────────── */}
-        <Band
-          tinted
-          eyebrow="Writing"
-          title="The decisions that change outcomes"
-        >
-          <div className="grid gap-px border border-line bg-line lg:grid-cols-3">
-            {recentPosts.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/blogs/${p.slug}`}
-                className="group flex flex-col bg-surface p-8 transition-colors hover:bg-brand-wash"
-              >
-                <span className="label">{p.category}</span>
-                <h3 className="mt-4 flex-1 text-lg font-semibold leading-snug text-ink">
-                  {p.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-3">
-                  {p.excerpt}
-                </p>
-                <p className="mt-6 font-mono text-xs text-ink-4">
-                  {p.readMins} min read
-                </p>
-              </Link>
-            ))}
-          </div>
-          <Link
-            href="/blogs"
-            className="group mt-10 inline-flex items-center gap-2 text-sm font-semibold text-brand"
-          >
-            Read all {POSTS.length} articles
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
-        </Band>
-
-        {/* ── FAQ + form ───────────────────────────────────────────────── */}
-        <Band eyebrow="FAQ" title="Questions we get before the first call">
-          <div className="grid gap-16 lg:grid-cols-[1.15fr_1fr]">
-            <Faq items={FAQS} />
-            <div>
-              <h3 className="text-xl font-semibold text-ink">
-                Still have a question?
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-3">
-                Ask it here and a person who works on delivery will answer.
-              </p>
-              <div className="mt-6">
-                <QuoteForm />
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={WHATSAPP} className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3.5 font-semibold text-brand transition-transform hover:scale-105">
+                  Book on WhatsApp
+                </a>
+                <a href={TEL} className="inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white">
+                  {`Call ${COMPANY.phone}`}
+                </a>
               </div>
             </div>
+            <div className="rounded-2xl bg-white/10 p-7 text-white ring-1 ring-white/15 backdrop-blur">
+              <p className="text-sm font-semibold uppercase tracking-wider text-white/70">Free booking</p>
+              <dl className="mt-5 space-y-4 text-sm">
+                <div>
+                  <dt className="text-white/60">Working hours</dt>
+                  <dd className="mt-1 text-base font-semibold">{COMPANY.hours}</dd>
+                </div>
+                <div>
+                  <dt className="text-white/60">Office</dt>
+                  <dd className="mt-1 text-base font-semibold">{COMPANY.address}</dd>
+                </div>
+                <div>
+                  <dt className="text-white/60">Email</dt>
+                  <dd className="mt-1 text-base font-semibold">
+                    <a href={`mailto:${COMPANY.email}`} className="hover:underline">{COMPANY.email}</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
           </div>
-        </Band>
+        </section>
 
-        {/* Category index — kept for internal linking and crawl depth. */}
-        <section className="border-t border-line bg-surface-2">
-          <div
-            className={`${SHELL} flex flex-wrap justify-center gap-3 py-12`}
-          >
-            {CATEGORIES.map((c) => (
-              <Link
-                key={c.key}
-                href={c.base}
-                className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:border-ink hover:text-ink"
-              >
-                All {c.label.toLowerCase()} ({c.items.length})
-              </Link>
-            ))}
+        {/* ── Long-form intro (the reference's SEO block) ── */}
+        <section className="bg-white">
+          <div className={`${SHELL} py-14`}>
+            <h2 className="text-2xl font-bold">Mobile App Development Company in India</h2>
+            <p className="mt-4 max-w-6xl leading-relaxed text-ink-3">
+              {COMPANY.name} builds native iOS and Android apps where platform depth matters, and
+              Flutter or React Native where one codebase across both stores is the right economics.
+              Alongside apps we build websites that hold their speed under real traffic, design
+              systems that engineering can build exactly, and AI features that are measured before
+              they ship.
+            </p>
+            <p className="mt-4 max-w-6xl leading-relaxed text-ink-3">
+              Our engineers have worked at JPMorgan Chase, Google and Y Combinator-backed startups,
+              and placed in the top 0.17% at ACM ICPC. We work from Hyderabad with clients in
+              India, the UAE, the UK, Europe and the US, and everything we build is handed over so
+              your own team can run it.
+            </p>
+          </div>
+        </section>
+
+        {/* ── FAQs ── */}
+        <section className="bg-white">
+          <div className={`${SHELL} pb-16`}>
+            <h2 className="text-center text-3xl font-bold">FAQs</h2>
+            <p className="mt-2 text-center text-sm text-ink-3">
+              Not here? Write to us through the form below.
+            </p>
+            <div className="mx-auto mt-8 max-w-5xl space-y-3">
+              {FAQS.map((f, k) => (
+                <details key={f.q} className="group rounded-xl bg-[#E3ECFF]/70 px-6 py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold text-ink">
+                    {`${String(k + 1).padStart(2, "0")}. ${f.q}`}
+                    <span aria-hidden="true" className="text-xl leading-none text-brand transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-3">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Let's Discuss + quote form ── */}
+        <section id="quote" className="bg-white">
+          <div className={`${SHELL} pb-20`}>
+            <p aria-hidden="true" className="text-center text-6xl font-semibold leading-none sm:text-8xl lg:text-9xl">
+              <span className="text-ink/80">Let&apos;s </span>
+              <span className="text-[#3a7bd5]">Discuss</span>
+            </p>
+            <div className="mx-auto mt-10 max-w-3xl">
+              <h2 className="text-xl font-bold text-brand">Let us elevate your project with our skills</h2>
+              <p className="mt-1 mb-6 text-sm text-ink-3">
+                {`Get a quote from ${COMPANY.name}. A person who works on delivery replies within one working day.`}
+              </p>
+              <QuoteForm />
+            </div>
           </div>
         </section>
       </main>

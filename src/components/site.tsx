@@ -100,9 +100,12 @@ const PhoneIcon = ({ className = "size-4" }: { className?: string }) => (
 
 function TopBar() {
   return (
-    <div className="hidden border-b border-line bg-surface-2 lg:block">
-      <div className="mx-auto flex max-w-[78rem] items-center justify-between px-6 py-2 text-xs text-ink-3 lg:px-10">
-        <p>{COMPANY.timings}</p>
+    <div className="hidden border-b border-black/5 bg-[#F8FAFC] lg:block">
+      <div className="mx-auto flex max-w-[90rem] items-center justify-between px-5 py-2 text-xs text-ink-3 lg:px-8">
+        <p className="flex items-center gap-2">
+          <span aria-hidden="true" className="size-2 rounded-full bg-[#16a34a]" />
+          {`Timings : ${COMPANY.timings}`}
+        </p>
         <div className="flex items-center gap-6">
           <a
             href={`mailto:${COMPANY.email}`}
@@ -145,9 +148,9 @@ export function FloatingActions() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-line bg-surface/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <TopBar />
-      <div className="mx-auto flex max-w-[78rem] items-center justify-between gap-6 px-6 lg:px-10">
+      <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-6 px-5 lg:px-8">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="py-2">
           <Logo className="h-auto w-[10rem] shrink-0 object-contain sm:w-[12rem] lg:w-[220px] 3xl:w-[300px]" />
         </Link>
@@ -182,18 +185,24 @@ export function Header() {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-4 xl:flex">
-          <a
-            href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-            className="flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-ink-2 transition-colors hover:text-ink"
-          >
-            <PhoneIcon className="size-3.5" />
-            {COMPANY.phone}
-          </a>
+          <div className="text-right">
+            <p className="flex items-center justify-end gap-1.5 text-xs text-ink-3">
+              <PhoneIcon className="size-3.5 text-brand" />
+              For Business :
+            </p>
+            <a
+              href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+              className="mt-0.5 flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-brand transition-colors hover:text-brand-soft"
+            >
+              <span aria-hidden="true">🇮🇳</span>
+              {COMPANY.phone}
+            </a>
+          </div>
           <Link
             href="/contact"
-            className="whitespace-nowrap rounded-full bg-ink px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand 3xl:text-sm"
+            className="whitespace-nowrap rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-white shadow-md transition-colors hover:bg-brand-soft 3xl:text-sm"
           >
-            Start a project
+            Free Quote
           </Link>
         </div>
 
@@ -284,7 +293,7 @@ export function Header() {
               href="/contact"
               className="mt-4 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white"
             >
-              Start a project
+              Free Quote
             </Link>
           </div>
         </details>
@@ -296,8 +305,8 @@ export function Header() {
 export function Footer() {
   const recent = POSTS.slice(0, 4);
   return (
-    <footer className="bg-ink text-white/65">
-      <div className="mx-auto max-w-[78rem] px-6 py-20 lg:px-10">
+    <footer className="relative overflow-hidden bg-[#0c1a38] text-white/65">
+      <div className="relative mx-auto max-w-[90rem] px-5 py-20 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <div className="inline-flex rounded-xl bg-white px-3 py-2">
@@ -419,6 +428,13 @@ export function Footer() {
           </div>
         </div>
       </div>
+      {/* The big faded wordmark that closes the page. Decorative only. */}
+      <p
+        aria-hidden="true"
+        className="pointer-events-none -mb-[0.18em] select-none text-center text-[22vw] font-bold leading-none tracking-tighter text-white/[0.06]"
+      >
+        elevatebox
+      </p>
     </footer>
   );
 }

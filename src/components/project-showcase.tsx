@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CLIENTS, PROJECTS, clientLogo } from "@/lib/content";
+import { CLIENTS, PROJECTS } from "@/lib/content";
 
 // ponytail: the "scrolling screen" is a native overflow-y container holding a
 // tall SVG. No carousel library, no JS — the user scrolls the phone screen the
@@ -9,8 +9,8 @@ import { CLIENTS, PROJECTS, clientLogo } from "@/lib/content";
 // scale together so every frame keeps a real handset aspect ratio (~9:19.5).
 const BASE_W = 208;
 const BASE_H = 450;
-const SCALES = [0.8, 0.9, 1, 0.9, 0.8];
-const OFFSETS = ["lg:mt-20", "lg:mt-10", "lg:mt-0", "lg:mt-10", "lg:mt-20"];
+const SCALES = [0.8, 0.9, 1, 1, 0.9, 0.8];
+const OFFSETS = ["xl:mt-20", "xl:mt-10", "xl:mt-0", "xl:mt-0", "xl:mt-10", "xl:mt-20"];
 
 export function ProjectShowcase() {
   return (
@@ -30,22 +30,21 @@ export function ProjectShowcase() {
           designed, built, and is still supported by our team.
         </p>
 
-        {/* Client logos */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        {/* Client wordmarks. Text, not logos: the logo files on hand are
+            generated icons, which read as clipart next to real work. */}
+        <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
           {CLIENTS.map((c) => (
-            <Image
+            <li
               key={c}
-              src={clientLogo(c)}
-              alt={c}
-              width={120}
-              height={100}
-              className="h-[74px] w-[90px] opacity-45 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-            />
+              className="text-lg font-bold tracking-tight text-ink-4 transition-colors hover:text-brand"
+            >
+              {c}
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Device lineup */}
-        <div className="mt-14 flex flex-wrap items-end justify-center gap-x-4 gap-y-12 lg:flex-nowrap">
+        <div className="mt-14 flex flex-wrap items-end justify-center gap-x-4 gap-y-12 xl:flex-nowrap">
           {PROJECTS.map((p, i) => {
             const scale = SCALES[i % SCALES.length];
             const w = Math.round(BASE_W * scale);
