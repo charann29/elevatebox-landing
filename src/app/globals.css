@@ -183,6 +183,39 @@ details[open] .chev {
   animation: marquee 42s linear infinite;
 }
 
+/* Process carousel: each step change replays these. --dir is 1 going
+   forward, -1 going back, so cards slide in from the side they came from. */
+@keyframes step-slide {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--dir, 1) * 48px)) scale(0.92);
+  }
+}
+@keyframes step-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes step-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.step-slide {
+  animation: step-slide 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.step-rise {
+  animation: step-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.step-progress {
+  transform-origin: left;
+  animation: step-progress var(--step-ms, 4000ms) linear both;
+}
+
 /* Hairline that fades at both ends — used under the hero and above the
    footer so full-width rules do not terminate abruptly at the viewport edge. */
 .rule-fade {
