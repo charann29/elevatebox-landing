@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 // Only routes that are live on the product app today.
 const SIGNUP = `${VOICE_APP}/login?mode=signup`;
 const DEMO = `${VOICE_APP}/`;
+const PRODUCT = `${VOICE_APP}/ai-calling`;
 
 const STEPS = [
   {
@@ -144,6 +145,9 @@ export default function VoicePage() {
                   Get a demo call
                 </a>
               </div>
+              <a href={PRODUCT} className="mt-5 inline-block text-sm font-semibold text-brand hover:underline">
+                Full product tour on agents.elevatebox.in →
+              </a>
             </div>
             <Image
               src="/assets/project-voice.svg"

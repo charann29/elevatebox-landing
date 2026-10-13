@@ -199,6 +199,12 @@ export function Header() {
             </a>
           </div>
           <Link
+            href="/voice"
+            className="whitespace-nowrap rounded-lg border border-brand px-4 py-2 text-xs font-semibold text-brand transition-colors hover:bg-brand hover:text-white 3xl:text-sm"
+          >
+            Voice AI
+          </Link>
+          <Link
             href="/contact"
             className="whitespace-nowrap rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-white shadow-md transition-colors hover:bg-brand-soft 3xl:text-sm"
           >
@@ -290,8 +296,14 @@ export function Header() {
               </a>
             </div>
             <Link
+              href="/voice"
+              className="mt-4 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand"
+            >
+              Voice AI
+            </Link>
+            <Link
               href="/contact"
-              className="mt-4 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white"
+              className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white"
             >
               Free Quote
             </Link>

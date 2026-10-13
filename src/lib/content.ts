@@ -1648,7 +1648,7 @@ export const getJob = (slug: string) => JOBS.find((j) => j.slug === slug);
 /* ------------------------------------------------------------------ */
 
 /* Voice by ElevateBox — the product app. Links point only at routes that are live there. */
-export const VOICE_APP = "https://elevatebox.up.railway.app";
+export const VOICE_APP = "https://agents.elevatebox.in";
 
 export const COMPANY = {
   name: "ElevateBox",
