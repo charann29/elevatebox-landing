@@ -42,6 +42,9 @@ const GUARANTEES = [
   { t: "Something live every two weeks", d: "Increments on a real environment, not a slide deck.", tint: "bg-[#E7F7EE]", icon: "M5 12l5 5L20 7" },
   { t: "Instrumented before launch", d: "Logging, tracing and crash reports in before release day.", tint: "bg-[#FFEBE6]", icon: "M3 12h4l3 8 4-16 3 8h4" },
   { t: "A reply within one day", d: "Every new brief gets a real answer by the next working day.", tint: "bg-[#F0FCFF]", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
+  { t: "Planning to after launch", d: "One team from the first workshop through launch and the support afterwards.", tint: "bg-[#EFEAFF]", icon: "M12 8v4l3 3M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" },
+  { t: "Updates every week", d: "A written update each week: what shipped, what is next, what is blocked.", tint: "bg-[#E3ECFF]", icon: "M8 7h8M8 12h8M8 17h5M5 3h14v18H5z" },
+  { t: "Built to be found", d: "Fast pages, metadata, schema and a sitemap on every site we ship.", tint: "bg-[#E7F7EE]", icon: "M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-5-5" },
 ];
 
 const LOCATIONS = CATEGORIES.find((c) => c.key === "locations")!;
