@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { COMPANY, POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
+import { POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `Blog | ${COMPANY.name}`,
+  title: `Blog`,
   description:
     "Practical writing on product engineering, delivery, cost, and AI — from the team that ships the work.",
   alternates: { canonical: "/blogs" },

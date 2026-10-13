@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CATEGORIES, COMPANY, getCategory } from "@/lib/content";
+import { CATEGORIES, getCategory } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, Faq, LinkCards, PageHero, Section } from "@/components/blocks";
 
@@ -19,7 +19,7 @@ export async function generateMetadata({
   const cat = getCategory(category);
   if (!cat) return {};
   return {
-    title: `${cat.label} | ${COMPANY.name}`,
+    title: `${cat.label}`,
     description: cat.blurb,
     alternates: { canonical: cat.base },
   };

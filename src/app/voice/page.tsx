@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Our own product: an AI phone employee that calls every new lead within seconds, talks in Telugu, Hindi or English, writes down what was said and books the next step.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} | ${COMPANY.name}`,
+  title: `${TITLE}`,
   description: DESCRIPTION,
   alternates: { canonical: "/voice" },
   openGraph: { title: TITLE, description: DESCRIPTION, url: "/voice", type: "website" },

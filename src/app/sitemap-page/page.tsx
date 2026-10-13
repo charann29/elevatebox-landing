@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
+import { CATEGORIES, JOBS, POSTS } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `Sitemap | ${COMPANY.name}`,
+  title: `Sitemap`,
   description: "Every page on the site, in one list.",
   alternates: { canonical: "/sitemap-page" },
 };

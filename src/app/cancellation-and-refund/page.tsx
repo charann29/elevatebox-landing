@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
 export const metadata: Metadata = {
-  title: `Cancellation & Refund Policy | ${COMPANY.name}`,
+  title: `Cancellation & Refund Policy`,
   description: "How cancellations, refunds, and paused engagements are handled.",
   alternates: { canonical: "/cancellation-and-refund" },
 };

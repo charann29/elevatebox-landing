@@ -4,7 +4,7 @@ import { Header, Footer } from "@/components/site";
 import { Faq, PageHero, QuoteForm, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `Contact Us | ${COMPANY.name}`,
+  title: `Contact Us`,
   description:
     "Talk to us about a project. We reply within one business day with scope questions, not a sales sequence.",
   alternates: { canonical: "/contact" },

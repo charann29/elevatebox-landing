@@ -20,7 +20,7 @@ export async function generateMetadata({
   const j = getJob(slug);
   if (!j) return {};
   return {
-    title: `${j.title} | Careers | ${COMPANY.name}`,
+    title: `${j.title} | Careers`,
     description: j.about,
     alternates: { canonical: `/careers/${j.slug}` },
   };

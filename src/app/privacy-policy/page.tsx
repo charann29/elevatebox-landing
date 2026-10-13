@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy | ${COMPANY.name}`,
+  title: `Privacy Policy`,
   description: "How we collect, use, store, and delete personal information.",
   alternates: { canonical: "/privacy-policy" },
 };

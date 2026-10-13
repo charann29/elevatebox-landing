@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { COMPANY, POSTS, getPost, postCover } from "@/lib/content";
+import { POSTS, getPost, postCover } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const p = getPost(slug);
   if (!p) return {};
   return {
-    title: `${p.title} | ${COMPANY.name}`,
+    title: `${p.title}`,
     description: p.excerpt,
     alternates: { canonical: `/blogs/${p.slug}` },
     openGraph: {

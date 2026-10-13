@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   CATEGORIES,
-  COMPANY,
   PROCESS_STEPS,
   TESTIMONIALS,
   getCategory,
@@ -37,7 +36,7 @@ export async function generateMetadata({
   const cat = getCategory(category);
   if (!entry || !cat) return {};
   return {
-    title: `${entry.title} | ${COMPANY.name}`,
+    title: `${entry.title}`,
     description: entry.tagline,
     alternates: { canonical: `${cat.base}/${entry.slug}` },
     openGraph: { title: entry.title, description: entry.tagline },

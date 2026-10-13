@@ -12,7 +12,7 @@ import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `About Us | ${COMPANY.name}`,
+  title: `About Us`,
   description:
     "Who we are, how we work, and the delivery principles we hold to on every engagement.",
   alternates: { canonical: "/about" },

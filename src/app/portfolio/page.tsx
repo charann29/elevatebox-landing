@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   CLIENTS,
-  COMPANY,
   IMG,
   PROJECTS,
   STATS,
@@ -14,7 +13,7 @@ import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `Portfolio | ${COMPANY.name}`,
+  title: `Portfolio`,
   description:
     "Selected product work across AI calling, healthcare, commerce, AI automation, and media — including Voice by ElevateBox, our own product.",
   alternates: { canonical: "/portfolio" },

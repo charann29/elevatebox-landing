@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
 export const metadata: Metadata = {
-  title: `Terms & Conditions | ${COMPANY.name}`,
+  title: `Terms & Conditions`,
   description: "The terms governing use of this website and our services.",
   alternates: { canonical: "/terms-and-conditions" },
 };

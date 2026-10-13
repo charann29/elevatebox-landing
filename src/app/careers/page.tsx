@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { COMPANY, JOBS } from "@/lib/content";
+import { JOBS } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `Careers | ${COMPANY.name}`,
+  title: `Careers`,
   description:
     "Open engineering, design, and growth roles at ElevateBox — Hyderabad, hybrid, and remote.",
   alternates: { canonical: "/careers" },
