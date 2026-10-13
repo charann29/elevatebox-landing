@@ -8,10 +8,10 @@ import {
   FAQS,
   PROJECTS,
   STATS,
-  TESTIMONIALS,
-} from "@/lib/content";
+  TESTIMONIALS, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { QuoteForm } from "@/components/blocks";
+import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 import { ProcessCarousel } from "@/components/process-carousel";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { ServiceBands } from "@/components/service-bands";
@@ -19,9 +19,9 @@ import { ServiceBands } from "@/components/service-bands";
 export const metadata: Metadata = {
   title: `${COMPANY.name} — Mobile App, Web & AI Development Company in Hyderabad`,
   description:
-    "ElevateBox builds mobile apps, websites and AI products from Hyderabad — and runs its own AI calling product, Voice. Honest scoping, two-week increments, and code in your name from day one.",
+    "Mobile app, web and AI development company in Hyderabad. Fixed-scope discovery, two-week releases, code in your name, and our own AI calling product, Voice.",
   alternates: { canonical: "/" },
-  openGraph: {
+  openGraph: { images: [OG_IMG],
     title: `${COMPANY.name} — Mobile App, Web & AI Development Company in Hyderabad`,
     description:
       "Mobile apps, websites and AI products, built in Hyderabad and kept running after launch.",
@@ -65,6 +65,9 @@ export default function Home() {
       <Header />
 
       <main className="flex-1">
+        <JsonLd
+          json={ld(ORG, { "@type": "WebSite", name: COMPANY.name, url: COMPANY.site, publisher: { "@id": ORG["@id"] } }, faqPage(FAQS))}
+        />
         {/* ── Hero: headline and about on the left, product collage on the right ── */}
         <section className="bg-[#FAFBFF]">
           <div className={`${SHELL} grid items-center gap-12 py-14 lg:grid-cols-[1.1fr_1fr] lg:py-20`}>
@@ -72,7 +75,7 @@ export default function Home() {
               <h1 className="text-4xl font-bold leading-[1.12] sm:text-5xl lg:text-6xl">
                 <span className="bg-linear-to-r from-brand to-[#3a7bd5] bg-clip-text text-transparent">
                   Mobile App &amp; AI
-                </span>
+                </span>{" "}
                 <br />
                 Development Company in Hyderabad
               </h1>

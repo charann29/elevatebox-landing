@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { POSTS, getPost, postCover } from "@/lib/content";
+import { POSTS, getPost, postCover, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -24,7 +24,7 @@ export async function generateMetadata({
     title: `${p.title}`,
     description: p.excerpt,
     alternates: { canonical: `/blogs/${p.slug}` },
-    openGraph: {
+    openGraph: { images: [OG_IMG],
       title: p.title,
       description: p.excerpt,
       type: "article",

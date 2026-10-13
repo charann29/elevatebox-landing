@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/portfolio",
     "/voice",
+    "/mobile-app-development-company-hyderabad",
     "/careers",
     "/blogs",
     "/contact",
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sitemap-page",
   ].map((p) => ({
     url: `${base}${p}`,
-    priority: p === "" ? 1 : 0.7,
+    priority: p === "" ? 1 : p.includes("hyderabad") ? 0.9 : 0.7,
   }));
 
   const categoryPages = CATEGORIES.flatMap((c) => [

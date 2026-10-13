@@ -29,7 +29,7 @@ const SERVICES: Entry[] = [
   {
     slug: "mobile-app-development",
     name: "Mobile App Development",
-    title: "Mobile App Development Services",
+    title: "Mobile App Development Services: Android, iOS, Flutter",
     tagline: "Native and cross-platform apps that ship on time and stay maintainable.",
     intro:
       "We build mobile products end to end — discovery, design, engineering, store submission, and the unglamorous maintenance work that keeps an app alive after launch. Every build ships with tests, crash reporting, and a release pipeline your team can run without us.",
@@ -972,13 +972,17 @@ const loc = (slug: string, name: string, intro: string, bl: [string, string][]):
 });
 
 const LOCATIONS: Entry[] = [
-  loc("hyderabad", "Hyderabad", "Our home base. Full-team engagement, on-site workshops, and the shortest feedback loop we offer — most Hyderabad clients see us in person during discovery and at every major milestone.",
+  {
+    ...loc("hyderabad", "Hyderabad", "Our home base. Full-team engagement, on-site workshops, and the shortest feedback loop we offer — most Hyderabad clients see us in person during discovery and at every major milestone.",
     [["On-site collaboration", "In-person discovery, planning, and review sessions."],
      ["Full IST overlap", "Complete working-day overlap with your team."],
      ["Local hiring network", "Access to one of India's deepest engineering talent pools."],
      ["Rapid team scaling", "Adding capacity measured in weeks, not quarters."],
      ["Local contracting", "Indian entity, INR invoicing, GST compliant."],
      ["Long-term support", "Maintenance retainers with on-site availability."]]),
+    title: "Software & App Development Company in Hyderabad",
+    tagline: "Mobile apps, web products and AI built by a Hyderabad team you can meet in person.",
+  },
   loc("dubai", "Dubai", "Dedicated delivery for Dubai-based clients, with a working day that overlaps almost entirely with GST and a contracting model that suits UAE procurement requirements.",
     [["Near-full time-zone overlap", "IST and GST differ by 90 minutes — effectively a shared working day."],
      ["UAE compliance awareness", "Data residency and regulatory requirements accounted for in architecture."],
@@ -1091,7 +1095,7 @@ const ICON_NAMES = [
 export const serviceIcon = (i: number) =>
   `/assets/icon-${ICON_NAMES[i % ICON_NAMES.length]}.svg`;
 export const HERO_IMG = "/assets/hero.svg";
-export const OG_IMG = "/assets/og.svg";
+export const OG_IMG = "/og.png";
 export const FLAG_IN = "/assets/flag-in.svg";
 /** Blog cover, keyed by post category. */
 export const postCover = (category: string) =>

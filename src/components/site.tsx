@@ -393,6 +393,11 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                <Link href="/mobile-app-development-company-hyderabad" className="text-sm transition-colors hover:text-white">
+                  Mobile App Development in Hyderabad
+                </Link>
+              </li>
+              <li>
                 <Link href="/ai-solutions" className="text-sm transition-colors hover:text-white">
                   AI Solutions
                 </Link>

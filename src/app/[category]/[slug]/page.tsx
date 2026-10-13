@@ -6,9 +6,10 @@ import {
   PROCESS_STEPS,
   TESTIMONIALS,
   getCategory,
-  getEntry,
-} from "@/lib/content";
+  getEntry, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
+import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
+import { FAQS } from "@/lib/content";
 import {
   BulletGrid,
   CtaBand,
@@ -39,7 +40,7 @@ export async function generateMetadata({
     title: `${entry.title}`,
     description: entry.tagline,
     alternates: { canonical: `${cat.base}/${entry.slug}` },
-    openGraph: { title: entry.title, description: entry.tagline },
+    openGraph: { images: [OG_IMG], title: entry.title, description: entry.tagline, url: `${cat.base}/${entry.slug}`, type: "website" },
   };
 }
 
@@ -60,6 +61,17 @@ export default async function EntryPage({
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd
+          json={ld(
+            ORG,
+            service(entry.title, entry.tagline, `${cat.base}/${entry.slug}`),
+            breadcrumb([
+              { name: cat.label, path: cat.base },
+              { name: entry.name, path: `${cat.base}/${entry.slug}` },
+            ]),
+            faqPage(FAQS),
+          )}
+        />
         <PageHero
           eyebrow={cat.label}
           title={entry.title}

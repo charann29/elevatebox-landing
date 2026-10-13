@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { COMPANY, IMG, VOICE_APP } from "@/lib/content";
+import { COMPANY, IMG, VOICE_APP, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { BulletGrid, Faq, PageHero, Section } from "@/components/blocks";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: `${TITLE}`,
   description: DESCRIPTION,
   alternates: { canonical: "/voice" },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: "/voice", type: "website" },
+  openGraph: { images: [OG_IMG], title: TITLE, description: DESCRIPTION, url: "/voice", type: "website" },
 };
 
 // Only routes that are live on the product app today.
