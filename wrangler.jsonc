@@ -1,0 +1,12 @@
+{
+  "name": "elevatebox-site",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "account_id": "f85ebaa6daad07a773cebe5ace3c25b6",
+  "assets": {
+    "directory": "out",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
