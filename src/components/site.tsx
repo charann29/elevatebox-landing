@@ -46,7 +46,7 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
     <li className="group relative">
       <NavLink
         href={cat.base}
-        className="flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-sm transition-colors"
+        className="flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
         activeClassName="bg-canvas text-ink"
         idleClassName="text-ink-2 hover:bg-canvas hover:text-ink"
       >
@@ -173,7 +173,7 @@ export function Header() {
         </Link>
 
         <nav
-          className="hidden rounded-full border border-black/5 bg-white/90 px-2 py-1.5 shadow-sm backdrop-blur xl:block"
+          className="hidden rounded-full bg-white px-2 py-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.06)] xl:block"
           aria-label="Main"
         >
           <ul className="flex items-center gap-0.5">
@@ -184,7 +184,7 @@ export function Header() {
               <li key={n.href}>
                 <NavLink
                   href={n.href}
-                  className="block whitespace-nowrap rounded-full px-3 py-1.5 text-sm transition-colors"
+                  className="block whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
                   activeClassName="bg-canvas text-ink"
                   idleClassName="text-ink-2 hover:bg-canvas hover:text-ink"
                 >

@@ -1801,8 +1801,21 @@ export const COMPANY = {
   address: "Hyderabad, Telangana, India",
   hours: "Mon–Sat, 10:00–19:00 IST",
   site: "https://elevatebox.in",
-  /** Calendly event for the 30-minute discovery call. Empty = /book falls back to WhatsApp and phone. */
-  calendly: "",
+};
+
+/* The paid first step: a Product Requirement Analysis call that ends in a quotation.
+   Pay on Razorpay, then pick a slot on cal.com. */
+export const DISCOVERY = {
+  price: "₹3,500",
+  title: "Product Requirement Analysis",
+  pay: "https://pages.razorpay.com/elevatebox-prd",
+  book: "https://cal.com/elevatebox/project-discovery-call-quotation",
+  includes: [
+    "A call with the people who will build it, not a sales desk",
+    "Your requirements worked through screen by screen",
+    "What to build first, and what to leave out",
+    "A written quotation and timeline you can take anywhere",
+  ],
 };
 
 /* Where the team has worked and what it has done. Every line here is
@@ -1864,6 +1877,7 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [];
 
 export const FAQS = [
+  { q: "How do we start, and what does it cost?", a: "With a Product Requirement Analysis for ₹3,500: a call with the people who will build it, your requirements worked through, and a written quotation and timeline. Pay on our Razorpay page, then pick a time at elevatebox.in/book." },
   { q: "How do you price engagements?", a: "Fixed-price for well-defined scopes, and time-and-materials for evolving products. We recommend fixed-price discovery first so the build estimate is based on evidence rather than assumption." },
   { q: "Who owns the code and infrastructure?", a: "You do, throughout. Repository, cloud accounts, and deployment credentials are in your name from the first commit, not transferred at the end." },
   { q: "How long does a typical project take?", a: "A focused MVP is usually eight to sixteen weeks. Platform work and multi-app products run longer. We give a range with a confidence level, and narrow it as unknowns resolve." },

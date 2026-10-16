@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { COMPANY, FAQS, IMG, serviceIcon } from "@/lib/content";
+import { COMPANY, DISCOVERY, FAQS, IMG, serviceIcon } from "@/lib/content";
 
 export function Crumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
@@ -296,31 +296,47 @@ export function Prose({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** The 30-minute call booking: Calendly inline, or WhatsApp and phone until a link is set. */
+/** The cal.com scheduler for the Product Requirement Analysis call, inline. */
 export function BookingEmbed() {
-  if (!COMPANY.calendly) {
-    return (
-      <div className="rounded-3xl bg-white p-10 text-center ring-1 ring-black/5">
-        <p className="font-display text-2xl font-bold text-ink">Pick a time with us directly</p>
-        <p className="mt-2 text-sm text-ink-3">{COMPANY.hours}</p>
-        <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-          <a
-            href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hi, I'd like to book a 30-minute call.")}`}
-            className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white"
-          >
-            Book on WhatsApp
-          </a>
-          <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-black/10 px-6 py-3 text-sm font-semibold text-ink">
-            {`Call ${COMPANY.phone}`}
-          </a>
-        </div>
-      </div>
-    );
-  }
-  const src = `${COMPANY.calendly}?hide_gdpr_banner=1&background_color=ffffff&text_color=0a0a0a&primary_color=0a0a0a`;
   return (
     <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-black/5">
-      <iframe src={src} title="Book a 30-minute call" className="h-[720px] w-full" loading="lazy" />
+      <iframe
+        src={`${DISCOVERY.book}?embed=true&theme=light&layout=month_view`}
+        title={`Book your ${DISCOVERY.title} call`}
+        className="h-[760px] w-full"
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
+/** The paid first step, as one card: price, what it includes, pay then book. */
+export function DiscoveryOffer({ dark }: { dark?: boolean }) {
+  return (
+    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white/5 text-white ring-1 ring-white/10" : "bg-white ring-1 ring-black/5"}`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider ${dark ? "text-white/50" : "text-ink-4"}`}>Start here</p>
+      <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+        <h3 className={`text-2xl font-bold sm:text-3xl ${dark ? "text-white" : ""}`}>{DISCOVERY.title}</h3>
+        <p className={`font-display text-4xl font-black tracking-tight ${dark ? "text-white" : "text-ink"}`}>{DISCOVERY.price}</p>
+      </div>
+      <ul className="mt-6 space-y-3">
+        {DISCOVERY.includes.map((i) => (
+          <li key={i} className={`flex items-start gap-3 text-sm ${dark ? "text-white/80" : "text-ink-2"}`}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="mt-0.5 size-4 shrink-0 text-[#16a34a]" aria-hidden="true">
+              <path d="M5 12l5 5L20 7" />
+            </svg>
+            {i}
+          </li>
+        ))}
+      </ul>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href={DISCOVERY.pay} target="_blank" rel="noopener" className={`rounded-full px-6 py-3.5 text-center text-sm font-semibold ${dark ? "bg-white text-ink" : "bg-ink text-white"}`}>
+          {`1 · Pay ${DISCOVERY.price}`}
+        </a>
+        <Link href="/book#schedule" className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold ${dark ? "border-white/20 text-white" : "border-black/10 text-ink"}`}>
+          2 · Pick your time
+        </Link>
+      </div>
     </div>
   );
 }

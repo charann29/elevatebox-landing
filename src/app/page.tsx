@@ -6,6 +6,7 @@ import {
   CLIENTS,
   COMPANY,
   CREDENTIALS,
+  DISCOVERY,
   FAQS,
   PROJECTS,
   STATS,
@@ -16,7 +17,7 @@ import {
   OG_IMG,
 } from "@/lib/content";
 import { Header, Footer, PillCta } from "@/components/site";
-import { QuoteForm } from "@/components/blocks";
+import { DiscoveryOffer } from "@/components/blocks";
 import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -67,7 +68,9 @@ const COMPARE: [string, string, string, string][] = [
   ["Who owns the code", "You, from day one", "+You", "Often handed over at the end"],
   ["Pricing", "Fixed discovery, then agreed", "Salaries, whether busy or not", "A guess that grows"],
   ["Range of skills", "Design, apps, web, cloud, AI", "Whoever you managed to hire", "Depends on the team you get"],
-  ["After launch", "Same team keeps it running", "If they stay", "Often a new contract"],
+  ["Design", "Modern, original, built to spec", "Depends on who you hire", "Agency styles vary"],
+  ["Focus", "Your product, with weekly updates", "Internal priorities", "Many clients at once"],
+  ["After launch", "Same team keeps it running", "If they stay", "Often ends at delivery"],
 ];
 
 // Soft backdrops behind each product phone, and the 3D renders behind the work cards.
@@ -80,6 +83,22 @@ const CARD_TINTS = [
   "bg-linear-to-br/srgb from-[#ffedd5] to-[#fff7ed]",
 ];
 const WORK_BGS = ["/assets/work-bg-dark.jpg", "/assets/work-bg-blue.jpg", "/assets/work-bg-purple.jpg", "/assets/work-bg-green.jpg"];
+
+// Real screenshots of the live products (public pages, captured at phone size). Creator Chart
+// opens behind a sign-in, so it keeps its illustrated screen.
+const REAL_SCREENS = new Set(["voice", "vamshi-farms", "8meds", "medibag", "oneasy"]);
+
+/** A product in a phone frame: the real live screen when we have one, the illustration otherwise. */
+function Phone({ slug, name, className = "" }: { slug: string; name: string; className?: string }) {
+  if (!REAL_SCREENS.has(slug)) {
+    return <Image src={projectImg(slug)} alt={`${name} app`} width={260} height={520} className={`drop-shadow-2xl ${className}`} />;
+  }
+  return (
+    <span className={`block rounded-[2rem] bg-[#0b0b0c] p-[5px] shadow-2xl shadow-black/30 ring-1 ring-white/10 ${className}`}>
+      <Image src={`/assets/real-${slug}.jpg`} alt={`${name}, live app screen`} width={520} height={1126} className="block w-full rounded-[1.65rem]" />
+    </span>
+  );
+}
 
 /** A small tilted icon tile set inline in the headline. */
 function Badge({ src, tilt }: { src: string; tilt: string }) {
@@ -101,9 +120,10 @@ const Icon = ({ d, className = "size-5" }: { d: string; className?: string }) =>
 const CHECK = "M5 12l5 5L20 7";
 const CROSS = "M6 6l12 12M18 6 6 18";
 
-function Heading({ id, title, lead }: { id: string; title: string; lead: string }) {
+function Heading({ id, title, lead, eyebrow }: { id: string; title: string; lead: string; eyebrow: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
+      <p className="mb-4 inline-block rounded-full border border-black/5 bg-white px-3 py-1 text-xs font-medium text-ink-3 shadow-sm">{eyebrow}</p>
       <h2 id={id} className="text-3xl font-bold sm:text-[2.6rem] sm:leading-[1.1]">
         {title}
       </h2>
@@ -134,6 +154,7 @@ export default function Home() {
 
         {/* ── Hero ── */}
         <section className="relative overflow-hidden">
+          <div aria-hidden="true" className="hero-dots pointer-events-none absolute inset-x-0 -top-24 h-[52rem]" />
           <div className={`${COL} relative pb-16 pt-10 text-center lg:pt-16`}>
             <a
               href={VOICE_APP}
@@ -146,17 +167,17 @@ export default function Home() {
               <span aria-hidden="true">→</span>
             </a>
 
-            <h1 className="mx-auto mt-7 max-w-4xl text-[2.5rem] font-bold leading-[1.12] sm:text-6xl lg:text-[4rem]">
+            <h1 className="mx-auto mt-7 max-w-3xl text-[2.25rem] font-bold leading-[1.1] text-[#111827] sm:text-5xl lg:text-[3.4rem]">
               Mobile App <Badge src={serviceIcon(0)} tilt="-rotate-6" /> &amp; AI{" "}
               <Badge src={serviceIcon(20)} tilt="rotate-6" /> Development Company in{" "}
               <span className="bg-linear-to-r/srgb from-brand to-[#3a7bd5] bg-clip-text text-transparent">Hyderabad</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-3">
+            <p className="mx-auto mt-6 max-w-xl font-medium leading-relaxed text-ink-2">
               We help startups and growing businesses go from idea to a product people use — design, engineering,
               launch, and the maintenance afterwards. One hand on design, the other on code.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <PillCta>Book a 30-min call</PillCta>
+              <PillCta>Book a call</PillCta>
               <a
                 href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
                 className="rounded-full border border-black/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink"
@@ -210,10 +231,10 @@ export default function Home() {
               const card = (
                 <>
                   <div className={`grid h-72 place-items-center overflow-hidden rounded-2xl ${CARD_TINTS[k % CARD_TINTS.length]}`}>
-                    <Image src={projectImg(p.slug)} alt={`${p.name} app`} width={260} height={520} className="mt-20 w-44 rotate-3 drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-0" />
+                    <Phone slug={p.slug} name={p.name} className="mt-24 w-44 rotate-3 transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-0" />
                   </div>
                   <p className="mt-4 rounded-2xl rounded-tl-sm bg-canvas px-4 py-3 text-sm leading-relaxed text-ink-2">
-                    {`${COMPANY.name} built ${p.name}: ${p.summary.split(" — ")[0].replace(/\.$/, "")}.`}
+                    {`${COMPANY.name} built ${p.name}: ${p.summary.split(/ — |, /)[0].replace(/\.$/, "")}.`}
                   </p>
                   <p className="ml-auto mt-2 w-fit rounded-2xl rounded-tr-sm bg-ink px-3.5 py-2 text-xs text-white">
                     Live, and still maintained by us.
@@ -259,7 +280,7 @@ export default function Home() {
 
         {/* ── Challenges ── */}
         <Band labelledBy="challenges">
-          <Heading id="challenges" title="The challenges growing businesses face" lead="Most briefs we get start with one of these. Each is something we fix for a living." />
+          <Heading id="challenges" eyebrow="Solutions beyond code" title="The challenges growing businesses face" lead="Most briefs we get start with one of these. Each is something we fix for a living." />
           <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {CHALLENGES.map((c, k) => (
               <li key={c.t} className="rounded-3xl bg-white p-3 ring-1 ring-black/5">
@@ -278,7 +299,7 @@ export default function Home() {
 
         {/* ── Why ElevateBox ── */}
         <Band tint labelledBy="why">
-          <Heading id="why" title={`Why choose ${COMPANY.name}?`} lead="What every engagement guarantees — commitments we control, not numbers we would need to inflate." />
+          <Heading id="why" eyebrow="Why us" title={`Why choose ${COMPANY.name}?`} lead="What every engagement guarantees — commitments we control, not numbers we would need to inflate." />
           <ul className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {GUARANTEES.map((g) => (
               <li key={g.t} className="text-center">
@@ -297,7 +318,7 @@ export default function Home() {
 
         {/* ── How to start ── */}
         <Band labelledBy="start">
-          <Heading id="start" title={`How to get started with ${COMPANY.name}`} lead="No long sales cycle. Three steps from a first call to software in your hands." />
+          <Heading id="start" eyebrow="Getting started" title={`How to get started with ${COMPANY.name}`} lead="No long sales cycle. Three steps from a first call to software in your hands." />
           <div className="mt-14 grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
             <div className="mx-auto w-full max-w-sm rounded-[2rem] bg-ink p-8 text-center text-white shadow-2xl shadow-black/20">
               <svg viewBox="0 0 24 24" className="mx-auto size-16 text-white/80" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" aria-hidden="true">
@@ -323,7 +344,7 @@ export default function Home() {
 
         {/* ── Services ── */}
         <Band tint labelledBy="services">
-          <Heading id="services" title="Solutions tailored for your growth" lead={SERVICES.blurb} />
+          <Heading id="services" eyebrow="Services" title="Solutions tailored for your growth" lead={SERVICES.blurb} />
           <ul className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3">
             {SERVICES.items.slice(0, 9).map((s, k) => (
               <li key={s.slug}>
@@ -345,7 +366,7 @@ export default function Home() {
 
         {/* ── Our work ── */}
         <Band labelledBy="work">
-          <Heading id="work" title="Our work" lead="Every product below was designed and built by this team, and is still maintained by it." />
+          <Heading id="work" eyebrow="Our work" title="Our work" lead="Every product below was designed and built by this team, and is still maintained by it." />
           <ul className="mt-14 grid gap-5 md:grid-cols-2">
             {PROJECTS.slice(0, 4).map((p, k) => (
               <li key={p.slug}>
@@ -354,11 +375,14 @@ export default function Home() {
                   className="group relative block h-96 overflow-hidden rounded-[2rem] bg-ink"
                 >
                   <Image src={WORK_BGS[k]} alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <Image src={projectImg(p.slug)} alt={`${p.name} screens`} width={260} height={520} className="absolute -bottom-36 right-10 w-52 rotate-6 drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-4 group-hover:rotate-3" />
+                  <Phone slug={p.slug} name={p.name} className="absolute -bottom-40 right-10 w-52 rotate-6 transition-transform duration-500 group-hover:-translate-y-4 group-hover:rotate-3" />
                   <div className="relative max-w-[55%] p-7">
                     <p className="text-xs font-semibold uppercase tracking-wider text-white/60">{p.sector}</p>
                     <h3 className="mt-2 text-2xl font-bold text-white">{p.name}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/70">{p.summary}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur transition-colors group-hover:bg-white group-hover:text-ink">
+                      View project <span aria-hidden="true">↗</span>
+                    </span>
                   </div>
                 </Link>
               </li>
@@ -373,7 +397,7 @@ export default function Home() {
 
         {/* ── What makes us different ── */}
         <Band tint labelledBy="different">
-          <Heading id="different" title="What makes us different" lead="The same build, three ways to get it done." />
+          <Heading id="different" eyebrow="The comparison" title="What makes us different" lead="The same build, three ways to get it done." />
           <div className="mt-14 overflow-x-auto rounded-3xl bg-white ring-1 ring-black/5">
             <table className="w-full min-w-[42rem] text-left text-sm">
               <thead>
@@ -417,7 +441,7 @@ export default function Home() {
 
         {/* ── Track record ── */}
         <Band labelledBy="record">
-          <Heading id="record" title="Our track record" lead="Where the people who will build your product have built before." />
+          <Heading id="record" eyebrow="Track record" title="Our track record" lead="Where the people who will build your product have built before." />
           <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { big: String(PROJECTS.length), t: "Products live and maintained", d: "Across AI calling, healthcare, commerce, agriculture and the creator economy." },
@@ -437,7 +461,7 @@ export default function Home() {
 
         {/* ── FAQ, as a conversation ── */}
         <Band tint labelledBy="faq">
-          <Heading id="faq" title="Frequently asked questions" lead="Curiosity is a good sign. Here are the ones we hear most." />
+          <Heading id="faq" eyebrow="FAQs" title="Frequently asked questions" lead="Curiosity is a good sign. Here are the ones we hear most." />
           <div className="mx-auto mt-14 max-w-3xl space-y-4">
             {FAQS.map((f, k) => (
               <details key={f.q} open={k === 0} className="group">
@@ -462,11 +486,11 @@ export default function Home() {
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold text-white sm:text-5xl">You&apos;ve reached the end — now let&apos;s start something new.</h2>
               <p className="mt-4 text-white/60">
-                {`Send the brief, however rough. A person who works on delivery replies within one working day — or call ${COMPANY.phone}.`}
+                {`Start with a ${DISCOVERY.title}: we work through what you need and hand you a written quotation. Or call ${COMPANY.phone}.`}
               </p>
             </div>
-            <div className="mx-auto mt-10 max-w-3xl">
-              <QuoteForm dark />
+            <div className="mx-auto mt-10 max-w-2xl">
+              <DiscoveryOffer dark />
             </div>
             <div className="mt-12 overflow-hidden rounded-3xl bg-white/5 py-5 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
               <ul className="marquee flex w-max gap-3" aria-hidden="true">
