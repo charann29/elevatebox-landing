@@ -1,6 +1,24 @@
 {
   "redirects": [
-    { "source": "/voice", "destination": "https://agents.elevatebox.in/", "permanent": true },
-    { "source": "/voice/:path*", "destination": "https://agents.elevatebox.in/", "permanent": true }
+    {
+      "source": "/voice",
+      "destination": "https://agents.elevatebox.in/",
+      "permanent": true
+    },
+    {
+      "source": "/voice/:path*",
+      "destination": "https://agents.elevatebox.in/",
+      "permanent": true
+    },
+    {
+      "source": "/voiceagents",
+      "destination": "https://agents.elevatebox.in/",
+      "permanent": true
+    },
+    {
+      "source": "/digitalmarketing",
+      "destination": "/services/digital-marketing",
+      "permanent": true
+    }
   ]
 }
