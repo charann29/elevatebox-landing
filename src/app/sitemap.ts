@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/portfolio",
-    "/voice",
     "/mobile-app-development-company-hyderabad",
     "/careers",
     "/blogs",

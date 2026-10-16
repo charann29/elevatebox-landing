@@ -4,10 +4,10 @@ import { COMPANY, FAQS, IMG, serviceIcon } from "@/lib/content";
 
 export function Crumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-xs text-white/60">
+    <nav aria-label="Breadcrumb" className="text-xs text-ink-4">
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
-          <Link href="/" className="hover:text-white">
+          <Link href="/" className="hover:text-ink">
             Home
           </Link>
         </li>
@@ -15,11 +15,11 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
           <li key={i.label} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
             {i.href ? (
-              <Link href={i.href} className="hover:text-white">
+              <Link href={i.href} className="hover:text-ink">
                 {i.label}
               </Link>
             ) : (
-              <span className="text-white/85">{i.label}</span>
+              <span className="text-ink-2">{i.label}</span>
             )}
           </li>
         ))}
@@ -40,23 +40,19 @@ export function PageHero({
   crumbs?: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-brand">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 size-[32rem] rounded-full bg-accent/20 blur-3xl"
-      />
-      <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+    <section className="relative">
+      <div className="guides relative mx-auto max-w-6xl px-5 pb-16 pt-10 lg:px-8 lg:pb-20 lg:pt-14">
         {crumbs && <Crumbs items={crumbs} />}
         {eyebrow && (
-          <p className="mt-6 text-sm font-semibold uppercase tracking-wider text-white/70">
+          <p className="mt-6 inline-block rounded-full border border-black/5 bg-white px-3 py-1 text-xs font-medium text-ink-2">
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-3 max-w-4xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {lead && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-3">
             {lead}
           </p>
         )}
@@ -81,22 +77,22 @@ export function Section({
   tinted?: boolean;
 }) {
   return (
-    <section id={id} className={tinted ? "bg-[#F8FAFC]" : undefined}>
-      <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+    <section id={id} className={tinted ? "bg-canvas-2" : undefined}>
+      <div className="guides mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-24">
         {(eyebrow || title) && (
           <div className="max-w-3xl">
             {eyebrow && (
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+              <p className="text-xs font-semibold uppercase tracking-wider text-ink-4">
                 {eyebrow}
               </p>
             )}
             {title && (
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
                 {title}
               </h2>
             )}
             {lead && (
-              <p className="mt-4 leading-relaxed text-ink-muted">{lead}</p>
+              <p className="mt-4 leading-relaxed text-ink-3">{lead}</p>
             )}
           </div>
         )}
@@ -106,22 +102,16 @@ export function Section({
   );
 }
 
-const TINTS = [
-  "bg-[#E3ECFF]",
-  "bg-[#F0FCFF]",
-  "bg-[#FFF6E9]",
-  "bg-[#EFEAFF]",
-  "bg-[#E7F7EE]",
-  "bg-[#FFEBE6]",
-];
-
 export function BulletGrid({ items }: { items: { t: string; d: string }[] }) {
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((i, n) => (
-        <div key={i.t} className={`rounded-2xl ${TINTS[n % TINTS.length]} p-7`}>
-          <h3 className="font-semibold text-brand">{i.t}</h3>
-          <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">{i.d}</p>
+        <div key={i.t} className="rounded-3xl bg-white p-7 ring-1 ring-black/5">
+          <span aria-hidden="true" className="grid size-8 place-items-center rounded-full bg-canvas text-xs font-semibold text-ink-3">
+            {String(n + 1).padStart(2, "0")}
+          </span>
+          <h3 className="mt-4 text-lg font-bold">{i.t}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-ink-3">{i.d}</p>
         </div>
       ))}
     </div>
@@ -141,20 +131,16 @@ export function LinkCards({
         <Link
           key={i.slug}
           href={`${base}/${i.slug}`}
-          className={`group rounded-2xl ${TINTS[n % TINTS.length]} p-7 transition-transform duration-300 hover:-translate-y-1`}
+          className="group rounded-3xl bg-white p-3 ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1"
         >
-          <Image
-            src={serviceIcon(n)}
-            alt=""
-            width={IMG.icon.w}
-            height={IMG.icon.h}
-            className="mb-5 h-[130px] w-[120px]"
-          />
-          <h3 className="text-lg font-semibold text-brand">{i.name}</h3>
-          <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">
+          <span className="grid h-36 place-items-center rounded-2xl bg-canvas">
+            <Image src={serviceIcon(n)} alt="" width={IMG.icon.w} height={IMG.icon.h} className="h-24 w-auto" />
+          </span>
+          <h3 className="mt-4 px-3 text-lg font-bold">{i.name}</h3>
+          <p className="mt-1.5 px-3 text-sm leading-relaxed text-ink-3">
             {i.tagline}
           </p>
-          <span className="mt-5 inline-block text-sm font-semibold text-brand opacity-0 transition-opacity group-hover:opacity-100">
+          <span className="mt-3 inline-block px-3 pb-3 text-sm font-semibold text-ink opacity-0 transition-opacity group-hover:opacity-100">
             Read more →
           </span>
         </Link>
@@ -207,18 +193,18 @@ export function CtaBand({
   cta?: string;
 }) {
   return (
-    <section className="bg-brand py-14 lg:py-20">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 text-center lg:flex-row lg:justify-between lg:px-8 lg:text-left">
+    <section className="px-3 py-6 sm:px-5">
+      <div className="mx-auto flex max-w-[90rem] flex-col items-center gap-8 rounded-[2rem] bg-ink px-6 py-14 text-center lg:flex-row lg:justify-between lg:px-14 lg:py-16 lg:text-left">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {title}
           </h2>
-          <p className="mt-3 max-w-xl text-white/75">{lead}</p>
+          <p className="mt-3 max-w-xl text-white/60">{lead}</p>
         </div>
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
           <Link
             href="/contact"
-            className="rounded-full bg-white px-8 py-4 text-base font-semibold text-brand transition-transform hover:scale-105"
+            className="rounded-full bg-white px-8 py-4 text-base font-semibold text-ink transition-transform hover:scale-105"
           >
             {cta}
           </Link>
@@ -238,13 +224,13 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
   // ponytail: mailto action — no backend, no email provider, no spam handling.
   // Point `action` at a real endpoint when there is one.
   const field =
-    "w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-sm text-ink outline-none focus:border-ink";
+    "w-full rounded-xl border border-line bg-canvas px-4 py-2.5 text-sm text-ink outline-none focus:border-ink focus:bg-white";
   return (
     <form
       action={`mailto:${COMPANY.email}`}
       method="post"
       encType="text/plain"
-      className={`grid gap-5 rounded-2xl border border-line p-7 ${dark ? "bg-white" : "bg-surface"}`}
+      className={`grid gap-5 rounded-3xl bg-white p-7 text-left ${dark ? "" : "ring-1 ring-black/5"}`}
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="grid gap-1.5">
@@ -304,7 +290,7 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
 
 export function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="max-w-3xl space-y-5 leading-relaxed text-ink-muted [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-brand [&_h3]:mt-8 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-brand [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-ink">
+    <div className="max-w-3xl space-y-5 leading-relaxed text-ink-2 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mt-8 [&_h3]:text-lg [&_h3]:font-semibold [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-ink">
       {children}
     </div>
   );

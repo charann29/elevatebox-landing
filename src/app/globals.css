@@ -14,6 +14,9 @@
   --color-line-soft: #f1f1f3;
   --color-surface: #ffffff;
   --color-surface-2: #fafafa;
+  /* Page canvas: a soft grey so white cards lift off it without shadows. */
+  --color-canvas: #f5f5f5;
+  --color-canvas-2: #efefef;
 
   /* Brand blue, kept as an accent. It should appear a handful of times per
      page — links, one button state, the odd rule. When it is everywhere it
@@ -29,7 +32,8 @@
   --color-accent-soft: #f5f8ff;
   --color-ink-muted: #3f3f46;
 
-  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
   --breakpoint-3xl: 1800px;
@@ -73,7 +77,7 @@ html {
 
 body {
   color: var(--color-ink-2);
-  background: var(--color-surface);
+  background: var(--color-canvas);
   font-feature-settings: "cv11", "ss01";
 }
 
@@ -84,6 +88,8 @@ body {
   h3,
   h4 {
     color: var(--color-ink);
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
 }
@@ -229,24 +235,17 @@ details[open] .chev {
   );
 }
 
-/* Whole page: every band rises in from black and white and takes on its
-   colour as it scrolls into view. Pure CSS, driven by scroll position, so
+/* Whole page: every band fades and rises in as it scrolls into view. Pure CSS, driven by scroll position, so
    nothing is hidden before JS runs. Browsers without scroll timelines
    (Firefox today) just show the page as is. */
 @keyframes band-in {
   from {
-    opacity: 0.15;
-    transform: translateY(56px) scale(0.97);
-    filter: grayscale(1);
-  }
-  60% {
-    opacity: 1;
-    transform: none;
+    opacity: 0;
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
     transform: none;
-    filter: grayscale(0);
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -255,8 +254,8 @@ details[open] .chev {
     body > footer {
       animation: band-in linear both;
       animation-timeline: view();
-      /* Fixed length, so a tall band is fully coloured once its top is 30vh down the screen. */
-      animation-range: entry 0% entry 70vh;
+      /* Fixed length, so a tall band has fully arrived once its top is 60vh down the screen. */
+      animation-range: entry 0% entry 40vh;
     }
   }
 }
@@ -274,4 +273,20 @@ details[open] .chev {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* The page's spine: a centred column framed by dashed guide lines, the way
+   a layout grid shows through a design file. Decorative only. */
+.guides {
+  background-image:
+    linear-gradient(to bottom, #d4d4d8 50%, transparent 50%),
+    linear-gradient(to bottom, #d4d4d8 50%, transparent 50%);
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+  background-position: left top, right top;
+}
+.rule-dash {
+  height: 1px;
+  background-image: linear-gradient(to right, #d4d4d8 50%, transparent 50%);
+  background-size: 10px 1px;
 }

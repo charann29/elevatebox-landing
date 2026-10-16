@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { FloatingActions } from "@/components/site";
 import { OG_IMG } from "@/lib/content";
 import "./globals.css";
 
-// Urbanist — SIL Open Font License, served self-hosted by next/font.
-const urbanist = Urbanist({
-  variable: "--font-urbanist",
+// Inter for reading, Plus Jakarta Sans for headings — both SIL OFL, self-hosted by next/font.
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -22,13 +23,6 @@ export const metadata: Metadata = {
     template: "%s | ElevateBox",
   },
   description: DESC,
-  icons: {
-    icon: [
-      { url: "/favicon.png" },
-      { url: "/assets/app-icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/assets/app-icon.svg",
-  },
   openGraph: {
     title: "ElevateBox — Product Engineering, Design & AI Delivery",
     description: DESC,
@@ -51,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${urbanist.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         {children}
         <FloatingActions />

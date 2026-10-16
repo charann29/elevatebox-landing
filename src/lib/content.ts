@@ -19,6 +19,9 @@ export type Category = {
   items: Entry[];
 };
 
+/* Voice by ElevateBox — the product app. Links point only at routes that are live there. */
+export const VOICE_APP = "https://agents.elevatebox.in";
+
 const b = (...pairs: [string, string][]) => pairs.map(([t, d]) => ({ t, d }));
 
 /* ------------------------------------------------------------------ */
@@ -1143,7 +1146,7 @@ export const PROJECTS: Project[] = [
     summary:
       "AI phone calls for Indian businesses — calls every new lead within seconds in Telugu, Hindi or English, writes down what was said, and books the next step.",
     platforms: ["Web", "Phone"],
-    href: "/voice",
+    href: VOICE_APP,
   },
   {
     slug: "vamshi-farms",
@@ -1786,8 +1789,6 @@ export const getJob = (slug: string) => JOBS.find((j) => j.slug === slug);
 /* SHARED SITE CONTENT                                                 */
 /* ------------------------------------------------------------------ */
 
-/* Voice by ElevateBox — the product app. Links point only at routes that are live there. */
-export const VOICE_APP = "https://agents.elevatebox.in";
 
 export const COMPANY = {
   name: "ElevateBox",
