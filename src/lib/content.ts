@@ -1803,6 +1803,12 @@ export const COMPANY = {
   site: "https://elevatebox.in",
 };
 
+/* AI and coding training. EMPTY ON PURPOSE: add a course only when its name, length, price
+   and next start date are real. /courses lists them when present and otherwise books a
+   planning call. */
+export const COURSES: { name: string; length: string; price: string; starts: string; summary: string }[] = [];
+export const TRAINING_CALL = "https://calendly.com/lsaicharan01/coders-ai-training";
+
 /* The paid first step: a Product Requirement Analysis call that ends in a quotation.
    Pay on Razorpay; its payment page redirects to the cal.com booking link (set in the
    Razorpay dashboard: cal.com/elevatebox/project-discovery-call-quotation), so the

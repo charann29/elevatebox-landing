@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blogs",
     "/contact",
     "/book",
+    "/courses",
+    "/best-ai-developers-in-hyderabad",
     "/privacy-policy",
     "/terms-and-conditions",
     "/cancellation-and-refund",

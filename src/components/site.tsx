@@ -28,6 +28,7 @@ const FLAT_NAV = [
 const TAIL_NAV = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Careers", href: "/careers" },
+  { label: "Courses", href: "/courses" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -270,7 +271,7 @@ export function Header() {
 export function Footer() {
   const recent = POSTS.slice(0, 4);
   const cols = [
-    { h: "Company", links: [...FLAT_NAV, ...TAIL_NAV, { label: "Mobile App Development in Hyderabad", href: "/mobile-app-development-company-hyderabad" }] },
+    { h: "Company", links: [...FLAT_NAV, ...TAIL_NAV, { label: "Mobile App Development in Hyderabad", href: "/mobile-app-development-company-hyderabad" }, { label: "AI Developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" }] },
     ...CATEGORIES.slice(0, 2).map((c) => ({
       h: c.label,
       links: [...c.items.slice(0, 7).map((i) => ({ label: i.name, href: `${c.base}/${i.slug}` })), { label: "View all →", href: c.base }],

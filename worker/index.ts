@@ -1,5 +1,5 @@
-// Serves the exported site. Beyond static files: www → apex, /voice → the Voice
-// product app, and /x → x.html when a same-named folder (Next's RSC .txt files) shadows it.
+// Serves the exported site. Beyond static files: www → apex, /voice and /voiceagents → the
+// Voice product app, /digitalmarketing → its service page, and /x → x.html when a same-named folder (Next's RSC .txt files) shadows it.
 export default {
   async fetch(request: Request, env: { ASSETS: { fetch: typeof fetch } }) {
     const url = new URL(request.url);
@@ -7,8 +7,11 @@ export default {
       url.hostname = "elevatebox.in";
       return Response.redirect(url.toString(), 308);
     }
-    if (/^\/voice(\/|$)/.test(url.pathname)) {
+    if (/^\/voice(agents)?(\/|$)/.test(url.pathname)) {
       return Response.redirect("https://agents.elevatebox.in/", 308);
+    }
+    if (/^\/digitalmarketing\/?$/.test(url.pathname)) {
+      return Response.redirect(`${url.origin}/services/digital-marketing`, 308);
     }
     const res = await env.ASSETS.fetch(request);
     if (res.status !== 404 || /\.\w+$/.test(url.pathname) || url.pathname === "/") return res;
