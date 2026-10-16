@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CATEGORIES, COMPANY, POSTS } from "@/lib/content";
+import { CATEGORIES, COMPANY, POSTS, VOICE_APP } from "@/lib/content";
 import { NavLink } from "@/components/nav-link";
 
 // ponytail: nav dropdowns and FAQ accordions use native <details>/CSS hover.
@@ -32,14 +32,23 @@ const TAIL_NAV = [
   { label: "Contact Us", href: "/contact" },
 ];
 
+// The pill holds what a visitor scans for first; the rest lives in the footer.
+const PILL_CATS = ["services", "industries", "ai-solutions"];
+const PILL_TAIL = [
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "About", href: "/about" },
+];
+
 function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
   const cols = cat.items.length > 12 ? 3 : 2;
   return (
     <li className="group relative">
       <NavLink
         href={cat.base}
-        className="flex cursor-pointer items-center gap-1 whitespace-nowrap py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
-        idleClassName="text-ink-muted group-hover:text-brand"
+        className="flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
+        activeClassName="bg-canvas text-ink"
+        idleClassName="text-ink-2 hover:bg-canvas hover:text-ink"
       >
         {cat.label}
         <svg
@@ -54,11 +63,9 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
           <path d="m6 9 6 6 6-6" />
         </svg>
       </NavLink>
-      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-1 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-        <div className="rounded-2xl border border-black/5 bg-white p-5 shadow-2xl shadow-brand/10">
-          <p className="mb-3 max-w-md px-2 text-xs leading-relaxed text-ink-muted">
-            {cat.blurb}
-          </p>
+      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+        <div className="rounded-3xl border border-black/5 bg-white p-5 shadow-2xl shadow-black/10">
+          <p className="mb-3 max-w-md px-2 text-xs leading-relaxed text-ink-3">{cat.blurb}</p>
           <ul
             className="grid gap-x-4 gap-y-0.5"
             style={{ gridTemplateColumns: `repeat(${cols}, minmax(13rem, 1fr))` }}
@@ -67,7 +74,7 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
               <li key={i.slug}>
                 <Link
                   href={`${cat.base}/${i.slug}`}
-                  className="block whitespace-nowrap rounded-lg px-2 py-1.5 text-sm text-ink-muted transition-colors hover:bg-accent-soft hover:text-brand"
+                  className="block whitespace-nowrap rounded-xl px-2 py-1.5 text-sm text-ink-2 transition-colors hover:bg-canvas hover:text-ink"
                 >
                   {i.name}
                 </Link>
@@ -76,7 +83,7 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
           </ul>
           <Link
             href={cat.base}
-            className="mt-3 block border-t border-black/5 px-2 pt-3 text-sm font-semibold text-brand hover:text-brand-soft"
+            className="mt-3 block border-t border-black/5 px-2 pt-3 text-sm font-semibold text-ink hover:text-brand"
           >
             View all {cat.label.toLowerCase()} →
           </Link>
@@ -97,33 +104,6 @@ const PhoneIcon = ({ className = "size-4" }: { className?: string }) => (
     <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" />
   </svg>
 );
-
-function TopBar() {
-  return (
-    <div className="hidden border-b border-black/5 bg-[#F8FAFC] lg:block">
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between px-5 py-2 text-xs text-ink-3 lg:px-8">
-        <p className="flex items-center gap-2">
-          <span aria-hidden="true" className="size-2 rounded-full bg-[#16a34a]" />
-          {`Timings : ${COMPANY.timings}`}
-        </p>
-        <div className="flex items-center gap-6">
-          <a
-            href={`mailto:${COMPANY.email}`}
-            className="transition-colors hover:text-ink"
-          >
-            {COMPANY.email}
-          </a>
-          <a
-            href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-            className="transition-colors hover:text-ink"
-          >
-            {COMPANY.phone}
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export function FloatingActions() {
   return (
@@ -146,124 +126,117 @@ export function FloatingActions() {
   );
 }
 
-export function Header() {
+const ARROW_UP_RIGHT = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5" aria-hidden="true">
+    <path d="M7 17 17 7M8 7h9v9" />
+  </svg>
+);
+
+/** The page's one primary action, everywhere: a black pill with an arrow chip. */
+export function PillCta({
+  href = "/book",
+  children = "Book a call",
+  light,
+  className = "",
+}: {
+  href?: string;
+  children?: React.ReactNode;
+  light?: boolean;
+  className?: string;
+}) {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <TopBar />
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-6 px-5 lg:px-8">
-        <Link href="/" aria-label={`${COMPANY.name} home`} className="py-2">
-          <Logo className="h-auto w-[10rem] shrink-0 object-contain sm:w-[12rem] lg:w-[220px] 3xl:w-[300px]" />
+    <Link
+      href={href}
+      className={`group inline-flex items-center gap-3 rounded-full py-1.5 pl-5 pr-1.5 text-sm font-semibold shadow-lg transition-transform hover:-translate-y-0.5 ${
+        light ? "bg-white text-ink shadow-black/20" : "bg-ink text-white shadow-black/15"
+      } ${className}`}
+    >
+      {children}
+      <span
+        className={`grid size-8 place-items-center rounded-full transition-transform group-hover:rotate-45 ${
+          light ? "bg-ink text-white" : "bg-white/15 text-white"
+        }`}
+      >
+        {ARROW_UP_RIGHT}
+      </span>
+    </Link>
+  );
+}
+
+export function Header() {
+  const pillCats = CATEGORIES.filter((c) => PILL_CATS.includes(c.key));
+  return (
+    <header className="sticky top-0 z-50 w-full">
+      <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-5 py-4 lg:px-8">
+        <Link href="/" aria-label={`${COMPANY.name} home`} className="shrink-0">
+          <Logo className="h-auto w-[9.5rem] object-contain sm:w-[11rem]" />
         </Link>
 
-        <nav className="hidden xl:block" aria-label="Main">
-          <ul className="flex items-center gap-3 2xl:gap-4 3xl:gap-5">
-            {FLAT_NAV.map((n) => (
-              <li key={n.href}>
-                <NavLink
-                  href={n.href}
-                  exact={n.href === "/"}
-                  className="block cursor-pointer whitespace-nowrap py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
-                >
-                  {n.label}
-                </NavLink>
-              </li>
-            ))}
-            {CATEGORIES.map((c) => (
+        <nav
+          className="hidden rounded-full bg-white px-2 py-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.06)] xl:block"
+          aria-label="Main"
+        >
+          <ul className="flex items-center gap-0.5">
+            {pillCats.map((c) => (
               <Dropdown key={c.key} cat={c} />
             ))}
-            {TAIL_NAV.map((n) => (
+            {PILL_TAIL.map((n) => (
               <li key={n.href}>
                 <NavLink
                   href={n.href}
-                  className="block cursor-pointer whitespace-nowrap py-2 text-xs font-medium transition-colors 2xl:text-[0.7rem] 3xl:text-sm 5xl:text-[1rem]"
+                  className="block whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
+                  activeClassName="bg-canvas text-ink"
+                  idleClassName="text-ink-2 hover:bg-canvas hover:text-ink"
                 >
                   {n.label}
                 </NavLink>
               </li>
             ))}
+            <li>
+              <a
+                href={VOICE_APP}
+                className="flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-semibold text-brand transition-colors hover:bg-brand-wash"
+              >
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-[#16a34a]" />
+                Voice AI
+              </a>
+            </li>
           </ul>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 xl:flex">
-          <div className="text-right">
-            <p className="flex items-center justify-end gap-1.5 text-xs text-ink-3">
-              <PhoneIcon className="size-3.5 text-brand" />
-              For Business :
-            </p>
-            <a
-              href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-              className="mt-0.5 flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-brand transition-colors hover:text-brand-soft"
-            >
-              <span aria-hidden="true">🇮🇳</span>
-              {COMPANY.phone}
-            </a>
-          </div>
-          <Link
-            href="/voice"
-            className="whitespace-nowrap rounded-lg border border-brand px-4 py-2 text-xs font-semibold text-brand transition-colors hover:bg-brand hover:text-white 3xl:text-sm"
-          >
-            Voice AI
-          </Link>
-          <Link
-            href="/contact"
-            className="whitespace-nowrap rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-white shadow-md transition-colors hover:bg-brand-soft 3xl:text-sm"
-          >
-            Free Quote
-          </Link>
+        <div className="hidden xl:block">
+          <PillCta>Book a call</PillCta>
         </div>
 
         {/* Mobile */}
         <details className="xl:hidden">
           <summary
-            className="my-3 flex size-10 cursor-pointer list-none items-center justify-center rounded-lg border border-black/10 text-brand"
+            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-black/5 bg-white text-ink shadow-sm"
             aria-label="Toggle navigation menu"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              aria-hidden="true"
-            >
-              <path d="M3 6h18M3 12h18M3 18h18" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
             </svg>
           </summary>
-          <div className="absolute inset-x-0 top-full max-h-[80vh] overflow-y-auto border-b border-black/5 bg-white p-5 shadow-lg">
+          <div className="absolute inset-x-3 top-full max-h-[80vh] overflow-y-auto rounded-3xl border border-black/5 bg-white p-5 shadow-2xl">
             <nav className="flex flex-col gap-1" aria-label="Mobile">
               {FLAT_NAV.map((n) => (
-                <Link
-                  key={n.href}
-                  href={n.href}
-                  className="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-accent-soft hover:text-brand"
-                >
+                <Link key={n.href} href={n.href} className="rounded-xl px-3 py-2.5 font-medium text-ink-2 hover:bg-canvas hover:text-ink">
                   {n.label}
                 </Link>
               ))}
               {CATEGORIES.map((c) => (
-                <details key={c.key} className="rounded-lg">
-                  <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 font-medium text-ink-muted">
+                <details key={c.key} className="rounded-xl">
+                  <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl px-3 py-2.5 font-medium text-ink-2">
                     {c.label}
-                    <svg
-                      className="chev size-4 transition-transform"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
-                    >
+                    <svg className="chev size-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </summary>
                   <ul className="ml-3 border-l border-black/10 pl-3">
                     {c.items.map((i) => (
                       <li key={i.slug}>
-                        <Link
-                          href={`${c.base}/${i.slug}`}
-                          className="block py-2 text-sm text-ink-muted hover:text-brand"
-                        >
+                        <Link href={`${c.base}/${i.slug}`} className="block py-2 text-sm text-ink-3 hover:text-ink">
                           {i.name}
                         </Link>
                       </li>
@@ -272,41 +245,21 @@ export function Header() {
                 </details>
               ))}
               {TAIL_NAV.map((n) => (
-                <Link
-                  key={n.href}
-                  href={n.href}
-                  className="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-accent-soft hover:text-brand"
-                >
+                <Link key={n.href} href={n.href} className="rounded-xl px-3 py-2.5 font-medium text-ink-2 hover:bg-canvas hover:text-ink">
                   {n.label}
                 </Link>
               ))}
             </nav>
-            <div className="mt-4 space-y-2 border-t border-line pt-4">
-              <a
-                href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-                className="block text-sm font-semibold text-ink"
-              >
-                {COMPANY.phone}
-              </a>
-              <a
-                href={`mailto:${COMPANY.email}`}
-                className="block text-sm text-ink-3"
-              >
-                {COMPANY.email}
-              </a>
+            <a href={VOICE_APP} className="mt-4 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand">
+              Voice AI — AI phone calls
+            </a>
+            <Link href="/book" className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white">
+              Book a call
+            </Link>
+            <div className="mt-4 space-y-1 border-t border-line pt-4 text-sm">
+              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="block font-semibold text-ink">{COMPANY.phone}</a>
+              <a href={`mailto:${COMPANY.email}`} className="block text-ink-3">{COMPANY.email}</a>
             </div>
-            <Link
-              href="/voice"
-              className="mt-4 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand"
-            >
-              Voice AI
-            </Link>
-            <Link
-              href="/contact"
-              className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white"
-            >
-              Free Quote
-            </Link>
           </div>
         </details>
       </div>
@@ -316,142 +269,81 @@ export function Header() {
 
 export function Footer() {
   const recent = POSTS.slice(0, 4);
+  const cols = [
+    { h: "Company", links: [...FLAT_NAV, ...TAIL_NAV, { label: "Mobile App Development in Hyderabad", href: "/mobile-app-development-company-hyderabad" }] },
+    ...CATEGORIES.slice(0, 2).map((c) => ({
+      h: c.label,
+      links: [...c.items.slice(0, 7).map((i) => ({ label: i.name, href: `${c.base}/${i.slug}` })), { label: "View all →", href: c.base }],
+    })),
+    {
+      h: "More",
+      links: [
+        ...CATEGORIES.slice(2).map((c) => ({ label: c.label, href: c.base })),
+        ...recent.map((p) => ({ label: p.title, href: `/blogs/${p.slug}` })),
+      ],
+    },
+  ];
   return (
-    <footer className="relative overflow-hidden bg-[#0c1a38] text-white/65">
-      <div className="relative mx-auto max-w-[90rem] px-5 py-20 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-6">
-          <div className="lg:col-span-2">
-            <div className="inline-flex rounded-xl bg-white px-3 py-2">
-              <Logo className="h-8 w-auto" />
-            </div>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed">
-              {COMPANY.tagline} Product engineering, design, and AI delivery from
-              Hyderabad for clients across India, the UAE, UK, Europe, and the US.
+    <footer className="relative overflow-hidden text-ink-3">
+      {/* The big faded wordmark behind the footer. Decorative only. */}
+      <p
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-4 select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-ink/[0.035]"
+      >
+        ElevateBox
+      </p>
+      <div className="relative mx-auto max-w-6xl px-5 pb-10 pt-24 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
+          <div>
+            <Logo className="h-8 w-auto" />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed">
+              {`${COMPANY.tagline} From Hyderabad, for clients across India, the UAE, UK, Europe and the US.`}
             </p>
-            <dl className="mt-7 space-y-2.5 text-sm">
-              <div className="flex gap-3">
-                <dt className="w-14 shrink-0 text-white/40">Email</dt>
-                <dd>
-                  <a className="hover:text-white" href={`mailto:${COMPANY.email}`}>
-                    {COMPANY.email}
-                  </a>
-                </dd>
+            <dl className="mt-6 space-y-1.5 text-sm">
+              <div>
+                <dt className="sr-only">Email</dt>
+                <dd><a className="hover:text-ink" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></dd>
               </div>
-              <div className="flex gap-3">
-                <dt className="w-14 shrink-0 text-white/40">Phone</dt>
-                <dd>
-                  <a className="hover:text-white" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>
-                    {COMPANY.phone}
-                  </a>
-                </dd>
+              <div>
+                <dt className="sr-only">Phone</dt>
+                <dd><a className="hover:text-ink" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>{COMPANY.phone}</a></dd>
               </div>
-              <div className="flex gap-3">
-                <dt className="w-14 shrink-0 text-white/40">Office</dt>
-                <dd>{COMPANY.address}</dd>
-              </div>
-              <div className="flex gap-3">
-                <dt className="w-14 shrink-0 text-white/40">Hours</dt>
-                <dd>{COMPANY.hours}</dd>
+              <div>
+                <dt className="sr-only">Hours</dt>
+                <dd>{`${COMPANY.address} · ${COMPANY.hours}`}</dd>
               </div>
             </dl>
-            {/* Social pills removed — every one of them pointed at "#".
-                Add them back as real profile URLs; a dead link in the footer
-                undoes more trust than the icon row ever earned. */}
+            <a href={VOICE_APP} className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-semibold text-ink hover:border-ink">
+              <span aria-hidden="true" className="size-1.5 rounded-full bg-[#16a34a]" />
+              Voice by ElevateBox →
+            </a>
           </div>
-
-          {CATEGORIES.slice(0, 3).map((c) => (
-            <div key={c.key}>
-              <h3 className="text-sm font-semibold text-white">{c.label}</h3>
-              <ul className="mt-4 space-y-2">
-                {c.items.slice(0, 8).map((i) => (
-                  <li key={i.slug}>
-                    <Link
-                      href={`${c.base}/${i.slug}`}
-                      className="text-sm transition-colors hover:text-white"
-                    >
-                      {i.name}
+          {cols.map((c) => (
+            <div key={c.h}>
+              <h3 className="text-sm font-semibold text-ink">{c.h}</h3>
+              <ul className="mt-4 space-y-2.5">
+                {c.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-sm leading-snug transition-colors hover:text-ink">
+                      {l.label}
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link href={c.base} className="text-sm font-semibold text-white/90">
-                    View all →
-                  </Link>
-                </li>
               </ul>
             </div>
           ))}
-
-          <div>
-            <h3 className="text-sm font-semibold text-white">Company</h3>
-            <ul className="mt-4 space-y-2">
-              {[...FLAT_NAV, ...TAIL_NAV].map((n) => (
-                <li key={n.href}>
-                  <Link href={n.href} className="text-sm transition-colors hover:text-white">
-                    {n.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/mobile-app-development-company-hyderabad" className="text-sm transition-colors hover:text-white">
-                  Mobile App Development in Hyderabad
-                </Link>
-              </li>
-              <li>
-                <Link href="/ai-solutions" className="text-sm transition-colors hover:text-white">
-                  AI Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations" className="text-sm transition-colors hover:text-white">
-                  Locations
-                </Link>
-              </li>
-            </ul>
-
-            <h3 className="mt-8 text-sm font-semibold text-white">Recent posts</h3>
-            <ul className="mt-4 space-y-3">
-              {recent.map((p) => (
-                <li key={p.slug}>
-                  <Link
-                    href={`/blogs/${p.slug}`}
-                    className="text-sm leading-snug transition-colors hover:text-white"
-                  >
-                    {p.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/12 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {COMPANY.legal}. All rights reserved.
-          </p>
+        <div className="mt-14 flex flex-col gap-4 border-t border-black/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+          <p>{`© ${new Date().getFullYear()} ${COMPANY.legal}. All rights reserved.`}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link className="hover:text-white" href="/privacy-policy">
-              Privacy Policy
-            </Link>
-            <Link className="hover:text-white" href="/terms-and-conditions">
-              Terms &amp; Conditions
-            </Link>
-            <Link className="hover:text-white" href="/cancellation-and-refund">
-              Cancellation &amp; Refund
-            </Link>
-            <Link className="hover:text-white" href="/sitemap-page">
-              Sitemap
-            </Link>
+            <Link className="hover:text-ink" href="/privacy-policy">Privacy Policy</Link>
+            <Link className="hover:text-ink" href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link className="hover:text-ink" href="/cancellation-and-refund">Cancellation &amp; Refund</Link>
+            <Link className="hover:text-ink" href="/sitemap-page">Sitemap</Link>
           </div>
         </div>
       </div>
-      {/* The big faded wordmark that closes the page. Decorative only. */}
-      <p
-        aria-hidden="true"
-        className="pointer-events-none -mb-[0.18em] select-none text-center text-[22vw] font-bold leading-none tracking-tighter text-white/[0.06]"
-      >
-        elevatebox
-      </p>
     </footer>
   );
 }

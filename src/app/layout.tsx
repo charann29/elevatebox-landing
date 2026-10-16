@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import { Inter } from "next/font/google";
 import { FloatingActions } from "@/components/site";
 import { OG_IMG } from "@/lib/content";
 import "./globals.css";
 
-// Urbanist — SIL Open Font License, served self-hosted by next/font.
-const urbanist = Urbanist({
-  variable: "--font-urbanist",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
+// Inter for reading (SIL OFL, self-hosted by next/font). Headings use Satoshi, served from
+// Fontshare's own CDN as its free licence allows — the font file is not in this public repo.
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+const SATOSHI_CSS = "https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap";
 
 const DESC =
   "ElevateBox designs and builds mobile and web products end to end — discovery, design, engineering, launch, and the maintenance afterwards. Hyderabad-based, delivering across India, the UAE, UK, Europe, and the US.";
@@ -22,13 +19,6 @@ export const metadata: Metadata = {
     template: "%s | ElevateBox",
   },
   description: DESC,
-  icons: {
-    icon: [
-      { url: "/favicon.png" },
-      { url: "/assets/app-icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/assets/app-icon.svg",
-  },
   openGraph: {
     title: "ElevateBox — Product Engineering, Design & AI Delivery",
     description: DESC,
@@ -51,7 +41,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${urbanist.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
+        <link rel="stylesheet" href={SATOSHI_CSS} />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         {children}
         <FloatingActions />

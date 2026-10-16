@@ -13,7 +13,7 @@
 - [Mobile app development services](https://elevatebox.in/services/mobile-app-development)
 - [Web development](https://elevatebox.in/services/web-development)
 - [AI solutions](https://elevatebox.in/ai-solutions)
-- [Voice by ElevateBox](https://elevatebox.in/voice)
+- [Voice by ElevateBox](https://agents.elevatebox.in)
 - [Portfolio](https://elevatebox.in/portfolio)
 - [All services](https://elevatebox.in/services)
 - [Industries](https://elevatebox.in/industries)

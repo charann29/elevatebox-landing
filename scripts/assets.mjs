@@ -527,14 +527,6 @@ const txt = (x, y, s, size, fill, weight = 600, anchor = "start") =>
   n++;
 }
 
-{
-  const inner = `
-  <rect width="512" height="512" rx="112" fill="${BRAND}"/>
-  <path d="M256 128 150 340h72l34-72 34 72h72L256 128Z" fill="${ACCENT}"/>
-  <rect x="182" y="360" width="148" height="26" rx="13" fill="#fff" opacity=".9"/>`;
-  write("app-icon.svg", wrap(512, 512, inner, "ElevateBox icon"));
-  n++;
-}
 
 /* ------------------------------------------------------------------ */
 /* 6. BLOG COVERS — 600x400, one per category                          */
