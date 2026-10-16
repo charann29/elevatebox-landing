@@ -134,7 +134,7 @@ const ARROW_UP_RIGHT = (
 
 /** The page's one primary action, everywhere: a black pill with an arrow chip. */
 export function PillCta({
-  href = "/contact",
+  href = "/book",
   children = "Book a call",
   light,
   className = "",
@@ -253,7 +253,7 @@ export function Header() {
             <a href={VOICE_APP} className="mt-4 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand">
               Voice AI — AI phone calls
             </a>
-            <Link href="/contact" className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white">
+            <Link href="/book" className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white">
               Book a call
             </Link>
             <div className="mt-4 space-y-1 border-t border-line pt-4 text-sm">

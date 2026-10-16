@@ -10,6 +10,7 @@ import {
   PROJECTS,
   STATS,
   VOICE_APP,
+  clientLogo,
   projectImg,
   serviceIcon,
   OG_IMG,
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 // One centred column, framed by dashed guides, like the grid of a design file.
-const COL = "mx-auto w-full max-w-6xl px-5 lg:px-8";
+const COL = "mx-auto w-full max-w-5xl px-5 lg:px-8";
 
 const CHALLENGES = [
   { t: "An outdated digital presence", d: "A slow site or a dated app turns customers away before they ever call." },
@@ -68,6 +69,26 @@ const COMPARE: [string, string, string, string][] = [
   ["Range of skills", "Design, apps, web, cloud, AI", "Whoever you managed to hire", "Depends on the team you get"],
   ["After launch", "Same team keeps it running", "If they stay", "Often a new contract"],
 ];
+
+// Soft backdrops behind each product phone, and the 3D renders behind the work cards.
+const CARD_TINTS = [
+  "bg-linear-to-br/srgb from-[#dbeafe] to-[#eef2ff]",
+  "bg-linear-to-br/srgb from-[#dcfce7] to-[#f0fdf4]",
+  "bg-linear-to-br/srgb from-[#cffafe] to-[#ecfeff]",
+  "bg-linear-to-br/srgb from-[#e0e7ff] to-[#f5f3ff]",
+  "bg-linear-to-br/srgb from-[#ede9fe] to-[#fae8ff]",
+  "bg-linear-to-br/srgb from-[#ffedd5] to-[#fff7ed]",
+];
+const WORK_BGS = ["/assets/work-bg-dark.jpg", "/assets/work-bg-blue.jpg", "/assets/work-bg-purple.jpg", "/assets/work-bg-green.jpg"];
+
+/** A small tilted icon tile set inline in the headline. */
+function Badge({ src, tilt }: { src: string; tilt: string }) {
+  return (
+    <span aria-hidden="true" className={`mx-1 inline-grid size-[0.95em] translate-y-[-0.08em] place-items-center rounded-[0.22em] bg-white align-middle shadow-md ring-1 ring-black/5 ${tilt}`}>
+      <Image src={src} alt="" width={120} height={130} className="size-[0.7em]" />
+    </span>
+  );
+}
 
 const SERVICES = CATEGORIES.find((c) => c.key === "services")!;
 const LOCATIONS = CATEGORIES.find((c) => c.key === "locations")!;
@@ -125,8 +146,9 @@ export default function Home() {
               <span aria-hidden="true">→</span>
             </a>
 
-            <h1 className="mx-auto mt-7 max-w-4xl text-[2.6rem] font-bold leading-[1.08] sm:text-6xl lg:text-[4.1rem]">
-              Mobile App &amp; AI Development Company in{" "}
+            <h1 className="mx-auto mt-7 max-w-4xl text-[2.5rem] font-bold leading-[1.12] sm:text-6xl lg:text-[4rem]">
+              Mobile App <Badge src={serviceIcon(0)} tilt="-rotate-6" /> &amp; AI{" "}
+              <Badge src={serviceIcon(20)} tilt="rotate-6" /> Development Company in{" "}
               <span className="bg-linear-to-r/srgb from-brand to-[#3a7bd5] bg-clip-text text-transparent">Hyderabad</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-3">
@@ -143,10 +165,24 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Where a review count usually sits: the team's record, every line of it checkable. */}
-            <ul className="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2">
+            {/* Where a review count usually sits: the clients whose products we run, no invented stars. */}
+            <div className="mt-9 flex items-center justify-center gap-3">
+              <span className="flex -space-x-2.5">
+                {CLIENTS.slice(0, 4).map((c) => (
+                  <Image key={c} src={clientLogo(c)} alt="" width={120} height={100} className="size-9 rounded-full bg-white object-cover ring-2 ring-canvas" />
+                ))}
+                <span className="grid size-9 place-items-center rounded-full bg-ink text-[0.65rem] font-semibold text-white ring-2 ring-canvas">
+                  {`+${PROJECTS.length - 4}`}
+                </span>
+              </span>
+              <span className="text-left text-xs leading-snug text-ink-3">
+                <span className="block font-semibold text-ink">{`${PROJECTS.length} products live`}</span>
+                built and still maintained by us
+              </span>
+            </div>
+            <ul className="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-2">
               {CREDENTIALS.map((c) => (
-                <li key={c.k} title={c.note} className="rounded-full border border-black/5 bg-white px-3.5 py-1.5 text-xs text-ink-3">
+                <li key={c.k} title={c.note} className="rounded-full border border-black/5 bg-white px-3 py-1 text-[0.7rem] text-ink-3">
                   <span className="font-semibold text-ink">{c.k}</span>
                   {` · ${c.v}`}
                 </li>
@@ -158,8 +194,8 @@ export default function Home() {
               <div
                 key={s.label}
                 aria-hidden="true"
-                className={`absolute top-[23rem] hidden w-48 rounded-2xl bg-white p-4 text-left shadow-xl shadow-black/5 ring-1 ring-black/5 xl:block ${
-                  k === 0 ? "-left-10 -rotate-6" : "-right-10 rotate-6"
+                className={`absolute top-60 hidden w-52 rounded-2xl bg-white p-5 text-left shadow-xl shadow-black/5 ring-1 ring-black/5 xl:block ${
+                  k === 0 ? "-left-40 -rotate-6" : "-right-40 rotate-6"
                 }`}
               >
                 <p className="font-display text-2xl font-bold text-ink">{s.value}</p>
@@ -170,14 +206,17 @@ export default function Home() {
 
           {/* Product cards: the work, each with a line on what we built. */}
           <ul className="mx-auto flex max-w-[90rem] snap-x gap-5 overflow-x-auto px-5 pb-6 lg:px-8">
-            {PROJECTS.map((p) => {
+            {PROJECTS.map((p, k) => {
               const card = (
                 <>
-                  <div className="grid h-72 place-items-center overflow-hidden rounded-2xl bg-canvas">
-                    <Image src={projectImg(p.slug)} alt={`${p.name} app`} width={260} height={520} className="mt-16 w-44 drop-shadow-xl transition-transform duration-500 group-hover:-translate-y-3" />
+                  <div className={`grid h-72 place-items-center overflow-hidden rounded-2xl ${CARD_TINTS[k % CARD_TINTS.length]}`}>
+                    <Image src={projectImg(p.slug)} alt={`${p.name} app`} width={260} height={520} className="mt-20 w-44 rotate-3 drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-0" />
                   </div>
                   <p className="mt-4 rounded-2xl rounded-tl-sm bg-canvas px-4 py-3 text-sm leading-relaxed text-ink-2">
-                    {p.summary}
+                    {`${COMPANY.name} built ${p.name}: ${p.summary.split(" — ")[0].replace(/\.$/, "")}.`}
+                  </p>
+                  <p className="ml-auto mt-2 w-fit rounded-2xl rounded-tr-sm bg-ink px-3.5 py-2 text-xs text-white">
+                    Live, and still maintained by us.
                   </p>
                   <div className="mt-4 flex items-center justify-between gap-3">
                     <div>
@@ -266,7 +305,7 @@ export default function Home() {
               </svg>
               <p className="mt-6 font-display text-3xl font-bold leading-tight">Tell us the goal</p>
               <p className="mt-2 text-sm text-white/60">{COMPANY.hours}</p>
-              <Link href="/contact" className="mt-7 block rounded-2xl bg-white/10 px-5 py-3.5 text-sm font-semibold transition-colors hover:bg-white/20">
+              <Link href="/book" className="mt-7 block rounded-2xl bg-white/10 px-5 py-3.5 text-sm font-semibold transition-colors hover:bg-white/20">
                 Free discovery call
               </Link>
             </div>
@@ -312,11 +351,10 @@ export default function Home() {
               <li key={p.slug}>
                 <Link
                   href={p.href ?? "/portfolio"}
-                  className={`group relative block h-80 overflow-hidden rounded-[2rem] ${
-                    ["bg-[#111827]", "bg-[#1d4ed8]", "bg-[#3b0764]", "bg-[#14532d]"][k]
-                  }`}
+                  className="group relative block h-96 overflow-hidden rounded-[2rem] bg-ink"
                 >
-                  <Image src={projectImg(p.slug)} alt={`${p.name} screens`} width={260} height={520} className="absolute -bottom-40 right-8 w-52 rotate-6 drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-4" />
+                  <Image src={WORK_BGS[k]} alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src={projectImg(p.slug)} alt={`${p.name} screens`} width={260} height={520} className="absolute -bottom-36 right-10 w-52 rotate-6 drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-4 group-hover:rotate-3" />
                   <div className="relative max-w-[55%] p-7">
                     <p className="text-xs font-semibold uppercase tracking-wider text-white/60">{p.sector}</p>
                     <h3 className="mt-2 text-2xl font-bold text-white">{p.name}</h3>

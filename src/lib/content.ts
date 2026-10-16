@@ -1801,6 +1801,8 @@ export const COMPANY = {
   address: "Hyderabad, Telangana, India",
   hours: "Mon–Sat, 10:00–19:00 IST",
   site: "https://elevatebox.in",
+  /** Calendly event for the 30-minute discovery call. Empty = /book falls back to WhatsApp and phone. */
+  calendly: "",
 };
 
 /* Where the team has worked and what it has done. Every line here is

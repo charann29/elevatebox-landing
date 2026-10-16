@@ -33,7 +33,7 @@
   --color-ink-muted: #3f3f46;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Satoshi", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
   --breakpoint-3xl: 1800px;
@@ -89,7 +89,7 @@ body {
   h4 {
     color: var(--color-ink);
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
 }

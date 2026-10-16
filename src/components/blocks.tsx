@@ -295,3 +295,32 @@ export function Prose({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
+/** The 30-minute call booking: Calendly inline, or WhatsApp and phone until a link is set. */
+export function BookingEmbed() {
+  if (!COMPANY.calendly) {
+    return (
+      <div className="rounded-3xl bg-white p-10 text-center ring-1 ring-black/5">
+        <p className="font-display text-2xl font-bold text-ink">Pick a time with us directly</p>
+        <p className="mt-2 text-sm text-ink-3">{COMPANY.hours}</p>
+        <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+          <a
+            href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hi, I'd like to book a 30-minute call.")}`}
+            className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white"
+          >
+            Book on WhatsApp
+          </a>
+          <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-black/10 px-6 py-3 text-sm font-semibold text-ink">
+            {`Call ${COMPANY.phone}`}
+          </a>
+        </div>
+      </div>
+    );
+  }
+  const src = `${COMPANY.calendly}?hide_gdpr_banner=1&background_color=ffffff&text_color=0a0a0a&primary_color=0a0a0a`;
+  return (
+    <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-black/5">
+      <iframe src={src} title="Book a 30-minute call" className="h-[720px] w-full" loading="lazy" />
+    </div>
+  );
+}
