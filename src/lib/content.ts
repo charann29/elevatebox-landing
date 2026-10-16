@@ -1804,12 +1804,13 @@ export const COMPANY = {
 };
 
 /* The paid first step: a Product Requirement Analysis call that ends in a quotation.
-   Pay on Razorpay, then pick a slot on cal.com. */
+   Pay on Razorpay; its payment page redirects to the cal.com booking link (set in the
+   Razorpay dashboard: cal.com/elevatebox/project-discovery-call-quotation), so the
+   calendar is only reached after paying. */
 export const DISCOVERY = {
   price: "₹3,500",
   title: "Product Requirement Analysis",
   pay: "https://pages.razorpay.com/elevatebox-prd",
-  book: "https://cal.com/elevatebox/project-discovery-call-quotation",
   includes: [
     "A call with the people who will build it, not a sales desk",
     "Your requirements worked through screen by screen",

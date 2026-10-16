@@ -298,3 +298,18 @@ details[open] .chev {
   opacity: 0.22;
   mask-image: radial-gradient(ellipse 60% 70% at 50% 30%, #000 30%, transparent 75%);
 }
+
+/* Project cards drift sideways on their own and stop under the pointer. The list is doubled
+   in the markup, so -50% lands exactly where it started. Without motion it is a plain scroller. */
+@media (prefers-reduced-motion: no-preference) {
+  .carousel {
+    overflow: hidden;
+  }
+  .carousel-track {
+    animation: marquee 70s linear infinite;
+  }
+  .carousel:hover .carousel-track,
+  .carousel:focus-within .carousel-track {
+    animation-play-state: paused;
+  }
+}

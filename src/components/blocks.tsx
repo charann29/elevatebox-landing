@@ -296,22 +296,9 @@ export function Prose({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** The cal.com scheduler for the Product Requirement Analysis call, inline. */
-export function BookingEmbed() {
-  return (
-    <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-black/5">
-      <iframe
-        src={`${DISCOVERY.book}?embed=true&theme=light&layout=month_view`}
-        title={`Book your ${DISCOVERY.title} call`}
-        className="h-[760px] w-full"
-        loading="lazy"
-      />
-    </div>
-  );
-}
-
-/** The paid first step, as one card: price, what it includes, pay then book. */
+/** The paid first step, as one card: price, what it includes, and one button that pays then books. */
 export function DiscoveryOffer({ dark }: { dark?: boolean }) {
+  const wa = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, a question about the ${DISCOVERY.title}.`)}`;
   return (
     <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white/5 text-white ring-1 ring-white/10" : "bg-white ring-1 ring-black/5"}`}>
       <p className={`text-xs font-semibold uppercase tracking-wider ${dark ? "text-white/50" : "text-ink-4"}`}>Start here</p>
@@ -330,13 +317,16 @@ export function DiscoveryOffer({ dark }: { dark?: boolean }) {
         ))}
       </ul>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href={DISCOVERY.pay} target="_blank" rel="noopener" className={`rounded-full px-6 py-3.5 text-center text-sm font-semibold ${dark ? "bg-white text-ink" : "bg-ink text-white"}`}>
-          {`1 · Pay ${DISCOVERY.price}`}
+        <a href={DISCOVERY.pay} className={`rounded-full px-6 py-3.5 text-center text-sm font-semibold ${dark ? "bg-white text-ink" : "bg-ink text-white"}`}>
+          {`Pay ${DISCOVERY.price} and pick a time`}
         </a>
-        <Link href="/book#schedule" className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold ${dark ? "border-white/20 text-white" : "border-black/10 text-ink"}`}>
-          2 · Pick your time
-        </Link>
+        <a href={wa} className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold ${dark ? "border-white/20 text-white" : "border-black/10 text-ink"}`}>
+          Ask a question first
+        </a>
       </div>
+      <p className={`mt-4 text-xs ${dark ? "text-white/45" : "text-ink-4"}`}>
+        Secure payment on Razorpay. The calendar opens as soon as it goes through.
+      </p>
     </div>
   );
 }

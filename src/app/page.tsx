@@ -38,12 +38,12 @@ export const metadata: Metadata = {
 const COL = "mx-auto w-full max-w-5xl px-5 lg:px-8";
 
 const CHALLENGES = [
-  { t: "An outdated digital presence", d: "A slow site or a dated app turns customers away before they ever call." },
-  { t: "No technical team in-house", d: "Hiring engineers is slow and costly, and one hire cannot cover design, apps and cloud." },
-  { t: "Manual, repetitive work", d: "Data copied between tools by hand, leads followed up late, reports built every Monday." },
-  { t: "Agencies that disappear", d: "The site launches, the invoice is paid, and nobody answers when something breaks." },
-  { t: "Estimates that keep growing", d: "A quote that was a guess, a scope that drifts, and a bill that drifts with it." },
-  { t: "AI without a business case", d: "Pilots that impress in a demo and save nobody any time in practice." },
+  { img: "/assets/challenge-presence.jpg", t: "An outdated digital presence", d: "A slow site or a dated app turns customers away before they ever call." },
+  { img: "/assets/challenge-team.jpg", t: "No technical team in-house", d: "Hiring engineers is slow and costly, and one hire cannot cover design, apps and cloud." },
+  { img: "/assets/challenge-manual.jpg", t: "Manual, repetitive work", d: "Data copied between tools by hand, leads followed up late, reports built every Monday." },
+  { img: "/assets/challenge-agency.jpg", t: "Agencies that disappear", d: "The site launches, the invoice is paid, and nobody answers when something breaks." },
+  { img: "/assets/challenge-estimate.jpg", t: "Estimates that keep growing", d: "A quote that was a guess, a scope that drifts, and a bill that drifts with it." },
+  { img: "/assets/challenge-ai.jpg", t: "AI without a business case", d: "Pilots that impress in a demo and save nobody any time in practice." },
 ];
 
 const GUARANTEES = [
@@ -226,8 +226,10 @@ export default function Home() {
           </div>
 
           {/* Product cards: the work, each with a line on what we built. */}
-          <ul className="mx-auto flex max-w-[90rem] snap-x gap-5 overflow-x-auto px-5 pb-6 lg:px-8">
-            {PROJECTS.map((p, k) => {
+          <div className="carousel overflow-x-auto pb-6 [mask-image:linear-gradient(90deg,transparent,#000_4%,#000_96%,transparent)]">
+          <ul className="carousel-track flex w-max gap-5 px-5">
+            {[...PROJECTS, ...PROJECTS].map((p, i) => {
+              const k = i % PROJECTS.length;
               const card = (
                 <>
                   <div className={`grid h-72 place-items-center overflow-hidden rounded-2xl ${CARD_TINTS[k % CARD_TINTS.length]}`}>
@@ -253,7 +255,7 @@ export default function Home() {
                 </>
               );
               return (
-                <li key={p.slug} className="w-[19rem] shrink-0 snap-start">
+                <li key={`${p.slug}-${i}`} aria-hidden={i >= PROJECTS.length || undefined} className="w-[19rem] shrink-0">
                   {p.href ? (
                     <a href={p.href} className="group block h-full rounded-3xl bg-white p-4 ring-1 ring-black/5 transition-shadow hover:shadow-xl">
                       {card}
@@ -265,6 +267,7 @@ export default function Home() {
               );
             })}
           </ul>
+          </div>
 
           {/* Client wordmarks, scrolling. Text, not logos: no clipart next to real work. */}
           <div className="relative mt-8 overflow-hidden border-y border-black/5 bg-white/60 py-6 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
@@ -282,10 +285,10 @@ export default function Home() {
         <Band labelledBy="challenges">
           <Heading id="challenges" eyebrow="Solutions beyond code" title="The challenges growing businesses face" lead="Most briefs we get start with one of these. Each is something we fix for a living." />
           <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {CHALLENGES.map((c, k) => (
-              <li key={c.t} className="rounded-3xl bg-white p-3 ring-1 ring-black/5">
-                <div className="grid h-36 place-items-center rounded-2xl bg-canvas">
-                  <Image src={serviceIcon(k * 3)} alt="" width={120} height={130} className="h-24 w-auto opacity-90" />
+            {CHALLENGES.map((c) => (
+              <li key={c.t} className="group rounded-3xl bg-white p-3 ring-1 ring-black/5">
+                <div className="overflow-hidden rounded-2xl bg-[#ececec]">
+                  <Image src={c.img} alt="" width={640} height={640} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="px-3 pb-3 pt-4">
                   <span className="rounded-full bg-[#fee2e2] px-2 py-0.5 text-[0.7rem] font-semibold text-[#b91c1c]">Problem</span>
@@ -443,19 +446,54 @@ export default function Home() {
         <Band labelledBy="record">
           <Heading id="record" eyebrow="Track record" title="Our track record" lead="Where the people who will build your product have built before." />
           <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { big: String(PROJECTS.length), t: "Products live and maintained", d: "Across AI calling, healthcare, commerce, agriculture and the creator economy." },
-              { big: "AIR 14", t: CREDENTIALS[0].k, d: CREDENTIALS[0].note },
-              { big: "120s → 7s", t: CREDENTIALS[1].k, d: CREDENTIALS[1].note },
-            ].map((a) => (
-              <li key={a.t} className="rounded-3xl bg-white p-3 ring-1 ring-black/5">
-                <div className="grid h-40 place-items-center rounded-2xl bg-canvas font-display text-5xl font-extrabold tracking-tight text-ink">{a.big}</div>
-                <div className="px-3 pb-3 pt-4">
-                  <h3 className="text-lg font-bold">{a.t}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-3">{a.d}</p>
-                </div>
-              </li>
-            ))}
+            <li className="rounded-3xl bg-white p-3 ring-1 ring-black/5">
+              <div className="relative h-48 overflow-hidden rounded-2xl bg-linear-to-br/srgb from-[#e0e7ff] to-[#f5f3ff]">
+                {["voice", "8meds", "vamshi-farms"].map((slug, k) => (
+                  <Phone
+                    key={slug}
+                    slug={slug}
+                    name={slug}
+                    className={`absolute top-6 w-24 ${["left-[12%] -rotate-12", "left-1/2 z-10 -translate-x-1/2", "right-[12%] rotate-12"][k]}`}
+                  />
+                ))}
+              </div>
+              <div className="px-3 pb-3 pt-4">
+                <h3 className="text-lg font-bold">{`${PROJECTS.length} products live`}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink-3">Across AI calling, healthcare, commerce, agriculture and the creator economy — all still maintained by us.</p>
+              </div>
+            </li>
+            <li className="rounded-3xl bg-white p-3 ring-1 ring-black/5">
+              <div className="relative grid h-48 place-items-center overflow-hidden rounded-2xl bg-canvas">
+                <p className="font-display text-7xl font-black tracking-tighter text-ink/90">AIR 14</p>
+                {["Flutter", "Next.js", "AI agents", "Swift", "Node.js", "AWS"].map((t, k) => (
+                  <span
+                    key={t}
+                    className="absolute rounded-full bg-white px-2.5 py-1 text-[0.65rem] font-medium text-ink-2 shadow-sm ring-1 ring-black/5"
+                    style={{ left: `${[6, 38, 68, 8, 40, 72][k]}%`, top: `${[8, 6, 9, 80, 83, 80][k]}%` }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="px-3 pb-3 pt-4">
+                <h3 className="text-lg font-bold">{`${CREDENTIALS[0].k} · ${CREDENTIALS[0].v}`}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink-3">{`${CREDENTIALS[0].note}. The same engineers build your product.`}</p>
+              </div>
+            </li>
+            <li className="rounded-3xl bg-white p-3 ring-1 ring-black/5">
+              <div className="relative h-48 overflow-hidden rounded-2xl bg-canvas p-5">
+                <p className="font-display text-2xl font-bold text-ink">120s → 7s</p>
+                <p className="text-xs text-ink-4">API response time</p>
+                <svg viewBox="0 0 300 100" className="absolute inset-x-0 bottom-0 h-24 w-full" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0 12 C60 14 90 20 120 40 S190 88 230 92 300 94 300 94 V100 H0 Z" fill="#dcfce7" />
+                  <path d="M0 12 C60 14 90 20 120 40 S190 88 230 92 300 94 300 94" fill="none" stroke="#16a34a" strokeWidth="2.5" />
+                </svg>
+              </div>
+              <div className="px-3 pb-3 pt-4">
+                <h3 className="text-lg font-bold">{`${CREDENTIALS[1].k} engineering`}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink-3">{`${CREDENTIALS[1].note} — the kind of work that keeps your app fast as it grows.`}</p>
+              </div>
+            </li>
           </ul>
         </Band>
 
@@ -472,7 +510,7 @@ export default function Home() {
                   {f.q}
                 </summary>
                 <div className="mt-3 flex max-w-[90%] items-end gap-3">
-                  <Image src="/icon.png" alt="" width={32} height={32} className="size-8 shrink-0 rounded-full bg-white" />
+                  <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-full bg-brand font-display text-[0.65rem] font-bold text-white">EB</span>
                   <p className="rounded-3xl rounded-bl-md bg-white px-5 py-3.5 text-sm leading-relaxed text-ink-2 ring-1 ring-black/5">{f.a}</p>
                 </div>
               </details>
