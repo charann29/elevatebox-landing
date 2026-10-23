@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { POSTS, getPost, postCover, OG_IMG } from "@/lib/content";
+import { COMPANY, POSTS, getPost, postCover, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
+import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 
 export const dynamicParams = false;
 
@@ -21,7 +22,8 @@ export async function generateMetadata({
   const p = getPost(slug);
   if (!p) return {};
   return {
-    title: `${p.title}`,
+    // Long titles drop the " | ElevateBox" suffix so Google shows them whole.
+    title: p.title.length > 47 ? { absolute: p.title } : p.title,
     description: p.excerpt,
     alternates: { canonical: `/blogs/${p.slug}` },
     openGraph: { images: [OG_IMG],
@@ -61,6 +63,21 @@ export default async function PostPage({
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd
+          json={ld(
+            ORG,
+            {
+              "@type": "BlogPosting",
+              headline: p.title,
+              description: p.excerpt,
+              datePublished: p.date,
+              mainEntityOfPage: `${COMPANY.site}/blogs/${p.slug}`,
+              author: { "@id": ORG["@id"] },
+              publisher: { "@id": ORG["@id"] },
+            },
+            breadcrumb([{ name: "Blogs", path: "/blogs" }, { name: p.title, path: `/blogs/${p.slug}` }]),
+          )}
+        />
         <PageHero
           eyebrow={p.category}
           title={p.title}
