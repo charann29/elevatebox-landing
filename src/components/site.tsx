@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CATEGORIES, COMPANY, POSTS, VOICE_APP } from "@/lib/content";
+import { CATEGORIES, COMPANY, POSTS, VOICE_APP, VOICE_SEO } from "@/lib/content";
 import { NavLink } from "@/components/nav-link";
 
 // ponytail: nav dropdowns and FAQ accordions use native <details>/CSS hover.
@@ -347,6 +347,13 @@ export function Footer() {
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#16a34a]" />
               Voice by ElevateBox →
             </a>
+            <ul className="mt-4 space-y-2 text-sm">
+              {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.pricing].map((l) => (
+                <li key={l.href}>
+                  <a href={l.href} className="transition-colors hover:text-white">{l.label}</a>
+                </li>
+              ))}
+            </ul>
           </div>
           {cols.map((c) => (
             <div key={c.h}>

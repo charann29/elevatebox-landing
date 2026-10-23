@@ -10,6 +10,7 @@ import {
   FAQS,
   PROJECTS,
   VOICE_APP,
+  VOICE_SEO,
   clientLogo,
   serviceIcon,
   OG_IMG,
@@ -57,7 +58,14 @@ const VOICE_FEATURES = [
   { t: "Books the next step", d: "Site visits, appointments and callbacks fixed on the call and saved with the lead.", icon: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" },
 ];
 
-const VOICE_USES = ["Real estate", "Clinics & hospitals", "Education & coaching", "Insurance & loans", "Automobile dealers", "D2C & e-commerce"];
+const VOICE_USES = [
+  { t: "Real estate", href: `${VOICE_APP}/best/ai-voice-agent-real-estate` },
+  { t: "Clinics & hospitals", href: `${VOICE_APP}/best/ai-voice-agent-hospitals-clinics` },
+  { t: "Education & coaching", href: `${VOICE_APP}/best/ai-voice-agent-coaching-admissions` },
+  { t: "Insurance & loans", href: `${VOICE_APP}/best/ai-voice-agent-loans-insurance` },
+  { t: "Automobile dealers", href: `${VOICE_APP}/best/ai-voice-agent-car-dealerships` },
+  { t: "D2C & e-commerce", href: VOICE_APP },
+];
 
 // An example call, as the product shows it. Illustrative, not a customer recording.
 const CALL_LINES: { who: "ai" | "lead"; text: string }[] = [
@@ -352,11 +360,15 @@ export default function Home() {
                 <p className="text-sm text-white/55">Built for</p>
                 <ul className="flex flex-wrap justify-center gap-2">
                   {VOICE_USES.map((u) => (
-                    <li key={u} className="rounded-full bg-white/[0.06] px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm text-white/80 ring-1 ring-white/10">{u}</li>
+                    <li key={u.t}>
+                      <a href={u.href} className="block rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/80 ring-1 ring-white/10 transition-colors hover:bg-white/[0.12] hover:text-white sm:px-4 sm:py-2 sm:text-sm">
+                        {u.t}
+                      </a>
+                    </li>
                   ))}
                 </ul>
-                <a href={VOICE_APP} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
-                  Prepaid, from ₹3.50 a minute — see how it works →
+                <a href={VOICE_SEO.pricing.href} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
+                  Prepaid, from ₹3.50 a minute — see AI voice agent pricing →
                 </a>
               </div>
             </div>

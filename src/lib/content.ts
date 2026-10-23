@@ -22,6 +22,17 @@ export type Category = {
 /* Voice by ElevateBox — the product app. Links point only at routes that are live there. */
 export const VOICE_APP = "https://agents.elevatebox.in";
 
+/** Voice's own SEO pages on agents.elevatebox.in (all indexable), linked from this site. */
+export const VOICE_SEO = {
+  hyderabad: { label: "Best AI voice agent in Hyderabad", href: `${VOICE_APP}/best/ai-voice-agent-hyderabad` },
+  telugu: { label: "AI voice agent in Telugu", href: `${VOICE_APP}/best/ai-voice-agent-telugu` },
+  pricing: { label: "AI voice agent pricing in India", href: `${VOICE_APP}/guides/ai-voice-agent-pricing-india` },
+  realEstateHyd: { label: "AI voice agent for real estate in Hyderabad", href: `${VOICE_APP}/best/ai-voice-agent-real-estate-hyderabad` },
+  clinicsHyd: { label: "AI voice agent for hospitals and clinics in Hyderabad", href: `${VOICE_APP}/best/ai-voice-agent-hospitals-clinics-hyderabad` },
+  coachingHyd: { label: "AI voice agent for coaching admissions in Hyderabad", href: `${VOICE_APP}/best/ai-voice-agent-coaching-admissions-hyderabad` },
+  loansHyd: { label: "AI voice agent for loans and insurance in Hyderabad", href: `${VOICE_APP}/best/ai-voice-agent-loans-insurance-hyderabad` },
+};
+
 const b = (...pairs: [string, string][]) => pairs.map(([t, d]) => ({ t, d }));
 
 /* ------------------------------------------------------------------ */
