@@ -215,13 +215,13 @@ export default function Home() {
             <div>
               <a
                 href={VOICE_APP}
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1.5 pl-2 pr-3 text-xs text-white/80 transition-colors hover:border-white/30"
+                className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1.5 pl-2 pr-3 text-xs text-white/80 lg:inline-flex transition-colors hover:border-white/30"
               >
                 <span className="rounded-full bg-[#22c55e]/15 px-2 py-0.5 font-semibold text-[#4ade80]">New</span>
                 Voice — India&apos;s best conversational voice agent
                 <span aria-hidden="true">→</span>
               </a>
-              <h1 className="mt-7 text-[2.6rem] font-bold leading-[1.02] text-white sm:text-6xl lg:text-[4.4rem]">
+              <h1 className="text-[2.6rem] lg:mt-7 font-bold leading-[1.02] text-white sm:text-6xl lg:text-[4.4rem]">
                 Mobile App &amp; AI Development Company in <span className="text-gradient">Hyderabad</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
@@ -253,7 +253,7 @@ export default function Home() {
             </div>
 
             {/* The flagship, live: Voice's own screen with a call in progress over it. */}
-            <a href={VOICE_APP} aria-label={`Try ${PROJECTS.find((p) => p.slug === "voice")!.name}`} className="group relative mx-auto block h-[30rem] w-full max-w-md sm:h-[36rem]">
+            <a href={VOICE_APP} aria-label={`Try ${PROJECTS.find((p) => p.slug === "voice")!.name}`} className="group relative mx-auto hidden h-[36rem] w-full max-w-md lg:block">
               <span aria-hidden="true" className="absolute inset-x-6 top-1/4 h-72 rounded-full bg-[#22c55e]/20 blur-3xl" />
               <span aria-hidden="true" className="absolute inset-x-16 top-1/3 h-64 rounded-full bg-electric/35 blur-3xl" />
               <Phone slug="voice" name="Voice" className="float absolute right-2 top-0 w-[54%] rotate-3 sm:right-4" />
