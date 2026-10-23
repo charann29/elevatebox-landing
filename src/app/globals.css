@@ -15,8 +15,16 @@
   --color-surface: #ffffff;
   --color-surface-2: #fafafa;
   /* Page canvas: a soft grey so white cards lift off it without shadows. */
-  --color-canvas: #f5f5f5;
-  --color-canvas-2: #efefef;
+  --color-canvas: #f6f7f9;
+  --color-canvas-2: #eef0f4;
+
+  /* Night: the dark bands (header, heroes, the closing card, footer). A blue-black, not grey. */
+  --color-night: #060912;
+  --color-night-2: #0c1222;
+  --color-night-3: #141b2e;
+  /* Electric: the brand blue, lifted so it carries on night. The logo's #013186 disappears there. */
+  --color-electric: #3d6bff;
+  --color-electric-2: #7c9bff;
 
   /* Brand blue, kept as an accent. It should appear a handful of times per
      page — links, one button state, the odd rule. When it is everywhere it
@@ -77,11 +85,11 @@ html {
 
 body {
   color: var(--color-ink-2);
-  background: var(--color-canvas);
+  background: #fff;
   font-feature-settings: "cv11", "ss01";
 }
 
-/* Layered, so a heading's own colour utility (white on a navy hero) wins. */
+/* Layered, so a heading's own colour utility (white on a night band) wins. */
 @layer base {
   h1,
   h2,
@@ -89,7 +97,7 @@ body {
   h4 {
     color: var(--color-ink);
     font-family: var(--font-display);
-    letter-spacing: -0.05em;
+    letter-spacing: -0.045em;
     text-wrap: balance;
   }
 }
@@ -99,14 +107,12 @@ p {
 }
 
 ::selection {
-  background: var(--color-ink);
+  background: var(--color-electric);
   color: #fff;
 }
 
-/* One focus treatment everywhere, so keyboard users get the same affordance
-   on a link, a button, and a summary. */
 :where(a, button, summary, input, select, textarea):focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--color-electric);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -119,61 +125,32 @@ details[open] .chev {
   transform: rotate(180deg);
 }
 
-/* Small-caps label used above section headings and on the credential strip. */
-.label {
-  font-size: var(--text-2xs);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--color-ink-4);
+/* The two-colour logo, in white for night bands. */
+.logo-white {
+  filter: brightness(0) invert(1);
 }
 
-/* Slim scrollbar inside the device frames, so the screen reads as an app
-   rather than a browser pane. Still a real scrollbar — keyboard and trackpad
-   scrolling both work. */
-.phone-screen {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(10, 10, 10, 0.28) transparent;
+/* Night band backdrop: a blue glow from the top and a faint grid that fades out. Decorative. */
+.night-glow {
+  background:
+    radial-gradient(60% 55% at 70% 0%, rgba(61, 107, 255, 0.32), transparent 70%),
+    radial-gradient(40% 40% at 0% 100%, rgba(61, 107, 255, 0.12), transparent 70%),
+    var(--color-night);
 }
-.phone-screen::-webkit-scrollbar {
-  width: 4px;
-}
-.phone-screen::-webkit-scrollbar-track {
-  background: transparent;
-}
-.phone-screen::-webkit-scrollbar-thumb {
-  background: rgba(10, 10, 10, 0.22);
-  border-radius: 2px;
-}
-.phone-screen:hover::-webkit-scrollbar-thumb {
-  background: rgba(10, 10, 10, 0.45);
+.night-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
-/* Hover-expand service bands.
-   Collapsed height animates via grid-template-rows 0fr -> 1fr.
-   Gated on (hover: hover) so touch devices — where there is no hover — get
-   every band expanded instead of content they can never reach. */
-@media (hover: hover) and (pointer: fine) {
-  .band-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .band-body > * {
-    overflow: hidden;
-    min-height: 0;
-  }
-  .band:hover .band-body,
-  .band:focus-within .band-body {
-    grid-template-rows: 1fr;
-  }
-  .band .band-chev {
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .band:hover .band-chev,
-  .band:focus-within .band-chev {
-    transform: rotate(180deg);
-  }
+/* Headline accent: brand blue to a lighter blue. */
+.text-gradient {
+  background: linear-gradient(90deg, #7c9bff, #3d6bff 55%, #9fb6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes marquee {
@@ -184,84 +161,23 @@ details[open] .chev {
     transform: translateX(-50%);
   }
 }
-
 .marquee {
   animation: marquee 42s linear infinite;
 }
 
-/* Process carousel: each step change replays these. --dir is 1 going
-   forward, -1 going back, so cards slide in from the side they came from. */
-@keyframes step-slide {
-  from {
-    opacity: 0;
-    transform: translateX(calc(var(--dir, 1) * 48px)) scale(0.92);
+/* Hero phones float a little, out of step with each other. */
+@keyframes float {
+  50% {
+    translate: 0 -10px;
   }
 }
-@keyframes step-rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-}
-@keyframes step-progress {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-.step-slide {
-  animation: step-slide 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.step-rise {
-  animation: step-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.step-progress {
-  transform-origin: left;
-  animation: step-progress var(--step-ms, 4000ms) linear both;
-}
-
-/* Hairline that fades at both ends — used under the hero and above the
-   footer so full-width rules do not terminate abruptly at the viewport edge. */
-.rule-fade {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-line) 12%,
-    var(--color-line) 88%,
-    transparent
-  );
-}
-
-/* Whole page: every band fades and rises in as it scrolls into view. Pure CSS, driven by scroll position, so
-   nothing is hidden before JS runs. Browsers without scroll timelines
-   (Firefox today) just show the page as is. */
-@keyframes band-in {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    main > section,
-    body > footer {
-      animation: band-in linear both;
-      animation-timeline: view();
-      /* Fixed length, so a tall band has fully arrived once its top is 60vh down the screen. */
-      animation-range: entry 0% entry 40vh;
-    }
-  }
+.float {
+  animation: float 6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee {
+  .marquee,
+  .float {
     animation: none;
   }
   html {
@@ -272,44 +188,5 @@ details[open] .chev {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
-  }
-}
-
-/* The page's spine: a centred column framed by dashed guide lines, the way
-   a layout grid shows through a design file. Decorative only. */
-.guides {
-  background-image:
-    linear-gradient(to bottom, #d4d4d8 50%, transparent 50%),
-    linear-gradient(to bottom, #d4d4d8 50%, transparent 50%);
-  background-size: 1px 10px;
-  background-repeat: repeat-y;
-  background-position: left top, right top;
-}
-.rule-dash {
-  height: 1px;
-  background-image: linear-gradient(to right, #d4d4d8 50%, transparent 50%);
-  background-size: 10px 1px;
-}
-
-/* Hero backdrop: a fine dot grid that fades out from the centre, behind the header and headline. */
-.hero-dots {
-  background-image: radial-gradient(rgba(10, 10, 10, 0.55) 1px, transparent 1.2px);
-  background-size: 18px 18px;
-  opacity: 0.22;
-  mask-image: radial-gradient(ellipse 60% 70% at 50% 30%, #000 30%, transparent 75%);
-}
-
-/* Project cards drift sideways on their own and stop under the pointer. The list is doubled
-   in the markup, so -50% lands exactly where it started. Without motion it is a plain scroller. */
-@media (prefers-reduced-motion: no-preference) {
-  .carousel {
-    overflow: hidden;
-  }
-  .carousel-track {
-    animation: marquee 70s linear infinite;
-  }
-  .carousel:hover .carousel-track,
-  .carousel:focus-within .carousel-track {
-    animation-play-state: paused;
   }
 }
