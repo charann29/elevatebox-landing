@@ -225,8 +225,12 @@ export default function Home() {
                 Mobile App &amp; AI Development Company in <span className="text-gradient">Hyderabad</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
-                We take startups and growing businesses from idea to a product people use: design, engineering, launch,
-                and the maintenance afterwards. The team that quotes it is the team that builds it.
+                We&apos;re a{" "}
+                <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-white underline decoration-white/30 underline-offset-4 hover:decoration-white">
+                  mobile app development company in Hyderabad
+                </Link>
+                , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
+                the maintenance afterwards.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a

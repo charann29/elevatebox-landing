@@ -84,6 +84,11 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
             <Link href={cat.base} className="mt-4 text-sm font-semibold text-ink hover:text-electric">
               {`View all ${cat.items.length} →`}
             </Link>
+            {cat.key === "services" && (
+              <Link href="/mobile-app-development-company-hyderabad" className="mt-2 text-sm font-semibold text-electric hover:underline">
+                Mobile app development company in Hyderabad →
+              </Link>
+            )}
             <div className="mt-auto">
               <VoiceCard />
             </div>
@@ -295,7 +300,7 @@ export function Header() {
 export function Footer() {
   const recent = POSTS.slice(0, 4);
   const cols = [
-    { h: "Company", links: [...FLAT_NAV, ...TAIL_NAV, { label: "Mobile App Development in Hyderabad", href: "/mobile-app-development-company-hyderabad" }, { label: "AI Developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" }] },
+    { h: "Company", links: [...FLAT_NAV, ...TAIL_NAV, { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" }, { label: "Hire app developers in Hyderabad", href: "/hire-mobile-app-developers-hyderabad" }, { label: "Web development company in Hyderabad", href: "/web-development-company-hyderabad" }, { label: "Software development company in Hyderabad", href: "/software-development-company-hyderabad" }, { label: "AI Developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" }] },
     ...CATEGORIES.slice(0, 2).map((c) => ({
       h: c.label,
       links: [...c.items.slice(0, 7).map((i) => ({ label: i.name, href: `${c.base}/${i.slug}` })), { label: "View all →", href: c.base }],
