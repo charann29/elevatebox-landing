@@ -221,73 +221,7 @@ export function CtaBand({
   );
 }
 
-export function QuoteForm({ dark }: { dark?: boolean }) {
-  // ponytail: mailto action — no backend, no email provider, no spam handling.
-  // Point `action` at a real endpoint when there is one.
-  const field =
-    "w-full rounded-xl border border-line bg-canvas px-4 py-2.5 text-sm text-ink outline-none focus:border-ink focus:bg-white";
-  return (
-    <form
-      action={`mailto:${COMPANY.email}`}
-      method="post"
-      encType="text/plain"
-      className={`grid gap-5 rounded-3xl bg-white p-7 text-left ${dark ? "" : "ring-1 ring-black/5"}`}
-    >
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="grid gap-1.5">
-          <label htmlFor="qf-name" className="text-sm font-medium text-ink">
-            Name
-          </label>
-          <input id="qf-name" name="name" required className={field} />
-        </div>
-        <div className="grid gap-1.5">
-          <label htmlFor="qf-email" className="text-sm font-medium text-ink">
-            Email
-          </label>
-          <input id="qf-email" name="email" type="email" required className={field} />
-        </div>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="grid gap-1.5">
-          <label htmlFor="qf-phone" className="text-sm font-medium text-ink">
-            Phone
-          </label>
-          <input id="qf-phone" name="phone" type="tel" className={field} />
-        </div>
-        <div className="grid gap-1.5">
-          <label htmlFor="qf-budget" className="text-sm font-medium text-ink">
-            Budget range
-          </label>
-          <select id="qf-budget" name="budget" className={field} defaultValue="">
-            <option value="" disabled>
-              Select a range
-            </option>
-            <option>Under ₹5 lakh</option>
-            <option>₹5–15 lakh</option>
-            <option>₹15–50 lakh</option>
-            <option>Over ₹50 lakh</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-      </div>
-      <div className="grid gap-1.5">
-        <label htmlFor="qf-message" className="text-sm font-medium text-ink">
-          What are you building?
-        </label>
-        <textarea id="qf-message" name="message" rows={4} required className={field} />
-      </div>
-      <button
-        type="submit"
-        className="rounded-full bg-electric px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#2f5cf0]"
-      >
-        Request a quote
-      </button>
-      <p className="text-xs text-ink-muted">
-        We reply within one business day. No sales sequence, no newsletter signup.
-      </p>
-    </form>
-  );
-}
+export { QuoteForm } from "@/components/quote-form";
 
 export function Prose({ children }: { children: React.ReactNode }) {
   return (
