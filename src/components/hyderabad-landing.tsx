@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CLIENTS, COMPANY, PROJECTS, VOICE_APP, clientLogo } from "@/lib/content";
+import { CLIENTS, COMPANY, PROJECTS, VOICE_APP, VOICE_SEO, clientLogo } from "@/lib/content";
 import { AREAS, type HydPage } from "@/lib/hyderabad";
 import { Header, Footer, PillCta } from "@/components/site";
 import { Crumbs, DiscoveryOffer, Faq } from "@/components/blocks";
@@ -157,6 +157,18 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                 <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
                 Try Voice, our AI voice agent
               </a>
+              <div className="mt-10 border-t border-white/10 pt-8">
+                <p className="text-sm font-semibold text-white">AI voice agents in Hyderabad</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.realEstateHyd, VOICE_SEO.clinicsHyd, VOICE_SEO.coachingHyd, VOICE_SEO.loansHyd].map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} className="block rounded-full bg-white/[0.06] px-3.5 py-1.5 text-xs text-white/80 ring-1 ring-white/10 hover:bg-white/[0.12] hover:text-white sm:text-sm">
+                        {l.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
