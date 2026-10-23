@@ -42,6 +42,13 @@ const PROOF = [
   { v: "2 weeks", l: "Between releases you can click and test" },
 ];
 
+// Voice in numbers. The call volume is the figure the team quotes for the product.
+const VOICE_STATS = [
+  { v: "8 lakh", l: "Calls a day, at scale" },
+  { v: "3", l: "Languages: Telugu, Hindi, English" },
+  { v: "Seconds", l: "From a new lead to a call" },
+];
+
 // What a brief usually starts with, and what we do about it.
 const FIXES = [
   { p: "An outdated site or app", f: "Fast, modern sites and apps, designed and built by one team." },
@@ -145,7 +152,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1.5 pl-2 pr-3 text-xs text-white/80 transition-colors hover:border-white/30"
               >
                 <span className="rounded-full bg-[#22c55e]/15 px-2 py-0.5 font-semibold text-[#4ade80]">New</span>
-                Voice — AI phone calls in Telugu, Hindi &amp; English
+                Voice — India&apos;s best conversational voice agent
                 <span aria-hidden="true">→</span>
               </a>
               <h1 className="mt-7 text-[2.6rem] font-bold leading-[1.02] text-white sm:text-6xl lg:text-[4.4rem]">
@@ -206,6 +213,49 @@ export default function Home() {
                 )),
               )}
             </ul>
+          </div>
+        </section>
+
+        {/* ── Voice spotlight: our own product ── */}
+        <section aria-labelledby="voice" className="px-3 pt-6 sm:px-5">
+          <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] ring-1 ring-electric/30">
+            <div aria-hidden="true" className="night-grid absolute inset-0" />
+            <div className={`${COL} relative grid items-center gap-12 py-16 lg:grid-cols-[1.2fr_1fr] lg:py-20`}>
+              <div>
+                <p className="inline-flex items-center gap-2 text-sm font-semibold text-[#4ade80]">
+                  <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#22c55e]" />
+                  Our product · Voice by {COMPANY.name}
+                </p>
+                <h2 id="voice" className="mt-4 text-4xl font-bold leading-[1.05] text-white sm:text-6xl">
+                  India&apos;s best <span className="text-gradient">conversational voice agent</span>
+                </h2>
+                <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/65">
+                  AI phone employees that call every new lead within seconds, talk naturally in Telugu, Hindi or English,
+                  write down what was said, and book the next step.
+                </p>
+                <dl className="mt-8 grid max-w-xl grid-cols-3 gap-2 sm:gap-4">
+                  {VOICE_STATS.map((v) => (
+                    <div key={v.l} className="rounded-2xl bg-white/[0.05] p-3 ring-1 ring-white/10 sm:p-4">
+                      <dt className="sr-only">{v.l}</dt>
+                      <dd>
+                        <p className="whitespace-nowrap font-display text-lg font-bold text-white sm:text-3xl">{v.v}</p>
+                        <p className="mt-1 text-xs leading-snug text-white/55">{v.l}</p>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <PillCta href={VOICE_APP}>Try Voice free</PillCta>
+                  <a href={VOICE_APP} className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5">
+                    Hear a demo call
+                  </a>
+                </div>
+              </div>
+              <a href={VOICE_APP} aria-label={`Open ${voice.name}`} className="relative mx-auto block w-56 sm:w-64">
+                <span aria-hidden="true" className="absolute inset-0 rounded-full bg-electric/40 blur-3xl" />
+                <Phone slug="voice" name={voice.name} className="float relative" />
+              </a>
+            </div>
           </div>
         </section>
 
