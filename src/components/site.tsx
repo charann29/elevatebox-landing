@@ -318,8 +318,8 @@ export function Footer() {
         ElevateBox
       </p>
       <div className="relative mx-auto max-w-7xl px-5 pb-[14vw] pt-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
-          <div>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
+          <div className="col-span-2 lg:col-span-1">
             <Logo white className="h-8 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed">
               {`${COMPANY.tagline} From Hyderabad, for clients across India, the UAE, UK, Europe and the US.`}
