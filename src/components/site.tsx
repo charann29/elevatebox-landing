@@ -41,53 +41,66 @@ const PILL_TAIL = [
   { label: "About", href: "/about" },
 ];
 
-function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
-  const cols = cat.items.length > 12 ? 3 : 2;
+/** The Voice promo that sits in every mega menu and the mobile menu. */
+function VoiceCard() {
   return (
-    <li className="group relative">
+    <a href={VOICE_APP} className="group/v mt-6 block rounded-2xl bg-night p-5 text-white ring-1 ring-electric/30 transition-transform hover:-translate-y-0.5">
+      <span className="flex items-center gap-2 text-xs font-semibold text-[#4ade80]">
+        <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-[#22c55e]" />
+        Voice by {COMPANY.name}
+      </span>
+      <span className="mt-2 block font-display text-lg font-bold leading-snug">India&apos;s best conversational voice agent</span>
+      <span className="mt-1 block text-xs text-white/60">8 lakh calls a day · Telugu, Hindi, English</span>
+      <span className="mt-3 inline-block text-sm font-semibold text-electric-2 group-hover/v:underline">Try it free →</span>
+    </a>
+  );
+}
+
+const CHEVRON = (
+  <svg className="size-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+);
+
+/** A mega menu: spans the header width so long lists never run off the panel, opens on hover and on keyboard focus. */
+function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
+  const many = cat.items.length > 12;
+  return (
+    <li className="group">
       <NavLink
         href={cat.base}
-        className="flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
+        className="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
         activeClassName="bg-white/10 text-white"
-        idleClassName="text-white/70 hover:bg-white/10 hover:text-white"
+        idleClassName="text-white/70 hover:bg-white/10 hover:text-white group-hover:bg-white/10 group-hover:text-white"
       >
         {cat.label}
-        <svg
-          className="size-3.5 transition-transform group-hover:rotate-180"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          aria-hidden="true"
-        >
-          <path d="m6 9 6 6 6-6" />
-        </svg>
+        {CHEVRON}
       </NavLink>
-      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-        <div className="rounded-3xl border border-black/5 bg-white p-5 shadow-2xl shadow-black/10">
-          <p className="mb-3 max-w-md px-2 text-xs leading-relaxed text-ink-3">{cat.blurb}</p>
-          <ul
-            className="grid gap-x-4 gap-y-0.5"
-            style={{ gridTemplateColumns: `repeat(${cols}, minmax(13rem, 1fr))` }}
-          >
+      <div className="invisible absolute inset-x-5 top-full z-50 translate-y-1 pt-2 opacity-0 transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 lg:inset-x-8">
+        <div className="grid grid-cols-[17rem_1fr] overflow-hidden rounded-3xl bg-white shadow-2xl shadow-black/25 ring-1 ring-black/5">
+          <div className="flex flex-col bg-canvas p-7">
+            <p className="text-xs font-semibold uppercase tracking-wider text-electric">{cat.label}</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-3">{cat.blurb}</p>
+            <Link href={cat.base} className="mt-4 text-sm font-semibold text-ink hover:text-electric">
+              {`View all ${cat.items.length} →`}
+            </Link>
+            <div className="mt-auto">
+              <VoiceCard />
+            </div>
+          </div>
+          <ul className={`grid content-start gap-1 p-5 ${many ? "grid-cols-3" : "grid-cols-2"}`}>
             {cat.items.map((i) => (
               <li key={i.slug}>
-                <Link
-                  href={`${cat.base}/${i.slug}`}
-                  className="block whitespace-nowrap rounded-xl px-2 py-1.5 text-sm text-ink-2 transition-colors hover:bg-canvas hover:text-ink"
-                >
-                  {i.name}
+                <Link href={`${cat.base}/${i.slug}`} className="group/i block rounded-xl px-3 py-2.5 transition-colors hover:bg-canvas">
+                  <span className="flex items-center justify-between gap-2 text-sm font-semibold text-ink group-hover/i:text-electric">
+                    {i.name}
+                    <span aria-hidden="true" className="opacity-0 transition-opacity group-hover/i:opacity-100">→</span>
+                  </span>
+                  {!many && <span className="mt-0.5 line-clamp-1 block text-xs text-ink-3">{i.tagline}</span>}
                 </Link>
               </li>
             ))}
           </ul>
-          <Link
-            href={cat.base}
-            className="mt-3 block border-t border-black/5 px-2 pt-3 text-sm font-semibold text-ink hover:text-brand"
-          >
-            View all {cat.label.toLowerCase()} →
-          </Link>
         </div>
       </div>
     </li>
@@ -167,8 +180,20 @@ export function PillCta({
 export function Header() {
   const pillCats = CATEGORIES.filter((c) => PILL_CATS.includes(c.key));
   return (
+    <>
+    {/* Voice, announced above every page. */}
+    <a
+      href={VOICE_APP}
+      className="block bg-linear-to-r/srgb from-[#1d3fd6] via-electric to-[#1d3fd6] px-4 py-2.5 text-center text-xs text-white transition hover:brightness-110 sm:text-sm"
+    >
+      <span aria-hidden="true" className="mr-2 inline-block size-2 animate-pulse rounded-full bg-[#4ade80] align-middle" />
+      <strong className="font-semibold">Voice by {COMPANY.name}</strong>
+      {" — India's best conversational voice agent"}
+      <span className="hidden sm:inline"> · 8 lakh calls a day</span>
+      <span className="ml-2 font-semibold underline underline-offset-4">Try it free →</span>
+    </a>
     <header className="sticky top-0 z-50 w-full border-b border-white/[0.07] bg-night/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="shrink-0">
           <Logo white className="h-auto w-[9.5rem] object-contain sm:w-[10.5rem]" />
         </Link>
@@ -193,10 +218,10 @@ export function Header() {
             <li>
               <a
                 href={VOICE_APP}
-                className="ml-1 flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:border-white/30"
+                className="ml-2 flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[#22c55e] px-4 py-1.5 text-sm font-bold text-night shadow-lg shadow-[#22c55e]/25 transition-transform hover:-translate-y-0.5"
               >
-                <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-[#22c55e]" />
-                Voice AI
+                <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-night" />
+                Try Voice AI
               </a>
             </li>
           </ul>
@@ -217,6 +242,10 @@ export function Header() {
             </svg>
           </summary>
           <div className="absolute inset-x-3 top-full max-h-[80vh] overflow-y-auto rounded-3xl border border-black/5 bg-white p-5 shadow-2xl">
+            <a href={VOICE_APP} className="mb-3 flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-5 py-3 text-sm font-bold text-night">
+              <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-night" />
+              Try Voice — India&apos;s best voice agent
+            </a>
             <nav className="flex flex-col gap-1" aria-label="Mobile">
               {FLAT_NAV.map((n) => (
                 <Link key={n.href} href={n.href} className="rounded-xl px-3 py-2.5 font-medium text-ink-2 hover:bg-canvas hover:text-ink">
@@ -248,10 +277,7 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <a href={VOICE_APP} className="mt-4 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand">
-              Voice AI — AI phone calls
-            </a>
-            <Link href="/book" className="mt-2 block rounded-full bg-electric px-5 py-3 text-center text-sm font-semibold text-white">
+            <Link href="/book" className="mt-4 block rounded-full bg-electric px-5 py-3 text-center text-sm font-semibold text-white">
               Book a call
             </Link>
             <div className="mt-4 space-y-1 border-t border-line pt-4 text-sm">
@@ -262,6 +288,7 @@ export function Header() {
         </details>
       </div>
     </header>
+    </>
   );
 }
 

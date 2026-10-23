@@ -121,7 +121,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-details[open] .chev {
+details[open] > summary .chev {
   transform: rotate(180deg);
 }
 
