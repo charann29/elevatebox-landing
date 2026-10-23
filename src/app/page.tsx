@@ -45,9 +45,74 @@ const PROOF = [
 // Voice in numbers. The call volume is the figure the team quotes for the product.
 const VOICE_STATS = [
   { v: "8 lakh", l: "Calls a day, at scale" },
-  { v: "3", l: "Languages: Telugu, Hindi, English" },
   { v: "Seconds", l: "From a new lead to a call" },
+  { v: "3", l: "Languages: Telugu, Hindi, English" },
+  { v: "10 min", l: "Free when you sign up" },
 ];
+
+const VOICE_FEATURES = [
+  { t: "Calls every lead in seconds", d: "A form fills, an ad converts, a list uploads — your employee is already dialling.", icon: "M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" },
+  { t: "Talks like your best caller", d: "Natural, human-sounding calls in Telugu, Hindi and English.", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
+  { t: "Writes down every word", d: "Transcript, summary and the answers you asked for, on every call.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5" },
+  { t: "Books the next step", d: "Site visits, appointments and callbacks fixed on the call and saved with the lead.", icon: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" },
+];
+
+const VOICE_USES = ["Real estate", "Clinics & hospitals", "Education & coaching", "Insurance & loans", "Automobile dealers", "D2C & e-commerce"];
+
+// An example call, as the product shows it. Illustrative, not a customer recording.
+const CALL_LINES: { who: "ai" | "lead"; text: string }[] = [
+  { who: "ai", text: "నమస్కారం! మీరు నిన్న మా వెబ్‌సైట్‌లో ఫ్లాట్ గురించి అడిగారు కదా?" },
+  { who: "lead", text: "Haan ji, 2BHK dekhna tha. Weekend pe ho sakta hai?" },
+  { who: "ai", text: "Bilkul! Saturday 11 baje site visit book kar doon?" },
+  { who: "lead", text: "Perfect, kar dijiye." },
+];
+
+/** A call in progress: caller, timer, waveform and the transcript as it is written. */
+function CallCard({ large }: { large?: boolean }) {
+  return (
+    <span className="block rounded-3xl bg-white/[0.07] p-5 text-left shadow-2xl shadow-black/40 ring-1 ring-white/15 backdrop-blur-xl">
+      <span className="flex items-center justify-between gap-3">
+        <span className="flex items-center gap-3">
+          <span className="relative grid size-10 place-items-center rounded-full bg-[#22c55e] text-night">
+            <span aria-hidden="true" className="absolute inset-0 animate-ping rounded-full bg-[#22c55e]/40" />
+            <svg viewBox="0 0 24 24" fill="currentColor" className="relative size-4" aria-hidden="true">
+              <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" />
+            </svg>
+          </span>
+          <span>
+            <span className="block text-sm font-semibold text-white">Live call · New lead</span>
+            <span className="block text-xs text-white/55">Example call · 00:42</span>
+          </span>
+        </span>
+        <span aria-hidden="true" className="flex h-6 items-end gap-[3px]">
+          {[0, 1, 2, 3, 4, 5].map((k) => (
+            <span key={k} className="wave w-[3px] rounded-full bg-[#4ade80]" style={{ animationDelay: `${k * 0.12}s` }} />
+          ))}
+        </span>
+      </span>
+      <span className="mt-4 flex flex-col gap-2">
+        {(large ? CALL_LINES : CALL_LINES.slice(0, 3)).map((l) => (
+          <span
+            key={l.text}
+            className={`max-w-[88%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed sm:text-sm ${
+              l.who === "ai" ? "self-start rounded-bl-sm bg-electric text-white" : "self-end rounded-br-sm bg-white/90 text-ink"
+            }`}
+          >
+            {l.text}
+          </span>
+        ))}
+      </span>
+      {large && (
+        <span className="mt-4 flex items-center gap-2 rounded-2xl bg-[#22c55e]/15 px-3.5 py-2.5 text-xs font-semibold text-[#4ade80] sm:text-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="size-4 shrink-0" aria-hidden="true">
+            <path d="M5 12l5 5L20 7" />
+          </svg>
+          Site visit booked · Saturday, 11:00 AM
+        </span>
+      )}
+    </span>
+  );
+}
 
 // What a brief usually starts with, and what we do about it.
 const FIXES = [
@@ -164,13 +229,14 @@ export default function Home() {
                 and the maintenance afterwards. The team that quotes it is the team that builds it.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <PillCta className="justify-between sm:justify-start">Book a call</PillCta>
                 <a
-                  href={WA}
-                  className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
+                  href={VOICE_APP}
+                  className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-6 py-3 text-sm font-bold text-night shadow-lg shadow-[#22c55e]/30 transition-transform hover:-translate-y-0.5"
                 >
-                  WhatsApp us
+                  <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
+                  Try Voice AI free
                 </a>
+                <PillCta className="justify-between sm:justify-start">Book a call</PillCta>
               </div>
 
               <div className="mt-10 flex items-center gap-3">
@@ -186,21 +252,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Three live app screens, fanned. */}
-            <div aria-hidden="true" className="relative mx-auto h-[26rem] w-full max-w-md sm:h-[34rem]">
-              <div className="absolute inset-x-8 top-1/3 h-64 rounded-full bg-electric/30 blur-3xl" />
-              <Phone slug="8meds" name="8Meds" className="float absolute left-0 top-16 w-[38%] -rotate-[10deg] [animation-delay:-2s]" />
-              <Phone slug="vamshi-farms" name="Vamshi Farms" className="float absolute right-0 top-16 w-[38%] rotate-[10deg] [animation-delay:-4s]" />
-              <Phone slug="voice" name="Voice" className="float absolute left-1/2 top-0 z-10 w-[46%] -translate-x-1/2" />
-              <div className="absolute -left-2 bottom-6 z-20 rounded-2xl bg-white/10 px-4 py-3 ring-1 ring-white/15 backdrop-blur-md sm:-left-8">
-                <p className="font-display text-xl font-bold text-white">120s → 7s</p>
-                <p className="text-xs text-white/60">API we sped up at JPMorgan</p>
-              </div>
-              <div className="absolute -right-2 bottom-20 z-20 rounded-2xl bg-white/10 px-4 py-3 ring-1 ring-white/15 backdrop-blur-md sm:-right-6">
-                <p className="font-display text-xl font-bold text-white">AIR 14</p>
-                <p className="text-xs text-white/60">ACM ICPC</p>
-              </div>
-            </div>
+            {/* The flagship, live: Voice's own screen with a call in progress over it. */}
+            <a href={VOICE_APP} aria-label={`Try ${PROJECTS.find((p) => p.slug === "voice")!.name}`} className="group relative mx-auto block h-[30rem] w-full max-w-md sm:h-[36rem]">
+              <span aria-hidden="true" className="absolute inset-x-6 top-1/4 h-72 rounded-full bg-[#22c55e]/20 blur-3xl" />
+              <span aria-hidden="true" className="absolute inset-x-16 top-1/3 h-64 rounded-full bg-electric/35 blur-3xl" />
+              <Phone slug="voice" name="Voice" className="float absolute right-2 top-0 w-[54%] rotate-3 sm:right-4" />
+              <span aria-hidden="true" className="absolute bottom-4 left-0 z-10 w-[78%] max-w-xs">
+                <CallCard />
+              </span>
+              <span aria-hidden="true" className="absolute left-0 top-8 z-10 rounded-2xl bg-white/10 px-4 py-3 ring-1 ring-white/15 backdrop-blur-md">
+                <span className="block font-display text-2xl font-bold text-white">8 lakh</span>
+                <span className="block text-xs text-white/60">calls a day, at scale</span>
+              </span>
+            </a>
           </div>
 
           {/* Credentials and clients, scrolling. Text, not logos. */}
@@ -217,45 +281,80 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Voice spotlight: our own product ── */}
+        {/* ── Voice: the flagship ── */}
         <section aria-labelledby="voice" className="px-3 pt-6 sm:px-5">
-          <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] ring-1 ring-electric/30">
+          <div className="relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] bg-night ring-1 ring-[#22c55e]/25">
+            <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(50%_45%_at_15%_0%,rgba(34,197,94,0.18),transparent_70%),radial-gradient(55%_50%_at_90%_10%,rgba(61,107,255,0.3),transparent_70%)]" />
             <div aria-hidden="true" className="night-grid absolute inset-0" />
-            <div className={`${COL} relative grid items-center gap-12 py-16 lg:grid-cols-[1.2fr_1fr] lg:py-20`}>
-              <div>
-                <p className="inline-flex items-center gap-2 text-sm font-semibold text-[#4ade80]">
+            <div className={`${COL} relative py-20 lg:py-28`}>
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="inline-flex items-center gap-2 rounded-full bg-[#22c55e]/10 px-4 py-1.5 text-sm font-semibold text-[#4ade80] ring-1 ring-[#22c55e]/30">
                   <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#22c55e]" />
-                  Our product · Voice by {COMPANY.name}
+                  {`Our flagship · Voice by ${COMPANY.name}`}
                 </p>
-                <h2 id="voice" className="mt-4 text-4xl font-bold leading-[1.05] text-white sm:text-6xl">
+                <h2 id="voice" className="mt-6 text-4xl font-bold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
                   India&apos;s best <span className="text-gradient">conversational voice agent</span>
                 </h2>
-                <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/65">
-                  AI phone employees that call every new lead within seconds, talk naturally in Telugu, Hindi or English,
-                  write down what was said, and book the next step.
+                <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
+                  An AI phone employee for your business. Describe the job in plain words; it calls every new lead within
+                  seconds, talks naturally in Telugu, Hindi or English, writes down what was said, and books the next step.
                 </p>
-                <dl className="mt-8 grid max-w-xl grid-cols-3 gap-2 sm:gap-4">
-                  {VOICE_STATS.map((v) => (
-                    <div key={v.l} className="rounded-2xl bg-white/[0.05] p-3 ring-1 ring-white/10 sm:p-4">
-                      <dt className="sr-only">{v.l}</dt>
-                      <dd>
-                        <p className="whitespace-nowrap font-display text-lg font-bold text-white sm:text-3xl">{v.v}</p>
-                        <p className="mt-1 text-xs leading-snug text-white/55">{v.l}</p>
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-                <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <PillCta href={VOICE_APP}>Try Voice free</PillCta>
-                  <a href={VOICE_APP} className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5">
-                    Hear a demo call
+                <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+                  <a
+                    href={VOICE_APP}
+                    className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-8 py-4 text-base font-bold text-night shadow-xl shadow-[#22c55e]/30 transition-transform hover:-translate-y-0.5"
+                  >
+                    <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
+                    Get a free demo call
+                  </a>
+                  <a href={VOICE_APP} className="rounded-full border border-white/15 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5">
+                    Start free — 10 minutes on us
                   </a>
                 </div>
               </div>
-              <a href={VOICE_APP} aria-label={`Open ${voice.name}`} className="relative mx-auto block w-56 sm:w-64">
-                <span aria-hidden="true" className="absolute inset-0 rounded-full bg-electric/40 blur-3xl" />
-                <Phone slug="voice" name={voice.name} className="float relative" />
-              </a>
+
+              <dl className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+                {VOICE_STATS.map((v) => (
+                  <div key={v.l} className="rounded-2xl bg-white/[0.05] p-5 text-center ring-1 ring-white/10">
+                    <dt className="sr-only">{v.l}</dt>
+                    <dd>
+                      <p className="whitespace-nowrap font-display text-2xl font-bold text-white sm:text-4xl">{v.v}</p>
+                      <p className="mt-1 text-xs leading-snug text-white/55 sm:text-sm">{v.l}</p>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="mt-16 grid items-center gap-8 lg:grid-cols-[1fr_1.15fr]">
+                <div className="mx-auto w-full max-w-md">
+                  <CallCard large />
+                </div>
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  {VOICE_FEATURES.map((f) => (
+                    <li key={f.t} className="rounded-3xl bg-white/[0.04] p-6 ring-1 ring-white/10 transition-colors hover:bg-white/[0.07]">
+                      <span className="grid size-11 place-items-center rounded-2xl bg-[#22c55e]/15 text-[#4ade80]">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden="true">
+                          <path d={f.icon} />
+                        </svg>
+                      </span>
+                      <h3 className="mt-4 text-lg font-bold text-white">{f.t}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-white/60">{f.d}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-14 flex flex-col items-center gap-5 border-t border-white/10 pt-10 text-center">
+                <p className="text-sm text-white/55">Built for</p>
+                <ul className="flex flex-wrap justify-center gap-2">
+                  {VOICE_USES.map((u) => (
+                    <li key={u} className="rounded-full bg-white/[0.06] px-4 py-2 text-sm text-white/80 ring-1 ring-white/10">{u}</li>
+                  ))}
+                </ul>
+                <a href={VOICE_APP} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
+                  Prepaid, from ₹3.50 a minute — see how it works →
+                </a>
+              </div>
             </div>
           </div>
         </section>
