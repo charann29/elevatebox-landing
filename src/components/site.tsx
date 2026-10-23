@@ -7,14 +7,14 @@ import { NavLink } from "@/components/nav-link";
 // Zero client JS. Swap to a client component only if you need focus trapping
 // or scroll-spy.
 
-export function Logo({ className = "h-9 w-auto" }: { className?: string }) {
+export function Logo({ className = "h-9 w-auto", white }: { className?: string; white?: boolean }) {
   return (
     <Image
       src="/logo.svg"
       alt={COMPANY.name}
       width={180}
       height={50}
-      className={className}
+      className={`${className} ${white ? "logo-white" : ""}`}
       priority
     />
   );
@@ -48,8 +48,8 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
       <NavLink
         href={cat.base}
         className="flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
-        activeClassName="bg-canvas text-ink"
-        idleClassName="text-ink-2 hover:bg-canvas hover:text-ink"
+        activeClassName="bg-white/10 text-white"
+        idleClassName="text-white/70 hover:bg-white/10 hover:text-white"
       >
         {cat.label}
         <svg
@@ -112,7 +112,7 @@ export function FloatingActions() {
       <a
         href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
         aria-label="Call us"
-        className="fixed bottom-6 left-6 z-40 grid size-12 place-items-center rounded-full bg-ink text-white shadow-lg transition-transform hover:scale-110"
+        className="fixed bottom-6 left-6 z-40 grid size-12 place-items-center rounded-full bg-electric text-white shadow-lg shadow-electric/30 transition-transform hover:scale-110"
       >
         <PhoneIcon className="size-5" />
       </a>
@@ -133,7 +133,7 @@ const ARROW_UP_RIGHT = (
   </svg>
 );
 
-/** The page's one primary action, everywhere: a black pill with an arrow chip. */
+/** The page's one primary action, everywhere: a blue pill with an arrow chip. */
 export function PillCta({
   href = "/book",
   children = "Book a call",
@@ -149,7 +149,7 @@ export function PillCta({
     <Link
       href={href}
       className={`group inline-flex items-center gap-3 rounded-full py-1.5 pl-5 pr-1.5 text-sm font-semibold shadow-lg transition-transform hover:-translate-y-0.5 ${
-        light ? "bg-white text-ink shadow-black/20" : "bg-ink text-white shadow-black/15"
+        light ? "bg-white text-ink shadow-black/20" : "bg-electric text-white shadow-electric/30 hover:bg-[#2f5cf0]"
       } ${className}`}
     >
       {children}
@@ -167,16 +167,13 @@ export function PillCta({
 export function Header() {
   const pillCats = CATEGORIES.filter((c) => PILL_CATS.includes(c.key));
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-5 py-4 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-white/[0.07] bg-night/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="shrink-0">
-          <Logo className="h-auto w-[9.5rem] object-contain sm:w-[11rem]" />
+          <Logo white className="h-auto w-[9.5rem] object-contain sm:w-[10.5rem]" />
         </Link>
 
-        <nav
-          className="hidden rounded-full bg-white px-2 py-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.06)] xl:block"
-          aria-label="Main"
-        >
+        <nav className="hidden xl:block" aria-label="Main">
           <ul className="flex items-center gap-0.5">
             {pillCats.map((c) => (
               <Dropdown key={c.key} cat={c} />
@@ -186,8 +183,8 @@ export function Header() {
                 <NavLink
                   href={n.href}
                   className="block whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
-                  activeClassName="bg-canvas text-ink"
-                  idleClassName="text-ink-2 hover:bg-canvas hover:text-ink"
+                  activeClassName="bg-white/10 text-white"
+                  idleClassName="text-white/70 hover:bg-white/10 hover:text-white"
                 >
                   {n.label}
                 </NavLink>
@@ -196,9 +193,9 @@ export function Header() {
             <li>
               <a
                 href={VOICE_APP}
-                className="flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-semibold text-brand transition-colors hover:bg-brand-wash"
+                className="ml-1 flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:border-white/30"
               >
-                <span aria-hidden="true" className="size-1.5 rounded-full bg-[#16a34a]" />
+                <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-[#22c55e]" />
                 Voice AI
               </a>
             </li>
@@ -212,7 +209,7 @@ export function Header() {
         {/* Mobile */}
         <details className="xl:hidden">
           <summary
-            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-black/5 bg-white text-ink shadow-sm"
+            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-white/10 bg-white/5 text-white"
             aria-label="Toggle navigation menu"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -254,7 +251,7 @@ export function Header() {
             <a href={VOICE_APP} className="mt-4 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand">
               Voice AI — AI phone calls
             </a>
-            <Link href="/book" className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white">
+            <Link href="/book" className="mt-2 block rounded-full bg-electric px-5 py-3 text-center text-sm font-semibold text-white">
               Book a call
             </Link>
             <div className="mt-4 space-y-1 border-t border-line pt-4 text-sm">
@@ -285,47 +282,47 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="relative overflow-hidden text-ink-3">
+    <footer className="relative overflow-hidden bg-night text-white/55">
       {/* The big faded wordmark behind the footer. Decorative only. */}
       <p
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-4 select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-ink/[0.035]"
+        className="pointer-events-none absolute inset-x-0 -bottom-[3vw] select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-white/[0.04]"
       >
         ElevateBox
       </p>
-      <div className="relative mx-auto max-w-6xl px-5 pb-10 pt-24 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 pb-[14vw] pt-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div>
-            <Logo className="h-8 w-auto" />
+            <Logo white className="h-8 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed">
               {`${COMPANY.tagline} From Hyderabad, for clients across India, the UAE, UK, Europe and the US.`}
             </p>
             <dl className="mt-6 space-y-1.5 text-sm">
               <div>
                 <dt className="sr-only">Email</dt>
-                <dd><a className="hover:text-ink" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></dd>
+                <dd><a className="hover:text-white" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></dd>
               </div>
               <div>
                 <dt className="sr-only">Phone</dt>
-                <dd><a className="hover:text-ink" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>{COMPANY.phone}</a></dd>
+                <dd><a className="hover:text-white" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>{COMPANY.phone}</a></dd>
               </div>
               <div>
                 <dt className="sr-only">Hours</dt>
                 <dd>{`${COMPANY.address} · ${COMPANY.hours}`}</dd>
               </div>
             </dl>
-            <a href={VOICE_APP} className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-semibold text-ink hover:border-ink">
+            <a href={VOICE_APP} className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-white hover:border-white/40">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#16a34a]" />
               Voice by ElevateBox →
             </a>
           </div>
           {cols.map((c) => (
             <div key={c.h}>
-              <h3 className="text-sm font-semibold text-ink">{c.h}</h3>
+              <h3 className="text-sm font-semibold text-white">{c.h}</h3>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="text-sm leading-snug transition-colors hover:text-ink">
+                    <Link href={l.href} className="text-sm leading-snug transition-colors hover:text-white">
                       {l.label}
                     </Link>
                   </li>
@@ -335,13 +332,13 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-black/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>{`© ${new Date().getFullYear()} ${COMPANY.legal}. All rights reserved.`}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link className="hover:text-ink" href="/privacy-policy">Privacy Policy</Link>
-            <Link className="hover:text-ink" href="/terms-and-conditions">Terms &amp; Conditions</Link>
-            <Link className="hover:text-ink" href="/cancellation-and-refund">Cancellation &amp; Refund</Link>
-            <Link className="hover:text-ink" href="/sitemap-page">Sitemap</Link>
+            <Link className="hover:text-white" href="/privacy-policy">Privacy Policy</Link>
+            <Link className="hover:text-white" href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link className="hover:text-white" href="/cancellation-and-refund">Cancellation &amp; Refund</Link>
+            <Link className="hover:text-white" href="/sitemap-page">Sitemap</Link>
           </div>
         </div>
       </div>

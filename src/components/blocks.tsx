@@ -4,10 +4,10 @@ import { COMPANY, DISCOVERY, FAQS, IMG, serviceIcon } from "@/lib/content";
 
 export function Crumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-xs text-ink-4">
+    <nav aria-label="Breadcrumb" className="text-xs text-white/45">
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
-          <Link href="/" className="hover:text-ink">
+          <Link href="/" className="hover:text-white">
             Home
           </Link>
         </li>
@@ -15,11 +15,11 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
           <li key={i.label} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
             {i.href ? (
-              <Link href={i.href} className="hover:text-ink">
+              <Link href={i.href} className="hover:text-white">
                 {i.label}
               </Link>
             ) : (
-              <span className="text-ink-2">{i.label}</span>
+              <span className="text-white/75">{i.label}</span>
             )}
           </li>
         ))}
@@ -40,19 +40,20 @@ export function PageHero({
   crumbs?: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative">
-      <div className="guides relative mx-auto max-w-6xl px-5 pb-16 pt-10 lg:px-8 lg:pb-20 lg:pt-14">
+    <section className="night-glow relative overflow-hidden">
+      <div aria-hidden="true" className="night-grid absolute inset-0" />
+      <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
         {crumbs && <Crumbs items={crumbs} />}
         {eyebrow && (
-          <p className="mt-6 inline-block rounded-full border border-black/5 bg-white px-3 py-1 text-xs font-medium text-ink-2">
+          <p className="mt-8 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/75">
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
+        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {lead && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-3">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/65">
             {lead}
           </p>
         )}
@@ -77,12 +78,12 @@ export function Section({
   tinted?: boolean;
 }) {
   return (
-    <section id={id} className={tinted ? "bg-canvas-2" : undefined}>
-      <div className="guides mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-24">
+    <section id={id} className={tinted ? "bg-canvas" : undefined}>
+      <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
         {(eyebrow || title) && (
           <div className="max-w-3xl">
             {eyebrow && (
-              <p className="text-xs font-semibold uppercase tracking-wider text-ink-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-electric">
                 {eyebrow}
               </p>
             )}
@@ -106,8 +107,8 @@ export function BulletGrid({ items }: { items: { t: string; d: string }[] }) {
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((i, n) => (
-        <div key={i.t} className="rounded-3xl bg-white p-7 ring-1 ring-black/5">
-          <span aria-hidden="true" className="grid size-8 place-items-center rounded-full bg-canvas text-xs font-semibold text-ink-3">
+        <div key={i.t} className="rounded-3xl bg-white p-7 ring-1 ring-black/[0.07] transition-shadow hover:shadow-xl hover:shadow-black/5">
+          <span aria-hidden="true" className="grid size-9 place-items-center rounded-xl bg-electric/10 font-display text-xs font-bold text-electric">
             {String(n + 1).padStart(2, "0")}
           </span>
           <h3 className="mt-4 text-lg font-bold">{i.t}</h3>
@@ -131,7 +132,7 @@ export function LinkCards({
         <Link
           key={i.slug}
           href={`${base}/${i.slug}`}
-          className="group rounded-3xl bg-white p-3 ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1"
+          className="group rounded-3xl bg-white p-3 ring-1 ring-black/[0.07] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
         >
           <span className="grid h-36 place-items-center rounded-2xl bg-canvas">
             <Image src={serviceIcon(n)} alt="" width={IMG.icon.w} height={IMG.icon.h} className="h-24 w-auto" />
@@ -140,7 +141,7 @@ export function LinkCards({
           <p className="mt-1.5 px-3 text-sm leading-relaxed text-ink-3">
             {i.tagline}
           </p>
-          <span className="mt-3 inline-block px-3 pb-3 text-sm font-semibold text-ink opacity-0 transition-opacity group-hover:opacity-100">
+          <span className="mt-3 inline-block px-3 pb-3 text-sm font-semibold text-electric">
             Read more →
           </span>
         </Link>
@@ -194,7 +195,7 @@ export function CtaBand({
 }) {
   return (
     <section className="px-3 py-6 sm:px-5">
-      <div className="mx-auto flex max-w-[90rem] flex-col items-center gap-8 rounded-[2rem] bg-ink px-6 py-14 text-center lg:flex-row lg:justify-between lg:px-14 lg:py-16 lg:text-left">
+      <div className="night-glow mx-auto flex max-w-7xl flex-col items-center gap-8 overflow-hidden rounded-[2rem] px-6 py-14 text-center lg:flex-row lg:justify-between lg:px-14 lg:py-16 lg:text-left">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {title}
@@ -204,7 +205,7 @@ export function CtaBand({
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
           <Link
             href="/contact"
-            className="rounded-full bg-white px-8 py-4 text-base font-semibold text-ink transition-transform hover:scale-105"
+            className="rounded-full bg-electric px-8 py-4 text-base font-semibold text-white shadow-lg shadow-electric/30 transition-transform hover:scale-105"
           >
             {cta}
           </Link>
@@ -277,7 +278,7 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
       </div>
       <button
         type="submit"
-        className="rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand"
+        className="rounded-full bg-electric px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#2f5cf0]"
       >
         Request a quote
       </button>
@@ -300,8 +301,8 @@ export function Prose({ children }: { children: React.ReactNode }) {
 export function DiscoveryOffer({ dark }: { dark?: boolean }) {
   const wa = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, a question about the ${DISCOVERY.title}.`)}`;
   return (
-    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white/5 text-white ring-1 ring-white/10" : "bg-white ring-1 ring-black/5"}`}>
-      <p className={`text-xs font-semibold uppercase tracking-wider ${dark ? "text-white/50" : "text-ink-4"}`}>Start here</p>
+    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white/[0.04] text-white ring-1 ring-white/10 backdrop-blur" : "bg-white shadow-xl shadow-black/5 ring-1 ring-black/[0.07]"}`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider ${dark ? "text-electric-2" : "text-electric"}`}>Start here</p>
       <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
         <h3 className={`text-2xl font-bold sm:text-3xl ${dark ? "text-white" : ""}`}>{DISCOVERY.title}</h3>
         <p className={`font-display text-4xl font-black tracking-tight ${dark ? "text-white" : "text-ink"}`}>{DISCOVERY.price}</p>
@@ -317,7 +318,7 @@ export function DiscoveryOffer({ dark }: { dark?: boolean }) {
         ))}
       </ul>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href={DISCOVERY.pay} className={`rounded-full px-6 py-3.5 text-center text-sm font-semibold ${dark ? "bg-white text-ink" : "bg-ink text-white"}`}>
+        <a href={DISCOVERY.pay} className="rounded-full bg-electric px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-electric/30 transition-colors hover:bg-[#2f5cf0]">
           {`Pay ${DISCOVERY.price} and pick a time`}
         </a>
         <a href={wa} className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold ${dark ? "border-white/20 text-white" : "border-black/10 text-ink"}`}>
