@@ -36,10 +36,10 @@ const COL = "mx-auto w-full max-w-7xl px-5 lg:px-8";
 const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
 
 const PROOF = [
-  { v: `${PROJECTS.length}`, l: "Products live, and still maintained by us" },
+  { v: "1,400", l: "Apps built to date" },
   { v: "AIR 14", l: "ACM ICPC — top 0.17% of 8,000+ competitors" },
   { v: "120s → 7s", l: "A core API we sped up at JPMorgan Chase" },
-  { v: "2 weeks", l: "Between releases you can click and test" },
+  { v: "< 6 hrs", l: "To respond to any bug or problem" },
 ];
 
 // Voice in numbers. The call volume is the figure the team quotes for the product.
@@ -70,7 +70,7 @@ const GUARANTEES = [
   "NDA before the first workshop",
   "A reply within one working day",
   "Fixed quotation before the build",
-  "Live every two weeks",
+  "Bugs answered in under 6 hours",
   "Same team after launch",
 ];
 
@@ -80,6 +80,7 @@ const COMPARE: [string, string, string, string][] = [
   ["Who owns the code", "You, from day one", "+You", "Often handed over at the end"],
   ["Pricing", "Paid analysis, then a written quote", "Salaries, whether busy or not", "A guess that grows"],
   ["Range of skills", "Design, apps, web, cloud, AI", "Whoever you managed to hire", "Depends on the team you get"],
+  ["Bug response", "Under 6 hours", "When someone is free", "A ticket queue, often days"],
   ["After launch", "Same team keeps it running", "If they stay", "Often ends at delivery"],
 ];
 
@@ -179,8 +180,8 @@ export default function Home() {
                   ))}
                 </span>
                 <span className="text-sm leading-snug text-white/55">
-                  <span className="block font-semibold text-white">{`${PROJECTS.length} products live`}</span>
-                  built and still maintained by us
+                  <span className="block font-semibold text-white">1,400 apps built to date</span>
+                  bugs answered in under 6 hours
                 </span>
               </div>
             </div>
