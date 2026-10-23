@@ -186,7 +186,7 @@ function Heading({ id, eyebrow, title, lead, dark, action }: { id: string; eyebr
         <h2 id={id} className={`mt-3 text-3xl font-bold leading-[1.08] sm:text-5xl ${dark ? "text-white" : ""}`}>
           {title}
         </h2>
-        {lead && <p className={`mt-4 text-lg leading-relaxed ${dark ? "text-white/60" : "text-ink-3"}`}>{lead}</p>}
+        {lead && <p className={`mt-4 text-base leading-relaxed sm:text-lg ${dark ? "text-white/60" : "text-ink-3"}`}>{lead}</p>}
       </div>
       {action}
     </div>
@@ -246,8 +246,8 @@ export default function Home() {
                   ))}
                 </span>
                 <span className="text-sm leading-snug text-white/55">
-                  <span className="block font-semibold text-white">1,400 apps built to date</span>
-                  bugs answered in under 6 hours
+                  <span className="block font-semibold text-white">1,400 apps built</span>
+                  bugs fixed in under 6 hours
                 </span>
               </div>
             </div>
@@ -286,7 +286,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] bg-night ring-1 ring-[#22c55e]/25">
             <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(50%_45%_at_15%_0%,rgba(34,197,94,0.18),transparent_70%),radial-gradient(55%_50%_at_90%_10%,rgba(61,107,255,0.3),transparent_70%)]" />
             <div aria-hidden="true" className="night-grid absolute inset-0" />
-            <div className={`${COL} relative py-20 lg:py-28`}>
+            <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <div className="mx-auto max-w-3xl text-center">
                 <p className="inline-flex items-center gap-2 rounded-full bg-[#22c55e]/10 px-4 py-1.5 text-sm font-semibold text-[#4ade80] ring-1 ring-[#22c55e]/30">
                   <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#22c55e]" />
@@ -295,7 +295,7 @@ export default function Home() {
                 <h2 id="voice" className="mt-6 text-4xl font-bold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
                   India&apos;s best <span className="text-gradient">conversational voice agent</span>
                 </h2>
-                <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
+                <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
                   An AI phone employee for your business. Describe the job in plain words; it calls every new lead within
                   seconds, talks naturally in Telugu, Hindi or English, writes down what was said, and books the next step.
                 </p>
@@ -313,7 +313,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <dl className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+              <dl className="mx-auto mt-10 grid max-w-4xl sm:mt-14 grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
                 {VOICE_STATS.map((v) => (
                   <div key={v.l} className="rounded-2xl bg-white/[0.05] p-5 text-center ring-1 ring-white/10">
                     <dt className="sr-only">{v.l}</dt>
@@ -325,30 +325,30 @@ export default function Home() {
                 ))}
               </dl>
 
-              <div className="mt-16 grid items-center gap-8 lg:grid-cols-[1fr_1.15fr]">
+              <div className="mt-10 grid items-center gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-[1fr_1.15fr]">
                 <div className="mx-auto w-full max-w-md">
                   <CallCard large />
                 </div>
-                <ul className="grid gap-4 sm:grid-cols-2">
+                <ul className="grid grid-cols-2 gap-3 sm:gap-4">
                   {VOICE_FEATURES.map((f) => (
-                    <li key={f.t} className="rounded-3xl bg-white/[0.04] p-6 ring-1 ring-white/10 transition-colors hover:bg-white/[0.07]">
-                      <span className="grid size-11 place-items-center rounded-2xl bg-[#22c55e]/15 text-[#4ade80]">
+                    <li key={f.t} className="rounded-3xl bg-white/[0.04] p-4 ring-1 sm:p-6 ring-white/10 transition-colors hover:bg-white/[0.07]">
+                      <span className="grid size-9 place-items-center rounded-xl bg-[#22c55e]/15 sm:size-11 sm:rounded-2xl text-[#4ade80]">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden="true">
                           <path d={f.icon} />
                         </svg>
                       </span>
-                      <h3 className="mt-4 text-lg font-bold text-white">{f.t}</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-white/60">{f.d}</p>
+                      <h3 className="mt-3 text-base font-bold leading-snug text-white sm:mt-4 sm:text-lg">{f.t}</h3>
+                      <p className="mt-1.5 text-xs leading-relaxed text-white/60 sm:text-sm">{f.d}</p>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-14 flex flex-col items-center gap-5 border-t border-white/10 pt-10 text-center">
+              <div className="mt-10 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center sm:mt-14 sm:gap-5 sm:pt-10">
                 <p className="text-sm text-white/55">Built for</p>
                 <ul className="flex flex-wrap justify-center gap-2">
                   {VOICE_USES.map((u) => (
-                    <li key={u} className="rounded-full bg-white/[0.06] px-4 py-2 text-sm text-white/80 ring-1 ring-white/10">{u}</li>
+                    <li key={u} className="rounded-full bg-white/[0.06] px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm text-white/80 ring-1 ring-white/10">{u}</li>
                   ))}
                 </ul>
                 <a href={VOICE_APP} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
@@ -361,7 +361,7 @@ export default function Home() {
 
         {/* ── Proof ── */}
         <section aria-label="Track record">
-          <dl className={`${COL} grid grid-cols-2 gap-y-10 py-16 lg:grid-cols-4 lg:py-20`}>
+          <dl className={`${COL} grid grid-cols-2 gap-y-8 py-12 sm:py-16 lg:grid-cols-4 lg:py-20`}>
             {PROOF.map((s) => (
               <div key={s.v} className="border-l border-line pl-5 lg:pl-8">
                 <dt className="sr-only">{s.l}</dt>
@@ -376,7 +376,7 @@ export default function Home() {
 
         {/* ── Work ── */}
         <section aria-labelledby="work" className="bg-canvas">
-          <div className={`${COL} py-20 lg:py-28`}>
+          <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
             <Heading
               id="work"
               eyebrow="Our work"
@@ -388,12 +388,13 @@ export default function Home() {
                 </Link>
               }
             />
-            <ul className="mt-12 grid auto-rows-[22rem] gap-5 md:grid-cols-6">
+            <p className="mt-6 text-xs text-ink-4 md:hidden">Swipe to see more →</p>
+            <ul className="-mx-5 mt-3 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] sm:mt-12 md:mx-0 md:grid md:auto-rows-[22rem] md:grid-cols-6 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
               {WORK.map((w, k) => {
                 const p = project(w.slug);
                 const big = k === 0;
                 return (
-                  <li key={w.slug} className={w.span}>
+                  <li key={w.slug} className={`h-[24rem] w-[82%] shrink-0 snap-center md:h-auto md:w-auto ${w.span}`}>
                     <Link href={p.href ?? "/portfolio"} className="group relative block h-full overflow-hidden rounded-[2rem] bg-night">
                       {w.bg ? (
                         <Image src={w.bg} alt="" fill sizes="(min-width: 768px) 66vw, 100vw" className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
@@ -405,13 +406,14 @@ export default function Home() {
                         slug={p.slug}
                         name={p.name}
                         className={`absolute right-6 rotate-6 transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-3 ${
-                          big ? "-bottom-40 w-40 md:-bottom-24 md:w-64" : "-bottom-40 w-40"
+                          big ? "-bottom-32 w-32 md:-bottom-24 md:w-64" : "-bottom-32 w-32 md:-bottom-40 md:w-40"
                         }`}
                       />
-                      <div className={`relative flex h-full flex-col p-7 ${big ? "max-w-[60%] sm:max-w-sm sm:p-10" : "max-w-[60%]"}`}>
+                      <div className={`relative flex h-full flex-col p-6 sm:p-7 ${big ? "max-w-[64%] md:max-w-sm md:p-10" : "max-w-[64%]"}`}>
                         <p className="text-xs font-semibold uppercase tracking-wider text-white/55">{p.sector}</p>
-                        <h3 className={`mt-2 font-bold text-white ${big ? "text-3xl sm:text-4xl" : "text-2xl"}`}>{p.name}</h3>
-                        <p className={`mt-3 text-sm leading-relaxed text-white/70 ${big ? "" : "line-clamp-4"}`}>{p.summary}</p>
+                        <h3 className={`mt-2 font-bold text-white ${big ? "text-2xl md:text-4xl" : "text-2xl"}`}>{p.name}</h3>
+                        <p className="mt-3 text-sm leading-relaxed text-white/70 md:hidden">{p.summary.split(" — ")[0]}</p>
+                        <p className={`mt-3 hidden text-sm leading-relaxed text-white/70 ${big ? "md:block" : "md:line-clamp-4"}`}>{p.summary}</p>
                         <span className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur transition-colors group-hover:bg-white group-hover:text-ink">
                           View project <span aria-hidden="true">↗</span>
                         </span>
@@ -426,7 +428,7 @@ export default function Home() {
 
         {/* ── Services ── */}
         <section aria-labelledby="services">
-          <div className={`${COL} py-20 lg:py-28`}>
+          <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
             <Heading
               id="services"
               eyebrow="Services"
@@ -438,22 +440,22 @@ export default function Home() {
                 </Link>
               }
             />
-            <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-3">
               {SERVICES.items.slice(0, 9).map((s, k) => (
                 <li key={s.slug}>
                   <Link
                     href={`${SERVICES.base}/${s.slug}`}
-                    className="group flex h-full gap-5 rounded-3xl p-6 ring-1 ring-black/[0.07] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
+                    className="group flex h-full flex-col gap-3 rounded-3xl p-4 ring-1 sm:flex-row sm:gap-5 sm:p-6 ring-black/[0.07] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
                   >
-                    <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-canvas transition-colors group-hover:bg-electric/10">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-canvas sm:size-14 transition-colors group-hover:bg-electric/10">
                       <Image src={serviceIcon(k)} alt="" width={120} height={130} className="h-9 w-auto" />
                     </span>
                     <span>
-                      <span className="flex items-center gap-2 font-display text-lg font-bold text-ink">
+                      <span className="flex items-center gap-2 font-display text-[0.95rem] font-bold leading-snug text-ink sm:text-lg">
                         {s.name}
                         <span aria-hidden="true" className="text-electric opacity-0 transition-opacity group-hover:opacity-100">→</span>
                       </span>
-                      <span className="mt-1 block text-sm leading-relaxed text-ink-3">{s.tagline}</span>
+                      <span className="mt-1 hidden text-sm leading-relaxed text-ink-3 sm:block">{s.tagline}</span>
                     </span>
                   </Link>
                 </li>
@@ -466,7 +468,7 @@ export default function Home() {
         <section aria-labelledby="process" className="px-3 sm:px-5">
           <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
             <div aria-hidden="true" className="night-grid absolute inset-0" />
-            <div className={`${COL} relative py-20 lg:py-28`}>
+            <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <Heading
                 id="process"
                 dark
@@ -474,16 +476,18 @@ export default function Home() {
                 title="From a first call to software in your hands"
                 lead="No long sales cycle. Three steps, and you know the price before anything is built."
               />
-              <ol className="mt-14 grid gap-5 lg:grid-cols-3">
+              <ol className="mt-10 grid gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-3">
                 {STEPS.map((s, k) => (
-                  <li key={s.t} className="rounded-3xl bg-white/[0.04] p-8 ring-1 ring-white/10">
-                    <p className="font-display text-5xl font-bold text-electric-2/80">{String(k + 1).padStart(2, "0")}</p>
-                    <h3 className="mt-6 text-xl font-bold text-white">{s.t}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/60">{s.d}</p>
+                  <li key={s.t} className="flex gap-4 rounded-3xl bg-white/[0.04] p-5 ring-1 ring-white/10 sm:block sm:p-8">
+                    <p className="font-display text-3xl font-bold text-electric-2/80 sm:text-5xl">{String(k + 1).padStart(2, "0")}</p>
+                    <div>
+                    <h3 className="text-lg font-bold text-white sm:mt-6 sm:text-xl">{s.t}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-white/60 sm:mt-2">{s.d}</p>
+                    </div>
                   </li>
                 ))}
               </ol>
-              <ul className="mt-10 grid gap-x-8 gap-y-4 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-8 grid gap-x-8 gap-y-3 border-t border-white/10 pt-8 sm:mt-10 sm:grid-cols-2 sm:gap-y-4 sm:pt-10 lg:grid-cols-3">
                 {GUARANTEES.map((g) => (
                   <li key={g} className="flex items-center gap-3 text-sm text-white/80">
                     <span className="grid size-6 shrink-0 place-items-center rounded-full bg-electric/20 text-electric-2">
@@ -493,7 +497,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-12">
+              <div className="mt-10 sm:mt-12">
                 <PillCta>Reserve your slot</PillCta>
               </div>
             </div>
@@ -502,16 +506,16 @@ export default function Home() {
 
         {/* ── Problems we fix ── */}
         <section aria-labelledby="fixes">
-          <div className={`${COL} py-20 lg:py-28`}>
+          <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
             <Heading id="fixes" eyebrow="Sounds familiar?" title="What growing businesses bring us" lead="Most briefs start with one of these. Each is something we fix for a living." />
-            <ul className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-line ring-1 ring-line md:grid-cols-2">
+            <ul className="mt-10 grid gap-px overflow-hidden rounded-3xl sm:mt-12 bg-line ring-1 ring-line md:grid-cols-2">
               {FIXES.map((x) => (
-                <li key={x.p} className="bg-white p-7">
+                <li key={x.p} className="bg-white p-5 sm:p-7">
                   <p className="flex items-center gap-2 text-sm text-ink-4">
                     <Cross className="size-3.5 text-[#dc2626]" />
                     <span className="line-through decoration-ink-4/40">{x.p}</span>
                   </p>
-                  <p className="mt-3 flex items-start gap-2 font-display text-lg font-bold leading-snug text-ink">
+                  <p className="mt-2 flex items-start gap-2 font-display text-base font-bold leading-snug text-ink sm:mt-3 sm:text-lg">
                     <Check className="mt-1 size-4 shrink-0 text-electric" />
                     {x.f}
                   </p>
@@ -523,9 +527,28 @@ export default function Home() {
 
         {/* ── Comparison ── */}
         <section aria-labelledby="different" className="bg-canvas">
-          <div className={`${COL} py-20 lg:py-28`}>
+          <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
             <Heading id="different" eyebrow="The comparison" title="The same build, three ways to get it done" />
-            <div className="mt-12 overflow-x-auto rounded-3xl bg-white ring-1 ring-black/[0.07]">
+            <ul className="mt-10 space-y-3 md:hidden">
+              {COMPARE.map(([k, us, hire, agency]) => (
+                <li key={k} className="rounded-2xl bg-white p-5 ring-1 ring-black/[0.07]">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-ink-4">{k}</p>
+                  <p className="mt-2 flex items-start gap-2 font-semibold text-ink">
+                    <Check className="mt-1 size-4 shrink-0 text-electric" />
+                    {`${COMPANY.name}: ${us}`}
+                  </p>
+                  <dl className="mt-3 grid grid-cols-2 gap-3 border-t border-line pt-3 text-xs">
+                    {[["Hiring in-house", hire], ["Typical agency", agency]].map(([who, v]) => (
+                      <div key={who}>
+                        <dt className="text-ink-4">{who}</dt>
+                        <dd className="mt-0.5 text-ink-2">{v.replace(/^\+/, "")}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-12 hidden overflow-x-auto rounded-3xl bg-white ring-1 ring-black/[0.07] md:block">
               <table className="w-full min-w-[44rem] text-left text-sm">
                 <thead>
                   <tr>
@@ -614,10 +637,10 @@ export default function Home() {
               0.17% at ACM ICPC. We work from Hyderabad with clients in India, the UAE, the UK, Europe and the US, and
               everything we build is handed over so your own team can run it.
             </p>
-            <ul className="mt-8 flex flex-wrap gap-2">
+            <ul className="-mx-5 mt-8 flex gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:flex-wrap md:px-0">
               {LOCATIONS.items.map((l) => (
                 <li key={l.slug}>
-                  <Link href={`${LOCATIONS.base}/${l.slug}`} className="block rounded-full border border-line px-3.5 py-1.5 text-xs text-ink-2 hover:border-ink">
+                  <Link href={`${LOCATIONS.base}/${l.slug}`} className="block whitespace-nowrap rounded-full border border-line px-3.5 py-1.5 text-xs text-ink-2 hover:border-ink">
                     {`App development in ${l.name}`}
                   </Link>
                 </li>
