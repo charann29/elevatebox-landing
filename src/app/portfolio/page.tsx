@@ -1,3 +1,4 @@
+import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,6 +34,7 @@ export default function PortfolioPage() {
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd json={ld(ORG, { "@type": "CollectionPage", "@id": "https://elevatebox.in/portfolio#page", url: "https://elevatebox.in/portfolio", name: "ElevateBox portfolio", about: { "@id": ORG["@id"] } }, breadcrumb([{ name: "ElevateBox portfolio", path: "/portfolio" }]))} />
         <PageHero
           eyebrow="Portfolio"
           title="Work that went live and stayed live"

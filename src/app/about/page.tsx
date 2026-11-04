@@ -1,3 +1,4 @@
+import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
@@ -12,7 +13,7 @@ import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: `About Us`,
+  title: `About ElevateBox, App Development Company in Hyderabad`,
   description:
     "Who we are, how we work, and the delivery principles we hold to on every engagement.",
   alternates: { canonical: "/about" },
@@ -32,6 +33,7 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd json={ld(ORG, { "@type": "AboutPage", "@id": "https://elevatebox.in/about#page", url: "https://elevatebox.in/about", name: "About ElevateBox", about: { "@id": ORG["@id"] } }, breadcrumb([{ name: "About ElevateBox", path: "/about" }]))} />
         <PageHero
           eyebrow="About us"
           title="A delivery company, not a deck company"

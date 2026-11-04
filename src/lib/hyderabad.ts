@@ -24,6 +24,8 @@ export type HydPage = {
   cost: { h2: string; lead: string; drivers: [string, string][] };
   faqs: { q: string; a: string }[];
   related: { label: string; href: string }[];
+  /** Places named in the ProfessionalService schema; defaults to Hyderabad and AREAS. */
+  areas?: string[];
 };
 
 export const AREAS = ["HITEC City", "Madhapur", "Gachibowli", "Jubilee Hills", "Kondapur", "Kukatpally", "Secunderabad", "Banjara Hills"];
@@ -135,6 +137,11 @@ export const HYD_PAGES: HydPage[] = [
       { label: "Web development company in Hyderabad", href: "/web-development-company-hyderabad" },
       { label: "Software development company in Hyderabad", href: "/software-development-company-hyderabad" },
       { label: "Top mobile app development companies in Hyderabad", href: "/blogs/top-mobile-app-development-companies-hyderabad" },
+      { label: "Android app development company in Hyderabad", href: "/android-app-development-company-hyderabad" },
+      { label: "iOS app development company in Hyderabad", href: "/ios-app-development-company-hyderabad" },
+      { label: "Flutter app development company in Hyderabad", href: "/flutter-app-development-company-hyderabad" },
+      { label: "MVP development for startups", href: "/mvp-development-company-hyderabad" },
+      { label: "App development across Telangana", href: "/app-development-company-telangana" },
     ],
   },
 
@@ -362,6 +369,302 @@ export const HYD_PAGES: HydPage[] = [
       { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
       { label: "Web development company in Hyderabad", href: "/web-development-company-hyderabad" },
       { label: "Best AI developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" },
+    ],
+  },
+
+  /* Nov 2026 additions, each from a query cluster Search Console already shows impressions for
+     (positions 12–45, zero clicks). One page per cluster; no city-swap doorway pages. */
+
+  {
+    path: "/android-app-development-company-hyderabad",
+    title: "Android App Development Company in Hyderabad",
+    description:
+      "Android app development company in Hyderabad: Kotlin and Flutter apps tested on the budget phones your customers use, launched on Play Store.",
+    h1: "Android App Development Company in Hyderabad",
+    sub: "Kotlin and Flutter Android apps, built for the phones and networks your customers actually have.",
+    intro:
+      "ElevateBox is an Android app development company in Hyderabad that designs, builds and launches Android apps on Google Play, tested on the low-cost phones and patchy networks most Indian users have, and keeps them updated after launch.",
+    serviceType: "Android app development",
+    services: {
+      h2: "Android app development services",
+      items: [
+        { t: "Native Kotlin apps", d: "For apps that lean on the device: background work, Bluetooth, camera, widgets.", href: "/technologies/kotlin" },
+        { t: "Flutter Android apps", d: "One codebase that can ship to iPhone later without a rewrite.", href: "/technologies/flutter" },
+        { t: "Play Store launch", d: "Listing, screenshots, data-safety form, staged rollout and review fixes.", href: "/technologies/android" },
+        { t: "Offline and low-network mode", d: "Apps that keep working on 2G and sync when the signal returns.", href: "/services/mobile-app-development" },
+        { t: "Payments and UPI", d: "Razorpay, UPI intent and subscriptions, tested end to end.", href: "/services/ecommerce-development" },
+        { t: "Android app maintenance", d: "Target-SDK upgrades Google enforces each year, plus crash fixes.", href: "/services/mobile-app-development" },
+      ],
+    },
+    why: { h2: "Why choose ElevateBox for your Android app", points: WHY },
+    ai: { h2: "AI features on Android", lead: "On-device and cloud AI, built in where it saves your users a step.", items: AI_ITEMS },
+    process: { h2: "How we build your Android app", steps: PROCESS_APP },
+    stack: {
+      h2: "Android technology stack",
+      groups: [
+        { t: "Android", items: ["Kotlin", "Jetpack Compose", "Flutter", "Room", "WorkManager"] },
+        { t: "Backend", items: ["Node.js", "Python", "PostgreSQL", "Firebase", "Supabase"] },
+        { t: "Release", items: ["Play Console", "Crashlytics", "Staged rollouts"] },
+        { t: "AI", items: ["Gemini", "OpenAI", "ML Kit", "Speech to text"] },
+      ],
+    },
+    industries: { h2: "Industries we build Android apps for", items: INDUSTRIES_APP },
+    cases: { h2: "Apps we built and still run", slugs: ["8meds", "medibag", "vamshi-farms"] },
+    cost: {
+      h2: "How much does Android app development cost in Hyderabad?",
+      lead: "An Android app's cost comes down to the six things below. We price yours in writing after a ₹3,500 requirement analysis, before development starts.",
+      drivers: COST_DRIVERS,
+    },
+    faqs: [
+      { q: "How much does it cost to build an Android app in Hyderabad?", a: "It depends on the screens, integrations such as UPI and maps, the backend and any AI features. A ₹3,500 requirement analysis ends in a written quotation, so you know the full cost before development starts." },
+      { q: "Should I build Android first or Android and iOS together?", a: "In India most users are on Android, so many businesses launch there first. If you build it in Flutter, the same code ships to iPhone later without a rewrite." },
+      { q: "Kotlin or Flutter for an Android app?", a: "Flutter for most business apps, because it keeps the iPhone option open. Kotlin when the app depends on background work, Bluetooth, widgets or heavy camera use." },
+      { q: "Will my app work on cheap Android phones?", a: "Yes. We test on low-RAM phones and slow networks in every sprint, not just on flagship devices." },
+      { q: "Do you handle Google Play Store publishing?", a: "Yes. We prepare the listing, the data-safety form and the screenshots, publish under your own Play Console account, and fix anything Google's review flags." },
+      ...SHARED_FAQS,
+    ],
+    related: [
+      { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
+      { label: "iOS app development company in Hyderabad", href: "/ios-app-development-company-hyderabad" },
+      { label: "Flutter app development company in Hyderabad", href: "/flutter-app-development-company-hyderabad" },
+      { label: "Hire mobile app developers in Hyderabad", href: "/hire-mobile-app-developers-hyderabad" },
+    ],
+  },
+
+  {
+    path: "/ios-app-development-company-hyderabad",
+    title: "iOS App Development Company in Hyderabad",
+    description:
+      "iOS app development company in Hyderabad: Swift and Flutter iPhone and iPad apps, taken through App Store review and published under your account.",
+    h1: "iOS App Development Company in Hyderabad",
+    sub: "iPhone and iPad apps in Swift or Flutter, through App Store review and into your own developer account.",
+    intro:
+      "ElevateBox is an iOS app development company in Hyderabad that builds iPhone and iPad apps in Swift and Flutter, takes them through Apple's App Store review, and publishes them under your own Apple developer account.",
+    serviceType: "iOS app development",
+    services: {
+      h2: "iOS app development services",
+      items: [
+        { t: "Native Swift apps", d: "SwiftUI apps for iPhone and iPad that feel native to Apple users.", href: "/technologies/swift" },
+        { t: "Flutter iOS apps", d: "One codebase for iPhone and Android, with a design that matches on both.", href: "/technologies/flutter" },
+        { t: "App Store review", d: "Privacy labels, sign-in rules and review replies handled for you.", href: "/technologies/ios" },
+        { t: "TestFlight betas", d: "Your team tests every sprint's build on their own iPhones.", href: "/technologies/ios" },
+        { t: "In-app purchases", d: "Subscriptions and purchases set up the way Apple requires.", href: "/services/mobile-app-development" },
+        { t: "iOS maintenance", d: "Updates for each new iOS version, before your users hit the bugs.", href: "/services/mobile-app-development" },
+      ],
+    },
+    why: { h2: "Why choose ElevateBox for your iOS app", points: WHY },
+    ai: { h2: "AI features on iPhone", lead: "Chat, voice and document reading built into the app, with privacy handled the way Apple expects.", items: AI_ITEMS },
+    process: { h2: "How we build your iOS app", steps: PROCESS_APP },
+    stack: {
+      h2: "iOS technology stack",
+      groups: [
+        { t: "iOS", items: ["Swift", "SwiftUI", "Flutter", "TestFlight", "StoreKit"] },
+        { t: "Backend", items: ["Node.js", "Python", "PostgreSQL", "Firebase", "Supabase"] },
+        { t: "Cloud", items: ["AWS", "Google Cloud", "Azure"] },
+        { t: "AI", items: ["OpenAI", "Gemini", "Speech to text", "Vision"] },
+      ],
+    },
+    industries: { h2: "Industries we build iOS apps for", items: INDUSTRIES_APP },
+    cases: { h2: "Apps we built and still run", slugs: ["8meds", "medibag", "vamshi-farms"] },
+    cost: {
+      h2: "How much does iOS app development cost in Hyderabad?",
+      lead: "An iPhone app's cost comes down to the six things below. We price yours in writing after a ₹3,500 requirement analysis, before development starts.",
+      drivers: COST_DRIVERS,
+    },
+    faqs: [
+      { q: "How much does iOS app development cost in Hyderabad?", a: "It depends on the screens, integrations, the backend and any AI features. A ₹3,500 requirement analysis ends in a written quotation before development starts. Apple's developer account costs $99 a year on top, paid by you to Apple." },
+      { q: "Do I need a Mac or an Apple developer account?", a: "You need an Apple developer account in your company's name; we help you set it up. You don't need a Mac. We build and sign the app on ours." },
+      { q: "How long does App Store review take?", a: "Usually one to three days. We plan one to two weeks for launch in case Apple asks for changes, and handle those replies for you." },
+      { q: "Can you build the iPhone and Android apps together?", a: "Yes. With Flutter, one codebase ships to both stores. We pick native Swift when the app depends on Apple-only features such as widgets, HealthKit or Apple Watch." },
+      { q: "Can my team test the app before it goes live?", a: "Yes. Every sprint's build goes out on TestFlight, so you test it on your own iPhones." },
+      ...SHARED_FAQS,
+    ],
+    related: [
+      { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
+      { label: "Android app development company in Hyderabad", href: "/android-app-development-company-hyderabad" },
+      { label: "Flutter app development company in Hyderabad", href: "/flutter-app-development-company-hyderabad" },
+    ],
+  },
+
+  {
+    path: "/flutter-app-development-company-hyderabad",
+    title: "Flutter App Development Company in Hyderabad",
+    description:
+      "Flutter and cross-platform app development company in Hyderabad: one codebase for Android and iPhone, launched on both stores, maintained after.",
+    h1: "Flutter App Development Company in Hyderabad",
+    sub: "Cross-platform apps from one Flutter or React Native codebase, launched on Play Store and App Store together.",
+    intro:
+      "ElevateBox is a Flutter app development company in Hyderabad that builds cross-platform apps: one codebase that ships to Android and iPhone at the same time, with one team, one set of tests and one release cycle.",
+    serviceType: "Cross-platform app development",
+    services: {
+      h2: "Cross-platform app development services",
+      items: [
+        { t: "Flutter app development", d: "Custom-designed apps that look and behave the same on both platforms.", href: "/technologies/flutter" },
+        { t: "React Native app development", d: "Cross-platform apps that share code and people with a React web team.", href: "/technologies/react-native" },
+        { t: "Native to Flutter migration", d: "Two separate apps merged into one codebase, screen by screen.", href: "/services/mobile-app-development" },
+        { t: "Flutter web and desktop", d: "The same code extended to a web admin or a desktop tool when it fits.", href: "/services/web-development" },
+        { t: "Store launch on both", d: "Play Store and App Store listings, reviews and staged rollouts.", href: "/services/mobile-app-development" },
+        { t: "Flutter maintenance", d: "Flutter, Android and iOS upgrades kept in step, plus fixes.", href: "/services/mobile-app-development" },
+      ],
+    },
+    why: { h2: "Why choose ElevateBox for Flutter development", points: WHY },
+    ai: { h2: "AI features in Flutter apps", lead: "Chat, voice and document reading built once and shipped to both platforms.", items: AI_ITEMS },
+    process: { h2: "How we build your cross-platform app", steps: PROCESS_APP },
+    stack: {
+      h2: "Cross-platform technology stack",
+      groups: [
+        { t: "Cross-platform", items: ["Flutter", "Dart", "React Native", "TypeScript"] },
+        { t: "Backend", items: ["Node.js", "Python", "PostgreSQL", "Firebase", "Supabase"] },
+        { t: "Cloud", items: ["AWS", "Google Cloud", "Azure"] },
+        { t: "AI", items: ["OpenAI", "Gemini", "Speech to text", "Vector search"] },
+      ],
+    },
+    industries: { h2: "Industries we build cross-platform apps for", items: INDUSTRIES_APP },
+    cases: { h2: "Apps we built for both stores", slugs: ["vamshi-farms", "8meds", "medibag"] },
+    cost: {
+      h2: "How much does Flutter app development cost in Hyderabad?",
+      lead: "One codebase usually costs less than two native apps. What decides your price is below; we quote in writing after a ₹3,500 requirement analysis.",
+      drivers: COST_DRIVERS,
+    },
+    faqs: [
+      { q: "Is Flutter good enough for a serious business app?", a: "Yes, for most business apps: commerce, booking, healthcare, education and internal tools. We pick native code only when the app depends heavily on device features such as background work, Bluetooth or widgets." },
+      { q: "Flutter or React Native?", a: "Flutter when the design must match exactly on both platforms. React Native when your team already writes React for the web and wants to share code and people." },
+      { q: "Does a Flutter app cost less than two native apps?", a: "Usually, because one team builds, tests and maintains one codebase. We quote in writing after a ₹3,500 requirement analysis, so you can compare." },
+      { q: "Can you move our two native apps to Flutter?", a: "Yes. We migrate screen by screen, so the existing apps keep working until the Flutter version replaces them." },
+      ...SHARED_FAQS,
+    ],
+    related: [
+      { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
+      { label: "Android app development company in Hyderabad", href: "/android-app-development-company-hyderabad" },
+      { label: "iOS app development company in Hyderabad", href: "/ios-app-development-company-hyderabad" },
+      { label: "Hire mobile app developers in Hyderabad", href: "/hire-mobile-app-developers-hyderabad" },
+    ],
+  },
+
+  {
+    path: "/mvp-development-company-hyderabad",
+    title: "MVP Development Company in Hyderabad for Startups",
+    description:
+      "MVP development company in Hyderabad: first versions of apps and SaaS products for startups, scoped in writing and live in weeks, code in your name.",
+    h1: "MVP Development Company in Hyderabad",
+    sub: "First versions of apps, web products and SaaS for startups, scoped tight and shipped in weeks.",
+    intro:
+      "ElevateBox is an MVP development company in Hyderabad that builds the first working version of a startup's app or software, scoped to the one thing it must prove, live in front of real users in weeks, and built so it can grow instead of being thrown away.",
+    serviceType: "MVP software development",
+    services: {
+      h2: "MVP development services for startups",
+      items: [
+        { t: "Product scoping", d: "What the first version must prove, and what waits for version two.", href: "/services/product-design-and-ideation" },
+        { t: "Clickable prototype", d: "Screens investors and first users can tap through before the build.", href: "/services/ui-ux-design" },
+        { t: "MVP app development", d: "Android and iPhone from one Flutter or React Native codebase.", href: "/services/mobile-app-development" },
+        { t: "SaaS MVP", d: "Sign-up, billing, roles and an admin panel, ready for paying users.", href: "/services/saas-paas-development" },
+        { t: "AI MVP", d: "An AI feature proved on real data before you invest in scale.", href: "/ai-solutions" },
+        { t: "After the MVP", d: "Analytics wired in, then the version two the data asks for.", href: "/services/web-development" },
+      ],
+    },
+    why: {
+      h2: "Why Hyderabad founders build their MVP with ElevateBox",
+      points: [
+        { t: "Engineers who have founded and scaled", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft." },
+        { t: "Price known before you start", d: "A ₹3,500 requirement analysis ends in a written quotation and timeline." },
+        { t: "Code in your name", d: "Repository, cloud and store accounts are yours from day one, ready for due diligence." },
+        { t: "Built to grow", d: "The same codebase carries you past the MVP, so you don't pay for a rewrite at seed stage." },
+      ],
+    },
+    ai: { h2: "AI in your first version", lead: "If AI is the product, we prove it works on your data inside the MVP, not after the raise.", items: AI_ITEMS },
+    process: {
+      h2: "How we build your MVP",
+      steps: [
+        { t: "Requirement analysis", d: "A paid call that ends in a written scope, quotation and timeline.", when: "Week 1" },
+        { t: "Prototype", d: "Clickable screens you can show to users and investors.", when: "Weeks 2–3" },
+        { t: "Build sprints", d: "Two-week sprints, each ending in something you can use.", when: "Every 2 weeks" },
+        { t: "Launch", d: "Store listings or a live web app, with analytics and crash reporting on.", when: "End of build" },
+        { t: "Learn and iterate", d: "We read the usage data with you and scope version two.", when: "After launch" },
+      ],
+    },
+    stack: { h2: "MVP technology stack", groups: STACK_APP },
+    industries: { h2: "Startup sectors we have built for", items: INDUSTRIES_APP },
+    cases: { h2: "Products we took from idea to live", slugs: ["oneasy", "8meds", "vamshi-farms"] },
+    cost: {
+      h2: "How much does MVP development cost in Hyderabad?",
+      lead: "An MVP's cost is mostly scope. These decide it; we fix it in writing after a ₹3,500 requirement analysis.",
+      drivers: [
+        ["The one thing to prove", "The narrower the first version, the faster and cheaper it ships."],
+        ["Platforms", "Web only, mobile only, or both from one codebase."],
+        ["Accounts and payments", "Sign-up, roles, Razorpay or Stripe billing."],
+        ["Integrations", "WhatsApp, SMS, maps, CRMs or other APIs."],
+        ["AI", "Whether AI is the product or a feature, and how accurate it must be."],
+      ],
+    },
+    faqs: [
+      { q: "How long does it take to build an MVP?", a: "It depends on scope. The requirement analysis fixes the timeline in writing; the build then runs in two-week sprints, each ending in something you can use." },
+      { q: "How much does an MVP cost for a startup in Hyderabad?", a: "Scope decides it. A ₹3,500 requirement analysis ends in a written quotation, so you know the full cost before development starts." },
+      { q: "Will we have to rebuild the MVP after we raise?", a: "No. We build on the same stack a scaled product would use, so the MVP becomes version one instead of a throwaway." },
+      { q: "Do you sign an NDA?", a: "Yes, before the first workshop." },
+      { q: "Who owns the code and IP?", a: "You do, from the first commit. Everything is created in your company's accounts, which keeps investor due diligence simple." },
+      ...SHARED_FAQS,
+    ],
+    related: [
+      { label: "Software development company in Hyderabad", href: "/software-development-company-hyderabad" },
+      { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
+      { label: "Web development company in Hyderabad", href: "/web-development-company-hyderabad" },
+      { label: "Best AI developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" },
+    ],
+  },
+
+  {
+    path: "/app-development-company-telangana",
+    title: "App Development Company in Telangana",
+    description:
+      "App and web development company in Telangana, based in Hyderabad, building for businesses in Warangal, Karimnagar, Nizamabad, Khammam and beyond.",
+    h1: "App Development Company in Telangana",
+    sub: "Mobile apps, websites and AI for businesses across Telangana, from a Hyderabad team that speaks Telugu.",
+    intro:
+      "ElevateBox is an app and web development company in Telangana, based in Hyderabad, that builds mobile apps, websites and AI tools for businesses across the state, including Warangal, Karimnagar, Nizamabad, Khammam and Mahbubnagar, with discussions in Telugu, Hindi or English.",
+    serviceType: "Mobile app and web development",
+    areas: ["Telangana", "Hyderabad", "Warangal", "Karimnagar", "Nizamabad", "Khammam", "Mahbubnagar"],
+    services: {
+      h2: "What we build for Telangana businesses",
+      items: [
+        { t: "Mobile apps", d: "Android and iPhone apps for customers, staff and field teams.", href: "/mobile-app-development-company-hyderabad" },
+        { t: "Websites", d: "Fast, search-ready websites that bring in enquiries.", href: "/web-development-company-hyderabad" },
+        { t: "E-commerce", d: "Online stores with UPI checkout and delivery tracking.", href: "/services/ecommerce-development" },
+        { t: "Business software", d: "Billing, inventory, CRM and staff apps that replace spreadsheets.", href: "/software-development-company-hyderabad" },
+        { t: "Telugu AI calling", d: "AI phone calls that speak Telugu, Hindi and English.", href: "https://agents.elevatebox.in" },
+        { t: "Digital marketing", d: "Google search and Meta ads that bring in local customers.", href: "/services/digital-marketing" },
+      ],
+    },
+    why: {
+      h2: "Why Telangana businesses work with ElevateBox",
+      points: [
+        { t: "Talk in Telugu", d: "Requirement calls, demos and training in Telugu, Hindi or English, whichever your team prefers." },
+        { t: "Built for local customers", d: "Apps tested on budget Android phones and weak networks, the way users outside the city use them." },
+        { t: "1,400 apps built", d: "Across healthcare, commerce, education and AI, by the team that quotes it." },
+        { t: "Price known before you start", d: "A ₹3,500 requirement analysis ends in a written quotation and timeline." },
+      ],
+    },
+    ai: { h2: "AI that works in Telugu", lead: "Our own product, Voice by ElevateBox, makes AI calls in Telugu. We build the same into your app or business.", items: AI_ITEMS },
+    process: { h2: "How we work with you, wherever you are in Telangana", steps: PROCESS_APP },
+    stack: { h2: "Technology stack", groups: STACK_APP },
+    industries: { h2: "Industries we build for across Telangana", items: INDUSTRIES_APP },
+    cases: { h2: "Products we built and still run", slugs: ["vamshi-farms", "8meds", "medibag"] },
+    cost: {
+      h2: "How much does app development cost in Telangana?",
+      lead: "The cost depends on the six things below, not on your city. We quote in writing after a ₹3,500 requirement analysis.",
+      drivers: COST_DRIVERS,
+    },
+    faqs: [
+      { q: "Do you work with businesses outside Hyderabad?", a: "Yes. We work with businesses across Telangana, including Warangal, Karimnagar, Nizamabad, Khammam and Mahbubnagar, over video calls and WhatsApp, and meet in person in Hyderabad or on site when the project needs it." },
+      { q: "Can we discuss the project in Telugu?", a: "Yes. Requirement calls, demos and training can be in Telugu, Hindi or English." },
+      { q: "Can the app itself be in Telugu?", a: "Yes. We build apps and websites in Telugu and English, and AI phone calls in Telugu through our own product, Voice by ElevateBox." },
+      { q: "How much does app development cost in Telangana?", a: "The same as in Hyderabad: it depends on the screens, integrations, backend and AI features. A ₹3,500 requirement analysis ends in a written quotation before development starts." },
+      ...SHARED_FAQS,
+    ],
+    related: [
+      { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
+      { label: "Web development company in Hyderabad", href: "/web-development-company-hyderabad" },
+      { label: "Software development company in Hyderabad", href: "/software-development-company-hyderabad" },
+      { label: "Telugu AI voice agents", href: "https://agents.elevatebox.in" },
     ],
   },
 ];

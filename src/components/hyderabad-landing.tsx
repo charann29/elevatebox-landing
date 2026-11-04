@@ -54,7 +54,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               email: COMPANY.email,
               address: ORG.address,
               openingHours: "Mo-Sa 10:00-19:00",
-              areaServed: ["Hyderabad", ...AREAS].map((name) => ({ "@type": "Place", name })),
+              areaServed: (page.areas ?? ["Hyderabad", ...AREAS]).map((name) => ({ "@type": "Place", name })),
               parentOrganization: { "@id": ORG["@id"] },
             },
             { ...service(page.serviceType, page.description, page.path), serviceType: page.serviceType },

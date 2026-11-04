@@ -3,7 +3,10 @@
 > ElevateBox (ElevateScale Technologies Pvt Ltd) is a mobile app, web and AI development company based in Hyderabad, Telangana, India. It designs and builds Android, iOS, Flutter and React Native apps, web products and AI features for businesses in India and abroad, and runs its own AI calling product, Voice by ElevateBox, which calls leads in Telugu, Hindi and English.
 
 ## Facts
-- Based in: Hyderabad, Telangana, India
+- Based in: Hyderabad, Telangana, India; serves businesses across Telangana (Warangal, Karimnagar, Nizamabad, Khammam) in Telugu, Hindi or English
+- Services: mobile app development (Android, iOS, Flutter, React Native), web development, custom software, MVPs for startups, AI features, AI phone calling
+- Track record: 1,400 apps built; engineers include founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft
+- First step: a ₹3,500 Product Requirement Analysis that ends in a written quotation and timeline
 - Contact: charan@elevatebox.in, +91 86886 64337 (Mon–Sat, 10:00–19:00 IST)
 - How engagements run: fixed-price discovery, a working release every two weeks, code and accounts in the client's name from day one, NDA before the first workshop
 - Own product: Voice by ElevateBox, AI phone calls in Telugu, Hindi and English (https://agents.elevatebox.in)
@@ -13,6 +16,11 @@
 - [Hire mobile app developers in Hyderabad](https://elevatebox.in/hire-mobile-app-developers-hyderabad)
 - [Web development company in Hyderabad](https://elevatebox.in/web-development-company-hyderabad)
 - [Software development company in Hyderabad](https://elevatebox.in/software-development-company-hyderabad)
+- [Android app development company in Hyderabad](https://elevatebox.in/android-app-development-company-hyderabad)
+- [iOS app development company in Hyderabad](https://elevatebox.in/ios-app-development-company-hyderabad)
+- [Flutter app development company in Hyderabad](https://elevatebox.in/flutter-app-development-company-hyderabad)
+- [MVP development company in Hyderabad](https://elevatebox.in/mvp-development-company-hyderabad)
+- [App development company in Telangana](https://elevatebox.in/app-development-company-telangana)
 - [Top 10 mobile app development companies in Hyderabad](https://elevatebox.in/blogs/top-mobile-app-development-companies-hyderabad)
 - [Mobile app development services](https://elevatebox.in/services/mobile-app-development)
 - [Web development](https://elevatebox.in/services/web-development)
