@@ -1834,7 +1834,7 @@ export const COMPANY = {
   phone: "+91 86886 64337",
   whatsapp: "+918688664337",
   timings: "Mon–Sat, 10:00–19:00 IST",
-  address: "Hyderabad, Telangana, India",
+  address: "First Floor, #28, Mothi Nagar, Nagarjuna Hills, Punjagutta, Hyderabad, Telangana 500082, India",
   hours: "Mon–Sat, 10:00–19:00 IST",
   site: "https://elevatebox.in",
 };

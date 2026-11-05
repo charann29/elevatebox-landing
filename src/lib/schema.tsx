@@ -13,7 +13,16 @@ export const ORG = {
   logo: url("/logo.svg"),
   email: COMPANY.email,
   telephone: COMPANY.phone,
-  address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressRegion: "Telangana", addressCountry: "IN" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "First Floor, #28, Mothi Nagar, Nagarjuna Hills, Punjagutta",
+    addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
+    postalCode: "500082",
+    addressCountry: "IN",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 17.4271462, longitude: 78.4507285 },
+  hasMap: "https://maps.app.goo.gl/cekeZVdwwrYZQ1pz9",
   areaServed: [
     { "@type": "City", name: "Hyderabad" },
     { "@type": "State", name: "Telangana" },
@@ -25,7 +34,6 @@ export const ORG = {
   sameAs: [
     "https://in.linkedin.com/company/elevatebox",
     "https://www.instagram.com/elevate.box/",
-    "https://www.justdial.com/Hyderabad/Elevatescale-Technologies-Pvt-Ltd-Nizampet/040PXX40-XX40-250801123513-X9N8_BZDET",
   ],
   knowsAbout: ["Mobile app development", "Android app development", "iOS app development", "Flutter", "React Native", "Web development", "MVP development", "AI voice agents", "Telugu AI calling"],
 };

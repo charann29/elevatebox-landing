@@ -77,7 +77,7 @@ export default function Page() {
         {
           h: "Governing law",
           p: [
-            `These terms are governed by the laws of India, and the courts at ${COMPANY.address.split(",")[0]} have exclusive jurisdiction, unless a signed agreement specifies otherwise.`,
+            `These terms are governed by the laws of India, and the courts at Hyderabad have exclusive jurisdiction, unless a signed agreement specifies otherwise.`,
           ],
         },
       ]}
