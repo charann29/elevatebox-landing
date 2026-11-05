@@ -79,6 +79,8 @@ const COST_DRIVERS: [string, string][] = [
 ];
 
 const SHARED_FAQS = [
+  { q: "Which is the best app development company in Hyderabad?", a: "The best one is the company that has shipped apps like yours and still runs them. Ask each company for live apps you can install, who owns the code, how fast they fix bugs after launch, and whether you meet the engineers who build it. ElevateBox shows live products in its portfolio, puts the code in your name from day one and answers bugs in under 6 hours." },
+  { q: "Is ElevateBox a registered company?", a: "Yes. ElevateBox is run by ElevateScale Technologies Private Limited, registered in Hyderabad, Telangana under CIN U62099TS2024PTC191165. You sign a contract and get GST invoices from the company." },
   { q: "Who owns the source code and the App Store and Play Store accounts?", a: "You do, from the first commit. The repository, cloud account and store listings are created in your name, and we work inside them." },
   { q: "Can you add AI features such as chat, voice or document reading to my app?", a: "Yes. We build chat on your own documents, document reading and voice agents. Our own product, Voice by ElevateBox, makes AI phone calls in Telugu, Hindi and English." },
 ];
