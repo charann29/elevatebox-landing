@@ -19,6 +19,14 @@ export const ORG = {
     { "@type": "State", name: "Telangana" },
     { "@type": "Country", name: "India" },
   ],
+  foundingDate: "2022",
+  identifier: { "@type": "PropertyValue", propertyID: "CIN", value: "U62099TS2024PTC191165" },
+  founder: { "@type": "Person", name: "Sai Charan L", sameAs: "https://in.linkedin.com/in/charann06" },
+  sameAs: [
+    "https://in.linkedin.com/company/elevatebox",
+    "https://www.instagram.com/elevate.box/",
+    "https://www.justdial.com/Hyderabad/Elevatescale-Technologies-Pvt-Ltd-Nizampet/040PXX40-XX40-250801123513-X9N8_BZDET",
+  ],
   knowsAbout: ["Mobile app development", "Android app development", "iOS app development", "Flutter", "React Native", "Web development", "MVP development", "AI voice agents", "Telugu AI calling"],
 };
 
