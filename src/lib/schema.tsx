@@ -14,6 +14,12 @@ export const ORG = {
   email: COMPANY.email,
   telephone: COMPANY.phone,
   address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressRegion: "Telangana", addressCountry: "IN" },
+  areaServed: [
+    { "@type": "City", name: "Hyderabad" },
+    { "@type": "State", name: "Telangana" },
+    { "@type": "Country", name: "India" },
+  ],
+  knowsAbout: ["Mobile app development", "Android app development", "iOS app development", "Flutter", "React Native", "Web development", "MVP development", "AI voice agents", "Telugu AI calling"],
 };
 
 export const ld = (...nodes: object[]) =>

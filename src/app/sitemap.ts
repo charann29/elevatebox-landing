@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/hire-mobile-app-developers-hyderabad",
     "/web-development-company-hyderabad",
     "/software-development-company-hyderabad",
+    "/android-app-development-company-hyderabad",
+    "/ios-app-development-company-hyderabad",
+    "/flutter-app-development-company-hyderabad",
+    "/mvp-development-company-hyderabad",
+    "/app-development-company-telangana",
     "/careers",
     "/blogs",
     "/contact",
@@ -25,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sitemap-page",
   ].map((p) => ({
     url: `${base}${p}`,
-    priority: p === "" ? 1 : p.includes("hyderabad") ? 0.9 : 0.7,
+    priority: p === "" ? 1 : /hyderabad|telangana/.test(p) ? 0.9 : 0.7,
   }));
 
   const categoryPages = CATEGORIES.flatMap((c) => [

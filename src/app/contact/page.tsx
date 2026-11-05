@@ -1,3 +1,4 @@
+import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import type { Metadata } from "next";
 import { COMPANY } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
@@ -21,6 +22,7 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd json={ld(ORG, { "@type": "ContactPage", "@id": "https://elevatebox.in/contact#page", url: "https://elevatebox.in/contact", name: "Contact ElevateBox", about: { "@id": ORG["@id"] } }, breadcrumb([{ name: "Contact ElevateBox", path: "/contact" }]))} />
         <PageHero
           eyebrow="Contact"
           title="Tell us what you are building"
