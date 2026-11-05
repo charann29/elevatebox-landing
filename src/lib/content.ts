@@ -1,3 +1,5 @@
+import taxAi from "./posts/how-to-build-tax-ai-india.json";
+import healthStudy from "./posts/hyderabad-health-apps-telugu-study-2026.json";
 // Single source of truth for every route, nav dropdown, and page body.
 // ponytail: one data file + generic templates instead of ~160 hand-written pages.
 // Edit copy here; routes, nav, sitemap and static params all derive from it.
@@ -1222,6 +1224,7 @@ export type Post = {
   readMins: number;
   excerpt: string;
   sections: { h: string; p: string[] }[];
+  sources?: { name: string; url: string; what?: string }[];
 };
 
 const post = (
@@ -1251,6 +1254,8 @@ const CLOSE = (topic: string): [string, string[]] => [
 ];
 
 export const POSTS: Post[] = [
+  { ...post(healthStudy.slug, healthStudy.title, healthStudy.category, "2026-11-05", healthStudy.excerpt, healthStudy.sections as [string, string[]][]), sources: healthStudy.sources },
+  { ...post(taxAi.slug, taxAi.title, taxAi.category, "2026-11-05", taxAi.excerpt, taxAi.sections as [string, string[]][]), sources: taxAi.sources },
   post("top-mobile-app-development-companies-hyderabad", "Top 10 Mobile App Development Companies in Hyderabad (2026)", "Cost & Planning", "2026-10-23",
     "Ten Hyderabad app development companies from Google's first page and map pack, what each one says about itself, and how to choose between them.",
     [["How this list was made", ["We searched \"mobile app development company in Hyderabad\" on Google from Hyderabad on 13 October 2026 and took every agency on the first page and in the map pack. Directories such as Clutch and Justdial ranked too, but they list hundreds of firms rather than being one.", "Each entry says what the company itself claims, plus its Google rating where it appears in the map pack. We are on the list as well, first, so judge our entry with that in mind."]],
