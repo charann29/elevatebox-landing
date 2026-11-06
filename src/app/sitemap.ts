@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ios-app-development-company-hyderabad",
     "/flutter-app-development-company-hyderabad",
     "/mvp-development-company-hyderabad",
+    "/ai-development-company-hyderabad",
     "/app-development-company-telangana",
     "/careers",
     "/blogs",

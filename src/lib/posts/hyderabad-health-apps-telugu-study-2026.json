@@ -1,0 +1,170 @@
+{
+ "slug": "hyderabad-health-apps-telugu-study-2026",
+ "title": "Only 1 of 10 Big Health Brands in Hyderabad Has a Telugu Website",
+ "category": "Data",
+ "excerpt": "We checked the websites and apps of 10 pharmacy, hospital and lab brands serving Hyderabad. Telugu, app ratings and delivery complaints, with sources.",
+ "sections": [
+  [
+   "What we found in one line",
+   [
+    "Hyderabad's medicine-delivery apps are rated well, its hospital and lab apps are not, and almost nobody serves patients in Telugu online. Of the 10 brands we checked on 5 November 2026, one has a native Telugu website, one offers machine translation, and eight are English only.",
+    "Every number below comes from a public app-store listing or the brand's own homepage on that date. The sources are listed at the end so anyone can check them."
+   ]
+  ],
+  [
+   "The 10 brands and how we checked them",
+   [
+    "Pharmacy and medicine delivery: MedPlus, Apollo 24|7, Netmeds, PharmEasy and Tata 1mg. Hospitals and diagnostics: KIMS, Yashoda, CARE, Rainbow Children's Hospital and Vijaya Diagnostic Centre.",
+    "For each brand we recorded the Google Play and App Store rating, rating count and last update, read a sample of recent reviews (50 per pharmacy brand, fewer where an app has fewer reviews), and checked the homepage for a Telugu option, a WhatsApp entry point and structured data that tells search engines what the business is.",
+    "We did not test booking or checkout end to end, because that needs real patient details. Speed scores are not included: Google's public PageSpeed tool refused our requests that day, and we would rather leave a number out than guess it."
+   ]
+  ],
+  [
+   "Finding 1: Telugu is almost missing",
+   [
+    "Telugu is the official language of Telangana, and many patients are more comfortable reading health information in it. Yet only CARE Hospitals runs a native Telugu version of its website. Yashoda offers Telugu through an automatic translation widget. The other eight brands have no Telugu option on their homepage, and on three hospital and lab sites a /te/ address returns an error or redirects away.",
+    "Tata 1mg is the interesting case: its site already has a language switcher, but English is the only language in it. The plumbing for a second language is built; the content is not."
+   ]
+  ],
+  [
+   "Finding 2: pharmacy apps score 4.5, hospital apps about 3",
+   [
+    "The five medicine-delivery apps average 4.5 on Google Play, from 36,000 to nearly 890,000 ratings each. Apollo 24|7 and Tata 1mg reach 4.6 on Android and 4.7 on iPhone.",
+    "The four hospital and lab brands that have a patient app average 3.0 on Google Play: Rainbow 3.6, KIMS 3.5, Vijaya Diagnostic 3.2 and Yashoda Connect 1.7. Several have very few ratings, so treat those numbers as early signals, not verdicts. CARE Hospitals has no patient app on either store; the only app it publishes is for doctors.",
+    "Two lab and hospital apps show the same pattern: about 30% of Rainbow's and Vijaya's Google Play ratings are one star."
+   ]
+  ],
+  [
+   "Finding 3: what patients complain about",
+   [
+    "In the pharmacy apps, the most common complaint is delivery: 45 of the 250 reviews we sampled (18%) describe a late, postponed or missing order. The share varies a lot by brand, from 3 of 50 for MedPlus to 20 of 50 for Netmeds.",
+    "In the hospital and lab apps, the complaints are different. Patients write about reports they cannot find in the app, one-time passwords that never arrive, and bookings that fail after an update. These are not delivery problems; they are software reliability problems, and they are the cheaper kind to fix."
+   ]
+  ],
+  [
+   "Finding 4: iPhone apps are sometimes an afterthought",
+   [
+    "MedPlus's Android app was updated in September 2026, but its iPhone app was last updated in March 2024, about 20 months earlier. PharmEasy's iPhone app is rated 3.9 against 4.5 on Android, and Vijaya Diagnostic's 1.8 against 3.2.",
+    "Most of India uses Android, so this is understandable. It still matters in Hyderabad, where many of the patients who pay for private healthcare use iPhones."
+   ]
+  ],
+  [
+   "Finding 5: hospitals are ahead on WhatsApp",
+   [
+    "Four of the five hospital and lab brands show a WhatsApp number on their homepage. Only two of the five pharmacy brands do: MedPlus and PharmEasy, both with an order-on-WhatsApp button.",
+    "For a city where most people already message businesses on WhatsApp, this is the cheapest channel to add and the easiest to measure."
+   ]
+  ],
+  [
+   "Finding 6: search engines are told very little",
+   [
+    "Structured data is the code that tells Google a page belongs to a hospital, a pharmacy or a doctor. Apollo 24|7's homepage declares only that it is a website, and Tata 1mg's only that it is an organisation. Among the hospitals, Yashoda declares the Hospital type, CARE uses it in lower case, and KIMS and Rainbow use a general medical organisation type instead. CARE and Rainbow mark up individual doctor profiles; on the KIMS profile we sampled, there was none.",
+    "This affects whether a hospital, its doctors and its timings appear richly in Google results and in AI answers."
+   ]
+  ],
+  [
+   "What would move the numbers",
+   [
+    "Telugu first, where it matters most: appointment booking, lab report messages and medicine reminders in Telugu. A full translated website is not needed on day one.",
+    "Fix reliability before adding features. For hospital apps, the review data points at three things: report access, OTP delivery and booking after updates. Each can be monitored and tested automatically.",
+    "Use calls and WhatsApp for the moments that go wrong. A short automated call or message when a delivery slips, or when a report is ready, answers the most common complaint before it becomes a one-star review.",
+    "Give search engines the basics: the right business type, doctor profiles marked up, and a Telugu version of the pages patients actually look for."
+   ]
+  ],
+  [
+   "Limits of this study",
+   [
+    "This is a snapshot of public data on one day, not a ranking of medical quality. App ratings mix many issues, review samples are small for newer apps, and a brand may have Telugu support inside its app or call centre that we could not see from the outside.",
+    "If you work at one of these brands and something here is out of date, write to us and we will correct it with the date of the change."
+   ]
+  ],
+  [
+   "Frequently asked questions",
+   [
+    "Which Hyderabad hospital has a Telugu website? Of the five hospital and lab brands we checked, CARE Hospitals has a native Telugu website. Yashoda offers Telugu through machine translation.",
+    "Which medicine-delivery app has the best rating? On 5 November 2026, Tata 1mg and Apollo 24|7 were rated 4.6 on Google Play and 4.7 on the App Store, the highest of the five pharmacy brands.",
+    "What do people complain about most in pharmacy apps? Late, postponed or missing deliveries: 18% of the 250 recent reviews we sampled.",
+    "Why are hospital app ratings lower? The reviews point to report access, one-time passwords and booking failures after updates, rather than to medical care itself.",
+    "Can we use these numbers? Yes, with a link to this page. Each figure has its public source listed below."
+   ]
+  ]
+ ],
+ "sources": [
+  {
+   "name": "MedPlus on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.medplus.mobile.android"
+  },
+  {
+   "name": "MedPlus on the App Store",
+   "url": "https://apps.apple.com/in/app/medplus-mart-online-pharmacy/id1070265254"
+  },
+  {
+   "name": "Apollo 24|7 on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.apollo.patientapp"
+  },
+  {
+   "name": "Apollo 24|7 on the App Store",
+   "url": "https://apps.apple.com/in/app/apollo-247-health-medicine/id1496740273"
+  },
+  {
+   "name": "Netmeds on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.NetmedsMarketplace.Netmeds"
+  },
+  {
+   "name": "Netmeds on the App Store",
+   "url": "https://apps.apple.com/in/app/netmeds-india-ki-pharmacy/id1011070011"
+  },
+  {
+   "name": "PharmEasy on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.phonegap.rxpal"
+  },
+  {
+   "name": "PharmEasy on the App Store",
+   "url": "https://apps.apple.com/in/app/pharmeasy-healthcare-app/id982432643"
+  },
+  {
+   "name": "Tata 1mg on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.aranoah.healthkart.plus"
+  },
+  {
+   "name": "Tata 1mg on the App Store",
+   "url": "https://apps.apple.com/in/app/tata-1mg-healthcare-app/id554578419"
+  },
+  {
+   "name": "MyKIMS on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.kimshospitals.mykimspatientapp"
+  },
+  {
+   "name": "MyKIMS on the App Store",
+   "url": "https://apps.apple.com/in/app/mykims/id6747935596"
+  },
+  {
+   "name": "Yashoda Connect on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.yashoda.yashodaconnect"
+  },
+  {
+   "name": "Rainbow Hospitals on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.sparctechnologies.rainbow"
+  },
+  {
+   "name": "Rainbow Hospitals on the App Store",
+   "url": "https://apps.apple.com/in/app/rainbow-hospitals/id6760179478"
+  },
+  {
+   "name": "Vijaya Diagnostic on Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.vijayadiagnostic.app"
+  },
+  {
+   "name": "Vijaya Diagnostic on the App Store",
+   "url": "https://apps.apple.com/in/app/vijaya-diagnostic-book-a-test/id1670369128"
+  },
+  {
+   "name": "CARE Hospitals apps on Google Play (developer page)",
+   "url": "https://play.google.com/store/apps/developer?id=Quality+CARE+India+Ltd"
+  },
+  {
+   "name": "CARE Hospitals Telugu website",
+   "url": "https://www.carehospitals.com/te/"
+  }
+ ]
+}

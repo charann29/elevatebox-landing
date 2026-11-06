@@ -1,0 +1,191 @@
+{
+ "slug": "how-to-build-tax-ai-india",
+ "title": "How to Build a Tax AI for India: Data, Retrieval, Verification",
+ "excerpt": "How to build a GST and income tax AI for India: the five data corpora, hybrid retrieval, citation checks, and handling the Income-tax Act, 2025.",
+ "category": "AI",
+ "sections": [
+  [
+   "Tax AI in India is a retrieval problem, not a model problem",
+   [
+    "Most teams that set out to build a tax AI for India start by asking which model to fine-tune. That is the wrong first question. A general large language model already writes good English and can follow instructions. What it cannot do on its own is know which circular is still in force, which section applies to which year, or what a tribunal held last month.",
+    "So a useful GST AI assistant or income tax notice reply tool is mostly a data and retrieval system with a language model at the end. You collect the law, structure it, retrieve the right pieces for each question, let the model write an answer from those pieces only, and then check the answer before anyone sees it. The model is the cheapest and most replaceable part.",
+    "This guide is for CA firms, tax-tech founders and enterprise finance heads who want to build such a system or judge one they are buying. At ElevateBox we build retrieval and verification systems for regulated domains, and the approach below is the one we would defend in front of a senior partner."
+   ]
+  ],
+  [
+   "2026 changed the ground: two income-tax Acts at once",
+   [
+    "Any Indian tax AI built today has to handle a major transition. The Income-tax Act, 2025 received Presidential assent on 21 August 2025 and came into force on 1 April 2026, replacing the Income-tax Act, 1961. The Income-tax Rules, 2026 were notified by CBDT on 20 March 2026, along with new forms. The Press Information Bureau described the change as a simplification done \"without altering the underlying tax policy\".",
+    "For a retrieval system, \"same policy\" does not mean \"same text\". The Income Tax Department says the new Act has 536 sections and 16 schedules, and it uses \"tax year\" in place of \"previous year\", with the term \"assessment year\" discontinued. Section numbers that every CA knows by heart have moved.",
+    "The old Act has not vanished either. It is repealed from 1 April 2026, but transitional provisions keep earlier years and pending proceedings under the 1961 Act. In practice a firm will answer questions under both Acts for years. Your system must know which Act governs a question before it retrieves a single paragraph, and it needs a mapping between old and new section numbers so that case law decided under the 1961 Act can still be found for a new-Act query."
+   ]
+  ],
+  [
+   "The five data corpora you need",
+   [
+    "Treat \"tax data\" as five separate corpora. Each has a different source, refresh rate and legal status.",
+    "First, primary statute. This means the Income-tax Act, 1961 and 2025, the CGST, IGST and UTGST Acts, the State GST Acts, the rules, schedules and every Finance Act amendment. The text is public. The value is in parsing it into a tree of section, sub-section, clause, proviso and explanation, with cross-references turned into links.",
+    "Second, subordinate legislation: notifications, circulars, instructions, orders and FAQs from CBDT and CBIC. Volume is real. The CBDT circulars page on incometaxindia.gov.in lists more than 1,380 circulars, and CBDT had reached Notification No. 139 of 2026 by 30 October 2026. On the GST side, CBIC issued Circulars 257 to 264 of 2026 on a single day, 26 October 2026, after the 57th GST Council meeting.",
+    "Third, case law from the Supreme Court, the High Courts, ITAT, CESTAT, the advance ruling authorities and now the GST Appellate Tribunal. Each judgment should be stored with structured fields: citation, parties, bench, date, provisions discussed, issue, holding and outcome. A PDF in a vector store is not case law research.",
+    "Fourth, commentary: treatises, journals and expert analysis. This is where interpretation lives, and it is copyrighted. You need a licence to index or train on it.",
+    "Fifth, procedural and practice data: return forms, filing schemas, ICAI guidance, notice templates such as GST ASMT-10 scrutiny notices and DRC-01 show cause summaries, and above all real notice and reply pairs with their outcomes. This last set is the hardest to get and the most valuable for an income tax notice reply AI, because it teaches what a reply that actually closed the matter looks like."
+   ]
+  ],
+  [
+   "Where to get the data",
+   [
+    "Primary statute and CBDT material are published free on incometaxindia.gov.in, which hosts the Income-tax Act, 2025, the 2026 Rules and the circulars and notifications pages. The CBDT circulars page also tags items as superseded, amended or withdrawn, which is a useful seed for your supersession graph. Authoritative gazette text is on egazette.gov.in.",
+    "GST circulars are listed on the GST Council site at gstcouncil.gov.in, and State GST departments publish their own copies and state circulars. Tribunal material is on itat.gov.in for income tax, cestat.gov.in for customs, excise and service tax, and gstat.gov.in for the GST Appellate Tribunal, which is constituted under section 109 of the CGST Act and now has an e-filing and e-courts portal.",
+    "For courts, the eCourts judgments portal at judgments.ecourts.gov.in offers free text search of Supreme Court and High Court judgments. Indian Kanoon offers a paid API priced per request, which is far easier than scraping, but check its terms for commercial use. Curated, headnoted libraries from commercial publishers are the clean route for commentary and cross-linked case law, and they are priced as enterprise licences.",
+    "Your own files are the last and best source. A CA firm that anonymises its queries, notices, replies and outcomes, with client consent written into the engagement letter, owns a dataset no competitor can download."
+   ]
+  ],
+  [
+   "Architecture: hybrid retrieval and reranking",
+   [
+    "The core pattern is retrieval-augmented generation with a reranker and, later, light fine-tuning. Nobody needs to pre-train a foundation model for Indian tax.",
+    "Retrieval must be hybrid. Tax questions are full of exact tokens: \"section 54F\", \"Rule 86B\", \"GSTR-3B\", a circular number. Pure vector search blurs these. Combine keyword search such as BM25 with dense embeddings, then apply hard filters for Act, section, year, forum and state, and rerank the shortlist with a cross-encoder trained on tax relevance pairs. Legal RAG in India fails most often at this step, not at generation.",
+    "Chunk by legal unit, not by token count. A proviso cut in half changes the meaning of the section. Keep each chunk tied to its parent section and to its source document so the answer can show exactly where a sentence came from."
+   ]
+  ],
+  [
+   "Temporal validity and the supersession graph",
+   [
+    "A correct answer for one year can be wrong for the next. Every statutory chunk needs valid-from and valid-to dates, and every query needs a year context, either stated by the user or inferred and shown back to them. Under the 2025 Act that context is a tax year; for older matters it is still an assessment year under the 1961 Act.",
+    "Circulars and notifications need a directed graph. Each node carries edges such as amends, clarifies, supersedes and rescinds. When retrieval lands on a circular, the system walks the graph to the latest live version before the model sees it. Without this, your assistant will quote a withdrawn circular with full confidence, which is the fastest way to lose a CA's trust."
+   ]
+  ],
+  [
+   "Citation grounding, jurisdiction and computation",
+   [
+    "Ground every citation. Pass retrieved chunks to the model with IDs, require it to cite by ID, and validate every citation against the retrieved set after generation. If the answer cites something it was not given, reject it and regenerate. The model should be unable to cite a section it did not retrieve.",
+    "Route by jurisdiction. GST runs on the CGST Act plus a State GST Act for each state, with the UTGST Act for union territories without a legislature. State circulars and advance rulings differ. A Telangana query should retrieve Telangana material first, so classify the place of registration or supply on the way in.",
+    "Never let the language model do tax arithmetic. Computation is branching rules plus numbers. Have the model produce a structured plan, run it in deterministic code, and pass the result back for explanation. This also gives you an audit trail a reviewer can check line by line."
+   ]
+  ],
+  [
+   "Training: SFT, preference data and an online verifier",
+   [
+    "Fine-tuning comes after retrieval works. Start with supervised fine-tuning on question and answer pairs written by practising CAs, each with the gold answer, the citations and the reasoning. This teaches format, citation style and when to refuse, not the law itself.",
+    "Next, collect preference pairs. Generate two to four candidate answers per question and have a CA rank them. Direct preference optimisation on these pairs shifts behaviour without the cost of full reinforcement learning from human feedback, which only pays off once you have large volumes of user ratings.",
+    "The most important layer is an online verifier that runs on every answer. It checks that each cited provision or case exists and says what the answer claims, that each cited circular is still in force, and that the answer does not contradict the governing statute for that year. Answers that fail never reach the user, and each failure becomes training data for the next round."
+   ]
+  ],
+  [
+   "Build the evaluation set first",
+   [
+    "Before you write retrieval code, have CAs write a few hundred real questions across income tax and GST, with gold answers, required citations and a marking rubric. Include questions that straddle the 1961 and 2025 Acts, state-specific GST questions and questions whose correct answer is \"it depends, and here is on what\".",
+    "Run the set on every change to prompts, chunking, retrieval or model. Track citation accuracy, freshness errors and wrong-year answers separately from overall quality. For a practice, the business metrics matter more: replies accepted without a follow-up, notices closed without escalation, and reviewer time per draft."
+   ]
+  ],
+  [
+   "What the market already looks like",
+   [
+    "Two Indian products show the two ends of the field. Taxmann launched Taxmann.AI with EY India on 18 July 2025. Its launch press release describes an Ask Bot that returns source-backed answers linked to sections, rules, circulars, case law and commentary, Microsoft Word integration, and a planned Draft Bot to analyse notices and draft responses. Its advantage is a licensed content library built over six decades.",
+    "TaxBotGPT, founded by CA Himanshu Kumar, positions itself as an AI workspace for Indian tax, with GST and income tax notice centres, case law search, cited sources and Hindi and English support. Its advantage is workflow. For a new builder, the lesson is that corpus authority and workflow depth are the two moats, and verification rigour is how you compete with either."
+   ]
+  ],
+  [
+   "Frequently asked questions",
+   [
+    "How do you build a tax AI for India? Collect statute, circulars and notifications, case law, licensed commentary and practice data. Structure them with dates and supersession links, retrieve with hybrid search and reranking, generate answers that cite retrieved chunks only, and verify every answer before release.",
+    "Do I need to train my own large language model? No. Retrieval-augmented generation on a strong existing model, plus light fine-tuning on CA-written answers and preference pairs, is enough. The effort belongs in data structure, retrieval and verification.",
+    "How should a GST AI assistant handle state law? Detect the relevant state from the registration or place of supply, filter retrieval to that state's SGST material and circulars alongside the CGST Act, and show the user which jurisdiction the answer assumes.",
+    "Can AI draft income tax notice replies safely? It can produce a first draft that a CA reviews. Safety comes from knowing which Act and year the notice falls under, citing only retrieved provisions, computing figures in code, and keeping a human sign-off before filing.",
+    "Is legal RAG in India legal to build on public data? Statutes, government circulars and court judgments published on official portals are broadly usable, but third-party databases and commentary carry licence terms. Read the terms of every source and license commentary before you index it."
+   ]
+  ]
+ ],
+ "sources": [
+  {
+   "name": "PIB: Income-tax Act, 2025 comes into force (1 April 2026)",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2248005",
+   "what": "Assent on 21 August 2025, in force 1 April 2026, Rules notified 20 March 2026, quote on unchanged tax policy"
+  },
+  {
+   "name": "Income Tax Department: Objective and scope of the New Act",
+   "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/objective-and-scope-new-act",
+   "what": "536 sections and 16 schedules, tax year replaces previous year, assessment year discontinued, 1961 Act repealed with transitional provisions"
+  },
+  {
+   "name": "Income-tax Act, 2025 (as amended), incometaxindia.gov.in",
+   "url": "https://www.incometaxindia.gov.in/documents/d/guest/income_tax_act_2025_as_amended_by_fa_act_2026-pdf",
+   "what": "Official text of the new Act, commencement on 1 April 2026"
+  },
+  {
+   "name": "CBDT Circulars, incometaxindia.gov.in",
+   "url": "https://www.incometaxindia.gov.in/circulars",
+   "what": "Over 1,380 circulars listed, superseded/amended/withdrawn tags, free official source"
+  },
+  {
+   "name": "Income Tax Department: News and e-Campaigns",
+   "url": "https://www.incometax.gov.in/iec/foportal/latest-news",
+   "what": "CBDT Notification No. 139/2026 dated 30 October 2026"
+  },
+  {
+   "name": "EY India tax alert: CBIC Circulars 257 to 264 of 2026",
+   "url": "https://www.ey.com/en_in/technical/alerts-hub/2026/10/cbic-issues-circulars-pursuant-to-the-recommendations-made-in-the-57th",
+   "what": "Eight CGST circulars issued on 26 October 2026 after the 57th GST Council meeting"
+  },
+  {
+   "name": "GST Council: CGST Circulars",
+   "url": "https://www.gstcouncil.gov.in/cgst-circulars",
+   "what": "Free official listing of CGST circulars"
+  },
+  {
+   "name": "e-Gazette of India",
+   "url": "https://egazette.gov.in/",
+   "what": "Authoritative gazette text of Acts and notifications"
+  },
+  {
+   "name": "Income Tax Appellate Tribunal",
+   "url": "https://itat.gov.in/",
+   "what": "Free source of ITAT orders"
+  },
+  {
+   "name": "CESTAT final orders",
+   "url": "https://cestat.gov.in/final-order-status",
+   "what": "Free source of CESTAT orders"
+  },
+  {
+   "name": "GST Appellate Tribunal",
+   "url": "https://gstat.gov.in/",
+   "what": "GSTAT constituted under section 109 of the CGST Act, now operational"
+  },
+  {
+   "name": "PIB: GST Appellate Tribunal e-Courts portal",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2170932",
+   "what": "GSTAT online filing and case tracking portal"
+  },
+  {
+   "name": "eCourts Judgments and Orders portal",
+   "url": "https://judgments.ecourts.gov.in/",
+   "what": "Free search of Supreme Court and High Court judgments"
+  },
+  {
+   "name": "Indian Kanoon API pricing",
+   "url": "https://api.indiankanoon.org/pricing/",
+   "what": "Paid per-request API for case law"
+  },
+  {
+   "name": "Taxmann press release: Taxmann and EY India launch Taxmann.AI",
+   "url": "https://www.taxmann.com/post/press-release/launch-alert-taxmann-and-ey-india-launch-ai-powered-platform-to-transform-tax-research",
+   "what": "Launch on 18 July 2025 with EY India, Ask Bot, Word integration, planned Draft Bot, six-decade library"
+  },
+  {
+   "name": "International Accounting Bulletin: EY India and Taxmann unveil AI tax platform",
+   "url": "https://www.internationalaccountingbulletin.com/news/ey-india-taxmann-tax-platform/",
+   "what": "Independent coverage of the Taxmann.AI and EY collaboration"
+  },
+  {
+   "name": "TaxBotGPT",
+   "url": "https://taxbotgpt.ai/",
+   "what": "Product features: GST and income tax notice centres, case law search, cited sources, Hindi and English"
+  },
+  {
+   "name": "TaxBotGPT on F6S",
+   "url": "https://www.f6s.com/company/taxbotgpt",
+   "what": "Founder CA Himanshu Kumar; auto-reply to income tax and GST notices"
+  }
+ ]
+}

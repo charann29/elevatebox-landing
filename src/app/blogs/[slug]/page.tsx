@@ -114,6 +114,20 @@ export default async function PostPage({
                 ))}
               </div>
 
+              {p.sources && (
+                <section className="mt-10">
+                  <h2 className="text-2xl font-bold text-brand">Sources</h2>
+                  <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-ink-muted">
+                    {p.sources.map((s) => (
+                      <li key={s.url}>
+                        <a href={s.url} className="underline hover:text-brand" rel="noopener">{s.name}</a>
+                        {s.what ? ` — ${s.what}` : ""}
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )}
+
               <div className="mt-12 rounded-2xl bg-[#E3ECFF] p-7">
                 <h2 className="text-lg font-semibold text-brand">
                   Working on something like this?

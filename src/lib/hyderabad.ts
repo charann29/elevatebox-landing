@@ -144,6 +144,7 @@ export const HYD_PAGES: HydPage[] = [
       { label: "Flutter app development company in Hyderabad", href: "/flutter-app-development-company-hyderabad" },
       { label: "MVP development for startups", href: "/mvp-development-company-hyderabad" },
       { label: "App development across Telangana", href: "/app-development-company-telangana" },
+      { label: "AI development company in Hyderabad", href: "/ai-development-company-hyderabad" },
     ],
   },
 
@@ -611,6 +612,85 @@ export const HYD_PAGES: HydPage[] = [
       { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
       { label: "Web development company in Hyderabad", href: "/web-development-company-hyderabad" },
       { label: "Best AI developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" },
+    ],
+  },
+
+  {
+    path: "/ai-development-company-hyderabad",
+    title: "AI Development Company in Hyderabad",
+    description:
+      "AI development company in Hyderabad: AI agents, Telugu and Hindi voice calling, chat on your documents and document reading, tested on your data first.",
+    h1: "AI Development Company in Hyderabad",
+    sub: "AI agents, voice calling, chat and document automation, proved on your data before you scale it.",
+    intro:
+      "ElevateBox is an AI development company in Hyderabad that builds AI agents, AI phone calls in Telugu, Hindi and English, chat on your own documents, and document reading for invoices, prescriptions and forms. We measure each one against a baseline before launch, and the code, data and model accounts stay in your name.",
+    serviceType: "AI software development",
+    services: {
+      h2: "AI development services in Hyderabad",
+      items: [
+        { t: "AI agents and automation", d: "Agents that do multi-step work across your tools, with a reviewable log of every action.", href: "/ai-solutions/ai-agents-and-automation" },
+        { t: "Voice AI agents", d: "Phone calls in Telugu, Hindi and English for leads, reminders and follow-ups. We run our own: Voice by ElevateBox.", href: "/ai-solutions" },
+        { t: "Generative AI development", d: "Chat and drafting on your own documents, with answers that cite the source they came from.", href: "/ai-solutions/generative-ai-development" },
+        { t: "Document reading", d: "Invoices, bank statements, prescriptions and forms read into fields, with a person checking the edge cases.", href: "/ai-solutions/ai-ml-development" },
+        { t: "Computer vision", d: "Reading images and video for counts, defects, IDs and documents.", href: "/ai-solutions/computer-vision" },
+        { t: "AI consulting", d: "Which process to automate first, what data it needs, and how to measure it.", href: "/ai-solutions/ai-consulting" },
+      ],
+    },
+    why: {
+      h2: "Why Hyderabad businesses build AI with ElevateBox",
+      points: [
+        { t: "We run AI in production ourselves", d: "Voice by ElevateBox makes AI phone calls in Telugu, Hindi and English for real businesses every day." },
+        { t: "Measured before launch", d: "We build a test set from your real examples first, so accuracy is a number, not a feeling." },
+        { t: "Engineers from top teams", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft, and AIR 14 at ACM ICPC." },
+        { t: "Your data stays yours", d: "Code, data and model accounts are created in your name, and nothing is used to train someone else's model." },
+      ],
+    },
+    ai: { h2: "Where AI pays off first", lead: "The best first AI project replaces work a person does by hand every day: calling, reading, typing or answering the same question.", items: AI_ITEMS },
+    process: {
+      h2: "How we build an AI system",
+      steps: [
+        { t: "Requirement analysis", d: "A paid call that picks the process, the data and the success measure, and ends in a written quotation.", when: "Week 1" },
+        { t: "Test set", d: "50 to 200 of your real examples with known-good answers, collected before any prompt is written.", when: "Weeks 1–2" },
+        { t: "Prototype on your data", d: "A working version scored against the test set, so you see accuracy before you commit to the build.", when: "Weeks 2–4" },
+        { t: "Production build", d: "Integrations, a human review step for low-confidence cases, logging and a fallback path.", when: "Two-week sprints" },
+        { t: "Monitor and improve", d: "Every mistake a person corrects becomes a new test case for the next version.", when: "After launch" },
+      ],
+    },
+    stack: {
+      h2: "AI technology stack",
+      groups: [
+        { t: "Models", items: ["OpenAI", "Azure OpenAI", "Gemini", "Claude"] },
+        { t: "Voice", items: ["Speech to text", "Text to speech", "SIP and WebRTC telephony"] },
+        { t: "Retrieval", items: ["Vector search", "Keyword search", "Reranking"] },
+        { t: "Backend", items: ["Python", "Node.js", "PostgreSQL", "Supabase"] },
+      ],
+    },
+    industries: { h2: "Industries we build AI for", items: INDUSTRIES_APP },
+    cases: { h2: "AI products we built and run", slugs: ["oneasy", "8meds", "medibag"] },
+    cost: {
+      h2: "How much does AI development cost in Hyderabad?",
+      lead: "Cost depends on the data, the integrations and how much a person must review. We fix it in writing after a ₹3,500 requirement analysis.",
+      drivers: [
+        ["The task", "Answering, reading, calling or acting, and how many steps each one takes."],
+        ["Your data", "How clean it is, where it lives, and whether it is in Telugu, Hindi or English."],
+        ["Accuracy needed", "How often it may be wrong before a person must check, and what a mistake costs."],
+        ["Integrations", "CRM, ERP, telephony, WhatsApp or your own app."],
+        ["Usage", "Model and call minutes, billed at actuals in your own accounts."],
+      ],
+    },
+    faqs: [
+      { q: "What does an AI development company build?", a: "Software that does work a person does today: AI phone agents, chat on your documents, document and invoice reading, and agents that carry out multi-step tasks across your tools." },
+      { q: "How do you know the AI is accurate enough?", a: "We collect 50 to 200 of your real examples with known-good answers before building, and score every version against them. Low-confidence cases go to a person instead of the customer." },
+      { q: "Can the AI speak Telugu?", a: "Yes. Voice by ElevateBox makes AI phone calls in Telugu, Hindi and English, and our chat and document tools handle Telugu text too." },
+      { q: "Will my data be used to train other models?", a: "No. We use model accounts in your name with training on your data switched off, and the data stays in your cloud." },
+      ...SHARED_FAQS,
+    ],
+    related: [
+      { label: "AI developers in Hyderabad", href: "/best-ai-developers-in-hyderabad" },
+      { label: "How to build a tax AI for India", href: "/blogs/how-to-build-tax-ai-india" },
+      { label: "Software development company in Hyderabad", href: "/software-development-company-hyderabad" },
+      { label: "MVP development company in Hyderabad", href: "/mvp-development-company-hyderabad" },
+      { label: "Mobile app development company in Hyderabad", href: "/mobile-app-development-company-hyderabad" },
     ],
   },
 
