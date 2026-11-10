@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
+import { PROPOSALS } from "@/lib/proposals";
 
 const base = COMPANY.site;
 
@@ -25,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/book",
     "/courses",
     "/best-ai-developers-in-hyderabad",
+    "/proposals",
     "/privacy-policy",
     "/terms-and-conditions",
     "/cancellation-and-refund",
@@ -50,5 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...categoryPages, ...posts, ...jobs];
+  const proposals = PROPOSALS.map((p) => ({
+    url: `${base}/proposals/${p.slug}`,
+    lastModified: new Date(p.date),
+    priority: 0.5,
+  }));
+
+  return [...staticPages, ...categoryPages, ...posts, ...jobs, ...proposals];
 }
