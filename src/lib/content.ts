@@ -1869,6 +1869,65 @@ export const DISCOVERY = {
   ],
 };
 
+/* Paid consultation tiers for the Meta ads funnel, one page each at /book/<slug>.
+   Same flow as DISCOVERY: a Razorpay Payment Page whose success redirect opens the
+   matching cal.com event. ponytail: pay stays "" until that Payment Page exists; the
+   pay button is hidden until then and only "Ask a question first" (WhatsApp) shows.
+   DRAFT: durations and deliverables for 1,499 and 3,499 await owner sign-off. */
+/* Results shown on the consult pages. Numbers come from the owner's recorded meetings
+   (Wispr: 30 Oct 2026 solar campaign, 22 Sep 2026 CA practice, 10 Oct 2026 wellness).
+   Clients are unnamed on purpose. DRAFT: owner to confirm each figure before going live. */
+export const CONSULT_RESULTS = [
+  { n: "253 leads", d: "and 51 site visits in two months for a solar installer, on about ₹800 a day of ads." },
+  { n: "3 hrs to 15 min", d: "per annual return for a CA practice, after we automated the paperwork." },
+  { n: "0 to 3 sales a day", d: "for a wellness centre once we added a small advance payment to its ad funnel." },
+];
+
+export const CONSULTS = [
+  {
+    slug: "499",
+    headline: "Find where your business can make more money, in one 30-minute call.",
+    price: "₹499",
+    title: "30-minute App Idea Call",
+    lead: "Tell us about your business. We show you where an app, website or AI can bring in more customers or save your team hours, and what to build first.",
+    pay: "",
+    includes: [
+      "30 minutes on Google Meet with someone who builds apps",
+      "Where your business is losing customers or hours today",
+      "The one app, website or AI fix that pays back first",
+      "A rough budget range (our projects start at ₹3 lakh)",
+    ],
+  },
+  {
+    slug: "1499",
+    headline: "Plan the product that earns, with the people who will build it.",
+    price: "₹1,499",
+    title: "45-minute Product Planning Call",
+    lead: "45 minutes working through your product with the team, then a short written note with next steps.",
+    pay: "",
+    includes: [
+      "45 minutes on Google Meet with the delivery team",
+      "Your main screens and features worked through",
+      "Tech choices explained in plain words",
+      "A short written next-step note after the call",
+    ],
+  },
+  {
+    slug: "3499",
+    headline: "Know exactly what to build, what it costs and when it starts earning.",
+    price: "₹3,499",
+    title: "60-minute Requirement Analysis",
+    lead: "A full hour with the people who would build it, ending in a written quotation and timeline.",
+    pay: "",
+    includes: [
+      "60 minutes with the people who will build it, not a sales desk",
+      "Your requirements worked through screen by screen",
+      "What to build first, and what to leave out",
+      "A written quotation and timeline you can take anywhere",
+    ],
+  },
+];
+
 /* Where the team has worked and what it has done. Every line here is
    checkable — that is the whole point of it. A round number a prospect
    cannot verify buys nothing; "founding engineer at ClickPe (YC W23)"
