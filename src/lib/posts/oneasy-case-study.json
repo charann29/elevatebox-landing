@@ -1,0 +1,47 @@
+{
+ "slug": "oneasy-ca-firm-automation-case-study",
+ "title": "OnEasy Case Study: Software for an AI-Operated CA Firm",
+ "excerpt": "How ElevateBox built OnEasy's Annual Returns Filer for MCA filings and stabilised its PAS practice-management platform for CA firms in Hyderabad.",
+ "category": "Case Study",
+ "sections": [
+  ["The client", [
+   "OnEasy (oneasy.in) is a Hyderabad chartered-accountancy practice led by CA Abhishek Boddu, building toward an AI-operated firm.",
+   "ElevateBox built OnEasy's Annual Returns Filer, and took over maintenance of PAS, its practice-management platform, on 1 October 2026. PAS was originally built by another developer.",
+   "Stack: Next.js, Supabase and OpenAI structured outputs for the Annual Returns Filer; SvelteKit, Drizzle, libSQL/Turso, AWS Lambda via SST and Cloudflare for PAS."
+  ]],
+  ["The problem", [
+   "Annual accounts and MCA filings for small private companies are repetitive, evidence-heavy work. A CA team re-keys bank statements, categorises every transaction, chases the client for answers, builds the trial balance, and then drafts six companion documents every year: Notes to Accounts, Auditor's Report, Board Report, List of Directors, List of Shareholders and AGM Notice.",
+   "One wrong date format or a missed reversal silently breaks the balance sheet. OnEasy wanted the first draft of all of this produced by software, with every number traceable to the source document, and with the CA still signing."
+  ]],
+  ["What we built: the Annual Returns Filer", [
+   "One upload, one workflow. The client uploads company evidence once: incorporation certificate, MCA master data and every bank statement. The app detects the company, its history and the financial years from the documents themselves.",
+   "Every transaction gets exactly one status: categorised, waiting for a client answer, suspense, or source conflict. Nothing is silently dropped or guessed.",
+   "Management answers questions and approves inside the app. Approval records a signed receipt covering the reviewer, the evidence digest and the exact answers, so a late edit cannot replace an approved answer.",
+   "Two outputs: an editable, traceable accounting workbook, and a document pack with the annual report, the year-specific companion documents and, when the firm enables it, pre-filled data for AOC-4, MGT-7A, ADT-1 and DPT-3.",
+   "Humans stay in charge of the legal steps. Signing, UDIN generation and MCA portal submission remain manual actions by the CA. Uploaded documents are treated as evidence, never as instructions, and one company's data can never become another company's defaults."
+  ]],
+  ["How we proved the arithmetic", [
+   "An independent audit on 15 September 2026 tested the Filer on 2,406 real bank rows across 11 financial years and 3 companies.",
+   "20,150 of 20,150 spreadsheet formula results matched after a forced full recalculation. 992 of 992 independent trial-balance debit and credit checks agreed.",
+   "4 of 4 workbook edit drills passed with the balance sheet still tallying: changing an accrual, excluding a journal, moving a journal across year-end, and reclassifying a payment.",
+   "346 of 347 automated tests passed (1 skipped), and 9 of 9 browser checks passed at phone, tablet and desktop widths with no runtime errors.",
+   "The audit also found and fixed real defects before any client saw them: bank rows with two-digit years were being skipped, ICICI's amount-plus-DR/CR layout was unsupported, negative reversals were rejected, and later-year opening balances were fixed numbers instead of formulas linked to the prior year's close."
+  ]],
+  ["What we have not claimed yet", [
+   "Live AI extraction accuracy on new, unseen documents. The 22 model evaluation cases are built but not yet run against production. We will publish that number when it exists."
+  ]],
+  ["PAS practice management: takeover and stabilisation", [
+   "PAS is OnEasy's multi-tenant practice-management platform for CA firms. At handoff on 2 October 2026 it held about 1,242 tasks, about 900 client entities and about 400 users, with its first paying firm from 25 August 2026.",
+   "The owner's top complaint was that the app hangs. In the first week we traced it to specific causes in the code: three serial database queries on every request, multiplied by 5 to 10 server calls per page; a write-locked database transaction used for a read-only sidebar widget, which serialised the whole firm's traffic; a dialog that loaded all 900 client entities twice on every page; and background polling outside error boundaries, so one failed request replaced the whole app with an error page.",
+   "We also mapped nine reported bugs to root causes, including the wrong point of contact on new entities, missing @mention suggestions, notifications swallowed by a unique index, and an empty users list for default roles. Working rules for the takeover: no destructive database change without a reviewed migration, and soft-delete over delete."
+  ]],
+  ["Why it matters", [
+   "For the firm: the first draft of an annual filing is produced from evidence, with every unresolved question visible instead of guessed.",
+   "For the client company: one upload and in-app answers instead of email chains and spreadsheets.",
+   "For the CA: every figure traces back to a bank row or a document, and the CA still signs."
+  ]],
+  ["Building something similar?", [
+   "We build AI and automation software for CA firms, accountants and other evidence-heavy businesses in Hyderabad and across India. Read our guide on how to build a tax AI for India, or book a call to talk through your workflow."
+  ]]
+ ]
+}

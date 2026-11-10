@@ -1,5 +1,6 @@
 import taxAi from "./posts/how-to-build-tax-ai-india.json";
 import healthStudy from "./posts/hyderabad-health-apps-telugu-study-2026.json";
+import oneasyCase from "./posts/oneasy-case-study.json";
 // Single source of truth for every route, nav dropdown, and page body.
 // ponytail: one data file + generic templates instead of ~160 hand-written pages.
 // Edit copy here; routes, nav, sitemap and static params all derive from it.
@@ -1192,6 +1193,7 @@ export const PROJECTS: Project[] = [
     summary:
       "AI agent platform — autonomous agents that carry out multi-step tasks with tool access, bounded permissions, and a reviewable action log.",
     platforms: ["Web", "API"],
+    href: "/blogs/oneasy-ca-firm-automation-case-study",
   },
   {
     slug: "creator-chart",
@@ -1254,6 +1256,7 @@ const CLOSE = (topic: string): [string, string[]] => [
 ];
 
 export const POSTS: Post[] = [
+  post(oneasyCase.slug, oneasyCase.title, oneasyCase.category, "2026-11-10", oneasyCase.excerpt, oneasyCase.sections as [string, string[]][]),
   { ...post(healthStudy.slug, healthStudy.title, healthStudy.category, "2026-11-05", healthStudy.excerpt, healthStudy.sections as [string, string[]][]), sources: healthStudy.sources },
   { ...post(taxAi.slug, taxAi.title, taxAi.category, "2026-11-05", taxAi.excerpt, taxAi.sections as [string, string[]][]), sources: taxAi.sources },
   post("top-mobile-app-development-companies-hyderabad", "Top 10 Mobile App Development Companies in Hyderabad (2026)", "Cost & Planning", "2026-10-23",
