@@ -7,9 +7,9 @@ import { CtaBand, PageHero, Section } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "AI Calling and Automation Proposals for Telangana Businesses",
+  title: "Growth Plans for Telangana Businesses",
   description:
-    "Open proposals for Hyderabad and Telangana businesses: where AI voice calling and automation could save staff time, based on public website checks.",
+    "12-month growth plans for Hyderabad and Telangana businesses: tech, automation, strategy and Meta ads, with the funnel and Month 6 and Month 12 numbers.",
   alternates: { canonical: "/proposals" },
   robots: { index: false, follow: true },
 };
@@ -26,15 +26,15 @@ export default function ProposalsHub() {
         <JsonLd
           json={ld(
             ORG,
-            { "@type": "CollectionPage", "@id": `${COMPANY.site}/proposals#page`, url: `${COMPANY.site}/proposals`, name: "AI calling and automation proposals", about: { "@id": ORG["@id"] } },
-            breadcrumb([{ name: "Proposals", path: "/proposals" }]),
+            { "@type": "CollectionPage", "@id": `${COMPANY.site}/proposals#page`, url: `${COMPANY.site}/proposals`, name: "Growth plans", about: { "@id": ORG["@id"] } },
+            breadcrumb([{ name: "Growth plans", path: "/proposals" }]),
           )}
         />
         <PageHero
-          eyebrow="Open proposals"
-          title="AI calling and automation proposals for Telangana businesses"
-          lead="For each business we checked its public website, then wrote down where AI phone calls and better software would save the most time. These are proposals, not client work."
-          crumbs={[{ label: "Proposals" }]}
+          eyebrow="Growth plans"
+          title="Growth plans for Telangana businesses"
+          lead="For each business we checked its public website and wrote a 12-month plan: tech, automation, strategy and Meta ads, with the money funnel and Month 6 and Month 12 numbers from a stated model. These businesses are not our clients."
+          crumbs={[{ label: "Growth plans" }]}
         />
         <Section>
           <div className="space-y-12">
