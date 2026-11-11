@@ -1,10 +1,11 @@
 export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
+import { getStudioPaths, getStudioPosts } from "@/lib/cms";
 import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
 
 const base = COMPANY.site;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
     "",
     "/about",
@@ -42,11 +43,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...c.items.map((i) => ({ url: `${base}${c.base}/${i.slug}`, priority: 0.7 })),
   ]);
 
-  const posts = POSTS.map((p) => ({
-    url: `${base}/blogs/${p.slug}`,
-    lastModified: new Date(p.date),
-    priority: 0.6,
-  }));
+  // Growth Studio posts (a Studio slug replaces ours) and its indexable pages at any address.
+  const studio = await getStudioPosts();
+  const taken = new Set(studio.map((s) => s.slug));
+  const posts = [
+    ...studio.map((s) => ({
+      url: `${base}/blogs/${s.slug}`,
+      lastModified: s.updatedAt ?? s.publishedAt ?? undefined,
+      priority: 0.6,
+    })),
+    ...POSTS.filter((p) => !taken.has(p.slug)).map((p) => ({
+      url: `${base}/blogs/${p.slug}`,
+      lastModified: new Date(p.date),
+      priority: 0.6,
+    })),
+    ...(await getStudioPaths())
+      .filter((e) => !e.noindex)
+      .map((e) => ({ url: `${base}${e.path}`, lastModified: e.lastmod ?? undefined, priority: 0.6 })),
+  ];
 
   const jobs = JOBS.map((j) => ({
     url: `${base}/careers/${j.slug}`,

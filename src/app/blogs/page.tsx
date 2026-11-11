@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
+import { getStudioPosts } from "@/lib/cms";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -13,14 +14,26 @@ export const metadata: Metadata = {
 };
 
 const fmt = (iso: string) =>
-  new Date(iso).toLocaleDateString("en-IN", {
+  iso && new Date(iso).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
     year: "numeric",
   });
 
-export default function BlogIndex() {
-  const [featured, ...rest] = POSTS;
+type Card = { slug: string; title: string; category: string; date: string; readMins: number; excerpt: string; cover: string };
+
+export default async function BlogIndex() {
+  // Studio posts first (newest first), then ours; on a slug clash Studio's rewrite wins.
+  const studio = await getStudioPosts();
+  const taken = new Set(studio.map((s) => s.slug));
+  const cards: Card[] = [
+    ...studio.map((s) => {
+      const category = s.eyebrow ?? s.tags[0] ?? "Article";
+      return { slug: s.slug, title: s.heading ?? s.title, category, date: s.publishedAt ?? s.updatedAt ?? "", readMins: s.readingTimeMinutes, excerpt: s.description, cover: s.imageUrl ?? postCover(category) };
+    }),
+    ...POSTS.filter((p) => !taken.has(p.slug)).map((p) => ({ ...p, cover: postCover(p.category) })),
+  ];
+  const [featured, ...rest] = cards;
 
   return (
     <>
@@ -54,7 +67,7 @@ export default function BlogIndex() {
             </div>
             <div className="self-center">
               <Image
-                src={postCover(featured.category)}
+                src={featured.cover}
                 alt=""
                 width={600}
                 height={400}
@@ -86,7 +99,7 @@ export default function BlogIndex() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
                 <Image
-                  src={postCover(p.category)}
+                  src={p.cover}
                   alt=""
                   width={600}
                   height={400}

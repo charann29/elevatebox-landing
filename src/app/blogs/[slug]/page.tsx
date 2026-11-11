@@ -6,12 +6,19 @@ import { COMPANY, POSTS, getPost, postCover, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
+import { BLOG_PATH, getStudioPost, getStudioPosts } from "@/lib/cms";
+import { StudioArticle, studioMetadata } from "@/components/studio-article";
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return POSTS.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const slugs = new Set([...POSTS.map((p) => p.slug), ...(await getStudioPosts()).map((s) => s.slug)]);
+  return [...slugs].map((slug) => ({ slug }));
 }
+
+// On a slug clash the Studio post wins: Growth Combinator's rewrites replace our posts at the same URL.
+const studioPost = async (slug: string) =>
+  (await getStudioPosts()).some((s) => s.slug === slug) ? getStudioPost(slug) : null;
 
 export async function generateMetadata({
   params,
@@ -19,6 +26,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const s = await studioPost(slug);
+  if (s) return studioMetadata(s, `${BLOG_PATH}/${slug}`);
   const p = getPost(slug);
   if (!p) return {};
   return {
@@ -48,6 +57,15 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const s = await studioPost(slug);
+  if (s)
+    return (
+      <StudioArticle
+        p={s}
+        path={`${BLOG_PATH}/${slug}`}
+        crumbs={[{ name: "Blogs", path: BLOG_PATH }, { name: s.breadcrumbLabel ?? s.title, path: `${BLOG_PATH}/${slug}` }]}
+      />
+    );
   const p = getPost(slug);
   if (!p) notFound();
 
