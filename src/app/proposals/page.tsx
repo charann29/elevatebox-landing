@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { COMPANY } from "@/lib/content";
-import { PROPOSALS, proposalIndustries } from "@/lib/proposals";
+import { PROPOSALS, citySlug, industrySlug, proposalCities, proposalIndustries } from "@/lib/proposals";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
@@ -37,7 +37,26 @@ export default function ProposalsHub() {
           crumbs={[{ label: "Growth plans" }]}
         />
         <Section>
-          <div className="space-y-12">
+          <div className="grid gap-8 sm:grid-cols-2">
+            {[
+              { h: "By industry", base: "industry", items: proposalIndustries().map((i) => ({ label: i, slug: industrySlug(i), n: PROPOSALS.filter((p) => p.industry === i).length })) },
+              { h: "By city", base: "city", items: proposalCities().map((c) => ({ label: c, slug: citySlug(c), n: PROPOSALS.filter((p) => p.city === c).length })).sort((a, b) => b.n - a.n) },
+            ].map((g) => (
+              <section key={g.h} className="rounded-2xl border border-black/10 p-6">
+                <h2 className="text-xl font-bold text-brand">{g.h}</h2>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {g.items.map((i) => (
+                    <li key={i.slug}>
+                      <Link href={`/proposals/${g.base}/${i.slug}`} className="inline-block rounded-full bg-brand-wash px-3 py-1.5 text-sm text-brand hover:underline">
+                        {i.label} <span className="text-ink-muted">({i.n})</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+          <div className="mt-14 space-y-12">
             {groups.map((g) => (
               <section key={g.ind}>
                 <h2 className="text-2xl font-bold text-brand">

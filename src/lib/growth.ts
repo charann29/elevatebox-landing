@@ -5,7 +5,7 @@
 
 export type Line = "bottom" | "top";
 
-type Model = {
+export type Model = {
   free: string; // what a stranger gets before paying anything
   cm1: { name: string; price: number; what: string }; // price 0 = a free but booked step
   cm2: { name: string; price: number; what: string };
@@ -146,27 +146,37 @@ const M: Record<string, Model> = {
   },
 };
 
-export const model = (industry: string) => M[industry] ?? M["Services & trade"];
+// City size moves prices, ad spend and our fee; returns, rates and margins stay the same.
+// ponytail: three tiers by name; swap for real city data when we have clients outside Hyderabad.
+const METRO = /hyderabad|secunderabad|kondapur|medchal|ranga ?reddy|patancheru|sangareddy/i;
+const TIER2 = /warangal|karimnagar|nizamabad|khammam/i;
+export const cityScale = (city: string) => (METRO.test(city) ? 1 : TIER2.test(city) ? 0.75 : 0.6);
+export const cityTier = (city: string) =>
+  METRO.test(city) ? "Hyderabad metro" : TIER2.test(city) ? "a tier-2 city" : "a district town";
+
+export function model(industry: string, city = "Hyderabad"): Model {
+  const b = M[industry] ?? M["Services & trade"];
+  const k = cityScale(city);
+  if (k === 1) return b;
+  const r = (n: number, step: number) => Math.round((n * k) / step) * step;
+  return { ...b, cm1: { ...b.cm1, price: r(b.cm1.price, 10) }, cm2: { ...b.cm2, price: r(b.cm2.price, 100) }, spend: r(b.spend, 1000), fee: r(b.fee, 5000) };
+}
 
 // Return on ad spend we plan to: Month 1 while Meta learns, and from Month 3. Cost per CM1 follows
 // from it (value of one CM1 / return). Low-margin, high-ticket trades need and usually get more.
 const ROAS: Record<Line, [number, number]> = { bottom: [1.2, 3], top: [2, 6] };
-export const roasOf = (industry: string) => model(industry).roas ?? ROAS;
-export const cm1Value = (x: Model, line: Line) => x.cm1.price + x.rate[line] * x.cm2.price;
-export const cpaOf = (industry: string, line: Line) => {
-  const x = model(industry);
-  const v = cm1Value(x, line);
-  return roasOf(industry)[line].map((r) => Math.round(v / r / 10) * 10) as [number, number];
-};
+const roasOf = (x: Model) => x.roas ?? ROAS;
+const cm1Value = (x: Model, line: Line) => x.cm1.price + x.rate[line] * x.cm2.price;
+const cpaOf = (x: Model, line: Line) =>
+  roasOf(x)[line].map((r) => Math.round(cm1Value(x, line) / r / 10) * 10) as [number, number];
 
 // Phase 1 (M1-3) holds spend; Phase 2 (M4-6) steps it up only while cost per CM1 falls; Phase 3 holds.
 const SPEND_X = [1, 1, 1, 1.33, 1.67, 2, 2, 2, 2, 2, 2, 2];
 
 export type Month = { m: number; spend: number; cm1: number; cm2: number; revenue: number; cumGap: number };
 
-export function project(industry: string, line: Line, fee = model(industry).fee): Month[] {
-  const x = model(industry);
-  const [c1, c3] = cpaOf(industry, line);
+function project(x: Model, line: Line, fee: number): Month[] {
+  const [c1, c3] = cpaOf(x, line);
   let gap = 0; // cumulative gross profit minus cumulative cost (ads + fee)
   return SPEND_X.map((k, i) => {
     const m = i + 1;
@@ -182,17 +192,31 @@ export function project(industry: string, line: Line, fee = model(industry).fee)
   });
 }
 
-export const breakEven = (rows: Month[]) => rows.find((r) => r.cumGap >= 0)?.m ?? null;
+const breakEven = (rows: Month[]) => rows.find((r) => r.cumGap >= 0)?.m ?? null;
 
 // Priced by the client's leverage, not our hours: the largest fee (up to the industry's list fee,
-// never below ₹25K) at which the bottom line still breaks even by Month 6.
-export function feeFor(industry: string) {
-  for (let fee = model(industry).fee; fee > 25000; fee -= 5000) {
-    const be = breakEven(project(industry, "bottom", fee));
+// never below ₹25K, or the list fee if lower) at which the bottom line still breaks even by Month 6.
+function feeFor(x: Model) {
+  const floor = Math.min(25000, x.fee);
+  for (let fee = x.fee; fee > floor; fee -= 5000) {
+    const be = breakEven(project(x, "bottom", fee));
     if (be !== null && be <= 6) return fee;
   }
-  return 25000;
+  return floor;
 }
+
+/** Everything a growth plan page needs for one industry in one city. */
+export function plan(industry: string, city = "Hyderabad") {
+  const x = model(industry, city);
+  const fee = feeFor(x);
+  const lo = project(x, "bottom", fee), hi = project(x, "top", fee);
+  return {
+    x, fee, lo, hi,
+    beLo: breakEven(lo), beHi: breakEven(hi),
+    roas: roasOf(x), cpaLo: cpaOf(x, "bottom"), cpaHi: cpaOf(x, "top"),
+  };
+}
+export type Plan = ReturnType<typeof plan>;
 
 /** Indian money: 1.2 Cr, 34.5 L, 45K. */
 export function inr(n: number) {
