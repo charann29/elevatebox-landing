@@ -17,6 +17,7 @@ import {
 } from "@/lib/content";
 import { Header, Footer, PillCta } from "@/components/site";
 import { DiscoveryOffer, Faq } from "@/components/blocks";
+import { VoiceVideos } from "@/components/voice-videos";
 import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -336,6 +337,8 @@ export default function Home() {
                   </div>
                 ))}
               </dl>
+
+              <VoiceVideos />
 
               <div className="mt-10 grid items-center gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-[1fr_1.15fr]">
                 <div className="mx-auto w-full max-w-md">
