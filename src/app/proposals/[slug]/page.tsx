@@ -31,6 +31,7 @@ export async function generateMetadata({
     title: t.length > 47 ? { absolute: t } : t,
     description: desc(p),
     alternates: { canonical: `/proposals/${p.slug}` },
+    robots: { index: false, follow: true },
     openGraph: { images: [OG_IMG], title: t, description: desc(p), type: "article", publishedTime: p.date },
   };
 }

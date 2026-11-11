@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Open proposals for Hyderabad and Telangana businesses: where AI voice calling and automation could save staff time, based on public website checks.",
   alternates: { canonical: "/proposals" },
+  robots: { index: false, follow: true },
 };
 
 export default function ProposalsHub() {

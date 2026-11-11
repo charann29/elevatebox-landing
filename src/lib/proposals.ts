@@ -17,10 +17,9 @@ export type Proposal = {
   steps: string[];
 };
 
-const today = new Date().toISOString().slice(0, 10);
-
-// ponytail: release is gated on build date, so a weekly deploy publishes the next batch.
-export const PROPOSALS: Proposal[] = (data as Proposal[]).filter((p) => p.date <= today);
+// Frozen at the first batch (owner, 12 Nov 2026): these pages name real businesses, so they stay
+// reachable by link for sales but are noindex and out of the sitemap. No new weekly batches.
+export const PROPOSALS: Proposal[] = (data as Proposal[]).filter((p) => p.date <= "2026-11-10");
 
 export const getProposal = (slug: string) => PROPOSALS.find((p) => p.slug === slug);
 
