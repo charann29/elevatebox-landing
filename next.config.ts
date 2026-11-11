@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
-// Every page is static, so the site exports to plain files in out/ and a
-// Cloudflare Worker serves them (wrangler.jsonc).
+// Vercel builds and serves this site (git integration on main). Pages are still prerendered at
+// build time; the only server code is /api/revalidate, which Growth Studio calls to start a rebuild.
 const nextConfig: NextConfig = {
-  output: "export",
   images: { unoptimized: true },
 };
 
