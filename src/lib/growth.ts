@@ -16,6 +16,7 @@ type Model = {
   rate: Record<Line, number>; // CM2 as a share of CM1
   hook: string; // the one-line ad idea
   roas?: Record<Line, [number, number]>; // return on ad spend, Month 1 and from Month 3 (default below)
+  tech: [string, string][]; // industry-specific builds: [what we build, what it does for the numbers]
 };
 
 const M: Record<string, Model> = {
@@ -27,6 +28,10 @@ const M: Record<string, Model> = {
     organic: { bottom: 20, top: 40 },
     rate: { bottom: 0.1, top: 0.18 },
     hook: "the doctor on camera explaining one problem at a time, in Telugu",
+    tech: [
+      ["Online slot booking that writes straight into each doctor's schedule", "Patients book at 11 pm when they search; fewer drop-offs between ad and first consultation"],
+      ["Reports, bills and reminders on WhatsApp, one patient record across reception, lab and pharmacy", "Patients come back for the treatment plan instead of starting over somewhere else: this is the CM2 rate"],
+    ],
   },
   "Manufacturing & industrial": {
     free: "Free spec sheet, price range and a call-back within 5 minutes",
@@ -37,6 +42,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.25, top: 0.4 },
     hook: "the product working on a real shop floor, with the spec on screen",
     roas: { bottom: [2, 8], top: [3, 14] },
+    tech: [
+      ["Quote generator from the enquiry details, approved by the sales head in one tap", "Buyers get a price the same day; quotes no longer sit in an inbox while the buyer orders elsewhere"],
+      ["Dealer and repeat-buyer ordering on WhatsApp or a portal, linked to Tally and stock", "Re-orders happen on schedule without a sales call: this is the CM2 line"],
+    ],
   },
   "Services & trade": {
     free: "Free quote on WhatsApp within the hour",
@@ -47,6 +56,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.1, top: 0.18 },
     hook: "a before-and-after of one real job, with the price range",
     roas: { bottom: [1.5, 5], top: [2, 9] },
+    tech: [
+      ["Quote, invoice and UPI payment link generated from the enquiry", "The first job is paid before the visit; fewer no-shows and unpaid jobs"],
+      ["Job scheduling with automatic service reminders", "Customers are reminded before they need you again, so the repeat job comes back to you"],
+    ],
   },
   "Food & hospitality": {
     free: "Free dessert or welcome drink on the first direct order",
@@ -57,6 +70,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.02, top: 0.04 },
     hook: "the signature dish being made, then the full table",
     roas: { bottom: [1.5, 5], top: [2, 9] },
+    tech: [
+      ["Direct ordering and table booking on your own site and WhatsApp", "Repeat customers order without the aggregator's 20 to 30 percent commission"],
+      ["Party, catering and banquet calendar with online deposits", "Big bookings are confirmed with money, not a phone promise: this is the CM2 line"],
+    ],
   },
   "Travel & logistics": {
     free: "Free quote in 10 minutes on WhatsApp",
@@ -67,6 +84,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.06, top: 0.12 },
     hook: "one real trip or move, start to finish, in 30 seconds",
     roas: { bottom: [1.5, 6], top: [2.5, 10] },
+    tech: [
+      ["Online quote and booking in one flow, on the site and WhatsApp", "Enquiries become paid bookings while the customer is still comparing"],
+      ["Live tracking links and trip updates on WhatsApp", "Fewer 'where is it' calls and more repeat and corporate customers"],
+    ],
   },
   Jewellery: {
     free: "Free design shortlist on WhatsApp and today's gold rate",
@@ -77,6 +98,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.08, top: 0.14 },
     hook: "a bride trying the set in the showroom, with the making charge shown",
     roas: { bottom: [3, 10], top: [5, 18] },
+    tech: [
+      ["Design catalogue on WhatsApp with today's rate and a visit booking", "Customers shortlist before they walk in, so a showroom visit turns into a purchase"],
+      ["Savings-scheme, repair and custom-order tracking with reminders", "Scheme instalments and wedding dates bring customers back for the big order"],
+    ],
   },
   Education: {
     free: "Free demo class or career guidance call",
@@ -86,6 +111,10 @@ const M: Record<string, Model> = {
     organic: { bottom: 10, top: 20 },
     rate: { bottom: 0.06, top: 0.12 },
     hook: "a past student's result, then the teacher explaining one topic",
+    tech: [
+      ["Online admission form and fee collection with UPI and automatic receipts", "Interested parents pay the workshop or admission fee the same day"],
+      ["Parent updates on WhatsApp: attendance, results and the next intake", "Happy parents refer the next student, and workshop students move to admission"],
+    ],
   },
   "Pharma & medical supplies": {
     free: "Free price list and stock check on WhatsApp",
@@ -96,6 +125,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.2, top: 0.35 },
     hook: "same-day delivery shown end to end, with the range on screen",
     roas: { bottom: [2, 8], top: [3, 14] },
+    tech: [
+      ["Retailer ordering app or WhatsApp ordering with live stock", "Chemists order in two taps instead of calling, so the first trial order is easy"],
+      ["Batch, expiry and outstanding-payment dashboard by retailer", "Repeat orders and collections run on schedule: this is the CM2 line"],
+    ],
   },
   "Real estate & construction": {
     free: "Free site visit with pick-up",
@@ -106,6 +139,10 @@ const M: Record<string, Model> = {
     rate: { bottom: 0.015, top: 0.03 },
     hook: "a walk-through of the ready unit and the view from it",
     roas: { bottom: [5, 20], top: [8, 35] },
+    tech: [
+      ["One lead inbox for portals, Meta and walk-ins, with a site-visit calendar", "Every lead gets a call in seconds and a booked visit, so ad money is not wasted"],
+      ["Buyer portal for payments, documents and construction updates", "Buyers who trust the progress refer friends and pay milestones on time"],
+    ],
   },
 };
 

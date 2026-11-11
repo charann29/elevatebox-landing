@@ -166,6 +166,18 @@ export default async function ProposalPage({
     },
   ];
 
+  // The full tech solution, each piece next to what it does for the numbers and when it is live.
+  const tech: [string, string, string][] = [
+    [gaps.length ? `Website fixes from Section 1: ${gaps.slice(0, 4).map((f) => lc(f.label)).join(", ")}${gaps.length > 4 ? `, and ${gaps.length - 4} more` : ""}` : "A faster, phone-first website", "Every ad rupee lands on a site that loads safely, works on a phone and can be reached in one tap; more visitors become CM1", "Week 1 to 2"],
+    [`One-offer ${cm1} pages with a two-tap UPI checkout`, `Ad traffic sees one offer and one button, not a menu; this is what brings the cost per ${cm1} down`, "Week 2"],
+    ["Meta Pixel, Conversions API and UTM tags on every page and checkout", "Meta learns from people who pay, not people who click; it is why the return on ad spend rises from Month 1 to Month 3", "Week 2"],
+    ["CRM with stages: enquiry, CM1, follow-up, CM2", "No lead is lost and every stage is a number; follow-ups on time raise the CM2 rate", "Week 3"],
+    [`AI calling agent in Telugu, Hindi and English on Voice by ElevateBox`, "Missed, after-hours and abandoned-checkout calls are returned within a minute; this is the CM1 that does not come from ads", "Week 3 to 4"],
+    ...x.tech.map(([a, b]): [string, string, string] => [a, b, "Month 2"]),
+    ["WhatsApp automation: confirmations, reminders, payment links, review requests", "Fewer no-shows, more Google reviews and more referrals; this is the Phase 3 flywheel", "Month 2"],
+    ["Owner dashboard: CM1, CM2, spend and cost per CM1, every morning", "Spend goes up only when the numbers say so, and weak ads are cut in days, not months", "Month 2"],
+  ];
+
   const payback = beLo
     ? `Counting ad spend and our fee against the gross profit on new sales, the plan pays for itself by Month ${beHi} on the top line and Month ${beLo} on the bottom line.`
     : beHi
@@ -208,7 +220,7 @@ export default async function ProposalPage({
               {p.name} is not an ElevateBox client, and this is not an endorsement by them. The website notes come from a
               public check of <a href={p.site} rel="nofollow noopener" className="underline">{host}</a> on {fmt(p.checked)}.
               The money figures are a model for a typical {p.industry.toLowerCase()} business in Hyderabad, built from the
-              assumptions in Section 5, not from {p.name}&apos;s own numbers. If you run {p.name}, email{" "}
+              assumptions in Section 6, not from {p.name}&apos;s own numbers. If you run {p.name}, email{" "}
               <a href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(`Growth plan: ${p.name}`)}`} className="underline">{COMPANY.email}</a>{" "}
               with your real numbers and we will redo it, or remove the page.
             </div>
@@ -278,6 +290,16 @@ export default async function ProposalPage({
               The AI calling runs on <a href={VOICE_APP} className="underline">Voice by ElevateBox</a>.
             </p>
 
+            <H2 n="Section 3">The full tech solution, side by side with performance</H2>
+            <p className="mt-3 leading-relaxed text-ink-muted">
+              What we build on the left; what it does for the ads, the CM1 and the CM2 on the right. Each piece is judged by
+              that column, not by how good it looks.
+            </p>
+            <Table
+              head={["What we build", "What it does for performance", "Live by"]}
+              rows={tech.map(([a, b, c]) => [a, b, c])}
+            />
+
             <H2 n="The funnel">From an ad to the {cm2}</H2>
             <ol className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-6">
               {[
@@ -300,7 +322,7 @@ export default async function ProposalPage({
               Meta, so the ads learn who actually pays.
             </p>
 
-            <H2 n="Section 3">The plan in three phases</H2>
+            <H2 n="Section 4">The plan in three phases</H2>
             <Table
               head={["Phase", "Months", "Meta spend a month", "What happens"]}
               rows={[
@@ -310,7 +332,7 @@ export default async function ProposalPage({
               ]}
             />
 
-            <H2 n="Section 4">The numbers: Month 3, Month 6, Month 12</H2>
+            <H2 n="Section 5">The numbers: Month 3, Month 6, Month 12</H2>
             <Table
               head={["Bottom to top line", "Month 3", "Month 6", "Month 12", "First 12 months"]}
               rows={[
@@ -323,7 +345,7 @@ export default async function ProposalPage({
             <Chart bottom={lo} top={hi} />
             <p className="mt-4 leading-relaxed text-ink-muted">{payback}</p>
 
-            <H2 n="Section 5">The assumptions behind every number</H2>
+            <H2 n="Section 6">The assumptions behind every number</H2>
             <Table
               head={["Input", "Bottom line", "Top line"]}
               rows={[
@@ -340,7 +362,7 @@ export default async function ProposalPage({
               business directly to Meta.
             </p>
 
-            <H2 n="Section 6">How we work, and how we price it</H2>
+            <H2 n="Section 7">How we work, and how we price it</H2>
             <Table
               head={["Way of working", "What it is", "When it fits"]}
               rows={[
