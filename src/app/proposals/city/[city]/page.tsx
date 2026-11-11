@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COMPANY, OG_IMG } from "@/lib/content";
-import { PROPOSALS, cityBySlug, citySlug, industrySample, industrySlug, proposalCities } from "@/lib/proposals";
+import { COMPANIES, PROPOSALS, companyHref, cityBySlug, citySlug, industrySlug, proposalCities } from "@/lib/proposals";
 import { cityTier, inr, plan } from "@/lib/growth";
 import { GrowthPlan, Table, beLabel, range } from "@/components/growth-plan";
 import { Header, Footer } from "@/components/site";
@@ -35,12 +35,14 @@ export default async function CityPlan({ params }: { params: Promise<{ city: str
   const city = cityBySlug((await params).city);
   if (!city) notFound();
   const path = `/proposals/city/${citySlug(city)}`;
-  const items = PROPOSALS.filter((p) => p.city === city);
+  const items = [
+    ...PROPOSALS.filter((p) => p.city === city).map((p) => ({ key: p.slug, name: p.name, industry: p.industry, href: `/proposals/${p.slug}` })),
+    ...COMPANIES.filter((c) => c.city === city).map((c) => ({ key: c.slug, name: c.name, industry: c.industry, href: companyHref(c.slug) })),
+  ];
   const count = (i: string) => items.filter((p) => p.industry === i).length;
   const inds = [...new Set(items.map((p) => p.industry))].sort((a, b) => count(b) - count(a));
   const top = inds[0];
   const g = plan(top, city);
-  const sample = industrySample(top);
 
   return (
     <>
@@ -78,7 +80,7 @@ export default async function CityPlan({ params }: { params: Promise<{ city: str
             />
 
             <h2 className="mt-14 text-2xl font-bold text-brand sm:text-3xl">The full plan: {top.toLowerCase()} in {city}</h2>
-            <GrowthPlan s={{ name: `a typical ${top.toLowerCase()} business`, industry: top, city, voice: sample.voice, stack: sample.stack.slice(-2) }} g={g} />
+            <GrowthPlan s={{ name: `a typical ${top.toLowerCase()} business`, industry: top, city, voice: g.x.voice, stack: g.x.ideas }} g={g} />
 
             <section className="mt-14">
               <h2 className="text-2xl font-bold text-brand">The {items.length} plans in {city}</h2>
@@ -87,8 +89,8 @@ export default async function CityPlan({ params }: { params: Promise<{ city: str
                   <h3 className="font-semibold text-brand">{i}</h3>
                   <ul className="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2 lg:grid-cols-3">
                     {items.filter((p) => p.industry === i).sort((a, b) => a.name.localeCompare(b.name)).map((p) => (
-                      <li key={p.slug}>
-                        <Link href={`/proposals/${p.slug}`} className="text-ink-muted hover:text-brand hover:underline">{p.name}</Link>
+                      <li key={p.key}>
+                        <Link href={p.href} className="text-ink-muted hover:text-brand hover:underline">{p.name}</Link>
                       </li>
                     ))}
                   </ul>

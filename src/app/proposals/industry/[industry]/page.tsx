@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COMPANY, OG_IMG } from "@/lib/content";
-import { PROPOSALS, citySlug, industryBySlug, industrySample, industrySlug, proposalIndustries } from "@/lib/proposals";
+import { COMPANIES, PROPOSALS, companyHref, citySlug, industryBySlug, industrySlug, proposalIndustries } from "@/lib/proposals";
 import { inr, plan } from "@/lib/growth";
 import { GrowthPlan, Table, beLabel, range } from "@/components/growth-plan";
 import { Header, Footer } from "@/components/site";
@@ -36,8 +36,10 @@ export default async function IndustryPlan({ params }: { params: Promise<{ indus
   if (!ind) notFound();
   const path = `/proposals/industry/${industrySlug(ind)}`;
   const g = plan(ind, "Hyderabad");
-  const sample = industrySample(ind);
-  const items = PROPOSALS.filter((p) => p.industry === ind);
+  const items = [
+    ...PROPOSALS.filter((p) => p.industry === ind).map((p) => ({ key: p.slug, name: p.name, city: p.city, href: `/proposals/${p.slug}` })),
+    ...COMPANIES.filter((c) => c.industry === ind).map((c) => ({ key: c.slug, name: c.name, city: c.city, href: companyHref(c.slug) })),
+  ];
   const cities = [...new Set(items.map((p) => p.city))].sort((a, b) => items.filter((p) => p.city === b).length - items.filter((p) => p.city === a).length);
 
   return (
@@ -78,7 +80,7 @@ export default async function IndustryPlan({ params }: { params: Promise<{ indus
               })}
             />
 
-            <GrowthPlan s={{ name: `a typical ${ind.toLowerCase()} business`, industry: ind, city: "Hyderabad", voice: sample.voice, stack: sample.stack.slice(-2) }} g={g} />
+            <GrowthPlan s={{ name: `a typical ${ind.toLowerCase()} business`, industry: ind, city: "Hyderabad", voice: g.x.voice, stack: g.x.ideas }} g={g} />
 
             <section className="mt-14">
               <h2 className="text-2xl font-bold text-brand">The {items.length} {ind.toLowerCase()} plans</h2>
@@ -87,8 +89,8 @@ export default async function IndustryPlan({ params }: { params: Promise<{ indus
                   <h3 className="font-semibold text-brand">{c}</h3>
                   <ul className="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2 lg:grid-cols-3">
                     {items.filter((p) => p.city === c).sort((a, b) => a.name.localeCompare(b.name)).map((p) => (
-                      <li key={p.slug}>
-                        <Link href={`/proposals/${p.slug}`} className="text-ink-muted hover:text-brand hover:underline">{p.name}</Link>
+                      <li key={p.key}>
+                        <Link href={p.href} className="text-ink-muted hover:text-brand hover:underline">{p.name}</Link>
                       </li>
                     ))}
                   </ul>

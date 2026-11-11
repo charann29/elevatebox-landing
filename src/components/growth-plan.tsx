@@ -1,8 +1,10 @@
-import { VOICE_APP } from "@/lib/content";
 import { cityTier, inr, type Month, type Plan } from "@/lib/growth";
 
 // One 12-month growth plan (SkillMeet / Healing Hastha format), used by the business, industry
 // and city pages under /proposals. Section 1 (the website check) shows only when we have one.
+
+// Same as VOICE_APP in lib/content; inlined so the client company page does not bundle content.ts.
+const VOICE_APP = "https://agents.elevatebox.in";
 
 export type Fact = { label: string; ok: boolean };
 export type Subject = {

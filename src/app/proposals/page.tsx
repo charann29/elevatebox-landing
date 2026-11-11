@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { COMPANY } from "@/lib/content";
-import { PROPOSALS, citySlug, industrySlug, proposalCities, proposalIndustries } from "@/lib/proposals";
+import { COMPANIES, PROPOSALS, citySlug, industrySlug, proposalCities, proposalIndustries } from "@/lib/proposals";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
@@ -33,14 +33,14 @@ export default function ProposalsHub() {
         <PageHero
           eyebrow="Growth plans"
           title="Growth plans for Telangana businesses"
-          lead="For each business we checked its public website and wrote a 12-month plan: tech, automation, strategy and Meta ads, with the money funnel and Month 6 and Month 12 numbers from a stated model. These businesses are not our clients."
+          lead={`${PROPOSALS.length + COMPANIES.length} 12-month plans for Telangana businesses: ${PROPOSALS.length} established firms whose websites we checked and ${COMPANIES.length} newly registered companies. Tech, automation, strategy and Meta ads, with the money funnel and Month 6 and Month 12 numbers from a stated model. These businesses are not our clients.`}
           crumbs={[{ label: "Growth plans" }]}
         />
         <Section>
           <div className="grid gap-8 sm:grid-cols-2">
             {[
-              { h: "By industry", base: "industry", items: proposalIndustries().map((i) => ({ label: i, slug: industrySlug(i), n: PROPOSALS.filter((p) => p.industry === i).length })) },
-              { h: "By city", base: "city", items: proposalCities().map((c) => ({ label: c, slug: citySlug(c), n: PROPOSALS.filter((p) => p.city === c).length })).sort((a, b) => b.n - a.n) },
+              { h: "By industry", base: "industry", items: proposalIndustries().map((i) => ({ label: i, slug: industrySlug(i), n: [...PROPOSALS, ...COMPANIES].filter((p) => p.industry === i).length })) },
+              { h: "By city", base: "city", items: proposalCities().map((c) => ({ label: c, slug: citySlug(c), n: [...PROPOSALS, ...COMPANIES].filter((p) => p.city === c).length })).sort((a, b) => b.n - a.n) },
             ].map((g) => (
               <section key={g.h} className="rounded-2xl border border-black/10 p-6">
                 <h2 className="text-xl font-bold text-brand">{g.h}</h2>
@@ -56,7 +56,9 @@ export default function ProposalsHub() {
               </section>
             ))}
           </div>
-          <div className="mt-14 space-y-12">
+          <h2 className="mt-14 text-2xl font-bold text-brand">Established businesses, by industry</h2>
+          <p className="mt-2 text-sm text-ink-muted">The newly registered companies are listed on each industry and city page above.</p>
+          <div className="mt-8 space-y-12">
             {groups.map((g) => (
               <section key={g.ind}>
                 <h2 className="text-2xl font-bold text-brand">
