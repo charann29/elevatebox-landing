@@ -1,0 +1,35 @@
+# Builds the static site and deploys it to Cloudflare. Runs on every merge to main, and when
+# Growth Studio publishes (worker/index.ts /api/revalidate dispatches this workflow).
+name: deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy
+  cancel-in-progress: false # queue: the newest publish still gets its own build
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build # fails if Growth Studio is down, so the live site stays as it was
+      - name: wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        # wrangler exits 1 on "Can't infer zone" for the custom domains even though the new version
+        # is uploaded and serving. Pass only when the upload line is there and that is the sole error.
+        run: |
+          set +e
+          npx wrangler deploy 2>&1 | tee deploy.log
+          code=${PIPESTATUS[0]}
+          [ "$code" = 0 ] && exit 0
+          grep -q "Uploaded elevatebox-site" deploy.log && grep -q "code: 10082" deploy.log && [ "$(grep -c '✘' deploy.log)" = 1 ] && exit 0
+          exit "$code"
