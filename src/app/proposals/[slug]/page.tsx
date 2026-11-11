@@ -40,7 +40,7 @@ const fmt = (iso: string) =>
   new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
 const range = (a: number, b: number) => `${inr(a)} to ${inr(b)}`;
-const lc = (s: string) => s[0].toLowerCase() + s.slice(1);
+const lc = (s: string) => (/^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s); // keeps WhatsApp, HTTPS
 const pct = (n: number) => `${Math.round(n * 1000) / 10}%`;
 
 const H2 = ({ n, children }: { n?: string; children: React.ReactNode }) => (
