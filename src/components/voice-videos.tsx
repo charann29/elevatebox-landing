@@ -12,13 +12,13 @@ const VIDEOS = [
 
 /** The two product videos, played in place. preload="none": nothing downloads until the visitor presses play. */
 export function VoiceVideos() {
-  const [lang, setLang] = useState<Lang>("te");
+  const [lang, setLang] = useState<Lang>("en");
   return (
     <div className="mx-auto mt-10 max-w-xl sm:mt-14">
       <div className="flex items-center justify-center gap-3">
         <span className="text-sm text-white/55">Watch in</span>
         <div role="radiogroup" aria-label="Video language" className="flex rounded-full bg-white/[0.06] p-1 ring-1 ring-white/10">
-          {(["te", "en"] as const).map((l) => (
+          {(["en", "te"] as const).map((l) => (
             <button
               key={l}
               type="button"
