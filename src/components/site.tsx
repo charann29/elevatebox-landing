@@ -320,7 +320,7 @@ export function Footer() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 -bottom-[3vw] select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-white/[0.04]"
       >
-        ElevateBox
+        elevatebox
       </p>
       <div className="relative mx-auto max-w-7xl px-5 pb-[14vw] pt-20 lg:px-8">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
