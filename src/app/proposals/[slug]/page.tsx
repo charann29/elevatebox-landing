@@ -40,7 +40,8 @@ const fmt = (iso: string) =>
   new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
 const range = (a: number, b: number) => `${inr(a)} to ${inr(b)}`;
-const lc = (s: string) => (/^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s); // keeps WhatsApp, HTTPS
+// lower-cases a sentence start for mid-sentence use, but leaves names like WhatsApp or HTTPS alone
+const lc = (s: string) => (/^[A-Z][a-z]+$/.test(s.split(/[\s-]/)[0]) ? s[0].toLowerCase() + s.slice(1) : s);
 const pct = (n: number) => `${Math.round(n * 1000) / 10}%`;
 
 const H2 = ({ n, children }: { n?: string; children: React.ReactNode }) => (
