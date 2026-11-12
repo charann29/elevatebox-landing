@@ -29,10 +29,14 @@ declare global {
 
 const cookie = (n: string) => document.cookie.match(new RegExp(`(?:^|; )${n}=([^;]*)`))?.[1] || "";
 function tracking() {
-  const p = new URLSearchParams(location.search);
-  const fbclid = p.get("fbclid") || "";
+  // Ad params arrive on /book/<tier>?..., and the link to /form drops them; the same-origin referrer still has them.
+  let ref = new URLSearchParams();
+  try { const r = new URL(document.referrer); if (r.origin === location.origin) ref = r.searchParams; } catch {}
+  const get = (k: string) => new URLSearchParams(location.search).get(k) || ref.get(k) || "";
+  const fbclid = get("fbclid");
   const attribution: Record<string, string> = { landing_url: location.href, referrer: document.referrer };
-  for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) if (p.get(k)) attribution[k] = p.get(k)!;
+  // campaign_id/adset_id/ad_id come from the ads' URL parameters ({{campaign.id}} etc.) so each sale maps to one ad
+  for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "campaign_id", "adset_id", "ad_id", "placement", "site_source_name"]) if (get(k)) attribution[k] = get(k);
   const fbc = cookie("_fbc") || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : "");
   return { meta: { fbp: cookie("_fbp"), fbc, sourceUrl: location.href }, attribution, consent: true };
 }
