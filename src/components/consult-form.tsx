@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cleanPhone, slotDays } from "@/lib/booking.mjs";
+import { COMPANY } from "@/lib/company";
 
 /* Ad booking flow: 7 questions -> pick a time -> Razorpay -> booked.
    Backend is the ElevateBox booking Worker (elevatebox-consult), proxied same-origin at /api/consult/* (vercel.json).
@@ -76,7 +77,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   const [time, setTime] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState("");  // booking id once paid
 
   const loadSlots = () => {
     setSlots(null);
@@ -125,7 +126,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
           setBusy(false);
           // Server sends the same Purchase (event id purchase_<booking>) to CAPI when payment is captured.
           if (v.status === "paid") window.fbq?.("track", "Purchase", { value: v.value, currency: "INR" }, { eventID: v.event_id });
-          if (v.status === "paid" || v.status === "pending") setDone(true);
+          if (v.status === "paid" || v.status === "pending") setDone(v.booking_id || "booked");
           else if (v.status === "conflict") setMsg("Your payment went through, but that time was taken a moment earlier. We will call you to pick a new time or refund you in full.");
           else setMsg("We could not confirm the payment here. If money left your account it is safe; we will call you to confirm.");
         },
@@ -142,6 +143,18 @@ export function ConsultForm({ offer }: { offer: Offer }) {
         <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">Payment received</p>
         <h2 className="mt-2 text-2xl font-bold">{`You're booked, ${a?.name}.`}</h2>
         <p className="mt-2 text-sm text-ink-3">{`${offer.title} on ${dayLabel(date)} at ${timeLabel(time)} IST. We'll send the Google Meet link to your WhatsApp before the call.`}</p>
+        {/* One tap opens a chat with the team, so they get the booking on WhatsApp at once. */}
+        <a
+          href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(
+            `Hi ElevateBox, I just booked the ${offer.title} (${offer.price}) for ${dayLabel(date)} at ${timeLabel(time)} IST.\nName: ${a?.name}\nBooking ID: ${done}\nPlease send me the Google Meet link.`,
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-block w-full rounded-full bg-[#25d366] px-6 py-4 text-base font-semibold text-white shadow-lg shadow-[#25d366]/30 hover:bg-[#1fb956]"
+        >
+          Send booking on WhatsApp
+        </a>
+        <p className="mt-2 text-xs text-ink-3">Opens WhatsApp with your booking details filled in. Just tap send.</p>
       </div>
     );
   }
