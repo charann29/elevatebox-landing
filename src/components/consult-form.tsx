@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { COMPANY } from "@/lib/content";
+import { COMPANY } from "@/lib/company";
 
 /* The 7 qualification questions (owner brief), one per step so drop-off per question can be
    measured later. Answers are kept in sessionStorage under "eb-consult" for the post-payment

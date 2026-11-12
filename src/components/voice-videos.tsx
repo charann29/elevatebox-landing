@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type Lang = "te" | "en";
 
-/** Each video exists in Telugu and English: /videos/<file>-<lang>.mp4 with poster /videos/<file>-<lang>.jpg. */
+/** Each video exists in Telugu and English: /videos/<file>-<lang>.mp4 with poster /videos/<file>-<lang>.webp. */
 const VIDEOS = [
   { file: "roopa-guide", title: { te: "Roopa ఎలా పని చేస్తుంది", en: "How it works" } },
   { file: "roopa-realestate", title: { te: "Real estate call", en: "A real estate call" } },
@@ -40,7 +40,7 @@ export function VoiceVideos() {
             <video
               key={`${v.file}-${lang}`}
               src={`/videos/${v.file}-${lang}.mp4`}
-              poster={`/videos/${v.file}-${lang}.jpg`}
+              poster={`/videos/${v.file}-${lang}.webp`}
               controls
               playsInline
               preload="none"

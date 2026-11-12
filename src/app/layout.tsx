@@ -48,7 +48,12 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
-        <link rel="stylesheet" href={SATOSHI_CSS} />
+        {/* Satoshi loads without blocking the first paint: a render-blocking stylesheet on a third-party
+            origin held the hero text back ~4.6 s on mobile (Growth Combinator audit, 10 Nov). Headings
+            show in Inter until Satoshi arrives (display=swap). */}
+        <link rel="preload" as="style" href={SATOSHI_CSS} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="${SATOSHI_CSS}";document.head.appendChild(l)})()` }} />
+        <noscript><link rel="stylesheet" href={SATOSHI_CSS} /></noscript>
         {/* Meta Pixel (dataset "ElevateBox"). Purchases come server-side from the Razorpay webhook. */}
         <script dangerouslySetInnerHTML={{ __html: META_PIXEL }} />
         <noscript>

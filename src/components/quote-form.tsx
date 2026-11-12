@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { COMPANY } from "@/lib/content";
+import { COMPANY } from "@/lib/company";
 
 // ponytail: no backend on this static site, so an enquiry goes to the team's WhatsApp,
 // with a correctly encoded email as the fallback. Point it at a lead API when one exists.

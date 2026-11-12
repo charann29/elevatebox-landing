@@ -1834,18 +1834,7 @@ export const getJob = (slug: string) => JOBS.find((j) => j.slug === slug);
 /* ------------------------------------------------------------------ */
 
 
-export const COMPANY = {
-  name: "ElevateBox",
-  legal: "ElevateScale Technologies Pvt Ltd",
-  tagline: "Design, engineering, and AI delivery for teams that need to ship.",
-  email: "charan@elevatebox.in",
-  phone: "+91 79810 32273",
-  whatsapp: "+917981032273",
-  timings: "Mon–Sat, 10:00–19:00 IST",
-  address: "First Floor, #28, Mothi Nagar, Nagarjuna Hills, Punjagutta, Hyderabad, Telangana 500082, India",
-  hours: "Mon–Sat, 10:00–19:00 IST",
-  site: "https://elevatebox.in",
-};
+export { COMPANY } from "./company";
 
 /* AI and coding training. EMPTY ON PURPOSE: add a course only when its name, length, price
    and next start date are real. /courses lists them when present and otherwise books a
