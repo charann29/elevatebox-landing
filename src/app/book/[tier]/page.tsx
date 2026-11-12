@@ -152,7 +152,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               <ul className="grid grid-cols-2 gap-3">
                 {PHOTOS.map((p) => (
                   <li key={p.src} className="overflow-hidden rounded-lg ring-1 ring-black/10">
-                    <Image src={p.src} alt={p.alt} width={600} height={600} className="aspect-square w-full object-cover" priority />
+                    <Image src={p.src} alt={p.alt} width={520} height={1126} className="aspect-[3/4] w-full object-cover object-top" priority />
                   </li>
                 ))}
               </ul>
@@ -249,7 +249,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
+        <section className="bg-white px-5 py-14 sm:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.6fr]">
             <div>
               <h2 className={`${serif.className} text-3xl leading-tight sm:text-[2.6rem]`}>Frequently asked questions:</h2>
@@ -282,12 +282,12 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       </footer>
 
       {/* Sticky mobile bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 py-3 pr-20 backdrop-blur lg:hidden" style={{ paddingLeft: "4.5rem" }}>
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 py-3 pl-4 pr-20 backdrop-blur lg:hidden">
         <div>
-          <p className={`${serif.className} text-lg leading-none`}>Tech consultation</p>
-          <p className="text-[11px] text-[#424242]">{`${minutes} on Google Meet`}</p>
+          <p className={`${serif.className} whitespace-nowrap text-lg leading-none`}>Tech consultation</p>
+          <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
         </div>
-        <a href={`${path}/form`} className={`rounded-md px-5 py-3 text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
+        <a href={`${path}/form`} className={`rounded-md px-5 py-3 shrink-0 whitespace-nowrap text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
       </div>
     </>
   );

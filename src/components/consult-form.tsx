@@ -25,12 +25,12 @@ export function ConsultForm({ offer }: { offer: { title: string; price: string; 
     const wa = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, I'd like the ${offer.title} (${offer.price}).\n\n${summary}`)}`;
     return (
       <div className="rounded-[2rem] bg-white p-8 shadow-xl shadow-black/5 ring-1 ring-black/[0.07]">
-        <p className="text-xs font-semibold uppercase tracking-wider text-electric">{"You're a fit"}</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">{"You're a fit"}</p>
         <h2 className="mt-2 text-2xl font-bold">{`Thanks, ${a.name}. One step left.`}</h2>
         <p className="mt-2 text-sm text-ink-3">{offer.pay ? "Pay to open the calendar and pick your time." : "Send your answers on WhatsApp and we'll share your slot and payment link."}</p>
         <div className="mt-6 flex flex-col gap-3">
           {offer.pay && (
-            <a href={offer.pay} className="rounded-full bg-electric px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-electric/30 hover:bg-[#2f5cf0]">
+            <a href={offer.pay} className="rounded-md bg-[#ff7701] px-6 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-white hover:bg-[#f57100]">
               {`Pay ${offer.price} and pick a time`}
             </a>
           )}
@@ -42,7 +42,7 @@ export function ConsultForm({ offer }: { offer: { title: string; price: string; 
     );
   }
 
-  const field = "mt-1.5 block w-full rounded-xl border border-black/15 bg-white px-3.5 py-3 text-base text-ink outline-none focus:border-electric focus:ring-2 focus:ring-electric/20";
+  const field = "mt-1.5 block w-full rounded-xl border border-black/15 bg-white px-3.5 py-3 text-base text-ink outline-none focus:border-[#ff7701] focus:ring-2 focus:ring-[#ff7701]/20";
   return (
     <form
       className="grid gap-5 rounded-[2rem] bg-white p-6 shadow-xl shadow-black/5 ring-1 ring-black/[0.07] sm:p-8"
@@ -76,7 +76,7 @@ export function ConsultForm({ offer }: { offer: { title: string; price: string; 
           )}
         </label>
       ))}
-      <button type="submit" className="rounded-full bg-electric px-6 py-4 text-base font-semibold text-white shadow-lg shadow-electric/30 hover:bg-[#2f5cf0]">
+      <button type="submit" className="rounded-md bg-[#ff7701] px-6 py-4 text-base font-bold uppercase tracking-wide text-white shadow-sm hover:bg-[#f57100]">
         Continue ›
       </button>
     </form>
