@@ -1876,6 +1876,8 @@ export const CONSULTS = [
   {
     slug: "499",
     headline: "Find where your business can make more money, in one 30-minute call.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Know exactly what to build next for your business, in 30 minutes.",
     price: "₹499",
     title: "30-minute App Idea Call",
     lead: "Tell us about your business. We show you where an app, website or AI can bring in more customers or save your team hours, and what to build first.",
@@ -1890,6 +1892,8 @@ export const CONSULTS = [
   {
     slug: "1499",
     headline: "Plan the product that earns, with the people who will build it.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Bring your product idea. Leave with a clear plan in 45 minutes.",
     price: "₹1,499",
     title: "45-minute Product Planning Call",
     lead: "45 minutes working through your product with the team, then a short written note with next steps.",
@@ -1904,6 +1908,8 @@ export const CONSULTS = [
   {
     slug: "3499",
     headline: "Know exactly what to build, what it costs and when it starts earning.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Get a written quote and timeline for your app in one hour.",
     price: "₹3,499",
     title: "60-minute Requirement Analysis",
     lead: "A full hour with the people who would build it, ending in a written quotation and timeline.",

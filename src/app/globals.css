@@ -223,3 +223,8 @@ details[open] > summary .chev {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Headline A/B on /book/<tier> (variant set on <html data-ab> by an inline script; no JS = A) */
+.ab-b { display: none; }
+html[data-ab="b"] .ab-a { display: none; }
+html[data-ab="b"] .ab-b { display: inline; }
