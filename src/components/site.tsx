@@ -70,8 +70,8 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
       <NavLink
         href={cat.base}
         className="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
-        activeClassName="bg-white/10 text-white"
-        idleClassName="text-white/70 hover:bg-white/10 hover:text-white group-hover:bg-white/10 group-hover:text-white"
+        activeClassName="bg-brand-wash text-brand"
+        idleClassName="text-ink-2 hover:bg-brand-wash hover:text-brand group-hover:bg-brand-wash group-hover:text-brand"
       >
         {cat.label}
         {CHEVRON}
@@ -197,10 +197,10 @@ export function Header() {
       <span className="hidden sm:inline"> · 8 lakh calls a day</span>
       <span className="ml-2 font-semibold underline underline-offset-4">Try it free →</span>
     </a>
-    <header className="sticky top-0 z-50 w-full border-b border-white/[0.07] bg-night/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-line bg-white/85 backdrop-blur-xl">
       <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="shrink-0">
-          <Logo white className="h-auto w-[9.5rem] object-contain sm:w-[10.5rem]" />
+          <Logo className="h-auto w-[9.5rem] object-contain sm:w-[10.5rem]" />
         </Link>
 
         <nav className="hidden xl:block" aria-label="Main">
@@ -213,8 +213,8 @@ export function Header() {
                 <NavLink
                   href={n.href}
                   className="block whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
-                  activeClassName="bg-white/10 text-white"
-                  idleClassName="text-white/70 hover:bg-white/10 hover:text-white"
+                  activeClassName="bg-brand-wash text-brand"
+                  idleClassName="text-ink-2 hover:bg-brand-wash hover:text-brand"
                 >
                   {n.label}
                 </NavLink>
@@ -239,7 +239,7 @@ export function Header() {
         {/* Mobile */}
         <details className="xl:hidden">
           <summary
-            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-white/10 bg-white/5 text-white"
+            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-line bg-white text-brand"
             aria-label="Toggle navigation menu"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">

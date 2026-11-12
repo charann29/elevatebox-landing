@@ -4,10 +4,10 @@ import { COMPANY, DISCOVERY, FAQS, IMG, serviceIcon } from "@/lib/content";
 
 export function Crumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-xs text-white/45">
+    <nav aria-label="Breadcrumb" className="text-xs text-ink-3">
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
-          <Link href="/" className="hover:text-white">
+          <Link href="/" className="hover:text-brand">
             Home
           </Link>
         </li>
@@ -15,11 +15,11 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
           <li key={i.label} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
             {i.href ? (
-              <Link href={i.href} className="hover:text-white">
+              <Link href={i.href} className="hover:text-brand">
                 {i.label}
               </Link>
             ) : (
-              <span className="text-white/75">{i.label}</span>
+              <span className="text-ink-2">{i.label}</span>
             )}
           </li>
         ))}
@@ -45,15 +45,15 @@ export function PageHero({
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
         {crumbs && <Crumbs items={crumbs} />}
         {eyebrow && (
-          <p className="mt-8 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/75">
+          <p className="mt-8 inline-block rounded-full border border-brand/10 bg-white px-3 py-1 text-xs font-medium text-ink-2">
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-brand sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {lead && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/65">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
             {lead}
           </p>
         )}
@@ -197,10 +197,10 @@ export function CtaBand({
     <section className="px-3 py-6 sm:px-5">
       <div className="night-glow mx-auto flex max-w-7xl flex-col items-center gap-8 overflow-hidden rounded-[2rem] px-6 py-14 text-center lg:flex-row lg:justify-between lg:px-14 lg:py-16 lg:text-left">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-brand sm:text-4xl">
             {title}
           </h2>
-          <p className="mt-3 max-w-xl text-white/60">{lead}</p>
+          <p className="mt-3 max-w-xl text-ink-2">{lead}</p>
         </div>
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
           <Link
@@ -211,7 +211,7 @@ export function CtaBand({
           </Link>
           <a
             href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-            className="rounded-full border border-white/25 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white"
+            className="rounded-full border border-brand/10 px-8 py-4 text-base font-semibold text-brand transition-colors hover:border-white"
           >
             Call us
           </a>
@@ -235,15 +235,15 @@ export function Prose({ children }: { children: React.ReactNode }) {
 export function DiscoveryOffer({ dark }: { dark?: boolean }) {
   const wa = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, a question about the ${DISCOVERY.title}.`)}`;
   return (
-    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white/[0.04] text-white ring-1 ring-white/10 backdrop-blur" : "bg-white shadow-xl shadow-black/5 ring-1 ring-black/[0.07]"}`}>
-      <p className={`text-xs font-semibold uppercase tracking-wider ${dark ? "text-electric-2" : "text-electric"}`}>Start here</p>
+    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white shadow-xl shadow-black/5 ring-1 ring-brand/10" : "bg-white shadow-xl shadow-black/5 ring-1 ring-black/[0.07]"}`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider text-electric`}>Start here</p>
       <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
-        <h3 className={`text-2xl font-bold sm:text-3xl ${dark ? "text-white" : ""}`}>{DISCOVERY.title}</h3>
-        <p className={`font-display text-4xl font-black tracking-tight ${dark ? "text-white" : "text-ink"}`}>{DISCOVERY.price}</p>
+        <h3 className={`text-2xl font-bold sm:text-3xl ${dark ? "text-brand" : ""}`}>{DISCOVERY.title}</h3>
+        <p className={`font-display text-4xl font-black tracking-tight ${dark ? "text-brand" : "text-ink"}`}>{DISCOVERY.price}</p>
       </div>
       <ul className="mt-6 space-y-3">
         {DISCOVERY.includes.map((i) => (
-          <li key={i} className={`flex items-start gap-3 text-sm ${dark ? "text-white/80" : "text-ink-2"}`}>
+          <li key={i} className={`flex items-start gap-3 text-sm "text-ink-2"`}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="mt-0.5 size-4 shrink-0 text-[#16a34a]" aria-hidden="true">
               <path d="M5 12l5 5L20 7" />
             </svg>
@@ -255,11 +255,11 @@ export function DiscoveryOffer({ dark }: { dark?: boolean }) {
         <a href={DISCOVERY.pay} className="rounded-full bg-electric px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-electric/30 transition-colors hover:bg-[#2f5cf0]">
           {`Pay ${DISCOVERY.price} and pick a time`}
         </a>
-        <a href={wa} className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold ${dark ? "border-white/20 text-white" : "border-black/10 text-ink"}`}>
+        <a href={wa} className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold "border-black/10 text-ink"`}>
           Ask a question first
         </a>
       </div>
-      <p className={`mt-4 text-xs ${dark ? "text-white/45" : "text-ink-4"}`}>
+      <p className={`mt-4 text-xs "text-ink-4"`}>
         Secure payment on Razorpay. The calendar opens as soon as it goes through.
       </p>
     </div>

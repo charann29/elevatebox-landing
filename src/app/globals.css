@@ -130,24 +130,23 @@ details[open] > summary .chev {
   filter: brightness(0) invert(1);
 }
 
-/* Night band backdrop: a blue glow from the top and a faint grid that fades out. Decorative. */
+/* Light band backdrop (was night): a soft blue wash from the top and a faint grid that fades out. Decorative. */
 .night-glow {
   background:
-    radial-gradient(60% 55% at 70% 0%, rgba(61, 107, 255, 0.32), transparent 70%),
-    radial-gradient(40% 40% at 0% 100%, rgba(61, 107, 255, 0.12), transparent 70%),
-    var(--color-night);
+    radial-gradient(60% 55% at 70% 0%, rgba(61, 107, 255, 0.16), transparent 70%),
+    linear-gradient(180deg, #dbe7ff 0%, var(--color-brand-wash) 100%);
 }
 .night-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(1, 49, 134, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 49, 134, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
 /* Headline accent: brand blue to a lighter blue. */
 .text-gradient {
-  background: linear-gradient(90deg, #7c9bff, #3d6bff 55%, #9fb6ff);
+  background: linear-gradient(90deg, #013186, #3d6bff 60%, #013186);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
