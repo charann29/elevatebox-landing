@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { COMPANY } from "@/lib/content";
+import { COMPANY } from "@/lib/company";
 
 /* The 7 qualification questions (owner brief), all on one page with native dropdowns
    (owner: form on its own page, simple). Answers are kept in sessionStorage under "eb-consult" for the post-payment

@@ -7,7 +7,7 @@
   --color-ink: #0a0a0a;
   --color-ink-2: #3f3f46;
   --color-ink-3: #71717a;
-  --color-ink-4: #a1a1aa;
+  --color-ink-4: #71717a; /* was #a1a1aa: 2.6:1 on white failed WCAG AA; now matches ink-3 (4.8:1) */
 
   /* Hairlines and surfaces. Borders carry the structure here, not shadows. */
   --color-line: #e4e4e7;
@@ -23,7 +23,7 @@
   --color-night-2: #0c1222;
   --color-night-3: #141b2e;
   /* Electric: the brand blue, lifted so it carries on night. The logo's #013186 disappears there. */
-  --color-electric: #3d6bff;
+  --color-electric: #3462f2; /* was #3d6bff: white text on it was 4.4:1, just under WCAG AA; now 5.0:1 */
   --color-electric-2: #7c9bff;
 
   /* Brand blue, kept as an accent. It should appear a handful of times per
