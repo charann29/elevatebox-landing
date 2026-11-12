@@ -22,7 +22,7 @@ const find = (tier: string) => CONSULTS.find((c) => c.slug === tier);
 export async function generateMetadata({ params }: { params: Promise<{ tier: string }> }): Promise<Metadata> {
   const c = find((await params).tier);
   if (!c) return {};
-  const title = `${c.title.split(" ")[0]} tech consultation`;
+  const title = `${c.title.split(" ")[0]} strategic consultation`;
   const path = `/book/${c.slug}`;
   return {
     title,
@@ -44,7 +44,7 @@ function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
   return (
     <div className="mt-10 text-center">
       <a href={href} className={`inline-block w-full max-w-sm rounded-md px-6 py-4 whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
-        Join for a tech consultation
+        Join for a strategic consultation
       </a>
       <p className="mt-2 text-sm font-medium text-[#262626]">{note}</p>
     </div>
@@ -138,7 +138,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(#f1f1f1_1px,transparent_1px),linear-gradient(90deg,#f1f1f1_1px,transparent_1px)] bg-[size:40px_40px]" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:py-14">
             <div>
-              <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} tech consultation on Google Meet`}</p>
+              <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} strategic consultation on Google Meet`}</p>
               <h1 className={`font-semibold tracking-tight mt-4 text-4xl leading-[1.15] sm:text-5xl`}>{c.headline}</h1>
               <p className="mt-4 text-[15px] leading-relaxed text-[#424242]">{c.lead}</p>
               <ul className="mt-5 space-y-3">
@@ -147,7 +147,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 ))}
               </ul>
               <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
-                Join for a tech consultation
+                Join for a strategic consultation
               </a>
               <p className="mt-2 text-center text-sm text-[#424242]">{GUARANTEE}</p>
             </div>
@@ -223,7 +223,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 ))}
               </ul>
               <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
-                Join for a tech consultation
+                Join for a strategic consultation
               </a>
             </div>
           </div>
@@ -281,7 +281,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       {/* Sticky mobile bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <div>
-          <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>Tech consultation</p>
+          <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>Strategic consultation</p>
           <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
         </div>
         <a href={`${path}/form`} className={`rounded-md px-5 py-3 shrink-0 whitespace-nowrap text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
