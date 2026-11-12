@@ -97,6 +97,25 @@ const AUDIENCE = [
   { i: "rocket", t: "Startup founders", d: "Turn an idea into a first version people pay for, without wasting months." },
 ];
 
+/* After the call: the owner's three engagement models (from his client-meeting brief).
+   No client names here on purpose. */
+const ENGAGE = [
+  {
+    t: "Strategy consulting",
+    k: "You have a pain, not a plan",
+    d: "We study how your business runs, find where time and money leak, and set you up with tools that already exist, the cheapest way to run them at scale. Often done in days, not months.",
+  },
+  {
+    t: "Build",
+    k: "Co-pilots and autopilots made for you",
+    d: "Custom apps, internal tools and AI that follow your rules every single time. It runs on your own accounts and you own it. Priced on what it earns you, so it pays back within months.",
+  },
+  {
+    t: "Paid proof of concept",
+    k: "For ideas nobody has proven yet",
+    d: "We build a small working version first. You pay only for the proof. If it works, we build it in full; if not, you stop there with a clear answer, not a big bill.",
+  },
+];
 const PAIN = ["Enquiries nobody called back.", "Customers who never came a second time.", "Hours lost copying data a phone could handle."];
 const FAN = ["z-0 -rotate-6 translate-y-6", "z-10 -rotate-2", "z-10 rotate-2 translate-y-3", "z-0 rotate-6 translate-y-8"];
 const PHOTOS = [
@@ -206,6 +225,27 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* Engagement models */}
+        <section className="px-5 py-14 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <H2>After the call: three ways to work with us</H2>
+            <ol className="mt-12 grid gap-5 lg:grid-cols-3">
+              {ENGAGE.map((e, i) => (
+                <li key={e.t} className="lit rounded-lg p-7 ring-1 ring-black/10">
+                  <p className="text-5xl font-semibold tracking-tight text-[#ff7701]">{`0${i + 1}`}</p>
+                  <h3 className="mt-4 text-xl font-bold">{e.t}</h3>
+                  <p className="mt-1 text-sm font-semibold text-[#0b1a3c]">{e.k}</p>
+                  <p className="mt-3 leading-relaxed text-[#424242]">{e.d}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-[#424242]">
+              We price on what the work is worth to you in the next six months, not on your lifetime plans. The call is where we work out which one fits.
+            </p>
+            <Cta href={`${path}/form`} />
           </div>
         </section>
 
