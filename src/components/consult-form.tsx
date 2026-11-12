@@ -37,6 +37,7 @@ function tracking() {
   const attribution: Record<string, string> = { landing_url: location.href, referrer: document.referrer };
   // campaign_id/adset_id/ad_id come from the ads' URL parameters ({{campaign.id}} etc.) so each sale maps to one ad
   for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "campaign_id", "adset_id", "ad_id", "placement", "site_source_name"]) if (get(k)) attribution[k] = get(k);
+  try { const ab = localStorage.getItem("eb_ab"); if (ab === "a" || ab === "b") attribution.ab = ab; } catch {}
   const fbc = cookie("_fbc") || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : "");
   return { meta: { fbp: cookie("_fbp"), fbc, sourceUrl: location.href }, attribution, consent: true };
 }

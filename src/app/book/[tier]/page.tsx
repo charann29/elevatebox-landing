@@ -40,6 +40,11 @@ const Check = () => (
   </span>
 );
 
+const abScript = (tier: string) =>
+  `(function(){var v;try{v=localStorage.getItem("eb_ab")}catch(e){}if(v!=="a"&&v!=="b"){v=Math.random()<.5?"a":"b";try{localStorage.setItem("eb_ab",v)}catch(e){}}` +
+  `document.documentElement.setAttribute("data-ab",v);var k="eb_abv_${tier}";try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1")}catch(e){}` +
+  `navigator.sendBeacon&&navigator.sendBeacon("/api/consult/ab-view",JSON.stringify({tier:"${tier}",variant:v}))})()`;
+
 function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
   return (
     <div className="mt-10 text-center">
@@ -158,7 +163,12 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:py-14">
             <div>
               <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} strategic consultation on Google Meet`}</p>
-              <h1 className={`font-semibold tracking-tight mt-4 text-4xl leading-[1.15] sm:text-5xl`}>{c.headline}</h1>
+              {/* Headline A/B: runs before the h1 paints, so no flicker. Sticky per browser; one view counted per session. */}
+              <script dangerouslySetInnerHTML={{ __html: abScript(c.slug) }} />
+              <h1 className={`font-semibold tracking-tight mt-4 text-4xl leading-[1.15] sm:text-5xl`}>
+                <span className="ab-a">{c.headline}</span>
+                <span className="ab-b">{c.headlineB}</span>
+              </h1>
               <p className="mt-4 text-[15px] leading-relaxed text-[#424242]">{c.lead}</p>
               <ul className="mt-5 space-y-3">
                 {c.includes.map((i) => (

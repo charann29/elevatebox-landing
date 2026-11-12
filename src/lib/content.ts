@@ -1876,12 +1876,14 @@ export const CONSULTS = [
   {
     slug: "499",
     headline: "Find where your business can grow faster, in one short call.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Grow your business. Talk to us.",
     price: "₹499",
-    title: "30-minute Business Strategy Call",
+    title: "45-minute Business Strategy Call",
     lead: "Tell us how your business runs today. We find what you can automate, what you can scale, and how ads or tech can bring in more customers.",
     pay: "",
     includes: [
-      "30 minutes on Google Meet with the team that runs ads and builds systems for businesses",
+      "45 minutes on Google Meet with the team that runs ads and builds systems for businesses",
       "How your sales, team, tools and spend work today",
       "What to automate first, and where to scale",
       "The ads or tech move that can pay back within six months",
@@ -1890,6 +1892,8 @@ export const CONSULTS = [
   {
     slug: "1499",
     headline: "Map your business and leave with a growth plan, from the people who will run it.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Grow your business. Talk to us.",
     price: "₹1,499",
     title: "45-minute Growth Planning Call",
     lead: "45 minutes going through your sales, operations and marketing, then a written plan: what to automate, what to scale and in what order.",
@@ -1904,12 +1908,14 @@ export const CONSULTS = [
   {
     slug: "3499",
     headline: "Know exactly what to automate, what to build, what it costs and when it pays back.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Grow your business. Talk to us.",
     price: "₹3,499",
-    title: "60-minute Requirement Analysis",
-    lead: "A full hour on your business and requirements with the people who would do the work, ending in a written quotation and timeline.",
+    title: "45-minute Requirement Analysis",
+    lead: "45 minutes on your business and requirements with the people who would do the work, ending in a written quotation and timeline.",
     pay: "",
     includes: [
-      "60 minutes with the people who will do the work, not a sales desk",
+      "45 minutes with the people who will do the work, not a sales desk",
       "Your business and requirements worked through end to end",
       "What existing tools can do for you, and what is worth building",
       "A written quotation and timeline you can take anywhere",
