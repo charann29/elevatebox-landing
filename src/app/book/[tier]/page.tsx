@@ -82,12 +82,12 @@ const Icon = ({ d }: { d: string }) => (
 );
 
 const OUTCOMES = [
-  { i: "money", t: "Where you are losing money today", d: "The leads, follow-ups and hours slipping through the cracks in how you run things now." },
-  { i: "target", t: "The one fix that pays back first", d: "An app, a website or an AI helper, whichever brings customers in fastest for your business." },
-  { i: "cut", t: "What not to build", d: "The features that sound good but eat budget without bringing a single sale." },
-  { i: "rupee", t: "What it should really cost", d: "An honest budget range, so no agency can overcharge you later." },
-  { i: "map", t: "A clear first step", d: "What to do this month, whether you build with us or not." },
-  { i: "clock", t: "When it starts earning", d: "A realistic timeline from first screen to first rupee back." },
+  { i: "map", t: "How your business really runs", d: "Sales, operations, team and spend, looked at together. We ask a lot of questions on purpose." },
+  { i: "clock", t: "What to automate", d: "The repeated work eating your team's hours: follow-ups, data entry, publishing, reporting." },
+  { i: "target", t: "Where to scale", d: "The channel that can bring more customers: Meta ads, LinkedIn, content or your website." },
+  { i: "cut", t: "What to skip", d: "Tools, features and spends that cost money without bringing a sale." },
+  { i: "rupee", t: "What it should cost", d: "Existing tools where they work, a custom build only where it pays. Honest numbers." },
+  { i: "money", t: "When it pays back", d: "A six-month view: what it should earn you, and when it breaks even." },
 ];
 
 const AUDIENCE = [
@@ -132,7 +132,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   const minutes = c.title.split("-")[0];
 
   const faqs = [
-    { q: "Who will I talk to?", a: "Someone from the team that designs and builds the apps, not a sales caller." },
+    { q: "Who will I talk to?", a: "Someone from the team that runs ads and builds systems for our clients, not a sales caller." },
     { q: "How does the call happen?", a: `On Google Meet, ${minutes} minutes. You pick the time on the calendar right after paying.` },
     { q: "How do I pay?", a: "UPI, cards or net banking on Razorpay. You get a receipt by email." },
     { q: "What if I paid but did not reach the calendar?", a: `WhatsApp ${COMPANY.phone} with your Razorpay payment ID and we will send your booking link straight away.` },
