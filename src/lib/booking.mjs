@@ -4,7 +4,7 @@
  */
 
 // Server price allowlist in paise. The Worker ignores any amount the browser sends.
-export const PRICES_PAISE = { 499: 49900, 1499: 149900, 3499: 349900 };
+export const PRICES_PAISE = { 499: 49900, 1499: 149900, 3499: 349900, roopa: 49900 };
 
 // Real daily slots (IST). The owner picked a fixed daily cap; nothing here is random.
 export const SLOT_CONFIG = {
