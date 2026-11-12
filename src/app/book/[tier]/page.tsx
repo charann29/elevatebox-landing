@@ -43,7 +43,7 @@ const Check = () => (
 function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
   return (
     <div className="mt-10 text-center">
-      <a href={href} className={`inline-block w-full max-w-sm rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors ${ORANGE}`}>
+      <a href={href} className={`inline-block w-full max-w-sm rounded-md px-6 py-4 whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
         Join for a tech consultation
       </a>
       <p className="mt-2 text-sm font-medium text-[#262626]">{note}</p>
@@ -97,6 +97,8 @@ const AUDIENCE = [
   { i: "rocket", t: "Startup founders", d: "Turn an idea into a first version people pay for, without wasting months." },
 ];
 
+const PAIN = ["Enquiries nobody called back.", "Customers who never came a second time.", "Hours lost copying data a phone could handle."];
+const FAN = ["z-0 -rotate-6 translate-y-6", "z-10 -rotate-2", "z-10 rotate-2 translate-y-3", "z-0 rotate-6 translate-y-8"];
 const PHOTOS = [
   { src: "/assets/real-vamshi-farms.jpg", alt: "Vamshi Farms app" },
   { src: "/assets/real-8meds.jpg", alt: "8Meds app" },
@@ -121,6 +123,8 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
 
   return (
     <div className={`contents ${LEXEND}`}>
+      {/* Ad page: one action only. Hide the site-wide call / WhatsApp buttons. */}
+      <style>{".eb-float{display:none!important}"}</style>
       <JsonLd json={ld(service(c.title, c.lead, path), breadcrumb([{ name: "Book a call", path: "/book" }, { name: c.title, path }]), faqPage(faqs))} />
 
       {/* Top bar */}
@@ -142,16 +146,17 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   <li key={i} className="flex items-start gap-3 text-[15px]"><Check />{i}</li>
                 ))}
               </ul>
-              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors ${ORANGE}`}>
+              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
                 Join for a tech consultation
               </a>
               <p className="mt-2 text-center text-sm text-[#424242]">{GUARANTEE}</p>
             </div>
-            <div>
-              <ul className="grid grid-cols-2 gap-3">
-                {PHOTOS.map((p) => (
-                  <li key={p.src} className="overflow-hidden rounded-lg ring-1 ring-black/10">
-                    <Image src={p.src} alt={p.alt} width={520} height={1126} className="aspect-[3/4] w-full object-cover object-top" priority />
+            <div className="order-first lg:order-none">
+              {/* Real app screens, shown whole in phone frames, fanned. On phones they come first: product before words. */}
+              <ul className="flex justify-center px-2 pb-6 pt-2">
+                {PHOTOS.map((p, i) => (
+                  <li key={p.src} className={`-mx-[2%] w-[27%] shrink-0 rounded-[1.3rem] bg-[#0b1a3c] p-[4px] shadow-2xl shadow-[#0b1a3c]/35 ${FAN[i]}`}>
+                    <Image src={p.src} alt={p.alt} width={520} height={1126} className="w-full rounded-[1.05rem]" priority />
                   </li>
                 ))}
               </ul>
@@ -161,18 +166,11 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         </section>
 
         {/* Problem */}
-        <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
-          <div className="mx-auto max-w-2xl">
-            <p className="text-center text-sm font-semibold">Do you still think</p>
-            <h2 className={`font-semibold tracking-tight mt-2 text-center text-3xl leading-tight sm:text-[2.6rem]`}>An app is just an expense for big companies?</h2>
-            <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-[#424242]">
-              <p>Most businesses we meet are losing money in plain sight. <b>Enquiries that nobody called back. Customers who never came a second time. Hours spent on work a phone could do.</b></p>
-              <p>Why?</p>
-              <p>Because the way customers buy has changed. They search on their phone, compare in minutes and pick whoever answers first.</p>
-              <p><b>Think about your typical day.</b> How many calls did you miss? How many follow-ups were forgotten? How much of your team&apos;s day went into copying data from one place to another?</p>
-              <p><b>The good news?</b> Fixing it rarely needs a huge build. It needs the right first step.</p>
-              <p>{`In ${minutes} minutes, the people who build apps every day look at your business and tell you exactly where an app, website or AI can bring in more money, and what to skip.`}</p>
-            </div>
+        <section className="bg-[#0b1a3c] px-5 py-20 text-white sm:py-28">
+          <div className="mx-auto max-w-2xl space-y-14 text-center text-[2rem] font-semibold leading-tight tracking-tight sm:text-5xl">
+            {PAIN.map((l) => <p key={l} className="lit">{l}</p>)}
+            <p className="lit text-[#ff7701]">Your business is leaking money.</p>
+            <p className="lit">{`One ${minutes}-minute call shows you where, and what to fix first.`}</p>
           </div>
         </section>
 
@@ -224,7 +222,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   <li key={x.k} className="flex items-start gap-3"><Check /><span><b>{x.k}</b>{`: ${x.v}. ${x.note}.`}</span></li>
                 ))}
               </ul>
-              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors ${ORANGE}`}>
+              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
                 Join for a tech consultation
               </a>
             </div>
@@ -237,8 +235,8 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <H2>What one good plan has done for businesses like yours</H2>
             <ul className="mt-12 grid gap-5 sm:grid-cols-3">
               {CONSULT_RESULTS.map((r) => (
-                <li key={r.n} className="rounded-lg bg-white p-7 text-center ring-1 ring-black/10">
-                  <p className={`font-semibold tracking-tight text-4xl text-[#ff7701]`}>{r.n}</p>
+                <li key={r.n} className="lit rounded-lg bg-white p-8 text-center ring-1 ring-black/10">
+                  <p className="text-5xl font-semibold tracking-tight text-[#ff7701] sm:text-6xl">{r.n}</p>
                   <p className="mt-3 leading-relaxed text-[#424242]">{r.d}</p>
                 </li>
               ))}
@@ -281,7 +279,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       </footer>
 
       {/* Sticky mobile bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 py-3 pl-4 pr-20 backdrop-blur lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <div>
           <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>Tech consultation</p>
           <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
