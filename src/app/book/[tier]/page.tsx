@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { CLIENTS, COMPANY, CONSULT_RESULTS, CONSULTS, CREDENTIALS, OG_IMG, clientLogo } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { Crumbs, Faq, Section } from "@/components/blocks";
-import { ConsultForm } from "@/components/consult-form";
 import { JsonLd, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 
 export const dynamicParams = false;
@@ -68,7 +67,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">{c.headline}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{c.lead}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="#book" className="rounded-full bg-electric px-8 py-4 text-center text-base font-semibold text-white shadow-lg shadow-electric/40 transition-colors hover:bg-[#2f5cf0]">
+              <a href={`${path}/form`} className="rounded-full bg-electric px-8 py-4 text-center text-base font-semibold text-white shadow-lg shadow-electric/40 transition-colors hover:bg-[#2f5cf0]">
                 {`Book my ${c.price} call ›`}
               </a>
               <p className="text-sm text-white/55">{GUARANTEE}</p>
@@ -117,15 +116,14 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   {`A wrong build costs you ₹3 lakh or more, plus months you could have been selling. One ${c.price} call tells you what will actually bring customers in, what to skip, and what it should cost, before you spend a rupee on development.`}
                 </p>
               </div>
-              <a href="#book" className="rounded-full bg-electric px-8 py-4 text-center font-semibold text-white shadow-lg shadow-electric/40">{`Book my ${c.price} call ›`}</a>
+              <a href={`${path}/form`} className="rounded-full bg-electric px-8 py-4 text-center font-semibold text-white shadow-lg shadow-electric/40">{`Book my ${c.price} call ›`}</a>
             </div>
           </div>
         </section>
 
         <Section>
-          <div id="book" className="grid scroll-mt-24 items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
-            <ConsultForm offer={c} />
-            <div className="space-y-6">
+          <div id="book" className="mx-auto grid max-w-5xl scroll-mt-24 items-start gap-6 lg:grid-cols-2">
+            <div className="contents">
               <div className="rounded-[2rem] bg-white p-7 ring-1 ring-black/[0.07]">
                 <div className="flex items-end justify-between gap-4">
                   <h2 className="text-xl font-bold">What you leave with</h2>
@@ -150,6 +148,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               </ol>
             </div>
           </div>
+          <div className="mt-8 text-center">
+            <a href={`${path}/form`} className="inline-block rounded-full bg-electric px-8 py-4 font-semibold text-white shadow-lg shadow-electric/40">{`Book my ${c.price} call ›`}</a>
+          </div>
           <div className="mx-auto mt-16 max-w-3xl">
             <Faq items={faqs} />
           </div>
@@ -162,7 +163,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <p className="font-display text-xl font-black leading-none">{c.price}</p>
           <p className="text-[11px] text-ink-3">{c.title}</p>
         </div>
-        <a href="#book" className="rounded-full bg-electric px-6 py-3 text-sm font-semibold text-white">Book now ›</a>
+        <a href={`${path}/form`} className="rounded-full bg-electric px-6 py-3 text-sm font-semibold text-white">Book now ›</a>
       </div>
       <Footer />
     </>
