@@ -216,6 +216,8 @@ export function ConsultForm({ offer }: { offer: Offer }) {
       <button type="submit" disabled={busy} className={primary}>
         {busy ? "Saving…" : "Continue ›"}
       </button>
+      {/* Consent for the abandoned-checkout call (Roopa lead source states this): keep the wording. */}
+      <p className="text-center text-xs text-ink-3">By continuing, you agree that we may call or WhatsApp you about this booking.</p>
     </form>
   );
 }
