@@ -1885,6 +1885,7 @@ export type Consult = {
   outcomes?: Item[]; audience?: Item[];
   questions?: Question[]; // keys must be the Worker's lead columns: build name phone business revenue investment stance
   focused?: boolean; // hide the ElevateBox-wide sections (engagement models, results)
+  pricing?: { people: string; price: string; each: string }[]; // volume price table right after the hero
 };
 
 export const CONSULTS: Consult[] = [
@@ -1938,11 +1939,11 @@ export const CONSULTS: Consult[] = [
   },
   {
     slug: "roopa",
-    headline: "Let Roopa call every lead for you, in your customers' language.",
+    headline: "Roopa calls 10,000 of your customers for ₹50,000.",
     price: "₹499",
     title: "30-minute Roopa Consultation",
     kind: "Roopa consultation",
-    lead: "Tell us how your business handles calls today. We map which calls Roopa, our AI telecaller, can make for you in Telugu, Hindi or English, and what it costs at your volume.",
+    lead: "That is ₹5 a person, and it gets cheaper as you grow. Roopa, our AI telecaller, speaks Telugu, Hindi and English. In 30 minutes we map which of your calls Roopa should make and plan your first campaign.",
     pay: "",
     includes: [
       "30 minutes on Google Meet with the team that builds Roopa",
@@ -1980,6 +1981,15 @@ export const CONSULTS: Consult[] = [
       { k: "stance", q: "When do you want Roopa calling for you?", opts: ["This week", "This month", "Just exploring"] },
     ],
     focused: true,
+    // Owner's price list, 13 Nov 2026. "each" = price / people, rounded to 10 paise.
+    pricing: [
+      { people: "10,000", price: "₹50,000", each: "₹5.00" },
+      { people: "25,000", price: "₹1 lakh", each: "₹4.00" },
+      { people: "50,000", price: "₹1.75 lakh", each: "₹3.50" },
+      { people: "1 lakh", price: "₹3 lakh", each: "₹3.00" },
+      { people: "5 lakh", price: "₹14 lakh", each: "₹2.80" },
+      { people: "10 lakh", price: "₹26 lakh", each: "₹2.60" },
+    ],
   },
 ];
 
