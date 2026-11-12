@@ -2,6 +2,7 @@ export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { getStudioPaths, getStudioPosts } from "@/lib/cms";
 import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
+import { COMPANIES, PROPOSALS, citySlug, companyHref, industrySlug, proposalCities, proposalIndustries } from "@/lib/proposals";
 
 const base = COMPANY.site;
 
@@ -67,5 +68,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...categoryPages, ...posts, ...jobs];
+  const plans = [
+    { url: `${base}/proposals`, priority: 0.7 },
+    ...proposalIndustries().map((i) => ({ url: `${base}/proposals/industry/${industrySlug(i)}`, priority: 0.7 })),
+    ...proposalCities().map((c) => ({ url: `${base}/proposals/city/${citySlug(c)}`, priority: 0.7 })),
+    ...PROPOSALS.map((p) => ({ url: `${base}/proposals/${p.slug}`, priority: 0.5 })),
+    ...COMPANIES.map((c) => ({ url: `${base}${companyHref(c.slug)}`, priority: 0.4 })),
+  ];
+
+  return [...staticPages, ...categoryPages, ...posts, ...jobs, ...plans];
 }

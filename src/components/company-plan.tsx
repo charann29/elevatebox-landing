@@ -1,32 +1,14 @@
-"use client";
-
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import companies from "@/lib/companies.json";
+import type { Company } from "@/lib/proposals";
 import { cityTier, plan } from "@/lib/growth";
 import { GrowthPlan, range } from "@/components/growth-plan";
 
-// Growth plan for one newly registered company, picked by ?c=<slug>. One static page serves all
-// ~4,800 of them: a static page each would add ~45,000 files and ~4 GB to every deploy.
+// Growth plan for one newly registered company, rendered at /proposals/company/<slug>.
 
-type Company = { slug: string; name: string; industry: string; city: string; activity: string; registered: string };
 const slugify = (s: string) => s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const month = (ym: string) => new Date(`${ym}-01`).toLocaleDateString("en-IN", { month: "long", year: "numeric" });
 
-export function CompanyPlan({ email }: { email: string }) {
-  const slug = useSearchParams().get("c") ?? "";
-  const c = (companies as Company[]).find((x) => x.slug === slug);
-
-  if (!c) {
-    return (
-      <div className="mx-auto max-w-3xl px-5 py-24 text-center">
-        <h1 className="text-3xl font-bold text-brand">We could not find that growth plan</h1>
-        <p className="mt-3 text-ink-muted">The link may be old or mistyped.</p>
-        <Link href="/proposals" className="mt-6 inline-block rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white">See all growth plans</Link>
-      </div>
-    );
-  }
-
+export function CompanyPlan({ c, email }: { c: Company; email: string }) {
   const g = plan(c.industry, c.city);
   return (
     <>

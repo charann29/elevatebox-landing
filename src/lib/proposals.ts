@@ -39,7 +39,7 @@ const slugify = (s: string) => s.toLowerCase().replace(/&/g, "and").replace(/[^a
 // district, activity and registration month only. Rendered by one client page, /proposals/company?c=.
 export type Company = { slug: string; name: string; industry: string; city: string; activity: string; registered: string };
 export const COMPANIES = companies as Company[];
-export const companyHref = (slug: string) => `/proposals/company?c=${slug}`;
+export const companyHref = (slug: string) => `/proposals/company/${slug}`;
 
 const uniq = (k: "industry" | "city") => [...new Set([...PROPOSALS, ...COMPANIES].map((p) => p[k]))].sort();
 export const proposalIndustries = () => uniq("industry");
