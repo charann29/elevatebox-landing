@@ -7,7 +7,7 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
     <nav aria-label="Breadcrumb" className="text-xs text-ink-3">
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
-          <Link href="/" className="hover:text-brand">
+          <Link href="/" className="hover:text-ink">
             Home
           </Link>
         </li>
@@ -15,7 +15,7 @@ export function Crumbs({ items }: { items: { label: string; href?: string }[] })
           <li key={i.label} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
             {i.href ? (
-              <Link href={i.href} className="hover:text-brand">
+              <Link href={i.href} className="hover:text-ink">
                 {i.label}
               </Link>
             ) : (
@@ -40,8 +40,8 @@ export function PageHero({
   crumbs?: { label: string; href?: string }[];
 }) {
   return (
-    <section className="night-glow relative overflow-hidden">
-      <div aria-hidden="true" className="night-grid absolute inset-0" />
+    <section className="light-glow relative overflow-hidden">
+      <div aria-hidden="true" className="light-grid absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
         {crumbs && <Crumbs items={crumbs} />}
         {eyebrow && (
@@ -49,7 +49,7 @@ export function PageHero({
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-brand sm:text-5xl lg:text-6xl">
+        <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {lead && (
@@ -195,9 +195,9 @@ export function CtaBand({
 }) {
   return (
     <section className="px-3 py-6 sm:px-5">
-      <div className="night-glow mx-auto flex max-w-7xl flex-col items-center gap-8 overflow-hidden rounded-[2rem] px-6 py-14 text-center lg:flex-row lg:justify-between lg:px-14 lg:py-16 lg:text-left">
+      <div className="light-glow mx-auto flex max-w-7xl flex-col items-center gap-8 overflow-hidden rounded-[2rem] px-6 py-14 text-center lg:flex-row lg:justify-between lg:px-14 lg:py-16 lg:text-left">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             {title}
           </h2>
           <p className="mt-3 max-w-xl text-ink-2">{lead}</p>
@@ -211,7 +211,7 @@ export function CtaBand({
           </Link>
           <a
             href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-            className="rounded-full border border-brand/10 px-8 py-4 text-base font-semibold text-brand transition-colors hover:border-white"
+            className="rounded-full border border-brand/10 px-8 py-4 text-base font-semibold text-ink transition-colors hover:border-white"
           >
             Call us
           </a>
@@ -235,11 +235,11 @@ export function Prose({ children }: { children: React.ReactNode }) {
 export function DiscoveryOffer({ dark }: { dark?: boolean }) {
   const wa = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, a question about the ${DISCOVERY.title}.`)}`;
   return (
-    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white shadow-xl shadow-black/5 ring-1 ring-brand/10" : "bg-white shadow-xl shadow-black/5 ring-1 ring-black/[0.07]"}`}>
-      <p className={`text-xs font-semibold uppercase tracking-wider text-electric`}>Start here</p>
+    <div className={`rounded-[2rem] p-8 sm:p-10 ${dark ? "bg-white shadow-xl shadow-black/5 ring-1 ring-black/5" : "bg-white shadow-xl shadow-black/5 ring-1 ring-black/[0.07]"}`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider "text-electric"`}>Start here</p>
       <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
-        <h3 className={`text-2xl font-bold sm:text-3xl ${dark ? "text-brand" : ""}`}>{DISCOVERY.title}</h3>
-        <p className={`font-display text-4xl font-black tracking-tight ${dark ? "text-brand" : "text-ink"}`}>{DISCOVERY.price}</p>
+        <h3 className={`text-2xl font-bold sm:text-3xl ""`}>{DISCOVERY.title}</h3>
+        <p className={`font-display text-4xl font-black tracking-tight "text-ink"`}>{DISCOVERY.price}</p>
       </div>
       <ul className="mt-6 space-y-3">
         {DISCOVERY.includes.map((i) => (

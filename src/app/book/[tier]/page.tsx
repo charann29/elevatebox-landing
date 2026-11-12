@@ -62,23 +62,23 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div aria-hidden="true" className="night-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-10 lg:px-8 lg:pb-20 lg:pt-14">
             <Crumbs items={[{ label: "Book a call", href: "/book" }, { label: c.price }]} />
-            <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-brand ring-1 ring-electric/30">
+            <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-electric/15 px-4 py-1.5 text-sm font-semibold text-electric-2 ring-1 ring-electric/30">
               {`${c.title} · ${c.price}`}
             </p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-brand sm:text-5xl lg:text-6xl">{c.headline}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{c.lead}</p>
+            <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">{c.headline}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{c.lead}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a href="#book" className="rounded-full bg-electric px-8 py-4 text-center text-base font-semibold text-white shadow-lg shadow-electric/40 transition-colors hover:bg-[#2f5cf0]">
                 {`Book my ${c.price} call ›`}
               </a>
-              <p className="text-sm text-ink-3">{GUARANTEE}</p>
+              <p className="text-sm text-white/55">{GUARANTEE}</p>
             </div>
             <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5" aria-label="Where our team has worked">
               {CREDENTIALS.map((x) => (
-                <li key={x.k} className="rounded-2xl bg-white px-4 py-3 ring-1 ring-brand/10">
-                  <p className="text-sm font-bold text-brand">{x.k}</p>
-                  <p className="text-xs text-ink-2">{x.v}</p>
-                  <p className="mt-1 text-[11px] text-ink-3">{x.note}</p>
+                <li key={x.k} className="rounded-2xl bg-white/[0.05] px-4 py-3 ring-1 ring-white/10">
+                  <p className="text-sm font-bold text-white">{x.k}</p>
+                  <p className="text-xs text-white/70">{x.v}</p>
+                  <p className="mt-1 text-[11px] text-white/45">{x.note}</p>
                 </li>
               ))}
             </ul>
@@ -110,10 +110,10 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 </li>
               ))}
             </ul>
-            <div className="mt-6 grid items-center gap-6 rounded-3xl bg-[#E3ECFF] p-8 sm:grid-cols-[1fr_auto] sm:p-10">
+            <div className="mt-6 grid items-center gap-6 rounded-3xl bg-ink p-8 text-white sm:grid-cols-[1fr_auto] sm:p-10">
               <div>
-                <h3 className="text-2xl font-bold text-brand">{`The ${c.price} math`}</h3>
-                <p className="mt-3 max-w-2xl text-ink-2">
+                <h3 className="text-2xl font-bold text-white">{`The ${c.price} math`}</h3>
+                <p className="mt-3 max-w-2xl text-white/70">
                   {`A wrong build costs you ₹3 lakh or more, plus months you could have been selling. One ${c.price} call tells you what will actually bring customers in, what to skip, and what it should cost, before you spend a rupee on development.`}
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       </main>
 
       {/* Sticky mobile book bar (Mahasiddhi pattern) */}
-      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white py-3 pl-4 pr-20 backdrop-blur lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 py-3 pl-4 pr-20 backdrop-blur lg:hidden">
         <div>
           <p className="font-display text-xl font-black leading-none">{c.price}</p>
           <p className="text-[11px] text-ink-3">{c.title}</p>

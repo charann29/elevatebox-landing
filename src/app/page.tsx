@@ -89,7 +89,7 @@ function CallCard({ large }: { large?: boolean }) {
             </svg>
           </span>
           <span>
-            <span className="block text-sm font-semibold text-brand">Live call · New lead</span>
+            <span className="block text-sm font-semibold text-ink">Live call · New lead</span>
             <span className="block text-xs text-ink-3">Example call · 00:42</span>
           </span>
         </span>
@@ -112,7 +112,7 @@ function CallCard({ large }: { large?: boolean }) {
         ))}
       </span>
       {large && (
-        <span className="mt-4 flex items-center gap-2 rounded-2xl bg-[#22c55e]/15 px-3.5 py-2.5 text-xs font-semibold text-[#15803d] sm:text-sm">
+        <span className="mt-4 flex items-center gap-2 rounded-2xl bg-[#22c55e]/15 px-3.5 py-2.5 text-xs font-semibold text-[#4ade80] sm:text-sm">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="size-4 shrink-0" aria-hidden="true">
             <path d="M5 12l5 5L20 7" />
           </svg>
@@ -191,8 +191,8 @@ function Heading({ id, eyebrow, title, lead, dark, action }: { id: string; eyebr
   return (
     <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
       <div className="max-w-2xl">
-        <p className={`text-sm font-semibold text-electric`}>{eyebrow}</p>
-        <h2 id={id} className={`mt-3 text-3xl font-bold leading-[1.08] sm:text-5xl ${dark ? "text-brand" : ""}`}>
+        <p className={`text-sm font-semibold "text-electric"`}>{eyebrow}</p>
+        <h2 id={id} className={`mt-3 text-3xl font-bold leading-[1.08] sm:text-5xl ${dark ? "text-ink" : ""}`}>
           {title}
         </h2>
         {lead && <p className={`mt-4 text-base leading-relaxed sm:text-lg "text-ink-3"`}>{lead}</p>}
@@ -218,8 +218,8 @@ export default function Home() {
         />
 
         {/* ── Hero ── */}
-        <section className="night-glow relative overflow-hidden">
-          <div aria-hidden="true" className="night-grid absolute inset-0" />
+        <section className="light-glow relative overflow-hidden">
+          <div aria-hidden="true" className="light-grid absolute inset-0" />
           <div className={`${COL} relative grid items-center gap-14 pb-20 pt-14 lg:grid-cols-[1.05fr_1fr] lg:pb-28 lg:pt-20`}>
             <div>
               <a
@@ -230,12 +230,12 @@ export default function Home() {
                 Voice — India&apos;s best conversational voice agent
                 <span aria-hidden="true">→</span>
               </a>
-              <h1 className="text-[2.6rem] lg:mt-7 font-bold leading-[1.02] text-brand sm:text-6xl lg:text-[4.4rem]">
+              <h1 className="text-[2.6rem] lg:mt-7 font-bold leading-[1.02] text-ink sm:text-6xl lg:text-[4.4rem]">
                 Mobile App &amp; AI Development Company in <span className="text-gradient">Hyderabad</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
                 We&apos;re a{" "}
-                <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-brand underline decoration-white/30 underline-offset-4 hover:decoration-white">
+                <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-ink underline decoration-white/30 underline-offset-4 hover:decoration-white">
                   mobile app development company in Hyderabad
                 </Link>
                 , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
@@ -259,7 +259,7 @@ export default function Home() {
                   ))}
                 </span>
                 <span className="text-sm leading-snug text-ink-3">
-                  <span className="block font-semibold text-brand">1,400 apps built</span>
+                  <span className="block font-semibold text-ink">1,400 apps built</span>
                   bugs fixed in under 6 hours
                 </span>
               </div>
@@ -274,7 +274,7 @@ export default function Home() {
                 <CallCard />
               </span>
               <span aria-hidden="true" className="absolute left-0 top-8 z-10 rounded-2xl bg-white px-4 py-3 ring-1 ring-brand/10 backdrop-blur-md">
-                <span className="block font-display text-2xl font-bold text-brand">8 lakh</span>
+                <span className="block font-display text-2xl font-bold text-ink">8 lakh</span>
                 <span className="block text-xs text-ink-2">calls a day, at scale</span>
               </span>
             </a>
@@ -296,19 +296,19 @@ export default function Home() {
 
         {/* ── Voice: the flagship ── */}
         <section aria-labelledby="voice" className="px-3 pt-6 sm:px-5">
-          <div className="relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] bg-brand-wash ring-1 ring-[#22c55e]/25">
+          <div className="relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] bg-night ring-1 ring-[#22c55e]/25">
             <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(50%_45%_at_15%_0%,rgba(34,197,94,0.18),transparent_70%),radial-gradient(55%_50%_at_90%_10%,rgba(61,107,255,0.3),transparent_70%)]" />
             <div aria-hidden="true" className="night-grid absolute inset-0" />
             <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <div className="mx-auto max-w-3xl text-center">
-                <p className="inline-flex items-center gap-2 rounded-full bg-[#22c55e]/10 px-4 py-1.5 text-sm font-semibold text-[#15803d] ring-1 ring-[#22c55e]/30">
+                <p className="inline-flex items-center gap-2 rounded-full bg-[#22c55e]/10 px-4 py-1.5 text-sm font-semibold text-[#4ade80] ring-1 ring-[#22c55e]/30">
                   <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#22c55e]" />
                   {`Our flagship · Voice by ${COMPANY.name}`}
                 </p>
-                <h2 id="voice" className="mt-6 text-4xl font-bold leading-[1.02] text-brand sm:text-6xl lg:text-7xl">
+                <h2 id="voice" className="mt-6 text-4xl font-bold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
                   India&apos;s best <span className="text-gradient">conversational voice agent</span>
                 </h2>
-                <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink-2 sm:text-lg">
+                <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
                   An AI phone employee for your business. Describe the job in plain words; it calls every new lead within
                   seconds, talks naturally in Telugu, Hindi or English, writes down what was said, and books the next step.
                 </p>
@@ -317,10 +317,10 @@ export default function Home() {
                     href={VOICE_APP}
                     className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-8 py-4 text-base font-bold text-night shadow-xl shadow-[#22c55e]/30 transition-transform hover:-translate-y-0.5"
                   >
-                    <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-brand-wash" />
+                    <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
                     Get a free demo call
                   </a>
-                  <a href={VOICE_APP} className="rounded-full border border-brand/10 px-8 py-4 text-center text-base font-semibold text-brand transition-colors hover:border-brand/10 hover:bg-brand-wash">
+                  <a href={VOICE_APP} className="rounded-full border border-white/15 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5">
                     Start free — 10 minutes on us
                   </a>
                 </div>
@@ -328,11 +328,11 @@ export default function Home() {
 
               <dl className="mx-auto mt-10 grid max-w-4xl sm:mt-14 grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
                 {VOICE_STATS.map((v) => (
-                  <div key={v.l} className="rounded-2xl bg-white p-5 text-center ring-1 ring-brand/10">
+                  <div key={v.l} className="rounded-2xl bg-white/[0.05] p-5 text-center ring-1 ring-white/10">
                     <dt className="sr-only">{v.l}</dt>
                     <dd>
-                      <p className="whitespace-nowrap font-display text-2xl font-bold text-brand sm:text-4xl">{v.v}</p>
-                      <p className="mt-1 text-xs leading-snug text-ink-3 sm:text-sm">{v.l}</p>
+                      <p className="whitespace-nowrap font-display text-2xl font-bold text-white sm:text-4xl">{v.v}</p>
+                      <p className="mt-1 text-xs leading-snug text-white/55 sm:text-sm">{v.l}</p>
                     </dd>
                   </div>
                 ))}
@@ -346,31 +346,31 @@ export default function Home() {
                 </div>
                 <ul className="grid grid-cols-2 gap-3 sm:gap-4">
                   {VOICE_FEATURES.map((f) => (
-                    <li key={f.t} className="rounded-3xl bg-white p-4 ring-1 sm:p-6 ring-brand/10 transition-colors hover:bg-brand-wash">
-                      <span className="grid size-9 place-items-center rounded-xl bg-[#22c55e]/15 sm:size-11 sm:rounded-2xl text-[#15803d]">
+                    <li key={f.t} className="rounded-3xl bg-white/[0.04] p-4 ring-1 sm:p-6 ring-white/10 transition-colors hover:bg-white/[0.07]">
+                      <span className="grid size-9 place-items-center rounded-xl bg-[#22c55e]/15 sm:size-11 sm:rounded-2xl text-[#4ade80]">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden="true">
                           <path d={f.icon} />
                         </svg>
                       </span>
-                      <h3 className="mt-3 text-base font-bold leading-snug text-brand sm:mt-4 sm:text-lg">{f.t}</h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-ink-2 sm:text-sm">{f.d}</p>
+                      <h3 className="mt-3 text-base font-bold leading-snug text-white sm:mt-4 sm:text-lg">{f.t}</h3>
+                      <p className="mt-1.5 text-xs leading-relaxed text-white/60 sm:text-sm">{f.d}</p>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-10 flex flex-col items-center gap-4 border-t border-brand/10 pt-8 text-center sm:mt-14 sm:gap-5 sm:pt-10">
-                <p className="text-sm text-ink-3">Built for</p>
+              <div className="mt-10 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center sm:mt-14 sm:gap-5 sm:pt-10">
+                <p className="text-sm text-white/55">Built for</p>
                 <ul className="flex flex-wrap justify-center gap-2">
                   {VOICE_USES.map((u) => (
                     <li key={u.t}>
-                      <a href={u.href} className="block rounded-full bg-white px-3 py-1.5 text-xs text-ink-2 ring-1 ring-brand/10 transition-colors hover:bg-brand-wash hover:text-brand sm:px-4 sm:py-2 sm:text-sm">
+                      <a href={u.href} className="block rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/80 ring-1 ring-white/10 transition-colors hover:bg-white/[0.12] hover:text-white sm:px-4 sm:py-2 sm:text-sm">
                         {u.t}
                       </a>
                     </li>
                   ))}
                 </ul>
-                <a href={VOICE_SEO.pricing.href} className="mt-2 text-sm font-semibold text-[#15803d] hover:underline">
+                <a href={VOICE_SEO.pricing.href} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
                   Prepaid, from ₹3.50 a minute — see AI voice agent pricing →
                 </a>
               </div>
@@ -414,7 +414,7 @@ export default function Home() {
                 const big = k === 0;
                 return (
                   <li key={w.slug} className={`h-[24rem] w-[82%] shrink-0 snap-center md:h-auto md:w-auto ${w.span}`}>
-                    <Link href={p.href ?? "/portfolio"} className="group relative block h-full overflow-hidden rounded-[2rem] bg-brand-wash">
+                    <Link href={p.href ?? "/portfolio"} className="group relative block h-full overflow-hidden rounded-[2rem] bg-night">
                       {w.bg ? (
                         <Image src={w.bg} alt="" fill sizes="(min-width: 768px) 66vw, 100vw" className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
                       ) : (
@@ -429,11 +429,11 @@ export default function Home() {
                         }`}
                       />
                       <div className={`relative flex h-full flex-col p-6 sm:p-7 ${big ? "max-w-[64%] md:max-w-sm md:p-10" : "max-w-[64%]"}`}>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-ink-3">{p.sector}</p>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-white/55">{p.sector}</p>
                         <h3 className={`mt-2 font-bold text-white ${big ? "text-2xl md:text-4xl" : "text-2xl"}`}>{p.name}</h3>
-                        <p className="mt-3 text-sm leading-relaxed text-ink-2 md:hidden">{p.summary.split(" — ")[0]}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-white/70 md:hidden">{p.summary.split(" — ")[0]}</p>
                         <p className={`mt-3 hidden text-sm leading-relaxed text-white/70 ${big ? "md:block" : "md:line-clamp-4"}`}>{p.summary}</p>
-                        <span className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-semibold text-brand backdrop-blur transition-colors group-hover:bg-brand-wash group-hover:text-ink">
+                        <span className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur transition-colors group-hover:bg-white group-hover:text-ink">
                           View project <span aria-hidden="true">↗</span>
                         </span>
                       </div>
@@ -485,8 +485,8 @@ export default function Home() {
 
         {/* ── Process and guarantees ── */}
         <section aria-labelledby="process" className="px-3 sm:px-5">
-          <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
-            <div aria-hidden="true" className="night-grid absolute inset-0" />
+          <div className="light-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
+            <div aria-hidden="true" className="light-grid absolute inset-0" />
             <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <Heading
                 id="process"
@@ -500,7 +500,7 @@ export default function Home() {
                   <li key={s.t} className="flex gap-4 rounded-3xl bg-white p-5 ring-1 ring-brand/10 sm:block sm:p-8">
                     <p className="font-display text-3xl font-bold text-electric/80 sm:text-5xl">{String(k + 1).padStart(2, "0")}</p>
                     <div>
-                    <h3 className="text-lg font-bold text-brand sm:mt-6 sm:text-xl">{s.t}</h3>
+                    <h3 className="text-lg font-bold text-ink sm:mt-6 sm:text-xl">{s.t}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-ink-2 sm:mt-2">{s.d}</p>
                     </div>
                   </li>
@@ -626,11 +626,11 @@ export default function Home() {
 
         {/* ── Closing offer ── */}
         <section id="quote" className="px-3 pb-6 sm:px-5">
-          <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
-            <div aria-hidden="true" className="night-grid absolute inset-0" />
+          <div className="light-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
+            <div aria-hidden="true" className="light-grid absolute inset-0" />
             <div className={`${COL} relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-24`}>
               <div>
-                <h2 className="text-4xl font-bold leading-[1.05] text-brand sm:text-6xl">
+                <h2 className="text-4xl font-bold leading-[1.05] text-ink sm:text-6xl">
                   Let&apos;s build what&apos;s <span className="text-gradient">next</span>.
                 </h2>
                 <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-2">

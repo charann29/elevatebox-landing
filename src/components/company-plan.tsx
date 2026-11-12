@@ -12,17 +12,17 @@ export function CompanyPlan({ c, email }: { c: Company; email: string }) {
   const g = plan(c.industry, c.city);
   return (
     <>
-      <section className="night-glow relative overflow-hidden">
-        <div aria-hidden="true" className="night-grid absolute inset-0" />
+      <section className="light-glow relative overflow-hidden">
+        <div aria-hidden="true" className="light-grid absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
           <nav aria-label="Breadcrumb" className="text-xs text-ink-3">
-            <Link href="/" className="hover:text-brand">Home</Link> / <Link href="/proposals" className="hover:text-brand">Growth plans</Link> /{" "}
+            <Link href="/" className="hover:text-ink">Home</Link> / <Link href="/proposals" className="hover:text-ink">Growth plans</Link> /{" "}
             <span className="text-ink-2">{c.name}</span>
           </nav>
           <p className="mt-8 inline-block rounded-full border border-brand/10 bg-white px-3 py-1 text-xs font-medium text-ink-2">
             Growth plan · {c.industry} · {c.city}
           </p>
-          <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-brand sm:text-5xl lg:text-6xl">Growth Plan for {c.name}, {c.city}</h1>
+          <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">Growth Plan for {c.name}, {c.city}</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
             How {c.name} could add {range(g.lo[5].revenue, g.hi[5].revenue)} a month by Month 6 and{" "}
             {range(g.lo[11].revenue, g.hi[11].revenue)} by Month 12, with tech, automation, strategy and Meta ads run as one plan.
