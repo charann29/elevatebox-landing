@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DM_Serif_Display } from "next/font/google";
 import { CLIENTS, COMPANY, CONSULT_RESULTS, CONSULTS, CREDENTIALS, OG_IMG } from "@/lib/content";
+import { LEXEND } from "@/lib/lexend";
 import { JsonLd, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 
 /* Ad landing page, one job: get the visitor into the booking form. No site nav, one CTA repeated
    after every section. Layout and colours follow the owner's reference (a single-offer webinar page):
-   navy top bar, serif headings with a red underline, orange buttons, light-blue alternate bands. */
-const serif = DM_Serif_Display({ weight: "400", subsets: ["latin"], display: "swap" });
+   navy top bar, Lexend headings with a red underline, orange buttons, light-blue alternate bands. */
 
 export const dynamicParams = false;
 export const generateStaticParams = () => CONSULTS.map((c) => ({ tier: c.slug }));
@@ -23,7 +22,7 @@ const find = (tier: string) => CONSULTS.find((c) => c.slug === tier);
 export async function generateMetadata({ params }: { params: Promise<{ tier: string }> }): Promise<Metadata> {
   const c = find((await params).tier);
   if (!c) return {};
-  const title = `${c.title.split(" ")[0]} tech consultation`;
+  const title = `${c.title.split(" ")[0]} strategic consultation`;
   const path = `/book/${c.slug}`;
   return {
     title,
@@ -44,8 +43,8 @@ const Check = () => (
 function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
   return (
     <div className="mt-10 text-center">
-      <a href={href} className={`inline-block w-full max-w-sm rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors ${ORANGE}`}>
-        Join for a tech consultation
+      <a href={href} className={`inline-block w-full max-w-sm rounded-md px-6 py-4 whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
+        Join for a strategic consultation
       </a>
       <p className="mt-2 text-sm font-medium text-[#262626]">{note}</p>
     </div>
@@ -55,7 +54,7 @@ function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
 function H2({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`text-center ${className}`}>
-      <h2 className={`${serif.className} text-3xl leading-tight text-[#262626] sm:text-[2.6rem]`}>{children}</h2>
+      <h2 className={`font-semibold tracking-tight text-3xl leading-tight text-[#262626] sm:text-[2.6rem]`}>{children}</h2>
       <span aria-hidden="true" className="mx-auto mt-2 block h-[3px] w-28 rounded bg-[#d32f2f]" />
     </div>
   );
@@ -83,12 +82,12 @@ const Icon = ({ d }: { d: string }) => (
 );
 
 const OUTCOMES = [
-  { i: "money", t: "Where you are losing money today", d: "The leads, follow-ups and hours slipping through the cracks in how you run things now." },
-  { i: "target", t: "The one fix that pays back first", d: "An app, a website or an AI helper, whichever brings customers in fastest for your business." },
-  { i: "cut", t: "What not to build", d: "The features that sound good but eat budget without bringing a single sale." },
-  { i: "rupee", t: "What it should really cost", d: "An honest budget range, so no agency can overcharge you later." },
-  { i: "map", t: "A clear first step", d: "What to do this month, whether you build with us or not." },
-  { i: "clock", t: "When it starts earning", d: "A realistic timeline from first screen to first rupee back." },
+  { i: "map", t: "How your business really runs", d: "Sales, operations, team and spend, looked at together. We ask a lot of questions on purpose." },
+  { i: "clock", t: "What to automate", d: "The repeated work eating your team's hours: follow-ups, data entry, publishing, reporting." },
+  { i: "target", t: "Where to scale", d: "The channel that can bring more customers: Meta ads, LinkedIn, content or your website." },
+  { i: "cut", t: "What to skip", d: "Tools, features and spends that cost money without bringing a sale." },
+  { i: "rupee", t: "What it should cost", d: "Existing tools where they work, a custom build only where it pays. Honest numbers." },
+  { i: "money", t: "When it pays back", d: "A six-month view: what it should earn you, and when it breaks even." },
 ];
 
 const AUDIENCE = [
@@ -98,6 +97,27 @@ const AUDIENCE = [
   { i: "rocket", t: "Startup founders", d: "Turn an idea into a first version people pay for, without wasting months." },
 ];
 
+/* After the call: the owner's three engagement models (from his client-meeting brief).
+   No client names here on purpose. */
+const ENGAGE = [
+  {
+    t: "Strategy consulting",
+    k: "You have a pain, not a plan",
+    d: "We study how your business runs, find where time and money leak, and set you up with tools that already exist, the cheapest way to run them at scale. Often done in days, not months.",
+  },
+  {
+    t: "Build",
+    k: "Co-pilots and autopilots made for you",
+    d: "Custom apps, internal tools and AI that follow your rules every single time. It runs on your own accounts and you own it. Priced on what it earns you, so it pays back within months.",
+  },
+  {
+    t: "Paid proof of concept",
+    k: "For ideas nobody has proven yet",
+    d: "We build a small working version first. You pay only for the proof. If it works, we build it in full; if not, you stop there with a clear answer, not a big bill.",
+  },
+];
+const PAIN = ["Enquiries nobody called back.", "Customers who never came a second time.", "Hours lost copying data a phone could handle."];
+const FAN = ["z-0 -rotate-6 translate-y-6", "z-10 -rotate-2", "z-10 rotate-2 translate-y-3", "z-0 rotate-6 translate-y-8"];
 const PHOTOS = [
   { src: "/assets/real-vamshi-farms.jpg", alt: "Vamshi Farms app" },
   { src: "/assets/real-8meds.jpg", alt: "8Meds app" },
@@ -112,7 +132,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   const minutes = c.title.split("-")[0];
 
   const faqs = [
-    { q: "Who will I talk to?", a: "Someone from the team that designs and builds the apps, not a sales caller." },
+    { q: "Who will I talk to?", a: "Someone from the team that runs ads and builds systems for our clients, not a sales caller." },
     { q: "How does the call happen?", a: `On Google Meet, ${minutes} minutes. You pick the time on the calendar right after paying.` },
     { q: "How do I pay?", a: "UPI, cards or net banking on Razorpay. You get a receipt by email." },
     { q: "What if I paid but did not reach the calendar?", a: `WhatsApp ${COMPANY.phone} with your Razorpay payment ID and we will send your booking link straight away.` },
@@ -121,7 +141,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   ];
 
   return (
-    <>
+    <div className={`contents ${LEXEND}`}>
+      {/* Ad page: one action only. Hide the site-wide call / WhatsApp buttons. */}
+      <style>{".eb-float{display:none!important}"}</style>
       <JsonLd json={ld(service(c.title, c.lead, path), breadcrumb([{ name: "Book a call", path: "/book" }, { name: c.title, path }]), faqPage(faqs))} />
 
       {/* Top bar */}
@@ -135,24 +157,25 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(#f1f1f1_1px,transparent_1px),linear-gradient(90deg,#f1f1f1_1px,transparent_1px)] bg-[size:40px_40px]" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:py-14">
             <div>
-              <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} tech consultation on Google Meet`}</p>
-              <h1 className={`${serif.className} mt-4 text-4xl leading-[1.15] sm:text-5xl`}>{c.headline}</h1>
+              <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} strategic consultation on Google Meet`}</p>
+              <h1 className={`font-semibold tracking-tight mt-4 text-4xl leading-[1.15] sm:text-5xl`}>{c.headline}</h1>
               <p className="mt-4 text-[15px] leading-relaxed text-[#424242]">{c.lead}</p>
               <ul className="mt-5 space-y-3">
                 {c.includes.map((i) => (
                   <li key={i} className="flex items-start gap-3 text-[15px]"><Check />{i}</li>
                 ))}
               </ul>
-              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors ${ORANGE}`}>
-                Join for a tech consultation
+              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
+                Join for a strategic consultation
               </a>
               <p className="mt-2 text-center text-sm text-[#424242]">{GUARANTEE}</p>
             </div>
-            <div>
-              <ul className="grid grid-cols-2 gap-3">
-                {PHOTOS.map((p) => (
-                  <li key={p.src} className="overflow-hidden rounded-lg ring-1 ring-black/10">
-                    <Image src={p.src} alt={p.alt} width={600} height={600} className="aspect-square w-full object-cover" priority />
+            <div className="order-first lg:order-none">
+              {/* Real app screens, shown whole in phone frames, fanned. On phones they come first: product before words. */}
+              <ul className="flex justify-center px-2 pb-6 pt-2">
+                {PHOTOS.map((p, i) => (
+                  <li key={p.src} className={`-mx-[2%] w-[27%] shrink-0 rounded-[1.3rem] bg-[#0b1a3c] p-[4px] shadow-2xl shadow-[#0b1a3c]/35 ${FAN[i]}`}>
+                    <Image src={p.src} alt={p.alt} width={520} height={1126} className="w-full rounded-[1.05rem]" priority />
                   </li>
                 ))}
               </ul>
@@ -162,18 +185,11 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         </section>
 
         {/* Problem */}
-        <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
-          <div className="mx-auto max-w-2xl">
-            <p className="text-center text-sm font-semibold">Do you still think</p>
-            <h2 className={`${serif.className} mt-2 text-center text-3xl leading-tight sm:text-[2.6rem]`}>An app is just an expense for big companies?</h2>
-            <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-[#424242]">
-              <p>Most businesses we meet are losing money in plain sight. <b>Enquiries that nobody called back. Customers who never came a second time. Hours spent on work a phone could do.</b></p>
-              <p>Why?</p>
-              <p>Because the way customers buy has changed. They search on their phone, compare in minutes and pick whoever answers first.</p>
-              <p><b>Think about your typical day.</b> How many calls did you miss? How many follow-ups were forgotten? How much of your team&apos;s day went into copying data from one place to another?</p>
-              <p><b>The good news?</b> Fixing it rarely needs a huge build. It needs the right first step.</p>
-              <p>{`In ${minutes} minutes, the people who build apps every day look at your business and tell you exactly where an app, website or AI can bring in more money, and what to skip.`}</p>
-            </div>
+        <section className="bg-[#0b1a3c] px-5 py-20 text-white sm:py-28">
+          <div className="mx-auto max-w-2xl space-y-14 text-center text-[2rem] font-semibold leading-tight tracking-tight sm:text-5xl">
+            {PAIN.map((l) => <p key={l} className="lit">{l}</p>)}
+            <p className="lit text-[#ff7701]">Your business is leaking money.</p>
+            <p className="lit">{`One ${minutes}-minute call shows you where, and what to fix first.`}</p>
           </div>
         </section>
 
@@ -212,11 +228,32 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           </div>
         </section>
 
+        {/* Engagement models */}
+        <section className="px-5 py-14 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <H2>After the call: three ways to work with us</H2>
+            <ol className="mt-12 grid gap-5 lg:grid-cols-3">
+              {ENGAGE.map((e, i) => (
+                <li key={e.t} className="lit rounded-lg p-7 ring-1 ring-black/10">
+                  <p className="text-5xl font-semibold tracking-tight text-[#ff7701]">{`0${i + 1}`}</p>
+                  <h3 className="mt-4 text-xl font-bold">{e.t}</h3>
+                  <p className="mt-1 text-sm font-semibold text-[#0b1a3c]">{e.k}</p>
+                  <p className="mt-3 leading-relaxed text-[#424242]">{e.d}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-[#424242]">
+              We price on what the work is worth to you in the next six months, not on your lifetime plans. The call is where we work out which one fits.
+            </p>
+            <Cta href={`${path}/form`} />
+          </div>
+        </section>
+
         {/* Team */}
         <section className="px-5 py-14 sm:py-20">
           <div className="mx-auto max-w-3xl">
             <div>
-              <h2 className={`${serif.className} text-3xl leading-tight sm:text-[2.6rem]`}>Meet the team who will be on your call</h2>
+              <h2 className={`font-semibold tracking-tight text-3xl leading-tight sm:text-[2.6rem]`}>Meet the team who will be on your call</h2>
               <p className="mt-2 text-sm font-bold">{`${COMPANY.name} · ${COMPANY.legal}, Hyderabad`}</p>
               <span aria-hidden="true" className="mt-2 block h-[3px] w-14 rounded bg-[#d32f2f]" />
               <p className="mt-5 leading-relaxed text-[#424242]">We design, build and run apps, websites and AI tools for businesses across India. The people on your call are the engineers who do the work, not a sales desk.</p>
@@ -225,8 +262,8 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   <li key={x.k} className="flex items-start gap-3"><Check /><span><b>{x.k}</b>{`: ${x.v}. ${x.note}.`}</span></li>
                 ))}
               </ul>
-              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-white shadow-sm transition-colors ${ORANGE}`}>
-                Join for a tech consultation
+              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
+                Join for a strategic consultation
               </a>
             </div>
           </div>
@@ -238,8 +275,8 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <H2>What one good plan has done for businesses like yours</H2>
             <ul className="mt-12 grid gap-5 sm:grid-cols-3">
               {CONSULT_RESULTS.map((r) => (
-                <li key={r.n} className="rounded-lg bg-white p-7 text-center ring-1 ring-black/10">
-                  <p className={`${serif.className} text-4xl text-[#ff7701]`}>{r.n}</p>
+                <li key={r.n} className="lit rounded-lg bg-white p-8 text-center ring-1 ring-black/10">
+                  <p className="text-5xl font-semibold tracking-tight text-[#ff7701] sm:text-6xl">{r.n}</p>
                   <p className="mt-3 leading-relaxed text-[#424242]">{r.d}</p>
                 </li>
               ))}
@@ -249,10 +286,10 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
+        <section className="bg-white px-5 py-14 sm:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.6fr]">
             <div>
-              <h2 className={`${serif.className} text-3xl leading-tight sm:text-[2.6rem]`}>Frequently asked questions:</h2>
+              <h2 className={`font-semibold tracking-tight text-3xl leading-tight sm:text-[2.6rem]`}>Frequently asked questions:</h2>
               <p className="mt-4 leading-relaxed text-[#424242]">{`WhatsApp ${COMPANY.phone} or email ${COMPANY.email} if you have any other question.`}</p>
             </div>
             <div className="space-y-3">
@@ -282,13 +319,13 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       </footer>
 
       {/* Sticky mobile bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 py-3 pr-20 backdrop-blur lg:hidden" style={{ paddingLeft: "4.5rem" }}>
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <div>
-          <p className={`${serif.className} text-lg leading-none`}>Tech consultation</p>
-          <p className="text-[11px] text-[#424242]">{`${minutes} on Google Meet`}</p>
+          <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>Strategic consultation</p>
+          <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
         </div>
-        <a href={`${path}/form`} className={`rounded-md px-5 py-3 text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
+        <a href={`${path}/form`} className={`rounded-md px-5 py-3 shrink-0 whitespace-nowrap text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
       </div>
-    </>
+    </div>
   );
 }

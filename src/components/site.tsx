@@ -142,14 +142,14 @@ export function FloatingActions() {
       <a
         href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
         aria-label="Call us"
-        className="fixed bottom-6 left-6 z-40 hidden size-12 sm:grid place-items-center rounded-full bg-electric text-white shadow-lg shadow-electric/30 transition-transform hover:scale-110"
+        className="eb-float fixed bottom-6 left-6 z-40 hidden size-12 sm:grid place-items-center rounded-full bg-electric text-white shadow-lg shadow-electric/30 transition-transform hover:scale-110"
       >
         <PhoneIcon className="size-5" />
       </a>
       <a
         href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-40 grid size-12 place-items-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110"
+        className="eb-float fixed bottom-6 right-6 z-40 grid size-12 place-items-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110"
       >
         <WhatsAppIcon className="size-7" />
       </a>
