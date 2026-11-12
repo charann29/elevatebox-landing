@@ -48,7 +48,7 @@ const abScript = (tier: string) =>
 function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
   return (
     <div className="mt-10 text-center">
-      <a href={href} className={`inline-block w-full max-w-sm rounded-md px-6 py-4 whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
+      <a href={href} className={`inline-block w-full max-w-md rounded-md px-4 py-4 sm:px-6 text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
         Join for a strategic consultation
       </a>
       <p className="mt-2 text-sm font-medium text-[#262626]">{note}</p>
@@ -175,7 +175,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   <li key={i} className="flex items-start gap-3 text-[15px]"><Check />{i}</li>
                 ))}
               </ul>
-              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
+              <a href={`${path}/form`} className={`mt-7 block rounded-md px-4 py-4 sm:px-6 text-center text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
                 Join for a strategic consultation
               </a>
               <p className="mt-2 text-center text-sm text-[#424242]">{GUARANTEE}</p>
@@ -272,7 +272,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   <li key={x.k} className="flex items-start gap-3"><Check /><span><b>{x.k}</b>{`: ${x.v}. ${x.note}.`}</span></li>
                 ))}
               </ul>
-              <a href={`${path}/form`} className={`mt-7 block rounded-md px-6 py-4 text-center whitespace-nowrap text-[15px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
+              <a href={`${path}/form`} className={`mt-7 block rounded-md px-4 py-4 sm:px-6 text-center text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
                 Join for a strategic consultation
               </a>
             </div>
