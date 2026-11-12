@@ -64,41 +64,41 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         />
 
         {/* ── First screen: the phrase, what is built, proof, and the way to start ── */}
-        <section className="night-glow relative overflow-hidden">
-          <div aria-hidden="true" className="night-grid absolute inset-0" />
+        <section className="light-glow relative overflow-hidden">
+          <div aria-hidden="true" className="light-grid absolute inset-0" />
           <div className={`${COL} relative pb-14 pt-10 lg:pb-20 lg:pt-14`}>
             <Crumbs items={[{ label: page.h1 }]} />
-            <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-[1.04] text-white sm:text-6xl">{page.h1}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{page.sub}</p>
+            <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-[1.04] text-ink sm:text-6xl">{page.h1}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{page.sub}</p>
             <dl className="mt-9 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
               {PROOF.map((s) => (
-                <div key={s.l} className="rounded-2xl bg-white/[0.05] p-4 ring-1 ring-white/10">
+                <div key={s.l} className="rounded-2xl bg-white p-4 ring-1 ring-brand/10">
                   <dt className="sr-only">{s.l}</dt>
                   <dd>
-                    <p className="whitespace-nowrap font-display text-2xl font-bold text-white">{s.v}</p>
-                    <p className="mt-0.5 text-xs text-white/55">{s.l}</p>
+                    <p className="whitespace-nowrap font-display text-2xl font-bold text-ink">{s.v}</p>
+                    <p className="mt-0.5 text-xs text-ink-3">{s.l}</p>
                   </dd>
                 </div>
               ))}
             </dl>
-            <p className="mt-6 max-w-2xl text-sm text-white/60">
+            <p className="mt-6 max-w-2xl text-sm text-ink-2">
               Built by founding engineers from ClickPe (YC W23) and an AI startup acquired by Microsoft.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <PillCta className="justify-between sm:justify-start">Get a quote</PillCta>
-              <a href={WA} className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:border-white/40">
+              <a href={WA} className="rounded-full border border-brand/10 px-6 py-3 text-center text-sm font-semibold text-ink transition-colors hover:border-brand/10">
                 Free consultation on WhatsApp
               </a>
-              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-center text-sm font-semibold text-white/80 hover:text-white">
+              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-center text-sm font-semibold text-ink-2 hover:text-ink">
                 {COMPANY.phone}
               </a>
             </div>
-            <p className="mt-3 text-xs text-white/45">We reply within one working day.</p>
+            <p className="mt-3 text-xs text-ink-3">We reply within one working day.</p>
           </div>
-          <div className="relative border-t border-white/[0.07]">
+          <div className="relative border-t border-brand/10">
             <ul className={`${COL} flex flex-wrap items-center gap-x-8 gap-y-3 py-5`} aria-label="Clients">
               {CLIENTS.map((c) => (
-                <li key={c} className="flex items-center gap-2 text-sm font-semibold text-white/55">
+                <li key={c} className="flex items-center gap-2 text-sm font-semibold text-ink-3">
                   <Image src={clientLogo(c)} alt="" width={120} height={100} className="size-7 rounded-full bg-white object-cover" />
                   {c}
                 </li>
@@ -138,31 +138,31 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         </Band>
 
         <section aria-labelledby="ai" className="px-3 sm:px-5">
-          <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
-            <div aria-hidden="true" className="night-grid absolute inset-0" />
+          <div className="light-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
+            <div aria-hidden="true" className="light-grid absolute inset-0" />
             <div className={`${COL} relative py-14 sm:py-20`}>
               <div className="max-w-3xl">
-                <h2 id="ai" className="text-3xl font-bold leading-[1.1] text-white sm:text-4xl">{page.ai.h2}</h2>
-                <p className="mt-4 text-base leading-relaxed text-white/65 sm:text-lg">{page.ai.lead}</p>
+                <h2 id="ai" className="text-3xl font-bold leading-[1.1] text-ink sm:text-4xl">{page.ai.h2}</h2>
+                <p className="mt-4 text-base leading-relaxed text-ink-2 sm:text-lg">{page.ai.lead}</p>
               </div>
               <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {page.ai.items.map((a) => (
-                  <li key={a.t} className="rounded-3xl bg-white/[0.04] p-6 ring-1 ring-white/10">
-                    <h3 className="text-lg font-bold text-white">{a.t}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/60">{a.d}</p>
+                  <li key={a.t} className="rounded-3xl bg-white p-6 ring-1 ring-brand/10">
+                    <h3 className="text-lg font-bold text-ink">{a.t}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-2">{a.d}</p>
                   </li>
                 ))}
               </ul>
               <a href={VOICE_APP} className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#22c55e] px-6 py-3 text-sm font-bold text-night">
-                <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
+                <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-brand-wash" />
                 Try Voice, our AI voice agent
               </a>
-              <div className="mt-10 border-t border-white/10 pt-8">
-                <p className="text-sm font-semibold text-white">AI voice agents in Hyderabad</p>
+              <div className="mt-10 border-t border-brand/10 pt-8">
+                <p className="text-sm font-semibold text-ink">AI voice agents in Hyderabad</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.realEstateHyd, VOICE_SEO.clinicsHyd, VOICE_SEO.coachingHyd, VOICE_SEO.loansHyd].map((l) => (
                     <li key={l.href}>
-                      <a href={l.href} className="block rounded-full bg-white/[0.06] px-3.5 py-1.5 text-xs text-white/80 ring-1 ring-white/10 hover:bg-white/[0.12] hover:text-white sm:text-sm">
+                      <a href={l.href} className="block rounded-full bg-white px-3.5 py-1.5 text-xs text-ink-2 ring-1 ring-brand/10 hover:bg-brand-wash hover:text-ink sm:text-sm">
                         {l.label}
                       </a>
                     </li>
@@ -225,7 +225,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <ul className="mt-10 grid gap-5 md:grid-cols-3">
             {cases.map((p) => (
               <li key={p.slug} className="overflow-hidden rounded-3xl bg-white ring-1 ring-black/[0.07]">
-                <div className="grid h-64 place-items-center overflow-hidden bg-night">
+                <div className="grid h-64 place-items-center overflow-hidden bg-brand-wash">
                   <Image
                     src={`/assets/real-${p.slug}.jpg`}
                     alt={`${p.name} ${p.platforms.join(" and ")} app screens, built by ${COMPANY.name}`}
@@ -300,18 +300,18 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         </Band>
 
         <section aria-labelledby="start" className="px-3 pb-6 sm:px-5">
-          <div className="night-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
-            <div aria-hidden="true" className="night-grid absolute inset-0" />
+          <div className="light-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
+            <div aria-hidden="true" className="light-grid absolute inset-0" />
             <div className={`${COL} relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2`}>
               <div>
-                <h2 id="start" className="text-3xl font-bold leading-[1.08] text-white sm:text-5xl">Start with a free consultation</h2>
-                <p className="mt-4 max-w-lg leading-relaxed text-white/60">
+                <h2 id="start" className="text-3xl font-bold leading-[1.08] text-ink sm:text-5xl">Start with a free consultation</h2>
+                <p className="mt-4 max-w-lg leading-relaxed text-ink-2">
                   Tell us what you are building on WhatsApp or by phone, free. When you are ready, the requirement analysis
                   turns it into a written quotation.
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <a href={WA} className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-bold text-night">WhatsApp us</a>
-                  <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white">
+                  <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-brand/10 px-6 py-3 text-center text-sm font-semibold text-ink">
                     {`Call ${COMPANY.phone}`}
                   </a>
                 </div>

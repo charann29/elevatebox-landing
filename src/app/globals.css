@@ -145,6 +145,23 @@ details[open] > summary .chev {
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
+/* Light band: white with a faint grey grid, like a clean product page. Decorative. */
+.light-glow {
+  background: linear-gradient(180deg, #ffffff 0%, var(--color-canvas) 100%);
+}
+.light-grid {
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 75%);
+}
+
+/* On light bands the accent runs navy to brand blue. */
+.light-glow .text-gradient {
+  background-image: linear-gradient(90deg, #013186, #3d6bff);
+}
+
 /* Headline accent: brand blue to a lighter blue. */
 .text-gradient {
   background: linear-gradient(90deg, #7c9bff, #3d6bff 55%, #9fb6ff);

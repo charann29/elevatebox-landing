@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CATEGORIES, COMPANY, POSTS, VOICE_APP, VOICE_SEO } from "@/lib/content";
+import { CATEGORIES, COMPANY, POSTS, VOICE_APP, VOICE_SEO, serviceIcon } from "@/lib/content";
 import { NavLink } from "@/components/nav-link";
 
 // ponytail: nav dropdowns and FAQ accordions use native <details>/CSS hover.
@@ -41,17 +41,24 @@ const PILL_TAIL = [
   { label: "About", href: "/about" },
 ];
 
-/** The Voice promo that sits in every mega menu and the mobile menu. */
+/** The Voice promo that sits in every mega menu: a bright card, like a featured product. */
 function VoiceCard() {
   return (
-    <a href={VOICE_APP} className="group/v mt-6 block rounded-2xl bg-night p-5 text-white ring-1 ring-electric/30 transition-transform hover:-translate-y-0.5">
-      <span className="flex items-center gap-2 text-xs font-semibold text-[#4ade80]">
-        <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-[#22c55e]" />
+    <a
+      href={VOICE_APP}
+      className="group/v flex h-full flex-col justify-between rounded-2xl bg-linear-to-br from-[#dcfce7] via-[#bbf7d0] to-[#86efac] p-5 ring-1 ring-[#22c55e]/25 transition-transform hover:-translate-y-0.5"
+    >
+      <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#15803d]">
+        <span aria-hidden="true" className="size-1.5 animate-pulse rounded-full bg-[#16a34a]" />
         Voice by {COMPANY.name}
       </span>
-      <span className="mt-2 block font-display text-lg font-bold leading-snug">India&apos;s best conversational voice agent</span>
-      <span className="mt-1 block text-xs text-white/60">8 lakh calls a day · Telugu, Hindi, English</span>
-      <span className="mt-3 inline-block text-sm font-semibold text-electric-2 group-hover/v:underline">Try it free →</span>
+      <span>
+        <span className="block font-display text-xl font-bold leading-snug text-ink">India&apos;s best conversational voice agent</span>
+        <span className="mt-1.5 block text-xs text-ink-2">8 lakh calls a day · Telugu, Hindi, English</span>
+        <span className="mt-4 inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#15803d] shadow-sm group-hover/v:shadow-md">
+          Try it free <span aria-hidden="true">→</span>
+        </span>
+      </span>
     </a>
   );
 }
@@ -62,50 +69,55 @@ const CHEVRON = (
   </svg>
 );
 
-/** A mega menu: spans the header width so long lists never run off the panel, opens on hover and on keyboard focus. */
+/** A mega menu under the nav: the first eight items with an icon and one line each, a "View all"
+ * link for the rest, and the Voice card. Opens on hover and on keyboard focus. */
 function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
-  const many = cat.items.length > 12;
+  const top = cat.items.slice(0, 8);
   return (
     <li className="group">
       <NavLink
         href={cat.base}
-        className="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
-        activeClassName="bg-white/10 text-white"
-        idleClassName="text-white/70 hover:bg-white/10 hover:text-white group-hover:bg-white/10 group-hover:text-white"
+        className="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] ring-1 ring-transparent transition"
+        activeClassName="bg-brand-wash text-brand"
+        idleClassName="text-ink-2 hover:text-brand group-hover:bg-white group-hover:text-brand group-hover:shadow-sm group-hover:ring-black/10"
       >
         {cat.label}
         {CHEVRON}
       </NavLink>
-      <div className="invisible absolute inset-x-5 top-full z-50 translate-y-1 pt-2 opacity-0 transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 lg:inset-x-8">
-        <div className="grid grid-cols-[17rem_1fr] overflow-hidden rounded-3xl bg-white shadow-2xl shadow-black/25 ring-1 ring-black/5">
-          <div className="flex flex-col bg-canvas p-7">
-            <p className="text-xs font-semibold uppercase tracking-wider text-electric">{cat.label}</p>
-            <p className="mt-2 text-sm leading-relaxed text-ink-3">{cat.blurb}</p>
-            <Link href={cat.base} className="mt-4 text-sm font-semibold text-ink hover:text-electric">
-              {`View all ${cat.items.length} →`}
-            </Link>
-            {cat.key === "services" && (
-              <Link href="/mobile-app-development-company-hyderabad" className="mt-2 text-sm font-semibold text-electric hover:underline">
-                Mobile app development company in Hyderabad →
-              </Link>
-            )}
-            <div className="mt-auto">
-              <VoiceCard />
+      <div className="invisible absolute left-1/2 top-full z-50 w-[min(60rem,calc(100%-2.5rem))] -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+        <div className="grid grid-cols-[1fr_16rem] gap-3 rounded-3xl bg-white p-3 shadow-2xl shadow-black/15 ring-1 ring-black/5">
+          <div className="rounded-2xl bg-canvas/60 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-ink">{cat.label}</p>
+            <p className="mt-1 text-xs text-ink-3">{cat.blurb}</p>
+            <ul className="mt-4 grid grid-cols-2 gap-1">
+              {top.map((i, k) => (
+                <li key={i.slug}>
+                  <Link href={`${cat.base}/${i.slug}`} className="group/i flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-white hover:shadow-sm">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-white ring-1 ring-black/5 transition-colors group-hover/i:bg-brand-wash">
+                      {cat.key === "services" ? (
+                        <Image src={serviceIcon(k)} alt="" width={120} height={130} className="h-6 w-auto" />
+                      ) : (
+                        <span aria-hidden="true" className="font-display text-sm font-bold text-brand">{i.name[0]}</span>
+                      )}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-semibold text-ink group-hover/i:text-brand">{i.name}</span>
+                      <span className="mt-0.5 line-clamp-1 text-xs text-ink-3">{i.tagline}</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 border-t border-black/5 pt-3 text-sm font-semibold">
+              <Link href={cat.base} className="text-brand hover:underline">{`View all ${cat.items.length} ${cat.label.toLowerCase()} →`}</Link>
+              {cat.key === "services" && (
+                <Link href="/mobile-app-development-company-hyderabad" className="text-ink-3 hover:text-brand">
+                  App development in Hyderabad →
+                </Link>
+              )}
             </div>
           </div>
-          <ul className={`grid content-start gap-1 p-5 ${many ? "grid-cols-3" : "grid-cols-2"}`}>
-            {cat.items.map((i) => (
-              <li key={i.slug}>
-                <Link href={`${cat.base}/${i.slug}`} className="group/i block rounded-xl px-3 py-2.5 transition-colors hover:bg-canvas">
-                  <span className="flex items-center justify-between gap-2 text-sm font-semibold text-ink group-hover/i:text-electric">
-                    {i.name}
-                    <span aria-hidden="true" className="opacity-0 transition-opacity group-hover/i:opacity-100">→</span>
-                  </span>
-                  {!many && <span className="mt-0.5 line-clamp-1 block text-xs text-ink-3">{i.tagline}</span>}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <VoiceCard />
         </div>
       </div>
     </li>
@@ -197,10 +209,10 @@ export function Header() {
       <span className="hidden sm:inline"> · 8 lakh calls a day</span>
       <span className="ml-2 font-semibold underline underline-offset-4">Try it free →</span>
     </a>
-    <header className="sticky top-0 z-50 w-full border-b border-white/[0.07] bg-night/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-line bg-white/85 backdrop-blur-xl">
       <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
         <Link href="/" aria-label={`${COMPANY.name} home`} className="shrink-0">
-          <Logo white className="h-auto w-[9.5rem] object-contain sm:w-[10.5rem]" />
+          <Logo className="h-auto w-[9.5rem] object-contain sm:w-[10.5rem]" />
         </Link>
 
         <nav className="hidden xl:block" aria-label="Main">
@@ -213,8 +225,8 @@ export function Header() {
                 <NavLink
                   href={n.href}
                   className="block whitespace-nowrap rounded-full px-3 py-1.5 text-[0.95rem] tracking-[-0.025em] transition-colors"
-                  activeClassName="bg-white/10 text-white"
-                  idleClassName="text-white/70 hover:bg-white/10 hover:text-white"
+                  activeClassName="bg-brand-wash text-brand"
+                  idleClassName="text-ink-2 hover:bg-brand-wash hover:text-brand"
                 >
                   {n.label}
                 </NavLink>
@@ -239,7 +251,7 @@ export function Header() {
         {/* Mobile */}
         <details className="xl:hidden">
           <summary
-            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-white/10 bg-white/5 text-white"
+            className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-line bg-white text-brand"
             aria-label="Toggle navigation menu"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
