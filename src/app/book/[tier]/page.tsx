@@ -198,6 +198,29 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         </section>
 
         {/* Problem */}
+        {c.pricing && (
+          <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
+            <div className="mx-auto max-w-2xl">
+              <H2>Roopa pricing: the more people, the less per call</H2>
+              <table className="mt-10 w-full overflow-hidden rounded-lg bg-white text-left ring-1 ring-black/10">
+                <thead className="bg-[#0b1a3c] text-sm text-white">
+                  <tr><th className="px-4 py-3">People called</th><th className="px-4 py-3">Price + GST</th><th className="px-4 py-3 text-right">Per person</th></tr>
+                </thead>
+                <tbody>
+                  {c.pricing.map((r) => (
+                    <tr key={r.people} className="border-t border-black/10">
+                      <td className="px-4 py-3 font-semibold">{r.people}</td>
+                      <td className="whitespace-nowrap px-4 py-3">{r.price}</td>
+                      <td className="px-4 py-3 text-right font-semibold text-[#ff7701]">{r.each}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <Cta href={`${path}/form`} label={join} note="Plan your first campaign on the call. The ₹499 is refunded if it isn't useful." />
+            </div>
+          </section>
+        )}
+
         <section className="bg-[#0b1a3c] px-5 py-20 text-white sm:py-28">
           <div className="mx-auto max-w-2xl space-y-14 text-center text-[2rem] font-semibold leading-tight tracking-tight sm:text-5xl">
             {(c.pain ?? PAIN).map((l) => <p key={l} className="lit">{l}</p>)}
