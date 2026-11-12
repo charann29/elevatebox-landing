@@ -1879,7 +1879,7 @@ export const CONSULTS = [
     price: "₹499",
     title: "30-minute App Idea Call",
     lead: "Tell us about your business. We show you where an app, website or AI can bring in more customers or save your team hours, and what to build first.",
-    pay: "",
+    pay: "https://elevatebox-consult.lsaicharan01.workers.dev/499/",
     includes: [
       "30 minutes on Google Meet with someone who builds apps",
       "Where your business is losing customers or hours today",
@@ -1893,7 +1893,7 @@ export const CONSULTS = [
     price: "₹1,499",
     title: "45-minute Product Planning Call",
     lead: "45 minutes working through your product with the team, then a short written note with next steps.",
-    pay: "",
+    pay: "https://elevatebox-consult.lsaicharan01.workers.dev/1499/",
     includes: [
       "45 minutes on Google Meet with the delivery team",
       "Your main screens and features worked through",
@@ -1907,7 +1907,7 @@ export const CONSULTS = [
     price: "₹3,499",
     title: "60-minute Requirement Analysis",
     lead: "A full hour with the people who would build it, ending in a written quotation and timeline.",
-    pay: "",
+    pay: "https://elevatebox-consult.lsaicharan01.workers.dev/3499/",
     includes: [
       "60 minutes with the people who will build it, not a sales desk",
       "Your requirements worked through screen by screen",
