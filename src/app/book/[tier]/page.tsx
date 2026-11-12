@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DM_Serif_Display } from "next/font/google";
 import { CLIENTS, COMPANY, CONSULT_RESULTS, CONSULTS, CREDENTIALS, OG_IMG } from "@/lib/content";
+import { LEXEND } from "@/lib/lexend";
 import { JsonLd, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 
 /* Ad landing page, one job: get the visitor into the booking form. No site nav, one CTA repeated
    after every section. Layout and colours follow the owner's reference (a single-offer webinar page):
-   navy top bar, serif headings with a red underline, orange buttons, light-blue alternate bands. */
-const serif = DM_Serif_Display({ weight: "400", subsets: ["latin"], display: "swap" });
+   navy top bar, Lexend headings with a red underline, orange buttons, light-blue alternate bands. */
 
 export const dynamicParams = false;
 export const generateStaticParams = () => CONSULTS.map((c) => ({ tier: c.slug }));
@@ -55,7 +54,7 @@ function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
 function H2({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`text-center ${className}`}>
-      <h2 className={`${serif.className} text-3xl leading-tight text-[#262626] sm:text-[2.6rem]`}>{children}</h2>
+      <h2 className={`font-semibold tracking-tight text-3xl leading-tight text-[#262626] sm:text-[2.6rem]`}>{children}</h2>
       <span aria-hidden="true" className="mx-auto mt-2 block h-[3px] w-28 rounded bg-[#d32f2f]" />
     </div>
   );
@@ -121,7 +120,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   ];
 
   return (
-    <>
+    <div className={`contents ${LEXEND}`}>
       <JsonLd json={ld(service(c.title, c.lead, path), breadcrumb([{ name: "Book a call", path: "/book" }, { name: c.title, path }]), faqPage(faqs))} />
 
       {/* Top bar */}
@@ -136,7 +135,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:py-14">
             <div>
               <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} tech consultation on Google Meet`}</p>
-              <h1 className={`${serif.className} mt-4 text-4xl leading-[1.15] sm:text-5xl`}>{c.headline}</h1>
+              <h1 className={`font-semibold tracking-tight mt-4 text-4xl leading-[1.15] sm:text-5xl`}>{c.headline}</h1>
               <p className="mt-4 text-[15px] leading-relaxed text-[#424242]">{c.lead}</p>
               <ul className="mt-5 space-y-3">
                 {c.includes.map((i) => (
@@ -165,7 +164,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
           <div className="mx-auto max-w-2xl">
             <p className="text-center text-sm font-semibold">Do you still think</p>
-            <h2 className={`${serif.className} mt-2 text-center text-3xl leading-tight sm:text-[2.6rem]`}>An app is just an expense for big companies?</h2>
+            <h2 className={`font-semibold tracking-tight mt-2 text-center text-3xl leading-tight sm:text-[2.6rem]`}>An app is just an expense for big companies?</h2>
             <div className="mt-8 space-y-5 text-[17px] leading-relaxed text-[#424242]">
               <p>Most businesses we meet are losing money in plain sight. <b>Enquiries that nobody called back. Customers who never came a second time. Hours spent on work a phone could do.</b></p>
               <p>Why?</p>
@@ -216,7 +215,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         <section className="px-5 py-14 sm:py-20">
           <div className="mx-auto max-w-3xl">
             <div>
-              <h2 className={`${serif.className} text-3xl leading-tight sm:text-[2.6rem]`}>Meet the team who will be on your call</h2>
+              <h2 className={`font-semibold tracking-tight text-3xl leading-tight sm:text-[2.6rem]`}>Meet the team who will be on your call</h2>
               <p className="mt-2 text-sm font-bold">{`${COMPANY.name} · ${COMPANY.legal}, Hyderabad`}</p>
               <span aria-hidden="true" className="mt-2 block h-[3px] w-14 rounded bg-[#d32f2f]" />
               <p className="mt-5 leading-relaxed text-[#424242]">We design, build and run apps, websites and AI tools for businesses across India. The people on your call are the engineers who do the work, not a sales desk.</p>
@@ -239,7 +238,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <ul className="mt-12 grid gap-5 sm:grid-cols-3">
               {CONSULT_RESULTS.map((r) => (
                 <li key={r.n} className="rounded-lg bg-white p-7 text-center ring-1 ring-black/10">
-                  <p className={`${serif.className} text-4xl text-[#ff7701]`}>{r.n}</p>
+                  <p className={`font-semibold tracking-tight text-4xl text-[#ff7701]`}>{r.n}</p>
                   <p className="mt-3 leading-relaxed text-[#424242]">{r.d}</p>
                 </li>
               ))}
@@ -252,7 +251,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         <section className="bg-white px-5 py-14 sm:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.6fr]">
             <div>
-              <h2 className={`${serif.className} text-3xl leading-tight sm:text-[2.6rem]`}>Frequently asked questions:</h2>
+              <h2 className={`font-semibold tracking-tight text-3xl leading-tight sm:text-[2.6rem]`}>Frequently asked questions:</h2>
               <p className="mt-4 leading-relaxed text-[#424242]">{`WhatsApp ${COMPANY.phone} or email ${COMPANY.email} if you have any other question.`}</p>
             </div>
             <div className="space-y-3">
@@ -284,11 +283,11 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       {/* Sticky mobile bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 py-3 pl-4 pr-20 backdrop-blur lg:hidden">
         <div>
-          <p className={`${serif.className} whitespace-nowrap text-lg leading-none`}>Tech consultation</p>
+          <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>Tech consultation</p>
           <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
         </div>
         <a href={`${path}/form`} className={`rounded-md px-5 py-3 shrink-0 whitespace-nowrap text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
       </div>
-    </>
+    </div>
   );
 }

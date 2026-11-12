@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CONSULTS } from "@/lib/content";
+import { LEXEND } from "@/lib/lexend";
 import { ConsultForm } from "@/components/consult-form";
 
 export const dynamicParams = false;
@@ -24,7 +25,7 @@ export default async function ConsultFormPage({ params }: { params: Promise<{ ti
   const c = find((await params).tier);
   if (!c) notFound();
   return (
-    <>
+    <div className={`contents ${LEXEND}`}>
       {/* ponytail: same bare top bar as the ad page, no site nav to leak ad traffic */}
       <div className="bg-[#0b1a3c] px-4 py-2.5 text-center text-xs font-semibold text-white sm:text-sm">
         ElevateBox, Hyderabad: <span className="text-[#f8e71c]">engineers from Google, JPMorgan Chase and a Y Combinator startup</span>
@@ -40,6 +41,6 @@ export default async function ConsultFormPage({ params }: { params: Promise<{ ti
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }
