@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tier: str
   if (!c) return {};
   return {
     title: `Join for a ${c.title.split(" ")[0]} strategic consultation`,
-    alternates: { canonical: `/book/${c.slug}/form` },
+    alternates: { canonical: `${c.path}/form` },
     robots: { index: false, follow: true },
   };
 }
@@ -33,7 +33,7 @@ export default async function ConsultFormPage({ params }: { params: Promise<{ ti
       </div>
       <main className="flex-1 bg-[#f7f7f5] px-5 py-10 sm:py-14">
         <div className="mx-auto max-w-xl">
-          <Link href={`/book/${c.slug}`} className="text-sm text-ink-3 hover:text-ink">‹ Back to details</Link>
+          <Link href={c.path} className="text-sm text-ink-3 hover:text-ink">‹ Back to details</Link>
           <p className="mt-6 text-sm font-semibold text-[#ff7701]">{`${c.title.split(" ")[0]} strategic consultation`}</p>
           <h1 className="mt-1 text-3xl font-bold sm:text-4xl">Tell us about your project</h1>
           <p className="mt-2 text-ink-3">7 quick questions, under a minute. Then pick your time and pay.</p>

@@ -1858,7 +1858,8 @@ export const DISCOVERY = {
   ],
 };
 
-/* Paid consultation tiers for the Meta ads funnel, one page each at /book/<slug>.
+/* Paid consultation tiers for the Meta ads funnel, one page each. slug is the internal tier id the booking Worker prices on (never shown);
+   path is the public URL (owner: no prices or tier hints in URLs; rewritten to /book/<slug> in next.config.ts).
    Same flow as DISCOVERY: a Razorpay Payment Page whose success redirect opens the
    matching cal.com event. ponytail: pay stays "" until that Payment Page exists; the
    pay button is hidden until then and only "Ask a question first" (WhatsApp) shows.
@@ -1875,6 +1876,7 @@ export const CONSULT_RESULTS = [
 export const CONSULTS = [
   {
     slug: "499",
+    path: "/tech-consultation",
     headline: "Find where your business can grow faster, in one short call.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
@@ -1891,6 +1893,7 @@ export const CONSULTS = [
   },
   {
     slug: "1499",
+    path: "/product-review",
     headline: "Map your business and leave with a growth plan, from the people who will run it.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
@@ -1907,6 +1910,7 @@ export const CONSULTS = [
   },
   {
     slug: "3499",
+    path: "/project-assessment",
     headline: "Know exactly what to automate, what to build, what it costs and when it pays back.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
