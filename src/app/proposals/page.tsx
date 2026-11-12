@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   description:
     "12-month growth plans for Hyderabad and Telangana businesses: tech, automation, strategy and Meta ads, with the funnel and Month 6 and Month 12 numbers.",
   alternates: { canonical: "/proposals" },
-  robots: { index: false, follow: true },
 };
 
 export default function ProposalsHub() {
