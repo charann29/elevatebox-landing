@@ -23,11 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ tier: str
   const c = find((await params).tier);
   if (!c) return {};
   const title = `${c.title.split(" ")[0]} ${c.kind ?? "strategic consultation"}`;
-  const path = `/book/${c.slug}`;
+  const path = c.path ?? `/book/${c.slug}`;
   return {
     title,
     description: `${c.lead} Book online with ElevateBox, Hyderabad.`,
     alternates: { canonical: path },
+    // ad-only pages: kept out of search and the sitemap so the three offers are not found side by side
+    robots: { index: false, follow: true },
     openGraph: { images: [OG_IMG], title, description: c.lead, url: path, type: "website" },
   };
 }
@@ -133,7 +135,7 @@ const PHOTOS = [
 export default async function ConsultPage({ params }: { params: Promise<{ tier: string }> }) {
   const c = find((await params).tier);
   if (!c) notFound();
-  const path = `/book/${c.slug}`;
+  const path = c.path ?? `/book/${c.slug}`;
   const minutes = c.title.split("-")[0];
   const kind = c.kind ?? "strategic consultation";
   const join = `Join for a ${kind}`;
