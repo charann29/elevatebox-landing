@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cleanPhone, slotDays } from "@/lib/booking.mjs";
+import type { Question } from "@/lib/content";
 
 /* Ad booking flow: 7 questions -> pick a time -> Razorpay -> booked.
    Backend is the ElevateBox booking Worker (elevatebox-consult), proxied same-origin at /api/consult/* (vercel.json).
@@ -11,7 +12,7 @@ import { cleanPhone, slotDays } from "@/lib/booking.mjs";
 const API = "/api/consult";
 
 // Keys match the Worker's leads table (investment, stance).
-const Q: { k: string; q: string; opts?: string[]; note?: string; type?: string }[] = [
+const Q: Question[] = [
   { k: "build", q: "What are you looking to build?", opts: ["AI automation for my business", "Mobile app", "Website", "SaaS / startup MVP", "Enterprise software", "Improve an existing product"] },
   { k: "name", q: "What's your name?", type: "text" },
   { k: "phone", q: "What is your WhatsApp number?", type: "tel" },
@@ -21,7 +22,7 @@ const Q: { k: string; q: string; opts?: string[]; note?: string; type?: string }
   { k: "stance", q: "Which statement best describes you?", opts: ["I'm ready to start immediately", "I have a clear requirement and I'm comparing partners", "I have a tech team and need expert execution", "I'm looking for a long-term technology partner"] },
 ];
 
-type Offer = { slug: string; title: string; price: string };
+type Offer = { slug: string; title: string; price: string; questions?: Question[] };
 type Rzp = new (o: object) => { open: () => void };
 declare global {
   interface Window { fbq?: (...a: unknown[]) => void; Razorpay?: Rzp }
@@ -69,6 +70,7 @@ const card = "rounded-[2rem] bg-white p-6 shadow-xl shadow-black/5 ring-1 ring-b
 const primary = "rounded-full bg-[#ff7701] px-6 py-4 text-base font-semibold text-white shadow-lg shadow-[#ff7701]/30 hover:bg-[#f57100] disabled:opacity-50";
 
 export function ConsultForm({ offer }: { offer: Offer }) {
+  const qs = offer.questions ?? Q;
   const [a, setA] = useState<Record<string, string> | null>(null);
   const [leadId, setLeadId] = useState("");
   const [slots, setSlots] = useState<{ taken: Record<string, string[]>; now: number } | null>(null);
@@ -88,7 +90,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    const next = Object.fromEntries(Q.map((x) => [x.k, String(fd.get(x.k) ?? "").trim()]));
+    const next = Object.fromEntries(qs.map((x) => [x.k, String(fd.get(x.k) ?? "").trim()]));
     next.phone = cleanPhone(next.phone);
     if (!next.phone) return setMsg("Please enter a 10-digit Indian mobile number.");
     setBusy(true);
@@ -188,7 +190,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   const field = "mt-1.5 block w-full rounded-xl border border-black/15 bg-white px-3.5 py-3 text-base text-ink outline-none focus:border-[#ff7701] focus:ring-2 focus:ring-[#ff7701]/20";
   return (
     <form className={`grid gap-5 ${card}`} onSubmit={submit}>
-      {Q.map((x) => (
+      {qs.map((x) => (
         <label key={x.k} className="block text-sm font-semibold text-ink">
           {x.q}
           {x.note && <span className="mt-0.5 block text-xs font-normal text-ink-3">{x.note}</span>}
@@ -215,6 +217,8 @@ export function ConsultForm({ offer }: { offer: Offer }) {
       <button type="submit" disabled={busy} className={primary}>
         {busy ? "Saving…" : "Continue ›"}
       </button>
+      {/* Consent for the abandoned-checkout call (Roopa lead source states this): keep the wording. */}
+      <p className="text-center text-xs text-ink-3">By continuing, you agree that we may call or WhatsApp you about this booking.</p>
     </form>
   );
 }

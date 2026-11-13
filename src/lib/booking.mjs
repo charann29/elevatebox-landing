@@ -4,7 +4,7 @@
  */
 
 // Server price allowlist in paise. The Worker ignores any amount the browser sends.
-export const PRICES_PAISE = { 499: 49900, 1499: 149900, 3499: 349900 };
+export const PRICES_PAISE = { 499: 49900, 1499: 149900, 3499: 349900, roopa: 49900 };
 
 // Real daily slots (IST), owner 2026-11-13: as many 45-minute calls as fit 11:00 am to 11:30 pm,
 // back to back, each ending by 23:30 (11:00, 11:45 ... 22:15 = 16 a day). Nothing here is random or faked.

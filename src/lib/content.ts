@@ -1858,7 +1858,8 @@ export const DISCOVERY = {
   ],
 };
 
-/* Paid consultation tiers for the Meta ads funnel, one page each at /book/<slug>.
+/* Paid consultation tiers for the Meta ads funnel, one page each. slug is the internal tier id the booking Worker prices on (never shown);
+   path is the public URL (owner: no prices or tier hints in URLs; rewritten to /book/<slug> in next.config.ts).
    Same flow as DISCOVERY: a Razorpay Payment Page whose success redirect opens the
    matching cal.com event. ponytail: pay stays "" until that Payment Page exists; the
    pay button is hidden until then and only "Ask a question first" (WhatsApp) shows.
@@ -1872,9 +1873,26 @@ export const CONSULT_RESULTS = [
   { n: "0 to 3 sales a day", d: "for a wellness centre once we added a small advance payment to its ad funnel." },
 ];
 
-export const CONSULTS = [
+export type Question = { k: string; q: string; opts?: string[]; note?: string; type?: string };
+type Item = { i: string; t: string; d: string };
+/* One paid call per entry at /book/<slug>. Optional fields override the page's default ElevateBox
+   sections, so a product (Roopa) can reuse the same layout, booking Worker and Razorpay flow. */
+export type Consult = {
+  slug: string; headline: string; headlineB?: string; price: string; title: string; lead: string; pay: string; includes: string[];
+  path?: string; // neutral ad URL; falls back to /book/<slug>
+  kind?: string; // "strategic consultation" by default
+  who?: string; // FAQ "Who will I talk to?"
+  photos?: { src: string; alt: string }[]; caption?: string;
+  pain?: string[]; painHit?: string; painClose?: string;
+  outcomes?: Item[]; audience?: Item[];
+  questions?: Question[]; // keys must be the Worker's lead columns: build name phone business revenue investment stance
+  focused?: boolean; // hide the ElevateBox-wide sections (engagement models, results)
+};
+
+export const CONSULTS: Consult[] = [
   {
     slug: "499",
+    path: "/tech-consultation",
     headline: "Find where your business can grow faster, in one short call.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
@@ -1891,6 +1909,7 @@ export const CONSULTS = [
   },
   {
     slug: "1499",
+    path: "/product-review",
     headline: "Map your business and leave with a growth plan, from the people who will run it.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
@@ -1907,6 +1926,7 @@ export const CONSULTS = [
   },
   {
     slug: "3499",
+    path: "/project-assessment",
     headline: "Know exactly what to automate, what to build, what it costs and when it pays back.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
@@ -1920,6 +1940,51 @@ export const CONSULTS = [
       "What existing tools can do for you, and what is worth building",
       "A written quotation and timeline you can take anywhere",
     ],
+  },
+  {
+    slug: "roopa",
+    headline: "Let Roopa call every lead for you, in your customers' language.",
+    price: "₹499",
+    title: "30-minute Roopa Consultation",
+    kind: "Roopa consultation",
+    lead: "Tell us how your business handles calls today. We map which calls Roopa, our AI telecaller, can make for you in Telugu, Hindi or English, and what it costs at your volume.",
+    pay: "",
+    includes: [
+      "30 minutes on Google Meet with the team that builds Roopa",
+      "Which of your calls Roopa can take: new leads, follow-ups, order confirmations, reminders",
+      "A demo call set up with your own business details",
+      "Your monthly cost at your call volume",
+    ],
+    who: "Someone from the team that builds and runs Roopa, not a sales caller.",
+    photos: [{ src: "/assets/real-voice.jpg", alt: "Roopa by ElevateBox" }],
+    caption: "Roopa by ElevateBox: AI telecaller in Telugu, Hindi and English",
+    pain: ["Leads that came in at night, called back next morning.", "Telecallers who leave after two months.", "Follow-ups nobody had time for."],
+    painHit: "Every missed call is a customer lost.",
+    painClose: "One 30-minute call shows how Roopa can take these calls for you.",
+    outcomes: [
+      { i: "map", t: "Which calls to hand over", d: "New enquiries, follow-ups, COD confirmations, appointment reminders: we list yours." },
+      { i: "clock", t: "How leads get called right away", d: "Roopa calls new leads as they come in, day or night, instead of the next morning." },
+      { i: "target", t: "What Roopa should say", d: "A call script in Telugu, Hindi or English, built from your brochure and website." },
+      { i: "cut", t: "What stays with your team", d: "The calls a person should still take, and how Roopa hands them over." },
+      { i: "rupee", t: "What it costs", d: "Your monthly cost at your call volume, next to what a telecaller costs you." },
+      { i: "money", t: "When it pays back", d: "A six-month view of leads followed up and hours saved." },
+    ],
+    audience: [
+      { i: "home", t: "Builders and real estate", d: "Every site-visit enquiry called back, not left for tomorrow." },
+      { i: "heart", t: "Clinics and hospitals", d: "Appointment reminders and follow-ups in the patient's language." },
+      { i: "shop", t: "Shops with COD orders", d: "Orders confirmed by phone before dispatch." },
+      { i: "rocket", t: "Any team with a call list", d: "Loans, insurance, coaching, events: if your team dials, Roopa can help." },
+    ],
+    questions: [
+      { k: "build", q: "What should Roopa handle first?", opts: ["Call back new enquiries", "Follow up old leads", "Confirm COD orders", "Appointment booking and reminders", "Payment or renewal reminders", "Answer incoming calls"] },
+      { k: "name", q: "What's your name?", type: "text" },
+      { k: "phone", q: "What is your WhatsApp number?", type: "tel" },
+      { k: "business", q: "What kind of business do you run?", opts: ["Real estate / builder", "Clinic or hospital", "Shop / e-commerce (COD)", "Loans or insurance", "Coaching or education", "Other"] },
+      { k: "revenue", q: "How many customer calls does your team make in a day?", opts: ["Under 20", "20 to 100", "100 to 500", "500+"] },
+      { k: "investment", q: "Which language do most of your customers speak?", opts: ["Telugu", "Telugu and English", "Hindi", "English", "A mix"] },
+      { k: "stance", q: "When do you want Roopa calling for you?", opts: ["This week", "This month", "Just exploring"] },
+    ],
+    focused: true,
   },
 ];
 
