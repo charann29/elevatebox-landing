@@ -6,9 +6,16 @@
 // Server price allowlist in paise. The Worker ignores any amount the browser sends.
 export const PRICES_PAISE = { 499: 49900, 1499: 149900, 3499: 349900, roopa: 49900 };
 
-// Real daily slots (IST). The owner picked a fixed daily cap; nothing here is random.
+// Real daily slots (IST), owner 2026-11-13: as many 45-minute calls as fit 11:00 am to 11:30 pm,
+// back to back, each ending by 23:30 (11:00, 11:45 ... 22:15 = 16 a day). Nothing here is random or faked.
+const every45 = [];
+for (let m = 11 * 60; m + 45 <= 23 * 60 + 30; m += 45) every45.push(`${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`);
+
 export const SLOT_CONFIG = {
-  times: ["11:00", "13:00", "16:00", "18:30"],
+  times: every45,
+  // Owner: don't show the whole calendar. Only the next `show` open times per day are offered;
+  // when one is booked the next real time appears. Booked times stay visible (struck through).
+  show: 4,
   closedWeekdays: [], // 0 = Sunday ... 6 = Saturday
   days: 7,
   holdMinutes: 10, // a pending (unpaid) order holds its slot this long
@@ -51,9 +58,15 @@ export function slotDays(nowMs, taken = {}, cfg = SLOT_CONFIG) {
   for (let i = 0; i < cfg.days; i++) {
     const date = istDate(nowMs + i * 864e5);
     if (cfg.closedWeekdays.includes(weekday(date))) continue;
-    const times = cfg.times
-      .filter((t) => slotEpoch(date, t) > nowMs)
-      .map((t) => ({ time: t, booked: (taken[date] || []).includes(t) }));
+    const times = [];
+    let open = 0;
+    for (const t of cfg.times) {
+      if (slotEpoch(date, t) <= nowMs) continue;
+      const booked = (taken[date] || []).includes(t);
+      if (!booked && open >= (cfg.show ?? Infinity)) break;
+      if (!booked) open++;
+      times.push({ time: t, booked });
+    }
     if (!times.length) continue;
     days.push({ date, today: i === 0, times, left: times.filter((t) => !t.booked).length });
   }

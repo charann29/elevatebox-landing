@@ -167,7 +167,8 @@ export function ConsultForm({ offer }: { offer: Offer }) {
                 </button>
               ))}
             </div>
-            <div className="mt-4 grid grid-cols-2 gap-2">
+            <p className="mt-4 text-sm font-semibold text-[#d32f2f]">{`Only ${day.left} ${day.left === 1 ? "time" : "times"} open ${day.today ? "today" : `on ${dayLabel(day.date)}`}. Calls fill up fast.`}</p>
+            <div className="mt-3 grid grid-cols-2 gap-2">
               {day.times.map((t) => (
                 <button key={t.time} type="button" disabled={t.booked} onClick={() => { setDate(day.date); setTime(t.time); }}
                   className={`rounded-xl border px-3.5 py-3 text-sm font-semibold disabled:line-through disabled:opacity-40 ${date === day.date && time === t.time ? "border-[#ff7701] bg-[#ff7701] text-white" : "border-black/15 text-ink"}`}>
