@@ -22,8 +22,8 @@ const find = (tier: string) => CONSULTS.find((c) => c.slug === tier);
 export async function generateMetadata({ params }: { params: Promise<{ tier: string }> }): Promise<Metadata> {
   const c = find((await params).tier);
   if (!c) return {};
-  const title = `${c.title.split(" ")[0]} strategic consultation`;
-  const path = c.path;
+  const title = `${c.title.split(" ")[0]} ${c.kind ?? "strategic consultation"}`;
+  const path = c.path ?? `/book/${c.slug}`;
   return {
     title,
     description: `${c.lead} Book online with ElevateBox, Hyderabad.`,
@@ -47,11 +47,11 @@ const abScript = (tier: string) =>
   `document.documentElement.setAttribute("data-ab",v);var k="eb_abv_${tier}";try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1")}catch(e){}` +
   `navigator.sendBeacon&&navigator.sendBeacon("/api/consult/ab-view",JSON.stringify({tier:"${tier}",variant:v}))})()`;
 
-function Cta({ href, note = GUARANTEE }: { href: string; note?: string }) {
+function Cta({ href, note = GUARANTEE, label = "Join for a strategic consultation" }: { href: string; note?: string; label?: string }) {
   return (
     <div className="mt-10 text-center">
       <a href={href} className={`inline-block w-full max-w-md rounded-md px-4 py-4 sm:px-6 text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
-        Join for a strategic consultation
+        {label}
       </a>
       <p className="mt-2 text-sm font-medium text-[#262626]">{note}</p>
     </div>
@@ -135,11 +135,14 @@ const PHOTOS = [
 export default async function ConsultPage({ params }: { params: Promise<{ tier: string }> }) {
   const c = find((await params).tier);
   if (!c) notFound();
-  const path = c.path;
+  const path = c.path ?? `/book/${c.slug}`;
   const minutes = c.title.split("-")[0];
+  const kind = c.kind ?? "strategic consultation";
+  const join = `Join for a ${kind}`;
+  const photos = c.photos ?? PHOTOS;
 
   const faqs = [
-    { q: "Who will I talk to?", a: "Someone from the team that runs ads and builds systems for our clients, not a sales caller." },
+    { q: "Who will I talk to?", a: c.who ?? "Someone from the team that runs ads and builds systems for our clients, not a sales caller." },
     { q: "How does the call happen?", a: `On Google Meet, ${minutes} minutes. You pick the time on the calendar right after paying.` },
     { q: "How do I pay?", a: "UPI, cards or net banking on Razorpay. You get a receipt by email." },
     { q: "What if I paid but did not reach the calendar?", a: `WhatsApp ${COMPANY.phone} with your Razorpay payment ID and we will send your booking link straight away.` },
@@ -164,7 +167,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(#f1f1f1_1px,transparent_1px),linear-gradient(90deg,#f1f1f1_1px,transparent_1px)] bg-[size:40px_40px]" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:py-14">
             <div>
-              <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} strategic consultation on Google Meet`}</p>
+              <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${c.title.split(" ")[0]} ${kind} on Google Meet`}</p>
               {/* Headline A/B: runs before the h1 paints, so no flicker. Sticky per browser; one view counted per session. */}
               <script dangerouslySetInnerHTML={{ __html: abScript(c.slug) }} />
               <h1 className={`font-semibold tracking-tight mt-4 text-4xl leading-[1.15] sm:text-5xl`}>
@@ -178,20 +181,20 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 ))}
               </ul>
               <a href={`${path}/form`} className={`mt-7 block rounded-md px-4 py-4 sm:px-6 text-center text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
-                Join for a strategic consultation
+                {join}
               </a>
               <p className="mt-2 text-center text-sm text-[#424242]">{GUARANTEE}</p>
             </div>
             <div className="order-first lg:order-none">
               {/* Real app screens, shown whole in phone frames, fanned. On phones they come first: product before words. */}
               <ul className="flex justify-center px-2 pb-6 pt-2">
-                {PHOTOS.map((p, i) => (
-                  <li key={p.src} className={`-mx-[2%] w-[27%] shrink-0 rounded-[1.3rem] bg-[#0b1a3c] p-[4px] shadow-2xl shadow-[#0b1a3c]/35 ${FAN[i]}`}>
+                {photos.map((p, i) => (
+                  <li key={p.src} className={`-mx-[2%] w-[27%] shrink-0 rounded-[1.3rem] bg-[#0b1a3c] p-[4px] shadow-2xl shadow-[#0b1a3c]/35 ${photos.length === 1 ? "w-[52%] sm:w-[44%]" : FAN[i]}`}>
                     <Image src={p.src} alt={p.alt} width={520} height={1126} className="w-full rounded-[1.05rem]" priority />
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-center text-sm font-semibold">{`Apps we have built: ${CLIENTS.join(", ")}`}</p>
+              <p className="mt-3 text-center text-sm font-semibold">{c.caption ?? `Apps we have built: ${CLIENTS.join(", ")}`}</p>
             </div>
           </div>
         </section>
@@ -199,9 +202,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         {/* Problem */}
         <section className="bg-[#0b1a3c] px-5 py-20 text-white sm:py-28">
           <div className="mx-auto max-w-2xl space-y-14 text-center text-[2rem] font-semibold leading-tight tracking-tight sm:text-5xl">
-            {PAIN.map((l) => <p key={l} className="lit">{l}</p>)}
-            <p className="lit text-[#ff7701]">Your business is leaking money.</p>
-            <p className="lit">{`One ${minutes}-minute call shows you where, and what to fix first.`}</p>
+            {(c.pain ?? PAIN).map((l) => <p key={l} className="lit">{l}</p>)}
+            <p className="lit text-[#ff7701]">{c.painHit ?? "Your business is leaking money."}</p>
+            <p className="lit">{c.painClose ?? `One ${minutes}-minute call shows you where, and what to fix first.`}</p>
           </div>
         </section>
 
@@ -210,7 +213,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div className="mx-auto max-w-6xl">
             <H2>At the end of the call, you&apos;ll know</H2>
             <ul className="mt-12 grid gap-x-12 gap-y-9 md:grid-cols-2">
-              {OUTCOMES.map((o) => (
+              {(c.outcomes ?? OUTCOMES).map((o) => (
                 <li key={o.t} className="flex gap-5">
                   <Icon d={ICONS[o.i]} />
                   <div>
@@ -220,7 +223,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 </li>
               ))}
             </ul>
-            <Cta href={`${path}/form`} />
+            <Cta href={`${path}/form`} label={join} />
           </div>
         </section>
 
@@ -229,7 +232,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
           <div className="mx-auto max-w-6xl">
             <H2>Who is this call for?</H2>
             <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {AUDIENCE.map((a) => (
+              {(c.audience ?? AUDIENCE).map((a) => (
                 <li key={a.t} className="flex flex-col items-center text-center">
                   <Icon d={ICONS[a.i]} />
                   <h3 className="mt-4 font-bold">{a.t}</h3>
@@ -241,7 +244,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         </section>
 
         {/* Engagement models */}
-        <section className="px-5 py-14 sm:py-20">
+        {!c.focused && <section className="px-5 py-14 sm:py-20">
           <div className="mx-auto max-w-6xl">
             <H2>After the call: three ways to work with us</H2>
             <ol className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -257,9 +260,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-[#424242]">
               We price on what the work is worth to you in the next six months, not on your lifetime plans. The call is where we work out which one fits.
             </p>
-            <Cta href={`${path}/form`} />
+            <Cta href={`${path}/form`} label={join} />
           </div>
-        </section>
+        </section>}
 
         {/* Team */}
         <section className="px-5 py-14 sm:py-20">
@@ -275,14 +278,14 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 ))}
               </ul>
               <a href={`${path}/form`} className={`mt-7 block rounded-md px-4 py-4 sm:px-6 text-center text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
-                Join for a strategic consultation
+                {join}
               </a>
             </div>
           </div>
         </section>
 
         {/* Results */}
-        <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
+        {!c.focused && <section className="bg-[#f3f8fd] px-5 py-14 sm:py-20">
           <div className="mx-auto max-w-6xl">
             <H2>What one good plan has done for businesses like yours</H2>
             <ul className="mt-12 grid gap-5 sm:grid-cols-3">
@@ -293,9 +296,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 </li>
               ))}
             </ul>
-            <Cta href={`${path}/form`} />
+            <Cta href={`${path}/form`} label={join} />
           </div>
-        </section>
+        </section>}
 
         {/* FAQ */}
         <section className="bg-white px-5 py-14 sm:py-20">
@@ -317,7 +320,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               ))}
             </div>
           </div>
-          <Cta href={`${path}/form`} />
+          <Cta href={`${path}/form`} label={join} />
         </section>
       </main>
 
@@ -333,7 +336,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       {/* Sticky mobile bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <div>
-          <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>Strategic consultation</p>
+          <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>{kind[0].toUpperCase() + kind.slice(1)}</p>
           <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
         </div>
         <a href={`${path}/form`} className={`rounded-md px-5 py-3 shrink-0 whitespace-nowrap text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
