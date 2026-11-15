@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
-import { CREDENTIALS, PROJECTS, VOICE_APP, OG_IMG } from "@/lib/content";
+import { CREDENTIALS, PROJECTS, VOICE_APP } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, DiscoveryOffer, Faq, PageHero, Section } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
@@ -8,14 +9,9 @@ import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 const PATH = "/best-ai-developers-in-hyderabad";
 const TITLE = "AI Developers in Hyderabad";
 const DESCRIPTION =
-  "Hire AI developers in Hyderabad who ship: AI agents, voice calling in Telugu and Hindi, chatbots and document automation, measured before launch and owned by you.";
+  "Hire AI developers in Hyderabad who ship: AI agents, Telugu and Hindi voice calling, chatbots and document automation, measured before launch, owned by you.";
 
-export const metadata: Metadata = {
-  title: `Best ${TITLE}: AI Agents, Voice & Automation`,
-  description: DESCRIPTION,
-  alternates: { canonical: PATH },
-  openGraph: { images: [OG_IMG], title: `Best ${TITLE} | ElevateBox`, description: DESCRIPTION, url: PATH, type: "website" },
-};
+export const metadata: Metadata = pageMeta(`Best ${TITLE}: Agents & Voice | ElevateBox`, DESCRIPTION, PATH);
 
 /* Each question is an H2 with the short answer first, so search and answer engines can
    lift it as-is. Claims are limited to what the team and the live products show. */

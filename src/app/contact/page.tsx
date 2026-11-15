@@ -1,15 +1,11 @@
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { COMPANY } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { Faq, PageHero, QuoteForm, Section } from "@/components/blocks";
 
-export const metadata: Metadata = {
-  title: `Contact Us`,
-  description:
-    "Talk to us about a project. We reply within one business day with scope questions, not a sales sequence.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata: Metadata = pageMeta("Contact ElevateBox: App & AI Developers in Hyderabad", "Contact ElevateBox in Punjagutta, Hyderabad on +91 79810 32273 or contact@elevatebox.in. We reply in one business day; start with a ₹3,500 analysis.", "/contact");
 
 const OFFICES = [
   { city: "Hyderabad", role: "Head office & delivery centre", detail: COMPANY.address, hours: COMPANY.hours },

@@ -90,7 +90,7 @@ export const HYD_PAGES: HydPage[] = [
     path: "/mobile-app-development-company-hyderabad",
     title: "Mobile App Development Company in Hyderabad",
     description:
-      "ElevateBox is a mobile app development company in Hyderabad building iOS, Android, Flutter and AI apps for startups and enterprises. Get a quote.",
+      "ElevateBox is a mobile app development company in Hyderabad building iOS, Android, Flutter and AI apps for startups and enterprises. 380+ apps shipped.",
     h1: "Mobile App Development Company in Hyderabad",
     sub: "iOS, Android, Flutter, React Native and AI-powered apps, designed, built and maintained by one Hyderabad team.",
     intro:
@@ -302,7 +302,7 @@ export const HYD_PAGES: HydPage[] = [
     path: "/software-development-company-hyderabad",
     title: "Software Development Company in Hyderabad",
     description:
-      "ElevateBox is a software development company in Hyderabad building custom software, SaaS, CRM, ERP and AI systems, with code in your name.",
+      "ElevateBox is a software development company in Hyderabad building custom software, SaaS, CRM, ERP and AI systems, with code and cloud in your name.",
     h1: "Software Development Company in Hyderabad",
     sub: "Custom software, SaaS, CRM, ERP and AI systems, designed and run by one Hyderabad team.",
     intro:
@@ -546,7 +546,7 @@ export const HYD_PAGES: HydPage[] = [
 
   {
     path: "/mvp-development-company-hyderabad",
-    title: "MVP Development Company in Hyderabad for Startups",
+    title: "MVP Development for Startups in Hyderabad",
     description:
       "MVP development company in Hyderabad: first versions of apps and SaaS products for startups, scoped in writing and live in weeks, code in your name.",
     h1: "MVP Development Company in Hyderabad",

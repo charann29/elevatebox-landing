@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CATEGORIES, FAQS, getCategory } from "@/lib/content";
+import { pageMeta } from "@/lib/seo";
 import { Header, Footer } from "@/components/site";
 import { COL, EntryCards, FaqCards, FeaturedCards, Head, HeroVisual, PriceCta, RichHero, TrustStrip, WorkRow, pageImage } from "@/components/inner";
 
@@ -18,11 +19,7 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = getCategory(category);
   if (!cat) return {};
-  return {
-    title: `${cat.label}`,
-    description: cat.blurb,
-    alternates: { canonical: cat.base },
-  };
+  return pageMeta(cat.seoTitle, cat.meta, cat.base);
 }
 
 export default async function CategoryPage({

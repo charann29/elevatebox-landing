@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { COMPANY, JOBS, getJob } from "@/lib/content";
+import { COMPANY, JOBS, JOBS_POSTED, getJob } from "@/lib/content";
+import { JsonLd, ORG, ld } from "@/lib/schema";
+import { pageMeta, withTail } from "@/lib/seo";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
@@ -11,6 +13,15 @@ export function generateStaticParams() {
   return JOBS.map((j) => ({ slug: j.slug }));
 }
 
+const jobDesc = (j: NonNullable<ReturnType<typeof getJob>>) =>
+  withTail(j.about, [
+    `${j.type}, ${j.experience}, ${j.location}. Join ElevateBox, the Hyderabad team behind 380+ shipped apps.`,
+    `${j.type}, ${j.experience}, ${j.location}. Join ElevateBox, 380+ apps shipped.`,
+    `${j.type}, ${j.experience}, ${j.location}. Join the ElevateBox team.`,
+    `${j.type}, ${j.experience}, ${j.location}, at ElevateBox.`,
+    `${j.location} role at ElevateBox.`,
+  ]);
+
 export async function generateMetadata({
   params,
 }: {
@@ -19,11 +30,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const j = getJob(slug);
   if (!j) return {};
-  return {
-    title: `${j.title} | Careers`,
-    description: j.about,
-    alternates: { canonical: `/careers/${j.slug}` },
-  };
+  return pageMeta(`${j.title} | Careers | ElevateBox`, jobDesc(j), `/careers/${j.slug}`);
 }
 
 export default async function JobPage({
@@ -41,6 +48,18 @@ export default async function JobPage({
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd
+          json={ld(ORG, {
+            "@type": "JobPosting",
+            title: j.title,
+            description: [`<p>${j.about}</p>`, "<p>What you will do:</p><ul>", ...j.responsibilities.map((r) => `<li>${r}</li>`), "</ul><p>What we look for:</p><ul>", ...j.requirements.map((r) => `<li>${r}</li>`), "</ul>"].join(""),
+            datePosted: JOBS_POSTED,
+            employmentType: j.type === "Full-time" ? "FULL_TIME" : j.type.toUpperCase().replace(/[^A-Z]+/g, "_"),
+            hiringOrganization: { "@type": "Organization", "@id": ORG["@id"], name: COMPANY.name, sameAs: COMPANY.site, logo: ORG.logo },
+            jobLocation: { "@type": "Place", address: ORG.address },
+            url: `${COMPANY.site}/careers/${j.slug}`,
+          })}
+        />
         <PageHero
           eyebrow={j.team}
           title={j.title}

@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
-export const metadata: Metadata = {
-  title: `Privacy Policy`,
-  description: "How we collect, use, store, and delete personal information.",
-  alternates: { canonical: "/privacy-policy" },
-};
+export const metadata: Metadata = pageMeta("Privacy Policy: How ElevateBox Handles Your Data", "How ElevateScale Technologies Pvt Ltd (ElevateBox, Hyderabad) collects, uses, stores and deletes personal information from this website and client projects.", "/privacy-policy");
 
 export default function Page() {
   return (

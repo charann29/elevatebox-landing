@@ -1,5 +1,6 @@
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import {
   CATEGORIES,
@@ -12,12 +13,7 @@ import {
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
-export const metadata: Metadata = {
-  title: `About ElevateBox, App Development Company in Hyderabad`,
-  description:
-    "Who we are, how we work, and the delivery principles we hold to on every engagement.",
-  alternates: { canonical: "/about" },
-};
+export const metadata: Metadata = pageMeta("About ElevateBox: App & AI Development Team in Hyderabad", "Meet ElevateBox, the Hyderabad app, web and AI team behind 380+ apps for 175+ organisations: code in your name, two-week releases and honest scope calls.", "/about");
 
 const VALUES = [
   { t: "Say the inconvenient thing early", d: "If the scope is wrong, the timeline is unrealistic, or the feature will not work, we say so during discovery — not after invoicing the build." },

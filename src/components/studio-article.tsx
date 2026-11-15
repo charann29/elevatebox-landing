@@ -6,7 +6,7 @@ import type { CmsPage, CmsPost } from "@/lib/cms";
 import { Header, Footer } from "@/components/site";
 import { AuthorBox, BlogCover, Byline, COL, FaqCards, PriceCta, RichHero, Toc } from "@/components/inner";
 import { StudioBody } from "@/components/studio-body";
-import { JsonLd, ORG, breadcrumb, faqPage, ld } from "@/lib/schema";
+import { FOUNDER, JsonLd, ORG, breadcrumb, faqPage, ld } from "@/lib/schema";
 import "@/app/studio-blocks.css";
 
 type Crumb = { name: string; path: string };
@@ -47,7 +47,7 @@ export function StudioArticle({ p, path, crumbs }: { p: CmsPost | CmsPage; path:
               datePublished: p.publishedAt ?? undefined,
               dateModified: p.updatedAt ?? undefined,
               mainEntityOfPage: `${COMPANY.site}${path}`,
-              author: { "@id": ORG["@id"] },
+              author: FOUNDER,
               publisher: { "@id": ORG["@id"] },
             },
             breadcrumb(crumbs),

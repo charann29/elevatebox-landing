@@ -1,5 +1,6 @@
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,12 +14,7 @@ import {
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
-export const metadata: Metadata = {
-  title: `Portfolio`,
-  description:
-    "Selected product work across AI calling, healthcare, commerce, AI automation, and media — including Roopa by ElevateBox, our own product.",
-  alternates: { canonical: "/portfolio" },
-};
+export const metadata: Metadata = pageMeta("Portfolio: Apps & Platforms We've Shipped | ElevateBox", "Apps and platforms ElevateBox has shipped from Hyderabad: AI calling, healthcare, commerce and automation, including Roopa by ElevateBox. 380+ apps in all.", "/portfolio");
 
 const TINTS = [
   "bg-[#E3ECFF]",

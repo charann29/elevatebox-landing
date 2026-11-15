@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { COMPANY, DISCOVERY, OG_IMG } from "@/lib/content";
+import { pageMeta } from "@/lib/seo";
+import { COMPANY, DISCOVERY } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { DiscoveryOffer, Faq, PageHero, Section } from "@/components/blocks";
 
 const TITLE = `Book a ${DISCOVERY.title} Call`;
-const DESCRIPTION = `Book a ${DISCOVERY.title} call with ElevateBox for ${DISCOVERY.price}: your requirements worked through with the delivery team, and a written quotation and timeline.`;
+const DESCRIPTION = `Book a ${DISCOVERY.price} ${DISCOVERY.title} with ElevateBox, Hyderabad: your requirements worked through by the delivery team, then a written quotation.`;
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: "/book" },
-  openGraph: { images: [OG_IMG], title: TITLE, description: DESCRIPTION, url: "/book", type: "website" },
-};
+export const metadata: Metadata = pageMeta(`${TITLE} | ElevateBox`, DESCRIPTION, "/book");
 
 const STEPS = [
   { t: `Pay ${DISCOVERY.price}`, d: "On our Razorpay page — UPI, cards and net banking. You get a receipt by email." },
