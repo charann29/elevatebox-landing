@@ -84,7 +84,7 @@ function Dropdown({ cat }: { cat: (typeof CATEGORIES)[number] }) {
         {cat.label}
         {CHEVRON}
       </NavLink>
-      <div className="invisible absolute left-1/2 top-full z-50 w-[min(60rem,calc(100%-2.5rem))] -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+      <div className="invisible absolute left-1/2 top-full z-50 w-[min(60rem,calc(100%-2.5rem))] -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-[opacity,transform,visibility] delay-200 duration-150 group-hover:visible group-hover:delay-0 group-focus-within:delay-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
         <div className="grid grid-cols-[1fr_16rem] gap-3 rounded-3xl border border-line bg-white p-3 shadow-[0_30px_60px_-30px_rgba(1,30,90,0.35)]">
           <div className="rounded-2xl bg-canvas p-5">
             <p className="text-sm font-semibold text-ink">{cat.label}</p>
@@ -376,6 +376,10 @@ export function Footer() {
               <li className="flex items-start gap-2.5 leading-snug"><Icon d={ICON.pin} className="mt-0.5 size-[18px] shrink-0 text-navy" /><span>{COMPANY.address}</span></li>
               <li className="flex items-start gap-2.5"><Icon d={ICON.clock} className="mt-0.5 size-[18px] shrink-0 text-navy" /><span>{COMPANY.hours}</span></li>
             </ul>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a href="https://www.linkedin.com/company/elevatebox" target="_blank" rel="noopener" className="rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold text-[#0A66C2] hover:border-[#0A66C2]">ElevateBox on LinkedIn</a>
+              <a href="https://www.linkedin.com/in/charann06" target="_blank" rel="noopener" className="rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold text-[#0A66C2] hover:border-[#0A66C2]">Founder on LinkedIn</a>
+            </div>
             <div className="mt-5 rounded-2xl border border-line p-4">
               <a href={VOICE_APP} className="inline-flex items-center gap-2 font-semibold text-ink hover:text-navy">
                 <span aria-hidden="true" className="size-2 rounded-full bg-live" />

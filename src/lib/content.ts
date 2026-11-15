@@ -2027,7 +2027,7 @@ export const HOME_STATS = [
   { v: "175", l: "Organisations served" },
   { v: "3,000", l: "Processes automated" },
   { v: "380", l: "Apps shipped to App Store and Play" },
-  { v: "21,000", l: "Students trained" },
+  { v: "28,000", l: "Students trained" },
 ];
 
 export const PROCESS_STEPS = [

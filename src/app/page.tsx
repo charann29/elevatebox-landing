@@ -52,15 +52,6 @@ const VOICE_STATS = [
   { v: "10 min", l: "Free when you sign up" },
 ];
 
-// What a brief usually starts with, and what we do about it.
-const FIXES = [
-  { p: "An outdated site or app", f: "Fast, modern sites and apps, designed and built by one team." },
-  { p: "No technical team in-house", f: "Design, apps, web, cloud and AI from the first week — no hiring." },
-  { p: "Manual, repetitive work", f: "Automations and AI agents that take the repeat work off your people." },
-  { p: "Agencies that disappear", f: "The same team keeps it running after launch." },
-  { p: "Estimates that keep growing", f: `A ${DISCOVERY.price} analysis first, then a written quotation.` },
-  { p: "AI without a business case", f: "AI measured against a real task before it ships." },
-];
 
 const STEPS = [
   { t: "Requirement analysis", d: `${DISCOVERY.price}. A call with the people who will build it, and a written quotation and timeline.` },
@@ -184,11 +175,31 @@ const CASES = [
   },
 ];
 
+// Real LinkedIn recommendations on the founder's profile (excerpts, unedited wording).
+const FOUNDER_QUOTES = [
+  {
+    q: "Sai Charan didn't just write code. He brought ideas to life. At OnEasy, we were building AI agents from the ground up, designed to serve 1,500+ businesses, and Sai Charan was the person who made that vision technically real.",
+    who: "CA Abhishek Boddu",
+    role: "Chartered Accountant, Virtual CFO, building OnEasy.Ai",
+  },
+  {
+    q: "Charan is one of the most enthusiastic problem solvers I have worked with. He takes his work very responsibly. His talent for programming, implementing features and solving the problem in hand very fast keeps him far ahead of his peers.",
+    who: "Ayan Kalyan",
+    role: "Designer at Dribbble, ex-Microsoft and Unacademy",
+  },
+];
+const LINKEDIN = { founder: "https://www.linkedin.com/in/charann06", company: "https://www.linkedin.com/company/elevatebox", recs: "https://www.linkedin.com/in/charann06/details/recommendations/" };
+
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="size-4" aria-hidden="true">
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+  </svg>
+);
+
 const FOUNDER_CREDS = [
   { src: "/assets/creds/google.png", alt: "Google", h: 108, l: "Associate Product Manager" },
   { src: "/assets/creds/zomato2.png", alt: "Zomato", h: 68, l: "Developer" },
   { src: "/assets/creds/yc.png", alt: "Y Combinator", h: 320, l: "Two YC-funded startups" },
-  { src: "/assets/edu/iitm.png", alt: "IIT Madras", h: 320, l: "Studied" },
 ];
 
 const QUOTES = [
@@ -218,7 +229,7 @@ export default function Home() {
         />
 
         {/* ── Hero: the 3D band, headline and the fan of live app screens ── */}
-        <section className="hero-3d overflow-hidden px-4 pt-12 text-center lg:h-[860px] lg:pt-[64px]">
+        <section className="hero-3d overflow-hidden px-4 pt-12 text-center lg:h-[740px] lg:pt-[64px]">
           <a href={VOICE_APP} className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 py-1.5 pl-1.5 pr-4 text-left text-sm text-white">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-live px-2.5 py-1 text-[11px] font-bold text-[#04210f]">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#04210f]" />
@@ -232,33 +243,38 @@ export default function Home() {
           <p className="mx-auto mt-3 max-w-[15ch] text-[40px] font-[700] leading-[1.04] tracking-[-0.03em] text-white lg:text-[68px]">
             We build apps people <span className="text-gradient">actually use</span>
           </p>
-          <p className="mx-auto mt-5 max-w-[36em] text-base leading-relaxed text-white/80 lg:text-[19px]">
-            We&apos;re a{" "}
-            <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">
-              mobile app development company in Hyderabad
-            </Link>
-            , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
-            the maintenance afterwards.
-          </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/book" className="inline-flex h-[52px] items-center rounded-full bg-white px-[26px] text-base font-semibold text-navy hover:bg-sky">
               Get quote now
             </Link>
             <a href={VOICE_APP} className="inline-flex h-[52px] items-center gap-2 rounded-full px-[26px] text-base font-semibold text-white ring-[1.5px] ring-inset ring-white hover:bg-white/10">
               <span aria-hidden="true" className="size-2 rounded-full bg-live" />
-              Try Voice AI free
+              Try Roopa free
             </a>
           </div>
-          <p className="mt-5 text-sm text-white/70">
-            <b className="font-semibold text-white">380+ apps built</b> · bugs fixed in under 6 hours
+          <p className="mx-auto mt-5 max-w-[34em] text-sm leading-relaxed text-white/75">
+            <b className="font-semibold text-white">What is Roopa?</b> Our AI phone agent that calls your leads in Telugu,
+            Hindi and English, and books the next step. Just try it for free.
           </p>
-          <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-[-170px] lg:mt-0 lg:h-[520px] lg:w-[1100px]">
+          <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-0 lg:mt-0 lg:h-[520px] lg:w-[1100px] lg:origin-bottom lg:scale-[0.65]">
             {FAN.map((f) => (
               <span key={f.src} className={`absolute bottom-0 block w-[130px] rounded-[30px] bg-[#0A1024] p-1.5 shadow-[0_40px_80px_-30px_rgba(1,20,70,0.55),0_0_0_1px_rgba(255,255,255,0.08)] lg:w-[220px] ${f.cls}`}>
                 <Image src={f.src} alt="" width={520} height={1126} className="w-full rounded-[24px]" priority={f.centre} />
               </span>
             ))}
           </div>
+        </section>
+
+        {/* ── What we do, in one line: moved out of the hero so the phones have room ── */}
+        <section aria-label="About ElevateBox" className="border-b border-line bg-white py-12 lg:py-16">
+          <p className={`${COL} max-w-4xl text-center text-xl leading-relaxed text-ink-2 lg:text-2xl`}>
+            We&apos;re a{" "}
+            <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-navy underline decoration-navy/30 underline-offset-4 hover:decoration-navy">
+              mobile app development company in Hyderabad
+            </Link>
+            , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
+            the maintenance afterwards.
+          </p>
         </section>
 
         {/* ── Clients: two logo rows moving opposite ways ── */}
@@ -284,8 +300,8 @@ export default function Home() {
         </section>
 
         {/* ── Numbers ── */}
-        <section aria-label="ElevateBox in numbers" className="bg-deep py-14 text-white lg:py-16">
-          <dl className={`${COL} grid grid-cols-2 gap-y-7 lg:grid-cols-4`}>
+        <section aria-label="ElevateBox in numbers" className="bg-white pb-16 lg:pb-20">
+          <dl className={`${COL} grid grid-cols-2 gap-y-7 rounded-[28px] bg-deep px-6 py-10 text-white lg:grid-cols-4 lg:px-12 lg:py-14`}>
             {HOME_STATS.map((s, k) => (
               <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : ""} ${k === 2 ? "lg:border-l lg:border-white/20" : ""} ${k === 0 || k === 2 ? "pl-0 lg:pl-0" : ""} ${k === 2 ? "lg:pl-7" : ""}`}>
                 <dt className="sr-only">{s.l}</dt>
@@ -385,6 +401,107 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Founder ── */}
+        <section aria-labelledby="founder" className="py-16 lg:py-24">
+          <div className={`${COL} grid items-center gap-7 lg:grid-cols-[380px_1fr] lg:gap-14`}>
+            <figure className="overflow-hidden rounded-3xl bg-[#7E1F2C]">
+              <Image src="/assets/founder.jpg" alt="Sai Charan L" width={680} height={850} className="w-full" />
+              <figcaption className="px-[22px] pb-5 pt-4 text-white">
+                <b className="block text-xl font-semibold">Sai Charan L</b>
+                <small className="text-sm text-white/75">{`Founder, ${COMPANY.name}, Hyderabad`}</small>
+              </figcaption>
+            </figure>
+            <div>
+              <h2 id="founder" className="max-w-[20ch] text-3xl font-semibold leading-[1.1] lg:text-[44px]">Built by product people, for business owners</h2>
+              <p className="mt-5 text-lg leading-relaxed text-ink-2 [&_b]:font-semibold [&_b]:text-ink">
+                Sai Charan L has worked as an Associate Product Manager at <b>Google</b>, a developer at <b>Zomato</b>, at <b>HackerRank</b> and the AI startup <b>SuperU</b>, and as founding engineer at <b>ICOM</b>, alongside two <b>Y Combinator</b>-backed startups. He was selected for the <b>ISB Young Leaders Programme</b>. He grew ElevateBox from a first batch of 600 students into the technology company it is today.
+              </p>
+              <ul className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
+                {FOUNDER_CREDS.map((c) => (
+                  <li key={c.alt} className="rounded-2xl border border-line p-4 text-center">
+                    <Image src={c.src} alt={c.alt} width={320} height={c.h} className="mx-auto h-[34px] w-[120px] object-contain" />
+                    <small className="mt-2.5 block text-[13px] text-ink-2">{c.l}</small>
+                  </li>
+                ))}
+                <li className="rounded-2xl border border-line p-4 text-center">
+                  <p className="text-[28px] font-semibold leading-[34px] text-navy">100+</p>
+                  <small className="mt-2.5 block text-[13px] text-ink-2">Products built</small>
+                </li>
+              </ul>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href={LINKEDIN.founder} target="_blank" rel="noopener" className="inline-flex h-11 items-center gap-2 rounded-full bg-[#0A66C2] px-5 text-[15px] font-semibold text-white hover:bg-[#004182]">
+                  <LinkedInIcon /> Sai Charan on LinkedIn
+                </a>
+                <a href={LINKEDIN.company} target="_blank" rel="noopener" className="inline-flex h-11 items-center gap-2 rounded-full px-5 text-[15px] font-semibold text-[#0A66C2] ring-[1.5px] ring-inset ring-[#0A66C2] hover:bg-[#0A66C2]/5">
+                  <LinkedInIcon /> ElevateBox on LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── In their words: institutions we train with ── */}
+        <section aria-labelledby="words" className="bg-night-2 py-16 text-white lg:py-24">
+          <div className={COL}>
+            <h2 id="words" className="text-3xl font-semibold leading-[1.1] text-white lg:text-[44px]">In their words</h2>
+            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-white/70">Founders we&apos;ve built with, and leaders from the institutions where we&apos;ve trained 28,000+ students.</p>
+            <div className="mt-11 grid gap-5 lg:grid-cols-2">
+              {FOUNDER_QUOTES.map((q) => (
+                <figure key={q.who} className="flex flex-col justify-between gap-6 rounded-3xl bg-white p-6 text-ink lg:p-[30px]">
+                  <blockquote className="text-[19px] leading-normal">{`“${q.q}”`}</blockquote>
+                  <figcaption className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-3.5">
+                      <span aria-hidden="true" className="grid size-[52px] shrink-0 place-items-center rounded-full bg-sky text-lg font-semibold text-navy">
+                        {q.who.replace("CA ", "").split(" ").map((w) => w[0]).join("")}
+                      </span>
+                      <span>
+                        <b className="block text-[15px] font-semibold">{q.who}</b>
+                        <small className="text-[13px] text-ink-2">{q.role}</small>
+                      </span>
+                    </span>
+                    <a href={LINKEDIN.recs} target="_blank" rel="noopener" className="shrink-0 text-[13px] font-semibold text-navy hover:underline">
+                      On LinkedIn
+                    </a>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <div className="mt-5 grid gap-5 lg:grid-cols-[1.3fr_1fr_1fr]">
+              {QUOTES.map((q, k) => (
+                <figure key={q.who} className="flex flex-col justify-between gap-6 rounded-3xl bg-night-3 p-6 lg:p-[30px]">
+                  <blockquote className={k === 0 ? "text-[22px] font-light leading-normal lg:text-2xl" : "text-[19px] leading-normal"}>{`“${q.q}”`}</blockquote>
+                  <figcaption className="flex items-center gap-3.5">
+                    <span className="grid size-[52px] shrink-0 place-items-center rounded-xl bg-white">
+                      <Image src={q.logo} alt="" width={128} height={128} className="max-h-10 w-auto" />
+                    </span>
+                    <span>
+                      <b className="block text-[15px] font-semibold">{q.who}</b>
+                      <small className="text-[13px] text-white/65">{q.role}</small>
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <div className="mt-11 flex flex-wrap items-center gap-6 border-t border-white/15 pt-8 lg:flex-nowrap">
+              <p className="shrink-0 text-[15px] text-white/75">
+                <b className="block text-[28px] font-semibold text-white">27+ institutions</b>
+                28,000+ students trained
+              </p>
+              <div className="mq min-w-0 basis-full lg:basis-auto lg:flex-1">
+                <ul className="mq-t [animation-duration:30s]">
+                  {[0, 1].flatMap((n) =>
+                    EDU.map(([src, alt]) => (
+                      <li key={`${src}-${n}`} aria-hidden={n > 0 || undefined} className="grid size-[58px] shrink-0 place-items-center rounded-[14px] bg-white">
+                        <Image src={`/assets/edu/${src}.png`} alt={n > 0 ? "" : alt} width={128} height={128} className="max-h-11 max-w-11 object-contain" />
+                      </li>
+                    )),
+                  )}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── Work ── */}
         <section aria-labelledby="work">
           <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
@@ -475,33 +592,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Founder ── */}
-        <section aria-labelledby="founder" className="py-16 lg:py-24">
-          <div className={`${COL} grid items-center gap-7 lg:grid-cols-[380px_1fr] lg:gap-14`}>
-            <figure className="overflow-hidden rounded-3xl bg-[#7E1F2C]">
-              <Image src="/assets/founder.jpg" alt="Sai Charan L" width={680} height={850} className="w-full" />
-              <figcaption className="px-[22px] pb-5 pt-4 text-white">
-                <b className="block text-xl font-semibold">Sai Charan L</b>
-                <small className="text-sm text-white/75">{`Founder, ${COMPANY.name}, Hyderabad`}</small>
-              </figcaption>
-            </figure>
-            <div>
-              <h2 id="founder" className="max-w-[20ch] text-3xl font-semibold leading-[1.1] lg:text-[44px]">Built by product people, for business owners</h2>
-              <p className="mt-5 text-lg leading-relaxed text-ink-2 [&_b]:font-semibold [&_b]:text-ink">
-                Sai Charan L has worked as an Associate Product Manager at <b>Google</b>, a developer at <b>Zomato</b>, at <b>HackerRank</b> and the AI startup <b>SuperU</b>, and as founding engineer at <b>ICOM</b>, alongside two <b>Y Combinator</b>-backed startups. He studied at <b>IIT Madras</b> and was selected for the <b>ISB Young Leaders Programme</b>. He grew ElevateBox from a first batch of 600 students into the technology company it is today.
-              </p>
-              <ul className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
-                {FOUNDER_CREDS.map((c) => (
-                  <li key={c.alt} className="rounded-2xl border border-line p-4 text-center">
-                    <Image src={c.src} alt={c.alt} width={320} height={c.h} className="mx-auto h-[34px] w-[120px] object-contain" />
-                    <small className="mt-2.5 block text-[13px] text-ink-2">{c.l}</small>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
         {/* ── Process and guarantees ── */}
         <section aria-labelledby="process" className="px-3 sm:px-5">
           <div className="light-glow relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem]">
@@ -537,68 +627,6 @@ export default function Home() {
               </ul>
               <div className="mt-10 sm:mt-12">
                 <PillCta>Reserve your slot</PillCta>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Problems we fix ── */}
-        <section aria-labelledby="fixes">
-          <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
-            <Heading id="fixes" eyebrow="Sounds familiar?" title="What growing businesses bring us" lead="Most briefs start with one of these. Each is something we fix for a living." />
-            <ul className="mt-10 grid gap-px overflow-hidden rounded-3xl sm:mt-12 bg-line ring-1 ring-line md:grid-cols-2">
-              {FIXES.map((x) => (
-                <li key={x.p} className="bg-white p-5 sm:p-7">
-                  <p className="flex items-center gap-2 text-sm text-ink-4">
-                    <Cross className="size-3.5 text-[#dc2626]" />
-                    <span className="line-through decoration-ink-4/40">{x.p}</span>
-                  </p>
-                  <p className="mt-2 flex items-start gap-2 font-display text-base font-bold leading-snug text-ink sm:mt-3 sm:text-lg">
-                    <Check className="mt-1 size-4 shrink-0 text-electric" />
-                    {x.f}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* ── In their words: institutions we train with ── */}
-        <section aria-labelledby="words" className="bg-night-2 py-16 text-white lg:py-24">
-          <div className={COL}>
-            <h2 id="words" className="text-3xl font-semibold leading-[1.1] text-white lg:text-[44px]">In their words</h2>
-            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-white/70">Leaders from the institutions where we&apos;ve trained 21,000+ students.</p>
-            <div className="mt-11 grid gap-5 lg:grid-cols-[1.3fr_1fr_1fr]">
-              {QUOTES.map((q, k) => (
-                <figure key={q.who} className="flex flex-col justify-between gap-6 rounded-3xl bg-night-3 p-6 lg:p-[30px]">
-                  <blockquote className={k === 0 ? "text-[22px] font-light leading-normal lg:text-2xl" : "text-[19px] leading-normal"}>{`“${q.q}”`}</blockquote>
-                  <figcaption className="flex items-center gap-3.5">
-                    <span className="grid size-[52px] shrink-0 place-items-center rounded-xl bg-white">
-                      <Image src={q.logo} alt="" width={128} height={128} className="max-h-10 w-auto" />
-                    </span>
-                    <span>
-                      <b className="block text-[15px] font-semibold">{q.who}</b>
-                      <small className="text-[13px] text-white/65">{q.role}</small>
-                    </span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-            <div className="mt-11 flex flex-wrap items-center gap-6 border-t border-white/15 pt-8 lg:flex-nowrap">
-              <p className="shrink-0 text-[15px] text-white/75">
-                <b className="block text-[28px] font-semibold text-white">27+ institutions</b>
-                21,000+ students trained
-              </p>
-              <div className="mq min-w-0 basis-full lg:basis-auto lg:flex-1">
-                <ul className="mq-t [animation-duration:30s]">
-                  {[0, 1].flatMap((n) =>
-                    EDU.map(([src, alt]) => (
-                      <li key={`${src}-${n}`} aria-hidden={n > 0 || undefined} className="grid size-[58px] shrink-0 place-items-center rounded-[14px] bg-white">
-                        <Image src={`/assets/edu/${src}.png`} alt={n > 0 ? "" : alt} width={128} height={128} className="max-h-11 max-w-11 object-contain" />
-                      </li>
-                    )),
-                  )}
-                </ul>
               </div>
             </div>
           </div>

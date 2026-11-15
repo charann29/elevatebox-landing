@@ -45,7 +45,7 @@
   --color-deep: #011a4d;
   --color-sky: #eaf1ff;
   --color-amber: #ffb020;
-  --color-amber-ink: #1b1300;
+  --color-amber-ink: #ffffff; /* owner: text on yellow is always white */
   --color-live: #22c55e;
 
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
