@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { COMPANY, POSTS, getPost, postCover, OG_IMG } from "@/lib/content";
+import { COMPANY, POSTS, getPost, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
-import { CtaBand, PageHero, Section } from "@/components/blocks";
+import { AuthorBox, BlogCover, Byline, COL, Head, PriceCta, RichHero, Toc, slugify } from "@/components/inner";
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import { BLOG_PATH, getStudioPost, getStudioPosts } from "@/lib/cms";
 import { StudioArticle, studioMetadata } from "@/components/studio-article";
@@ -96,103 +95,105 @@ export default async function PostPage({
             breadcrumb([{ name: "Blogs", path: "/blogs" }, { name: p.title, path: `/blogs/${p.slug}` }]),
           )}
         />
-        <PageHero
+        <RichHero
           eyebrow={p.category}
           title={p.title}
           lead={p.excerpt}
           crumbs={[{ label: "Blogs", href: "/blogs" }, { label: p.category }]}
+          actions={false}
+          meta={
+            <Byline>
+              {fmt(p.date)} · {p.readMins} min read
+            </Byline>
+          }
+          visual={
+            <div className="overflow-hidden rounded-[28px] ring-1 ring-white/15">
+              <BlogCover slug={p.slug} title={p.title} category={p.category} />
+            </div>
+          }
         />
 
-        <Section>
-          <div className="grid gap-12 lg:grid-cols-3">
-            <article className="lg:col-span-2">
-              <Image
-                src={postCover(p.category)}
-                alt=""
-                width={600}
-                height={400}
-                priority
-                className="mb-8 h-auto w-full rounded-2xl shadow-lg"
-              />
-              <p className="text-xs text-ink-muted">
-                {fmt(p.date)} · {p.readMins} min read
-              </p>
-              <div className="mt-8 space-y-10">
-                {p.sections.map((s) => (
-                  <section key={s.h}>
-                    <h2 className="text-2xl font-bold text-brand">{s.h}</h2>
-                    <div className="mt-4 space-y-4">
-                      {s.p.map((para, i) => (
-                        <p key={i} className="leading-relaxed text-ink-muted">
-                          {para}
-                        </p>
-                      ))}
-                    </div>
-                  </section>
-                ))}
-              </div>
-
-              {p.sources && (
-                <section className="mt-10">
-                  <h2 className="text-2xl font-bold text-brand">Sources</h2>
-                  <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-ink-muted">
-                    {p.sources.map((s) => (
-                      <li key={s.url}>
-                        <a href={s.url} className="underline hover:text-brand" rel="noopener">{s.name}</a>
-                        {s.what ? ` — ${s.what}` : ""}
-                      </li>
+        <div className={`${COL} grid gap-8 py-12 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16 lg:py-20`}>
+          <Toc items={p.sections.map((s) => ({ id: slugify(s.h), text: s.h }))} />
+          <article className="min-w-0 max-w-[70ch] text-[18px] leading-[1.75] text-ink-2">
+            <div className="space-y-12">
+              {p.sections.map((s) => (
+                <section key={s.h}>
+                  <h2 id={slugify(s.h)} className="scroll-mt-28 text-[26px] font-semibold leading-tight lg:text-[30px]">{s.h}</h2>
+                  <div className="mt-5 space-y-5">
+                    {s.p.map((para, i) => (
+                      <p key={i}>{para}</p>
                     ))}
-                  </ol>
+                  </div>
                 </section>
-              )}
+              ))}
+            </div>
 
-              <div className="mt-12 rounded-2xl bg-[#E3ECFF] p-7">
-                <h2 className="text-lg font-semibold text-brand">
-                  Working on something like this?
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+            {p.sources && (
+              <section className="mt-12">
+                <h2 className="text-[26px] font-semibold">Sources</h2>
+                <ol className="mt-4 list-decimal space-y-2 pl-5 text-[15px] text-ink-3">
+                  {p.sources.map((s) => (
+                    <li key={s.url}>
+                      <a href={s.url} className="underline hover:text-navy" rel="noopener">{s.name}</a>
+                      {s.what ? ` — ${s.what}` : ""}
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
+
+            <div className="mt-12 flex flex-col gap-5 rounded-3xl bg-sky p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <div>
+                <h2 className="text-xl font-semibold">Working on something like this?</h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
                   Send us the brief. We will tell you what we would build, what
                   we would cut, and roughly what it costs.
                 </p>
-                <Link
-                  href="/contact"
-                  className="mt-5 inline-block rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white"
-                >
-                  Talk to us
-                </Link>
               </div>
-            </article>
+              <Link
+                href="/contact"
+                className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-navy px-6 text-[15px] font-semibold text-white hover:bg-brand-soft"
+              >
+                Talk to us
+              </Link>
+            </div>
 
-            <aside className="lg:sticky lg:top-24 lg:self-start">
-              <div className="rounded-2xl border border-black/5 bg-[#F8FAFC] p-6">
-                <h2 className="font-semibold text-brand">Related reading</h2>
-                <ul className="mt-4 space-y-4">
-                  {more.map((o) => (
-                    <li key={o.slug}>
-                      <Link
-                        href={`/blogs/${o.slug}`}
-                        className="block text-sm font-medium leading-snug text-ink-muted transition-colors hover:text-brand"
-                      >
-                        {o.title}
-                      </Link>
-                      <p className="mt-1 text-xs text-ink-muted/70">
-                        {o.category} · {o.readMins} min
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/blogs"
-                  className="mt-5 block border-t border-black/10 pt-4 text-sm font-semibold text-brand"
-                >
+            <AuthorBox />
+          </article>
+        </div>
+
+        <section className="bg-canvas">
+          <div className={`${COL} py-16 lg:py-20`}>
+            <Head
+              title="Related reading"
+              action={
+                <Link href="/blogs" className="shrink-0 text-sm font-semibold text-navy underline-offset-4 hover:underline">
                   All articles →
                 </Link>
-              </div>
-            </aside>
+              }
+            />
+            <ul className="mt-10 grid gap-5 md:grid-cols-3">
+              {more.map((o) => (
+                <li key={o.slug}>
+                  <Link href={`/blogs/${o.slug}`} className="group flex h-full flex-col rounded-3xl border border-line bg-white p-3 transition-colors hover:border-navy/30">
+                    <span className="block overflow-hidden rounded-2xl">
+                      <BlogCover slug={o.slug} title={o.title} category={o.category} small />
+                    </span>
+                    <span className="px-2 pb-2 pt-4">
+                      <span className="block font-semibold leading-snug text-ink group-hover:text-navy">{o.title}</span>
+                      <span className="mt-1.5 block text-xs text-ink-4">
+                        {o.category} · {o.readMins} min
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </Section>
+        </section>
 
-        <CtaBand />
+        <PriceCta />
       </main>
       <Footer />
     </>

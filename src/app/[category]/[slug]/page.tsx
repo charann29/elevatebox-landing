@@ -3,21 +3,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   CATEGORIES,
-  PROCESS_STEPS,
   TESTIMONIALS,
   getCategory,
   getEntry, OG_IMG } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 import { FAQS } from "@/lib/content";
+import { QuoteForm, Section } from "@/components/blocks";
 import {
-  BulletGrid,
-  CtaBand,
-  Faq,
-  PageHero,
-  QuoteForm,
-  Section,
-} from "@/components/blocks";
+  COL,
+  EntryCards,
+  FaqCards,
+  FeatureGrid,
+  Head,
+  HeroVisual,
+  Icon,
+  PriceCta,
+  ProcessTimeline,
+  RichHero,
+  SidePanel,
+  TrustStrip,
+  WorkRow,
+  pageImage,
+} from "@/components/inner";
 
 export const dynamicParams = false;
 
@@ -72,91 +80,60 @@ export default async function EntryPage({
             faqPage(FAQS),
           )}
         />
-        <PageHero
+        <RichHero
           eyebrow={cat.label}
           title={entry.title}
           lead={entry.tagline}
           crumbs={[{ label: cat.label, href: cat.base }, { label: entry.name }]}
+          visual={<HeroVisual img={pageImage(`${category}-${entry.slug}`)} seed={`${category} ${entry.slug} ${entry.name}`} chip={entry.name} priority />}
         />
 
-        <Section>
-          <div className="grid gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <p className="text-lg leading-relaxed text-ink-muted">
-                {entry.intro}
-              </p>
-              <h2 className="mt-10 text-2xl font-bold text-brand">
-                What the engagement includes
-              </h2>
-              <ul className="mt-5 space-y-4">
+        <TrustStrip />
+
+        <section className="bg-white">
+          <div className={`${COL} grid items-center gap-10 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24`}>
+            <div>
+              <p className="text-xl leading-relaxed text-ink-2 lg:text-[22px]">{entry.intro}</p>
+              <h2 className="mt-10 text-2xl font-semibold lg:text-[28px]">What the engagement includes</h2>
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                 {entry.bullets.map((b) => (
-                  <li key={b.t} className="flex gap-3">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
-                    />
-                    <span>
-                      <strong className="font-semibold text-brand">{b.t}</strong>
-                      <span className="text-ink-muted"> — {b.d}</span>
+                  <li key={b.t} className="flex items-start gap-3 rounded-2xl border border-line bg-white px-4 py-3 text-[15px] font-medium leading-snug text-ink">
+                    <span className="mt-px grid size-5 shrink-0 place-items-center rounded-full bg-navy text-white">
+                      <Icon name="check" className="size-3" />
                     </span>
+                    {b.t}
                   </li>
                 ))}
               </ul>
             </div>
-
-            <aside className="lg:sticky lg:top-24 lg:self-start">
-              <div className="rounded-2xl border border-black/5 bg-[#F8FAFC] p-6">
-                <h2 className="font-semibold text-brand">
-                  Other {cat.label.toLowerCase()}
-                </h2>
-                <ul className="mt-4 space-y-1">
-                  {siblings.map((s) => (
-                    <li key={s.slug}>
-                      <Link
-                        href={`${cat.base}/${s.slug}`}
-                        className="block rounded-lg px-2 py-1.5 text-sm text-ink-muted transition-colors hover:bg-white hover:text-brand"
-                      >
-                        {s.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={cat.base}
-                  className="mt-3 block border-t border-black/10 px-2 pt-3 text-sm font-semibold text-brand"
-                >
-                  View all →
-                </Link>
-              </div>
-            </aside>
+            <SidePanel seed={`${category} ${entry.slug}`} chips={entry.bullets.map((b) => b.t)} img={pageImage(`${category}-${entry.slug}-detail`)} />
           </div>
-        </Section>
+        </section>
 
-        <Section
-          tinted
-          eyebrow="Capabilities"
-          title="How we approach this work"
-          lead={`Every ${entry.name.toLowerCase()} engagement runs on the same delivery model — the specifics below change, the discipline does not.`}
-        >
-          <BulletGrid items={entry.bullets} />
-        </Section>
+        <section className="bg-canvas">
+          <div className={`${COL} py-16 lg:py-24`}>
+            <Head
+              eyebrow="Capabilities"
+              title="How we approach this work"
+              lead={`Every ${entry.name.toLowerCase()} engagement runs on the same delivery model — the specifics below change, the discipline does not.`}
+            />
+            <div className="mt-10 lg:mt-12">
+              <FeatureGrid items={entry.bullets} />
+            </div>
+          </div>
+        </section>
 
-        <Section eyebrow="Process" title="How a project runs">
-          <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {PROCESS_STEPS.map((s) => (
-              <li
-                key={s.n}
-                className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm"
-              >
-                <span className="text-sm font-bold text-accent">{s.n}</span>
-                <h3 className="mt-2 font-semibold text-brand">{s.t}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
-                  {s.d}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </Section>
+        <WorkRow />
+
+        <section className="hero-3d bg-deep">
+          <div className={`${COL} py-16 lg:py-24`}>
+            <p className="text-sm font-semibold text-electric-2">Process</p>
+            <h2 className="mt-3 text-[30px] font-semibold leading-[1.1] text-white lg:text-[44px]">How a project runs</h2>
+            <div className="mt-10 lg:mt-12">
+              <ProcessTimeline />
+            </div>
+          </div>
+        </section>
 
         {quotes.length > 0 && (
         <Section tinted eyebrow="Client feedback" title="What clients say">
@@ -164,21 +141,14 @@ export default async function EntryPage({
             {quotes.map((t) => (
               <figure
                 key={t.name + t.role}
-                className="flex flex-col rounded-2xl bg-white p-7 shadow-sm"
+                className="flex flex-col rounded-3xl border border-line bg-white p-7"
               >
-                <div className="flex gap-0.5 text-accent" aria-label="5 out of 5">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <span key={i} aria-hidden="true">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
+                <blockquote className="flex-1 text-sm leading-relaxed text-ink-2">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 border-t border-black/5 pt-4">
-                  <p className="text-sm font-semibold text-brand">{t.name}</p>
-                  <p className="text-xs text-ink-muted">{t.role}</p>
+                <figcaption className="mt-5 border-t border-line pt-4">
+                  <p className="text-sm font-semibold text-ink">{t.name}</p>
+                  <p className="text-xs text-ink-3">{t.role}</p>
                 </figcaption>
               </figure>
             ))}
@@ -186,14 +156,35 @@ export default async function EntryPage({
         </Section>
         )}
 
-        <Section eyebrow="FAQ" title={`${entry.name} questions`}>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <Faq />
-            <QuoteForm />
+        <section className="bg-white">
+          <div className={`${COL} py-16 lg:py-24`}>
+            <Head eyebrow="FAQ" title={`${entry.name} questions`} />
+            <div className="mt-10 grid items-start gap-10 lg:mt-12 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
+              <FaqCards items={FAQS} />
+              <div className="rounded-3xl border border-line bg-canvas p-5 sm:p-7 lg:sticky lg:top-28">
+                <QuoteForm />
+              </div>
+            </div>
           </div>
-        </Section>
+        </section>
 
-        <CtaBand />
+        <section className="bg-canvas">
+          <div className={`${COL} py-16 lg:py-24`}>
+            <Head
+              title={`Other ${cat.label.toLowerCase()}`}
+              action={
+                <Link href={cat.base} className="shrink-0 text-sm font-semibold text-navy underline-offset-4 hover:underline">
+                  View all →
+                </Link>
+              }
+            />
+            <div className="mt-10">
+              <EntryCards category={category} base={cat.base} items={siblings} all={cat.items} four />
+            </div>
+          </div>
+        </section>
+
+        <PriceCta />
       </main>
       <Footer />
     </>
