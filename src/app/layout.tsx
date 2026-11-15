@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { FloatingActions } from "@/components/site";
 import { OG_IMG } from "@/lib/content";
+import { lexend } from "@/lib/lexend";
 import "./globals.css";
 
-// Inter for reading (SIL OFL, self-hosted by next/font). Headings use Satoshi, served from
-// Fontshare's own CDN as its free licence allows — the font file is not in this public repo.
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const SATOSHI_CSS = "https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap";
+// Lexend everywhere (self-hosted by next/font), set up in src/lib/lexend.ts.
 
 const PIXEL_ID = "1656684676111797";
 const META_PIXEL = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${PIXEL_ID}');fbq('track','PageView');`;
@@ -44,16 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning /* data-ab set by the /book A/B script */>
+    <html lang="en" className={`${lexend.variable} h-full antialiased`} suppressHydrationWarning /* data-ab set by the /book A/B script */>
       <head>
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
-        {/* Satoshi loads without blocking the first paint: a render-blocking stylesheet on a third-party
-            origin held the hero text back ~4.6 s on mobile (Growth Combinator audit, 10 Nov). Headings
-            show in Inter until Satoshi arrives (display=swap). */}
-        <link rel="preload" as="style" href={SATOSHI_CSS} />
-        <script dangerouslySetInnerHTML={{ __html: `(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="${SATOSHI_CSS}";document.head.appendChild(l)})()` }} />
-        <noscript><link rel="stylesheet" href={SATOSHI_CSS} /></noscript>
         {/* Meta Pixel (dataset "ElevateBox"). Purchases come server-side from the Razorpay webhook. */}
         <script dangerouslySetInnerHTML={{ __html: META_PIXEL }} />
         <noscript>

@@ -29,7 +29,7 @@ export default async function ConsultFormPage({ params }: { params: Promise<{ ti
       <style>{".eb-float{display:none!important}"}</style>
       {/* ponytail: same bare top bar as the ad page, no site nav to leak ad traffic */}
       <div className="bg-[#0b1a3c] px-4 py-2.5 text-center text-xs font-semibold text-white sm:text-sm">
-        ElevateBox, Hyderabad: <span className="text-[#f8e71c]">engineers from Google, JPMorgan Chase and a Y Combinator startup</span>
+        ElevateBox, Hyderabad: <span className="text-[#f8e71c]">built by product people from Google, Zomato and Y Combinator-backed startups</span>
       </div>
       <main className="flex-1 bg-[#f7f7f5] px-5 py-10 sm:py-14">
         <div className="mx-auto max-w-xl">

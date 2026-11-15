@@ -4,7 +4,7 @@ export const COMPANY = {
   name: "ElevateBox",
   legal: "ElevateScale Technologies Pvt Ltd",
   tagline: "Design, engineering, and AI delivery for teams that need to ship.",
-  email: "charan@elevatebox.in",
+  email: "contact@elevatebox.in",
   phone: "+91 79810 32273",
   whatsapp: "+917981032273",
   timings: "Mon–Sat, 10:00–19:00 IST",

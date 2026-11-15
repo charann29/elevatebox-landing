@@ -158,7 +158,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
 
       {/* Top bar */}
       <div className="bg-[#0b1a3c] px-4 py-2.5 text-center text-xs font-semibold text-white sm:text-sm">
-        ElevateBox, Hyderabad: <span className="text-[#f8e71c]">engineers from Google, JPMorgan Chase and a Y Combinator startup</span>
+        ElevateBox, Hyderabad: <span className="text-[#f8e71c]">built by product people from Google, Zomato and Y Combinator-backed startups</span>
       </div>
 
       <main className="flex-1 pb-24 text-[#262626] lg:pb-0">

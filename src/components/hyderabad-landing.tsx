@@ -6,13 +6,13 @@ import { Header, Footer, PillCta } from "@/components/site";
 import { Crumbs, DiscoveryOffer, Faq } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 
-const COL = "mx-auto w-full max-w-7xl px-5 lg:px-8";
+const COL = "mx-auto w-[min(1216px,100%-32px)]";
 const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
 
 const PROOF = [
-  { v: "1,400", l: "Apps built" },
+  { v: "380+", l: "Apps shipped" },
   { v: "< 6 hrs", l: "Bug response" },
-  { v: "AIR 14", l: "ACM ICPC" },
+  { v: "175+", l: "Organisations served" },
   { v: "8 lakh", l: "AI calls a day, at scale" },
 ];
 
@@ -64,42 +64,41 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         />
 
         {/* ── First screen: the phrase, what is built, proof, and the way to start ── */}
-        <section className="light-glow relative overflow-hidden">
-          <div aria-hidden="true" className="light-grid absolute inset-0" />
-          <div className={`${COL} relative pb-14 pt-10 lg:pb-20 lg:pt-14`}>
+        <section className="hero-3d overflow-hidden">
+          <div className={`${COL} pb-14 pt-8 lg:pb-20 lg:pt-12`}>
             <Crumbs items={[{ label: page.h1 }]} />
-            <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-[1.04] text-ink sm:text-6xl">{page.h1}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{page.sub}</p>
+            <h1 className="mt-8 max-w-4xl text-4xl font-[700] leading-[1.04] tracking-[-0.03em] text-white sm:text-6xl">{page.h1}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">{page.sub}</p>
             <dl className="mt-9 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
               {PROOF.map((s) => (
-                <div key={s.l} className="rounded-2xl bg-white p-4 ring-1 ring-brand/10">
+                <div key={s.l} className="rounded-2xl border border-white/15 bg-white/10 p-4">
                   <dt className="sr-only">{s.l}</dt>
                   <dd>
-                    <p className="whitespace-nowrap font-display text-2xl font-bold text-ink">{s.v}</p>
-                    <p className="mt-0.5 text-xs text-ink-3">{s.l}</p>
+                    <p className="whitespace-nowrap text-2xl font-semibold text-white">{s.v}</p>
+                    <p className="mt-0.5 text-xs text-white/70">{s.l}</p>
                   </dd>
                 </div>
               ))}
             </dl>
-            <p className="mt-6 max-w-2xl text-sm text-ink-2">
-              Built by founding engineers from ClickPe (YC W23) and an AI startup acquired by Microsoft.
+            <p className="mt-6 max-w-2xl text-sm text-white/75">
+              Built by product people from Google, Zomato and Y Combinator-backed startups.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <PillCta className="justify-between sm:justify-start">Get a quote</PillCta>
-              <a href={WA} className="rounded-full border border-brand/10 px-6 py-3 text-center text-sm font-semibold text-ink transition-colors hover:border-brand/10">
-                Free consultation on WhatsApp
+              <a href={WA} className="rounded-full px-6 py-3 text-center text-sm font-semibold text-white ring-[1.5px] ring-inset ring-white/80 transition-colors hover:bg-white/10">
+                Message us on WhatsApp
               </a>
-              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-center text-sm font-semibold text-ink-2 hover:text-ink">
+              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-center text-sm font-semibold text-white/80 hover:text-white">
                 {COMPANY.phone}
               </a>
             </div>
-            <p className="mt-3 text-xs text-ink-3">We reply within one working day.</p>
+            <p className="mt-3 text-xs text-white/65">We reply within one working day.</p>
           </div>
-          <div className="relative border-t border-brand/10">
+          <div className="border-t border-white/10 bg-white">
             <ul className={`${COL} flex flex-wrap items-center gap-x-8 gap-y-3 py-5`} aria-label="Clients">
               {CLIENTS.map((c) => (
                 <li key={c} className="flex items-center gap-2 text-sm font-semibold text-ink-3">
-                  <Image src={clientLogo(c)} alt="" width={120} height={100} className="size-7 rounded-full bg-white object-cover" />
+                  <Image src={clientLogo(c)} alt="" width={120} height={100} className="size-7 rounded-full border border-line bg-white object-cover" />
                   {c}
                 </li>
               ))}
@@ -116,8 +115,8 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {page.services.items.map((s) => (
               <li key={s.t}>
-                <Link href={s.href} className="group block h-full rounded-3xl bg-white p-6 ring-1 ring-black/[0.07] transition hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5">
-                  <h3 className="text-lg font-bold group-hover:text-electric">{s.t}</h3>
+                <Link href={s.href} className="group block h-full rounded-3xl border border-line bg-white p-6 transition-colors hover:border-navy/30">
+                  <h3 className="text-lg font-semibold group-hover:text-navy">{s.t}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-3">{s.d}</p>
                 </Link>
               </li>
@@ -129,7 +128,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <H2 id="why">{page.why.h2}</H2>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {page.why.points.map((w) => (
-              <li key={w.t} className="rounded-3xl p-6 ring-1 ring-black/[0.07]">
+              <li key={w.t} className="rounded-3xl p-6 border border-line">
                 <h3 className="text-lg font-bold">{w.t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-3">{w.d}</p>
               </li>
@@ -147,14 +146,14 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               </div>
               <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {page.ai.items.map((a) => (
-                  <li key={a.t} className="rounded-3xl bg-white p-6 ring-1 ring-brand/10">
+                  <li key={a.t} className="rounded-3xl bg-white p-6 border border-line">
                     <h3 className="text-lg font-bold text-ink">{a.t}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-ink-2">{a.d}</p>
                   </li>
                 ))}
               </ul>
-              <a href={VOICE_APP} className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#22c55e] px-6 py-3 text-sm font-bold text-night">
-                <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-brand-wash" />
+              <a href={VOICE_APP} className="mt-8 inline-flex items-center gap-2 rounded-full bg-live px-6 py-3 text-sm font-semibold text-[#04210f]">
+                <span aria-hidden="true" className="size-2 rounded-full bg-[#04210f]" />
                 Try Voice, our AI voice agent
               </a>
               <div className="mt-10 border-t border-brand/10 pt-8">
@@ -162,7 +161,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.realEstateHyd, VOICE_SEO.clinicsHyd, VOICE_SEO.coachingHyd, VOICE_SEO.loansHyd].map((l) => (
                     <li key={l.href}>
-                      <a href={l.href} className="block rounded-full bg-white px-3.5 py-1.5 text-xs text-ink-2 ring-1 ring-brand/10 hover:bg-brand-wash hover:text-ink sm:text-sm">
+                      <a href={l.href} className="block rounded-full bg-white px-3.5 py-1.5 text-xs text-ink-2 border border-line hover:bg-brand-wash hover:text-ink sm:text-sm">
                         {l.label}
                       </a>
                     </li>
@@ -177,7 +176,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <H2 id="process">{page.process.h2}</H2>
           <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {page.process.steps.map((s, k) => (
-              <li key={s.t} className="rounded-3xl p-6 ring-1 ring-black/[0.07]">
+              <li key={s.t} className="rounded-3xl p-6 border border-line">
                 <p className="flex items-center justify-between gap-3 text-sm">
                   <span className="font-display text-2xl font-bold text-electric">{String(k + 1).padStart(2, "0")}</span>
                   <span className="rounded-full bg-electric/10 px-3 py-1 text-xs font-semibold text-electric">{s.when}</span>
@@ -198,7 +197,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                 <dt className="text-sm font-semibold text-ink">{g.t}</dt>
                 <dd className="mt-3 flex flex-wrap gap-2">
                   {g.items.map((i) => (
-                    <span key={i} className="rounded-full bg-white px-3 py-1.5 text-sm text-ink-2 ring-1 ring-black/[0.07]">{i}</span>
+                    <span key={i} className="rounded-full bg-white px-3 py-1.5 text-sm text-ink-2 border border-line">{i}</span>
                   ))}
                 </dd>
               </div>
@@ -211,8 +210,8 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {page.industries.items.map((i) => (
               <li key={i.t}>
-                <Link href={i.href} className="group block h-full rounded-3xl p-6 ring-1 ring-black/[0.07] transition hover:shadow-xl hover:shadow-black/5">
-                  <h3 className="text-lg font-bold group-hover:text-electric">{i.t}</h3>
+                <Link href={i.href} className="group block h-full rounded-3xl border border-line p-6 transition-colors hover:border-navy/30">
+                  <h3 className="text-lg font-semibold group-hover:text-navy">{i.t}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-3">{i.d}</p>
                 </Link>
               </li>
@@ -224,7 +223,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <H2 id="cases">{page.cases.h2}</H2>
           <ul className="mt-10 grid gap-5 md:grid-cols-3">
             {cases.map((p) => (
-              <li key={p.slug} className="overflow-hidden rounded-3xl bg-white ring-1 ring-black/[0.07]">
+              <li key={p.slug} className="overflow-hidden rounded-3xl bg-white border border-line">
                 <div className="grid h-64 place-items-center overflow-hidden bg-brand-wash">
                   <Image
                     src={`/assets/real-${p.slug}.jpg`}
@@ -252,7 +251,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <H2 id="cost" lead={page.cost.lead}>
             {page.cost.h2}
           </H2>
-          <div className="mt-10 overflow-hidden rounded-3xl ring-1 ring-black/[0.07]">
+          <div className="mt-10 overflow-hidden rounded-3xl border border-line">
             <table className="w-full text-left text-sm">
               <thead className="bg-canvas">
                 <tr>
@@ -280,7 +279,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           <p className="mt-6 text-sm font-semibold text-ink">Areas we serve</p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {AREAS.map((a) => (
-              <li key={a} className="rounded-full bg-white px-3.5 py-1.5 text-sm text-ink-2 ring-1 ring-black/[0.07]">{a}</li>
+              <li key={a} className="rounded-full bg-white px-3.5 py-1.5 text-sm text-ink-2 border border-line">{a}</li>
             ))}
           </ul>
         </Band>
@@ -304,19 +303,19 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
             <div aria-hidden="true" className="light-grid absolute inset-0" />
             <div className={`${COL} relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2`}>
               <div>
-                <h2 id="start" className="text-3xl font-bold leading-[1.08] text-ink sm:text-5xl">Start with a free consultation</h2>
+                <h2 id="start" className="text-3xl font-bold leading-[1.08] text-ink sm:text-5xl">Tell us what you need</h2>
                 <p className="mt-4 max-w-lg leading-relaxed text-ink-2">
-                  Tell us what you are building on WhatsApp or by phone, free. When you are ready, the requirement analysis
+                  Message us on WhatsApp or call about what you are building. When you are ready, the requirement analysis
                   turns it into a written quotation.
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <a href={WA} className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-bold text-night">WhatsApp us</a>
+                  <a href={WA} className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-semibold text-[#04210f]">WhatsApp us</a>
                   <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-brand/10 px-6 py-3 text-center text-sm font-semibold text-ink">
                     {`Call ${COMPANY.phone}`}
                   </a>
                 </div>
               </div>
-              <DiscoveryOffer dark />
+              <DiscoveryOffer />
             </div>
           </div>
         </section>

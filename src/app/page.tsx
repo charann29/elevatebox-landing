@@ -5,19 +5,19 @@ import {
   CATEGORIES,
   CLIENTS,
   COMPANY,
+  HOME_STATS,
   CREDENTIALS,
   DISCOVERY,
   FAQS,
   PROJECTS,
   VOICE_APP,
-  VOICE_SEO,
-  clientLogo,
   serviceIcon,
   OG_IMG,
 } from "@/lib/content";
 import { Header, Footer, PillCta } from "@/components/site";
 import { DiscoveryOffer, Faq } from "@/components/blocks";
 import { VoiceVideos } from "@/components/voice-videos";
+import { CountUp } from "@/components/count-up";
 import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   },
 };
 
-const COL = "mx-auto w-full max-w-7xl px-5 lg:px-8";
+const COL = "mx-auto w-[min(1216px,100%-32px)]";
 const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
 
 const PROOF = [
-  { v: "1,400", l: "Apps built to date" },
-  { v: "AIR 14", l: "ACM ICPC — top 0.17% of 8,000+ competitors" },
-  { v: "120s → 7s", l: "A core API we sped up at JPMorgan Chase" },
+  { v: "380+", l: "Apps built to date" },
+  { v: "350+", l: "MSMEs served" },
+  { v: "27+", l: "Partner institutions, including IIT Madras, IIT Delhi and BHU" },
   { v: "< 6 hrs", l: "To respond to any bug or problem" },
 ];
 
@@ -51,77 +51,6 @@ const VOICE_STATS = [
   { v: "3", l: "Languages: Telugu, Hindi, English" },
   { v: "10 min", l: "Free when you sign up" },
 ];
-
-const VOICE_FEATURES = [
-  { t: "Calls every lead in seconds", d: "A form fills, an ad converts, a list uploads — your employee is already dialling.", icon: "M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" },
-  { t: "Talks like your best caller", d: "Natural, human-sounding calls in Telugu, Hindi and English.", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
-  { t: "Writes down every word", d: "Transcript, summary and the answers you asked for, on every call.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5" },
-  { t: "Books the next step", d: "Site visits, appointments and callbacks fixed on the call and saved with the lead.", icon: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" },
-];
-
-const VOICE_USES = [
-  { t: "Real estate", href: `${VOICE_APP}/best/ai-voice-agent-real-estate` },
-  { t: "Clinics & hospitals", href: `${VOICE_APP}/best/ai-voice-agent-hospitals-clinics` },
-  { t: "Education & coaching", href: `${VOICE_APP}/best/ai-voice-agent-coaching-admissions` },
-  { t: "Insurance & loans", href: `${VOICE_APP}/best/ai-voice-agent-loans-insurance` },
-  { t: "Automobile dealers", href: `${VOICE_APP}/best/ai-voice-agent-car-dealerships` },
-  { t: "D2C & e-commerce", href: VOICE_APP },
-];
-
-// An example call, as the product shows it. Illustrative, not a customer recording.
-const CALL_LINES: { who: "ai" | "lead"; text: string }[] = [
-  { who: "ai", text: "నమస్కారం! మీరు నిన్న మా వెబ్‌సైట్‌లో ఫ్లాట్ గురించి అడిగారు కదా?" },
-  { who: "lead", text: "Haan ji, 2BHK dekhna tha. Weekend pe ho sakta hai?" },
-  { who: "ai", text: "Bilkul! Saturday 11 baje site visit book kar doon?" },
-  { who: "lead", text: "Perfect, kar dijiye." },
-];
-
-/** A call in progress: caller, timer, waveform and the transcript as it is written. */
-function CallCard({ large }: { large?: boolean }) {
-  return (
-    <span className="block rounded-3xl bg-white p-5 text-left shadow-2xl shadow-black/40 ring-1 ring-brand/10 backdrop-blur-xl">
-      <span className="flex items-center justify-between gap-3">
-        <span className="flex items-center gap-3">
-          <span className="relative grid size-10 place-items-center rounded-full bg-[#22c55e] text-night">
-            <span aria-hidden="true" className="absolute inset-0 animate-ping rounded-full bg-[#22c55e]/40" />
-            <svg viewBox="0 0 24 24" fill="currentColor" className="relative size-4" aria-hidden="true">
-              <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" />
-            </svg>
-          </span>
-          <span>
-            <span className="block text-sm font-semibold text-ink">Live call · New lead</span>
-            <span className="block text-xs text-ink-3">Example call · 00:42</span>
-          </span>
-        </span>
-        <span aria-hidden="true" className="flex h-6 items-end gap-[3px]">
-          {[0, 1, 2, 3, 4, 5].map((k) => (
-            <span key={k} className="wave w-[3px] rounded-full bg-[#4ade80]" style={{ animationDelay: `${k * 0.12}s` }} />
-          ))}
-        </span>
-      </span>
-      <span className="mt-4 flex flex-col gap-2">
-        {(large ? CALL_LINES : CALL_LINES.slice(0, 3)).map((l) => (
-          <span
-            key={l.text}
-            className={`max-w-[88%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed sm:text-sm ${
-              l.who === "ai" ? "self-start rounded-bl-sm bg-electric text-white" : "self-end rounded-br-sm bg-white/90 text-ink"
-            }`}
-          >
-            {l.text}
-          </span>
-        ))}
-      </span>
-      {large && (
-        <span className="mt-4 flex items-center gap-2 rounded-2xl bg-[#22c55e]/15 px-3.5 py-2.5 text-xs font-semibold text-[#4ade80] sm:text-sm">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="size-4 shrink-0" aria-hidden="true">
-            <path d="M5 12l5 5L20 7" />
-          </svg>
-          Site visit booked · Saturday, 11:00 AM
-        </span>
-      )}
-    </span>
-  );
-}
 
 // What a brief usually starts with, and what we do about it.
 const FIXES = [
@@ -191,16 +120,87 @@ function Heading({ id, eyebrow, title, lead, dark, action }: { id: string; eyebr
   return (
     <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
       <div className="max-w-2xl">
-        <p className={`text-sm font-semibold "text-electric"`}>{eyebrow}</p>
-        <h2 id={id} className={`mt-3 text-3xl font-bold leading-[1.08] sm:text-5xl ${dark ? "text-ink" : ""}`}>
+        <p className="text-sm font-semibold text-navy">{eyebrow}</p>
+        <h2 id={id} className={`mt-3 text-3xl font-semibold leading-[1.1] lg:text-[44px] ${dark ? "text-ink" : ""}`}>
           {title}
         </h2>
-        {lead && <p className={`mt-4 text-base leading-relaxed sm:text-lg "text-ink-3"`}>{lead}</p>}
+        {lead && <p className="mt-3.5 text-lg leading-relaxed text-ink-2">{lead}</p>}
       </div>
       {action}
     </div>
   );
 }
+
+// The hero fan: five live app screens, TRH360 in the middle with the green ring.
+const FAN = [
+  { src: "/assets/real-medibag.jpg", cls: "left-0 rotate-[-14deg] translate-y-[60px]" },
+  { src: "/assets/real-vamshi-farms.jpg", cls: "left-[110px] rotate-[-7deg] translate-y-[10px] lg:left-[200px]" },
+  { src: "/assets/trh-app.webp", cls: "left-[230px] z-[2] !w-[140px] -translate-y-[30px] !shadow-[0_0_0_3px_#22c55e,0_50px_90px_-30px_rgba(0,0,0,0.7)] lg:left-[440px] lg:!w-[240px]", centre: true },
+  { src: "/assets/real-oneasy.jpg", cls: "right-[110px] rotate-[7deg] translate-y-[10px] lg:right-[200px]" },
+  { src: "/assets/autopilot-app.webp", cls: "right-0 rotate-[14deg] translate-y-[60px]" },
+];
+
+// Client logos for the two marquee rows: [file in /assets/clients, name, height at 320 wide].
+const CLIENT_ROWS: [string, string, number][][] = [
+  [["hi-cont2", "Continental Hospitals", 186], ["hi-medicover", "Medicover Hospitals", 200], ["hi-trh360", "TRH360", 88], ["joy", "Joy Hospitals", 178], ["bajaj", "Bajaj Electronics", 183], ["sumantv", "Suman TV", 318]],
+  [["hi-mokobara", "Mokobara", 57], ["oneasy", "OnEasy", 93], ["n-8meds", "8Meds", 112], ["n-triq1", "TriQ Pharma", 152], ["vamshi", "Vamshi Farms", 320], ["haritha", "Haritha Wellness", 162]],
+];
+
+/** One row of logo tiles, the list twice so the loop is seamless. Pauses on hover; still under reduced motion. */
+function LogoRow({ logos, reverse, className = "" }: { logos: [string, string, number][]; reverse?: boolean; className?: string }) {
+  return (
+    <div className={`mq ${reverse ? "mq-rev" : ""} ${className}`}>
+      <ul className="mq-t">
+        {[0, 1].flatMap((n) =>
+          logos.map(([src, alt, h]) => (
+            <li key={`${src}-${n}`} aria-hidden={n > 0 || undefined} className="grid h-[76px] w-[150px] shrink-0 place-items-center rounded-2xl border border-line bg-white px-[22px] py-3.5 lg:h-24 lg:w-[200px]">
+              <Image src={`/assets/clients/${src}.png`} alt={n > 0 ? "" : alt} width={320} height={h} className="max-h-[52px] w-auto max-w-full object-contain" />
+            </li>
+          )),
+        )}
+      </ul>
+    </div>
+  );
+}
+
+const CASES = [
+  {
+    name: "TRH360",
+    logo: "/assets/clients/hi-trh360.png",
+    lh: 88,
+    tag: "Healthcare",
+    h: "A complete digital hospital in one app",
+    p: "Care was split across separate touchpoints, and every patient enquiry depended on someone making a manual call.",
+    imp: "The entire patient journey, from booking to follow-up, lives in one app. Every enquiry gets a call back.",
+  },
+  {
+    name: "OnEasy",
+    logo: "/assets/clients/oneasy.png",
+    lh: 93,
+    tag: "Professional services",
+    h: "A CA practice, rebuilt as a platform",
+    p: "Client work, documents and recurring filings ran across people and spreadsheets, a model that could not scale.",
+    imp: "The practice operates as a platform. Clients self-serve their status, and recurring filings run on schedule.",
+  },
+];
+
+const FOUNDER_CREDS = [
+  { src: "/assets/creds/google.png", alt: "Google", h: 108, l: "Associate Product Manager" },
+  { src: "/assets/creds/zomato2.png", alt: "Zomato", h: 68, l: "Developer" },
+  { src: "/assets/creds/yc.png", alt: "Y Combinator", h: 320, l: "Two YC-funded startups" },
+  { src: "/assets/edu/iitm.png", alt: "IIT Madras", h: 320, l: "Studied" },
+];
+
+const QUOTES = [
+  { q: "ElevateBox isn't just another trainer: it's an ecosystem partner. They set up hands-on innovation labs, curated coding fellowships and industry linkages that made our students startup-ready.", who: "Dr. Madhu Mutyam", role: "HoD, Computer Science, IIT Madras", logo: "/assets/edu/iitm.png" },
+  { q: "ElevateBox has helped us reimagine what engineering education can look like when creativity meets structured mentorship.", who: "Prof. Ajit Kumar Chaturvedi", role: "Vice-Chancellor, BHU", logo: "/assets/edu/edu-bhu.png" },
+  { q: "ElevateBox workshops helped me evolve from a traditional instructor to an innovation facilitator.", who: "Dr. Neha Agarwal", role: "Associate Professor, IIT Delhi", logo: "/assets/edu/edu-iitd.png" },
+];
+
+const EDU: [string, string][] = [
+  ["edu-iitg", "IIT Guwahati"], ["edu-iitd", "IIT Delhi"], ["iitm", "IIT Madras"], ["edu-bits", "BITS Goa"], ["edu-bhu", "BHU"], ["vnr", "VNR VJIET"],
+  ["edu-gnits", "GNITS"], ["edu-cmr-emblem", "CMR"], ["edu-mgit-emblem", "MGIT"], ["edu-lpu", "LPU"], ["edu-uoh-emblem", "University of Hyderabad"],
+];
 
 const SERVICES = CATEGORIES.find((c) => c.key === "services")!;
 const LOCATIONS = CATEGORIES.find((c) => c.key === "locations")!;
@@ -217,95 +217,100 @@ export default function Home() {
           json={ld(ORG, { "@type": "WebSite", name: COMPANY.name, url: COMPANY.site, publisher: { "@id": ORG["@id"] } }, faqPage(FAQS))}
         />
 
-        {/* ── Hero ── */}
-        <section className="light-glow relative overflow-hidden">
-          <div aria-hidden="true" className="light-grid absolute inset-0" />
-          <div className={`${COL} relative grid items-center gap-14 pb-20 pt-14 lg:grid-cols-[1.05fr_1fr] lg:pb-28 lg:pt-20`}>
-            <div>
-              <a
-                href={VOICE_APP}
-                className="hidden items-center gap-2 rounded-full border border-brand/10 bg-white py-1.5 pl-2 pr-3 text-xs text-ink-2 lg:inline-flex transition-colors hover:border-brand/10"
-              >
-                <span className="rounded-full bg-[#22c55e]/15 px-2 py-0.5 font-semibold text-[#15803d]">New</span>
-                Voice — India&apos;s best conversational voice agent
-                <span aria-hidden="true">→</span>
-              </a>
-              <h1 className="text-[2.6rem] lg:mt-7 font-bold leading-[1.02] text-ink sm:text-6xl lg:text-[4.4rem]">
-                Mobile App &amp; AI Development Company in <span className="text-gradient">Hyderabad</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2">
-                We&apos;re a{" "}
-                <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-ink underline decoration-white/30 underline-offset-4 hover:decoration-white">
-                  mobile app development company in Hyderabad
-                </Link>
-                , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
-                the maintenance afterwards.
-              </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  href={VOICE_APP}
-                  className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-6 py-3 text-sm font-bold text-night shadow-lg shadow-[#22c55e]/30 transition-transform hover:-translate-y-0.5"
-                >
-                  <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-brand-wash" />
-                  Try Voice AI free
-                </a>
-                <PillCta className="justify-between sm:justify-start">Book a call</PillCta>
-              </div>
-
-              <div className="mt-10 flex items-center gap-3">
-                <span className="flex -space-x-2.5">
-                  {CLIENTS.slice(0, 4).map((c) => (
-                    <Image key={c} src={clientLogo(c)} alt="" width={120} height={100} className="size-9 rounded-full bg-white object-cover ring-2 ring-night" />
-                  ))}
-                </span>
-                <span className="text-sm leading-snug text-ink-3">
-                  <span className="block font-semibold text-ink">1,400 apps built</span>
-                  bugs fixed in under 6 hours
-                </span>
-              </div>
-            </div>
-
-            {/* The flagship, live: Voice's own screen with a call in progress over it. */}
-            <a href={VOICE_APP} aria-label={`Try ${PROJECTS.find((p) => p.slug === "voice")!.name}`} className="group relative mx-auto hidden h-[36rem] w-full max-w-md lg:block">
-              <span aria-hidden="true" className="absolute inset-x-6 top-1/4 h-72 rounded-full bg-[#22c55e]/20 blur-3xl" />
-              <span aria-hidden="true" className="absolute inset-x-16 top-1/3 h-64 rounded-full bg-electric/35 blur-3xl" />
-              <Phone slug="voice" name="Voice" className="float absolute right-2 top-0 w-[54%] rotate-3 sm:right-4" />
-              <span aria-hidden="true" className="absolute bottom-4 left-0 z-10 w-[78%] max-w-xs">
-                <CallCard />
-              </span>
-              <span aria-hidden="true" className="absolute left-0 top-8 z-10 rounded-2xl bg-white px-4 py-3 ring-1 ring-brand/10 backdrop-blur-md">
-                <span className="block font-display text-2xl font-bold text-ink">8 lakh</span>
-                <span className="block text-xs text-ink-2">calls a day, at scale</span>
-              </span>
+        {/* ── Hero: the 3D band, headline and the fan of live app screens ── */}
+        <section className="hero-3d overflow-hidden px-4 pt-12 text-center lg:h-[860px] lg:pt-[64px]">
+          <a href={VOICE_APP} className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 py-1.5 pl-1.5 pr-4 text-left text-sm text-white">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-live px-2.5 py-1 text-[11px] font-bold text-[#04210f]">
+              <span aria-hidden="true" className="size-1.5 rounded-full bg-[#04210f]" />
+              NEW
+            </span>
+            Voice AI calls your leads in Telugu, Hindi and English
+          </a>
+          <h1 className="mx-auto mt-6 max-w-3xl text-base font-medium text-electric-2 sm:text-lg">
+            Mobile App &amp; AI Development Company in <span className="text-white">Hyderabad</span>
+          </h1>
+          <p className="mx-auto mt-3 max-w-[15ch] text-[40px] font-[700] leading-[1.04] tracking-[-0.03em] text-white lg:text-[68px]">
+            We build apps people <span className="text-gradient">actually use</span>
+          </p>
+          <p className="mx-auto mt-5 max-w-[36em] text-base leading-relaxed text-white/80 lg:text-[19px]">
+            We&apos;re a{" "}
+            <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">
+              mobile app development company in Hyderabad
+            </Link>
+            , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
+            the maintenance afterwards.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link href="/book" className="inline-flex h-[52px] items-center rounded-full bg-white px-[26px] text-base font-semibold text-navy hover:bg-sky">
+              Get quote now
+            </Link>
+            <a href={VOICE_APP} className="inline-flex h-[52px] items-center gap-2 rounded-full px-[26px] text-base font-semibold text-white ring-[1.5px] ring-inset ring-white hover:bg-white/10">
+              <span aria-hidden="true" className="size-2 rounded-full bg-live" />
+              Try Voice AI free
             </a>
           </div>
-
-          {/* Credentials and clients, scrolling. Text, not logos. */}
-          <div className="relative border-t border-brand/10 py-6 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
-            <ul className="marquee flex w-max items-center gap-12" aria-label="Clients and credentials">
-              {[0, 1].flatMap((n) =>
-                [...CLIENTS, ...CREDENTIALS.map((c) => `${c.k} · ${c.v}`)].map((c) => (
-                  <li key={`${c}-${n}`} aria-hidden={n > 0 || undefined} className="whitespace-nowrap font-display text-lg font-bold tracking-tight text-ink-3">
-                    {c}
-                  </li>
-                )),
-              )}
-            </ul>
+          <p className="mt-5 text-sm text-white/70">
+            <b className="font-semibold text-white">380+ apps built</b> · bugs fixed in under 6 hours
+          </p>
+          <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-[-170px] lg:mt-0 lg:h-[520px] lg:w-[1100px]">
+            {FAN.map((f) => (
+              <span key={f.src} className={`absolute bottom-0 block w-[130px] rounded-[30px] bg-[#0A1024] p-1.5 shadow-[0_40px_80px_-30px_rgba(1,20,70,0.55),0_0_0_1px_rgba(255,255,255,0.08)] lg:w-[220px] ${f.cls}`}>
+                <Image src={f.src} alt="" width={520} height={1126} className="w-full rounded-[24px]" priority={f.centre} />
+              </span>
+            ))}
           </div>
         </section>
 
+        {/* ── Clients: two logo rows moving opposite ways ── */}
+        <section aria-labelledby="clients" className="bg-white py-16 lg:pb-[88px] lg:pt-20">
+          <div className={COL}>
+            <h2 id="clients" className="max-w-[20ch] text-3xl font-semibold leading-[1.1] lg:text-[44px]">Trusted by hospitals, brands and MSMEs</h2>
+            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-ink-2">175+ organisations across healthcare, commerce, media, real estate and public life.</p>
+            <LogoRow logos={CLIENT_ROWS[0]} className="mt-10" />
+            <LogoRow logos={CLIENT_ROWS[1]} className="mt-4" reverse />
+            {/* Credentials and clients, scrolling. Text, not logos. */}
+            <div className="mq mt-8 border-t border-line pt-6">
+              <ul className="marquee flex w-max items-center gap-12" aria-label="Clients and credentials">
+                {[0, 1].flatMap((n) =>
+                  [...CLIENTS, ...CREDENTIALS.map((c) => `${c.k} · ${c.v}`)].map((c) => (
+                    <li key={`${c}-${n}`} aria-hidden={n > 0 || undefined} className="whitespace-nowrap text-base font-semibold text-ink-3">
+                      {c}
+                    </li>
+                  )),
+                )}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Numbers ── */}
+        <section aria-label="ElevateBox in numbers" className="bg-deep py-14 text-white lg:py-16">
+          <dl className={`${COL} grid grid-cols-2 gap-y-7 lg:grid-cols-4`}>
+            {HOME_STATS.map((s, k) => (
+              <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : ""} ${k === 2 ? "lg:border-l lg:border-white/20" : ""} ${k === 0 || k === 2 ? "pl-0 lg:pl-0" : ""} ${k === 2 ? "lg:pl-7" : ""}`}>
+                <dt className="sr-only">{s.l}</dt>
+                <dd>
+                  <p className="text-[44px] font-light leading-none tracking-[-0.02em] lg:text-[72px]">
+                    <CountUp value={s.v} />
+                    <span className="text-amber">+</span>
+                  </p>
+                  <p className="mt-2.5 text-base text-white/75">{s.l}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         {/* ── Voice: the flagship ── */}
-        <section aria-labelledby="voice" className="px-3 pt-6 sm:px-5">
-          <div className="relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] bg-night ring-1 ring-[#22c55e]/25">
-            <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(50%_45%_at_15%_0%,rgba(34,197,94,0.18),transparent_70%),radial-gradient(55%_50%_at_90%_10%,rgba(61,107,255,0.3),transparent_70%)]" />
-            <div aria-hidden="true" className="night-grid absolute inset-0" />
+        <section aria-labelledby="voice" className="bg-night">
+          <div className="relative overflow-hidden">
             <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <div className="mx-auto max-w-3xl text-center">
                 <p className="inline-flex items-center gap-2 rounded-full bg-[#22c55e]/10 px-4 py-1.5 text-sm font-semibold text-[#4ade80] ring-1 ring-[#22c55e]/30">
                   <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#22c55e]" />
-                  {`Our flagship · Voice by ${COMPANY.name}`}
+                  {`Our flagship · Roopa by ${COMPANY.name}`}
                 </p>
-                <h2 id="voice" className="mt-6 text-4xl font-bold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+                <h2 id="voice" className="mt-6 text-4xl font-semibold leading-[1.04] text-white sm:text-6xl">
                   India&apos;s best <span className="text-gradient">conversational voice agent</span>
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
@@ -315,7 +320,7 @@ export default function Home() {
                 <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
                   <a
                     href={VOICE_APP}
-                    className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-8 py-4 text-base font-bold text-night shadow-xl shadow-[#22c55e]/30 transition-transform hover:-translate-y-0.5"
+                    className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-8 py-4 text-base font-semibold text-[#04210f] transition-colors hover:bg-[#16a34a]"
                   >
                     <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
                     Get a free demo call
@@ -340,40 +345,6 @@ export default function Home() {
 
               <VoiceVideos />
 
-              <div className="mt-10 grid items-center gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-[1fr_1.15fr]">
-                <div className="mx-auto w-full max-w-md">
-                  <CallCard large />
-                </div>
-                <ul className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {VOICE_FEATURES.map((f) => (
-                    <li key={f.t} className="rounded-3xl bg-white/[0.04] p-4 ring-1 sm:p-6 ring-white/10 transition-colors hover:bg-white/[0.07]">
-                      <span className="grid size-9 place-items-center rounded-xl bg-[#22c55e]/15 sm:size-11 sm:rounded-2xl text-[#4ade80]">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden="true">
-                          <path d={f.icon} />
-                        </svg>
-                      </span>
-                      <h3 className="mt-3 text-base font-bold leading-snug text-white sm:mt-4 sm:text-lg">{f.t}</h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-white/60 sm:text-sm">{f.d}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-10 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center sm:mt-14 sm:gap-5 sm:pt-10">
-                <p className="text-sm text-white/55">Built for</p>
-                <ul className="flex flex-wrap justify-center gap-2">
-                  {VOICE_USES.map((u) => (
-                    <li key={u.t}>
-                      <a href={u.href} className="block rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/80 ring-1 ring-white/10 transition-colors hover:bg-white/[0.12] hover:text-white sm:px-4 sm:py-2 sm:text-sm">
-                        {u.t}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                <a href={VOICE_SEO.pricing.href} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
-                  Prepaid, from ₹3.50 a minute — see AI voice agent pricing →
-                </a>
-              </div>
             </div>
           </div>
         </section>
@@ -385,7 +356,7 @@ export default function Home() {
               <div key={s.v} className="border-l border-line pl-5 lg:pl-8">
                 <dt className="sr-only">{s.l}</dt>
                 <dd>
-                  <p className="whitespace-nowrap font-display text-[1.7rem] font-bold tracking-tight text-ink sm:text-5xl">{s.v}</p>
+                  <p className="whitespace-nowrap text-[1.7rem] font-semibold tracking-tight text-ink sm:text-4xl lg:text-[2.6rem]">{s.v}</p>
                   <p className="mt-2 max-w-[14rem] text-sm leading-snug text-ink-3">{s.l}</p>
                 </dd>
               </div>
@@ -393,8 +364,29 @@ export default function Home() {
           </dl>
         </section>
 
+        {/* ── Proof, not promises: two client stories ── */}
+        <section aria-labelledby="proof" className="bg-canvas py-16 lg:py-24">
+          <div className={COL}>
+            <h2 id="proof" className="text-3xl font-semibold leading-[1.1] lg:text-[44px]">Proof, not promises</h2>
+            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-ink-2">We re-engineer how businesses run, so people do the work only people can do.</p>
+            <div className="mt-11 grid gap-5 md:grid-cols-2">
+              {CASES.map((c) => (
+                <article key={c.h} className="flex flex-col gap-4 rounded-3xl border border-line bg-white p-6 lg:p-[30px]">
+                  <span className="grid h-16 w-[180px] place-items-center rounded-[14px] border border-line p-2.5">
+                    <Image src={c.logo} alt={c.name} width={320} height={c.lh} className="max-h-10 w-auto" />
+                  </span>
+                  <span className="self-start rounded-full bg-sky px-3 py-1 text-xs font-semibold text-navy">{c.tag}</span>
+                  <h3 className="text-[26px] font-semibold leading-tight">{c.h}</h3>
+                  <p className="leading-relaxed text-ink-2">{c.p}</p>
+                  <p className="rounded-2xl bg-navy px-5 py-4 font-medium leading-normal text-white">{c.imp}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Work ── */}
-        <section aria-labelledby="work" className="bg-canvas">
+        <section aria-labelledby="work">
           <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
             <Heading
               id="work"
@@ -446,7 +438,7 @@ export default function Home() {
         </section>
 
         {/* ── Services ── */}
-        <section aria-labelledby="services">
+        <section aria-labelledby="services" className="bg-canvas">
           <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
             <Heading
               id="services"
@@ -464,7 +456,7 @@ export default function Home() {
                 <li key={s.slug}>
                   <Link
                     href={`${SERVICES.base}/${s.slug}`}
-                    className="group flex h-full flex-col gap-3 rounded-3xl p-4 ring-1 sm:flex-row sm:gap-5 sm:p-6 ring-black/[0.07] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5"
+                    className="group flex h-full flex-col gap-3 rounded-3xl border border-line bg-white p-4 transition-colors duration-300 hover:border-navy/30 sm:flex-row sm:gap-5 sm:p-6"
                   >
                     <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-canvas sm:size-14 transition-colors group-hover:bg-electric/10">
                       <Image src={serviceIcon(k)} alt="" width={120} height={130} className="h-9 w-auto" />
@@ -480,6 +472,33 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* ── Founder ── */}
+        <section aria-labelledby="founder" className="py-16 lg:py-24">
+          <div className={`${COL} grid items-center gap-7 lg:grid-cols-[380px_1fr] lg:gap-14`}>
+            <figure className="overflow-hidden rounded-3xl bg-[#7E1F2C]">
+              <Image src="/assets/founder.jpg" alt="Sai Charan L" width={680} height={850} className="w-full" />
+              <figcaption className="px-[22px] pb-5 pt-4 text-white">
+                <b className="block text-xl font-semibold">Sai Charan L</b>
+                <small className="text-sm text-white/75">{`Founder, ${COMPANY.name}, Hyderabad`}</small>
+              </figcaption>
+            </figure>
+            <div>
+              <h2 id="founder" className="max-w-[20ch] text-3xl font-semibold leading-[1.1] lg:text-[44px]">Built by product people, for business owners</h2>
+              <p className="mt-5 text-lg leading-relaxed text-ink-2 [&_b]:font-semibold [&_b]:text-ink">
+                Sai Charan L has worked as an Associate Product Manager at <b>Google</b>, a developer at <b>Zomato</b>, at <b>HackerRank</b> and the AI startup <b>SuperU</b>, and as founding engineer at <b>ICOM</b>, alongside two <b>Y Combinator</b>-backed startups. He studied at <b>IIT Madras</b> and was selected for the <b>ISB Young Leaders Programme</b>. He grew ElevateBox from a first batch of 600 students into the technology company it is today.
+              </p>
+              <ul className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
+                {FOUNDER_CREDS.map((c) => (
+                  <li key={c.alt} className="rounded-2xl border border-line p-4 text-center">
+                    <Image src={c.src} alt={c.alt} width={320} height={c.h} className="mx-auto h-[34px] w-[120px] object-contain" />
+                    <small className="mt-2.5 block text-[13px] text-ink-2">{c.l}</small>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -541,6 +560,47 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* ── In their words: institutions we train with ── */}
+        <section aria-labelledby="words" className="bg-night-2 py-16 text-white lg:py-24">
+          <div className={COL}>
+            <h2 id="words" className="text-3xl font-semibold leading-[1.1] text-white lg:text-[44px]">In their words</h2>
+            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-white/70">Leaders from the institutions where we&apos;ve trained 21,000+ students.</p>
+            <div className="mt-11 grid gap-5 lg:grid-cols-[1.3fr_1fr_1fr]">
+              {QUOTES.map((q, k) => (
+                <figure key={q.who} className="flex flex-col justify-between gap-6 rounded-3xl bg-night-3 p-6 lg:p-[30px]">
+                  <blockquote className={k === 0 ? "text-[22px] font-light leading-normal lg:text-2xl" : "text-[19px] leading-normal"}>{`“${q.q}”`}</blockquote>
+                  <figcaption className="flex items-center gap-3.5">
+                    <span className="grid size-[52px] shrink-0 place-items-center rounded-xl bg-white">
+                      <Image src={q.logo} alt="" width={128} height={128} className="max-h-10 w-auto" />
+                    </span>
+                    <span>
+                      <b className="block text-[15px] font-semibold">{q.who}</b>
+                      <small className="text-[13px] text-white/65">{q.role}</small>
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <div className="mt-11 flex flex-wrap items-center gap-6 border-t border-white/15 pt-8 lg:flex-nowrap">
+              <p className="shrink-0 text-[15px] text-white/75">
+                <b className="block text-[28px] font-semibold text-white">27+ institutions</b>
+                21,000+ students trained
+              </p>
+              <div className="mq min-w-0 basis-full lg:basis-auto lg:flex-1">
+                <ul className="mq-t [animation-duration:30s]">
+                  {[0, 1].flatMap((n) =>
+                    EDU.map(([src, alt]) => (
+                      <li key={`${src}-${n}`} aria-hidden={n > 0 || undefined} className="grid size-[58px] shrink-0 place-items-center rounded-[14px] bg-white">
+                        <Image src={`/assets/edu/${src}.png`} alt={n > 0 ? "" : alt} width={128} height={128} className="max-h-11 max-w-11 object-contain" />
+                      </li>
+                    )),
+                  )}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -637,7 +697,7 @@ export default function Home() {
                   {`Start with a ${DISCOVERY.title}: we work through what you need and hand you a written quotation. Or call ${COMPANY.phone}.`}
                 </p>
               </div>
-              <DiscoveryOffer dark />
+              <DiscoveryOffer />
             </div>
           </div>
         </section>
@@ -652,8 +712,7 @@ export default function Home() {
               , which calls leads in Telugu, Hindi and English.
             </p>
             <p className="mt-4 max-w-4xl leading-relaxed text-ink-3">
-              Our engineers have worked at JPMorgan Chase, Google and Y Combinator-backed startups, and placed in the top
-              0.17% at ACM ICPC. We work from Hyderabad with clients in India, the UAE, the UK, Europe and the US, and
+              Our founder has worked at Google, Zomato, HackerRank and two Y Combinator-backed startups. We work from Hyderabad with clients in India, the UAE, the UK, Europe and the US, and
               everything we build is handed over so your own team can run it.
             </p>
             <ul className="-mx-5 mt-8 flex gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:flex-wrap md:px-0">
@@ -665,6 +724,18 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+        {/* ── The paid first step, as a closing band ── */}
+        <section aria-labelledby="start" className="bg-navy py-[72px] text-white">
+          <div className={`${COL} flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-center`}>
+            <div>
+              <h2 id="start" className="max-w-[20ch] text-3xl font-semibold leading-[1.15] text-white lg:text-[40px]">Start with a ₹3,500 requirement analysis</h2>
+              <p className="mt-2.5 text-[17px] text-white/75">A written quotation and timeline before you commit to anything.</p>
+            </div>
+            <Link href="/book" className="inline-flex h-[52px] shrink-0 items-center rounded-full bg-amber px-[26px] text-base font-semibold text-amber-ink hover:bg-[#ffbf47]">
+              Get quote now
+            </Link>
           </div>
         </section>
       </main>
