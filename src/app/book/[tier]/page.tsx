@@ -139,6 +139,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   const minutes = c.title.split("-")[0];
   const kind = c.kind ?? "strategic consultation";
   const join = `Join for a ${kind}`;
+  // ponytail: only the ₹99 tech call shows its price on the page (owner 2026-11-15); others unchanged.
+  const showPrice = c.slug === "499";
+  const note = showPrice ? `${c.price} to book. ${GUARANTEE}` : GUARANTEE;
   const photos = c.photos ?? PHOTOS;
 
   const faqs = [
@@ -183,7 +186,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               <a href={`${path}/form`} className={`mt-7 block rounded-md px-4 py-4 sm:px-6 text-center text-balance leading-snug text-[14px] font-bold uppercase text-white sm:text-base sm:tracking-wide shadow-sm transition-colors ${ORANGE}`}>
                 {join}
               </a>
-              <p className="mt-2 text-center text-sm text-[#424242]">{GUARANTEE}</p>
+              <p className="mt-2 text-center text-sm text-[#424242]">{note}</p>
             </div>
             <div className="order-first lg:order-none">
               {/* Real app screens, shown whole in phone frames, fanned. On phones they come first: product before words. */}
@@ -223,7 +226,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 </li>
               ))}
             </ul>
-            <Cta href={`${path}/form`} label={join} />
+            <Cta href={`${path}/form`} label={join} note={note} />
           </div>
         </section>
 
@@ -260,7 +263,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-[#424242]">
               We price on what the work is worth to you in the next six months, not on your lifetime plans. The call is where we work out which one fits.
             </p>
-            <Cta href={`${path}/form`} label={join} />
+            <Cta href={`${path}/form`} label={join} note={note} />
           </div>
         </section>}
 
@@ -296,7 +299,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                 </li>
               ))}
             </ul>
-            <Cta href={`${path}/form`} label={join} />
+            <Cta href={`${path}/form`} label={join} note={note} />
           </div>
         </section>}
 
@@ -320,7 +323,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               ))}
             </div>
           </div>
-          <Cta href={`${path}/form`} label={join} />
+          <Cta href={`${path}/form`} label={join} note={note} />
         </section>
       </main>
 
@@ -337,7 +340,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <div>
           <p className={`font-semibold tracking-tight whitespace-nowrap text-lg leading-none`}>{kind[0].toUpperCase() + kind.slice(1)}</p>
-          <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet`}</p>
+          <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet${showPrice ? `, ${c.price}` : ""}`}</p>
         </div>
         <a href={`${path}/form`} className={`rounded-md px-5 py-3 shrink-0 whitespace-nowrap text-sm font-bold uppercase text-white ${ORANGE}`}>Join now</a>
       </div>

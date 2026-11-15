@@ -22,7 +22,7 @@ const Q: Question[] = [
   { k: "stance", q: "Which statement best describes you?", opts: ["I'm ready to start immediately", "I have a clear requirement and I'm comparing partners", "I have a tech team and need expert execution", "I'm looking for a long-term technology partner"] },
 ];
 
-type Offer = { slug: string; title: string; price: string; questions?: Question[] };
+type Offer = { slug: string; title: string; price: string; includes?: string[]; questions?: Question[] };
 type Rzp = new (o: object) => { open: () => void };
 declare global {
   interface Window { fbq?: (...a: unknown[]) => void; Razorpay?: Rzp }
@@ -178,10 +178,19 @@ export function ConsultForm({ offer }: { offer: Offer }) {
                 </button>
               ))}
             </div>
+            {offer.includes && (
+              <div className="mt-6 rounded-xl bg-[#f7f7f5] p-4">
+                <p className="text-sm font-semibold text-ink">{`What you get for ${offer.price}`}</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-3">
+                  {offer.includes.map((i) => <li key={i}>{i}</li>)}
+                </ul>
+              </div>
+            )}
             <button type="button" disabled={!time || busy} onClick={pay} className={`mt-6 w-full ${primary}`}>
               {busy ? "Opening payment…" : `Pay ${offer.price} and confirm`}
             </button>
-            <p className="mt-3 text-center text-xs text-ink-3">Secure payment by Razorpay. UPI, cards and netbanking. Full refund if the call isn&apos;t useful.</p>
+            <p className="mt-3 text-center text-sm font-semibold text-ink">Not useful? Tell us after the call and we refund you in full.</p>
+            <p className="mt-1 text-center text-xs text-ink-3">Secure payment by Razorpay. UPI, cards and netbanking.</p>
           </>
         )}
         {msg && <p role="alert" className="mt-4 text-sm font-semibold text-red-700">{msg}</p>}
