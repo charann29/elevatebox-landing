@@ -252,7 +252,7 @@ export function DiscoveryOffer({ dark }: { dark?: boolean }) {
         ))}
       </ul>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href={DISCOVERY.pay} className="rounded-full bg-electric px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-electric/30 transition-colors hover:bg-[#2f5cf0]">
+        <a href={DISCOVERY.pay} className="rounded-full bg-electric px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-electric/30 transition-colors hover:bg-[#2b6a29]">
           {`Pay ${DISCOVERY.price} and pick a time`}
         </a>
         <a href={wa} className={`rounded-full border px-6 py-3.5 text-center text-sm font-semibold "border-black/10 text-ink"`}>

@@ -178,14 +178,14 @@ export function PillCta({
   return (
     <Link
       href={href}
-      className={`group inline-flex items-center gap-3 rounded-full py-1.5 pl-5 pr-1.5 text-sm font-semibold shadow-lg transition-transform hover:-translate-y-0.5 ${
-        light ? "bg-white text-ink shadow-black/20" : "bg-electric text-white shadow-electric/30 hover:bg-[#2f5cf0]"
+      className={`group inline-flex items-center gap-3 rounded-full py-1.5 pl-5 pr-1.5 text-sm font-semibold uppercase tracking-[0.08em] shadow-lg transition-transform hover:-translate-y-0.5 ${
+        light ? "bg-white text-ink shadow-black/20" : "bg-lime text-ink shadow-electric/15 ring-1 ring-electric/15 hover:bg-electric-2"
       } ${className}`}
     >
       {children}
       <span
         className={`grid size-8 place-items-center rounded-full transition-transform group-hover:rotate-45 ${
-          light ? "bg-ink text-white" : "bg-white/15 text-white"
+          light ? "bg-ink text-white" : "bg-electric text-white"
         }`}
       >
         {ARROW_UP_RIGHT}
@@ -201,9 +201,9 @@ export function Header() {
     {/* Voice, announced above every page. */}
     <a
       href={VOICE_APP}
-      className="block bg-linear-to-r/srgb from-[#1d3fd6] via-electric to-[#1d3fd6] px-4 py-2.5 text-center text-xs text-white transition hover:brightness-110 sm:text-sm"
+      className="block bg-electric-2 px-4 py-2.5 text-center text-xs text-ink transition hover:brightness-105 sm:text-sm"
     >
-      <span aria-hidden="true" className="mr-2 inline-block size-2 animate-pulse rounded-full bg-[#4ade80] align-middle" />
+      <span aria-hidden="true" className="mr-2 inline-block size-2 animate-pulse rounded-full bg-electric align-middle" />
       <strong className="font-semibold">Voice by {COMPANY.name}</strong>
       {" — India's best conversational voice agent"}
       <span className="hidden sm:inline"> · 8 lakh calls a day</span>
@@ -326,54 +326,54 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="relative overflow-hidden bg-night text-white/55">
+    <footer className="relative overflow-hidden bg-linear-to-b from-white to-[#e3edfb] text-ink-3">
       {/* The big faded wordmark behind the footer. Decorative only. */}
       <p
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -bottom-[3vw] select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-white/[0.04]"
+        className="pointer-events-none absolute inset-x-0 -bottom-[3vw] select-none text-center font-display text-[18vw] font-extrabold leading-none tracking-tighter text-brand/[0.05]"
       >
         elevatebox
       </p>
       <div className="relative mx-auto max-w-7xl px-5 pb-[14vw] pt-20 lg:px-8">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div className="col-span-2 lg:col-span-1">
-            <Logo white className="h-8 w-auto" />
+            <Logo className="h-8 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed">
               {`${COMPANY.tagline} From Hyderabad, for clients across India, the UAE, UK, Europe and the US.`}
             </p>
             <dl className="mt-6 space-y-1.5 text-sm">
               <div>
                 <dt className="sr-only">Email</dt>
-                <dd><a className="hover:text-white" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></dd>
+                <dd><a className="hover:text-brand" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></dd>
               </div>
               <div>
                 <dt className="sr-only">Phone</dt>
-                <dd><a className="hover:text-white" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>{COMPANY.phone}</a></dd>
+                <dd><a className="hover:text-brand" href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}>{COMPANY.phone}</a></dd>
               </div>
               <div>
                 <dt className="sr-only">Hours</dt>
                 <dd>{`${COMPANY.address} · ${COMPANY.hours}`}</dd>
               </div>
             </dl>
-            <a href={VOICE_APP} className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-white hover:border-white/40">
+            <a href={VOICE_APP} className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand/20 px-4 py-2 text-xs font-semibold text-brand hover:border-brand/50">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#16a34a]" />
               Voice by ElevateBox →
             </a>
             <ul className="mt-4 space-y-2 text-sm">
               {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.pricing].map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="transition-colors hover:text-white">{l.label}</a>
+                  <a href={l.href} className="transition-colors hover:text-brand">{l.label}</a>
                 </li>
               ))}
             </ul>
           </div>
           {cols.map((c) => (
             <div key={c.h}>
-              <h3 className="text-sm font-semibold text-white">{c.h}</h3>
+              <h3 className="text-sm font-semibold text-ink">{c.h}</h3>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="text-sm leading-snug transition-colors hover:text-white">
+                    <Link href={l.href} className="text-sm leading-snug transition-colors hover:text-brand">
                       {l.label}
                     </Link>
                   </li>
@@ -383,13 +383,13 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-dashed border-[#cfd6df] pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>{`© ${new Date().getFullYear()} ${COMPANY.legal}. All rights reserved.`}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link className="hover:text-white" href="/privacy-policy">Privacy Policy</Link>
-            <Link className="hover:text-white" href="/terms-and-conditions">Terms &amp; Conditions</Link>
-            <Link className="hover:text-white" href="/cancellation-and-refund">Cancellation &amp; Refund</Link>
-            <Link className="hover:text-white" href="/sitemap-page">Sitemap</Link>
+            <Link className="hover:text-brand" href="/privacy-policy">Privacy Policy</Link>
+            <Link className="hover:text-brand" href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link className="hover:text-brand" href="/cancellation-and-refund">Cancellation &amp; Refund</Link>
+            <Link className="hover:text-brand" href="/sitemap-page">Sitemap</Link>
           </div>
         </div>
       </div>

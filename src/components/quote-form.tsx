@@ -97,7 +97,7 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
       </div>
       <button
         type="submit"
-        className="rounded-full bg-electric px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#2f5cf0]"
+        className="rounded-full bg-electric px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#2b6a29]"
       >
         Send on WhatsApp
       </button>

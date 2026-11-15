@@ -191,11 +191,11 @@ function Heading({ id, eyebrow, title, lead, dark, action }: { id: string; eyebr
   return (
     <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
       <div className="max-w-2xl">
-        <p className={`text-sm font-semibold "text-electric"`}>{eyebrow}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">{eyebrow}</p>
         <h2 id={id} className={`mt-3 text-3xl font-bold leading-[1.08] sm:text-5xl ${dark ? "text-ink" : ""}`}>
           {title}
         </h2>
-        {lead && <p className={`mt-4 text-base leading-relaxed sm:text-lg "text-ink-3"`}>{lead}</p>}
+        {lead && <p className="mt-5 border-l-4 border-leaf pl-5 text-base leading-relaxed text-ink-2 sm:text-lg">{lead}</p>}
       </div>
       {action}
     </div>
@@ -297,7 +297,7 @@ export default function Home() {
         {/* ── Voice: the flagship ── */}
         <section aria-labelledby="voice" className="px-3 pt-6 sm:px-5">
           <div className="relative mx-auto max-w-[96rem] overflow-hidden rounded-[2.5rem] bg-night ring-1 ring-[#22c55e]/25">
-            <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(50%_45%_at_15%_0%,rgba(34,197,94,0.18),transparent_70%),radial-gradient(55%_50%_at_90%_10%,rgba(61,107,255,0.3),transparent_70%)]" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(50%_45%_at_15%_0%,rgba(34,197,94,0.18),transparent_70%),radial-gradient(55%_50%_at_90%_10%,rgba(45,86,181,0.45),transparent_70%)]" />
             <div aria-hidden="true" className="night-grid absolute inset-0" />
             <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <div className="mx-auto max-w-3xl text-center">

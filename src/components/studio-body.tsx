@@ -9,5 +9,5 @@ export function StudioBody({ html }: { html: string }) {
     if (!ref.current || !w.StudioBlocks) return;
     return w.StudioBlocks.enhance(ref.current);
   }, [html]);
-  return <div ref={ref} className="studio-body leading-relaxed text-ink-muted" style={{ "--studio-accent": "#013186" } as React.CSSProperties} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div ref={ref} className="studio-body leading-relaxed text-ink-muted" style={{ "--studio-accent": "#214497" } as React.CSSProperties} dangerouslySetInnerHTML={{ __html: html }} />;
 }

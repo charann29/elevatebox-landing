@@ -77,8 +77,8 @@ function Chart({ bottom, top }: { bottom: Month[]; top: Month[] }) {
           const x = i * bw + bw * 0.18, w = bw * 0.64;
           return (
             <g key={t.m}>
-              <rect x={x} y={H - ht} width={w} height={ht} rx="3" fill="none" stroke="#013186" strokeWidth="1.5" />
-              <rect x={x} y={H - hb} width={w} height={hb} rx="3" fill="#013186" />
+              <rect x={x} y={H - ht} width={w} height={ht} rx="3" fill="none" stroke="#214497" strokeWidth="1.5" />
+              <rect x={x} y={H - hb} width={w} height={hb} rx="3" fill="#214497" />
               <text x={x + w / 2} y={H + 16} textAnchor="middle" fontSize="11" fill="#3f3f46">M{t.m}</text>
             </g>
           );

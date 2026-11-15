@@ -4,41 +4,43 @@
   /* Ink scale. Near-black rather than pure black — pure #000 on white reads
      harsh at large sizes and is the single most common tell of an unconsidered
      palette. */
-  --color-ink: #0a0a0a;
-  --color-ink-2: #3f3f46;
-  --color-ink-3: #71717a;
-  --color-ink-4: #71717a; /* was #a1a1aa: 2.6:1 on white failed WCAG AA; now matches ink-3 (4.8:1) */
+  --color-ink: #1e1e2f; /* Endiya ink */
+  --color-ink-2: #3d3d52;
+  --color-ink-3: #62647a;
+  --color-ink-4: #62647a; /* matches ink-3 (5.8:1 on white) */
 
   /* Hairlines and surfaces. Borders carry the structure here, not shadows. */
-  --color-line: #e4e4e7;
-  --color-line-soft: #f1f1f3;
+  --color-line: #e2e7ee;
+  --color-line-soft: #eef2f6;
   --color-surface: #ffffff;
-  --color-surface-2: #fafafa;
+  --color-surface-2: #f8fafc;
   /* Page canvas: a soft grey so white cards lift off it without shadows. */
-  --color-canvas: #f6f7f9;
-  --color-canvas-2: #eef0f4;
+  --color-canvas: #f3f6f9;
+  --color-canvas-2: #eaf0f6;
 
   /* Night: the dark bands (header, heroes, the closing card, footer). A blue-black, not grey. */
-  --color-night: #060912;
-  --color-night-2: #0c1222;
-  --color-night-3: #141b2e;
+  --color-night: #0e1733; /* deep Endiya navy */
+  --color-night-2: #152150;
+  --color-night-3: #1c2b63;
   /* Electric: the brand blue, lifted so it carries on night. The logo's #013186 disappears there. */
-  --color-electric: #3462f2; /* was #3d6bff: white text on it was 4.4:1, just under WCAG AA; now 5.0:1 */
-  --color-electric-2: #7c9bff;
+  --color-electric: #357f32; /* Endiya green, darkened so white text passes AA (5.0:1); raw #469843 is 3.6:1 */
+  --color-electric-2: #b5d56a; /* Endiya lime */
+  --color-lime: #e0eec2; /* Endiya soft button */
+  --color-leaf: #469843; /* Endiya green, decorative only */
 
   /* Brand blue, kept as an accent. It should appear a handful of times per
      page — links, one button state, the odd rule. When it is everywhere it
      stops meaning anything. */
-  --color-brand: #013186;
-  --color-brand-soft: #0145a6;
-  --color-brand-wash: #f5f8ff;
+  --color-brand: #214497; /* Endiya navy */
+  --color-brand-soft: #2d56b5;
+  --color-brand-wash: #eff3f9;
 
   /* Retained so existing routes that still reference the old tokens compile
      until they are migrated. */
-  --color-brand-dark: #001f57;
-  --color-accent: #013186;
-  --color-accent-soft: #f5f8ff;
-  --color-ink-muted: #3f3f46;
+  --color-brand-dark: #172f6b;
+  --color-accent: #214497;
+  --color-accent-soft: #eff3f9;
+  --color-ink-muted: #3d3d52;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: "Satoshi", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -107,8 +109,8 @@ p {
 }
 
 ::selection {
-  background: var(--color-electric);
-  color: #fff;
+  background: var(--color-electric-2);
+  color: var(--color-ink);
 }
 
 :where(a, button, summary, input, select, textarea):focus-visible {
@@ -133,8 +135,8 @@ details[open] > summary .chev {
 /* Night band backdrop: a blue glow from the top and a faint grid that fades out. Decorative. */
 .night-glow {
   background:
-    radial-gradient(60% 55% at 70% 0%, rgba(61, 107, 255, 0.32), transparent 70%),
-    radial-gradient(40% 40% at 0% 100%, rgba(61, 107, 255, 0.12), transparent 70%),
+    radial-gradient(60% 55% at 70% 0%, rgba(70, 152, 67, 0.28), transparent 70%),
+    radial-gradient(40% 40% at 0% 100%, rgba(33, 68, 151, 0.35), transparent 70%),
     var(--color-night);
 }
 .night-grid {
@@ -145,29 +147,38 @@ details[open] > summary .chev {
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
-/* Light band: white with a faint grey grid, like a clean product page. Decorative. */
+/* Light band: white fading into Endiya's pale blue, with soft green/lime streaks (Equal-style). Decorative. */
 .light-glow {
-  background: linear-gradient(180deg, #ffffff 0%, var(--color-canvas) 100%);
+  background:
+    radial-gradient(35% 60% at 85% 10%, rgba(181, 213, 106, 0.22), transparent 70%),
+    radial-gradient(30% 50% at 60% 0%, rgba(70, 152, 67, 0.1), transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #eef3fb 100%);
 }
 .light-grid {
   background-image:
-    linear-gradient(rgba(10, 10, 10, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 10, 10, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(30, 30, 47, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 30, 47, 0.03) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
-/* On light bands the accent runs navy to brand blue. */
-.light-glow .text-gradient {
-  background-image: linear-gradient(90deg, #013186, #3d6bff);
-}
-
-/* Headline accent: brand blue to a lighter blue. */
+/* Headline accent on dark bands: lime to green. */
 .text-gradient {
-  background: linear-gradient(90deg, #7c9bff, #3d6bff 55%, #9fb6ff);
+  background: linear-gradient(90deg, #d4ec8f, #b5d56a 50%, #7cc46f);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* On light bands the accent is a lime highlight behind the word (Equal-style), in Endiya lime. */
+.light-glow .text-gradient {
+  background: linear-gradient(transparent 12%, var(--color-electric-2) 12%, var(--color-electric-2) 92%, transparent 92%);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--color-ink);
+  padding-inline: 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 @keyframes marquee {
