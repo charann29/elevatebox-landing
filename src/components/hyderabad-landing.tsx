@@ -35,9 +35,14 @@ function Band({ id, tint, children }: { id: string; tint?: boolean; children: Re
   );
 }
 
-/** One Hyderabad landing page, laid out in the order the page-1 study recommends. */
+/** One Hyderabad landing page, laid out in the order the page-1 study recommends.
+ *  With page.intl (lib/global.ts) it serves clients abroad: no prices, WhatsApp/email booking. */
 export function HyderabadLanding({ page }: { page: HydPage }) {
   const cases = page.cases.slugs.map((s) => PROJECTS.find((p) => p.slug === s)!);
+  const intl = page.intl;
+  const book = intl ? `${WA}?text=${encodeURIComponent(`Hi, I'd like to book a call about ${page.serviceType.toLowerCase()} (${intl.country}).`)}` : undefined;
+  const crumbs = intl ? [{ label: "Global", href: "/global" }, { label: page.h1 }] : [{ label: page.h1 }];
+  const proof = intl ? PROOF.map((p) => (p.v === "8 lakh" ? { ...p, v: "800,000" } : p)) : PROOF;
   return (
     <>
       <Header />
@@ -54,11 +59,17 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               email: COMPANY.email,
               address: ORG.address,
               openingHours: "Mo-Sa 10:00-19:00",
-              areaServed: (page.areas ?? ["Hyderabad", ...AREAS]).map((name) => ({ "@type": "Place", name })),
+              areaServed: intl
+                ? [{ "@type": "Country", name: intl.country }]
+                : (page.areas ?? ["Hyderabad", ...AREAS]).map((name) => ({ "@type": "Place", name })),
               parentOrganization: { "@id": ORG["@id"] },
             },
-            { ...service(page.serviceType, page.description, page.path), serviceType: page.serviceType },
-            breadcrumb([{ name: page.h1, path: page.path }]),
+            {
+              ...service(page.serviceType, page.description, page.path),
+              serviceType: page.serviceType,
+              ...(intl && { areaServed: [{ "@type": "Country", name: intl.country }] }),
+            },
+            breadcrumb([...(intl ? [{ name: "Global", path: "/global" }] : []), { name: page.h1, path: page.path }]),
             faqPage(page.faqs),
           )}
         />
@@ -66,11 +77,11 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         {/* ── First screen: the phrase, what is built, proof, and the way to start ── */}
         <section className="hero-3d overflow-hidden">
           <div className={`${COL} pb-14 pt-8 lg:pb-20 lg:pt-12`}>
-            <Crumbs items={[{ label: page.h1 }]} />
+            <Crumbs items={crumbs} />
             <h1 className="mt-8 max-w-4xl text-4xl font-[700] leading-[1.04] tracking-[-0.03em] text-white sm:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">{page.sub}</p>
             <dl className="mt-9 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {PROOF.map((s) => (
+              {proof.map((s) => (
                 <div key={s.l} className="rounded-2xl border border-white/15 bg-white/10 p-4">
                   <dt className="sr-only">{s.l}</dt>
                   <dd>
@@ -84,7 +95,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               Built by product people from Google, Zomato and Y Combinator-backed startups.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <PillCta className="justify-between sm:justify-start">Get a quote</PillCta>
+              <PillCta href={book} className="justify-between sm:justify-start">{intl ? "Book a call" : "Get a quote"}</PillCta>
               <a href={WA} className="rounded-full px-6 py-3 text-center text-sm font-semibold text-white ring-[1.5px] ring-inset ring-white/80 transition-colors hover:bg-white/10">
                 Message us on WhatsApp
               </a>
@@ -156,7 +167,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                 <span aria-hidden="true" className="size-2 rounded-full bg-[#04210f]" />
                 Try Roopa, our AI voice agent
               </a>
-              <div className="mt-10 border-t border-brand/10 pt-8">
+              {!intl && <div className="mt-10 border-t border-brand/10 pt-8">
                 <p className="text-sm font-semibold text-ink">AI voice agents in Hyderabad</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.realEstateHyd, VOICE_SEO.clinicsHyd, VOICE_SEO.coachingHyd, VOICE_SEO.loansHyd].map((l) => (
@@ -167,7 +178,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div>}
             </div>
           </div>
         </section>
@@ -272,13 +283,15 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         </Band>
 
         <Band id="local" tint>
-          <H2 id="local">Based in Hyderabad</H2>
+          <H2 id="local">{intl ? intl.local.h2 : "Based in Hyderabad"}</H2>
           <p className="mt-4 max-w-3xl leading-relaxed text-ink-3">
-            {`${COMPANY.name} (${COMPANY.legal}) works from ${COMPANY.address}, ${COMPANY.hours}. We meet clients in person across the city and work remotely with teams in India, the UAE, the UK, Europe and the US.`}
+            {intl
+              ? intl.local.body
+              : `${COMPANY.name} (${COMPANY.legal}) works from ${COMPANY.address}, ${COMPANY.hours}. We meet clients in person across the city and work remotely with teams in India, the UAE, the UK, Europe and the US.`}
           </p>
-          <p className="mt-6 text-sm font-semibold text-ink">Areas we serve</p>
+          <p className="mt-6 text-sm font-semibold text-ink">{intl ? "Cities we work with" : "Areas we serve"}</p>
           <ul className="mt-3 flex flex-wrap gap-2">
-            {AREAS.map((a) => (
+            {(intl ? intl.local.chips : AREAS).map((a) => (
               <li key={a} className="rounded-full bg-white px-3.5 py-1.5 text-sm text-ink-2 border border-line">{a}</li>
             ))}
           </ul>
@@ -287,7 +300,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         <Band id="faq">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <H2 id="faq">{`${page.h1.replace(/ Company| in Hyderabad/g, "")} FAQs`}</H2>
+              <H2 id="faq">{`${page.h1.replace(intl ? / Company/ : / Company| in Hyderabad/g, "")} FAQs`}</H2>
               <p className="mt-5 text-ink-3">
                 Something else?{" "}
                 <a href={WA} className="font-semibold text-electric hover:underline">Ask us on WhatsApp</a>
@@ -305,17 +318,30 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               <div>
                 <h2 id="start" className="text-3xl font-bold leading-[1.08] text-ink sm:text-5xl">Tell us what you need</h2>
                 <p className="mt-4 max-w-lg leading-relaxed text-ink-2">
-                  Message us on WhatsApp or call about what you are building. When you are ready, the requirement analysis
-                  turns it into a written quotation.
+                  {intl
+                    ? "Message us on WhatsApp or email with what you are building and two times that suit you. We confirm a call within one working day, then send a written quotation."
+                    : "Message us on WhatsApp or call about what you are building. When you are ready, the requirement analysis turns it into a written quotation."}
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <a href={WA} className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-semibold text-[#04210f]">WhatsApp us</a>
+                  <a href={book ?? WA} className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-semibold text-[#04210f]">WhatsApp us</a>
                   <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-brand/10 px-6 py-3 text-center text-sm font-semibold text-ink">
                     {`Call ${COMPANY.phone}`}
                   </a>
                 </div>
               </div>
-              <DiscoveryOffer />
+              {intl ? (
+                <div className="rounded-3xl border border-line bg-white p-7 sm:p-10">
+                  <p className="text-sm font-semibold text-navy">Book a call</p>
+                  <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">Talk to the people who will build it</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-2">{`We work through your requirements with you, in your time zone, and follow up with a written quotation and timeline. ${COMPANY.phone} · ${COMPANY.email}`}</p>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href={book} className="rounded-full bg-amber px-6 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-[#ffbf47]">Book on WhatsApp</a>
+                    <a href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(`Call about ${page.h1}`)}`} className="rounded-full border border-line px-6 py-3.5 text-center text-sm font-semibold text-navy hover:border-navy/40">Email us</a>
+                  </div>
+                </div>
+              ) : (
+                <DiscoveryOffer />
+              )}
             </div>
           </div>
         </section>

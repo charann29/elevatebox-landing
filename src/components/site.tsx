@@ -1,3 +1,4 @@
+import { GLOBAL_GROUPS } from "@/lib/global";
 import Image from "next/image";
 import Link from "next/link";
 import { CATEGORIES, COMPANY, POSTS, VOICE_APP, VOICE_SEO, serviceIcon } from "@/lib/content";
@@ -417,6 +418,18 @@ export function Footer() {
               <li key={l.href} className="flex items-center">
                 <Link href={l.href} className="whitespace-nowrap hover:text-navy">{l.label}</Link>
                 {k < HYDERABAD.length - 1 && <span aria-hidden="true" className="mx-3.5 size-1 rounded-full bg-[#b7c0d3]" />}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="grid gap-2.5 border-t border-line py-6 lg:grid-cols-[160px_1fr] lg:items-baseline lg:gap-5">
+          <h3 className="text-[15px] font-semibold text-ink">Outside India</h3>
+          <ul className="flex flex-wrap gap-y-2 leading-normal">
+            {[...GLOBAL_GROUPS.map((g) => ({ label: `App development in ${g.label.replace(/^The /, "the ")}`, href: g.pages[2].href })), { label: "All countries", href: "/global" }].map((l, k, all) => (
+              <li key={l.href} className="flex items-center">
+                <Link href={l.href} className="whitespace-nowrap hover:text-navy">{l.label}</Link>
+                {k < all.length - 1 && <span aria-hidden="true" className="mx-3.5 size-1 rounded-full bg-[#b7c0d3]" />}
               </li>
             ))}
           </ul>
