@@ -249,11 +249,12 @@ export default function Home() {
             </Link>
             <a href={VOICE_APP} className="inline-flex h-[52px] items-center gap-2 rounded-full px-[26px] text-base font-semibold text-white ring-[1.5px] ring-inset ring-white hover:bg-white/10">
               <span aria-hidden="true" className="size-2 rounded-full bg-live" />
-              Try Voice AI free
+              Try Roopa free
             </a>
           </div>
-          <p className="mt-5 text-sm text-white/70">
-            <b className="font-semibold text-white">380+ apps built</b> · bugs fixed in under 6 hours
+          <p className="mx-auto mt-5 max-w-[34em] text-sm leading-relaxed text-white/75">
+            <b className="font-semibold text-white">What is Roopa?</b> Our AI phone agent that calls your leads in Telugu,
+            Hindi and English, and books the next step. Just try it for free.
           </p>
           <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-0 lg:mt-0 lg:h-[520px] lg:w-[1100px] lg:origin-bottom lg:scale-[0.65]">
             {FAN.map((f) => (

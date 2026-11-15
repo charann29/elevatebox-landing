@@ -154,7 +154,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               </ul>
               <a href={VOICE_APP} className="mt-8 inline-flex items-center gap-2 rounded-full bg-live px-6 py-3 text-sm font-semibold text-[#04210f]">
                 <span aria-hidden="true" className="size-2 rounded-full bg-[#04210f]" />
-                Try Voice, our AI voice agent
+                Try Roopa, our AI voice agent
               </a>
               <div className="mt-10 border-t border-brand/10 pt-8">
                 <p className="text-sm font-semibold text-ink">AI voice agents in Hyderabad</p>
