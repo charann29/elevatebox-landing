@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { COMPANY, OG_IMG } from "@/lib/content";
 import type { CmsPage, CmsPost } from "@/lib/cms";
 import { Header, Footer } from "@/components/site";
-import { CtaBand, PageHero, Section } from "@/components/blocks";
+import { AuthorBox, BlogCover, Byline, COL, FaqCards, PriceCta, RichHero, Toc } from "@/components/inner";
 import { StudioBody } from "@/components/studio-body";
 import { JsonLd, ORG, breadcrumb, faqPage, ld } from "@/lib/schema";
 import "@/app/studio-blocks.css";
@@ -54,68 +54,53 @@ export function StudioArticle({ p, path, crumbs }: { p: CmsPost | CmsPage; path:
             ...(p.faq.length ? [faqPage(p.faq)] : []),
           )}
         />
-        <PageHero
+        <RichHero
           eyebrow={p.eyebrow ?? undefined}
           title={h1}
           lead={p.standfirst ?? p.description}
           crumbs={crumbs.map((c, i) => (i < crumbs.length - 1 ? { label: c.name, href: c.path } : { label: c.name }))}
-        />
-        <Section>
-          <article className="max-w-3xl">
-            {p.imageUrl && (
-              // eslint-disable-next-line @next/next/no-img-element -- Cloudinary already sizes it
-              <img src={p.imageUrl} alt={p.imageAlt ?? p.title} className="mb-8 h-auto w-full rounded-2xl shadow-lg" />
-            )}
-            {p.publishedAt && (
-              <p className="text-xs text-ink-muted">
+          actions={false}
+          meta={
+            p.publishedAt ? (
+              <Byline>
                 {fmt(p.publishedAt)} · {p.readingTimeMinutes} min read
-              </p>
-            )}
-            {toc.length >= 2 && (
-              <nav className="studio-toc mt-6" aria-label="In this article">
-                <details open>
-                  <summary>In this article</summary>
-                  <ol>
-                    {toc.map((t) => (
-                      <li key={t.id} data-level={t.level}>
-                        <a href={`#${t.id}`}>{t.text}</a>
-                      </li>
-                    ))}
-                  </ol>
-                </details>
-              </nav>
-            )}
-            <div className="mt-8">
-              <StudioBody html={p.contentHtml} />
+              </Byline>
+            ) : undefined
+          }
+          visual={
+            <div className="overflow-hidden rounded-[28px] ring-1 ring-white/15">
+              <BlogCover slug={path} title={h1} category={p.eyebrow ?? p.tags[0] ?? "Article"} src={p.imageUrl} alt={p.imageAlt ?? p.title} />
             </div>
+          }
+        />
+        <div className={`${COL} grid gap-8 py-12 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16 lg:py-20`}>
+          <Toc items={toc} />
+          <article className="min-w-0 max-w-[70ch] text-[18px] leading-[1.75]">
+            <StudioBody html={p.contentHtml} />
             {p.faqPlacement === "field" && p.faq.length > 0 && (
-              <section className="mt-10">
-                <h2 className="text-2xl font-bold text-brand">{p.faqHeading ?? "Frequently asked questions"}</h2>
-                <dl className="mt-4 space-y-5">
-                  {p.faq.map((f) => (
-                    <div key={f.q}>
-                      <dt className="font-semibold text-brand">{f.q}</dt>
-                      <dd className="mt-1 leading-relaxed text-ink-muted">{f.a}</dd>
-                    </div>
-                  ))}
-                </dl>
+              <section className="mt-12">
+                <h2 className="text-[26px] font-semibold">{p.faqHeading ?? "Frequently asked questions"}</h2>
+                <div className="mt-5">
+                  <FaqCards items={p.faq} />
+                </div>
               </section>
             )}
             {children.length > 0 && (
-              <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+              <ul className="mt-12 grid gap-4 sm:grid-cols-2">
                 {children.map((c) => (
                   <li key={c.path}>
-                    <Link href={c.path} className="block h-full rounded-2xl border border-black/5 bg-white p-6 shadow-sm hover:-translate-y-1">
-                      <span className="font-semibold text-brand">{c.label}</span>
-                      <span className="mt-2 block text-sm leading-relaxed text-ink-muted">{c.description}</span>
+                    <Link href={c.path} className="block h-full rounded-3xl border border-line bg-white p-6 transition-colors hover:border-navy/30">
+                      <span className="font-semibold text-ink">{c.label}</span>
+                      <span className="mt-2 block text-[15px] leading-relaxed text-ink-3">{c.description}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
             )}
+            {!("id" in p) && <AuthorBox />}
           </article>
-        </Section>
-        <CtaBand />
+        </div>
+        <PriceCta />
       </main>
       <Footer />
       <Script src="/studio-blocks.js" strategy="afterInteractive" />

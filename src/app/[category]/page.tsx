@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CATEGORIES, getCategory } from "@/lib/content";
+import { CATEGORIES, FAQS, getCategory } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
-import { CtaBand, Faq, LinkCards, PageHero, Section } from "@/components/blocks";
+import { COL, EntryCards, FaqCards, FeaturedCards, Head, HeroVisual, PriceCta, RichHero, TrustStrip, WorkRow, pageImage } from "@/components/inner";
 
 export const dynamicParams = false;
 
@@ -38,28 +38,35 @@ export default async function CategoryPage({
     <>
       <Header />
       <main className="flex-1">
-        <PageHero
+        <RichHero
           eyebrow={cat.label}
           title={`${cat.label} we deliver`}
           lead={cat.blurb}
           crumbs={[{ label: cat.label }]}
+          visual={<HeroVisual img={pageImage(cat.key)} seed={`${cat.key} index`} chip={`${cat.items.length} ${cat.label.toLowerCase()}`} priority />}
         />
 
-        <Section>
-          <LinkCards base={cat.base} items={cat.items} />
-        </Section>
+        <TrustStrip />
 
-        <Section
-          tinted
-          eyebrow="Common questions"
-          title="Before you get in touch"
-        >
-          <div className="max-w-3xl">
-            <Faq />
+        <section className="bg-canvas">
+          <div className={`${COL} py-16 lg:py-24`}>
+            <FeaturedCards category={cat.key} base={cat.base} items={cat.items.slice(0, 2)} />
+            <div className="mt-4 lg:mt-5">
+              <EntryCards category={cat.key} base={cat.base} items={cat.items.slice(2)} all={cat.items} />
+            </div>
           </div>
-        </Section>
+        </section>
 
-        <CtaBand />
+        <WorkRow />
+
+        <section className="bg-canvas">
+          <div className={`${COL} grid items-start gap-10 py-16 lg:grid-cols-[1fr_1.4fr] lg:gap-16 lg:py-24`}>
+            <Head eyebrow="Common questions" title="Before you get in touch" />
+            <FaqCards items={FAQS} />
+          </div>
+        </section>
+
+        <PriceCta />
       </main>
       <Footer />
     </>
