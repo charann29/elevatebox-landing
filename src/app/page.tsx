@@ -11,13 +11,13 @@ import {
   FAQS,
   PROJECTS,
   VOICE_APP,
-  VOICE_SEO,
   serviceIcon,
   OG_IMG,
 } from "@/lib/content";
 import { Header, Footer, PillCta } from "@/components/site";
 import { DiscoveryOffer, Faq } from "@/components/blocks";
 import { VoiceVideos } from "@/components/voice-videos";
+import { CountUp } from "@/components/count-up";
 import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -51,77 +51,6 @@ const VOICE_STATS = [
   { v: "3", l: "Languages: Telugu, Hindi, English" },
   { v: "10 min", l: "Free when you sign up" },
 ];
-
-const VOICE_FEATURES = [
-  { t: "Calls every lead in seconds", d: "A form fills, an ad converts, a list uploads — your employee is already dialling.", icon: "M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" },
-  { t: "Talks like your best caller", d: "Natural, human-sounding calls in Telugu, Hindi and English.", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
-  { t: "Writes down every word", d: "Transcript, summary and the answers you asked for, on every call.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5" },
-  { t: "Books the next step", d: "Site visits, appointments and callbacks fixed on the call and saved with the lead.", icon: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" },
-];
-
-const VOICE_USES = [
-  { t: "Real estate", href: `${VOICE_APP}/best/ai-voice-agent-real-estate` },
-  { t: "Clinics & hospitals", href: `${VOICE_APP}/best/ai-voice-agent-hospitals-clinics` },
-  { t: "Education & coaching", href: `${VOICE_APP}/best/ai-voice-agent-coaching-admissions` },
-  { t: "Insurance & loans", href: `${VOICE_APP}/best/ai-voice-agent-loans-insurance` },
-  { t: "Automobile dealers", href: `${VOICE_APP}/best/ai-voice-agent-car-dealerships` },
-  { t: "D2C & e-commerce", href: VOICE_APP },
-];
-
-// An example call, as the product shows it. Illustrative, not a customer recording.
-const CALL_LINES: { who: "ai" | "lead"; text: string }[] = [
-  { who: "ai", text: "నమస్కారం! మీరు నిన్న మా వెబ్‌సైట్‌లో ఫ్లాట్ గురించి అడిగారు కదా?" },
-  { who: "lead", text: "Haan ji, 2BHK dekhna tha. Weekend pe ho sakta hai?" },
-  { who: "ai", text: "Bilkul! Saturday 11 baje site visit book kar doon?" },
-  { who: "lead", text: "Perfect, kar dijiye." },
-];
-
-/** A call in progress: caller, timer, waveform and the transcript as it is written. */
-function CallCard({ large }: { large?: boolean }) {
-  return (
-    <span className="block rounded-3xl bg-white p-5 text-left ring-1 ring-white/10">
-      <span className="flex items-center justify-between gap-3">
-        <span className="flex items-center gap-3">
-          <span className="relative grid size-10 place-items-center rounded-full bg-[#22c55e] text-night">
-            <span aria-hidden="true" className="absolute inset-0 animate-ping rounded-full bg-[#22c55e]/40" />
-            <svg viewBox="0 0 24 24" fill="currentColor" className="relative size-4" aria-hidden="true">
-              <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" />
-            </svg>
-          </span>
-          <span>
-            <span className="block text-sm font-semibold text-ink">Live call · New lead</span>
-            <span className="block text-xs text-ink-3">Example call · 00:42</span>
-          </span>
-        </span>
-        <span aria-hidden="true" className="flex h-6 items-end gap-[3px]">
-          {[0, 1, 2, 3, 4, 5].map((k) => (
-            <span key={k} className="wave w-[3px] rounded-full bg-[#4ade80]" style={{ animationDelay: `${k * 0.12}s` }} />
-          ))}
-        </span>
-      </span>
-      <span className="mt-4 flex flex-col gap-2">
-        {(large ? CALL_LINES : CALL_LINES.slice(0, 3)).map((l) => (
-          <span
-            key={l.text}
-            className={`max-w-[88%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed sm:text-sm ${
-              l.who === "ai" ? "self-start rounded-bl-sm bg-electric text-white" : "self-end rounded-br-sm bg-sky text-ink"
-            }`}
-          >
-            {l.text}
-          </span>
-        ))}
-      </span>
-      {large && (
-        <span className="mt-4 flex items-center gap-2 rounded-2xl bg-[#22c55e]/15 px-3.5 py-2.5 text-xs font-semibold text-[#15803d] sm:text-sm">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="size-4 shrink-0" aria-hidden="true">
-            <path d="M5 12l5 5L20 7" />
-          </svg>
-          Site visit booked · Saturday, 11:00 AM
-        </span>
-      )}
-    </span>
-  );
-}
 
 // What a brief usually starts with, and what we do about it.
 const FIXES = [
@@ -208,7 +137,7 @@ const FAN = [
   { src: "/assets/real-vamshi-farms.jpg", cls: "left-[110px] rotate-[-7deg] translate-y-[10px] lg:left-[200px]" },
   { src: "/assets/trh-app.webp", cls: "left-[230px] z-[2] !w-[140px] -translate-y-[30px] !shadow-[0_0_0_3px_#22c55e,0_50px_90px_-30px_rgba(0,0,0,0.7)] lg:left-[440px] lg:!w-[240px]", centre: true },
   { src: "/assets/real-oneasy.jpg", cls: "right-[110px] rotate-[7deg] translate-y-[10px] lg:right-[200px]" },
-  { src: "/assets/real-voice.jpg", cls: "right-0 rotate-[14deg] translate-y-[60px]" },
+  { src: "/assets/autopilot-app.webp", cls: "right-0 rotate-[14deg] translate-y-[60px]" },
 ];
 
 // Client logos for the two marquee rows: [file in /assets/clients, name, height at 320 wide].
@@ -354,6 +283,24 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Numbers ── */}
+        <section aria-label="ElevateBox in numbers" className="bg-deep py-14 text-white lg:py-16">
+          <dl className={`${COL} grid grid-cols-2 gap-y-7 lg:grid-cols-4`}>
+            {HOME_STATS.map((s, k) => (
+              <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : ""} ${k === 2 ? "lg:border-l lg:border-white/20" : ""} ${k === 0 || k === 2 ? "pl-0 lg:pl-0" : ""} ${k === 2 ? "lg:pl-7" : ""}`}>
+                <dt className="sr-only">{s.l}</dt>
+                <dd>
+                  <p className="text-[44px] font-light leading-none tracking-[-0.02em] lg:text-[72px]">
+                    <CountUp value={s.v} />
+                    <span className="text-amber">+</span>
+                  </p>
+                  <p className="mt-2.5 text-base text-white/75">{s.l}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         {/* ── Voice: the flagship ── */}
         <section aria-labelledby="voice" className="bg-night">
           <div className="relative overflow-hidden">
@@ -398,60 +345,8 @@ export default function Home() {
 
               <VoiceVideos />
 
-              <div className="mt-10 grid items-center gap-6 sm:mt-16 sm:gap-8 lg:grid-cols-[1fr_1.15fr]">
-                <div className="mx-auto w-full max-w-md">
-                  <CallCard large />
-                </div>
-                <ul className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {VOICE_FEATURES.map((f) => (
-                    <li key={f.t} className="rounded-3xl bg-white/[0.04] p-4 ring-1 sm:p-6 ring-white/10 transition-colors hover:bg-white/[0.07]">
-                      <span className="grid size-9 place-items-center rounded-xl bg-[#22c55e]/15 sm:size-11 sm:rounded-2xl text-[#4ade80]">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden="true">
-                          <path d={f.icon} />
-                        </svg>
-                      </span>
-                      <h3 className="mt-3 text-base font-bold leading-snug text-white sm:mt-4 sm:text-lg">{f.t}</h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-white/60 sm:text-sm">{f.d}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-10 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center sm:mt-14 sm:gap-5 sm:pt-10">
-                <p className="text-sm text-white/55">Built for</p>
-                <ul className="flex flex-wrap justify-center gap-2">
-                  {VOICE_USES.map((u) => (
-                    <li key={u.t}>
-                      <a href={u.href} className="block rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-white/80 ring-1 ring-white/10 transition-colors hover:bg-white/[0.12] hover:text-white sm:px-4 sm:py-2 sm:text-sm">
-                        {u.t}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                <a href={VOICE_SEO.pricing.href} className="mt-2 text-sm font-semibold text-[#4ade80] hover:underline">
-                  Prepaid, from ₹3.50 a minute — see AI voice agent pricing →
-                </a>
-              </div>
             </div>
           </div>
-        </section>
-
-        {/* ── Numbers ── */}
-        <section aria-label="ElevateBox in numbers" className="border-t border-white/10 bg-deep py-14 text-white">
-          <dl className={`${COL} grid grid-cols-2 gap-y-7 lg:grid-cols-4`}>
-            {HOME_STATS.map((s, k) => (
-              <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : ""} ${k === 2 ? "lg:border-l lg:border-white/20" : ""} ${k === 0 || k === 2 ? "pl-0 lg:pl-0" : ""} ${k === 2 ? "lg:pl-7" : ""}`}>
-                <dt className="sr-only">{s.l}</dt>
-                <dd>
-                  <p className="text-[38px] font-light leading-none tracking-[-0.02em] lg:text-[56px]">
-                    {s.v}
-                    <span className="text-amber">+</span>
-                  </p>
-                  <p className="mt-2.5 text-base text-white/75">{s.l}</p>
-                </dd>
-              </div>
-            ))}
-          </dl>
         </section>
 
         {/* ── Proof ── */}
