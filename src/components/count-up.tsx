@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/** Counts from 0 to `value` (e.g. "21,000") once it scrolls into view.
+/** Counts from 0 to `value` (e.g. "28,000") once it scrolls into view.
  * Renders the final number on the server, so crawlers and no-JS visitors see it. */
 export function CountUp({ value, ms = 1600 }: { value: string; ms?: number }) {
   const target = Number(value.replace(/,/g, ""));

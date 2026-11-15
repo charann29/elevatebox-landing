@@ -52,15 +52,6 @@ const VOICE_STATS = [
   { v: "10 min", l: "Free when you sign up" },
 ];
 
-// What a brief usually starts with, and what we do about it.
-const FIXES = [
-  { p: "An outdated site or app", f: "Fast, modern sites and apps, designed and built by one team." },
-  { p: "No technical team in-house", f: "Design, apps, web, cloud and AI from the first week — no hiring." },
-  { p: "Manual, repetitive work", f: "Automations and AI agents that take the repeat work off your people." },
-  { p: "Agencies that disappear", f: "The same team keeps it running after launch." },
-  { p: "Estimates that keep growing", f: `A ${DISCOVERY.price} analysis first, then a written quotation.` },
-  { p: "AI without a business case", f: "AI measured against a real task before it ships." },
-];
 
 const STEPS = [
   { t: "Requirement analysis", d: `${DISCOVERY.price}. A call with the people who will build it, and a written quotation and timeline.` },
@@ -218,7 +209,7 @@ export default function Home() {
         />
 
         {/* ── Hero: the 3D band, headline and the fan of live app screens ── */}
-        <section className="hero-3d overflow-hidden px-4 pt-12 text-center lg:h-[860px] lg:pt-[64px]">
+        <section className="hero-3d overflow-hidden px-4 pt-12 text-center lg:h-[740px] lg:pt-[64px]">
           <a href={VOICE_APP} className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 py-1.5 pl-1.5 pr-4 text-left text-sm text-white">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-live px-2.5 py-1 text-[11px] font-bold text-[#04210f]">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#04210f]" />
@@ -232,14 +223,6 @@ export default function Home() {
           <p className="mx-auto mt-3 max-w-[15ch] text-[40px] font-[700] leading-[1.04] tracking-[-0.03em] text-white lg:text-[68px]">
             We build apps people <span className="text-gradient">actually use</span>
           </p>
-          <p className="mx-auto mt-5 max-w-[36em] text-base leading-relaxed text-white/80 lg:text-[19px]">
-            We&apos;re a{" "}
-            <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">
-              mobile app development company in Hyderabad
-            </Link>
-            , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
-            the maintenance afterwards.
-          </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/book" className="inline-flex h-[52px] items-center rounded-full bg-white px-[26px] text-base font-semibold text-navy hover:bg-sky">
               Get quote now
@@ -252,13 +235,25 @@ export default function Home() {
           <p className="mt-5 text-sm text-white/70">
             <b className="font-semibold text-white">380+ apps built</b> · bugs fixed in under 6 hours
           </p>
-          <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-[-170px] lg:mt-0 lg:h-[520px] lg:w-[1100px]">
+          <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-0 lg:mt-0 lg:h-[520px] lg:w-[1100px] lg:origin-bottom lg:scale-[0.65]">
             {FAN.map((f) => (
               <span key={f.src} className={`absolute bottom-0 block w-[130px] rounded-[30px] bg-[#0A1024] p-1.5 shadow-[0_40px_80px_-30px_rgba(1,20,70,0.55),0_0_0_1px_rgba(255,255,255,0.08)] lg:w-[220px] ${f.cls}`}>
                 <Image src={f.src} alt="" width={520} height={1126} className="w-full rounded-[24px]" priority={f.centre} />
               </span>
             ))}
           </div>
+        </section>
+
+        {/* ── What we do, in one line: moved out of the hero so the phones have room ── */}
+        <section aria-label="About ElevateBox" className="border-b border-line bg-white py-12 lg:py-16">
+          <p className={`${COL} max-w-4xl text-center text-xl leading-relaxed text-ink-2 lg:text-2xl`}>
+            We&apos;re a{" "}
+            <Link href="/mobile-app-development-company-hyderabad" className="font-semibold text-navy underline decoration-navy/30 underline-offset-4 hover:decoration-navy">
+              mobile app development company in Hyderabad
+            </Link>
+            , taking startups and growing businesses from idea to a product people use: design, engineering, launch, and
+            the maintenance afterwards.
+          </p>
         </section>
 
         {/* ── Clients: two logo rows moving opposite ways ── */}
@@ -284,8 +279,8 @@ export default function Home() {
         </section>
 
         {/* ── Numbers ── */}
-        <section aria-label="ElevateBox in numbers" className="bg-deep py-14 text-white lg:py-16">
-          <dl className={`${COL} grid grid-cols-2 gap-y-7 lg:grid-cols-4`}>
+        <section aria-label="ElevateBox in numbers" className="bg-white pb-16 lg:pb-20">
+          <dl className={`${COL} grid grid-cols-2 gap-y-7 rounded-[28px] bg-deep px-6 py-10 text-white lg:grid-cols-4 lg:px-12 lg:py-14`}>
             {HOME_STATS.map((s, k) => (
               <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : ""} ${k === 2 ? "lg:border-l lg:border-white/20" : ""} ${k === 0 || k === 2 ? "pl-0 lg:pl-0" : ""} ${k === 2 ? "lg:pl-7" : ""}`}>
                 <dt className="sr-only">{s.l}</dt>
@@ -542,32 +537,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Problems we fix ── */}
-        <section aria-labelledby="fixes">
-          <div className={`${COL} py-14 sm:py-20 lg:py-28`}>
-            <Heading id="fixes" eyebrow="Sounds familiar?" title="What growing businesses bring us" lead="Most briefs start with one of these. Each is something we fix for a living." />
-            <ul className="mt-10 grid gap-px overflow-hidden rounded-3xl sm:mt-12 bg-line ring-1 ring-line md:grid-cols-2">
-              {FIXES.map((x) => (
-                <li key={x.p} className="bg-white p-5 sm:p-7">
-                  <p className="flex items-center gap-2 text-sm text-ink-4">
-                    <Cross className="size-3.5 text-[#dc2626]" />
-                    <span className="line-through decoration-ink-4/40">{x.p}</span>
-                  </p>
-                  <p className="mt-2 flex items-start gap-2 font-display text-base font-bold leading-snug text-ink sm:mt-3 sm:text-lg">
-                    <Check className="mt-1 size-4 shrink-0 text-electric" />
-                    {x.f}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
         {/* ── In their words: institutions we train with ── */}
         <section aria-labelledby="words" className="bg-night-2 py-16 text-white lg:py-24">
           <div className={COL}>
             <h2 id="words" className="text-3xl font-semibold leading-[1.1] text-white lg:text-[44px]">In their words</h2>
-            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-white/70">Leaders from the institutions where we&apos;ve trained 21,000+ students.</p>
+            <p className="mt-3.5 max-w-[42em] text-lg leading-relaxed text-white/70">Leaders from the institutions where we&apos;ve trained 28,000+ students.</p>
             <div className="mt-11 grid gap-5 lg:grid-cols-[1.3fr_1fr_1fr]">
               {QUOTES.map((q, k) => (
                 <figure key={q.who} className="flex flex-col justify-between gap-6 rounded-3xl bg-night-3 p-6 lg:p-[30px]">
@@ -587,7 +561,7 @@ export default function Home() {
             <div className="mt-11 flex flex-wrap items-center gap-6 border-t border-white/15 pt-8 lg:flex-nowrap">
               <p className="shrink-0 text-[15px] text-white/75">
                 <b className="block text-[28px] font-semibold text-white">27+ institutions</b>
-                21,000+ students trained
+                28,000+ students trained
               </p>
               <div className="mq min-w-0 basis-full lg:basis-auto lg:flex-1">
                 <ul className="mq-t [animation-duration:30s]">
