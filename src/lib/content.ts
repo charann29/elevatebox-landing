@@ -1262,7 +1262,7 @@ export const POSTS: Post[] = [
   post("top-mobile-app-development-companies-hyderabad", "Top 10 Mobile App Development Companies in Hyderabad (2026)", "Cost & Planning", "2026-10-23",
     "Ten Hyderabad app development companies from Google's first page and map pack, what each one says about itself, and how to choose between them.",
     [["How this list was made", ["We searched \"mobile app development company in Hyderabad\" on Google from Hyderabad on 13 October 2026 and took every agency on the first page and in the map pack. Directories such as Clutch and Justdial ranked too, but they list hundreds of firms rather than being one.", "Each entry says what the company itself claims, plus its Google rating where it appears in the map pack. We are on the list as well, first, so judge our entry with that in mind."]],
-     ["1. ElevateBox", ["A Hyderabad team building iOS, Android, Flutter, React Native and AI-powered apps. ElevateBox has built 1,400 apps, answers bugs in under 6 hours, and runs its own AI voice agent, Voice by ElevateBox, which calls leads in Telugu, Hindi and English.", "Engagements start with a ₹3,500 requirement analysis that ends in a written quotation, and the code and store accounts are in the client's name from day one."]],
+     ["1. ElevateBox", ["A Hyderabad team building iOS, Android, Flutter, React Native and AI-powered apps. ElevateBox has shipped 380+ apps, answers bugs in under 6 hours, and runs its own AI voice agent, Voice by ElevateBox, which calls leads in Telugu, Hindi and English.", "Engagements start with a ₹3,500 requirement analysis that ends in a written quotation, and the code and store accounts are in the client's name from day one."]],
      ["2. Ahex Technologies", ["First in Google's organic results for the search. Its page says 16+ years, 125+ developers and 150+ clients, shows three Clutch badges under the headline, and promises a consultation within 48 hours."]],
      ["3. Codeft", ["Third in the organic results. It positions itself as founder-focused, building iOS, Android and cross-platform apps \"from Hyderabad, building for the world\", and offers a free consultation."]],
      ["4. Colourmoon Technologies", ["Fifth in the organic results, with a service page covering Android and iOS app development and a quote form, WhatsApp and support links in its first screen."]],
@@ -2021,6 +2021,15 @@ export const STATS = [
   { value: "Day one", label: "Repos and cloud in your name" },
   { value: "Fixed", label: "Discovery scope and price" },
   { value: "1 day", label: "Reply time on a new brief" },
+];
+
+/* Company-wide counts from the company profile (owner, Nov 2026). Change them here only: the home
+   numbers band, the Hyderabad pages and the client strip all read this. Never 1,400 or 830+. */
+export const HOME_STATS = [
+  { v: "175", l: "Organisations served" },
+  { v: "3,000", l: "Processes automated" },
+  { v: "380", l: "Apps shipped to App Store and Play" },
+  { v: "21,000", l: "Students trained" },
 ];
 
 export const PROCESS_STEPS = [

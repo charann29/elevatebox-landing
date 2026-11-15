@@ -56,7 +56,7 @@ const AI_ITEMS = [
 ];
 
 const WHY = [
-  { t: "1,400 apps built", d: "Across healthcare, commerce, education and AI. The team that quotes it is the team that builds it." },
+  { t: "380+ apps shipped", d: "Across healthcare, commerce, education and AI. The team that quotes it is the team that builds it." },
   { t: "Engineers from top teams", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft, and AIR 14 at ACM ICPC." },
   { t: "Bugs answered in under 6 hours", d: "One team from the first call to support, with crash reporting wired in before launch." },
   { t: "Code in your name", d: "Repository, cloud and App Store and Play Store accounts are yours from day one." },
@@ -156,7 +156,7 @@ export const HYD_PAGES: HydPage[] = [
     h1: "Hire Mobile App Developers in Hyderabad",
     sub: "Flutter, React Native, Android and iOS developers who join your team, your stand-ups and your repository.",
     intro:
-      "Hire mobile app developers in Hyderabad from ElevateBox: experienced Flutter, React Native, Android and iOS engineers who work inside your team and your tools, backed by a company that has built 1,400 apps.",
+      "Hire mobile app developers in Hyderabad from ElevateBox: experienced Flutter, React Native, Android and iOS engineers who work inside your team and your tools, backed by a company that has shipped 380+ apps.",
     serviceType: "Mobile app developer staffing",
     services: {
       h2: "Mobile app developers you can hire",
@@ -721,7 +721,7 @@ export const HYD_PAGES: HydPage[] = [
       points: [
         { t: "Talk in Telugu", d: "Requirement calls, demos and training in Telugu, Hindi or English, whichever your team prefers." },
         { t: "Built for local customers", d: "Apps tested on budget Android phones and weak networks, the way users outside the city use them." },
-        { t: "1,400 apps built", d: "Across healthcare, commerce, education and AI, by the team that quotes it." },
+        { t: "380+ apps shipped", d: "Across healthcare, commerce, education and AI, by the team that quotes it." },
         { t: "Price known before you start", d: "A ₹3,500 requirement analysis ends in a written quotation and timeline." },
       ],
     },
