@@ -49,7 +49,7 @@ const INDUSTRIES_APP = [
 ];
 
 const AI_ITEMS = [
-  { t: "Voice agents", d: "AI phone calls in Telugu, Hindi and English. We run our own: Voice by ElevateBox." },
+  { t: "Voice agents", d: "AI phone calls in Telugu, Hindi and English. We run our own: Roopa by ElevateBox." },
   { t: "Chat inside the app", d: "Answers from your own catalogue, policies and documents, not the open internet." },
   { t: "Document reading", d: "Prescriptions, invoices and forms read into fields, with a person checking the edge cases." },
   { t: "Recommendations", d: "What to show next, based on what each user actually did." },
@@ -57,7 +57,7 @@ const AI_ITEMS = [
 
 const WHY = [
   { t: "380+ apps shipped", d: "Across healthcare, commerce, education and AI. The team that quotes it is the team that builds it." },
-  { t: "Engineers from top teams", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft, and AIR 14 at ACM ICPC." },
+  { t: "Engineers from top teams", d: "Product people from Google, Zomato, HackerRank and two Y Combinator-backed startups." },
   { t: "Bugs answered in under 6 hours", d: "One team from the first call to support, with crash reporting wired in before launch." },
   { t: "Code in your name", d: "Repository, cloud and App Store and Play Store accounts are yours from day one." },
 ];
@@ -82,7 +82,7 @@ const SHARED_FAQS = [
   { q: "Which is the best app development company in Hyderabad?", a: "The best one is the company that has shipped apps like yours and still runs them. Ask each company for live apps you can install, who owns the code, how fast they fix bugs after launch, and whether you meet the engineers who build it. ElevateBox shows live products in its portfolio, puts the code in your name from day one and answers bugs in under 6 hours." },
   { q: "Is ElevateBox a registered company?", a: "Yes. ElevateBox is run by ElevateScale Technologies Private Limited, registered in Hyderabad, Telangana under CIN U62099TS2024PTC191165. You sign a contract and get GST invoices from the company." },
   { q: "Who owns the source code and the App Store and Play Store accounts?", a: "You do, from the first commit. The repository, cloud account and store listings are created in your name, and we work inside them." },
-  { q: "Can you add AI features such as chat, voice or document reading to my app?", a: "Yes. We build chat on your own documents, document reading and voice agents. Our own product, Voice by ElevateBox, makes AI phone calls in Telugu, Hindi and English." },
+  { q: "Can you add AI features such as chat, voice or document reading to my app?", a: "Yes. We build chat on your own documents, document reading and voice agents. Our own product, Roopa by ElevateBox, makes AI phone calls in Telugu, Hindi and English." },
 ];
 
 export const HYD_PAGES: HydPage[] = [
@@ -174,7 +174,7 @@ export const HYD_PAGES: HydPage[] = [
       points: [
         { t: "Start in days, not months", d: "Skip the hiring cycle. Developers join within days of the requirement call." },
         { t: "Backed by a full team", d: "Your developer has designers, testers and senior engineers behind them, not just a CV." },
-        { t: "Engineers from top teams", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft, and AIR 14 at ACM ICPC." },
+        { t: "Engineers from top teams", d: "Product people from Google, Zomato, HackerRank and two Y Combinator-backed startups." },
         { t: "Your code, your accounts", d: "They work in your repository and tools. Nothing is held back when the engagement ends." },
       ],
     },
@@ -247,7 +247,7 @@ export const HYD_PAGES: HydPage[] = [
       lead: "Websites that answer and act, not just display.",
       items: [
         { t: "AI chat on your content", d: "Visitors get answers from your own pages, policies and catalogue." },
-        { t: "Lead calls in seconds", d: "A form fills and Voice by ElevateBox calls the lead in Telugu, Hindi or English." },
+        { t: "Lead calls in seconds", d: "A form fills and Roopa by ElevateBox calls the lead in Telugu, Hindi or English." },
         { t: "Search that understands", d: "Search by meaning, not just exact words." },
         { t: "Content at scale", d: "Programmatic SEO pages from your own data, each with real content." },
       ],
@@ -629,7 +629,7 @@ export const HYD_PAGES: HydPage[] = [
       h2: "AI development services in Hyderabad",
       items: [
         { t: "AI agents and automation", d: "Agents that do multi-step work across your tools, with a reviewable log of every action.", href: "/ai-solutions/ai-agents-and-automation" },
-        { t: "Voice AI agents", d: "Phone calls in Telugu, Hindi and English for leads, reminders and follow-ups. We run our own: Voice by ElevateBox.", href: "/ai-solutions" },
+        { t: "Voice AI agents", d: "Phone calls in Telugu, Hindi and English for leads, reminders and follow-ups. We run our own: Roopa by ElevateBox.", href: "/ai-solutions" },
         { t: "Generative AI development", d: "Chat and drafting on your own documents, with answers that cite the source they came from.", href: "/ai-solutions/generative-ai-development" },
         { t: "Document reading", d: "Invoices, bank statements, prescriptions and forms read into fields, with a person checking the edge cases.", href: "/ai-solutions/ai-ml-development" },
         { t: "Computer vision", d: "Reading images and video for counts, defects, IDs and documents.", href: "/ai-solutions/computer-vision" },
@@ -639,9 +639,9 @@ export const HYD_PAGES: HydPage[] = [
     why: {
       h2: "Why Hyderabad businesses build AI with ElevateBox",
       points: [
-        { t: "We run AI in production ourselves", d: "Voice by ElevateBox makes AI phone calls in Telugu, Hindi and English for real businesses every day." },
+        { t: "We run AI in production ourselves", d: "Roopa by ElevateBox makes AI phone calls in Telugu, Hindi and English for real businesses every day." },
         { t: "Measured before launch", d: "We build a test set from your real examples first, so accuracy is a number, not a feeling." },
-        { t: "Engineers from top teams", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft, and AIR 14 at ACM ICPC." },
+        { t: "Engineers from top teams", d: "Product people from Google, Zomato, HackerRank and two Y Combinator-backed startups." },
         { t: "Your data stays yours", d: "Code, data and model accounts are created in your name, and nothing is used to train someone else's model." },
       ],
     },
@@ -681,7 +681,7 @@ export const HYD_PAGES: HydPage[] = [
     faqs: [
       { q: "What does an AI development company build?", a: "Software that does work a person does today: AI phone agents, chat on your documents, document and invoice reading, and agents that carry out multi-step tasks across your tools." },
       { q: "How do you know the AI is accurate enough?", a: "We collect 50 to 200 of your real examples with known-good answers before building, and score every version against them. Low-confidence cases go to a person instead of the customer." },
-      { q: "Can the AI speak Telugu?", a: "Yes. Voice by ElevateBox makes AI phone calls in Telugu, Hindi and English, and our chat and document tools handle Telugu text too." },
+      { q: "Can the AI speak Telugu?", a: "Yes. Roopa by ElevateBox makes AI phone calls in Telugu, Hindi and English, and our chat and document tools handle Telugu text too." },
       { q: "Will my data be used to train other models?", a: "No. We use model accounts in your name with training on your data switched off, and the data stays in your cloud." },
       ...SHARED_FAQS,
     ],
@@ -725,7 +725,7 @@ export const HYD_PAGES: HydPage[] = [
         { t: "Price known before you start", d: "A ₹3,500 requirement analysis ends in a written quotation and timeline." },
       ],
     },
-    ai: { h2: "AI that works in Telugu", lead: "Our own product, Voice by ElevateBox, makes AI calls in Telugu. We build the same into your app or business.", items: AI_ITEMS },
+    ai: { h2: "AI that works in Telugu", lead: "Our own product, Roopa by ElevateBox, makes AI calls in Telugu. We build the same into your app or business.", items: AI_ITEMS },
     process: { h2: "How we work with you, wherever you are in Telangana", steps: PROCESS_APP },
     stack: { h2: "Technology stack", groups: STACK_APP },
     industries: { h2: "Industries we build for across Telangana", items: INDUSTRIES_APP },
@@ -738,7 +738,7 @@ export const HYD_PAGES: HydPage[] = [
     faqs: [
       { q: "Do you work with businesses outside Hyderabad?", a: "Yes. We work with businesses across Telangana, including Warangal, Karimnagar, Nizamabad, Khammam and Mahbubnagar, over video calls and WhatsApp, and meet in person in Hyderabad or on site when the project needs it." },
       { q: "Can we discuss the project in Telugu?", a: "Yes. Requirement calls, demos and training can be in Telugu, Hindi or English." },
-      { q: "Can the app itself be in Telugu?", a: "Yes. We build apps and websites in Telugu and English, and AI phone calls in Telugu through our own product, Voice by ElevateBox." },
+      { q: "Can the app itself be in Telugu?", a: "Yes. We build apps and websites in Telugu and English, and AI phone calls in Telugu through our own product, Roopa by ElevateBox." },
       { q: "How much does app development cost in Telangana?", a: "The same as in Hyderabad: it depends on the screens, integrations, backend and AI features. A ₹3,500 requirement analysis ends in a written quotation before development starts." },
       ...SHARED_FAQS,
     ],

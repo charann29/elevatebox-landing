@@ -12,7 +12,7 @@ const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
 const PROOF = [
   { v: "380+", l: "Apps shipped" },
   { v: "< 6 hrs", l: "Bug response" },
-  { v: "AIR 14", l: "ACM ICPC" },
+  { v: "175+", l: "Organisations served" },
   { v: "8 lakh", l: "AI calls a day, at scale" },
 ];
 
@@ -81,12 +81,12 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               ))}
             </dl>
             <p className="mt-6 max-w-2xl text-sm text-white/75">
-              Built by founding engineers from ClickPe (YC W23) and an AI startup acquired by Microsoft.
+              Built by product people from Google, Zomato and Y Combinator-backed startups.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <PillCta className="justify-between sm:justify-start">Get a quote</PillCta>
               <a href={WA} className="rounded-full px-6 py-3 text-center text-sm font-semibold text-white ring-[1.5px] ring-inset ring-white/80 transition-colors hover:bg-white/10">
-                Free consultation on WhatsApp
+                Message us on WhatsApp
               </a>
               <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-center text-sm font-semibold text-white/80 hover:text-white">
                 {COMPANY.phone}
@@ -303,9 +303,9 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
             <div aria-hidden="true" className="light-grid absolute inset-0" />
             <div className={`${COL} relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2`}>
               <div>
-                <h2 id="start" className="text-3xl font-bold leading-[1.08] text-ink sm:text-5xl">Start with a free consultation</h2>
+                <h2 id="start" className="text-3xl font-bold leading-[1.08] text-ink sm:text-5xl">Tell us what you need</h2>
                 <p className="mt-4 max-w-lg leading-relaxed text-ink-2">
-                  Tell us what you are building on WhatsApp or by phone, free. When you are ready, the requirement analysis
+                  Message us on WhatsApp or call about what you are building. When you are ready, the requirement analysis
                   turns it into a written quotation.
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">

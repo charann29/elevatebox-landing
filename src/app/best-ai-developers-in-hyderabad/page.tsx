@@ -38,7 +38,7 @@ const FAQS = [
   ...ANSWERS,
   {
     q: "Have you shipped AI products yourselves?",
-    a: "Yes. We built and run Voice by ElevateBox, an AI phone employee that calls Indian businesses' leads in Telugu, Hindi and English, and OnEasy's AI agent platform.",
+    a: "Yes. We built and run Roopa by ElevateBox, an AI phone employee that calls Indian businesses' leads in Telugu, Hindi and English, and OnEasy's AI agent platform.",
   },
   {
     q: "Is the team based in Hyderabad?",

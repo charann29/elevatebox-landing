@@ -16,7 +16,7 @@ import { CtaBand, PageHero, Section } from "@/components/blocks";
 export const metadata: Metadata = {
   title: `Portfolio`,
   description:
-    "Selected product work across AI calling, healthcare, commerce, AI automation, and media — including Voice by ElevateBox, our own product.",
+    "Selected product work across AI calling, healthcare, commerce, AI automation, and media — including Roopa by ElevateBox, our own product.",
   alternates: { canonical: "/portfolio" },
 };
 

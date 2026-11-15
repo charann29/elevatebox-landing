@@ -22,7 +22,7 @@ export type Category = {
   items: Entry[];
 };
 
-/* Voice by ElevateBox — the product app. Links point only at routes that are live there. */
+/* Roopa by ElevateBox — the product app. Links point only at routes that are live there. */
 export const VOICE_APP = "https://agents.elevatebox.in";
 
 /** Voice's own SEO pages on agents.elevatebox.in (all indexable), linked from this site. */
@@ -1155,7 +1155,7 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     slug: "voice",
-    name: "Voice by ElevateBox",
+    name: "Roopa by ElevateBox",
     sector: "Our product / AI calling",
     summary:
       "AI phone calls for Indian businesses — calls every new lead within seconds in Telugu, Hindi or English, writes down what was said, and books the next step.",
@@ -1262,7 +1262,7 @@ export const POSTS: Post[] = [
   post("top-mobile-app-development-companies-hyderabad", "Top 10 Mobile App Development Companies in Hyderabad (2026)", "Cost & Planning", "2026-10-23",
     "Ten Hyderabad app development companies from Google's first page and map pack, what each one says about itself, and how to choose between them.",
     [["How this list was made", ["We searched \"mobile app development company in Hyderabad\" on Google from Hyderabad on 13 October 2026 and took every agency on the first page and in the map pack. Directories such as Clutch and Justdial ranked too, but they list hundreds of firms rather than being one.", "Each entry says what the company itself claims, plus its Google rating where it appears in the map pack. We are on the list as well, first, so judge our entry with that in mind."]],
-     ["1. ElevateBox", ["A Hyderabad team building iOS, Android, Flutter, React Native and AI-powered apps. ElevateBox has shipped 380+ apps, answers bugs in under 6 hours, and runs its own AI voice agent, Voice by ElevateBox, which calls leads in Telugu, Hindi and English.", "Engagements start with a ₹3,500 requirement analysis that ends in a written quotation, and the code and store accounts are in the client's name from day one."]],
+     ["1. ElevateBox", ["A Hyderabad team building iOS, Android, Flutter, React Native and AI-powered apps. ElevateBox has shipped 380+ apps, answers bugs in under 6 hours, and runs its own AI voice agent, Roopa by ElevateBox, which calls leads in Telugu, Hindi and English.", "Engagements start with a ₹3,500 requirement analysis that ends in a written quotation, and the code and store accounts are in the client's name from day one."]],
      ["2. Ahex Technologies", ["First in Google's organic results for the search. Its page says 16+ years, 125+ developers and 150+ clients, shows three Clutch badges under the headline, and promises a consultation within 48 hours."]],
      ["3. Codeft", ["Third in the organic results. It positions itself as founder-focused, building iOS, Android and cross-platform apps \"from Hyderabad, building for the world\", and offers a free consultation."]],
      ["4. Colourmoon Technologies", ["Fifth in the organic results, with a service page covering Android and iOS app development and a quote form, WhatsApp and support links in its first screen."]],
@@ -1996,8 +1996,6 @@ export const CONSULTS: Consult[] = [
    Rule for this array: if you cannot produce evidence on request, it does
    not go in. */
 export const CREDENTIALS = [
-  { k: "ACM ICPC", v: "All India Rank 14", note: "Top 0.17% of 8,000+ competitors" },
-  { k: "JPMorgan Chase", v: "Engineering", note: "Cut a core API from 120s to 7s" },
   { k: "Google", v: "Associate Product Manager", note: "2022 cohort" },
   { k: "ClickPe", v: "Founding Engineer", note: "Y Combinator W23" },
   { k: "Acquired by Microsoft", v: "Founding Engineer", note: "AI startup, exited to Microsoft" },

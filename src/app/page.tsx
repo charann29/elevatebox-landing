@@ -39,8 +39,8 @@ const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
 
 const PROOF = [
   { v: "380+", l: "Apps built to date" },
-  { v: "AIR 14", l: "ACM ICPC — top 0.17% of 8,000+ competitors" },
-  { v: "120s → 7s", l: "A core API we sped up at JPMorgan Chase" },
+  { v: "350+", l: "MSMEs served" },
+  { v: "27+", l: "Partner institutions, including IIT Madras, IIT Delhi and BHU" },
   { v: "< 6 hrs", l: "To respond to any bug or problem" },
 ];
 
@@ -712,8 +712,7 @@ export default function Home() {
               , which calls leads in Telugu, Hindi and English.
             </p>
             <p className="mt-4 max-w-4xl leading-relaxed text-ink-3">
-              Our engineers have worked at JPMorgan Chase, Google and Y Combinator-backed startups, and placed in the top
-              0.17% at ACM ICPC. We work from Hyderabad with clients in India, the UAE, the UK, Europe and the US, and
+              Our founder has worked at Google, Zomato, HackerRank and two Y Combinator-backed startups. We work from Hyderabad with clients in India, the UAE, the UK, Europe and the US, and
               everything we build is handed over so your own team can run it.
             </p>
             <ul className="-mx-5 mt-8 flex gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:flex-wrap md:px-0">

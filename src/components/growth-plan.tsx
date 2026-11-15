@@ -161,7 +161,7 @@ export function GrowthPlan({ s, g }: { s: Subject; g: Plan }) {
     [`One-offer ${cm1} pages with a two-tap UPI checkout`, `Ad traffic sees one offer and one button, not a menu; this is what brings the cost per ${cm1} down`, "Week 2"],
     ["Meta Pixel, Conversions API and UTM tags on every page and checkout", "Meta learns from people who pay, not people who click; it is why the return on ad spend rises from Month 1 to Month 3", "Week 2"],
     ["CRM with stages: enquiry, CM1, follow-up, CM2", "No lead is lost and every stage is a number; follow-ups on time raise the CM2 rate", "Week 3"],
-    ["AI calling agent in Telugu, Hindi and English on Voice by ElevateBox", "Missed, after-hours and abandoned-checkout calls are returned within a minute; this is the CM1 that does not come from ads", "Week 3 to 4"],
+    ["AI calling agent in Telugu, Hindi and English on Roopa by ElevateBox", "Missed, after-hours and abandoned-checkout calls are returned within a minute; this is the CM1 that does not come from ads", "Week 3 to 4"],
     ...x.tech.map(([a, b]): [string, string, string] => [a, b, "Month 2"]),
     ["WhatsApp automation: confirmations, reminders, payment links, review requests", "Fewer no-shows, more Google reviews and more referrals; this is the Phase 3 flywheel", "Month 2"],
     ["Owner dashboard: CM1, CM2, spend and cost per CM1, every morning", "Spend goes up only when the numbers say so, and weak ads are cut in days, not months", "Month 2"],
@@ -229,7 +229,7 @@ export function GrowthPlan({ s, g }: { s: Subject; g: Plan }) {
         ))}
       </div>
       <p className="mt-4 text-sm text-ink-muted">
-        The AI calling runs on <a href={VOICE_APP} className="underline">Voice by ElevateBox</a>.
+        The AI calling runs on <a href={VOICE_APP} className="underline">Roopa by ElevateBox</a>.
       </p>
 
       <H2 n={sec()}>The full tech solution, side by side with performance</H2>
