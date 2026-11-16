@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 
 const OFFICES = [
   { city: "Hyderabad", role: "Head office & delivery centre", detail: COMPANY.address, hours: COMPANY.hours },
-  { city: "Dubai", role: "UAE client coverage", detail: "Client meetings by appointment", hours: "Sun–Thu, 09:00–18:00 GST" },
-  { city: "London", role: "UK & Europe client coverage", detail: "Remote coverage with committed overlap", hours: "Mon–Fri, 09:00–17:00 GMT" },
 ];
 
 export default function ContactPage() {
@@ -82,7 +80,7 @@ export default function ContactPage() {
                 </div>
               </dl>
 
-              <h2 className="mt-12 text-2xl font-bold text-brand">Offices</h2>
+              <h2 className="mt-12 text-2xl font-bold text-brand">Office</h2>
               <div className="mt-6 space-y-4">
                 {OFFICES.map((o) => (
                   <div
