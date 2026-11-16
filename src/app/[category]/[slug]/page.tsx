@@ -10,6 +10,8 @@ import { entryDesc, entryTitle, pageMeta } from "@/lib/seo";
 import { Header, Footer } from "@/components/site";
 import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 import { FAQS } from "@/lib/content";
+import { clustersOf } from "@/lib/global";
+import { RelatedLinks } from "@/components/hyderabad-landing";
 import { QuoteForm, Section } from "@/components/blocks";
 import {
   COL,
@@ -179,6 +181,8 @@ export default async function EntryPage({
             </div>
           </div>
         </section>
+
+        <RelatedLinks links={clustersOf(`${cat.base}/${entry.slug}`)} />
 
         <PriceCta />
       </main>

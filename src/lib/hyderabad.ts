@@ -24,10 +24,29 @@ export type HydPage = {
   cost: { h2: string; lead: string; drivers: [string, string][] };
   faqs: { q: string; a: string }[];
   related: { label: string; href: string }[];
+  /** The pillar service page this cluster page links up to; the pillar links back down (clustersOf). */
+  pillar?: { label: string; href: string };
   /** Places named in the ProfessionalService schema; defaults to Hyderabad and AREAS. */
   areas?: string[];
   /** Pages for clients outside India (lib/global.ts): no prices, book-a-call CTA, own local band. */
   intl?: { country: string; local: { h2: string; body: string; chips: string[] } };
+};
+
+export const APP_PILLAR = { label: "Mobile app development services", href: "/services/mobile-app-development" };
+export const AI_PILLAR = { label: "AI solutions", href: "/ai-solutions" };
+export const VOICE_PILLAR = { label: "AI voice calling agent in Hyderabad and Telangana", href: "/ai-voice-calling-agent-hyderabad" };
+const PILLAR_OF: Record<string, { label: string; href: string }> = {
+  "/mobile-app-development-company-hyderabad": APP_PILLAR,
+  "/hire-mobile-app-developers-hyderabad": APP_PILLAR,
+  "/android-app-development-company-hyderabad": APP_PILLAR,
+  "/ios-app-development-company-hyderabad": APP_PILLAR,
+  "/flutter-app-development-company-hyderabad": APP_PILLAR,
+  "/mvp-development-company-hyderabad": APP_PILLAR,
+  "/app-development-company-telangana": APP_PILLAR,
+  "/web-development-company-hyderabad": { label: "Web development services", href: "/services/web-development" },
+  "/software-development-company-hyderabad": { label: "All development services", href: "/services" },
+  "/ai-development-company-hyderabad": AI_PILLAR,
+  "/ai-voice-calling-agent-hyderabad": AI_PILLAR,
 };
 
 export const AREAS = ["HITEC City", "Madhapur", "Gachibowli", "Jubilee Hills", "Kondapur", "Kukatpally", "Secunderabad", "Banjara Hills"];
@@ -87,7 +106,7 @@ const SHARED_FAQS = [
   { q: "Can you add AI features such as chat, voice or document reading to my app?", a: "Yes. We build chat on your own documents, document reading and voice agents. Our own product, Roopa by ElevateBox, makes AI phone calls in Telugu, Hindi and English." },
 ];
 
-export const HYD_PAGES: HydPage[] = [
+const PAGES: HydPage[] = [
   {
     path: "/mobile-app-development-company-hyderabad",
     title: "Mobile App Development Company in Hyderabad",
@@ -495,7 +514,7 @@ export const HYD_PAGES: HydPage[] = [
     path: "/flutter-app-development-company-hyderabad",
     title: "Flutter App Development Company in Hyderabad",
     description:
-      "Flutter and cross-platform app development company in Hyderabad: one codebase for Android and iPhone, launched on both stores, maintained after.",
+      "Flutter app development company in Hyderabad building cross-platform apps: one codebase for Android and iPhone, launched on both stores, maintained after.",
     h1: "Flutter App Development Company in Hyderabad",
     sub: "Cross-platform apps from one Flutter or React Native codebase, launched on Play Store and App Store together.",
     intro:
@@ -548,7 +567,7 @@ export const HYD_PAGES: HydPage[] = [
 
   {
     path: "/mvp-development-company-hyderabad",
-    title: "MVP Development for Startups in Hyderabad",
+    title: "MVP Development Company in Hyderabad",
     description:
       "MVP development company in Hyderabad: first versions of apps and SaaS products for startups, scoped in writing and live in weeks, code in your name.",
     h1: "MVP Development Company in Hyderabad",
@@ -700,7 +719,7 @@ export const HYD_PAGES: HydPage[] = [
     path: "/app-development-company-telangana",
     title: "App Development Company in Telangana",
     description:
-      "App and web development company in Telangana, based in Hyderabad, building for businesses in Warangal, Karimnagar, Nizamabad, Khammam and beyond.",
+      "App development company in Telangana, based in Hyderabad, building apps and websites for businesses in Warangal, Karimnagar, Nizamabad, Khammam and beyond.",
     h1: "App Development Company in Telangana",
     sub: "Mobile apps, websites and AI for businesses across Telangana, from a Hyderabad team that speaks Telugu.",
     intro:
@@ -714,7 +733,7 @@ export const HYD_PAGES: HydPage[] = [
         { t: "Websites", d: "Fast, search-ready websites that bring in enquiries.", href: "/web-development-company-hyderabad" },
         { t: "E-commerce", d: "Online stores with UPI checkout and delivery tracking.", href: "/services/ecommerce-development" },
         { t: "Business software", d: "Billing, inventory, CRM and staff apps that replace spreadsheets.", href: "/software-development-company-hyderabad" },
-        { t: "Telugu AI calling", d: "AI phone calls that speak Telugu, Hindi and English.", href: "https://agents.elevatebox.in" },
+        { t: "Telugu AI calling", d: "AI phone calls that speak Telugu, Hindi and English.", href: VOICE_PILLAR.href },
         { t: "Digital marketing", d: "Google search and Meta ads that bring in local customers.", href: "/services/digital-marketing" },
       ],
     },
@@ -751,6 +770,113 @@ export const HYD_PAGES: HydPage[] = [
       { label: "Telugu AI voice agents", href: "https://agents.elevatebox.in" },
     ],
   },
+
+  /* Voice target #1 (SEO consultant, Nov 2026): local first. Facts only from the Roopa consultation
+     (CONSULTS "roopa"), the home voice band and the /global voice pages. */
+  {
+    path: "/ai-voice-calling-agent-hyderabad",
+    title: "AI Voice Calling Agent | Hyderabad | Telangana",
+    description:
+      "AI voice calling agent for Hyderabad and Telangana: Roopa by ElevateBox is AI telecalling software that calls every lead in Telugu, Hindi and English.",
+    h1: "AI Voice Calling Agent in Hyderabad, Telangana",
+    sub: "Roopa by ElevateBox, our AI telecalling software, calls every new lead within seconds in Telugu, Hindi or English and books the next step.",
+    intro:
+      "ElevateBox builds and runs Roopa, an AI voice calling agent for businesses in Hyderabad and across Telangana. It is AI telecalling software: describe the job in plain words, and it calls every new lead within seconds, day or night, talks in Telugu, Hindi or English, writes down what was said and books the next step.",
+    serviceType: "AI voice calling agent",
+    areas: ["Hyderabad", "Telangana", ...AREAS, "Warangal", "Karimnagar", "Nizamabad", "Khammam"],
+    services: {
+      h2: "What Roopa calls for you",
+      items: [
+        { t: "Call back new enquiries", d: "Every new lead called within seconds, day or night, instead of the next morning.", href: "/ai-solutions/ai-agents-and-automation" },
+        { t: "Follow up old leads", d: "The follow-ups nobody had time for, made with your own script.", href: "/ai-solutions/ai-agents-and-automation" },
+        { t: "Confirm COD orders", d: "Orders confirmed by phone before dispatch.", href: "/industries/ecommerce" },
+        { t: "Appointment booking and reminders", d: "Confirms, reschedules and reminds, in the customer's language.", href: "/industries/healthcare-fitness" },
+        { t: "Payment and renewal reminders", d: "Reminder calls at the time you choose, with every answer written down.", href: "/industries/finance-insurance" },
+        { t: "Answer incoming calls", d: "Handles common questions and hands the rest to your team.", href: "/ai-solutions/ai-agents-and-automation" },
+        { t: "CRM and calendar links", d: "Call summaries, recordings and outcomes pushed into the tools your team already uses.", href: "/services/crm-software-development" },
+        { t: "Custom voice agents", d: "A voice agent built around your script, knowledge base and hand-off rules.", href: "/ai-solutions/generative-ai-development" },
+      ],
+    },
+    why: {
+      h2: "Why Hyderabad businesses choose Roopa",
+      points: [
+        { t: "Telugu, Hindi and English", d: "Your customers hear their own language. The call script is built from your brochure and website." },
+        { t: "Calls within seconds", d: "New leads are called as they come in, day or night, so none wait for the next morning." },
+        { t: "Every call written down", d: "What was said and the next step, so your team picks up where Roopa left off." },
+        { t: "Built and run in Hyderabad", d: "The team that builds Roopa runs it in production, at up to 8 lakh calls a day." },
+      ],
+    },
+    ai: {
+      h2: "Try Roopa before you decide",
+      lead: "Start free with ₹50 of calls on us, or book a 30-minute Roopa consultation and hear a demo call made with your own business details.",
+      items: [
+        { t: "Start free", d: "₹50 of calls on us when you sign up. Describe the job in plain words and hear Roopa make the call." },
+        { t: "Demo with your business", d: "In a ₹499 Roopa consultation we set up a demo call with your own business details." },
+        { t: "Script in your language", d: "A call script in Telugu, Hindi or English, built from your brochure and website." },
+        { t: "Hand-over to your team", d: "The calls a person should still take, and how Roopa hands them over." },
+      ],
+    },
+    process: {
+      h2: "How we set up Roopa for your business",
+      steps: [
+        { t: "Call script and goals", d: "Which calls, what the agent must find out, and when it hands over to a person.", when: "Week 1" },
+        { t: "Test calls", d: "We run the agent against real call scenarios and your team listens before anything goes live.", when: "Weeks 1–2" },
+        { t: "Pilot", d: "Live calls on a slice of your volume, with every call recorded and scored.", when: "Weeks 2–4" },
+        { t: "Scale", d: "More numbers, more call types and CRM links once the pilot hits its numbers.", when: "After the pilot" },
+        { t: "Tune", d: "Missed questions and failed calls feed the next version of the script.", when: "Every week" },
+      ],
+    },
+    stack: {
+      h2: "Technology behind Roopa",
+      groups: [
+        { t: "Voice", items: ["Speech to text", "Text to speech", "Turn-taking and barge-in"] },
+        { t: "Telephony", items: ["SIP trunks", "WebRTC", "Call recording"] },
+        { t: "Models", items: ["OpenAI", "Azure OpenAI", "Gemini"] },
+        { t: "Integrations", items: ["CRMs", "Calendars", "Webhooks", "WhatsApp"] },
+      ],
+    },
+    industries: {
+      h2: "Who Roopa calls for",
+      items: [
+        { t: "Builders and real estate", d: "Every site-visit enquiry called back, not left for tomorrow.", href: "/industries/real-estate" },
+        { t: "Clinics and hospitals", d: "Appointment reminders and follow-ups in the patient's language.", href: "/industries/healthcare-fitness" },
+        { t: "Shops with COD orders", d: "Orders confirmed by phone before dispatch.", href: "/industries/ecommerce" },
+        { t: "Loans and insurance", d: "New leads called back, and payment and renewal reminders.", href: "/industries/finance-insurance" },
+        { t: "Coaching and education", d: "Admission enquiries called back and followed up.", href: "/industries/education" },
+        { t: "Any team with a call list", d: "Events, services, anything: if your team dials, Roopa can help.", href: "/book/roopa" },
+      ],
+    },
+    cases: { h2: "Products we built and still run", slugs: ["voice", "oneasy", "8meds"] },
+    cost: {
+      h2: "How much does an AI voice calling agent cost in Hyderabad?",
+      lead: "It depends on the things below. In a 30-minute Roopa consultation (₹499) we work out your monthly cost at your call volume, next to what a telecaller costs you.",
+      drivers: [
+        ["Call types", "Inbound, outbound or both, and how many different conversations the agent must handle."],
+        ["Languages", "Telugu, Hindi and English today."],
+        ["Volume", "Calls a day and minutes per call."],
+        ["Telephony", "Your existing numbers and provider, or new ones."],
+        ["Integrations", "CRM, calendar, payment links and hand-off to your team."],
+      ],
+    },
+    faqs: [
+      { q: "What is an AI voice calling agent?", a: "Software that makes and answers phone calls for your business. Roopa by ElevateBox calls every new lead within seconds, talks in Telugu, Hindi or English, writes down what was said and books the next step." },
+      { q: "Is Roopa AI telecalling software?", a: "Yes. Roopa is AI telecalling software: the AI makes the calls, not a call centre. Your team keeps the calls a person should still take, and Roopa hands them over." },
+      { q: "Which languages does Roopa speak?", a: "Telugu, Hindi and English are in production today." },
+      { q: "Which calls can Roopa make?", a: "New enquiries, follow-ups on old leads, COD order confirmations, appointment booking and reminders, payment or renewal reminders, and answering incoming calls." },
+      { q: "How much does an AI voice calling agent cost in Hyderabad?", a: "It depends on your call types, languages, call volume and integrations. In a 30-minute Roopa consultation (₹499) we set up a demo call with your business details and work out your monthly cost at your call volume. New accounts also get ₹50 of calls free." },
+      { q: "Will callers know they are talking to an AI?", a: "We recommend the agent says so at the start of the call. It hands over to a person whenever the caller asks or the question is outside its script." },
+      { q: "Can Roopa use our existing phone numbers?", a: "In most cases, yes: the agent connects to your telephony provider over SIP. We confirm what your provider supports on the first call, and test calls run before any live traffic." },
+      { q: "Do you work with businesses outside Hyderabad?", a: "Yes. We work with businesses across Telangana and India over video calls and WhatsApp, and build voice agents for clients in the UAE, Saudi Arabia, Qatar, the USA, the UK, Germany and the Netherlands." },
+      SHARED_FAQS[1],
+    ],
+    related: [
+      { label: "Book a Roopa consultation", href: "/book/roopa" },
+      { label: "AI development company in Hyderabad", href: "/ai-development-company-hyderabad" },
+      { label: "App development company in Telangana", href: "/app-development-company-telangana" },
+    ],
+  },
 ];
+
+export const HYD_PAGES: HydPage[] = PAGES.map((p) => ({ ...p, pillar: PILLAR_OF[p.path] }));
 
 export const hydPage = (path: string) => HYD_PAGES.find((p) => p.path === path)!;

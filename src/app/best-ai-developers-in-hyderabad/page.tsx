@@ -9,7 +9,7 @@ import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 const PATH = "/best-ai-developers-in-hyderabad";
 const TITLE = "AI Developers in Hyderabad";
 const DESCRIPTION =
-  "Hire AI developers in Hyderabad who ship: AI agents, Telugu and Hindi voice calling, chatbots and document automation, measured before launch, owned by you.";
+  "Hire the best AI developers in Hyderabad: AI agents, Telugu and Hindi voice calling, chatbots and document automation, measured before launch, owned by you.";
 
 export const metadata: Metadata = pageMeta(`Best ${TITLE}: Agents & Voice | ElevateBox`, DESCRIPTION, PATH);
 

@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { CATEGORIES, FAQS, getCategory } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 import { Header, Footer } from "@/components/site";
+import { JsonLd, ORG, breadcrumb, faqPage, ld } from "@/lib/schema";
+import { clustersOf } from "@/lib/global";
+import { RelatedLinks } from "@/components/hyderabad-landing";
 import { COL, EntryCards, FaqCards, FeaturedCards, Head, HeroVisual, PriceCta, RichHero, TrustStrip, WorkRow, pageImage } from "@/components/inner";
 
 export const dynamicParams = false;
@@ -35,6 +38,7 @@ export default async function CategoryPage({
     <>
       <Header />
       <main className="flex-1">
+        <JsonLd json={ld(ORG, breadcrumb([{ name: cat.label, path: cat.base }]), faqPage(FAQS))} />
         <RichHero
           eyebrow={cat.label}
           title={`${cat.label} we deliver`}
@@ -62,6 +66,8 @@ export default async function CategoryPage({
             <FaqCards items={FAQS} />
           </div>
         </section>
+
+        <RelatedLinks links={clustersOf(cat.base)} />
 
         <PriceCta />
       </main>

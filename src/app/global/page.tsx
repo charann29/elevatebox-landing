@@ -8,7 +8,7 @@ import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 
 const TITLE = "AI and App Development for Clients Outside India";
 const DESCRIPTION =
-  "ElevateBox builds AI systems, AI voice agents and apps for businesses in the UAE, Saudi Arabia, Qatar, the USA, the UK, Germany and the Netherlands.";
+  "AI and app development for clients outside India: AI agents, voice agents and apps for the UAE, Saudi Arabia, Qatar, the USA, UK, Germany and the Netherlands.";
 
 export const metadata: Metadata = {
   title: TITLE,
