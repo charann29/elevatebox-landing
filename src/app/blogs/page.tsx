@@ -3,6 +3,7 @@ import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
+import { pageImage } from "@/components/inner";
 import { getStudioPosts } from "@/lib/cms";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
@@ -27,7 +28,7 @@ export default async function BlogIndex() {
       const category = s.eyebrow ?? s.tags[0] ?? "Article";
       return { slug: s.slug, title: s.heading ?? s.title, category, date: s.publishedAt ?? s.updatedAt ?? "", readMins: s.readingTimeMinutes, excerpt: s.description, cover: s.imageUrl ?? postCover(category) };
     }),
-    ...POSTS.filter((p) => !taken.has(p.slug)).map((p) => ({ ...p, cover: postCover(p.category) })),
+    ...POSTS.filter((p) => !taken.has(p.slug)).map((p) => ({ ...p, cover: pageImage(`blog-${p.slug}`) ?? postCover(p.category) })),
   ];
   const [featured, ...rest] = cards;
 
