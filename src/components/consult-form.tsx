@@ -171,15 +171,15 @@ export function ConsultForm({ offer }: { offer: Offer }) {
             <div className="mt-3 grid grid-cols-2 gap-2">
               {day.times.map((t) => (
                 <button key={t.time} type="button" disabled={t.booked} onClick={() => { setDate(day.date); setTime(t.time); }}
-                  className={`rounded-xl border px-3.5 py-3 text-sm font-semibold disabled:line-through disabled:opacity-40 ${date === day.date && time === t.time ? "border-[#ff7701] bg-[#ff7701] text-white" : "border-black/15 text-ink"}`}>
-                  {timeLabel(t.time)}
+                  className={`rounded-xl border px-3.5 py-3 text-sm font-semibold disabled:border-black/5 disabled:bg-black/5 disabled:text-ink-3 ${date === day.date && time === t.time ? "border-[#ff7701] bg-[#ff7701] text-white" : "border-black/15 text-ink"}`}>
+                  {timeLabel(t.time)}{t.booked && <span className="ml-1 text-xs font-medium">· Booked</span>}
                 </button>
               ))}
             </div>
             <button type="button" disabled={!time || busy} onClick={pay} className={`mt-6 w-full ${primary}`}>
               {busy ? "Opening payment…" : `Pay ${offer.price} and confirm`}
             </button>
-            <p className="mt-3 text-center text-xs text-ink-3">Secure payment by Razorpay. UPI, cards and netbanking.</p>
+            <p className="mt-3 text-center text-xs text-ink-3">Secure payment by Razorpay. UPI, cards and netbanking. Full refund if the call isn&apos;t useful.</p>
           </>
         )}
         {msg && <p role="alert" className="mt-4 text-sm font-semibold text-red-700">{msg}</p>}
