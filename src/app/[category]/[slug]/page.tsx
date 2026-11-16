@@ -5,7 +5,8 @@ import {
   CATEGORIES,
   TESTIMONIALS,
   getCategory,
-  getEntry, OG_IMG } from "@/lib/content";
+  getEntry } from "@/lib/content";
+import { entryDesc, entryTitle, pageMeta } from "@/lib/seo";
 import { Header, Footer } from "@/components/site";
 import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
 import { FAQS } from "@/lib/content";
@@ -44,12 +45,7 @@ export async function generateMetadata({
   const entry = getEntry(category, slug);
   const cat = getCategory(category);
   if (!entry || !cat) return {};
-  return {
-    title: `${entry.title}`,
-    description: entry.tagline,
-    alternates: { canonical: `${cat.base}/${entry.slug}` },
-    openGraph: { images: [OG_IMG], title: entry.title, description: entry.tagline, url: `${cat.base}/${entry.slug}`, type: "website" },
-  };
+  return pageMeta(entryTitle(cat, entry), entryDesc(cat, entry), `${cat.base}/${entry.slug}`);
 }
 
 export default async function EntryPage({
@@ -72,7 +68,7 @@ export default async function EntryPage({
         <JsonLd
           json={ld(
             ORG,
-            service(entry.title, entry.tagline, `${cat.base}/${entry.slug}`),
+            service(entry.title, entryDesc(cat, entry), `${cat.base}/${entry.slug}`, entry.name),
             breadcrumb([
               { name: cat.label, path: cat.base },
               { name: entry.name, path: `${cat.base}/${entry.slug}` },

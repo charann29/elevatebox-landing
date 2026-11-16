@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
-export const metadata: Metadata = {
-  title: `Terms & Conditions`,
-  description: "The terms governing use of this website and our services.",
-  alternates: { canonical: "/terms-and-conditions" },
-};
+export const metadata: Metadata = pageMeta("Terms & Conditions | ElevateBox, Hyderabad", "The terms governing use of elevatebox.in and ElevateBox services from ElevateScale Technologies Pvt Ltd, Hyderabad, where no signed agreement or SOW applies.", "/terms-and-conditions");
 
 export default function Page() {
   return (

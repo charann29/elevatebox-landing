@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COMPANY, POSTS, getPost, OG_IMG } from "@/lib/content";
+import { BLOG_TAILS, pageMeta, withTail } from "@/lib/seo";
 import { Header, Footer } from "@/components/site";
 import { AuthorBox, BlogCover, Byline, COL, Head, PriceCta, RichHero, Toc, slugify } from "@/components/inner";
-import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
+import { FOUNDER, JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import { BLOG_PATH, getStudioPost, getStudioPosts } from "@/lib/cms";
 import { StudioArticle, studioMetadata } from "@/components/studio-article";
 
@@ -19,6 +20,18 @@ export async function generateStaticParams() {
 const studioPost = async (slug: string) =>
   (await getStudioPosts()).some((s) => s.slug === slug) ? getStudioPost(slug) : null;
 
+// <title> for posts whose H1 runs past 60 characters; the H1 itself is unchanged.
+const SEO_TITLES: Record<string, string> = {
+  "flutter-vs-react-native": "Flutter vs React Native: How to Choose for Your App",
+  "freelance-vs-app-development-company-hyderabad": "Freelance App Developer vs App Company in Hyderabad",
+  "how-to-build-tax-ai-india": "How to Build a Tax AI for India: Data, Retrieval, Checks",
+  "hyderabad-health-apps-telugu-study-2026": "1 of 10 Hyderabad Health Brands Has a Telugu Website",
+  "tech-stack-for-a-new-startup": "Picking a Tech Stack for a New Startup | ElevateBox",
+};
+const postTitle = (p: { slug: string; title: string }) =>
+  SEO_TITLES[p.slug] ?? (p.title.length > 47 ? p.title : `${p.title} | ElevateBox`);
+const postDesc = (p: { excerpt: string }) => withTail(p.excerpt, BLOG_TAILS);
+
 export async function generateMetadata({
   params,
 }: {
@@ -29,18 +42,8 @@ export async function generateMetadata({
   if (s) return studioMetadata(s, `${BLOG_PATH}/${slug}`);
   const p = getPost(slug);
   if (!p) return {};
-  return {
-    // Long titles drop the " | ElevateBox" suffix so Google shows them whole.
-    title: p.title.length > 47 ? { absolute: p.title } : p.title,
-    description: p.excerpt,
-    alternates: { canonical: `/blogs/${p.slug}` },
-    openGraph: { images: [OG_IMG],
-      title: p.title,
-      description: p.excerpt,
-      type: "article",
-      publishedTime: p.date,
-    },
-  };
+  // Long titles drop the " | ElevateBox" suffix so Google shows them whole.
+  return pageMeta(postTitle(p), postDesc(p), `/blogs/${p.slug}`, { publishedTime: p.date });
 }
 
 const fmt = (iso: string) =>
@@ -86,10 +89,11 @@ export default async function PostPage({
             {
               "@type": "BlogPosting",
               headline: p.title,
-              description: p.excerpt,
+              description: postDesc(p),
+              image: `${COMPANY.site}${OG_IMG}`,
               datePublished: p.date,
               mainEntityOfPage: `${COMPANY.site}/blogs/${p.slug}`,
-              author: { "@id": ORG["@id"] },
+              author: FOUNDER,
               publisher: { "@id": ORG["@id"] },
             },
             breadcrumb([{ name: "Blogs", path: "/blogs" }, { name: p.title, path: `/blogs/${p.slug}` }]),

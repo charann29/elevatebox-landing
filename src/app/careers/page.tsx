@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { JOBS } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
-export const metadata: Metadata = {
-  title: `Careers`,
-  description:
-    "Open engineering, design, and growth roles at ElevateBox — Hyderabad, hybrid, and remote.",
-  alternates: { canonical: "/careers" },
-};
+export const metadata: Metadata = pageMeta("Careers: Engineering & Design Jobs in Hyderabad | ElevateBox", "Engineering, design and growth jobs at ElevateBox, Hyderabad, hybrid or remote. Build products for 175+ organisations, with family health cover from day one.", "/careers");
 
 const PERKS = [
   { t: "Real ownership", d: "You own features end to end, including the production behaviour after release." },

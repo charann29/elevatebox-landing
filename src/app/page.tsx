@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,7 +13,6 @@ import {
   PROJECTS,
   VOICE_APP,
   serviceIcon,
-  OG_IMG,
 } from "@/lib/content";
 import { Header, Footer, PillCta } from "@/components/site";
 import { DiscoveryOffer, Faq } from "@/components/blocks";
@@ -20,19 +20,7 @@ import { VoiceVideos } from "@/components/voice-videos";
 import { CountUp } from "@/components/count-up";
 import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: `${COMPANY.name} — Mobile App, Web & AI Development Company in Hyderabad`,
-  description:
-    "Mobile app, web and AI development company in Hyderabad. A paid requirement analysis, two-week releases, code in your name, and our own AI calling product, Voice.",
-  alternates: { canonical: "/" },
-  openGraph: {
-    images: [OG_IMG],
-    title: `${COMPANY.name} — Mobile App, Web & AI Development Company in Hyderabad`,
-    description: "Mobile apps, websites and AI products, built in Hyderabad and kept running after launch.",
-    url: "/",
-    type: "website",
-  },
-};
+export const metadata: Metadata = pageMeta("App, Web & AI Development Company in Hyderabad | ElevateBox", "ElevateBox builds mobile apps, websites and AI in Hyderabad: 380+ apps shipped, code in your name, and Roopa by ElevateBox AI calls in Telugu, Hindi, English.", "/");
 
 const COL = "mx-auto w-[min(1216px,100%-32px)]";
 const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { COMPANY, COURSES, CREDENTIALS, TRAINING_CALL, OG_IMG } from "@/lib/content";
+import { pageMeta } from "@/lib/seo";
+import { COMPANY, COURSES, CREDENTIALS, TRAINING_CALL } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { Faq, PageHero, Section } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, faqPage, ld } from "@/lib/schema";
@@ -9,12 +10,7 @@ const TITLE = "AI and Coding Courses in Hyderabad";
 const DESCRIPTION =
   "Learn to build with AI from engineers who ship it: AI agents, voice AI and production apps. Training for developers and teams in Hyderabad and online.";
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: PATH },
-  openGraph: { images: [OG_IMG], title: `${TITLE} | ElevateBox`, description: DESCRIPTION, url: PATH, type: "website" },
-};
+export const metadata: Metadata = pageMeta(`${TITLE} | ElevateBox`, DESCRIPTION, PATH);
 
 // What the people teaching build every day — the subjects, not a fixed syllabus.
 const TOPICS = [

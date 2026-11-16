@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { COMPANY } from "@/lib/content";
 import { LegalPage } from "@/components/legal";
 
-export const metadata: Metadata = {
-  title: `Cancellation & Refund Policy`,
-  description: "How cancellations, refunds, and paused engagements are handled.",
-  alternates: { canonical: "/cancellation-and-refund" },
-};
+export const metadata: Metadata = pageMeta("Cancellation & Refund Policy | ElevateBox", "How ElevateBox (ElevateScale Technologies Pvt Ltd, Hyderabad) handles cancellations, refunds and paused engagements, unless a signed SOW sets other terms.", "/cancellation-and-refund");
 
 export default function Page() {
   return (

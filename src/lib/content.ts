@@ -12,6 +12,8 @@ export type Entry = {
   tagline: string;
   intro: string;
   bullets: { t: string; d: string }[];
+  /** Meta description override; otherwise built from tagline by entryDesc() in lib/seo.ts. */
+  meta?: string;
 };
 
 export type Category = {
@@ -19,6 +21,9 @@ export type Category = {
   label: string;
   base: string;
   blurb: string;
+  /** <title> and meta description of the index page (the H1 stays "<label> we deliver"). */
+  seoTitle: string;
+  meta: string;
   items: Entry[];
 };
 
@@ -1051,6 +1056,18 @@ const LOCATIONS: Entry[] = [
      ["Scalable capacity", "Team size adjusted per phase without re-contracting."]]),
 ];
 
+/* Location taglines share one template, so their meta descriptions are written by hand. */
+const LOCATION_META: Record<string, string> = {
+  hyderabad: "Software and app development company in Hyderabad: mobile apps, web products and AI from a Punjagutta team you can meet. 380+ apps shipped, code in your name.",
+  dubai: "Software and app development for Dubai clients by ElevateBox, Hyderabad: a near-shared working day with GST, Arabic and English apps, UAE-ready contracting.",
+  uae: "App and software development across the UAE by ElevateBox, Hyderabad: Dubai, Abu Dhabi and Sharjah, bilingual Arabic and English products, data residency.",
+  uk: "Software development for UK clients by ElevateBox, Hyderabad: a committed daily overlap with UK hours, UK GDPR built in, WCAG 2.2 AA, and familiar contracts.",
+  europe: "Software development for European clients by ElevateBox, Hyderabad: GDPR by design, EU data residency, multi-language delivery and a committed CET overlap.",
+  italy: "Software and app development for Italian businesses by ElevateBox, Hyderabad: Italian localisation, e-invoicing awareness, GDPR and a CET overlap window.",
+  california: "Software development for California startups by ElevateBox, Hyderabad: a committed Pacific-time overlap, CCPA-aware data handling and weekly shipping.",
+  usa: "Software development for US companies by ElevateBox, Hyderabad: overlap windows agreed per client, enterprise-ready process, Section 508 and familiar MSAs.",
+};
+
 /* ------------------------------------------------------------------ */
 /* CATEGORY REGISTRY                                                   */
 /* ------------------------------------------------------------------ */
@@ -1061,6 +1078,8 @@ export const CATEGORIES: Category[] = [
     label: "Services",
     base: "/services",
     blurb: "End-to-end product delivery — design, build, launch, and the maintenance afterwards.",
+    seoTitle: "App, Web & AI Development Services in Hyderabad | ElevateBox",
+    meta: "App, web and AI development services from ElevateBox, Hyderabad: design, build, launch and maintenance. 380+ apps shipped, with code and cloud in your name.",
     items: SERVICES,
   },
   {
@@ -1068,6 +1087,8 @@ export const CATEGORIES: Category[] = [
     label: "Technologies",
     base: "/technologies",
     blurb: "The stacks we work in daily, chosen for your constraints rather than our comfort.",
+    seoTitle: "App Development Technologies We Use | ElevateBox Hyderabad",
+    meta: "The stacks ElevateBox builds with in Hyderabad: Flutter, React Native, Swift, Kotlin, Next.js, Node.js, Python, AWS and Azure, chosen for your constraints.",
     items: TECHNOLOGIES,
   },
   {
@@ -1075,6 +1096,8 @@ export const CATEGORIES: Category[] = [
     label: "Industries",
     base: "/industries",
     blurb: "Websites and apps for the sectors we build for, each with the features that sector needs.",
+    seoTitle: "Industries We Build Apps For | ElevateBox Hyderabad",
+    meta: "Websites and apps ElevateBox builds in Hyderabad for healthcare, education, real estate, e-commerce, logistics and fintech. 380+ apps for 175+ organisations.",
     items: INDUSTRIES,
   },
   {
@@ -1082,6 +1105,8 @@ export const CATEGORIES: Category[] = [
     label: "AI Solutions",
     base: "/ai-solutions",
     blurb: "AI built into products where it measurably reduces work — and skipped where it does not.",
+    seoTitle: "AI Development Solutions in Hyderabad | ElevateBox",
+    meta: "AI agents, generative AI, computer vision and predictive analytics from ElevateBox, Hyderabad, built where it cuts work. 3,000+ processes automated so far.",
     items: AI_SOLUTIONS,
   },
   {
@@ -1089,7 +1114,9 @@ export const CATEGORIES: Category[] = [
     label: "Locations",
     base: "/locations",
     blurb: "Where we deliver, and the overlap hours and compliance work each region needs.",
-    items: LOCATIONS,
+    seoTitle: "Where We Deliver: India, UAE, UK, Europe, US | ElevateBox",
+    meta: "ElevateBox delivers apps and software from Hyderabad to clients in India, Dubai and the UAE, the UK, Europe and the US, with committed overlap and compliance.",
+    items: LOCATIONS.map((l) => ({ ...l, meta: LOCATION_META[l.slug] })),
   },
 ];
 
@@ -1655,6 +1682,9 @@ export type Job = {
   responsibilities: string[];
   requirements: string[];
 };
+
+/** First published on the site (git history of this file); used as JobPosting datePosted. */
+export const JOBS_POSTED = "2026-08-02";
 
 export const JOBS: Job[] = [
   {

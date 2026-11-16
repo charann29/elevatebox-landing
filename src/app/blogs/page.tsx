@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
@@ -6,12 +7,7 @@ import { getStudioPosts } from "@/lib/cms";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
-export const metadata: Metadata = {
-  title: `Blog`,
-  description:
-    "Practical writing on product engineering, delivery, cost, and AI — from the team that ships the work.",
-  alternates: { canonical: "/blogs" },
-};
+export const metadata: Metadata = pageMeta("Tech & App Development Blog | ElevateBox", "Practical writing on app development cost, tech choices, delivery and AI from ElevateBox, the Hyderabad team behind 380+ apps for 175+ organisations.", "/blogs");
 
 const fmt = (iso: string) =>
   iso && new Date(iso).toLocaleDateString("en-IN", {

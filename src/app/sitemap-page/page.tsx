@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { CATEGORIES, JOBS, POSTS } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
 import { PageHero, Section } from "@/components/blocks";
 
-export const metadata: Metadata = {
-  title: `Sitemap`,
-  description: "Every page on the site, in one list.",
-  alternates: { canonical: "/sitemap-page" },
-};
+export const metadata: Metadata = pageMeta("Sitemap: Every Page on the ElevateBox Website", "Every page on elevatebox.in in one list: app, web and AI services, industries, technologies, locations, Hyderabad pages, blog posts, careers and policies.", "/sitemap-page");
 
 const PAGES = [
   { label: "Home", href: "/" },
