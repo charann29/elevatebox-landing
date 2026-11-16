@@ -244,7 +244,7 @@ export function DiscoveryOffer() {
       <ul className="mt-6 space-y-3">
         {DISCOVERY.includes.map((i) => (
           <li key={i} className="flex items-start gap-3 text-sm text-ink-2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="mt-0.5 size-4 shrink-0 text-[#16a34a]" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden="true">
               <path d="M5 12l5 5L20 7" />
             </svg>
             {i}

@@ -204,7 +204,7 @@ export function GrowthPlan({ s, g }: { s: Subject; g: Plan }) {
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {s.facts.map((f) => (
               <li key={f.label} className="flex items-start gap-2 text-sm text-ink-muted">
-                <span aria-hidden="true" className={f.ok ? "text-green-700" : "text-amber-700"}>{f.ok ? "✓" : "✗"}</span>
+                <span aria-hidden="true" className={f.ok ? "text-brand" : "text-amber-700"}>{f.ok ? "✓" : "✗"}</span>
                 <span>{f.label}</span>
               </li>
             ))}

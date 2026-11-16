@@ -46,7 +46,7 @@
   --color-sky: #eaf1ff;
   --color-amber: #ffb020;
   --color-amber-ink: #ffffff; /* owner: text on yellow is always white */
-  --color-live: #22c55e;
+  --color-live: #ffb020; /* owner: no green anywhere; live accents are amber */
 
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;

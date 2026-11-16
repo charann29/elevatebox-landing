@@ -163,8 +163,8 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                   </li>
                 ))}
               </ul>
-              <a href={VOICE_APP} className="mt-8 inline-flex items-center gap-2 rounded-full bg-live px-6 py-3 text-sm font-semibold text-[#04210f]">
-                <span aria-hidden="true" className="size-2 rounded-full bg-[#04210f]" />
+              <a href={VOICE_APP} className="mt-8 inline-flex items-center gap-2 rounded-full bg-live px-6 py-3 text-sm font-semibold text-white">
+                <span aria-hidden="true" className="size-2 rounded-full bg-white" />
                 Try Roopa, our AI voice agent
               </a>
               {!intl && <div className="mt-10 border-t border-brand/10 pt-8">
@@ -323,7 +323,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
                     : "Message us on WhatsApp or call about what you are building. When you are ready, the requirement analysis turns it into a written quotation."}
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <a href={book ?? WA} className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-semibold text-[#04210f]">WhatsApp us</a>
+                  <a href={book ?? WA} className="rounded-full bg-[#ffb020] px-6 py-3 text-center text-sm font-semibold text-white">WhatsApp us</a>
                   <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="rounded-full border border-brand/10 px-6 py-3 text-center text-sm font-semibold text-ink">
                     {`Call ${COMPANY.phone}`}
                   </a>
