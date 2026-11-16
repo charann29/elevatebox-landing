@@ -12,6 +12,12 @@ import paymentGateway from "./payment-gateway-integration-pitfalls.json";
 import appOrWebsite from "./when-not-to-build-an-app.json";
 import fleetGps from "./gps-tracking-for-fleets.json";
 import erpIntegration from "./erp-integration-without-a-rewrite.json";
+import topHyderabad from "./top-mobile-app-development-companies-hyderabad.json";
+import flutterVsRn from "./flutter-vs-react-native.json";
+import aiIntegration from "./ai-integration-existing-products.json";
+import bharat from "./building-for-bharat.json";
+import contentSeo from "./content-seo-that-still-works.json";
+import appSecurity from "./mobile-app-security-checklist.json";
 
 // Long-form posts in Growth Studio's shape (see src/lib/cms.ts). Add a post: drop <slug>.json here,
 // its images in public/assets/blog/<slug>/, and add it to the list below.
@@ -25,5 +31,5 @@ const rich = (p: Omit<CmsPost, "imageUrl" | "ogImageUrl"> & { imageUrl: string |
 });
 
 export const RICH_POSTS: CmsPost[] = (
-  [appCost, whatsappApi, gbp, appMaintenance, appStoreRejections, devPartner, checkout, freelanceVsCompany, mvpScope, paymentGateway, appOrWebsite, fleetGps, erpIntegration] as Parameters<typeof rich>[0][]
+  [appCost, whatsappApi, gbp, appMaintenance, appStoreRejections, devPartner, checkout, freelanceVsCompany, mvpScope, paymentGateway, appOrWebsite, fleetGps, erpIntegration, topHyderabad, flutterVsRn, aiIntegration, bharat, contentSeo, appSecurity] as Parameters<typeof rich>[0][]
 ).map(rich);
