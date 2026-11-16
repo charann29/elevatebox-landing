@@ -63,12 +63,12 @@ export function slotDays(nowMs, taken = {}, cfg = SLOT_CONFIG) {
     for (const t of cfg.times) {
       if (slotEpoch(date, t) <= nowMs) continue;
       const booked = (taken[date] || []).includes(t);
-      if (!booked && open >= (cfg.show ?? Infinity)) break;
       if (!booked) open++;
-      times.push({ time: t, booked });
+      if (booked || open <= (cfg.show ?? Infinity)) times.push({ time: t, booked });
     }
     if (!times.length) continue;
-    days.push({ date, today: i === 0, times, left: times.filter((t) => !t.booked).length });
+    // left = every real open time that day (not just the shown ones), so "Only N left" is never overstated
+    days.push({ date, today: i === 0, times, left: open });
   }
   return days;
 }

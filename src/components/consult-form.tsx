@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cleanPhone, slotDays } from "@/lib/booking.mjs";
+import { cleanPhone, slotDays, SLOT_CONFIG } from "@/lib/booking.mjs";
 import type { Question } from "@/lib/content";
 
 /* Ad booking flow: 7 questions -> pick a time -> Razorpay -> booked.
@@ -73,7 +73,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   const qs = offer.questions ?? Q;
   const [a, setA] = useState<Record<string, string> | null>(null);
   const [leadId, setLeadId] = useState("");
-  const [slots, setSlots] = useState<{ taken: Record<string, string[]>; now: number } | null>(null);
+  const [slots, setSlots] = useState<{ taken: Record<string, string[]>; now: number; week?: number } | null>(null);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [busy, setBusy] = useState(false);
@@ -83,7 +83,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   const loadSlots = () => {
     setSlots(null);
     // Worker clock, so the page never needs Date.now() during render
-    fetch(`${API}/slots`).then((r) => (r.ok ? r.json() : null)).then((d) => setSlots({ taken: d?.taken || {}, now: d?.now || 0 }))
+    fetch(`${API}/slots`).then((r) => (r.ok ? r.json() : null)).then((d) => setSlots({ taken: d?.taken || {}, now: d?.now || 0, week: d?.paid_week || 0 }))
       .catch(() => setSlots({ taken: {}, now: 0 }));
   };
 
@@ -167,7 +167,9 @@ export function ConsultForm({ offer }: { offer: Offer }) {
                 </button>
               ))}
             </div>
-            <p className="mt-4 text-sm font-semibold text-[#d32f2f]">{`Only ${day.left} ${day.left === 1 ? "time" : "times"} open ${day.today ? "today" : `on ${dayLabel(day.date)}`}. Calls fill up fast.`}</p>
+            {/* Both lines are real counts from the booking Worker; nothing is invented. */}
+            {(slots.week ?? 0) >= 2 && <p className="mt-4 text-sm font-semibold text-ink">{`${slots.week} people booked a call this week.`}</p>}
+            {day.left <= (SLOT_CONFIG.show ?? 0) && <p className="mt-4 text-sm font-semibold text-[#d32f2f]">{`Only ${day.left} ${day.left === 1 ? "time" : "times"} left ${day.today ? "today" : `on ${dayLabel(day.date)}`}.`}</p>}
             <div className="mt-3 grid grid-cols-2 gap-2">
               {day.times.map((t) => (
                 <button key={t.time} type="button" disabled={t.booked} onClick={() => { setDate(day.date); setTime(t.time); }}
