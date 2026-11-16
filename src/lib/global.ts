@@ -65,7 +65,7 @@ const COUNTRIES: Country[] = [
     in: "the USA",
     country: "United States",
     short: "US",
-    tz: "India is 9.5 to 12.5 hours ahead of US time zones. We hold a daily call in your morning, our evening, and build while you sleep, so each morning starts with yesterday's work done.",
+    tz: "India is 9.5 to 13.5 hours ahead of mainland US time zones. We hold a daily call in your morning, our evening, and build while you sleep, so each morning starts with yesterday's work done.",
     law: "HIPAA for health data, the SOC 2 controls enterprise buyers ask for, and state privacy laws such as California's CCPA and CPRA",
     lawShort: "HIPAA and CCPA",
     hosting: "US cloud regions on AWS, Azure or Google Cloud, in your own account",
@@ -349,7 +349,8 @@ function build(s: Service, c: Country): HydPage {
 
 export const GLOBAL_PAGES: HydPage[] = COUNTRIES.flatMap((c) => SERVICES.map((s) => build(s, c)));
 export const GLOBAL_GROUPS = COUNTRIES.map((c) => ({
-  label: c.in.replace(/^the /, "The "),
+  label: c.in === "Dubai" ? "UAE (Dubai)" : c.in.replace(/^the /, "The "),
+  in: c.in,
   pages: SERVICES.map((s) => ({ label: s.phrase, href: path(s, c) })),
 }));
 export const globalPage = (slug: string) => GLOBAL_PAGES.find((p) => p.path === `/global/${slug}`);

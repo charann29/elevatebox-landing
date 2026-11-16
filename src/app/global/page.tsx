@@ -54,7 +54,7 @@ export default function GlobalHub() {
                 <ul className="mt-4 space-y-2">
                   {g.pages.map((p) => (
                     <li key={p.href}>
-                      <Link href={p.href} className="text-sm font-semibold text-navy hover:underline">{`${p.label} in ${g.label.replace(/^The /, "the ")} →`}</Link>
+                      <Link href={p.href} className="text-sm font-semibold text-navy hover:underline">{`${p.label} in ${g.in} →`}</Link>
                     </li>
                   ))}
                 </ul>
