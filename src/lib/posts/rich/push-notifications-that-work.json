@@ -1,0 +1,180 @@
+{
+ "slug": "push-notifications-that-work",
+ "locale": "en",
+ "title": "Push notification best practices for Android and iOS",
+ "description": "Push notifications users keep: Android 13 permission, iOS prompts and provisional trials, App Store 4.5.4, FCM and APNs delivery, Indian examples, checks.",
+ "imageUrl": "/assets/blog/push-notifications-that-work/cover.webp",
+ "imageAlt": "Illustration of an Indian restaurant owner looking at an order notification on a phone, beside the words Push that works",
+ "ogImageUrl": null,
+ "tags": [
+  "push notifications",
+  "Android",
+  "iOS",
+  "app engagement"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-03-28T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "how-to-get-push-notifications-allowed-and-kept",
+   "text": "How to get push notifications allowed and kept",
+   "level": 2
+  },
+  {
+   "id": "the-platform-rules-side-by-side",
+   "text": "The platform rules, side by side",
+   "level": 2
+  },
+  {
+   "id": "android-13-notifications-start-off",
+   "text": "Android 13: notifications start off",
+   "level": 2
+  },
+  {
+   "id": "ios-one-prompt-or-a-quiet-trial",
+   "text": "iOS: one prompt, or a quiet trial",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-ask-for-permission-the-right-way",
+   "text": "Step by step: ask for permission the right way",
+   "level": 2
+  },
+  {
+   "id": "design-what-you-send-channels-and-content",
+   "text": "Design what you send: channels and content",
+   "level": 2
+  },
+  {
+   "id": "delivery-details-your-developer-must-get-right",
+   "text": "Delivery details your developer must get right",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples-from-indian-businesses",
+   "text": "Three worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-restaurant-or-cloud-kitchen-ordering-app",
+   "text": "A restaurant or cloud kitchen ordering app",
+   "level": 3
+  },
+  {
+   "id": "a-diagnostic-lab-or-clinic",
+   "text": "A diagnostic lab or clinic",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-fashion-brand",
+   "text": "A D2C fashion brand",
+   "level": 3
+  },
+  {
+   "id": "mistakes-that-make-people-turn-notifications-off",
+   "text": "Mistakes that make people turn notifications off",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-notification-check",
+   "text": "A monthly notification check",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Do I need to ask permission for push notifications on Android?",
+   "a": "Yes, on Android 13 and higher. Android's guide says notifications from a newly installed app are off by default until the user grants the POST_NOTIFICATIONS permission. The runtime permission arrived with Android 13 (API level 33)."
+  },
+  {
+   "q": "When is the best time to ask for notification permission?",
+   "a": "After the user has done something that makes notifications useful, such as placing an order or tapping an alert bell. Google suggests letting users get familiar with the app first, and Apple recommends asking in context rather than on first launch."
+  },
+  {
+   "q": "What happens if a user taps don't allow?",
+   "a": "On Android, all your app's notification channels are blocked, as if the user turned them off in settings. On iOS, later requests don't show the prompt again. The user can only change it in system settings."
+  },
+  {
+   "q": "Can I send promotional push notifications on iOS?",
+   "a": "Only if customers have explicitly opted in through consent language in your app's interface and you give them a way to opt out in the app. That is App Store Review Guideline 4.5.4."
+  },
+  {
+   "q": "What is provisional authorisation on iOS?",
+   "a": "It lets an app send notifications quietly without first showing a prompt. They appear only in Notification Center, without sound or banner, with buttons to keep or turn off future notifications."
+  },
+  {
+   "q": "How big can a push notification payload be?",
+   "a": "Firebase Cloud Messaging allows 4096 bytes for notification and data messages, or 1000 characters from the Firebase console. Apple's APNs limits a regular notification payload to 4 KB, and 5 KB for VoIP notifications."
+  },
+  {
+   "q": "Do push notifications work on iPhone websites?",
+   "a": "Since iOS and iPadOS 16.4, web apps added to the Home Screen can request push permission, but only in response to a direct user action such as tapping a subscribe button. WebKit's announcement covers Home Screen web apps, not ordinary Safari tabs."
+  }
+ ],
+ "contentHtml": "<h2 id=\"how-to-get-push-notifications-allowed-and-kept\">How to get push notifications allowed and kept</h2><p><strong>In short:</strong> On Android 13 and later, and on every iPhone, push notifications are off until the user says yes. So ask at the moment a notification is obviously useful, such as after an order, not on first launch. Then send only what the user asked for, put each type in its own Android channel, and never send marketing pushes on iOS without explicit opt-in.</p><p>This guide was checked in November 2026, against Android Developers, Apple's Human Interface Guidelines and developer documentation, the App Store Review Guidelines, Firebase Cloud Messaging docs and MDN.</p><p>Push notifications are the cheapest way an app can bring a customer back. They are also the fastest way to get muted. Once a user turns off your notifications, there is no second prompt to fix it, only a trip into system settings that most people never make.</p><p>I will go through the platform rules that decide whether you can notify at all, how to ask, what to send, the delivery details your developer needs to get right, three worked examples from Indian businesses, and the mistakes that make people switch notifications off.</p><h2 id=\"the-platform-rules-side-by-side\">The platform rules, side by side</h2><p>The rules differ by platform, and Android's changed with Android 13. Here is what each one says.</p><p><em>Push notification permission and content rules by platform</em></p><table><thead><tr><th>Platform</th><th>Default for a new install</th><th>Who controls when you ask</th><th>Notable rule</th></tr></thead><tbody><tr><td>Android 13 and higher</td><td>Off until the user grants POST_NOTIFICATIONS</td><td>Your app, if it targets Android 13 or higher</td><td>Apps targeting 12L or lower get the prompt when they create a channel, usually at startup</td></tr><tr><td>Android 8.0 and higher</td><td>Each notification belongs to a channel</td><td>User sets behaviour per channel</td><td>You can't change a channel's behaviour after creating it</td></tr><tr><td>iOS and iPadOS</td><td>Off until the user allows</td><td>Your app, through requestAuthorization</td><td>Only the first request shows a prompt; later requests don't</td></tr><tr><td>iOS, provisional</td><td>Quiet delivery to Notification Center</td><td>Granted automatically, user keeps or turns off</td><td>No sound, banner or lock screen until kept</td></tr><tr><td>App Store</td><td>Not applicable</td><td>Not applicable</td><td>Marketing pushes need explicit opt-in and an in-app opt-out (guideline 4.5.4)</td></tr><tr><td>Web, including iOS 16.4 Home Screen web apps</td><td>Off until the user allows</td><td>Must follow a user gesture, such as tapping a button</td><td>iOS web push works only for web apps added to the Home Screen</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.android.com/develop/ui/views/notifications/notification-permission\" rel=\"noopener noreferrer nofollow\"><em>Android notification permission</em></a><em> and </em><a href=\"https://developer.android.com/develop/ui/views/notifications/channels\" rel=\"noopener noreferrer nofollow\"><em>Android notification channels</em></a><em> and </em><a href=\"https://developer.apple.com/documentation/usernotifications/asking-permission-to-use-notifications\" rel=\"noopener noreferrer nofollow\"><em>Apple, Asking permission to use notifications</em></a><em> and </em><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\"><em>App Store Review Guidelines</em></a><em> and </em><a href=\"https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/\" rel=\"noopener noreferrer nofollow\"><em>WebKit blog</em></a><em>, read 16 November 2026.</em></p><p>The common thread is that the user decides, and usually decides once. So the request is a one-shot opportunity, and the content afterwards decides whether the permission lasts.</p><h2 id=\"android-13-notifications-start-off\">Android 13: notifications start off</h2><p>Android's <a href=\"https://developer.android.com/develop/ui/views/notifications/notification-permission\" rel=\"noopener noreferrer nofollow\">notification permission guide</a> says that if a user installs your app on a device running Android 13 or higher, your app's notifications are off by default. The app must wait until it has asked for the POST_NOTIFICATIONS permission and the user has granted it.</p><p>The user sees three choices in the dialog: allow, don't allow, or swipe it away. Swiping away changes nothing. Tapping don't allow blocks all of your app's notification channels, the same as switching them off in settings.</p><p>Two details matter for older apps. If your app still targets 12L or lower, the system shows the permission dialog the first time your app starts an activity after creating a notification channel, which is usually at startup. You lose control of timing. And Google's guide warns that for those apps, if the user taps don't allow even once, they aren't prompted again until they reinstall the app or you update it to target Android 13 or higher.</p><p>Apps that were already installed get some relief. When a user upgrades their phone to Android 13, the system pre-grants the permission to eligible existing apps, as long as the app had a notification channel and the user had not turned its notifications off. New installs get no such help.</p><figure><img src=\"/assets/blog/push-notifications-that-work/1.webp\" alt=\"Annotated view of Android's notification permission guide showing that notifications are off by default and advice to wait before asking\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Android's guide: new installs start with notifications off, and you should wait before asking.</figcaption></figure><h2 id=\"ios-one-prompt-or-a-quiet-trial\">iOS: one prompt, or a quiet trial</h2><p>Apple's <a href=\"https://developer.apple.com/documentation/usernotifications/asking-permission-to-use-notifications\" rel=\"noopener noreferrer nofollow\">Asking permission to use notifications</a> page says the first time your app makes the authorisation request, the system prompts the person and records the answer. Subsequent requests don't prompt again. Apple recommends asking in context, for example in a task app right after the person schedules their first task, rather than automatically on first launch, because people can then see what the notifications are for.</p><p>Apple also offers provisional authorisation, which I think more Indian apps should try. With it, the app is authorised automatically, but notifications arrive quietly: no sound, no banner, nothing on the lock screen, only in Notification Center's history. Each carries buttons to keep or turn off future notifications. People judge your notifications by seeing them, rather than guessing from a dialog.</p><p>Apple's <a href=\"https://developer.apple.com/design/human-interface-guidelines/notifications\" rel=\"noopener noreferrer nofollow\">Human Interface Guidelines</a> add content rules worth pinning on the wall. Keep notifications concise. Avoid sending multiple notifications for the same thing, even if someone hasn't responded, because people may turn off all notifications from your app. Don't use a notification to show an error message; use an alert. And avoid sensitive, personal or confidential information, because you can't predict who else can see the screen.</p><p>For marketing, the <a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\">App Store Review Guidelines</a> are stricter than many owners expect. Guideline 4.5.4 says push notifications must not be required for the app to function, should not carry sensitive personal or confidential information, and should not be used for promotions or direct marketing unless customers have explicitly opted in through consent language in your app's interface, with a way to opt out in the app.</p><figure><img src=\"/assets/blog/push-notifications-that-work/2.webp\" alt=\"Annotated view of Apple's notifications guidance warning against repeated notifications\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple's guidelines say repeated notifications can lead people to turn off all of yours.</figcaption></figure><h2 id=\"step-by-step-ask-for-permission-the-right-way\">Step by step: ask for permission the right way</h2><p>This is the sequence I would build into any Android or iOS app.</p><p><strong>Step 1. Target the current Android version.</strong> Google strongly recommends targeting Android 13 or higher so your app, not the system, decides when the dialog appears. Ask your developer what the app's target SDK is.</p><p><strong>Step 2. Don't ask on first launch.</strong> Google's guide says to let users get familiar with the app first, and gives examples of good moments: tapping an alert bell, following an account, or submitting a food delivery order. It also suggests waiting until the third or fourth launch as an alternative.</p><p><strong>Step 3. Tie the ask to a promise.</strong> Show a short screen that says exactly what the user will get: \"We'll tell you when your order is out for delivery.\" Google says requesting in context, so it is clear what notifications are for, makes users more likely to grant it. On Android, the explanation screen is needed only when shouldShowRequestPermissionRationale() returns true.</p><p><strong>Step 4. Consider a quiet start on iOS.</strong> Provisional authorisation lets people see your notifications before committing.</p><p><strong>Step 5. Check before sending.</strong> On Android, call areNotificationsEnabled() before posting. On iOS, Apple says to check the authorisation status before scheduling local notifications, because people can change it at any time.</p><p><strong>Step 6. Ask separately for marketing.</strong> Order updates and offers are different promises. On iOS, guideline 4.5.4 requires explicit opt-in for promotional pushes. I would use the same rule on Android.</p><figure><img src=\"/assets/blog/push-notifications-that-work/3.webp\" alt=\"Infographic of when to ask for notification permission: after a useful action, with a clear promise\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Ask after a useful action, with a promise, not on the splash screen.</figcaption></figure><h2 id=\"design-what-you-send-channels-and-content\">Design what you send: channels and content</h2><p>On Android 8.0 and higher, every notification must belong to a <a href=\"https://developer.android.com/develop/ui/views/notifications/channels\" rel=\"noopener noreferrer nofollow\">notification channel</a>. Users see channels as \"categories\" in your app's settings and can turn each one off or change its sound. Google says to create a channel for each type of notification you send. After you create a channel you can't change its behaviour; the user has complete control.</p><p>This is useful for you, not just the user. If order updates, payment reminders and offers share one channel, a user annoyed by offers switches off everything. If they are separate, the user switches off offers and keeps the order updates that bring them back.</p><p>A sensible starting set for a business app:</p><ul><li><strong>Transactions:</strong> order confirmed, out for delivery, payment received. High value, the user expects them.</li><li><strong>Reminders:</strong> appointment tomorrow, renewal due. Useful if the user set them up.</li><li><strong>Messages:</strong> a reply from support or a seller.</li><li><strong>Offers:</strong> sales and promotions, separate, opt-in, and the first thing users mute.</li></ul><p>For the words themselves, Apple's guidance applies everywhere: a short title that adds context, a body that makes sense at a glance, no app name in the text because the system shows your icon, and no instructions to go and do something inside the app. Write in the language the user chose in the app. A Telugu-speaking customer reading an English notification on a lock screen is more likely to swipe it away.</p><p>For anything sensitive, such as a lab report or a loan status, send a neutral notification (\"Your report is ready\") and show the detail only inside the app after sign-in.</p><h2 id=\"delivery-details-your-developer-must-get-right\">Delivery details your developer must get right</h2><p>Even good notifications fail if delivery is set up badly. These are the points to check with whoever builds your app.</p><p><strong>Message type.</strong> Firebase Cloud Messaging has <a href=\"https://firebase.google.com/docs/cloud-messaging/customize-messages/set-message-type\" rel=\"noopener noreferrer nofollow\">two message types</a>: notification messages, which the FCM SDK displays automatically, and data messages, which your app handles itself. The maximum payload for both is 4096 bytes, and 1000 characters when sending from the Firebase console.</p><p><strong>Priority on Android.</strong> FCM's <a href=\"https://firebase.google.com/docs/cloud-messaging/android/message-priority\" rel=\"noopener noreferrer nofollow\">priority guide</a> says normal priority is the default and may be delayed while the phone is in Doze mode. High priority is for time-sensitive, user-visible notifications; Google gives chat messages, account problems and food delivery updates as examples. But if FCM sees high priority messages that don't result in a visible notification, judged over 7 days, it may deprioritise them to normal. Don't mark silent background syncs as high priority.</p><p><strong>Do the work quickly.</strong> The same guide says the app gets only a few seconds to process each message in onMessageReceived, enough to show a notification. Heavy work like downloading images needs extra steps, or notifications arrive late or not at all.</p><p><strong>Priority and expiry on iOS.</strong> Apple's <a href=\"https://developer.apple.com/documentation/usernotifications/sending-notification-requests-to-apns\" rel=\"noopener noreferrer nofollow\">APNs documentation</a> says apns-priority 10 sends immediately, 5 sends based on power considerations on the device, and 1 prioritises power and avoids waking the device. The payload is limited to 4 KB (4096 bytes). Use apns-expiration so a \"sale ends at 6 pm\" push is not delivered at 9 pm, and apns-collapse-id to merge repeated updates into one notification.</p><p><strong>Clean up old tokens.</strong> Firebase's <a href=\"https://firebase.google.com/docs/cloud-messaging/manage-tokens\" rel=\"noopener noreferrer nofollow\">token management guide</a> says registrations of devices that have not connected for over a month are stale, and on Android a registration inactive for 270 days is treated as expired and rejected. Sending to dead tokens wastes effort and distorts your delivery numbers.</p><p><strong>Web push.</strong> MDN's <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API\" rel=\"noopener noreferrer nofollow\">Notifications API guide</a> says to request permission only in response to a user gesture, and notes browsers are moving to disallow requests that are not. WebKit added web push to iOS and iPadOS 16.4 for web apps added to the Home Screen, again only after a direct user interaction such as tapping a subscribe button.</p><h2 id=\"three-worked-examples-from-indian-businesses\">Three worked examples from Indian businesses</h2><p>These are illustrative. The businesses and details are made up to show the decisions.</p><h3 id=\"a-restaurant-or-cloud-kitchen-ordering-app\">A restaurant or cloud kitchen ordering app</h3><p>A cloud kitchen in Hyderabad launches its own ordering app. The original build asked for notification permission on the splash screen, before the customer had seen the menu.</p><p>The better flow: no prompt until the first order is placed. On the order confirmation screen, a line reads \"Get updates when your food is on the way\" with an allow button. Order status goes in a transactions channel at high priority, which matches Google's own food delivery example. Offers go in a separate offers channel, at most a few a week, with an in-app switch. Our page on <a href=\"/industries/restaurants\">restaurant apps</a> covers ordering builds like this.</p><figure><img src=\"/assets/blog/push-notifications-that-work/4.webp\" alt=\"Illustration of a customer receiving an order update notification on a phone while a delivery rider arrives\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>An order update is the moment a notification feels like help, not noise.</figcaption></figure><h3 id=\"a-diagnostic-lab-or-clinic\">A diagnostic lab or clinic</h3><p>A diagnostic lab wants to tell patients when reports are ready and remind them about appointments.</p><p>The permission is asked right after the patient books a test: \"We'll tell you when your report is ready.\" The notification says only that, never the test name or result, following Apple's advice on sensitive information and guideline 4.5.4. A reminders channel carries appointment reminders the day before. Health offers, if any, are opt-in only. For larger healthcare builds, see our <a href=\"/industries/healthcare-appointments\">healthcare appointments</a> page.</p><h3 id=\"a-d2c-fashion-brand\">A D2C fashion brand</h3><p>A D2C brand selling kurtas wants pushes for sales. This is the case most likely to go wrong.</p><p>Shipping updates are the reason to allow notifications, so the ask comes after the first purchase. Sale announcements need their own explicit opt-in on iOS, and I would do the same on Android. On iOS, provisional authorisation lets a new customer see a quiet shipping update before deciding. Sale pushes use an expiry time so a sale that has ended is never announced. The brand sends one push per sale, not a countdown of reminders, because Apple warns that repeated notifications for the same thing lead people to turn off all of them.</p><h2 id=\"mistakes-that-make-people-turn-notifications-off\">Mistakes that make people turn notifications off</h2><p><strong>Asking on first launch.</strong> Both Google and Apple advise against it. The user has no reason to say yes yet.</p><p><strong>Staying on an old target SDK.</strong> The system then asks at startup for you, and a single don't allow sticks until reinstall.</p><p><strong>One channel for everything.</strong> An annoyed user mutes the lot, including the order updates you needed.</p><p><strong>Repeating the same message.</strong> Reminders about an abandoned cart three times a day are exactly what Apple's guidelines warn against.</p><p><strong>Marketing without consent on iOS.</strong> Guideline 4.5.4 requires explicit opt-in and an opt-out in the app.</p><p><strong>Private details on the lock screen.</strong> Amounts, diagnoses and loan decisions belong inside the app.</p><p><strong>Using notifications for errors.</strong> Apple says to use an alert for an error, not a notification.</p><p><strong>Marking everything high priority.</strong> FCM may deprioritise your messages if high priority sends don't produce visible notifications.</p><h2 id=\"a-monthly-notification-check\">A monthly notification check</h2><ul><li>Opt-in rate for new users on Android 13+ and iOS, split by where the prompt was shown.</li><li>Channel by channel, how many users switched each one off.</li><li>Number of pushes per user per week, by channel.</li><li>Delivery failures and stale tokens removed.</li><li>Any notification that showed personal or sensitive details on the lock screen.</li><li>Marketing pushes sent only to users who opted in, with a working opt-out.</li><li>Expiry set on every time-limited offer.</li></ul><p>If you are planning an app and want the notification plan written into the scope, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">book it here</a>). Code, cloud and credentials stay in your name. Our <a href=\"/services/mobile-app-development\">mobile app development</a> page has more on how we build.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"do-i-need-to-ask-permission-for-push-notifications-on-android\">Do I need to ask permission for push notifications on Android?</h3><p>Yes, on Android 13 and higher. Android's guide says notifications from a newly installed app are off by default until the user grants the POST_NOTIFICATIONS permission. The runtime permission arrived with Android 13 (API level 33).</p><h3 id=\"when-is-the-best-time-to-ask-for-notification-permission\">When is the best time to ask for notification permission?</h3><p>After the user has done something that makes notifications useful, such as placing an order or tapping an alert bell. Google suggests letting users get familiar with the app first, and Apple recommends asking in context rather than on first launch.</p><h3 id=\"what-happens-if-a-user-taps-dont-allow\">What happens if a user taps don't allow?</h3><p>On Android, all your app's notification channels are blocked, as if the user turned them off in settings. On iOS, later requests don't show the prompt again. The user can only change it in system settings.</p><h3 id=\"can-i-send-promotional-push-notifications-on-ios\">Can I send promotional push notifications on iOS?</h3><p>Only if customers have explicitly opted in through consent language in your app's interface and you give them a way to opt out in the app. That is App Store Review Guideline 4.5.4.</p><h3 id=\"what-is-provisional-authorisation-on-ios\">What is provisional authorisation on iOS?</h3><p>It lets an app send notifications quietly without first showing a prompt. They appear only in Notification Center, without sound or banner, with buttons to keep or turn off future notifications.</p><h3 id=\"how-big-can-a-push-notification-payload-be\">How big can a push notification payload be?</h3><p>Firebase Cloud Messaging allows 4096 bytes for notification and data messages, or 1000 characters from the Firebase console. Apple's APNs limits a regular notification payload to 4 KB, and 5 KB for VoIP notifications.</p><h3 id=\"do-push-notifications-work-on-iphone-websites\">Do push notifications work on iPhone websites?</h3><p>Since iOS and iPadOS 16.4, web apps added to the Home Screen can request push permission, but only in response to a direct user action such as tapping a subscribe button. WebKit's announcement covers Home Screen web apps, not ordinary Safari tabs.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developer.android.com/develop/ui/views/notifications/notification-permission\" rel=\"noopener noreferrer nofollow\">Notification runtime permission, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/develop/ui/views/notifications/channels\" rel=\"noopener noreferrer nofollow\">Create and manage notification channels, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/design/human-interface-guidelines/notifications\" rel=\"noopener noreferrer nofollow\">Notifications, Apple Human Interface Guidelines</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/documentation/usernotifications/asking-permission-to-use-notifications\" rel=\"noopener noreferrer nofollow\">Asking permission to use notifications, Apple Developer Documentation</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/documentation/usernotifications/sending-notification-requests-to-apns\" rel=\"noopener noreferrer nofollow\">Sending notification requests to APNs, Apple Developer Documentation</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\">App Store Review Guidelines, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/cloud-messaging/customize-messages/set-message-type\" rel=\"noopener noreferrer nofollow\">Set the message type, Firebase Cloud Messaging documentation</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/cloud-messaging/android/message-priority\" rel=\"noopener noreferrer nofollow\">Setting the priority of a message, Firebase Cloud Messaging documentation</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/cloud-messaging/manage-tokens\" rel=\"noopener noreferrer nofollow\">Best practices for FCM registration token management, Firebase documentation</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API\" rel=\"noopener noreferrer nofollow\">Using the Notifications API, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Push_API\" rel=\"noopener noreferrer nofollow\">Push API, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/\" rel=\"noopener noreferrer nofollow\">Web Push for Web Apps on iOS and iPadOS, WebKit blog</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian restaurant owner looking at an order notification on a phone, beside the words Push that works",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian woman who runs a cloud kitchen, in an apron over a kurta, standing at a steel kitchen counter with packed food boxes, smiling at her phone where a single notification card with a bell icon appears. Phone shows only abstract shapes and a bell icon, no readable text, no logos. Face fully in frame. Right half: the title 'Push that works' in very large bold black sans-serif, left-aligned, on three lines ('Push' / 'that' / 'works'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Android's notification permission guide showing that notifications are off by default and advice to wait before asking",
+   "url": "https://developer.android.com/develop/ui/views/notifications/notification-permission",
+   "annotate": [
+    {
+     "text": "notifications are off by default",
+     "label": "New installs start off"
+    },
+    {
+     "text": "Wait to show notification permission prompt",
+     "label": "Don't ask at launch"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Apple's notifications guidance warning against repeated notifications",
+   "url": "https://developer.apple.com/design/human-interface-guidelines/notifications",
+   "annotate": [
+    {
+     "text": "Avoid sending multiple notifications for the same thing",
+     "label": "Repeats get you muted"
+    },
+    {
+     "text": "Avoid including sensitive, personal, or confidential information in a notification.",
+     "label": "Keep details in the app"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "infographic",
+   "alt": "Infographic of when to ask for notification permission: after a useful action, with a clear promise",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'When to ask for notifications'. A left-to-right flow of four steps, each an icon above a dark-blue rounded pill with white text, joined by orange arrows. Step 1: phone icon, pill 'User places an order'. Step 2: speech-bubble icon, pill 'Say what they will get'. Step 3: bell icon, pill 'Show the system prompt'. Step 4: sliders icon, pill 'Separate channel for offers'. Above the flow, a small crossed-out splash-screen icon with grey note 'Not on first launch'. One-line bold takeaway at bottom: 'Ask once, at a useful moment.' No logos, no other text."
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a customer receiving an order update notification on a phone while a delivery rider arrives",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Outside an Indian apartment gate: a young man in a T-shirt and track pants glances at his phone, which shows a single notification card with a small scooter icon, as a delivery rider on a scooter with a food box pulls up. No readable text on the phone or the food box, no logos. Faces fully in frame."
+  }
+ ]
+}

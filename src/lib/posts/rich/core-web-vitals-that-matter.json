@@ -1,0 +1,206 @@
+{
+ "slug": "core-web-vitals-that-matter",
+ "locale": "en",
+ "title": "Core Web Vitals thresholds: LCP, INP, CLS guide",
+ "description": "Core Web Vitals thresholds for LCP, INP and CLS from Google, and how to check your site in Search Console and PageSpeed Insights, step by step, for India.",
+ "imageUrl": "/assets/blog/core-web-vitals-that-matter/cover.webp",
+ "imageAlt": "Illustration of an Indian shop owner testing her website speed on a phone beside the words Core Web Vitals",
+ "ogImageUrl": null,
+ "tags": [
+  "Core Web Vitals",
+  "page speed",
+  "SEO",
+  "India"
+ ],
+ "readingTimeMinutes": 17,
+ "publishedAt": "2026-06-20T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-core-web-vitals-are",
+   "text": "What Core Web Vitals are",
+   "level": 2
+  },
+  {
+   "id": "the-thresholds-in-one-table",
+   "text": "The thresholds, in one table",
+   "level": 2
+  },
+  {
+   "id": "inp-replaced-fid-in-march-2024",
+   "text": "INP replaced FID in March 2024",
+   "level": 2
+  },
+  {
+   "id": "do-core-web-vitals-affect-google-ranking",
+   "text": "Do Core Web Vitals affect Google ranking?",
+   "level": 2
+  },
+  {
+   "id": "field-data-and-lab-data-why-your-scores-disagree",
+   "text": "Field data and lab data: why your scores disagree",
+   "level": 2
+  },
+  {
+   "id": "how-to-check-your-core-web-vitals-step-by-step",
+   "text": "How to check your Core Web Vitals, step by step",
+   "level": 2
+  },
+  {
+   "id": "when-search-console-says-no-data-available",
+   "text": "When Search Console says \"No data available\"",
+   "level": 2
+  },
+  {
+   "id": "why-your-site-can-be-slower-for-indian-visitors",
+   "text": "Why your site can be slower for Indian visitors",
+   "level": 2
+  },
+  {
+   "id": "what-fixes-each-metric",
+   "text": "What fixes each metric",
+   "level": 2
+  },
+  {
+   "id": "fixing-lcp",
+   "text": "Fixing LCP",
+   "level": 3
+  },
+  {
+   "id": "fixing-inp",
+   "text": "Fixing INP",
+   "level": 3
+  },
+  {
+   "id": "fixing-cls",
+   "text": "Fixing CLS",
+   "level": 3
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-multi-speciality-clinic-website",
+   "text": "A multi-speciality clinic website",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-saree-brand-on-a-theme-based-store",
+   "text": "A D2C saree brand on a theme-based store",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-landing-page",
+   "text": "A coaching institute landing page",
+   "level": 3
+  },
+  {
+   "id": "five-ways-the-scores-mislead-you",
+   "text": "Five ways the scores mislead you",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-20-minute-routine",
+   "text": "A monthly 20-minute routine",
+   "level": 2
+  },
+  {
+   "id": "when-to-bring-in-a-developer",
+   "text": "When to bring in a developer",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What are the Core Web Vitals thresholds?",
+   "a": "LCP of 2.5 seconds or less, INP of 200 milliseconds or less and CLS of 0.1 or less count as good. Poor starts above 4 seconds, 500 milliseconds and 0.25. Google measures these at the 75th percentile of real visits, separately for mobile and desktop."
+  },
+  {
+   "q": "Is FID still a Core Web Vital?",
+   "a": "No. Interaction to Next Paint replaced First Input Delay on March 12, 2024. FID was removed from Search Console on that date. Any report still grading FID is out of date."
+  },
+  {
+   "q": "Why does PageSpeed Insights show a good score but Search Console says Poor?",
+   "a": "The 0 to 100 score is lab data from one simulated load. Search Console uses field data from real Chrome users over 28 days. Google's own documentation says the two may differ, and the field data decides whether a page passes."
+  },
+  {
+   "q": "Do Core Web Vitals affect SEO rankings?",
+   "a": "Google says Core Web Vitals are used by its ranking systems, but good scores do not guarantee top positions. Google also says it shows the most relevant content even when page experience is sub-par. Treat speed as a tie-breaker and a conversion issue."
+  },
+  {
+   "q": "Why does Search Console show No data available?",
+   "a": "Either the property is new or there is not enough real-user data in the Chrome UX Report for that device type. Small and new sites often see this. Use PageSpeed Insights lab results meanwhile and check again as traffic grows."
+  },
+  {
+   "q": "How long does it take for fixes to show?",
+   "a": "Field data covers the previous 28 days, and Search Console's validation watches for 28 days after you click Start Tracking. Expect about four weeks before a fix is fully reflected."
+  },
+  {
+   "q": "Can Lighthouse measure INP?",
+   "a": "No. INP needs real taps and clicks, which a simulated page load does not have. web.dev lists Total Blocking Time as the lab metric to use instead. Real INP comes only from field data."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-core-web-vitals-are\">What Core Web Vitals are</h2><p><strong>In short:</strong> Core Web Vitals are Google's three measures of how a page feels to real visitors. A page passes when, for 75% of visits, Largest Contentful Paint (LCP) is 2.5 seconds or less, Interaction to Next Paint (INP) is 200 milliseconds or less and Cumulative Layout Shift (CLS) is 0.1 or less. You check them free in Search Console and PageSpeed Insights.</p><p>This guide was checked in November 2026, against Google's own documentation on web.dev, Search Central and Search Console Help. Every number below comes from those pages, and they are listed at the end.</p><p>The three metrics cover three parts of a visit. In the words of <a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\">web.dev</a>, LCP measures loading, INP measures interactivity and CLS measures visual stability. Put plainly: how soon the main thing on the page appears, how soon the page reacts when someone taps, and whether things jump around while they read.</p><p>For an Indian business, the phone is where this matters. A customer in Vijayawada or Nashik may well be opening your site on a mid-range Android, on mobile data, from a WhatsApp link. Google's tools report mobile and desktop separately, and the mobile numbers are the ones I would read first.</p><h2 id=\"the-thresholds-in-one-table\">The thresholds, in one table</h2><p>Each metric has three bands. Search Console uses the labels Good, Need improvement and Poor.</p><p><em>Core Web Vitals thresholds, measured at the 75th percentile of visits</em></p><table><thead><tr><th>Metric</th><th>What it measures</th><th>Good</th><th>Need improvement</th><th>Poor</th></tr></thead><tbody><tr><td>LCP (Largest Contentful Paint)</td><td>Time until the largest image or text block in view is shown</td><td>2.5 s or less</td><td>Up to 4 s</td><td>More than 4 s</td></tr><tr><td>INP (Interaction to Next Paint)</td><td>Delay between a tap, click or key press and the screen updating</td><td>200 ms or less</td><td>Up to 500 ms</td><td>More than 500 ms</td></tr><tr><td>CLS (Cumulative Layout Shift)</td><td>How much the layout jumps unexpectedly</td><td>0.1 or less</td><td>Up to 0.25</td><td>More than 0.25</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.google.com/webmasters/answer/9205520\" rel=\"noopener noreferrer nofollow\"><em>Search Console Help, Core Web Vitals report</em></a><em> and </em><a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\"><em>web.dev, Web Vitals</em></a><em>, read 16 November 2026.</em></p><p>The 75th percentile is the important part. web.dev says <a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\">tools should consider a page passing</a> if it meets the targets at the 75th percentile for all three metrics. So it is not your average visit that has to be fast. Three out of four visits have to be fast, including people on weaker phones and patchy networks.</p><p>Search Console adds one more rule. A group of pages gets the status of its worst metric. Its <a href=\"https://support.google.com/webmasters/answer/9205520\" rel=\"noopener noreferrer nofollow\">help page</a> gives the example: poor CLS but good INP means the URL status is \"poor.\" One bad metric is enough to fail.</p><figure><img src=\"/assets/blog/core-web-vitals-that-matter/1.webp\" alt=\"Annotated view of the web.dev Web Vitals page showing the 75th percentile rule\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>web.dev's rule: a page passes only when all three metrics are good at the 75th percentile.</figcaption></figure><h2 id=\"inp-replaced-fid-in-march-2024\">INP replaced FID in March 2024</h2><p>If you read an older guide, you will see First Input Delay (FID) as the third metric. That is out of date. web.dev <a href=\"https://web.dev/blog/inp-cwv-march-12\" rel=\"noopener noreferrer nofollow\">announced</a> that INP would become a Core Web Vital and replace FID on March 12, 2024, and that FID would be deprecated. FID was removed from Search Console on that date.</p><p>The change matters because INP is stricter. FID only looked at the first interaction. INP, as <a href=\"https://web.dev/articles/inp\" rel=\"noopener noreferrer nofollow\">web.dev defines it</a>, observes the latency of all click, tap and keyboard interactions during a visit, and the final value is the longest one, ignoring outliers. A page that loads quickly but freezes when someone taps \"Add to cart\" on the third product can pass FID and fail INP.</p><p>If an agency report or a plugin dashboard still shows FID as a pass, ask them to rerun it. It is measuring the wrong thing.</p><h2 id=\"do-core-web-vitals-affect-google-ranking\">Do Core Web Vitals affect Google ranking?</h2><p>Yes, but less than most people selling speed work suggest. Google's <a href=\"https://developers.google.com/search/docs/appearance/page-experience\" rel=\"noopener noreferrer nofollow\">page experience documentation</a> says plainly: \"Core Web Vitals are used by our ranking systems.\" The same page then warns that good results in Search Console's report or third-party tools \"doesn't guarantee that your pages will rank at the top of Google Search results.\"</p><p>It also says: \"Google Search always seeks to show the most relevant content, even if the page experience is sub-par.\" A slow page with the best answer can still outrank a fast page with a weak one.</p><p>How I read that for a business owner: speed is a tie-breaker and a conversion problem, not a shortcut to page one. Google's <a href=\"https://developers.google.com/search/docs/appearance/core-web-vitals\" rel=\"noopener noreferrer nofollow\">Core Web Vitals page</a> recommends good scores \"for success with Search and to ensure a great user experience generally.\" The second half is where the money is. A customer who waits on a blank screen goes back to the search results or to a competitor's WhatsApp.</p><p>Content and relevance still come first. If you are planning a new site and want both right from the start, our <a href=\"/services/seo-services\">SEO services page</a> and <a href=\"/services/web-development\">web development page</a> describe how we approach it.</p><h2 id=\"field-data-and-lab-data-why-your-scores-disagree\">Field data and lab data: why your scores disagree</h2><p>This is the single most confusing thing for owners, so it gets its own section. There are two kinds of measurement and Google's tools show both.</p><ul><li><strong>Field data</strong> is from real Chrome users visiting your site. It comes from the Chrome User Experience Report (CrUX). Search Console's Core Web Vitals report uses only this.</li><li><strong>Lab data</strong> is a single simulated page load by Lighthouse, on one device and one network setting. The 0 to 100 \"performance score\" in PageSpeed Insights is lab data.</li></ul><p>Google's <a href=\"https://developers.google.com/speed/docs/insights/v5/about\" rel=\"noopener noreferrer nofollow\">PageSpeed Insights documentation</a> says the field data reports real users' experiences \"over the previous 28-day collection period\", at the 75th percentile. For lab data, it says Lighthouse simulates \"a mid-tier device (Moto G4)\" on a mobile network for mobile, and an emulated desktop with a wired connection for desktop. It also says, in so many words, that the values may differ, and that \"having good lab data does not necessarily mean real-user experiences will also be good.\"</p><p>One more catch for small sites. Lighthouse cannot measure INP at all, because nobody taps during a simulated load. <a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\">web.dev</a> lists Total Blocking Time (TBT) as the lab stand-in. So a lab report never tells you your INP. Only field data does.</p><p>The rule I use: Core Web Vitals pass or fail is decided by field data. The lab score is a diagnostic tool for finding the cause. A 95 lab score with poor field LCP is still a poor page.</p><h2 id=\"how-to-check-your-core-web-vitals-step-by-step\">How to check your Core Web Vitals, step by step</h2><p>All of this is free and needs no developer. You need a Google account and, for Search Console, ownership of the site verified.</p><p><strong>Step 1. Run PageSpeed Insights on your top page.</strong> Go to <a href=\"https://pagespeed.web.dev/\" rel=\"noopener noreferrer nofollow\">pagespeed.web.dev</a>, paste your home page or your best-selling product page, and run it. Look at the top section first. That is field data from real users, if Google has enough of it. It says whether the page passes the Core Web Vitals assessment.</p><p><strong>Step 2. Read the mobile tab, not the desktop one.</strong> PageSpeed Insights opens on mobile. Stay there. Your own analytics will show what share of visits come from phones; for a business selling to the public it is usually the larger share, and the mobile numbers are the harder ones to pass.</p><p><strong>Step 3. Note which metric fails.</strong> Write down the three field values: LCP in seconds, INP in milliseconds, CLS as a number. The fix for each is different, so knowing which one fails tells you what to ask for.</p><p><strong>Step 4. Scroll to the lab diagnostics.</strong> Below the field data is the Lighthouse run, with a list of opportunities and diagnostics. Use this list to find causes: a huge hero image, render-blocking scripts, images without sizes. Do not treat the 0 to 100 score as the verdict.</p><p><strong>Step 5. Open the Core Web Vitals report in Search Console.</strong> This shows the whole site, not one page. Search Console's <a href=\"https://support.google.com/webmasters/answer/9205520\" rel=\"noopener noreferrer nofollow\">help page</a> says it groups URLs into pages with a similar user experience, by status (Poor, Need improvement, Good) and by metric. Open the mobile report. Click into each issue to see example URLs.</p><p><strong>Step 6. Fix Poor before Need improvement.</strong> Google's own advice to non-technical users is to fix everything labelled Poor first, then prioritise by the issues that affect the most URLs or your most important URLs. Share the report link with whoever builds your site. The share button gives them access to that issue page only. While you are there, note Google's two plain rules of thumb from the same page: keep a page and all its resources under 500KB, and limit a page to 50 resources on mobile.</p><figure><img src=\"/assets/blog/core-web-vitals-that-matter/4.webp\" alt=\"Annotated view of Search Console Help's Core Web Vitals report page showing page-size advice\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Search Console Help's common fixes: under 500KB and 50 resources per page.</figcaption></figure><p><strong>Step 7. Validate the fix and wait 28 days.</strong> Once a fix is live, click Start Tracking on the issue. Search Console then watches CrUX data for 28 days. If the issue does not appear in any URL in that window, it is marked fixed. Search Console notes this \"does not trigger re-indexing\". It only restarts the clock.</p><figure><img src=\"/assets/blog/core-web-vitals-that-matter/2.webp\" alt=\"Infographic of the seven-step Core Web Vitals check from PageSpeed Insights to Search Console validation\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The routine: field data first, lab diagnostics second, then validate in Search Console.</figcaption></figure><h2 id=\"when-search-console-says-no-data-available\">When Search Console says \"No data available\"</h2><p>Many small Indian business sites hit this. Search Console's <a href=\"https://support.google.com/webmasters/answer/9205520\" rel=\"noopener noreferrer nofollow\">help page</a> says it means either the property is new, or there is not enough data in the CrUX report to give meaningful information for that device type.</p><p>Two things help here. First, Search Console may still show an origin group: if a set of URLs lacks data, it falls back to the whole origin (for example, all of https://www.example.in) when that has enough. Second, if there is no field data at all, PageSpeed Insights lab results are all you have. Treat them as an early warning, fix the obvious problems, and check again as traffic grows.</p><p>Note one quirk. Search Console treats http and https as separate origins. If your site still answers on both, fix the redirect first.</p><h2 id=\"why-your-site-can-be-slower-for-indian-visitors\">Why your site can be slower for Indian visitors</h2><p>Search Console's help page includes a line I wish more owners read: data is combined for all requests from all locations, so \"if you have a substantial amount of traffic from a country with, say, slow internet connections, then your performance in general will go down.\" It suggests breaking performance down by country using CrUX data in BigQuery if you suspect this.</p><p>I would not assume Indian networks are slow, and I have no official figure to quote on that. What I can say is that your field data reflects your actual visitors: their phones, their networks, the time of day they browse. A site tested on an office laptop over fibre in Hyderabad tells you little about a customer on a budget phone in a moving bus.</p><p>If your audience is mostly on entry-level Android phones, the work is partly design. We wrote about that separately in <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a>.</p><h2 id=\"what-fixes-each-metric\">What fixes each metric</h2><p>Google's Chrome team publishes a short list it calls <a href=\"https://web.dev/articles/top-cwv\" rel=\"noopener noreferrer nofollow\">the most effective ways to improve Core Web Vitals</a>. These are the items I would start with, with the figures that page quotes.</p><h3 id=\"fixing-lcp\">Fixing LCP</h3><p>The same web.dev page says LCP is the metric developers struggle with most, with 40% of sites in the Chrome UX Report not meeting the recommended threshold. Its first advice is to make the LCP resource discoverable from the HTML and give it priority.</p><ul><li>Load the hero image with a normal &lt;img&gt; tag and a real src, not a lazy-loading attribute like data-src that needs JavaScript. web.dev says 7% of pages hide their LCP image behind data-src.</li><li>Add fetchpriority=\"high\" to the LCP image. web.dev cites the Web Almanac: only 15% of eligible pages use it.</li><li>Do not lazy-load the main image at the top of the page. Lazy-load the ones further down.</li><li>Serve HTML from a CDN where you can. web.dev cites the Web Almanac figure that only 33% of HTML document requests were served from a CDN.</li></ul><h3 id=\"fixing-inp\">Fixing INP</h3><ul><li>Break up long tasks. web.dev defines a long task as one over 50 milliseconds and recommends yielding to the main thread often.</li><li>Remove JavaScript you do not need. Chat widgets, heatmaps, three analytics tags and an old pop-up plugin all compete for the same main thread.</li><li>Avoid large rendering updates after a tap, such as re-drawing a whole product grid when one filter changes.</li></ul><h3 id=\"fixing-cls\">Fixing CLS</h3><ul><li>Set width and height on every image and video. web.dev says 66% of pages have at least one unsized image, and without a size, those images start at 0px high and push content down when they load.</li><li>Reserve space for ads, embeds and banners that load late, like a \"Free delivery above ₹999\" strip that slides in.</li><li>Keep pages eligible for the back/forward cache. web.dev says its introduction in 2022 gave the biggest improvement in CLS seen that year.</li><li>Animate with transform rather than margin, top or left. web.dev says pages animating margin or border widths have poor CLS at almost twice the rate of pages overall.</li></ul><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are illustrative businesses, made up to show how the same check plays out differently. The names and the problems are not real clients or measurements.</p><h3 id=\"a-multi-speciality-clinic-website\">A multi-speciality clinic website</h3><p>Imagine a clinic in Kukatpally whose home page opens with a full-width photo slider of the building and doctors. PageSpeed Insights field data shows LCP failing on mobile. The lab diagnostics point at the slider: the first photo is large and loaded by a JavaScript carousel after the script runs.</p><p>The fix is boring and cheap. Replace the slider with one well-compressed photo in a plain &lt;img&gt; tag with fetchpriority=\"high\", and put the \"Book an appointment\" button right under it. After the change, Search Console's 28-day validation decides whether it worked. For more on what clinic sites need, see our <a href=\"/industries/healthcare-appointments\">healthcare appointments page</a>.</p><figure><img src=\"/assets/blog/core-web-vitals-that-matter/3.webp\" alt=\"Illustration of a clinic receptionist checking the clinic website on a phone at the front desk\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a clinic, the main photo is usually the LCP element. Make it load first.</figcaption></figure><h3 id=\"a-d2c-saree-brand-on-a-theme-based-store\">A D2C saree brand on a theme-based store</h3><p>Imagine a D2C brand selling handloom sarees from Pochampally. LCP is fine, but INP is poor on product listing pages. Visitors tap a colour filter and the page stalls. The store runs a review widget, a WhatsApp chat bubble, two analytics tags, a spin-the-wheel discount pop-up and a currency switcher.</p><p>Here the work is subtraction. Remove the apps nobody uses, delay the chat bubble until after the page is usable, and test the filter tap again. CLS is the second check: product images without fixed sizes jump as they load, and a late banner pushes the price down just as someone reaches for it. Speed problems on product and checkout pages cost orders directly, which we covered in <a href=\"/blogs/ecommerce-checkout-conversion\">e-commerce checkout conversion</a>.</p><h3 id=\"a-coaching-institute-landing-page\">A coaching institute landing page</h3><p>Imagine a NEET coaching institute running Instagram ads to a landing page with a lead form. Search Console says \"No data available\" because the page is new and gets little organic traffic. The only data is lab data.</p><p>In this case I would fix what the lab run flags, test on a real budget Android phone over mobile data, and watch the form itself. A form that jumps as a cookie banner or a late image loads makes students tap the wrong field. CLS on the form section is what I would check by hand, scrolling slowly on the phone.</p><h2 id=\"five-ways-the-scores-mislead-you\">Five ways the scores mislead you</h2><p><strong>1. Chasing a 100 lab score.</strong> The lab score is a simulation on one device. Google's own PageSpeed Insights page says good lab data does not mean real users have a good experience. Pass the field assessment first.</p><p><strong>2. Testing only the home page.</strong> Your product pages, blog posts and booking page are separate URL groups in Search Console. The home page is often the most polished and the least visited by Google searchers.</p><p><strong>3. Reading desktop numbers.</strong> Desktop usually looks better, because the lab test emulates a wired connection for it. If most of your customers are on phones, the mobile report is the one that counts.</p><p><strong>4. Expecting results next week.</strong> Field data covers the previous 28 days, and validation runs for 28 days. A fix shipped today shows fully in the data about a month later.</p><p><strong>5. Assuming speed will lift rankings on its own.</strong> Google says Core Web Vitals are used by its ranking systems, and also that relevant content wins even with sub-par page experience. Speed helps people stay. It does not replace a page that answers the search.</p><h2 id=\"a-monthly-20-minute-routine\">A monthly 20-minute routine</h2><p>Once things pass, this keeps them passing. It is what I would hand to an owner or marketing person.</p><ul><li>Open the Search Console Core Web Vitals report, mobile first. Note the count of Poor and Need improvement URLs.</li><li>If any new issue appears, click it, open an example URL and run PageSpeed Insights on it.</li><li>Run PageSpeed Insights on your three most important pages: home, top product or service, and contact or booking.</li><li>Write the field LCP, INP and CLS values in a sheet with the date. A trend tells you more than one reading.</li><li>Before adding any new app, widget, chat tool or tracking tag, run the test before and after. If a metric moves to Need improvement, question whether the tool earns its place.</li><li>After any fix, click Start Tracking and check back in four weeks.</li></ul><p>Search Console's help page notes that a site can change status with no change on your side, for example if a site-wide event or a slower image server nudges borderline pages over the edge. The monthly sheet is how you notice.</p><h2 id=\"when-to-bring-in-a-developer\">When to bring in a developer</h2><p>You can read the reports yourself. Fixes to LCP and CLS on a template site can sometimes be done in the theme settings. INP problems, server response times and custom-built sites usually need someone who can read a performance trace.</p><p>If you are rebuilding or building a new site and want speed scoped in from day one, our ₹3,500 requirement analysis is a call with the people who will build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">book it here</a>). Code, hosting and credentials stay in your name. You do not need it to do anything in this guide.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-are-the-core-web-vitals-thresholds\">What are the Core Web Vitals thresholds?</h3><p>LCP of 2.5 seconds or less, INP of 200 milliseconds or less and CLS of 0.1 or less count as good. Poor starts above 4 seconds, 500 milliseconds and 0.25. Google measures these at the 75th percentile of real visits, separately for mobile and desktop.</p><h3 id=\"is-fid-still-a-core-web-vital\">Is FID still a Core Web Vital?</h3><p>No. Interaction to Next Paint replaced First Input Delay on March 12, 2024. FID was removed from Search Console on that date. Any report still grading FID is out of date.</p><h3 id=\"why-does-pagespeed-insights-show-a-good-score-but-search-console-says-poor\">Why does PageSpeed Insights show a good score but Search Console says Poor?</h3><p>The 0 to 100 score is lab data from one simulated load. Search Console uses field data from real Chrome users over 28 days. Google's own documentation says the two may differ, and the field data decides whether a page passes.</p><h3 id=\"do-core-web-vitals-affect-seo-rankings\">Do Core Web Vitals affect SEO rankings?</h3><p>Google says Core Web Vitals are used by its ranking systems, but good scores do not guarantee top positions. Google also says it shows the most relevant content even when page experience is sub-par. Treat speed as a tie-breaker and a conversion issue.</p><h3 id=\"why-does-search-console-show-no-data-available\">Why does Search Console show No data available?</h3><p>Either the property is new or there is not enough real-user data in the Chrome UX Report for that device type. Small and new sites often see this. Use PageSpeed Insights lab results meanwhile and check again as traffic grows.</p><h3 id=\"how-long-does-it-take-for-fixes-to-show\">How long does it take for fixes to show?</h3><p>Field data covers the previous 28 days, and Search Console's validation watches for 28 days after you click Start Tracking. Expect about four weeks before a fix is fully reflected.</p><h3 id=\"can-lighthouse-measure-inp\">Can Lighthouse measure INP?</h3><p>No. INP needs real taps and clicks, which a simulated page load does not have. web.dev lists Total Blocking Time as the lab metric to use instead. Real INP comes only from field data.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\">Web Vitals, web.dev</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/lcp\" rel=\"noopener noreferrer nofollow\">Largest Contentful Paint (LCP), web.dev</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/inp\" rel=\"noopener noreferrer nofollow\">Interaction to Next Paint (INP), web.dev</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/cls\" rel=\"noopener noreferrer nofollow\">Cumulative Layout Shift (CLS), web.dev</a>, read 16 November 2026</li><li><a href=\"https://web.dev/blog/inp-cwv-march-12\" rel=\"noopener noreferrer nofollow\">Interaction to Next Paint becomes a Core Web Vital on March 12, web.dev</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/top-cwv\" rel=\"noopener noreferrer nofollow\">The most effective ways to improve Core Web Vitals, web.dev</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/webmasters/answer/9205520\" rel=\"noopener noreferrer nofollow\">Core Web Vitals report, Search Console Help</a>, read 16 November 2026</li><li><a href=\"https://developers.google.com/speed/docs/insights/v5/about\" rel=\"noopener noreferrer nofollow\">About PageSpeed Insights, Google for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.google.com/search/docs/appearance/page-experience\" rel=\"noopener noreferrer nofollow\">Understanding Google Page Experience, Google Search Central</a>, read 16 November 2026</li><li><a href=\"https://developers.google.com/search/docs/appearance/core-web-vitals\" rel=\"noopener noreferrer nofollow\">Understanding Core Web Vitals and Google search results, Google Search Central</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian shop owner testing her website speed on a phone beside the words Core Web Vitals",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian woman in her 30s in a kurta, owner of a small boutique, standing at her shop counter with folded fabric on shelves behind her, holding a phone in one hand and looking at a laptop that shows three abstract gauge dials (green, no numbers, no readable text). Face fully in frame. No logos. Right half: the title text 'Core Web Vitals' in very large bold black sans-serif, left-aligned, on three lines ('Core' / 'Web' / 'Vitals'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the web.dev Web Vitals page showing the 75th percentile rule",
+   "url": "https://web.dev/articles/vitals",
+   "annotate": [
+    {
+     "text": "Tools that assess Core Web Vitals compliance should consider a page passing if it meets the recommended targets at the 75th percentile for all three of the Core Web Vitals metrics.",
+     "label": "All three must pass"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the seven-step Core Web Vitals check from PageSpeed Insights to Search Console validation",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Check your Core Web Vitals in 7 steps'. A left-to-right path of seven dark-blue rounded pills with white text, joined by orange arrows, in two rows: '1 Run PageSpeed Insights', '2 Read the mobile tab', '3 Note the failing metric', '4 Read lab diagnostics', then second row '5 Open Search Console report', '6 Fix Poor first', '7 Start Tracking, wait 28 days'. Small flat icons above pills: phone, magnifier, gauge, wrench, chart, warning sign, calendar. Under the pills a small strip of three tags: 'LCP 2.5 s or less', 'INP 200 ms or less', 'CLS 0.1 or less'. One-line bold takeaway at bottom: 'Field data decides the pass. Lab data finds the cause.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a clinic receptionist checking the clinic website on a phone at the front desk",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian clinic reception: a young male receptionist in a sage uniform at the front desk holding a phone, showing a webpage with a large abstract photo block and a button shape, while an older man waits on a bench with a file folder. A wall clock and a potted plant behind. No readable text on any screen or sign, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Search Console Help's Core Web Vitals report page showing page-size advice",
+   "url": "https://support.google.com/webmasters/answer/9205520",
+   "annotate": [
+    {
+     "text": "Reduce your page size: best practice is less than 500KB for a page and all its resources.",
+     "label": "Google's page size advice"
+    },
+    {
+     "text": "Limit a page to 50 resources for best performance on mobile.",
+     "label": "Fewer files on mobile"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,185 @@
+{
+ "slug": "accessibility-is-cheaper-early",
+ "locale": "en",
+ "title": "Website accessibility in India: WCAG 2.2, RPwD Act, GIGW",
+ "description": "Website accessibility in India: what the RPwD Act, the 2024 Supreme Court ruling and 2026 draft ICT rules require, and why WCAG 2.2 costs less built in early.",
+ "imageUrl": "/assets/blog/accessibility-is-cheaper-early/cover.webp",
+ "imageAlt": "Illustration of an Indian designer reviewing an accessible app design beside the words Accessibility built in",
+ "ogImageUrl": null,
+ "tags": [
+  "accessibility",
+  "WCAG 2.2",
+  "RPwD Act",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-05-30T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "website-accessibility-in-india-the-short-answer",
+   "text": "Website accessibility in India: the short answer",
+   "level": 2
+  },
+  {
+   "id": "what-indian-law-says-today",
+   "text": "What Indian law says today",
+   "level": 2
+  },
+  {
+   "id": "the-supreme-courts-2024-ruling-and-the-2026-draft-rules",
+   "text": "The Supreme Court's 2024 ruling and the 2026 draft rules",
+   "level": 2
+  },
+  {
+   "id": "gigw-3-0-is-17802-and-wcag-which-standard-to-build-to",
+   "text": "GIGW 3.0, IS 17802 and WCAG: which standard to build to",
+   "level": 2
+  },
+  {
+   "id": "what-wcag-2-2-added-and-why-it-matters-for-indian-products",
+   "text": "What WCAG 2.2 added, and why it matters for Indian products",
+   "level": 2
+  },
+  {
+   "id": "why-accessibility-is-cheaper-early",
+   "text": "Why accessibility is cheaper early",
+   "level": 2
+  },
+  {
+   "id": "how-to-build-accessibility-in-from-day-one",
+   "text": "How to build accessibility in from day one",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-coaching-institutes-student-app",
+   "text": "A coaching institute's student app",
+   "level": 3
+  },
+  {
+   "id": "a-private-hospitals-appointment-site",
+   "text": "A private hospital's appointment site",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brands-online-store",
+   "text": "A D2C brand's online store",
+   "level": 3
+  },
+  {
+   "id": "five-common-mistakes",
+   "text": "Five common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-quarterly-accessibility-checklist",
+   "text": "A quarterly accessibility checklist",
+   "level": 2
+  },
+  {
+   "id": "getting-it-scoped-before-you-build",
+   "text": "Getting it scoped before you build",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is website accessibility mandatory in India for private companies?",
+   "a": "Section 46 of the RPwD Act 2016 requires service providers, whether government or private, to follow the accessibility rules made under section 40. Draft rules issued in July 2026 would make IS 17802 conformance mandatory for websites and apps serving users in India. Take legal advice for your case."
+  },
+  {
+   "q": "Which WCAG version should an Indian website follow?",
+   "a": "GIGW 3.0 was developed in accordance with WCAG 2.1 Level AA. WCAG 2.2 is the current W3C version and includes the 2.1 criteria except the removed 4.1.1 Parsing. Building to WCAG 2.2 Level AA covers both."
+  },
+  {
+   "q": "What did the Supreme Court decide in Rajive Raturi?",
+   "a": "On 8 November 2024 the Court held Rule 15(1) of the RPwD Rules ultra vires because several standards were recommendatory, and directed the Union Government to delineate mandatory accessibility rules under section 40 within three months, in consultation with stakeholders."
+  },
+  {
+   "q": "What are the 2026 draft ICT accessibility rules?",
+   "a": "S.O. 3962(E), dated 16 July 2026, issued for 30 days of comments. As drafted, they require IS 17802 conformance, an Accessibility Conformance Report and a grievance officer, with one year for establishments with ₹500 crore turnover or more and eighteen months for smaller ones."
+  },
+  {
+   "q": "What is the penalty under the RPwD Act?",
+   "a": "Section 89 sets a fine of up to ₹10,000 for a first contravention of the Act or its rules, and ₹50,000 to ₹5 lakh for later contraventions."
+  },
+  {
+   "q": "Do accessibility overlay widgets make a site compliant?",
+   "a": "No tool can fix missing labels, broken keyboard support or image-only content from the outside. The draft rules ask for conformance tested to IS 17802 Part 2 and documented in a report. Fix the site itself."
+  },
+  {
+   "q": "Does OTP login fail WCAG 2.2?",
+   "a": "Not by itself. WCAG 2.2's accessible authentication criterion targets steps that make people solve, recall or transcribe something. Support SMS autofill and allow paste so users do not have to retype the code, and avoid puzzle CAPTCHAs."
+  }
+ ],
+ "contentHtml": "<h2 id=\"website-accessibility-in-india-the-short-answer\">Website accessibility in India: the short answer</h2><p><strong>In short:</strong> In India, the RPwD Act 2016 already requires private service providers to follow accessibility rules, and draft rules from July 2026 would make IS 17802 compliance mandatory for websites and apps. The working technical target is WCAG 2.2 Level AA. Building it in from the first design is far cheaper than fixing a live site.</p><p>This guide was checked in November 2026, against the RPwD Act's text, the Supreme Court's 2024 judgment, the Department of Empowerment of Persons with Disabilities' draft rules, GIGW 3.0 and the W3C's WCAG 2.2 pages. I am not a lawyer, and this is not legal advice.</p><p>Accessibility means people with disabilities can use your site or app: someone who is blind using a screen reader, someone with a tremor tapping small buttons, someone who cannot hear a video, someone who struggles to remember a password. It also helps everyone else: older customers, people in bright sunlight, people on a cracked phone screen.</p><h2 id=\"what-indian-law-says-today\">What Indian law says today</h2><p>The Rights of Persons with Disabilities Act, 2016 is the main law. Three sections matter for a business with a website or app. You can read the <a href=\"https://indiankanoon.org/doc/97660308/\" rel=\"noopener noreferrer nofollow\">full Act on Indian Kanoon</a>.</p><p><em>The RPwD Act provisions that touch websites and apps</em></p><table><thead><tr><th>Section</th><th>What it says</th><th>What it means for a business</th></tr></thead><tbody><tr><td>40</td><td>The Central Government shall formulate rules laying down standards of accessibility for, among other things, \"information and communications, including appropriate technologies and systems\"</td><td>The accessibility standards for websites and apps come from rules made under this section</td></tr><tr><td>42</td><td>The government shall take measures so that all contents in audio, print and electronic media are in accessible format, with audio description, sign language interpretation and close captioning</td><td>Video, PDFs and documents are in scope, not just web pages</td></tr><tr><td>46</td><td>Service providers \"whether Government or private\" shall provide services in accordance with the accessibility rules within two years of the rules' notification</td><td>Private businesses are covered, not just government sites</td></tr><tr><td>89</td><td>First contravention: fine up to ₹10,000. Later contraventions: ₹50,000 to ₹5 lakh</td><td>The Act's general penalty for breaking its provisions or rules</td></tr></tbody></table><p><em>Source: </em><a href=\"https://indiankanoon.org/doc/97660308/\" rel=\"noopener noreferrer nofollow\"><em>Rights of Persons with Disabilities Act, 2016, on Indian Kanoon</em></a><em>, read 16 November 2026.</em></p><p>The rules under section 40 are the RPwD Rules, 2017. Rule 15 listed the standards, and for websites it pointed to the Guidelines for Indian Government Websites. Later amendments added IS 17802, the Bureau of Indian Standards' standard for ICT products and services.</p><h2 id=\"the-supreme-courts-2024-ruling-and-the-2026-draft-rules\">The Supreme Court's 2024 ruling and the 2026 draft rules</h2><p>On 8 November 2024, in <a href=\"https://indiankanoon.org/doc/98908321/\" rel=\"noopener noreferrer nofollow\">Rajive Raturi v Union of India</a>, the Supreme Court held that several of the guidelines in Rule 15 \"appear to be recommendatory guidelines, under the garb of mandatory rules\", and that Rule 15(1) is ultra vires the RPwD Act. It directed the Union Government \"to delineate mandatory rules, as required by Section 40, within a period of three months.\" The Court said a minimum floor of accessibility \"cannot be left to the altar of progressive realization.\"</p><p>On 30 April 2025, in Amar Jain v Union of India, the Court went further. As summarised by <a href=\"https://vidhilegalpolicy.in/blog/digital-access-as-a-fundamental-right/\" rel=\"noopener noreferrer nofollow\">Vidhi Centre for Legal Policy</a>, it read the right to digital access into Article 21, the right to life, and directed that digital KYC be made accessible to persons with disabilities.</p><p>The rules have now been drafted. On 16 July 2026 the Department of Empowerment of Persons with Disabilities issued <a href=\"https://cdnbbsr.s3waas.gov.in/s3e58aea67b01fa747687f038dfde066f6/uploads/2026/07/202607271973960991.pdf\" rel=\"noopener noreferrer nofollow\">draft rules, S.O. 3962(E)</a>, with 30 days for comments, and posted them on its <a href=\"https://depwd.gov.in/en/draft-rules-on-non-negotiable-accessibility-standards-for-information-and-communication-technology-sector/\" rel=\"noopener noreferrer nofollow\">consultation page</a>. As drafted, they would:</p><ul><li>Apply to every establishment that makes websites, mobile apps, software, digital content or electronic documents available to people in India, \"whether such establishment is located within India or outside India\".</li><li>Require conformance with IS 17802 (Part 1): 2021, tested as per IS 17802 (Part 2): 2022.</li><li>Require an Accessibility Conformance Report, reviewed and updated at least once every two years.</li><li>Give establishments with turnover of ₹500 crore or more one year to meet the first schedules, and smaller establishments eighteen months, with full compliance within two years of publication.</li><li>Require a Grievance Redressal Officer, with complaints escalating to government nodal officers.</li></ul><p>As of the date I checked, these are draft rules, not final ones. The obligations and dates could change when they are notified. But the direction is clear: accessibility is moving from a nice-to-have to a compliance item for private businesses, with a paper trail.</p><figure><img src=\"/assets/blog/accessibility-is-cheaper-early/1.webp\" alt=\"Infographic of India's accessibility timeline from the RPwD Act 2016 to the July 2026 draft ICT rules\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>From the 2016 Act to the 2026 draft rules: the direction is mandatory, documented accessibility.</figcaption></figure><h2 id=\"gigw-3-0-is-17802-and-wcag-which-standard-to-build-to\">GIGW 3.0, IS 17802 and WCAG: which standard to build to</h2><p>Owners get lost in the acronyms, so here is how they fit together.</p><ul><li><strong>WCAG</strong> is the W3C's Web Content Accessibility Guidelines, the international reference. <a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\">WCAG 2.2</a> is the current version.</li><li><strong>GIGW 3.0</strong> is the <a href=\"https://guidelines.india.gov.in/\" rel=\"noopener noreferrer nofollow\">Guidelines for Indian Government Websites and Apps</a>. Its <a href=\"https://cdnbbsr.s3waas.gov.in/s3c92a10324374fac681719d63979d00fe/uploads/2025/02/2025021775.pdf\" rel=\"noopener noreferrer nofollow\">document</a> says it \"has been developed in accordance with level AA of WCAG 2.1\". It is written for government bodies, but it is a useful, India-specific checklist for anyone.</li><li><strong>IS 17802</strong> is the BIS standard for accessibility of ICT products and services, which the draft rules would make mandatory. Part 1 sets requirements; Part 2 sets how conformance is tested.</li></ul><p>My practical advice: build to WCAG 2.2 Level AA. It includes everything in 2.1 (the level GIGW references) plus newer criteria. The W3C notes that the 2.0 and 2.1 criteria are essentially the same in 2.2, with one exception: 4.1.1 Parsing is obsolete and removed. Building to the newer version covers the older one.</p><h2 id=\"what-wcag-2-2-added-and-why-it-matters-for-indian-products\">What WCAG 2.2 added, and why it matters for Indian products</h2><p>WCAG 2.2 became a W3C Recommendation on 5 October 2023. The W3C's <a href=\"https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/\" rel=\"noopener noreferrer nofollow\">What’s new in WCAG 2.2</a> page lists the new criteria. The Level A and AA ones, which are the ones a typical compliance target includes:</p><p><em>New WCAG 2.2 success criteria at Level A and AA</em></p><table><thead><tr><th>Criterion</th><th>Level</th><th>W3C's plain summary</th></tr></thead><tbody><tr><td>2.4.11 Focus Not Obscured (Minimum)</td><td>AA</td><td>When an item gets keyboard focus, it is at least partially visible</td></tr><tr><td>2.5.7 Dragging Movements</td><td>AA</td><td>For any action that involves dragging, provide a simple pointer alternative</td></tr><tr><td>2.5.8 Target Size (Minimum)</td><td>AA</td><td>Targets meet a minimum size (24 by 24 CSS pixels) or have enough spacing</td></tr><tr><td>3.2.6 Consistent Help</td><td>A</td><td>Put help in the same place when it is on multiple pages</td></tr><tr><td>3.3.7 Redundant Entry</td><td>A</td><td>Don't ask for the same information twice in the same session</td></tr><tr><td>3.3.8 Accessible Authentication (Minimum)</td><td>AA</td><td>Don't make people solve, recall, or transcribe something to log in</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/\" rel=\"noopener noreferrer nofollow\"><em>W3C WAI, What's New in WCAG 2.2</em></a><em> and </em><a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\"><em>WCAG 2.2</em></a><em>, read 16 November 2026.</em></p><p>Three of these land squarely on common Indian product patterns.</p><p><strong>OTP logins.</strong> The W3C explains that some people \"cannot solve puzzles, memorize a username and password, or retype one-time passcodes.\" If your login is a 6-digit OTP the user must type, support autofill from SMS and allow paste. A CAPTCHA puzzle on the login page is the classic failure.</p><p><strong>Small tap targets.</strong> Crowded filter chips, tiny \"x\" buttons on pop-ups and icon-only menus on budget phones fail 2.5.8 easily.</p><p><strong>Forms that ask twice.</strong> A checkout that asks for the delivery address and then again for the billing address, with no \"same as delivery\" option, fails 3.3.7.</p><figure><img src=\"/assets/blog/accessibility-is-cheaper-early/2.webp\" alt=\"Annotated view of the W3C page listing what is new in WCAG 2.2\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>W3C's summary of WCAG 2.2: logins without puzzles or retyped codes.</figcaption></figure><h2 id=\"why-accessibility-is-cheaper-early\">Why accessibility is cheaper early</h2><p>I could not find an official Indian figure for the cost of fixing accessibility late, and I will not repeat the multipliers that circulate without a source. What I can point to is the W3C's own business case and what is visible in how sites get built.</p><p>The W3C's <a href=\"https://www.w3.org/WAI/business-case/\" rel=\"noopener noreferrer nofollow\">business case for digital accessibility</a> cites a Forrester study commissioned by Microsoft, which concluded that accessibility \"could contribute to cost savings when it is integrated into existing and ongoing development cycles.\" The same page says a useful business case \"also presents the cost and risk of inaction.\"</p><p>Here is why the order matters, in practical terms:</p><ul><li><strong>Colour is set once.</strong> If your brand colours fail contrast, every page, banner and button inherits it. Choosing an accessible palette during design costs nothing extra. Changing it after launch means redoing assets.</li><li><strong>Components are reused.</strong> A dropdown, modal or date picker built without keyboard support is copied into dozens of screens. Fix the component early and every screen is fixed. Fix it late and you test every screen again.</li><li><strong>Content piles up.</strong> Five hundred product images without alt text, a year of scanned PDF brochures and videos without captions are a backlog. Writing alt text as you upload is a minute per image.</li><li><strong>Testing gets harder.</strong> A small site is quick to check by keyboard and screen reader. A large one with years of plugins is not.</li></ul><p>The scale of the problem on the web is large. <a href=\"https://webaim.org/projects/million/\" rel=\"noopener noreferrer nofollow\">WebAIM’s 2026 analysis</a> of the top one million home pages found WCAG 2 failures on 95.9% of them, with an average of 56.1 errors per page. Six error types made up 96% of everything found: low contrast text (83.9% of pages), missing alt text (53.1%), missing form labels (51%), empty links (46.3%), empty buttons (30.6%) and missing document language (13.5%). WebAIM notes these \"have been the same for the last 7 years.\"</p><p>That last line is the cheapest lesson in this post. Most failures are basic, and basics are cheapest at design time.</p><figure><img src=\"/assets/blog/accessibility-is-cheaper-early/3.webp\" alt=\"Annotated view of the WebAIM Million 2026 report showing the share of home pages with WCAG failures\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>WebAIM's 2026 scan: 95.9% of top home pages had detectable WCAG failures.</figcaption></figure><h2 id=\"how-to-build-accessibility-in-from-day-one\">How to build accessibility in from day one</h2><p>Here is the order I would follow on a new website or app.</p><p><strong>Step 1. Write it into the brief.</strong> State \"WCAG 2.2 Level AA\" as a requirement in the scope and contract, alongside IS 17802 if you will sell to large enterprises or the government. A requirement nobody wrote down is a requirement nobody quoted for.</p><p><strong>Step 2. Check colours and type in the design phase.</strong> Test text and button colours for contrast before the design is approved. Use readable font sizes and allow text to be enlarged without breaking layouts.</p><p><strong>Step 3. Build accessible components once.</strong> Buttons, form fields with labels, menus, modals, tabs and carousels, each working with keyboard and screen reader. A shared component library makes this stick. We wrote about that in <a href=\"/blogs/design-systems-that-get-used\">design systems that get used</a>.</p><p><strong>Step 4. Make login and checkout pass WCAG 2.2.</strong> OTP autofill and paste, no puzzle CAPTCHAs, no duplicate address entry, tap targets of at least 24 by 24 CSS pixels.</p><p><strong>Step 5. Make content accessible as it is added.</strong> Alt text for meaningful images, captions for videos, real text PDFs instead of scans, and a document language set on every page.</p><p><strong>Step 6. Test with tools and with people.</strong> Automated tools find a share of problems. WebAIM itself says the absence of detected errors does not mean a page is accessible. Add a keyboard-only pass and a screen reader pass (TalkBack on Android, VoiceOver on iPhone) on the key journeys.</p><p><strong>Step 7. Publish an accessibility statement and a contact.</strong> Say what standard you follow, what you know is not yet fixed and how to report a problem. The draft rules expect a grievance route anyway.</p><p>If your product serves several Indian languages, accessibility and localisation overlap: screen readers need the right language tags to pronounce Telugu or Hindi text. See <a href=\"/blogs/localisation-beyond-translation\">localisation beyond translation</a>.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are illustrative businesses, made up to show where accessibility bites by type. They are not clients.</p><h3 id=\"a-coaching-institutes-student-app\">A coaching institute's student app</h3><p>Imagine a coaching institute in Kota with an app for recorded lectures, mock tests and fee payments. The lecture videos need captions, which section 42 of the Act expects for electronic media. Mock tests with drag-and-drop answers need a tap alternative. Timed tests need a way to extend time for students who use screen readers.</p><p>Building captions into the upload workflow from the first lecture is a process decision. Adding them to three years of recordings later is a project. More on apps for this sector on our <a href=\"/industries/education\">education page</a>.</p><h3 id=\"a-private-hospitals-appointment-site\">A private hospital's appointment site</h3><p>Imagine a hospital in Visakhapatnam whose website books appointments and shares lab reports. Its patients skew older, so contrast, text size and large tap targets matter more than for the average site. Lab reports as scanned image PDFs are unreadable to screen readers.</p><p>A hospital is also the kind of service provider section 46 clearly covers. I would treat WCAG 2.2 AA on the booking flow and report downloads as the minimum.</p><figure><img src=\"/assets/blog/accessibility-is-cheaper-early/4.webp\" alt=\"Illustration of an older Indian man using a phone with large buttons to book a hospital appointment, helped by his daughter\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a hospital site, older patients are the main users: large text and big tap targets matter.</figcaption></figure><h3 id=\"a-d2c-brands-online-store\">A D2C brand's online store</h3><p>Imagine a D2C brand in Bengaluru selling skincare. The risks are in the product grid and checkout: product images without alt text, colour swatches with no text names, a size chart that is a single image, a coupon pop-up that traps keyboard focus, and a login that demands an OTP be retyped.</p><p>None of these is hard to fix on a new theme. All of them are slow to fix across hundreds of products after launch.</p><h2 id=\"five-common-mistakes\">Five common mistakes</h2><p><strong>1. Buying an overlay widget.</strong> A toolbar that promises one-line compliance does not fix missing labels, broken keyboard support or image-only content in your code. The draft rules ask for tested conformance with IS 17802, documented in a report.</p><p><strong>2. Treating it as a government-only rule.</strong> Section 46 says service providers \"whether Government or private\". The 2026 draft rules apply to establishments in or outside India that serve users here.</p><p><strong>3. Testing only with an automated scanner.</strong> Scanners catch contrast and missing alt text well. They miss whether the alt text makes sense, or whether the checkout works by keyboard.</p><p><strong>4. Forgetting documents and video.</strong> Brochures, menus, price lists and lecture videos are content too. Section 42 names audio, print and electronic media.</p><p><strong>5. Leaving it to the end of the project.</strong> By then the colours, components and content are set. That is the expensive point to start.</p><h2 id=\"a-quarterly-accessibility-checklist\">A quarterly accessibility checklist</h2><ul><li>Run an automated scan on your top 10 pages. Fix new contrast, label and alt text errors.</li><li>Do a keyboard-only pass of sign-up, login, search and checkout or booking.</li><li>Do a screen reader pass of the same journeys with TalkBack or VoiceOver.</li><li>Check that new videos have captions and new PDFs are real text.</li><li>Check new pop-ups, banners and chat widgets for focus traps and tiny close buttons.</li><li>Review accessibility complaints received, and update your accessibility statement.</li><li>Check the Department of Empowerment of Persons with Disabilities' site for whether the draft ICT rules have been notified, and their final dates.</li></ul><h2 id=\"getting-it-scoped-before-you-build\">Getting it scoped before you build</h2><p>Accessibility is a requirement like any other: it costs least when it is in the brief, the design and the quote from the start. If you are planning a new site or app, our ₹3,500 requirement analysis is a call with the people who will build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). We can write WCAG 2.2 AA into that scope. Code, cloud and credentials stay in your name. For design work specifically, see our <a href=\"/services/ui-ux-design\">UI and UX design page</a>.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-website-accessibility-mandatory-in-india-for-private-companies\">Is website accessibility mandatory in India for private companies?</h3><p>Section 46 of the RPwD Act 2016 requires service providers, whether government or private, to follow the accessibility rules made under section 40. Draft rules issued in July 2026 would make IS 17802 conformance mandatory for websites and apps serving users in India. Take legal advice for your case.</p><h3 id=\"which-wcag-version-should-an-indian-website-follow\">Which WCAG version should an Indian website follow?</h3><p>GIGW 3.0 was developed in accordance with WCAG 2.1 Level AA. WCAG 2.2 is the current W3C version and includes the 2.1 criteria except the removed 4.1.1 Parsing. Building to WCAG 2.2 Level AA covers both.</p><h3 id=\"what-did-the-supreme-court-decide-in-rajive-raturi\">What did the Supreme Court decide in Rajive Raturi?</h3><p>On 8 November 2024 the Court held Rule 15(1) of the RPwD Rules ultra vires because several standards were recommendatory, and directed the Union Government to delineate mandatory accessibility rules under section 40 within three months, in consultation with stakeholders.</p><h3 id=\"what-are-the-2026-draft-ict-accessibility-rules\">What are the 2026 draft ICT accessibility rules?</h3><p>S.O. 3962(E), dated 16 July 2026, issued for 30 days of comments. As drafted, they require IS 17802 conformance, an Accessibility Conformance Report and a grievance officer, with one year for establishments with ₹500 crore turnover or more and eighteen months for smaller ones.</p><h3 id=\"what-is-the-penalty-under-the-rpwd-act\">What is the penalty under the RPwD Act?</h3><p>Section 89 sets a fine of up to ₹10,000 for a first contravention of the Act or its rules, and ₹50,000 to ₹5 lakh for later contraventions.</p><h3 id=\"do-accessibility-overlay-widgets-make-a-site-compliant\">Do accessibility overlay widgets make a site compliant?</h3><p>No tool can fix missing labels, broken keyboard support or image-only content from the outside. The draft rules ask for conformance tested to IS 17802 Part 2 and documented in a report. Fix the site itself.</p><h3 id=\"does-otp-login-fail-wcag-2-2\">Does OTP login fail WCAG 2.2?</h3><p>Not by itself. WCAG 2.2's accessible authentication criterion targets steps that make people solve, recall or transcribe something. Support SMS autofill and allow paste so users do not have to retype the code, and avoid puzzle CAPTCHAs.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://indiankanoon.org/doc/97660308/\" rel=\"noopener noreferrer nofollow\">Rights of Persons with Disabilities Act, 2016, Indian Kanoon</a>, read 16 November 2026</li><li><a href=\"https://indiankanoon.org/doc/98908321/\" rel=\"noopener noreferrer nofollow\">Rajive Raturi vs Union of India, 8 November 2024, Indian Kanoon</a>, read 16 November 2026</li><li><a href=\"https://vidhilegalpolicy.in/blog/digital-access-as-a-fundamental-right/\" rel=\"noopener noreferrer nofollow\">Digital Access As a Fundamental Right, Vidhi Centre for Legal Policy</a>, read 16 November 2026</li><li><a href=\"https://depwd.gov.in/en/draft-rules-on-non-negotiable-accessibility-standards-for-information-and-communication-technology-sector/\" rel=\"noopener noreferrer nofollow\">Draft rules on non-negotiable accessibility standards for ICT, Department of Empowerment of Persons with Disabilities</a>, read 16 November 2026</li><li><a href=\"https://cdnbbsr.s3waas.gov.in/s3e58aea67b01fa747687f038dfde066f6/uploads/2026/07/202607271973960991.pdf\" rel=\"noopener noreferrer nofollow\">Draft RPwD (Amendment) Rules, S.O. 3962(E) of 16 July 2026 (PDF), Gazette of India</a>, read 16 November 2026</li><li><a href=\"https://guidelines.india.gov.in/\" rel=\"noopener noreferrer nofollow\">Guidelines for Indian Government Websites and Apps (GIGW), Government of India</a>, read 16 November 2026</li><li><a href=\"https://cdnbbsr.s3waas.gov.in/s3c92a10324374fac681719d63979d00fe/uploads/2025/02/2025021775.pdf\" rel=\"noopener noreferrer nofollow\">GIGW 3.0 document (PDF), Government of India</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\">Web Content Accessibility Guidelines (WCAG) 2.2, W3C</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/\" rel=\"noopener noreferrer nofollow\">What's New in WCAG 2.2, W3C Web Accessibility Initiative</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/WAI/business-case/\" rel=\"noopener noreferrer nofollow\">The Business Case for Digital Accessibility, W3C Web Accessibility Initiative</a>, read 16 November 2026</li><li><a href=\"https://webaim.org/projects/million/\" rel=\"noopener noreferrer nofollow\">The WebAIM Million, 2026 report, WebAIM</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian designer reviewing an accessible app design beside the words Accessibility built in",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian woman designer in her 30s in a kurta, seated at a studio desk, comparing two phone screen mock-ups on a large monitor: one with tiny faint buttons, one with large high-contrast buttons, both showing only abstract shapes, no readable text. Beside her a colleague, a young man with a white cane resting by his chair, listening through earphones to his phone. Faces fully in frame. No logos. Right half: the title text 'Accessibility built in' in very large bold black sans-serif, left-aligned, on three lines ('Accessibility' / 'built' / 'in'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of India's accessibility timeline from the RPwD Act 2016 to the July 2026 draft ICT rules",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Digital accessibility in India: the timeline'. A horizontal timeline with orange arrows joining five dark-blue rounded pills with white text, each with a small flat icon above: book icon 'RPwD Act 2016', gavel icon 'Supreme Court, 8 Nov 2024: make rules mandatory', gavel icon 'Supreme Court, 30 Apr 2025: right to digital access', document icon 'Draft ICT rules, 16 Jul 2026', checklist icon 'IS 17802 conformance report'. Under the last pill a small grey note 'draft, not yet final'. One-line bold takeaway at bottom: 'Build to WCAG 2.2 AA now, before it is a deadline.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the W3C page listing what is new in WCAG 2.2",
+   "url": "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+   "annotate": [
+    {
+     "text": "Ensure targets meet a minimum size or have sufficient spacing around them.",
+     "label": "Bigger tap targets"
+    },
+    {
+     "text": "Don't ask for the same information twice in the same session.",
+     "label": "No duplicate forms"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the WebAIM Million 2026 report showing the share of home pages with WCAG failures",
+   "url": "https://webaim.org/projects/million/",
+   "annotate": [
+    {
+     "text": "95.9% of home pages had detected WCAG 2 failures.",
+     "label": "Almost every site"
+    },
+    {
+     "text": "These most common errors have been the same for the last 7 years.",
+     "label": "Same basics every year"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an older Indian man using a phone with large buttons to book a hospital appointment, helped by his daughter",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. An Indian living room: an older man in his 70s with reading glasses, in a cotton shirt, sitting on a sofa holding a phone that shows a few large rounded buttons and a big calendar shape, no readable text. His adult daughter in a salwar kameez sits beside him, pointing gently at the screen. A ceiling fan and a framed picture of a landscape behind. No logos. Faces fully in frame."
+  }
+ ]
+}

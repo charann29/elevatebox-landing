@@ -1,0 +1,181 @@
+{
+ "slug": "security-basics-for-startups",
+ "locale": "en",
+ "title": "Cyber security for startups in India: a budget checklist",
+ "description": "Cyber security for startups in India on a budget: CERT-In's 6-hour rule and 15 MSME controls, DPDP Rules safeguards from May 2027 and the OWASP Top 10.",
+ "imageUrl": "/assets/blog/security-basics-for-startups/cover.webp",
+ "imageAlt": "Illustration of an Indian startup founder checking a security list on a laptop beside the words Startup security basics",
+ "ogImageUrl": null,
+ "tags": [
+  "cyber security",
+  "startups",
+  "CERT-In",
+  "DPDP Act"
+ ],
+ "readingTimeMinutes": 16,
+ "publishedAt": "2026-04-25T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-startup-security-in-india-actually-requires",
+   "text": "What startup security in India actually requires",
+   "level": 2
+  },
+  {
+   "id": "the-four-documents-side-by-side",
+   "text": "The four documents, side by side",
+   "level": 2
+  },
+  {
+   "id": "cert-in-the-rules-you-already-have-to-follow",
+   "text": "CERT-In: the rules you already have to follow",
+   "level": 2
+  },
+  {
+   "id": "dpdp-rules-what-changes-in-may-2027",
+   "text": "DPDP Rules: what changes in May 2027",
+   "level": 2
+  },
+  {
+   "id": "cert-ins-15-controls-for-msmes-the-free-to-do-list",
+   "text": "CERT-In's 15 controls for MSMEs: the free to-do list",
+   "level": 2
+  },
+  {
+   "id": "owasp-top-10-2025-what-to-build-against",
+   "text": "OWASP Top 10:2025: what to build against",
+   "level": 2
+  },
+  {
+   "id": "a-budget-security-plan-step-by-step",
+   "text": "A budget security plan, step by step",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-b2b-invoicing-saas",
+   "text": "A B2B invoicing SaaS",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-booking-and-records-app",
+   "text": "A clinic booking and records app",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-on-a-hosted-store",
+   "text": "A D2C brand on a hosted store",
+   "level": 3
+  },
+  {
+   "id": "five-common-mistakes",
+   "text": "Five common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-30-minute-security-check",
+   "text": "A monthly 30-minute security check",
+   "level": 2
+  },
+  {
+   "id": "where-outside-help-fits",
+   "text": "Where outside help fits",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Do CERT-In's directions apply to small startups?",
+   "a": "The directions apply to service providers, intermediaries, data centres, body corporate and government organisations, with no size exemption in the text. In my reading a private limited company is a body corporate. Check with a lawyer for your case."
+  },
+  {
+   "q": "What is the 6-hour rule?",
+   "a": "CERT-In requires the incident types in Annexure I of its 28 April 2022 directions to be reported within 6 hours of noticing them or being told about them. You can report by email to incident@cert-in.org.in or by phone on 1800-11-4949."
+  },
+  {
+   "q": "When do the DPDP security rules apply?",
+   "a": "The DPDP Rules were published on 14 November 2025. Rule 1 says rules 3, 5 to 16, 22 and 23, which include the security safeguards and breach notice, come into force eighteen months later, which is May 2027."
+  },
+  {
+   "q": "What are CERT-In's 15 controls for MSMEs?",
+   "a": "A CERT-In guidance document, version 1.0 dated 1 September 2025, listing 15 elemental controls from asset management to vulnerability audits, with 45 baseline recommendations for self-assessment. It suggests a baseline audit by an empanelled auditor at least once a year."
+  },
+  {
+   "q": "What is new in the OWASP Top 10:2025?",
+   "a": "Two new categories, software supply chain failures and mishandling of exceptional conditions, and one consolidation: server-side request forgery is now part of broken access control, which stays at number one. Security misconfiguration rose from fifth to second."
+  },
+  {
+   "q": "How long must a startup keep logs in India?",
+   "a": "CERT-In asks for logs of all ICT systems for a rolling 180 days, kept within Indian jurisdiction. From May 2027, DPDP Rule 6 also asks for logs and personal data to be kept for one year for investigating unauthorised access, unless another law says otherwise."
+  },
+  {
+   "q": "Do I need a paid security audit?",
+   "a": "Not before you have done the basics. Start with CERT-In's self-assessment. A paid audit from a CERT-In empanelled organisation makes sense before handling health or financial data, an enterprise contract or a launch where customers will ask."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-startup-security-in-india-actually-requires\">What startup security in India actually requires</h2><p><strong>In short:</strong> A startup in India needs three things on a small budget: CERT-In's rules (report listed cyber incidents within 6 hours, keep logs for 180 days in India, sync clocks), the DPDP Rules' security safeguards that apply from May 2027, and a product built against the OWASP Top 10. CERT-In's free 15 controls for MSMEs turn that into a to-do list.</p><p>This guide was checked in November 2026, against CERT-In's directions and MSME controls, the DPDP Rules 2025 and the OWASP Top 10:2025. I am not a lawyer, and this is not legal advice. Where a rule has a date, I give it.</p><p>Security advice for startups usually swings between two bad extremes: \"you are too small to be a target\" and an expensive audit before the first customer. Neither fits. What fits is a short list of habits that cost mostly time, done in the right order, plus knowing what the law asks of you.</p><h2 id=\"the-four-documents-side-by-side\">The four documents, side by side</h2><p>Most of what a small Indian company must or should do comes from four documents. Here is what each one is and what it asks.</p><p><em>The four documents that shape startup security in India</em></p><table><thead><tr><th>Document</th><th>Issued by</th><th>Binding?</th><th>What it asks of a startup</th></tr></thead><tbody><tr><td>Cyber security directions under section 70B(6) of the IT Act, 28 April 2022</td><td>CERT-In</td><td>Yes, for service providers, intermediaries, data centres, body corporate and government bodies</td><td>Report Annexure I incidents within 6 hours, keep ICT logs 180 days in India, sync clocks to NIC or NPL, name a point of contact</td></tr><tr><td>Digital Personal Data Protection Rules, 2025</td><td>MeitY, under the DPDP Act 2023</td><td>Yes, with phased dates</td><td>Security safeguards (Rule 6), breach notice to users and the Board, detailed Board report within 72 hours (Rule 7)</td></tr><tr><td>15 Elemental Cyber Defense Controls for MSMEs, version 1.0, 1 September 2025</td><td>CERT-In</td><td>Guidance</td><td>15 controls with 45 baseline recommendations for self-assessment, and a baseline audit at least once a year</td></tr><tr><td>OWASP Top 10:2025</td><td>OWASP Foundation</td><td>No, an awareness list</td><td>The ten most serious web application risks to design and test against</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\"><em>CERT-In directions of 28 April 2022</em></a><em> and </em><a href=\"https://dpdpa.com/dpdparules/rule1.html\" rel=\"noopener noreferrer nofollow\"><em>DPDP Rules 2025, Rule 1</em></a><em> and </em><a href=\"https://www.cert-in.org.in/PDF/Elemental_Cyber_Defense_Controls_for_MSME.pdf\" rel=\"noopener noreferrer nofollow\"><em>CERT-In MSME controls</em></a><em> and </em><a href=\"https://owasp.org/Top10/2025/\" rel=\"noopener noreferrer nofollow\"><em>OWASP Top 10:2025</em></a><em>, read 16 November 2026.</em></p><p>Two of these are law and two are guidance. The guidance is where a small team gets the most for its time, because it tells you what to do on a Tuesday afternoon, not just what you will be fined for.</p><h2 id=\"cert-in-the-rules-you-already-have-to-follow\">CERT-In: the rules you already have to follow</h2><p>The <a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\">CERT-In directions</a> took effect in 2022 and have no startup exemption. They apply to \"service providers, intermediaries, data centres, body corporate and Government organisations\". In my reading, a private limited company running a website or app is a body corporate. The four duties that matter most:</p><ul><li><strong>6-hour reporting.</strong> Report the incident types listed in Annexure I to CERT-In \"within 6 hours of noticing such incidents or being brought to notice about such incidents\", by email to incident@cert-in.org.in, phone (1800-11-4949) or fax.</li><li><strong>180 days of logs, in India.</strong> Enable logs of all ICT systems and keep them securely \"for a rolling period of 180 days\", maintained within Indian jurisdiction.</li><li><strong>Clock sync.</strong> Connect systems to the NTP server of NIC or NPL, or servers traceable to them. Logs with wrong timestamps are hard to use in an investigation.</li><li><strong>A point of contact.</strong> Designate a person to interface with CERT-In.</li></ul><p>Annexure I has 20 incident types. The ones a typical startup can actually hit: unauthorised access of IT systems or data, website defacement, ransomware and other malicious code, phishing and identity theft, DDoS, attacks on e-commerce applications, data breach, data leak, attacks on digital payment systems, fake mobile apps, unauthorised access to social media accounts and attacks on cloud systems.</p><p>Two surprise founders. A data leak counts, not just a hack, so a public cloud bucket of customer invoices is reportable. And a hijacked company Instagram account is on the list too.</p><h2 id=\"dpdp-rules-what-changes-in-may-2027\">DPDP Rules: what changes in May 2027</h2><p>The DPDP Rules were published on 14 November 2025. <a href=\"https://dpdpa.com/dpdparules/rule1.html\" rel=\"noopener noreferrer nofollow\">Rule 1</a> sets the dates: rules 1, 2 and 17 to 21 apply from publication, Rule 4 after one year, and rules 3, 5 to 16, 22 and 23 \"eighteen months after the date of publication\". That puts the security and breach rules in May 2027.</p><p><a href=\"https://dpdpa.com/dpdparules/rule6.html\" rel=\"noopener noreferrer nofollow\">Rule 6</a> lists the minimum security safeguards. Read it as a checklist, because it is one:</p><ul><li>Encryption, obfuscation, masking or virtual tokens for personal data.</li><li>Access control on the computer resources used by you or your data processor.</li><li>Logs, monitoring and review, so unauthorised access can be detected, investigated and fixed.</li><li>Measures to keep processing going if data is lost or compromised, \"such as by way of data-backups\".</li><li>Logs and personal data kept for one year, unless another law requires otherwise.</li><li>Security terms in your contracts with data processors. That includes your cloud host, your CRM and the agency that builds your app.</li><li>Technical and organisational measures to make sure all of this is actually observed.</li></ul><p><a href=\"https://dpdpa.com/dpdparules/rule7.html\" rel=\"noopener noreferrer nofollow\">Rule 7</a> covers breaches. You must tell each affected person \"without delay\", in plain language, what happened, what it means for them and what they can do. You must tell the Data Protection Board without delay, and send a detailed report \"within seventy-two hours of becoming aware of the breach\", unless the Board allows longer in writing.</p><figure><img src=\"/assets/blog/security-basics-for-startups/4.webp\" alt=\"Annotated view of DPDP Rule 7 text showing the 72-hour report to the Data Protection Board\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Rule 7 of the DPDP Rules: the detailed report to the Board is due within 72 hours.</figcaption></figure><p>The penalties are large. The Act's <a href=\"https://dpdpact.net/reader/schedule\" rel=\"noopener noreferrer nofollow\">Schedule</a> says failing to take reasonable security safeguards \"may extend to two hundred and fifty crore rupees\", and failing to notify the Board or affected people of a breach may extend to two hundred crore rupees. Those are ceilings, not fixed fines, but they explain why investors and enterprise customers now ask about this in due diligence.</p><figure><img src=\"/assets/blog/security-basics-for-startups/1.webp\" alt=\"Infographic of the two breach clocks a startup faces: CERT-In's 6 hours and the DPDP Board's 72 hours\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>One incident, two clocks: CERT-In now, the Data Protection Board from May 2027.</figcaption></figure><h2 id=\"cert-ins-15-controls-for-msmes-the-free-to-do-list\">CERT-In's 15 controls for MSMEs: the free to-do list</h2><p>The most useful document for a small company is the one fewest founders have read. In September 2025 CERT-In published <a href=\"https://www.cert-in.org.in/PDF/Elemental_Cyber_Defense_Controls_for_MSME.pdf\" rel=\"noopener noreferrer nofollow\">15 Elemental Cyber Defense Controls for MSMEs</a>. It applies to enterprises that meet the government's MSME classification, which covers most early-stage startups. It says MSMEs may use its 45 baseline recommendations for self-assessment, and may get a baseline audit from a CERT-In empanelled auditor at least once a year.</p><p>Here are the fifteen, with what I would do first for each on a small budget.</p><p><em>CERT-In's 15 elemental controls and a low-cost first step for each</em></p><table><thead><tr><th>Control</th><th>Low-cost first step</th></tr></thead><tbody><tr><td>Effective asset management</td><td>One sheet listing every laptop, phone, domain, cloud account, SaaS tool and who owns it</td></tr><tr><td>Network and email security</td><td>SPF, DKIM and DMARC on your domain; no shared mailbox passwords</td></tr><tr><td>Endpoint and mobile security</td><td>Screen lock, disk encryption and automatic updates on every work device</td></tr><tr><td>Secure configurations</td><td>No default passwords; production database not open to the internet</td></tr><tr><td>Patch management</td><td>Turn on automatic updates; a monthly check of server and dependency updates</td></tr><tr><td>Incident management</td><td>A one-page plan: who decides, who reports to CERT-In in 6 hours</td></tr><tr><td>Logging and monitoring</td><td>Cloud and app logs switched on, kept 180 days, clocks synced</td></tr><tr><td>Awareness and training</td><td>A 30-minute phishing and UPI fraud briefing for every new joiner</td></tr><tr><td>Third party risk management</td><td>A list of vendors who hold customer data, with security terms in contracts</td></tr><tr><td>Data protection, backup and recovery</td><td>Automated backups stored separately, and one restore test a quarter</td></tr><tr><td>Governance and compliance</td><td>One named owner for security, reviewed at a monthly founders' meeting</td></tr><tr><td>Robust password policy</td><td>A password manager for the team; no passwords in chat or spreadsheets</td></tr><tr><td>Access control and identity management</td><td>Two-factor login on email, cloud, code and payments; remove leavers the same day</td></tr><tr><td>Physical security</td><td>Lock screens and the server cupboard; no laptops left in the car</td></tr><tr><td>Vulnerability audits and assessments</td><td>Self-assess against the 45 recommendations; book an empanelled audit before a big launch</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.cert-in.org.in/PDF/Elemental_Cyber_Defense_Controls_for_MSME.pdf\" rel=\"noopener noreferrer nofollow\"><em>CERT-In, 15 Elemental Cyber Defense Controls for MSMEs, version 1.0</em></a><em>, read 16 November 2026.</em></p><p>The control names in the left column are CERT-In's. The first steps on the right are mine, chosen because they cost little beyond a few hours.</p><h2 id=\"owasp-top-10-2025-what-to-build-against\">OWASP Top 10:2025: what to build against</h2><p>CERT-In tells you how to run the company. The <a href=\"https://owasp.org/Top10/2025/\" rel=\"noopener noreferrer nofollow\">OWASP Top 10</a> tells your developers what to avoid in the product. The 2025 list is:</p><ul><li>A01 Broken Access Control</li><li>A02 Security Misconfiguration</li><li>A03 Software Supply Chain Failures</li><li>A04 Cryptographic Failures</li><li>A05 Injection</li><li>A06 Insecure Design</li><li>A07 Authentication Failures</li><li>A08 Software or Data Integrity Failures</li><li>A09 Security Logging and Alerting Failures</li><li>A10 Mishandling of Exceptional Conditions</li></ul><p>OWASP's <a href=\"https://owasp.org/Top10/2025/0x00_2025-Introduction/\" rel=\"noopener noreferrer nofollow\">introduction</a> explains what changed. Broken access control stays at number one: on average 3.73% of applications tested had one or more of the 40 weaknesses in that category, and server-side request forgery is now rolled into it. Security misconfiguration moved up from fifth in 2021 to second. Software supply chain failures is an expansion of the old \"vulnerable and outdated components\", and OWASP says it has the fewest occurrences in the data but the highest average exploit and impact scores. Mishandling of exceptional conditions is new.</p><p>For a startup, the top three map neatly onto real mistakes I would look for first:</p><ul><li><strong>Access control:</strong> change the invoice or order ID in a URL or API call and see someone else's data. Every request has to check who is asking, on the server.</li><li><strong>Misconfiguration:</strong> a staging server with real data, an admin panel at /admin with a default password, a storage bucket set to public.</li><li><strong>Supply chain:</strong> a package nobody has updated in two years, or a new dependency added because a blog post said so. Know what you install.</li></ul><figure><img src=\"/assets/blog/security-basics-for-startups/2.webp\" alt=\"Annotated view of the OWASP Top 10:2025 page listing the ten risk categories\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>OWASP's 2025 list: broken access control is still first.</figcaption></figure><p>Designing APIs so that the access check cannot be forgotten is cheaper than finding the bug later. We wrote about that in <a href=\"/blogs/api-design-that-ages-well\">API design that ages well</a>.</p><h2 id=\"a-budget-security-plan-step-by-step\">A budget security plan, step by step</h2><p>Here is the order I would work through for a startup with a product live or about to launch. Most steps cost hours, not money.</p><p><strong>Step 1. List what you have.</strong> Every device, domain, cloud account, code repository, payment account and SaaS tool, with an owner. You cannot protect what you have not written down, and this list is CERT-In's first control.</p><p><strong>Step 2. Turn on two-factor login everywhere it matters.</strong> Email, cloud console, code hosting, domain registrar, payment gateway, social media. A hijacked social media account is a reportable incident; this is the cheapest way to avoid one.</p><p><strong>Step 3. Give the team a password manager.</strong> Move shared logins out of WhatsApp groups and spreadsheets. Remove access for people who leave on their last day.</p><p><strong>Step 4. Switch on logs and keep them 180 days.</strong> Cloud audit logs, server and application logs, admin panel logins. Check retention settings: many defaults are shorter. Sync server clocks to NIC or NPL NTP servers.</p><p><strong>Step 5. Back up and test a restore.</strong> Automated database backups, stored away from the main account, and one real restore every quarter. A backup you have never restored is a hope, not a backup.</p><p><strong>Step 6. Fix the OWASP top three in your product.</strong> Server-side access checks on every request, no default credentials or public buckets, and a dependency scan in your build.</p><p><strong>Step 7. Write the one-page incident plan.</strong> Who decides something is an incident, who emails CERT-In within 6 hours, who tells customers, and, from May 2027, who reports to the Data Protection Board. Put the CERT-In email and phone number on it.</p><p><strong>Step 8. Add security terms to vendor contracts.</strong> Rule 6 asks for them with data processors. Start with whoever hosts and builds your product.</p><p><strong>Step 9. Self-assess, then audit when it is worth it.</strong> Go through CERT-In's 45 baseline recommendations yourself. Pay for an empanelled audit before an enterprise deal, a health or fintech launch, or a fundraise where it will be asked about.</p><p>Logging well is a topic of its own. If you are setting it up, <a href=\"/blogs/observability-before-you-need-it\">observability before you need it</a> covers what to capture.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are illustrative startups, made up to show how priorities shift by business type. They are not clients.</p><h3 id=\"a-b2b-invoicing-saas\">A B2B invoicing SaaS</h3><p>Imagine a five-person Pune startup selling GST invoicing software to small traders. Each customer sees only their own invoices, so broken access control is the risk that ends the company: one trader reading another's sales. The first spend of time goes into server-side tenant checks on every API call and a test suite that tries to cross tenants.</p><p>Its customers are businesses, and enterprise buyers will send a security questionnaire. Having the CERT-In self-assessment done, logs kept for 180 days and a written incident plan answers half of it.</p><h3 id=\"a-clinic-booking-and-records-app\">A clinic booking and records app</h3><p>Imagine a Hyderabad health startup storing appointment history and lab reports for clinics. Health data raises the stakes of every DPDP safeguard. Encryption at rest, per-patient access checks, download links that expire and a log of who opened which report are the basics.</p><p>Here I would not wait for the self-assessment alone. An outside test before launch is worth it, and the vendor contracts with the clinics should say who does what when there is a breach.</p><figure><img src=\"/assets/blog/security-basics-for-startups/3.webp\" alt=\"Illustration of a small startup team reviewing a security checklist together in an office\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For most small teams, security starts with a list and a named owner.</figcaption></figure><h3 id=\"a-d2c-brand-on-a-hosted-store\">A D2C brand on a hosted store</h3><p>Imagine a Jaipur block-print brand on a hosted e-commerce platform, with payments through a gateway. The platform handles most product security. The risks left are the team's accounts: the store admin, the payment dashboard, the Instagram page and the email that resets all of them.</p><p>Two-factor login on all of those, a password manager, and removing an ex-employee's access on their last day cover most of the risk. The incident plan still matters: a hijacked Instagram account selling fake discounts in the brand's name is on CERT-In's list.</p><h2 id=\"five-common-mistakes\">Five common mistakes</h2><p><strong>1. \"We are too small to be a target.\"</strong> Most attacks are not aimed. Bots try default passwords and public buckets on everyone. CERT-In's directions also make no size exception for reporting.</p><p><strong>2. Buying a tool before writing the list.</strong> A security product does not help if nobody knows which cloud accounts exist. Asset management is control number one for a reason.</p><p><strong>3. Logs that are on but useless.</strong> Logs kept for 7 days, on servers with wrong clocks, in the same account an attacker would delete. CERT-In asks for 180 days and synced clocks; Rule 6 asks for a year for personal data access logs.</p><p><strong>4. Treating the OWASP Top 10 as a certificate.</strong> It is an awareness list. Passing a scan for it does not mean the app is secure, and access control bugs often need a human to find them.</p><p><strong>5. No one owns it.</strong> If security is everyone's job, the 6-hour report at 11 pm on a Saturday is nobody's. Name the person.</p><h2 id=\"a-monthly-30-minute-security-check\">A monthly 30-minute security check</h2><ul><li>Review who has access to email, cloud, code and payments. Remove anyone who has left or changed role.</li><li>Check that automatic updates ran on laptops, phones and servers. Update outdated dependencies.</li><li>Confirm logs are still flowing and retained for 180 days.</li><li>Confirm the last backup ran. Once a quarter, restore one.</li><li>Check no storage bucket, database or admin panel has become public.</li><li>Re-read the incident plan. Is the CERT-In contact person still at the company?</li><li>Note one item from CERT-In's 45 recommendations to fix before next month.</li></ul><p>For staff devices, CERT-In also runs the <a href=\"https://www.csk.gov.in/\" rel=\"noopener noreferrer nofollow\">Cyber Swachhta Kendra</a>, its botnet cleaning and malware analysis centre, which links to free bot removal tools from antivirus companies. It is worth a bookmark for the team.</p><h2 id=\"where-outside-help-fits\">Where outside help fits</h2><p>Most of this list is habit, and a founder can run it. Where outside help earns its fee is the product itself: access control, secure configuration and a test before launch. If you are building a product and want security scoped in from the start, our ₹3,500 requirement analysis is a call with the people who will build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">see how it works</a>). Code, cloud and credentials stay in your company's name, which matters for Step 1. For protecting the business more broadly, see our <a href=\"/services/business-protection-services\">business protection services</a>.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"do-cert-ins-directions-apply-to-small-startups\">Do CERT-In's directions apply to small startups?</h3><p>The directions apply to service providers, intermediaries, data centres, body corporate and government organisations, with no size exemption in the text. In my reading a private limited company is a body corporate. Check with a lawyer for your case.</p><h3 id=\"what-is-the-6-hour-rule\">What is the 6-hour rule?</h3><p>CERT-In requires the incident types in Annexure I of its 28 April 2022 directions to be reported within 6 hours of noticing them or being told about them. You can report by email to incident@cert-in.org.in or by phone on 1800-11-4949.</p><h3 id=\"when-do-the-dpdp-security-rules-apply\">When do the DPDP security rules apply?</h3><p>The DPDP Rules were published on 14 November 2025. Rule 1 says rules 3, 5 to 16, 22 and 23, which include the security safeguards and breach notice, come into force eighteen months later, which is May 2027.</p><h3 id=\"what-are-cert-ins-15-controls-for-msmes\">What are CERT-In's 15 controls for MSMEs?</h3><p>A CERT-In guidance document, version 1.0 dated 1 September 2025, listing 15 elemental controls from asset management to vulnerability audits, with 45 baseline recommendations for self-assessment. It suggests a baseline audit by an empanelled auditor at least once a year.</p><h3 id=\"what-is-new-in-the-owasp-top-10-2025\">What is new in the OWASP Top 10:2025?</h3><p>Two new categories, software supply chain failures and mishandling of exceptional conditions, and one consolidation: server-side request forgery is now part of broken access control, which stays at number one. Security misconfiguration rose from fifth to second.</p><h3 id=\"how-long-must-a-startup-keep-logs-in-india\">How long must a startup keep logs in India?</h3><p>CERT-In asks for logs of all ICT systems for a rolling 180 days, kept within Indian jurisdiction. From May 2027, DPDP Rule 6 also asks for logs and personal data to be kept for one year for investigating unauthorised access, unless another law says otherwise.</p><h3 id=\"do-i-need-a-paid-security-audit\">Do I need a paid security audit?</h3><p>Not before you have done the basics. Start with CERT-In's self-assessment. A paid audit from a CERT-In empanelled organisation makes sense before handling health or financial data, an enterprise contract or a launch where customers will ask.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\">Directions under section 70B(6) of the IT Act, 28 April 2022 (PDF), CERT-In</a>, read 16 November 2026</li><li><a href=\"https://www.cert-in.org.in/Directions70B.jsp\" rel=\"noopener noreferrer nofollow\">Directions by CERT-In under Section 70B, CERT-In</a>, read 16 November 2026</li><li><a href=\"https://www.cert-in.org.in/PDF/Elemental_Cyber_Defense_Controls_for_MSME.pdf\" rel=\"noopener noreferrer nofollow\">15 Elemental Cyber Defense Controls for MSMEs, version 1.0 (PDF), CERT-In</a>, read 16 November 2026</li><li><a href=\"https://www.csk.gov.in/\" rel=\"noopener noreferrer nofollow\">Cyber Swachhta Kendra, CERT-In</a>, read 16 November 2026</li><li><a href=\"https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa\" rel=\"noopener noreferrer nofollow\">Digital Personal Data Protection Rules 2025, MeitY</a>, read 16 November 2026</li><li><a href=\"https://dpdpa.com/dpdparules/rule1.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules 2025, Rule 1, dpdpa.com</a>, read 16 November 2026</li><li><a href=\"https://dpdpa.com/dpdparules/rule6.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules 2025, Rule 6, dpdpa.com</a>, read 16 November 2026</li><li><a href=\"https://dpdpa.com/dpdparules/rule7.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules 2025, Rule 7, dpdpa.com</a>, read 16 November 2026</li><li><a href=\"https://dpdpact.net/reader/schedule\" rel=\"noopener noreferrer nofollow\">DPDP Act 2023, Schedule of penalties, DPDP Act reader</a>, read 16 November 2026</li><li><a href=\"https://owasp.org/Top10/2025/\" rel=\"noopener noreferrer nofollow\">OWASP Top 10:2025, OWASP Foundation</a>, read 16 November 2026</li><li><a href=\"https://owasp.org/Top10/2025/0x00_2025-Introduction/\" rel=\"noopener noreferrer nofollow\">Introduction, OWASP Top 10:2025, OWASP Foundation</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian startup founder checking a security list on a laptop beside the words Startup security basics",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian man in his late 20s in a casual shirt, a startup founder, at a small co-working desk with a laptop showing an abstract padlock and shield icon, a phone with a two-step code icon in his hand, a printed checklist with tick boxes (no readable words) and a chai glass. Face fully in frame. No logos, no readable text on screens. Right half: the title text 'Startup security basics' in very large bold black sans-serif, left-aligned, on three lines ('Startup' / 'security' / 'basics'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the two breach clocks a startup faces: CERT-In's 6 hours and the DPDP Board's 72 hours",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'One incident, two clocks'. Left: alarm bell icon with dark-blue pill 'You notice an incident'. Two orange arrows branch right. Top row: shield icon, dark-blue pill 'CERT-In', orange arrow, pill 'Report within 6 hours', small grey note 'in force since 2022'. Bottom row: scales icon, dark-blue pill 'Data Protection Board', orange arrow, pill 'Tell it without delay', orange arrow, pill 'Detailed report within 72 hours', small grey note 'from May 2027'. Third small row: people icon, pill 'Tell affected users without delay'. One-line bold takeaway at bottom: 'Name the person who sends the 6-hour report.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the OWASP Top 10:2025 page listing the ten risk categories",
+   "url": "https://owasp.org/Top10/2025/",
+   "annotate": [
+    {
+     "text": "A01:2025 - Broken Access Control",
+     "label": "Still number one"
+    },
+    {
+     "text": "A03:2025 - Software Supply Chain Failures",
+     "label": "New for 2025"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a small startup team reviewing a security checklist together in an office",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian startup office: three young people, a woman in a kurta and two men in casual shirts, gathered at a table around one laptop and a printed checklist with tick marks, one pointing at a phone showing an abstract lock icon. A whiteboard behind with only abstract boxes and arrows, no readable words. No logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of DPDP Rule 7 text showing the 72-hour report to the Data Protection Board",
+   "url": "https://dpdpa.com/dpdparules/rule7.html",
+   "annotate": [
+    {
+     "text": "within seventy-two hours of becoming aware of the breach",
+     "label": "72-hour report"
+    }
+   ]
+  }
+ ]
+}

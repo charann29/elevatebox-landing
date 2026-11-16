@@ -1,0 +1,201 @@
+{
+ "slug": "data-pipelines-that-dont-lie",
+ "locale": "en",
+ "title": "Business dashboard for small businesses in India",
+ "description": "How to build a business dashboard for an Indian small business: Sheets, Data Studio or Power BI, Tally and gateway data, and checks that keep numbers right.",
+ "imageUrl": "/assets/blog/data-pipelines-that-dont-lie/cover.webp",
+ "imageAlt": "Illustration of an Indian shop owner checking a business dashboard on a laptop beside the words Business dashboard",
+ "ogImageUrl": null,
+ "tags": [
+  "dashboards",
+  "data engineering",
+  "small business",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-05-23T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-a-business-dashboard-should-do-for-a-small-business",
+   "text": "What a business dashboard should do for a small business",
+   "level": 2
+  },
+  {
+   "id": "the-tools-and-what-they-cost-in-november-2026",
+   "text": "The tools and what they cost in November 2026",
+   "level": 2
+  },
+  {
+   "id": "data-studio-power-bi-or-metabase-how-i-would-choose",
+   "text": "Data Studio, Power BI or Metabase: how I would choose",
+   "level": 2
+  },
+  {
+   "id": "what-to-put-on-the-page",
+   "text": "What to put on the page",
+   "level": 2
+  },
+  {
+   "id": "why-dashboard-numbers-stop-matching-your-books",
+   "text": "Why dashboard numbers stop matching your books",
+   "level": 2
+  },
+  {
+   "id": "dates-in-the-wrong-time-zone",
+   "text": "Dates in the wrong time zone",
+   "level": 3
+  },
+  {
+   "id": "orders-are-not-money-in-the-bank",
+   "text": "Orders are not money in the bank",
+   "level": 3
+  },
+  {
+   "id": "gst-inclusive-in-one-place-exclusive-in-another",
+   "text": "GST inclusive in one place, exclusive in another",
+   "level": 3
+  },
+  {
+   "id": "the-same-customer-three-spellings",
+   "text": "The same customer, three spellings",
+   "level": 3
+  },
+  {
+   "id": "rows-that-silently-disappear",
+   "text": "Rows that silently disappear",
+   "level": 3
+  },
+  {
+   "id": "how-to-build-a-dashboard-you-can-trust-step-by-step",
+   "text": "How to build a dashboard you can trust, step by step",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-for-three-indian-businesses",
+   "text": "Worked examples for three Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-three-store-retail-chain-in-hyderabad",
+   "text": "A three-store retail chain in Hyderabad",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-skincare-brand-selling-on-its-own-website",
+   "text": "A D2C skincare brand selling on its own website",
+   "level": 3
+  },
+  {
+   "id": "a-diagnostic-lab-with-two-collection-centres",
+   "text": "A diagnostic lab with two collection centres",
+   "level": 3
+  },
+  {
+   "id": "who-should-own-the-dashboard",
+   "text": "Who should own the dashboard",
+   "level": 2
+  },
+  {
+   "id": "ways-a-dashboard-misleads-you",
+   "text": "Ways a dashboard misleads you",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-routine-that-keeps-it-honest",
+   "text": "A monthly routine that keeps it honest",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is the cheapest way to build a business dashboard?",
+   "a": "Google Sheets plus Google Data Studio. Google describes Data Studio as a no-cost tool, and Sheets holds up to 20 million cells. The real cost is the time spent getting the data right, not the software."
+  },
+  {
+   "q": "Is Looker Studio the same as Data Studio?",
+   "a": "Yes. Google rebranded Looker Studio as Data Studio on 16 April 2026, according to its release notes. The paid edition is now called Data Studio Pro."
+  },
+  {
+   "q": "How much does Power BI cost in India?",
+   "a": "Microsoft's India pricing page lists a free account, Power BI Pro at ₹1,165 and Premium Per User at ₹1,995 per user per month, paid yearly, with GST extra. Check the page before buying, as prices change."
+  },
+  {
+   "q": "Can I connect Tally to a dashboard?",
+   "a": "Yes. TallyPrime documents an ODBC route: in Excel you choose Data, Get Data, From other sources, From ODBC, then the Tally ODBC Driver. From there the data can feed a sheet or dashboard."
+  },
+  {
+   "q": "Why do my website sales not match my bank account?",
+   "a": "Orders include refunds, cancellations and unpaid cash on delivery orders, and payment gateways deduct fees. Razorpay says its standard domestic settlement cycle is T+2 working days, so money also arrives later than the order."
+  },
+  {
+   "q": "When do I need a data warehouse like BigQuery?",
+   "a": "When your sheet becomes slow or you are joining several sources. BigQuery's first 10 GiB of storage and first 1 TiB of queries each month are free, which covers most small businesses."
+  },
+  {
+   "q": "How do I know my dashboard is correct?",
+   "a": "Reconcile it with your accountant's figures every month for the first three months, and add checks for unique invoice numbers, empty amounts, unexpected statuses and missing customers."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-a-business-dashboard-should-do-for-a-small-business\">What a business dashboard should do for a small business</h2><p><strong>In short:</strong> A business dashboard for a small Indian business is one page that shows sales, collections, stock and costs from the systems you already use, refreshed on a schedule. You can build one free with Google Sheets and Data Studio, but it only helps if every number on it matches your books. Most dashboards fail on that, not on charts.</p><p>This guide was checked in November 2026, against the official pricing and documentation pages listed at the end. Prices change, so check the page before you buy.</p><p>The old title of this post was about data pipelines that do not lie. I kept the idea. A pipeline is just the route your numbers take from Tally, your billing software, your website and your payment gateway to the dashboard. If that route drops refunds, double counts an order or puts an 11.30 pm sale on the wrong day, the dashboard lies, and the owner stops trusting it within a month.</p><h2 id=\"the-tools-and-what-they-cost-in-november-2026\">The tools and what they cost in November 2026</h2><p>Here is what a small business can use for each layer, with prices from the official pages.</p><p><em>Common dashboard tools for a small Indian business and their published prices</em></p><table><thead><tr><th>Layer</th><th>Tool</th><th>Published price or limit</th><th>Good for</th></tr></thead><tbody><tr><td>Spreadsheet store</td><td>Google Sheets</td><td>Up to 20 million cells or 100MB per spreadsheet</td><td>Under a few lakh rows, one person maintaining it</td></tr><tr><td>Dashboard</td><td>Google Data Studio (formerly Looker Studio)</td><td>Google calls it a no-cost tool; a paid Pro edition exists</td><td>Owners who already use Google Workspace</td></tr><tr><td>Dashboard</td><td>Power BI</td><td>Free account; Pro ₹1,165 and Premium Per User ₹1,995 per user per month, paid yearly, GST extra</td><td>Teams on Microsoft 365 and Excel</td></tr><tr><td>Dashboard</td><td>Metabase</td><td>Open source edition free and self-hosted; cloud Starter $100 a month with 5 users</td><td>A developer on the team who can host it</td></tr><tr><td>Warehouse</td><td>BigQuery</td><td>First 10 GiB of storage and first 1 TiB of queries each month free</td><td>When Sheets gets slow or several sources must be joined</td></tr><tr><td>Testing the data</td><td>dbt</td><td>Ships with four generic tests: unique, not_null, accepted_values, relationships</td><td>Catching broken numbers before the owner sees them</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.google.com/drive/answer/37603\" rel=\"noopener noreferrer nofollow\"><em>Google Drive Help</em></a><em> and </em><a href=\"https://docs.cloud.google.com/looker/docs/studio\" rel=\"noopener noreferrer nofollow\"><em>Google Cloud Data Studio docs</em></a><em> and </em><a href=\"https://www.microsoft.com/en-in/power-platform/products/power-bi/pricing\" rel=\"noopener noreferrer nofollow\"><em>Microsoft Power BI India pricing</em></a><em> and </em><a href=\"https://www.metabase.com/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Metabase pricing</em></a><em> and </em><a href=\"https://cloud.google.com/bigquery/pricing\" rel=\"noopener noreferrer nofollow\"><em>BigQuery pricing</em></a><em> and </em><a href=\"https://docs.getdbt.com/docs/build/data-tests\" rel=\"noopener noreferrer nofollow\"><em>dbt docs</em></a><em>, read 16 November 2026.</em></p><p>A note on names. Google <a href=\"https://docs.cloud.google.com/data-studio/release-notes\" rel=\"noopener noreferrer nofollow\">rebranded Looker Studio as Data Studio</a> on 16 April 2026. If a tutorial or a freelancer says Looker Studio, it is the same product.</p><p>For most businesses under a few crore in turnover, I would start with Sheets and Data Studio. The software costs nothing. The real cost is the hours someone spends getting the data right, and that does not change with the tool.</p><h2 id=\"data-studio-power-bi-or-metabase-how-i-would-choose\">Data Studio, Power BI or Metabase: how I would choose</h2><p>All three draw good charts. The choice is about where your data and your people already are.</p><ul><li><strong>Data Studio</strong> fits a business that runs on Gmail, Google Sheets and Google Ads. Sharing works like sharing a Google Doc. It reads Sheets and BigQuery directly, and Google lists it as a no-cost tool. Its weakness is heavy calculation on large data: it leans on the source to do the work.</li><li><strong>Power BI</strong> fits a business that lives in Excel and Microsoft 365, and an accountant who already writes Excel formulas. The free account is enough for one person building reports. Sharing with colleagues needs a paid licence, which the India pricing page lists at ₹1,165 per user per month for Pro, paid yearly.</li><li><strong>Metabase</strong> fits a business with its own app or website database and a developer who can host software. The open source edition is free with unlimited users if you run it yourself. The hosted Starter plan is $100 a month with five users included.</li></ul><p>If you are unsure, start with whatever matches your email. Moving five charts to another tool later takes a day. Fixing data that was never checked takes months, whatever the tool.</p><h2 id=\"what-to-put-on-the-page\">What to put on the page</h2><p>A dashboard the owner opens every morning usually has three bands, top to bottom.</p><ul><li><strong>The five numbers.</strong> Each as a large figure with last month and the same month last year beside it, and a small arrow for direction. Nothing else in this band.</li><li><strong>Two trends.</strong> Sales and collections by week for the last six months, on one chart, so the gap between them is visible.</li><li><strong>One action table.</strong> Who owes money, sorted by days outstanding, or which stock has not moved in sixty days. This is the part that leads to a phone call, which is the point of the whole exercise.</li></ul><p>Filters for branch, salesperson or channel go at the top. Leave out the gauges and pie charts with nine slices. If a chart has never changed a decision, remove it.</p><h2 id=\"why-dashboard-numbers-stop-matching-your-books\">Why dashboard numbers stop matching your books</h2><p>Before building anything, know the usual ways numbers drift apart. Most mismatches come from one of these.</p><h3 id=\"dates-in-the-wrong-time-zone\">Dates in the wrong time zone</h3><p>Many cloud tools store time in UTC. India is five and a half hours ahead. A sale at 1 am IST on the 1st is still the previous day in UTC. If one source reports in IST and another in UTC, the month-end totals will not match, and nobody can say why. Pick IST for every report and convert at the first step.</p><h3 id=\"orders-are-not-money-in-the-bank\">Orders are not money in the bank</h3><p>Your website says ₹2 lakh of orders today. Your bank shows less. Part of that is timing: <a href=\"https://razorpay.com/docs/payments/settlements/\" rel=\"noopener noreferrer nofollow\">Razorpay’s settlement documentation</a> says \"the standard settlement cycle for domestic payments is T+2 working days,\" and that the amount is settled \"after deducting fees.\" Part is refunds, cancellations and cash on delivery orders that were never paid. A dashboard that calls orders \"revenue\" will always look better than the bank.</p><h3 id=\"gst-inclusive-in-one-place-exclusive-in-another\">GST inclusive in one place, exclusive in another</h3><p>Your billing software may store the invoice total with GST. Your website platform may report sales before tax. Put both on one chart and the numbers disagree by the tax amount. Decide one rule: I prefer showing sales before GST, with tax as its own line.</p><h3 id=\"the-same-customer-three-spellings\">The same customer, three spellings</h3><p>\"Sri Lakshmi Traders\", \"Sri Laxmi Traders\" and \"SRI LAKSHMI TRADERS\" become three customers in a top customers chart. Join on a code, a GSTIN or a phone number, never on a name.</p><h3 id=\"rows-that-silently-disappear\">Rows that silently disappear</h3><p>A copy-paste export misses the last day. An import cuts off at a row limit. Nobody notices because the dashboard still draws a chart. This is why the tests in the next section matter more than any chart.</p><figure><img src=\"/assets/blog/data-pipelines-that-dont-lie/1.webp\" alt=\"Infographic showing four ways a small business dashboard drifts from the books\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Four common causes of dashboard numbers that do not match the books.</figcaption></figure><h2 id=\"how-to-build-a-dashboard-you-can-trust-step-by-step\">How to build a dashboard you can trust, step by step</h2><p>This is the order I would follow for a business starting from Tally, a billing app, a website and a payment gateway.</p><p><strong>Step 1. Write the five numbers the owner checks.</strong> Not twenty. Usually: sales this month, collections this month, money owed by customers, stock value, and one cost line such as purchases or ad spend. Write the exact definition of each in one sentence, for example \"sales means invoice value before GST, minus credit notes, by invoice date in IST.\"</p><p><strong>Step 2. Name the one source of truth for each.</strong> Sales from the accounting system, not the website. Collections from the bank or the gateway settlement report, not the order list. When two systems disagree, the definition in Step 1 says which wins.</p><p><strong>Step 3. Get the data out on a schedule.</strong> Use the official export or connector, not manual copy-paste. TallyPrime, for example, documents an <a href=\"https://help.tallysolutions.com/tallyprime/odbc/\" rel=\"noopener noreferrer nofollow\">ODBC route</a>: in Excel you go to Data, Get Data, From other sources, From ODBC, and select the Tally ODBC Driver. Payment gateways and website platforms have scheduled reports or APIs. Land everything in one place, a Google Sheet to start with.</p><p><strong>Step 4. Clean once, at the start.</strong> Convert every date to IST. Strip GST if your rule says before tax. Map customer names to one code. Do this in one sheet or one query that every chart reads from, so there is only one place to fix.</p><p><strong>Step 5. Add checks before charts.</strong> The four dbt tests are a good model even if you never use dbt: every invoice number is unique, no amount is empty, every status is one you expect, and every invoice's customer exists in the customer list. In a sheet these can be simple formulas with a red cell when they fail.</p><figure><img src=\"/assets/blog/data-pipelines-that-dont-lie/2.webp\" alt=\"Annotated view of the dbt documentation listing its four generic data tests\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>dbt's four built-in tests. The same four checks work as spreadsheet formulas.</figcaption></figure><p><strong>Step 6. Reconcile with the books once.</strong> Take last month. Put the dashboard's sales next to the accountant's figure. If they differ, find out why before going further. Write the reason down. Do this every month for the first three months.</p><p><strong>Step 7. Build the page.</strong> Now open Data Studio or Power BI. Five numbers at the top, each compared with last month. A trend chart for sales and collections. One table of who owes money. Show \"last refreshed\" on the page.</p><p><strong>Step 8. Move to a warehouse only when you have to.</strong> When the sheet slows down, or you join four sources, move the data to BigQuery. Its free tier covers the first 10 GiB of storage and 1 TiB of queries a month, which is far more than most small businesses use.</p><figure><img src=\"/assets/blog/data-pipelines-that-dont-lie/3.webp\" alt=\"Annotated view of Google Drive Help showing the Google Sheets cell limit\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's own limit for a spreadsheet. Most small businesses hit slowness well before it.</figcaption></figure><aside data-callout=\"accent\"><p data-callout-title>Show the refresh time</p><p>Put the time of the last successful refresh at the top of every dashboard. If the data failed to load last night, the owner sees yesterday's date and asks, instead of making a decision on stale numbers.</p></aside><h2 id=\"worked-examples-for-three-indian-businesses\">Worked examples for three Indian businesses</h2><p>These examples are illustrative. The businesses and numbers are invented to show the method, not taken from real clients.</p><h3 id=\"a-three-store-retail-chain-in-hyderabad\">A three-store retail chain in Hyderabad</h3><p>Say a family runs three garment stores with a billing app at each counter and Tally at the head office. The owner wants to know, each morning, sales by store and stock that is not moving.</p><p>The source of truth for sales is Tally after the accountant posts the day, because counter returns are entered there. The billing app's daily export lands in a sheet for a quick morning view, clearly labelled \"before returns.\" The test that matters most is unique bill numbers per store, because the same day's export gets uploaded twice more often than anyone admits. Stock value comes from Tally once a week.</p><p>The action table for this owner is slow stock: items with no sale in sixty days, by store, with their stock value. In an illustrative month that list might hold a few lakh rupees of stock sitting in the wrong store, which a transfer between stores fixes. That one table is often worth more than every chart above it, because it turns straight into a task for the store managers that week.</p><h3 id=\"a-d2c-skincare-brand-selling-on-its-own-website\">A D2C skincare brand selling on its own website</h3><p>Say a brand sells ₹30 lakh a month (an invented figure) on its website through a payment gateway, with some cash on delivery. The founder's old dashboard showed website orders as revenue and was always 15 to 20 percent ahead of the bank.</p><p>The fix is two lines, not one. \"Orders\" from the website, and \"collected\" from the gateway's settlement report plus COD remittances. The gap between them is shown on the page: refunds, RTO and settlement timing. Ad spend comes from the ad platforms' own reports by IST date. Our page on <a href=\"/industries/ecommerce\">ecommerce development</a> covers the store side.</p><h3 id=\"a-diagnostic-lab-with-two-collection-centres\">A diagnostic lab with two collection centres</h3><p>Say a lab bills patients at two centres and also bills corporate clients monthly. The owner wants daily collections and money owed by corporates.</p><p>Patient bills are paid at the counter, so collections are close to billing. Corporate bills are the risk: the dashboard shows each corporate client, invoice date, amount and days outstanding. The check that matters is that every invoice belongs to a client in the master list, the relationships test. Patient data stays out of the dashboard: it needs counts and amounts, not names or reports. Our <a href=\"/industries/healthcare-fitness\">healthcare page</a> has more on this sector.</p><figure><img src=\"/assets/blog/data-pipelines-that-dont-lie/4.webp\" alt=\"Illustration of an Indian shop owner and accountant comparing a dashboard with the ledger\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>The first three months are mostly reconciliation. That is what makes the dashboard trusted.</figcaption></figure><h2 id=\"who-should-own-the-dashboard\">Who should own the dashboard</h2><p>Every dashboard needs one named owner inside the business, even if an outside team builds it. That person checks the monthly reconciliation, answers \"why is this number different\" and decides when a new chart is worth adding.</p><p>In a small business this is often the accountant or the operations manager, not the founder. Give them edit access, a short written note of each number's definition, and the list of sources with their refresh times. Keep the Google or Microsoft account that holds the data in the company's name, with the owner and one other person as admins. When the person who built it leaves, the dashboard should keep running without a phone call to them.</p><h2 id=\"ways-a-dashboard-misleads-you\">Ways a dashboard misleads you</h2><ul><li><strong>Pretty charts on unchecked data.</strong> A chart is drawn even when half the rows are missing. Without tests, nobody knows.</li><li><strong>Orders called revenue.</strong> Refunds, cancellations, RTO and gateway fees all sit between an order and money in the bank.</li><li><strong>Mixed time zones.</strong> Month-end totals differ by a few orders, and trust drops for good.</li><li><strong>Twenty numbers on one page.</strong> The owner looks at none of them. Five numbers with last month next to them get used.</li><li><strong>One person's laptop.</strong> The whole thing runs from an employee's personal Google account. When they leave, it stops. Keep data and dashboards in a company account.</li><li><strong>Live connections to production databases.</strong> A dashboard that queries your app's live database can slow the app for customers. Copy the data out on a schedule instead.</li><li><strong>Comparing with nothing.</strong> \"₹12 lakh this month\" means little without last month and the same month last year.</li></ul><h2 id=\"a-monthly-routine-that-keeps-it-honest\">A monthly routine that keeps it honest</h2><p>Once it is built, the routine takes about an hour a month.</p><ul><li>On the 3rd of each month, put last month's dashboard sales next to the accountant's figure. Note the difference and the reason.</li><li>Check that every test cell is green: unique invoice numbers, no empty amounts, known statuses, every customer in the master list.</li><li>Check the last refresh time on each source. Anything older than a day gets fixed today.</li><li>Look at the gap between orders and collections. A sudden jump usually means refunds or a settlement problem worth a call.</li><li>Ask the owner which number they did not look at last month. Remove it.</li><li>Once a quarter, check who has access. Remove people who left.</li></ul><p>If you want a dashboard built from your Tally, billing app or website data, our <a href=\"/services/data-engineering\">data engineering service</a> does this work, and our ₹3,500 requirement analysis gives you a written scope, fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). The data and accounts stay in your company's name. For picking the analytics tool behind a website or app, see our guide to <a href=\"/blogs/choosing-analytics-tools\">GA4, Firebase, Mixpanel and PostHog</a>.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-the-cheapest-way-to-build-a-business-dashboard\">What is the cheapest way to build a business dashboard?</h3><p>Google Sheets plus Google Data Studio. Google describes Data Studio as a no-cost tool, and Sheets holds up to 20 million cells. The real cost is the time spent getting the data right, not the software.</p><h3 id=\"is-looker-studio-the-same-as-data-studio\">Is Looker Studio the same as Data Studio?</h3><p>Yes. Google rebranded Looker Studio as Data Studio on 16 April 2026, according to its release notes. The paid edition is now called Data Studio Pro.</p><h3 id=\"how-much-does-power-bi-cost-in-india\">How much does Power BI cost in India?</h3><p>Microsoft's India pricing page lists a free account, Power BI Pro at ₹1,165 and Premium Per User at ₹1,995 per user per month, paid yearly, with GST extra. Check the page before buying, as prices change.</p><h3 id=\"can-i-connect-tally-to-a-dashboard\">Can I connect Tally to a dashboard?</h3><p>Yes. TallyPrime documents an ODBC route: in Excel you choose Data, Get Data, From other sources, From ODBC, then the Tally ODBC Driver. From there the data can feed a sheet or dashboard.</p><h3 id=\"why-do-my-website-sales-not-match-my-bank-account\">Why do my website sales not match my bank account?</h3><p>Orders include refunds, cancellations and unpaid cash on delivery orders, and payment gateways deduct fees. Razorpay says its standard domestic settlement cycle is T+2 working days, so money also arrives later than the order.</p><h3 id=\"when-do-i-need-a-data-warehouse-like-bigquery\">When do I need a data warehouse like BigQuery?</h3><p>When your sheet becomes slow or you are joining several sources. BigQuery's first 10 GiB of storage and first 1 TiB of queries each month are free, which covers most small businesses.</p><h3 id=\"how-do-i-know-my-dashboard-is-correct\">How do I know my dashboard is correct?</h3><p>Reconcile it with your accountant's figures every month for the first three months, and add checks for unique invoice numbers, empty amounts, unexpected statuses and missing customers.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://docs.cloud.google.com/looker/docs/studio\" rel=\"noopener noreferrer nofollow\">Data Studio overview, Google Cloud documentation</a>, read 16 November 2026</li><li><a href=\"https://docs.cloud.google.com/data-studio/release-notes\" rel=\"noopener noreferrer nofollow\">Data Studio release notes, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/drive/answer/37603\" rel=\"noopener noreferrer nofollow\">Files you can store in Google Drive, Google Drive Help</a>, read 16 November 2026</li><li><a href=\"https://www.microsoft.com/en-in/power-platform/products/power-bi/pricing\" rel=\"noopener noreferrer nofollow\">Power BI pricing (India), Microsoft</a>, read 16 November 2026</li><li><a href=\"https://www.metabase.com/pricing/\" rel=\"noopener noreferrer nofollow\">Pricing, Metabase</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/bigquery/pricing\" rel=\"noopener noreferrer nofollow\">BigQuery pricing, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://docs.getdbt.com/docs/build/data-tests\" rel=\"noopener noreferrer nofollow\">Add data tests to your DAG, dbt Developer Hub</a>, read 16 November 2026</li><li><a href=\"https://help.tallysolutions.com/tallyprime/odbc/\" rel=\"noopener noreferrer nofollow\">ODBC in TallyPrime, Tally Solutions Help</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/settlements/\" rel=\"noopener noreferrer nofollow\">Settlements, Razorpay Docs</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian shop owner checking a business dashboard on a laptop beside the words Business dashboard",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian man in his 50s, owner of a garment shop, in a cotton shirt, seated behind his shop counter with folded fabric shelves behind him, looking at a laptop that shows abstract bar charts and a line chart (no readable text or numbers), a ledger book and calculator beside it. Face fully in frame. Right half: the title text 'Business dashboard' in very large bold black sans-serif, left-aligned, on two lines ('Business' / 'dashboard'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing four ways a small business dashboard drifts from the books",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Why dashboard numbers stop matching your books'. Four rows, each with an icon, a dark-blue rounded pill with white text and an orange arrow to a second pill. Row 1: clock icon, pill 'Time zone', arrow, pill 'Use IST everywhere'. Row 2: shopping bag and bank icons, pill 'Orders are not money', arrow, pill 'Show collections separately'. Row 3: receipt icon, pill 'GST in, GST out', arrow, pill 'Pick one rule'. Row 4: people icon, pill 'Same customer, three names', arrow, pill 'Join on a code or GSTIN'. One-line bold takeaway at bottom: 'Check the data before you draw the chart.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the dbt documentation listing its four generic data tests",
+   "url": "https://docs.getdbt.com/docs/build/data-tests",
+   "annotate": [
+    {
+     "text": "Data tests are assertions you make about your models and other resources in your dbt project",
+     "label": "Checks, not charts"
+    },
+    {
+     "text": "Out of the box, dbt ships with four generic data tests already defined",
+     "label": "Four tests to copy"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Google Drive Help showing the Google Sheets cell limit",
+   "url": "https://support.google.com/drive/answer/37603",
+   "annotate": [
+    {
+     "text": "Up to 20 million cells or 100MB for spreadsheets that are created in or converted to Google Sheets.",
+     "label": "Sheets limit"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian shop owner and accountant comparing a dashboard with the ledger",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian office at the back of a shop: a woman owner in a saree and a male accountant with glasses sit at a desk, one pointing at a laptop showing abstract charts, the other holding an open ledger with tick marks (no readable text). A wall calendar with no readable dates, a steel tiffin box on the desk. Faces fully in frame. No logos."
+  }
+ ]
+}

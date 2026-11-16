@@ -1,0 +1,171 @@
+{
+ "slug": "migrating-off-legacy-php",
+ "locale": "en",
+ "title": "Migrating an old PHP website: upgrade or rewrite?",
+ "description": "Old PHP website or app in India? See which PHP and Laravel versions still get security fixes, when to upgrade instead of rewrite, and a step-by-step plan.",
+ "imageUrl": "/assets/blog/migrating-off-legacy-php/cover.webp",
+ "imageAlt": "Illustration of an Indian business owner and developer moving an old website to a new server beside the words Legacy PHP",
+ "ogImageUrl": null,
+ "tags": [
+  "PHP",
+  "Legacy migration",
+  "Web development",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-04-04T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-to-do-with-an-old-php-website-or-app",
+   "text": "What to do with an old PHP website or app",
+   "level": 2
+  },
+  {
+   "id": "which-php-versions-are-still-supported",
+   "text": "Which PHP versions are still supported",
+   "level": 2
+  },
+  {
+   "id": "frameworks-and-wordpress-have-their-own-clocks",
+   "text": "Frameworks and WordPress have their own clocks",
+   "level": 2
+  },
+  {
+   "id": "why-it-matters-more-in-india-from-2027",
+   "text": "Why it matters more in India from 2027",
+   "level": 2
+  },
+  {
+   "id": "upgrade-replace-in-pieces-or-rewrite",
+   "text": "Upgrade, replace in pieces, or rewrite",
+   "level": 2
+  },
+  {
+   "id": "how-to-migrate-an-old-php-system-step-by-step",
+   "text": "How to migrate an old PHP system, step by step",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-real-estate-developers-enquiry-website-on-php-7-2",
+   "text": "A real estate developer's enquiry website on PHP 7.2",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-student-portal-in-core-php",
+   "text": "A coaching institute's student portal in core PHP",
+   "level": 3
+  },
+  {
+   "id": "a-distributors-ordering-app-on-an-abandoned-framework",
+   "text": "A distributor's ordering app on an abandoned framework",
+   "level": 3
+  },
+  {
+   "id": "what-a-php-migration-quote-should-include",
+   "text": "What a PHP migration quote should include",
+   "level": 2
+  },
+  {
+   "id": "common-mistakes-in-php-migrations",
+   "text": "Common mistakes in PHP migrations",
+   "level": 2
+  },
+  {
+   "id": "a-yearly-php-health-check",
+   "text": "A yearly PHP health check",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is PHP 7.4 still safe to use?",
+   "a": "PHP 7.4 reached end of life on 28 November 2022, according to php.net, so it receives no security fixes from the PHP project. php.net urges users of unsupported versions to upgrade, as they may be exposed to security vulnerabilities and bugs fixed in newer versions."
+  },
+  {
+   "q": "Which PHP version should I upgrade to?",
+   "a": "As of November 2026, I would aim for PHP 8.4 or 8.5. php.net lists security support for 8.4 until 31 December 2028 and for 8.5 until 31 December 2029. PHP 8.2 is still supported, but only until 31 December 2026."
+  },
+  {
+   "q": "Do I need to rewrite my old PHP website?",
+   "a": "Usually not. If the code is understandable and the business logic is still right, upgrading the PHP and framework versions in place is cheaper and safer. Rewrite when the code cannot be changed safely or the platform itself cannot be upgraded."
+  },
+  {
+   "q": "How long are Laravel versions supported?",
+   "a": "Laravel's release notes say each release gets bug fixes for 18 months and security fixes for 2 years. Laravel 12 supports PHP 8.2 to 8.5 and gets security fixes until 24 February 2027. Laravel 11's security fixes ended on 12 March 2026."
+  },
+  {
+   "q": "What PHP version does WordPress need?",
+   "a": "WordPress recommends PHP 8.3 or greater, with MySQL 8.4 or greater or MariaDB 10.11 or greater. It still works with PHP 7.4 and MySQL 5.5.5, but WordPress warns these have reached end of life and may expose your site to security vulnerabilities."
+  },
+  {
+   "q": "Does India's data protection law affect old software?",
+   "a": "It can. DLA Piper's summary of the DPDP Rules, 2025 says most obligations apply from 13 May 2027, including reasonable security safeguards such as encryption, access control and logging, and breach reporting to the Data Protection Board. Take legal advice for your case."
+  },
+  {
+   "q": "Can old PHP code be upgraded automatically?",
+   "a": "Partly. Tools such as Rector, an open source project, say they can move code from PHP 5.3 to 8.5 and across major Laravel, Symfony and CakePHP versions. A developer still needs to review the changes and test the money paths."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-to-do-with-an-old-php-website-or-app\">What to do with an old PHP website or app</h2><p><strong>In short:</strong> If your site or app runs on PHP 7.4 or older, it has had no security fixes from the PHP project since 28 November 2022, and PHP 8.1 joined it on 31 December 2025. Most old PHP systems do not need a rewrite. Upgrade the PHP version in place first, then replace the riskiest parts one at a time. Rewrite only when the code is so tangled that nobody can change it safely.</p><p>This guide was checked in November 2026, against php.net's support tables, Laravel's release notes, WordPress's requirements and a published summary of India's data protection rules, all read on 16 November 2026.</p><p>A lot of Indian businesses run on PHP written between 2010 and 2018: a booking system, an admin panel, a dealer portal, a school management system. It works, the original developer has moved on, and every quote you get says throw it away. That is sometimes right. More often, the cheaper and safer path is a planned upgrade.</p><h2 id=\"which-php-versions-are-still-supported\">Which PHP versions are still supported</h2><p>The PHP project gives each version two years of active support and then security fixes only, four years in total. After that, <a href=\"https://www.php.net/supported-versions.php\" rel=\"noopener noreferrer nofollow\">php.net</a> says the branch is no longer supported and users should upgrade as soon as possible, as they may be exposed to unpatched security vulnerabilities.</p><p><em>PHP versions and their support status, from php.net</em></p><table><thead><tr><th>Version</th><th>Security fixes until</th><th>Status in November 2026</th></tr></thead><tbody><tr><td>5.6</td><td>31 Dec 2018</td><td>End of life</td></tr><tr><td>7.0 to 7.3</td><td>10 Jan 2019 to 6 Dec 2021</td><td>End of life</td></tr><tr><td>7.4</td><td>28 Nov 2022</td><td>End of life</td></tr><tr><td>8.0</td><td>26 Nov 2023</td><td>End of life</td></tr><tr><td>8.1</td><td>31 Dec 2025</td><td>End of life</td></tr><tr><td>8.2</td><td>31 Dec 2026</td><td>Security fixes only, ends next month</td></tr><tr><td>8.3</td><td>31 Dec 2027</td><td>Security fixes only</td></tr><tr><td>8.4</td><td>31 Dec 2028</td><td>Active support until 31 Dec 2026</td></tr><tr><td>8.5</td><td>31 Dec 2029</td><td>Active support until 31 Dec 2027</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.php.net/supported-versions.php\" rel=\"noopener noreferrer nofollow\"><em>PHP supported versions</em></a><em> and </em><a href=\"https://www.php.net/eol.php\" rel=\"noopener noreferrer nofollow\"><em>PHP unsupported branches</em></a><em>, read 16 November 2026.</em></p><p>The row to look at is 8.2. If you upgraded to it a couple of years ago and stopped, your security fixes run out on 31 December 2026. For any upgrade planned now, I would aim at 8.4 or 8.5, which give you two to three more years before the next move.</p><p>To find out what you run, ask your hosting provider, or have your developer check the PHP version in the server control panel. On shared hosting in India it is common to find several sites on one account, each pinned to a different old version.</p><figure><img src=\"/assets/blog/migrating-off-legacy-php/2.webp\" alt=\"Annotated view of php.net's end of life table showing the dates support ended for PHP 7.4 and PHP 8.1\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>php.net's own end of life table. If your version is on it, it gets no security fixes.</figcaption></figure><h2 id=\"frameworks-and-wordpress-have-their-own-clocks\">Frameworks and WordPress have their own clocks</h2><p>The PHP version is only one clock. The framework or CMS on top has another.</p><p><strong>Laravel.</strong> Laravel's <a href=\"https://laravel.com/docs/master/releases\" rel=\"noopener noreferrer nofollow\">release notes</a> say every release gets bug fixes for 18 months and security fixes for 2 years. Laravel 10's security fixes ended on 4 February 2025 and Laravel 11's on 12 March 2026. Laravel 12, which supports PHP 8.2 to 8.5, gets security fixes until 24 February 2027. Laravel says it aims for upgrades to a new major release to take one day or less, which is true for a well-kept app and optimistic for a neglected one.</p><p><strong>WordPress.</strong> WordPress's <a href=\"https://wordpress.org/about/requirements/\" rel=\"noopener noreferrer nofollow\">requirements page</a> recommends PHP 8.3 or greater and MySQL 8.4 or greater, or MariaDB 10.11 or greater. It also says WordPress works with PHP 7.4 and MySQL 5.5.5, and warns that these versions have reached their official end of life and may expose your site to security vulnerabilities. So a WordPress site that loads fine is not the same as a WordPress site that is safe.</p><figure><img src=\"/assets/blog/migrating-off-legacy-php/4.webp\" alt=\"Annotated view of WordPress's requirements page showing the recommended PHP version\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>WordPress recommends PHP 8.3 or newer, even though older versions still load.</figcaption></figure><p><strong>Core PHP and older frameworks.</strong> Hand-written PHP with no framework has no vendor clock at all, which sounds good and is not. Every security fix is yours to write. Older frameworks that are no longer maintained are in the same position.</p><h2 id=\"why-it-matters-more-in-india-from-2027\">Why it matters more in India from 2027</h2><p>Old software is a security problem first, and in India that is becoming a legal one too. According to <a href=\"https://www.dlapiperdataprotection.com/?t=law&c=IN\" rel=\"noopener noreferrer nofollow\">DLA Piper's summary</a> of the Digital Personal Data Protection Rules, 2025, notified on 13 November 2025, most substantive obligations apply from 13 May 2027. They include reasonable security safeguards such as encryption, access controls, logging, backups and keeping logs for one year, and telling the Data Protection Board about a breach, with detailed information due within 72 hours of becoming aware of it.</p><p>An app on an unsupported PHP version, with customer names, phone numbers and addresses in its database, is a hard thing to defend under those rules. I am not a lawyer, and you should take legal advice on how the rules apply to you, but a PHP upgrade plan is a reasonable first line in any answer to the question of what you did to keep data safe.</p><figure><img src=\"/assets/blog/migrating-off-legacy-php/1.webp\" alt=\"Explainer comparing three paths for a legacy PHP system: upgrade in place, replace piece by piece, or rewrite\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Three paths for old PHP. Most systems should start on the left.</figcaption></figure><h2 id=\"upgrade-replace-in-pieces-or-rewrite\">Upgrade, replace in pieces, or rewrite</h2><p>There are three honest options. The right one depends on the state of the code, not on how old it is.</p><p><strong>Upgrade in place.</strong> Keep the code, move it to a supported PHP version, fix what breaks, and update the framework. Tools help: <a href=\"https://getrector.com/\" rel=\"noopener noreferrer nofollow\">Rector</a>, an open source tool, says it can move code from PHP 5.3 to 8.5 and jump major Symfony, Laravel and CakePHP versions. This is the cheapest path when the code is understandable and the business logic is right.</p><p><strong>Replace piece by piece.</strong> Keep the old system running and build new parts beside it, moving one module at a time: first the login, then the customer portal, then reports. A proxy sends each request to the old or new code. It takes longer than a rewrite on paper but you are never without a working system.</p><p><strong>Rewrite.</strong> Build a new system and switch over. It is right when the code cannot be changed safely, the business has changed so much that the old logic is wrong, or the platform itself, such as an abandoned framework, cannot be upgraded. It is the riskiest option because the old system's undocumented rules have to be found and rebuilt, usually after the switch, by angry users.</p><p>Our post on <a href=\"/blogs/technical-debt-conversations\">talking about technical debt</a> covers how to frame this choice with a non-technical partner or board.</p><h2 id=\"how-to-migrate-an-old-php-system-step-by-step\">How to migrate an old PHP system, step by step</h2><p><strong>Step 1. Get control of everything.</strong> Hosting login, domain registrar, database access, the code in a repository you own, and any payment gateway or SMS keys. If a former developer holds any of these, get them back before anything else.</p><p><strong>Step 2. Take a full backup and prove it restores.</strong> Code, database and uploaded files. Restore it onto a separate server and check the site works. A backup you have not restored is a hope, not a backup.</p><p><strong>Step 3. Write down what the system does.</strong> Every screen, every report, every scheduled job, every email or SMS it sends. Ask the people who use it daily. This list is what testing checks against.</p><p><strong>Step 4. Measure the gap.</strong> Current PHP version, framework and version, database version, and the packages it depends on. Run the code on the target PHP version in a copy and list what breaks.</p><p><strong>Step 5. Choose the path.</strong> If the breakage list is manageable, upgrade in place. If one or two modules are the real problem, replace those. Rewrite only if the code cannot be changed safely at all.</p><p><strong>Step 6. Add tests around the money paths.</strong> Before changing code, add automated checks for the things that must never break: login, payments, invoices, bookings. These do not need to be perfect, just enough to catch a broken checkout.</p><p><strong>Step 7. Move in stages, with a way back.</strong> Upgrade on a copy, test with real users, switch over at a quiet time, and keep the old server ready to switch back for a week.</p><p><strong>Step 8. Set the next date.</strong> Put the end of security support for your new PHP and framework versions in the calendar, with a reminder six months before.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses, ages and sizes below are illustrative, made up to show the method. They are not real customers.</p><h3 id=\"a-real-estate-developers-enquiry-website-on-php-7-2\">A real estate developer's enquiry website on PHP 7.2</h3><p>A developer has a website built in 2016 on a PHP framework, with project pages, an enquiry form that emails the sales team, and an admin panel to add listings. It runs on PHP 7.2, end of life since 30 November 2020, on shared hosting.</p><p>The path: upgrade in place. The site is small, the logic is simple, and the risk is mainly the old version. A developer moves it to a supported version on a copy, fixes the deprecated functions, updates or replaces the framework, and checks the enquiry form still delivers. The form's leads, with names and phone numbers, are exactly the personal data the 2027 rules care about.</p><p>What this tells you: small, simple PHP sites are almost always upgrade jobs, not rebuilds. If you do want a new look at the same time, keep the two jobs separate so you can tell which one broke something.</p><h3 id=\"a-coaching-institutes-student-portal-in-core-php\">A coaching institute's student portal in core PHP</h3><p>An institute runs a portal written in core PHP with no framework: student login, fee receipts, test results and an attendance screen. It grew over eight years and three developers. Nobody wants to touch the fee module.</p><figure><img src=\"/assets/blog/migrating-off-legacy-php/3.webp\" alt=\"Illustration of an institute administrator and a developer reviewing an old student portal together\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Write down what the old system does before anyone changes it.</figcaption></figure><p>The path: replace piece by piece. Move the code to a supported PHP version first, fixing only what breaks, so the security clock stops. Then rebuild the fee module as a new, tested component beside the old portal, and switch that one module over. Results and attendance follow later, one at a time.</p><p>What this tells you: when one module is the problem, replace that module, not the whole system. The rest of the portal can keep working while you do it.</p><h3 id=\"a-distributors-ordering-app-on-an-abandoned-framework\">A distributor's ordering app on an abandoned framework</h3><p>A distributor uses a dealer ordering web app built on a PHP framework that stopped receiving updates years ago, with a mobile app on top that calls its API. The framework cannot run on any supported PHP version without major changes, and the business now wants credit limits and schemes the old data model cannot hold.</p><p>The path: this is a genuine rewrite case. The platform cannot be upgraded and the business logic has changed. But the rewrite keeps the old API's request and response shapes so the mobile app keeps working, runs both systems side by side for a month, and moves dealers over in batches.</p><p>What this tells you: even a rewrite can be done in stages. Keep the outside contract, the API the mobile app uses, stable while you replace what is behind it. Our post on <a href=\"/blogs/api-design-that-ages-well\">API design that ages well</a> explains why.</p><h2 id=\"what-a-php-migration-quote-should-include\">What a PHP migration quote should include</h2><p>Quotes for the same old system can differ by several times, and the cheapest one is often the one that left things out. When I compare quotes for a migration, I look for these lines. If one is missing, ask about it before you compare prices.</p><ul><li><strong>An assessment phase with a written report.</strong> Current versions, what breaks on the target version, and the recommended path, before any fixed price for the build.</li><li><strong>The target versions, named.</strong> Which PHP version, which framework version, which database version, and the date each one's security support ends.</li><li><strong>The list of features being preserved.</strong> Based on your Step 3 list. Anything not on it is not promised.</li><li><strong>Testing.</strong> Who tests, on what copy, against which list, and how long users get to check before the switch.</li><li><strong>Data migration.</strong> If the database moves or changes shape, how records, uploaded files and passwords move, and how the counts are checked afterwards.</li><li><strong>The switch-over and the way back.</strong> The date, the downtime if any, and how long the old server stays ready.</li><li><strong>Handover.</strong> Code in your repository, credentials in your name, and a short document on how to deploy and where the logs are.</li><li><strong>Aftercare.</strong> How many weeks of fixes are included after go-live, and what support costs after that.</li></ul><p>A quote that covers all of these and costs more is usually cheaper in the end than one that covers half and adds the rest as change requests. Our post on <a href=\"/blogs/estimating-software-honestly\">how software estimates work</a> explains why quotes for the same job vary so much.</p><h2 id=\"common-mistakes-in-php-migrations\">Common mistakes in PHP migrations</h2><p><strong>Rewriting because the code is old.</strong> Age is not the problem. Unsupported versions and code nobody can change safely are. Old code that works and can be upgraded is an asset.</p><p><strong>Changing everything at once.</strong> New PHP, new framework, new design and new hosting in one weekend means that when something breaks, nobody knows which change did it.</p><p><strong>No owner for the credentials.</strong> The hosting account, the domain and the code repository are in a former freelancer's name. Fix that first, whatever path you choose.</p><p><strong>Forgetting the scheduled jobs.</strong> The nightly SMS reminder, the monthly report email and the backup script live in a cron table nobody has read. List them in Step 3.</p><p><strong>Stopping at 8.2.</strong> It feels current, but its security fixes end on 31 December 2026. Aim higher so the work lasts.</p><p><strong>Ignoring the database.</strong> Old MySQL versions have their own end of life. WordPress, for one, now recommends MySQL 8.4 or MariaDB 10.11 or newer.</p><p><strong>No way back.</strong> Switch over with the old server ready to take traffic again, and keep it for at least a week.</p><h2 id=\"a-yearly-php-health-check\">A yearly PHP health check</h2><p><em>A once-a-year check for any PHP system you depend on</em></p><table><thead><tr><th>Check</th><th>Where to look</th><th>What good looks like</th></tr></thead><tbody><tr><td>PHP version</td><td>Hosting panel or server</td><td>On a version with at least a year of security fixes left</td></tr><tr><td>Framework or CMS version</td><td>composer.json, or the WordPress dashboard</td><td>Inside the vendor's security support window</td></tr><tr><td>Database version</td><td>Hosting panel</td><td>A version the vendor still supports</td></tr><tr><td>Backups</td><td>A test restore on another server</td><td>Restored and working, this year</td></tr><tr><td>Credentials</td><td>Hosting, domain, repository, payment keys</td><td>All in the company's name, with a list of who has access</td></tr><tr><td>Next deadline</td><td>php.net and the framework's release notes</td><td>A date in the calendar six months ahead of it</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.php.net/supported-versions.php\" rel=\"noopener noreferrer nofollow\"><em>PHP supported versions</em></a><em> and </em><a href=\"https://laravel.com/docs/master/releases\" rel=\"noopener noreferrer nofollow\"><em>Laravel release notes</em></a><em> and </em><a href=\"https://wordpress.org/about/requirements/\" rel=\"noopener noreferrer nofollow\"><em>WordPress requirements</em></a><em>, read 16 November 2026.</em></p><p>If you want an old PHP system assessed and the migration priced before anyone touches it, our ₹3,500 requirement analysis is a call with the people who would do the work, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our <a href=\"/technologies/php\">PHP page</a> and <a href=\"/services/web-development\">web development page</a> describe the wider work.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-php-7-4-still-safe-to-use\">Is PHP 7.4 still safe to use?</h3><p>PHP 7.4 reached end of life on 28 November 2022, according to php.net, so it receives no security fixes from the PHP project. php.net urges users of unsupported versions to upgrade, as they may be exposed to security vulnerabilities and bugs fixed in newer versions.</p><h3 id=\"which-php-version-should-i-upgrade-to\">Which PHP version should I upgrade to?</h3><p>As of November 2026, I would aim for PHP 8.4 or 8.5. php.net lists security support for 8.4 until 31 December 2028 and for 8.5 until 31 December 2029. PHP 8.2 is still supported, but only until 31 December 2026.</p><h3 id=\"do-i-need-to-rewrite-my-old-php-website\">Do I need to rewrite my old PHP website?</h3><p>Usually not. If the code is understandable and the business logic is still right, upgrading the PHP and framework versions in place is cheaper and safer. Rewrite when the code cannot be changed safely or the platform itself cannot be upgraded.</p><h3 id=\"how-long-are-laravel-versions-supported\">How long are Laravel versions supported?</h3><p>Laravel's release notes say each release gets bug fixes for 18 months and security fixes for 2 years. Laravel 12 supports PHP 8.2 to 8.5 and gets security fixes until 24 February 2027. Laravel 11's security fixes ended on 12 March 2026.</p><h3 id=\"what-php-version-does-wordpress-need\">What PHP version does WordPress need?</h3><p>WordPress recommends PHP 8.3 or greater, with MySQL 8.4 or greater or MariaDB 10.11 or greater. It still works with PHP 7.4 and MySQL 5.5.5, but WordPress warns these have reached end of life and may expose your site to security vulnerabilities.</p><h3 id=\"does-indias-data-protection-law-affect-old-software\">Does India's data protection law affect old software?</h3><p>It can. DLA Piper's summary of the DPDP Rules, 2025 says most obligations apply from 13 May 2027, including reasonable security safeguards such as encryption, access control and logging, and breach reporting to the Data Protection Board. Take legal advice for your case.</p><h3 id=\"can-old-php-code-be-upgraded-automatically\">Can old PHP code be upgraded automatically?</h3><p>Partly. Tools such as Rector, an open source project, say they can move code from PHP 5.3 to 8.5 and across major Laravel, Symfony and CakePHP versions. A developer still needs to review the changes and test the money paths.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.php.net/supported-versions.php\" rel=\"noopener noreferrer nofollow\">Supported versions, PHP</a>, read 16 November 2026</li><li><a href=\"https://www.php.net/eol.php\" rel=\"noopener noreferrer nofollow\">Unsupported branches, PHP</a>, read 16 November 2026</li><li><a href=\"https://laravel.com/docs/master/releases\" rel=\"noopener noreferrer nofollow\">Release notes, Laravel documentation</a>, read 16 November 2026</li><li><a href=\"https://wordpress.org/about/requirements/\" rel=\"noopener noreferrer nofollow\">Requirements, WordPress.org</a>, read 16 November 2026</li><li><a href=\"https://getrector.com/\" rel=\"noopener noreferrer nofollow\">Rector, automated PHP upgrades</a>, read 16 November 2026</li><li><a href=\"https://www.dlapiperdataprotection.com/?t=law&c=IN\" rel=\"noopener noreferrer nofollow\">Data protection laws in India, DLA Piper</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian business owner and developer moving an old website to a new server beside the words Legacy PHP",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian small business office: a middle-aged business owner in a kurta standing beside a young developer at a desk, the developer's laptop showing abstract code blocks, an old beige server box on the floor with an orange arrow leading to a new sleek server box. No readable text, no logos. Terracotta, mustard and sage palette, soft shadows, faces fully in frame. Right half: the title text 'Legacy PHP' in very large bold black sans-serif, left-aligned, on two lines ('Legacy' / 'PHP'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Explainer comparing three paths for a legacy PHP system: upgrade in place, replace piece by piece, or rewrite",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Three paths for old PHP'. Three columns left to right, each with a flat icon and a dark-blue rounded pill with white text, and a small grey note below: 1) wrench icon, pill 'Upgrade in place', note 'Code is clear, version is old'; 2) puzzle pieces icon, pill 'Replace piece by piece', note 'One or two modules are the problem'; 3) building blocks icon, pill 'Rewrite', note 'Platform cannot be upgraded'. An orange arrow runs under the three columns from left to right labelled 'Cost and risk rise'. One-line bold takeaway at bottom: 'Start on the left. Move right only if you must.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of php.net's end of life table showing the dates support ended for PHP 7.4 and PHP 8.1",
+   "url": "https://www.php.net/eol.php",
+   "annotate": [
+    {
+     "text": "28 Nov 2022",
+     "label": "PHP 7.4 ended"
+    },
+    {
+     "text": "31 Dec 2025",
+     "label": "PHP 8.1 ended"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an institute administrator and a developer reviewing an old student portal together",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. An Indian coaching institute office: a woman administrator in a saree pointing at a desktop monitor showing abstract table rows, a young developer beside her taking notes in a notebook, a whiteboard behind with abstract boxes and arrows, a stack of fee receipt books on the desk. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of WordPress's requirements page showing the recommended PHP version",
+   "url": "https://wordpress.org/about/requirements/",
+   "annotate": [
+    {
+     "text": "PHP version 8.3 or greater",
+     "label": "Recommended PHP"
+    }
+   ]
+  }
+ ]
+}

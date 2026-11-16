@@ -1,0 +1,180 @@
+{
+ "slug": "migrating-to-app-router",
+ "locale": "en",
+ "title": "Migrate Next.js Pages Router to App Router: 2026 guide",
+ "description": "Move a Next.js app from Pages Router to App Router one route at a time, per the official guide: layouts, metadata, data fetching, Next.js 16 changes.",
+ "imageUrl": "/assets/blog/migrating-to-app-router/cover.webp",
+ "imageAlt": "Illustration of an Indian developer moving website pages from one folder to another beside the words App Router migration",
+ "ogImageUrl": null,
+ "tags": [
+  "Next.js",
+  "App Router",
+  "web development",
+  "migration"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-09-06T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "should-you-migrate-to-the-app-router-now",
+   "text": "Should you migrate to the App Router now",
+   "level": 2
+  },
+  {
+   "id": "where-next-js-stands-in-november-2026",
+   "text": "Where Next.js stands in November 2026",
+   "level": 2
+  },
+  {
+   "id": "what-you-gain-and-when-to-wait",
+   "text": "What you gain, and when to wait",
+   "level": 2
+  },
+  {
+   "id": "what-changes-between-the-two-routers",
+   "text": "What changes between the two routers",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-migrate-one-route-at-a-time",
+   "text": "Step by step: migrate one route at a time",
+   "level": 2
+  },
+  {
+   "id": "small-things-the-guide-mentions-that-teams-forget",
+   "text": "Small things the guide mentions that teams forget",
+   "level": 2
+  },
+  {
+   "id": "the-hard-navigation-problem-during-migration",
+   "text": "The hard navigation problem during migration",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-from-indian-businesses",
+   "text": "Worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-brands-storefront",
+   "text": "A D2C brand's storefront",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-with-a-marketing-site-and-student-portal",
+   "text": "A coaching institute with a marketing site and student portal",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-chains-booking-site",
+   "text": "A clinic chain's booking site",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-in-app-router-migrations",
+   "text": "Common mistakes in App Router migrations",
+   "level": 2
+  },
+  {
+   "id": "a-migration-checklist",
+   "text": "A migration checklist",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Can I use the App Router and Pages Router together?",
+   "a": "Yes. The Next.js migration guide says the app directory is designed to work alongside the pages directory for incremental, page-by-page migration. The catch is that navigating between routes served by different routers is a hard navigation, a full page reload."
+  },
+  {
+   "q": "Is the Pages Router deprecated?",
+   "a": "The migration guide does not call it deprecated. It says upgrading Next.js does not require the App Router, and API Routes in pages/api continue to work. New features are documented for the App Router, so active products should plan to move."
+  },
+  {
+   "q": "What replaces getServerSideProps in the App Router?",
+   "a": "An async Server Component that fetches data directly, using fetch with cache set to no-store. Request data comes from the cookies() and headers() functions, which must be awaited in Next.js 16."
+  },
+  {
+   "q": "What replaces next/router?",
+   "a": "next/navigation, with useRouter, usePathname, useSearchParams and useParams. The new useRouter has no query or pathname. These hooks work only in Client Components. For components shared with pages, use useRouter from next/compat/router during migration."
+  },
+  {
+   "q": "What Node.js version does Next.js 16 need?",
+   "a": "Node.js 20.9.0 or later. The version 16 upgrade guide says Node.js 18 is no longer supported, and TypeScript must be 5.1.0 or later."
+  },
+  {
+   "q": "How long does an App Router migration take?",
+   "a": "It depends on route count, data fetching patterns and how much code uses next/router. I would not quote a number without seeing the codebase. Doing the Next.js upgrade first and migrating in route groups makes the work predictable."
+  },
+  {
+   "q": "Do I need to move API routes to Route Handlers?",
+   "a": "Not immediately. The guide says API Routes in pages/api continue to work without changes. Move them when you are changing them anyway."
+  }
+ ],
+ "contentHtml": "<h2 id=\"should-you-migrate-to-the-app-router-now\">Should you migrate to the App Router now</h2><p><strong>In short:</strong> You can move a Next.js app from the Pages Router to the App Router one route at a time, because the app and pages directories run side by side. Start with the root layout, move one simple page, swap next/router for next/navigation and getServerSideProps for fetch in Server Components, then repeat. Plan for full page reloads between the two routers while you migrate.</p><p>This guide was checked in November 2026, against the official Next.js migration guide (last updated 6 November 2026 on nextjs.org) and the version 16 upgrade guide. Everything below follows those pages; where I add my own opinion, I say so.</p><p>I get asked this mostly by founders whose website or dashboard was built in 2021 or 2022 on the Pages Router, and who now hear that everything new is App Router only. The honest answer is that migrating is worth it for most active products, but it is not urgent, and it should never be a big-bang rewrite.</p><h2 id=\"where-next-js-stands-in-november-2026\">Where Next.js stands in November 2026</h2><p>A short timeline helps, because a lot of older advice online is about versions nobody should start on today.</p><p><em>Next.js releases that matter for an App Router migration</em></p><table><thead><tr><th>Release</th><th>Date</th><th>What it changed for this decision</th></tr></thead><tbody><tr><td>Next.js 13</td><td>25 October 2022</td><td>Introduced layouts, React Server Components and streaming in the app directory</td></tr><tr><td>Next.js 13.4</td><td>4 May 2023</td><td>Moved the App Router to stable; the migration guide requires 13.4 or later</td></tr><tr><td>Next.js 16</td><td>21 October 2025</td><td>Turbopack stable and default; synchronous params, cookies and headers removed; middleware renamed to proxy; Node.js 20.9 minimum</td></tr><tr><td>Next.js 16.4</td><td>6 October 2026</td><td>Latest minor release on the Next.js blog; November 2026 security release published 3 November</td></tr></tbody></table><p><em>Source: </em><a href=\"https://nextjs.org/blog\" rel=\"noopener noreferrer nofollow\"><em>Next.js blog</em></a><em> and </em><a href=\"https://nextjs.org/docs/app/guides/upgrading/version-16\" rel=\"noopener noreferrer nofollow\"><em>Next.js version 16 upgrade guide</em></a><em>, read 16 November 2026.</em></p><p>Two practical points come out of this. First, if your app is still on Next.js 12 or 13 with the Pages Router, the first job is upgrading Next.js itself, which does not require the App Router. The migration guide says so directly: upgrading to Next.js 13 \"does not require using the App Router.\" Second, Next.js now ships regular security releases. Staying on an old major version is a security decision, not just a features one.</p><h2 id=\"what-you-gain-and-when-to-wait\">What you gain, and when to wait</h2><p>The guide is clear about the main gain. With Server Components, data fetching sits inside the component on the server, which \"allows us to send less JavaScript to the client, while maintaining the rendered HTML from the server.\" For an Indian audience on mid-range Android phones and patchy mobile data, less JavaScript is the benefit that shows up in real use.</p><p>Other gains are smaller but real. Nested layouts replace the old getLayout pattern. Global stylesheets are no longer restricted to _app; the guide says they can be added to any layout, page or component. Metadata is built in rather than bolted on with next/head. And new Next.js features, such as the Cache Components model introduced in version 16, are documented for the App Router.</p><p>When would I wait? If the site is small, rarely changes and already loads fast, upgrading Next.js and staying on the Pages Router is a perfectly good decision for now. If a big redesign is planned within six months, do the migration as part of it rather than twice. And if nobody on the team has used Server Components, budget time to learn them; the guide itself says migration \"means new concepts, mental models, and behavioral changes to learn.\"</p><h2 id=\"what-changes-between-the-two-routers\">What changes between the two routers</h2><p>The <a href=\"https://nextjs.org/docs/app/guides/migrating/app-router-migration\" rel=\"noopener noreferrer nofollow\">official migration guide</a> lists the mapping. Here it is in one table, which I keep open during every migration.</p><p><em>Pages Router features and their App Router replacements</em></p><table><thead><tr><th>Pages Router</th><th>App Router</th><th>Note</th></tr></thead><tbody><tr><td>pages/_app.js and pages/_document.js</td><td>app/layout.js root layout</td><td>Must define html and body tags</td></tr><tr><td>next/head</td><td>metadata export or generateMetadata</td><td>Built-in SEO support</td></tr><tr><td>getServerSideProps</td><td>fetch with cache: 'no-store' in a Server Component</td><td>Request data via cookies() and headers(), which are async</td></tr><tr><td>getStaticProps</td><td>fetch with cache: 'force-cache'</td><td>With next: { revalidate: N } for ISR</td></tr><tr><td>getStaticPaths</td><td>generateStaticParams</td><td>fallback replaced by dynamicParams</td></tr><tr><td>useRouter from next/router</td><td>useRouter, usePathname, useSearchParams from next/navigation</td><td>Client Components only; no query or pathname on the router</td></tr><tr><td>pages/api/*</td><td>app/.../route.js Route Handlers</td><td>Web Request and Response APIs</td></tr><tr><td>pages/_error.js and pages/404.js</td><td>error.js and not-found.js</td><td>More granular, per route segment</td></tr></tbody></table><p><em>Source: </em><a href=\"https://nextjs.org/docs/app/guides/migrating/app-router-migration\" rel=\"noopener noreferrer nofollow\"><em>Next.js App Router migration guide</em></a><em>, read 16 November 2026.</em></p><p>The biggest mental shift is not in that table. Pages in the app directory are Server Components by default, while pages in the pages directory are Client Components. Anything that uses state, effects, browser APIs or a React Context provider has to live in a file marked 'use client'.</p><figure><img src=\"/assets/blog/migrating-to-app-router/1.webp\" alt=\"Annotated view of the Next.js migration guide explaining incremental migration\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The official guide: the app directory is designed to run alongside pages for page-by-page migration.</figcaption></figure><h2 id=\"step-by-step-migrate-one-route-at-a-time\">Step by step: migrate one route at a time</h2><p>This follows the order in the official guide, with what I have learned to watch for at each step.</p><p><strong>Step 1. Upgrade Next.js and Node.js first.</strong> Get on the latest Next.js with the Pages Router still in place, and get the build green. Next.js 16 needs Node.js 20.9 or later and TypeScript 5.1 or later; Node.js 18 is no longer supported. The guide offers a codemod, npx @next/codemod@canary upgrade latest, which also moves middleware to proxy and migrates from next lint to the ESLint CLI. Ship this upgrade on its own, before any routing change.</p><p><strong>Step 2. Create the app directory and a root layout.</strong> Add app/layout.tsx with html and body tags. Copy global styles from _app into it. The guide warns that styles in the root layout do not apply to pages/*, so keep _app and _document until the last page has moved.</p><p><strong>Step 3. Move providers into a Client Component.</strong> Theme, auth and analytics providers that use React Context must be wrapped in a 'use client' component, then used inside the root layout.</p><p><strong>Step 4. Pick the simplest page first.</strong> An about page or a static landing page. The guide's easiest path is to move the existing page component, unchanged, into a Client Component file, then import it from a new page.tsx. Delete the old file in pages in the same commit, because the same route cannot be defined in both.</p><p><strong>Step 5. Replace next/head with metadata.</strong> Export a metadata object, or generateMetadata for dynamic pages. Check the rendered title, description, canonical and Open Graph tags against the old page, because SEO regressions are the most expensive migration bug for a business site.</p><p><strong>Step 6. Replace routing hooks.</strong> Import from next/navigation. The new router has no query or pathname; use useSearchParams, useParams and usePathname. For shared components still used by pages, the guide points to useRouter from next/compat/router.</p><p><strong>Step 7. Move data fetching into Server Components.</strong> Replace getServerSideProps with an async page that fetches with cache: 'no-store', getStaticProps with a default or force-cache fetch, and ISR with next: { revalidate: 60 }. In Next.js 16, params, searchParams, cookies() and headers() must be awaited.</p><p><strong>Step 8. Move API routes last, or not at all.</strong> The guide says API Routes in pages/api \"continue to work\" without changes. Move them to Route Handlers when you touch them anyway, not as part of the page migration.</p><p><strong>Step 9. Delete _app, _document and the pages directory.</strong> Only when nothing is left in pages. Then remove compatibility code such as next/compat/router.</p><p>One more habit I would add to the official steps: keep every route group in its own release, with the previous release ready to redeploy. Because each group is a self-contained set of files moved from pages to app, rolling back a bad group means redeploying the last good build, not untangling a half-finished rewrite. Write down, for each release, which URLs moved, so whoever is checking search traffic and error logs the next morning knows exactly where to look.</p><figure><img src=\"/assets/blog/migrating-to-app-router/2.webp\" alt=\"Infographic of the App Router migration in five stages\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Upgrade first, migrate one route at a time, delete the pages directory last.</figcaption></figure><h2 id=\"small-things-the-guide-mentions-that-teams-forget\">Small things the guide mentions that teams forget</h2><p>These are easy to skip on a first read of the guide, and each one can cost a day of debugging.</p><ul><li><strong>Scripts.</strong> Move any beforeInteractive scripts from _document into the root layout. The experimental worker strategy does not work in app, and onLoad, onReady and onError handlers do not work in Server Components.</li><li><strong>Fonts.</strong> Inlined font CSS still works in pages but not in app. Use next/font, which works in both.</li><li><strong>Tailwind.</strong> Add the app directory to the content paths in tailwind.config.js, or classes used only in app will be missing from the build. Import global styles in app/layout.js.</li><li><strong>router.push.</strong> In the App Router, router.push() and router.replace() no longer return a Promise. Code that awaited them to show a spinner needs useTransition instead.</li><li><strong>Locale values.</strong> locale, locales and defaultLocale are gone from the new useRouter. Sites in English and Telugu or Hindi need the App Router's own internationalisation approach.</li><li><strong>Images.</strong> Next.js 16 changed next/image defaults: minimumCacheTTL went from 60 seconds to 4 hours, and qualities now allows only 75 unless you configure more. Product photos that look softer after the upgrade can trace back to this.</li><li><strong>Parallel routes.</strong> In Next.js 16, every parallel route slot needs an explicit default.js file, or the build fails.</li></ul><p>None of these is hard. They are just easy to miss when the main pages render and everything looks done.</p><h2 id=\"the-hard-navigation-problem-during-migration\">The hard navigation problem during migration</h2><p>This is the part teams most often miss when estimating. The guide says that when navigating between routes served by the different routers, \"there will be a hard navigation,\" and that next/link prefetching does not work across routers. In plain terms, clicking from an App Router page to a Pages Router page reloads the whole page.</p><p>For a marketing site, that is barely noticeable. For a dashboard where people jump between screens all day, it feels slow and can reset client state. The migration guide links to Vercel's guide on <a href=\"https://vercel.com/guides/optimizing-hard-navigations\" rel=\"noopener noreferrer nofollow\">optimising hard navigations</a>, which says their impact \"can be reduced by using prefetching and prerendering.\" It recommends the Speculation Rules API, supported in Chrome, Edge and Opera, to prefetch or prerender chosen links, with link rel=prefetch tags as a fallback for other browsers. Both can be used together. That softens the cost during the migration period, at the price of some extra network use. My own advice is to migrate in groups that people navigate between together: all of checkout, or all of the account section, rather than one page from each area. If your analytics show most visitors on Chrome or Edge, a Speculation Rules script on the links between old and new sections is cheap insurance while both routers are live.</p><figure><img src=\"/assets/blog/migrating-to-app-router/3.webp\" alt=\"Annotated view of the Next.js version 16 upgrade guide showing the Node.js requirement\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Next.js 16 needs Node.js 20.9 or later. Upgrade the runtime before touching routes.</figcaption></figure><h2 id=\"worked-examples-from-indian-businesses\">Worked examples from Indian businesses</h2><p>These three cases are illustrative. The businesses and page counts are invented to show the reasoning.</p><h3 id=\"a-d2c-brands-storefront\">A D2C brand's storefront</h3><p>A Jaipur block-print brand runs a custom Next.js storefront on the Pages Router: home, 40 collection pages, product pages built with getStaticPaths and ISR, a cart and a checkout. Search traffic is most of its revenue.</p><p>I would start with the static pages, then collections and products, since getStaticPaths plus ISR maps cleanly to generateStaticParams and revalidate. Each moved template gets its metadata checked against the live page before release. Cart and checkout move last, together, so shoppers never hit a hard navigation mid-purchase. The payment gateway's webhook route stays in pages/api until everything else is done.</p><h3 id=\"a-coaching-institute-with-a-marketing-site-and-student-portal\">A coaching institute with a marketing site and student portal</h3><p>A Hyderabad coaching institute has one Next.js app with public course pages and a logged-in student portal for schedules and test results. The portal uses getServerSideProps with cookies for auth on every page.</p><p>Here I would migrate the public pages first, because they are simple and SEO matters. The portal moves as one group, behind a shared layout in app/(portal)/layout.tsx that checks the session once, replacing the repeated per-page auth logic. Every cookies() call is awaited, as Next.js 16 requires. Because both halves are in one app, the team keeps _app until the last portal page has moved.</p><h3 id=\"a-clinic-chains-booking-site\">A clinic chain's booking site</h3><p>A clinic chain has a small site with doctor profiles, branch pages and a slot booking flow that uses useRouter().query heavily. It has fewer than 20 routes.</p><p>For a site this size, I would migrate in one short project rather than over months: upgrade, move everything, swap query for useSearchParams and useParams, and test the booking flow end to end on a low-end Android phone. The doctor profile pages gain generateMetadata so each doctor's name and specialty appear in search results. A migration of that size is a good moment to fix Core Web Vitals too; see our post on <a href=\"/blogs/core-web-vitals-that-matter\">Core Web Vitals that matter</a>.</p><figure><img src=\"/assets/blog/migrating-to-app-router/4.webp\" alt=\"Illustration of two Indian developers pairing on a website migration\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Migrate in groups of pages people use together, not one page from each corner of the site.</figcaption></figure><h2 id=\"common-mistakes-in-app-router-migrations\">Common mistakes in App Router migrations</h2><ul><li><strong>Doing the Next.js upgrade and the router migration in one pull request.</strong> When something breaks, you cannot tell which change caused it.</li><li><strong>Marking everything 'use client'.</strong> It works, and it is a fine first step, but it keeps all the JavaScript you were trying to cut. Move non-interactive parts back to Server Components over time.</li><li><strong>Defining a route in both directories.</strong> Delete the pages version in the same commit you add the app version.</li><li><strong>Forgetting metadata.</strong> A page without a migrated title, description or canonical can lose search traffic quietly.</li><li><strong>Assuming fetch caching matches the old behaviour.</strong> Set cache or revalidate explicitly on every fetch you migrate, so the behaviour is written down rather than inherited from a default.</li><li><strong>Synchronous params and cookies.</strong> Next.js 16 removed synchronous access. Run the next-async-request-api codemod and await them.</li><li><strong>Renaming edge middleware to proxy blindly.</strong> The version 16 guide says the edge runtime is not supported in proxy; keep middleware if you rely on edge.</li><li><strong>Ignoring the hard navigation cost.</strong> Migrate sections that link to each other together.</li></ul><h2 id=\"a-migration-checklist\">A migration checklist</h2><p>I use this list for each group of routes before it goes live.</p><ul><li>The app meets Next.js 16's requirements: Node.js 20.9 or later, TypeScript 5.1 or later.</li><li>The old page file is deleted and the new route renders at the same URL.</li><li>Title, description, canonical, Open Graph tags and JSON-LD match or improve on the old page.</li><li>Every migrated fetch has an explicit cache or revalidate setting.</li><li>params, searchParams, cookies() and headers() are awaited.</li><li>Client-only code is in files marked 'use client', and nothing else is.</li><li>Links within the migrated group navigate without a full reload.</li><li>The build is green, and the key user flow has been clicked through on a real phone.</li><li>Analytics and error tracking still fire on the new routes.</li></ul><p>If you want a migration like this estimated properly, with routes grouped, risks listed and a fixed price, that is what our ₹3,500 requirement analysis produces: a call with the people who would do the work and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our <a href=\"/technologies/nextjs\">Next.js</a> and <a href=\"/services/web-development\">web development</a> pages show the kind of work we take on.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"can-i-use-the-app-router-and-pages-router-together\">Can I use the App Router and Pages Router together?</h3><p>Yes. The Next.js migration guide says the app directory is designed to work alongside the pages directory for incremental, page-by-page migration. The catch is that navigating between routes served by different routers is a hard navigation, a full page reload.</p><h3 id=\"is-the-pages-router-deprecated\">Is the Pages Router deprecated?</h3><p>The migration guide does not call it deprecated. It says upgrading Next.js does not require the App Router, and API Routes in pages/api continue to work. New features are documented for the App Router, so active products should plan to move.</p><h3 id=\"what-replaces-getserversideprops-in-the-app-router\">What replaces getServerSideProps in the App Router?</h3><p>An async Server Component that fetches data directly, using fetch with cache set to no-store. Request data comes from the cookies() and headers() functions, which must be awaited in Next.js 16.</p><h3 id=\"what-replaces-next-router\">What replaces next/router?</h3><p>next/navigation, with useRouter, usePathname, useSearchParams and useParams. The new useRouter has no query or pathname. These hooks work only in Client Components. For components shared with pages, use useRouter from next/compat/router during migration.</p><h3 id=\"what-node-js-version-does-next-js-16-need\">What Node.js version does Next.js 16 need?</h3><p>Node.js 20.9.0 or later. The version 16 upgrade guide says Node.js 18 is no longer supported, and TypeScript must be 5.1.0 or later.</p><h3 id=\"how-long-does-an-app-router-migration-take\">How long does an App Router migration take?</h3><p>It depends on route count, data fetching patterns and how much code uses next/router. I would not quote a number without seeing the codebase. Doing the Next.js upgrade first and migrating in route groups makes the work predictable.</p><h3 id=\"do-i-need-to-move-api-routes-to-route-handlers\">Do I need to move API routes to Route Handlers?</h3><p>Not immediately. The guide says API Routes in pages/api continue to work without changes. Move them when you are changing them anyway.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://nextjs.org/docs/app/guides/migrating/app-router-migration\" rel=\"noopener noreferrer nofollow\">How to migrate from Pages to the App Router, Next.js Docs</a>, read 16 November 2026</li><li><a href=\"https://nextjs.org/docs/app/guides/upgrading/version-16\" rel=\"noopener noreferrer nofollow\">How to upgrade to version 16, Next.js Docs</a>, read 16 November 2026</li><li><a href=\"https://nextjs.org/blog\" rel=\"noopener noreferrer nofollow\">The latest Next.js news, Next.js blog</a>, read 16 November 2026</li><li><a href=\"https://vercel.com/guides/optimizing-hard-navigations\" rel=\"noopener noreferrer nofollow\">Optimizing hard navigations, Vercel</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian developer moving website pages from one folder to another beside the words App Router migration",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian woman developer with a laptop at a desk in a small studio office, lifting stylised web-page cards from one open folder and placing them into a second folder, a cup of chai beside the laptop. Screens and cards show only abstract shapes, no readable text, no logos. Face fully in frame. Right half: the title text 'App Router migration' in very large bold black sans-serif, left-aligned, on three lines ('App Router' / 'migration'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Next.js migration guide explaining incremental migration",
+   "url": "https://nextjs.org/docs/app/guides/migrating/app-router-migration",
+   "annotate": [
+    {
+     "text": "is intentionally designed to work simultaneously with the",
+     "label": "Both routers at once"
+    },
+    {
+     "text": "When navigating between routes served by the different Next.js routers, there will be a hard navigation.",
+     "label": "Full reload between routers"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the App Router migration in five stages",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Pages Router to App Router, step by step'. Five stages left to right joined by orange arrows, each a flat icon above a dark-blue pill with white text: 1) up-arrow icon, pill 'Upgrade Next.js and Node 20.9+'; 2) frame icon, pill 'Add root layout'; 3) single page icon, pill 'Move one simple page'; 4) stack of pages icon, pill 'Move route groups'; 5) bin icon, pill 'Delete pages folder'. Under stages 3 and 4, a small grey note: 'Full reload between old and new pages'. One-line bold takeaway at bottom: 'Upgrade first. Migrate in groups. Delete last.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Next.js version 16 upgrade guide showing the Node.js requirement",
+   "url": "https://nextjs.org/docs/app/guides/upgrading/version-16",
+   "annotate": [
+    {
+     "text": "Node.js 18 no longer supported",
+     "label": "Node.js 20.9 minimum"
+    },
+    {
+     "text": "Starting with Next.js 16, synchronous access is fully removed.",
+     "label": "Await params and cookies"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of two Indian developers pairing on a website migration",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Two Indian developers, a man in a half-sleeve checked shirt and a woman in a kurta, sitting side by side at a desk with one large monitor and a laptop, the man pointing at the screen, a phone on a stand showing an abstract website. Plants and a window behind. No readable text on any screen, no logos. Faces fully in frame."
+  }
+ ]
+}

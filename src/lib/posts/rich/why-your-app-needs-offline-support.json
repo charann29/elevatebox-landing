@@ -1,0 +1,185 @@
+{
+ "slug": "why-your-app-needs-offline-support",
+ "locale": "en",
+ "title": "Offline-first apps: why your app needs offline mode",
+ "description": "Why Indian apps need offline mode: Google's offline-first rules, write strategies, sync and conflicts, PWA storage limits, examples and a developer checklist.",
+ "imageUrl": "/assets/blog/why-your-app-needs-offline-support/cover.webp",
+ "imageAlt": "Illustration of an Indian salesperson using a phone app in a shop with no signal, beside the words Offline-first apps",
+ "ogImageUrl": null,
+ "tags": [
+  "offline-first",
+  "mobile apps",
+  "app architecture",
+  "India"
+ ],
+ "readingTimeMinutes": 17,
+ "publishedAt": "2026-07-04T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-offline-support-means-for-an-app",
+   "text": "What offline support means for an app",
+   "level": 2
+  },
+  {
+   "id": "why-connectivity-in-india-is-uneven",
+   "text": "Why connectivity in India is uneven",
+   "level": 2
+  },
+  {
+   "id": "what-googles-offline-first-guidance-actually-says",
+   "text": "What Google's offline-first guidance actually says",
+   "level": 2
+  },
+  {
+   "id": "choose-a-write-strategy-for-each-feature",
+   "text": "Choose a write strategy for each feature",
+   "level": 2
+  },
+  {
+   "id": "syncing-and-conflicts-in-plain-words",
+   "text": "Syncing and conflicts, in plain words",
+   "level": 2
+  },
+  {
+   "id": "offline-for-web-apps-and-pwas",
+   "text": "Offline for web apps and PWAs",
+   "level": 2
+  },
+  {
+   "id": "build-it-yourself-or-use-a-managed-sync-service",
+   "text": "Build it yourself or use a managed sync service",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-plan-offline-support-before-the-build",
+   "text": "Step by step: plan offline support before the build",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples-from-indian-businesses",
+   "text": "Three worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-distributors-field-sales-app",
+   "text": "A distributor's field sales app",
+   "level": 3
+  },
+  {
+   "id": "a-home-healthcare-or-clinic-app",
+   "text": "A home healthcare or clinic app",
+   "level": 3
+  },
+  {
+   "id": "a-logistics-proof-of-delivery-app",
+   "text": "A logistics proof-of-delivery app",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-that-break-offline-mode",
+   "text": "Common mistakes that break offline mode",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-to-give-your-developer",
+   "text": "A checklist to give your developer",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is an offline-first app?",
+   "a": "Android's guide defines it as an app that can perform all, or a critical subset, of its core functionality without internet access. At a minimum it must be able to read data without the network. The data on the phone is the source of truth, and the server is synchronised in the background."
+  },
+  {
+   "q": "Does every app need offline mode?",
+   "a": "No. An app that only makes payments or live bookings can stay online-only, as long as it tells users clearly when they are offline. Most business apps benefit from at least offline reading of recent data, because mobile signal in India is uneven."
+  },
+  {
+   "q": "Is offline support expensive to add?",
+   "a": "It is cheaper to plan from the start than to add later, because it shapes how the app stores and reads data. I have not found reliable published figures on the extra cost, so ask for it as a separate line in your quotation."
+  },
+  {
+   "q": "How does an app handle two people editing the same record offline?",
+   "a": "That is a conflict. Android's guide says conflict resolution usually needs versioning, and that last write wins is a common approach for mobile apps. For stock, balances or anything that should add up, decide a different rule and write it into the requirements."
+  },
+  {
+   "q": "Can a website or PWA work offline?",
+   "a": "Yes, with a service worker, which needs HTTPS. Browser storage is best-effort by default and can be evicted, Safari may delete script data for sites not used in seven days, and the Background Sync API is not available in every browser."
+  },
+  {
+   "q": "Does Firebase work offline?",
+   "a": "Cloud Firestore's offline persistence is on by default for Android and Apple apps and off by default on the web, where it is supported only in Chrome, Safari and Firefox. The default cache threshold is 100 MB."
+  },
+  {
+   "q": "How should offline mode be tested?",
+   "a": "Turn on airplane mode, use a weak signal, kill the app during a sync and restart the phone with items still queued. Every case should end with the data on the server and nothing lost or duplicated."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-offline-support-means-for-an-app\">What offline support means for an app</h2><p><strong>In short:</strong> Offline support means your app still opens, shows the last data it had and saves what the user does, even with no signal. Google's Android guide calls this an offline-first app: at a minimum it must read data without the network. For Indian users moving between good 4G, patchy rural coverage and lifts with no signal, it decides whether the app gets used or uninstalled.</p><p>This guide was checked in November 2026, against the official Android, MDN, web.dev and Firebase pages listed at the end, and the latest TRAI subscriber report.</p><p>In my experience, most business owners ask about offline mode after a complaint. A salesperson says the order screen spun for a minute inside a basement godown. A patient says the app showed a blank page on a train. The fix is not a better spinner. It is deciding, before the build, which parts of the app must work with no network and how the data catches up later.</p><p>I will go through what Google's own guidance says, how to pick a write strategy for each feature, three worked examples from Indian businesses, the mistakes I see most, and a checklist you can hand to whoever builds your app.</p><h2 id=\"why-connectivity-in-india-is-uneven\">Why connectivity in India is uneven</h2><p>India has a lot of internet users. It does not follow that every user has a good connection at every moment. TRAI's latest quarterly report shows the gap between urban and rural access.</p><p><em>Internet subscribers in India, quarter ending 30 June 2026</em></p><table><thead><tr><th>Measure</th><th>Figure</th></tr></thead><tbody><tr><td>Total internet subscribers</td><td>1,114.17 million</td></tr><tr><td>Wireless (fixed and mobile) internet subscribers</td><td>1,066.43 million</td></tr><tr><td>Fixed (wired) internet subscribers</td><td>47.73 million</td></tr><tr><td>Rural internet subscribers</td><td>448.08 million</td></tr><tr><td>Urban internet subscribers per 100 people</td><td>129.03</td></tr><tr><td>Rural internet subscribers per 100 people</td><td>49.07</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322388\" rel=\"noopener noreferrer nofollow\"><em>TRAI quarterly performance indicators, via PIB</em></a><em> and </em><a href=\"https://www.trai.gov.in/release-publication/reports/performance-indicators-reports\" rel=\"noopener noreferrer nofollow\"><em>TRAI performance indicators reports page</em></a><em>, read 16 November 2026.</em></p><p>Two things stand out. Almost all of those connections are wireless, so your users are on mobile data that comes and goes as they move. And rural access per 100 people is well under half of urban access. If your customers include farmers, rural retailers, field staff or anyone who travels for work, a large share of their sessions will happen on weak or no signal.</p><p>Subscriber counts do not measure signal quality, and I have not found an official source that publishes how often Indian users lose connection. So I will not give you a number for that. What Google's guidance does list is the everyday reality: limited bandwidth, short interruptions such as an elevator or a tunnel, and devices that are only online now and then, such as Wi-Fi-only tablets. Every one of those is common in Indian offices, shops and homes.</p><p>If you are building for users outside the metros, our post on <a href=\"/blogs/building-for-bharat\">building for Bharat</a> covers language and device choices that sit alongside this.</p><h2 id=\"what-googles-offline-first-guidance-actually-says\">What Google's offline-first guidance actually says</h2><p>The clearest official definition is in Android's <a href=\"https://developer.android.com/topic/architecture/data-layer/offline-first\" rel=\"noopener noreferrer nofollow\">Build an offline-first app</a> guide. An offline-first app \"is able to perform all, or a critical subset of its core functionality without access to the internet.\" To work offline, the guide says the app must be able to do three things:</p><ul><li>Remain usable without a reliable network connection.</li><li>Present users with local data immediately, instead of waiting for the first network call to complete or fail.</li><li>Fetch data in a way that is conscious of battery and data, for example only when charging or on Wi-Fi.</li></ul><p>The key design rule follows from that. The data stored on the phone, which the guide calls the local data source, is the canonical source of truth for the app. Screens read only from it. The server, the network data source, is synchronised with the local copy in the background. The guide is explicit that the screens and business logic must never talk to the network directly.</p><p>This sounds like a technical detail. It is the decision that makes offline work possible. If every screen calls the server and waits, there is nothing to show when the call fails. If every screen reads a local database that a background job keeps fresh, the app opens instantly and still works in a basement.</p><figure><img src=\"/assets/blog/why-your-app-needs-offline-support/1.webp\" alt=\"Annotated view of the Android Developers offline-first guide showing the criteria for an offline-first app\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Android's offline-first guide lists what an app must do to work without a reliable connection.</figcaption></figure><p>Note what the guide does not demand. An app is offline-first if it can read without a network. Writing offline is optional and harder, because of conflicts, which I cover below. You can start with reads and add offline writes only where they matter.</p><h2 id=\"choose-a-write-strategy-for-each-feature\">Choose a write strategy for each feature</h2><p>This is where most of the real decisions sit. Android's guide names three strategies for saving data. Each feature in your app should get one, chosen on purpose.</p><p><em>The three write strategies from Android's offline-first guide</em></p><table><thead><tr><th>Strategy</th><th>What happens</th><th>Google's guidance on when to use it</th><th>Indian business example</th></tr></thead><tbody><tr><td>Online-only writes</td><td>Send to the server; if it fails, tell the user</td><td>Transactions that must happen in near real time, such as a bank transfer</td><td>Paying an invoice, booking the last slot at a clinic</td></tr><tr><td>Queued writes</td><td>Put the item in a queue and send it when back online, with retries</td><td>Data that is not time sensitive and where failure need not be shown, such as analytics and logs</td><td>App usage events, crash logs</td></tr><tr><td>Lazy writes</td><td>Save on the phone first, then send at the earliest chance</td><td>Data that is critical, where losing it is unacceptable</td><td>A field order, a delivery photo, a visit note</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.android.com/topic/architecture/data-layer/offline-first\" rel=\"noopener noreferrer nofollow\"><em>Android Developers, Build an offline-first app</em></a><em>, read 16 November 2026.</em></p><p>For online-only writes, the guide suggests not showing the write option at all when offline, or disabling it, and telling the user with a message they can see. That is better than letting someone fill a long form and then fail.</p><p>Lazy writes are what most business owners mean when they say offline mode. The salesperson taps save, the order is stored on the phone, and the app sends it when the signal returns. Google's own example is a to-do app where tasks added offline must be stored locally to avoid losing data.</p><figure><img src=\"/assets/blog/why-your-app-needs-offline-support/2.webp\" alt=\"Infographic of the three write strategies: online-only, queued and lazy, with when to use each\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>One feature, one strategy: decide this for every screen that saves data.</figcaption></figure><h2 id=\"syncing-and-conflicts-in-plain-words\">Syncing and conflicts, in plain words</h2><p>Once data is saved on the phone, it has to reach the server. Android's guide describes two ways of keeping the two in step.</p><p><strong>Pull-based sync</strong> fetches fresh data when the user opens a screen. It is easier to build and never fetches data nobody looks at. The guide warns it can use a lot of data if screens refetch unchanged information, and it works best when offline periods are short.</p><p><strong>Push-based sync</strong> downloads a baseline on first start, then waits for the server to say something has changed and fetches only that. The guide says such an app can stay offline indefinitely and uses minimum data, but versioning data for conflict resolution is not trivial and the server has to support it. Many apps mix the two: pull for a busy feed, push for the user's own profile.</p><p>A conflict happens when two people, or one person on two devices, change the same record while offline. The guide says resolving conflicts usually needs versioning, and that for mobile apps a common approach is \"last write wins\": each device stamps its change with a time, and the server keeps the newest.</p><p>Last write wins is fine for a profile picture. It is risky for stock counts or money, where two changes should add up rather than one replacing the other. That is a business decision, not a coding one, so the owner should make it. Ask your developer which records can conflict, and what the rule is for each.</p><p>On Android, the guide recommends <a href=\"https://developer.android.com/develop/background-work/background-tasks/persistent\" rel=\"noopener noreferrer nofollow\">WorkManager</a> for the queues and retries. WorkManager lets tasks persist across app restarts and device reboots, and its constraints can hold work until the device is on an unmetered network, idle or has enough battery. For retries, the guide suggests exponential backoff, waiting longer between each attempt, and not retrying requests that failed because the user is not authorised.</p><h2 id=\"offline-for-web-apps-and-pwas\">Offline for web apps and PWAs</h2><p>If your product is a website or a progressive web app rather than a native app, the tools are different but the idea is the same.</p><p>MDN's <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers\" rel=\"noopener noreferrer nofollow\">service worker guide</a> explains that a service worker lets a site use cached assets first, giving a default experience offline before fetching more from the network. Service workers only run over HTTPS, with localhost allowed for development. The web.dev <a href=\"https://web.dev/articles/offline-cookbook\" rel=\"noopener noreferrer nofollow\">Offline Cookbook</a> lists the common patterns, including caching the app shell on install, serving from cache and falling back to the network, and stale-while-revalidate, which shows the cached copy and refreshes it in the background.</p><p>Browser storage has limits you should know before you promise offline mode on the web. MDN's page on <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria\" rel=\"noopener noreferrer nofollow\">storage quotas and eviction</a> says data is stored as best-effort by default, which means the browser may delete it under storage pressure. In Chromium browsers such as Chrome and Edge an origin can use up to 60% of total disk. Safari also proactively deletes script-created data for sites with no user interaction in the last seven days of browser use, when cross-site tracking prevention is on. You can ask for persistent storage with navigator.storage.persist(), which the browser may grant or refuse.</p><p>The <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Background_Synchronization_API\" rel=\"noopener noreferrer nofollow\">Background Synchronization API</a>, which would let a web app send queued data after the tab is closed, is marked by MDN as limited availability and not Baseline, because it does not work in some widely used browsers. So on the web, plan for queued data to go out the next time the user opens the site.</p><figure><img src=\"/assets/blog/why-your-app-needs-offline-support/3.webp\" alt=\"Annotated view of MDN's storage quotas page showing Safari's proactive eviction rule\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>MDN documents when browsers delete stored data, which matters for offline web apps.</figcaption></figure><h2 id=\"build-it-yourself-or-use-a-managed-sync-service\">Build it yourself or use a managed sync service</h2><p>Android's guide describes two routes. A custom stack uses a local database such as Room, your own network client and WorkManager jobs, and gives you full control over conflict rules. A managed service such as Cloud Firestore handles the disk cache, offline write queue and sync for you.</p><p>If you go the managed route, read the defaults. Firebase's <a href=\"https://firebase.google.com/docs/firestore/manage-data/enable-offline\" rel=\"noopener noreferrer nofollow\">offline data page</a> says offline persistence is on by default for Android and Apple platforms but off by default for the web, and that on the web it is supported only in Chrome, Safari and Firefox. The default cache threshold is 100 MB. Firebase also warns that the web cache is not cleared between sessions, so an app handling sensitive information should ask whether the user is on a trusted device before turning persistence on.</p><p>Neither route is right for everyone. A managed service is quicker to ship. A custom stack is easier to bend when your conflict rules are unusual, such as stock that two people edit at once.</p><h2 id=\"step-by-step-plan-offline-support-before-the-build\">Step by step: plan offline support before the build</h2><p>This is the order I would follow with any business app.</p><p><strong>Step 1. List the jobs users do away from good signal.</strong> Walk through a real day. Where does your salesperson, delivery rider or patient use the app? A godown, a lift, a village, a hospital corridor. Write down the screens they need there.</p><p><strong>Step 2. Mark each screen read-only or read-write offline.</strong> Many screens only need to show the last known data: a price list, a patient's past visits, today's route. Those are the easy wins.</p><p><strong>Step 3. Give every save action a write strategy.</strong> Online-only, queued or lazy, using the table above. Anything involving money or a limited slot usually stays online-only.</p><p><strong>Step 4. Decide the conflict rule for shared records.</strong> For each record that two people can change, decide: newest wins, or changes are combined, or a person reviews it. Put it in writing.</p><p><strong>Step 5. Design the offline states.</strong> The user should always know three things: this is saved on the phone, this has reached the server, this failed and needs action. A small sync status on each item beats a full-screen error.</p><p><strong>Step 6. Set what is downloaded and when.</strong> Decide how much data the app keeps on the phone and when it refreshes, keeping Google's advice about battery and data in mind. A rider does not need last year's deliveries.</p><p><strong>Step 7. Test with the network actually off.</strong> Airplane mode, a weak signal, the app killed halfway through a sync, the phone restarted with items in the queue. Each should end with no lost data.</p><p>If you want this written down with a fixed price before any build starts, that is what our ₹3,500 requirement analysis covers: a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">book it here</a>). Code, cloud and credentials stay in your name.</p><h2 id=\"three-worked-examples-from-indian-businesses\">Three worked examples from Indian businesses</h2><p>These are illustrative. The businesses and numbers are made up to show the decisions, not taken from real clients.</p><h3 id=\"a-distributors-field-sales-app\">A distributor's field sales app</h3><p>An FMCG distributor in Telangana has, say, 30 salespeople visiting kirana shops. Many shops are in market lanes or villages where the signal drops.</p><p>The product catalogue, prices and each shop's outstanding balance should be readable offline, downloaded every morning on Wi-Fi at the office or at the start of the route. New orders are lazy writes: saved on the phone first with a clear \"waiting to send\" mark, then sent when the signal returns. Stock availability is the hard part. If two salespeople sell the last 20 cartons offline, last write wins would quietly lose one order. The owner should decide that orders are always accepted and stock shortfalls are handled at the godown, and tell the developer.</p><figure><img src=\"/assets/blog/why-your-app-needs-offline-support/4.webp\" alt=\"Illustration of a field salesperson taking an order on a phone inside a small kirana shop\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A field order is the classic lazy write: save on the phone first, send when the signal returns.</figcaption></figure><h3 id=\"a-home-healthcare-or-clinic-app\">A home healthcare or clinic app</h3><p>A clinic chain sends nurses for home visits. The nurse needs the patient's address, history and today's tasks, sometimes in buildings with poor coverage.</p><p>The visit list and patient summary are read offline. Visit notes and vital signs are lazy writes, because losing them is not acceptable. Booking a new appointment slot stays online-only, because two people could take the same slot. Because this is health data, the cached data on the phone needs the same care as data on the server: encrypted storage, sign-out that clears it, and only the records the nurse needs that day.</p><h3 id=\"a-logistics-proof-of-delivery-app\">A logistics proof-of-delivery app</h3><p>A delivery company's riders capture a photo and the receiver's name at the door. Some apartment basements have no signal at all.</p><p>The day's route and parcel list are downloaded at the hub. The delivery confirmation and photo are lazy writes with WorkManager retrying in the background, ideally waiting for a connection before uploading heavy photos. The customer-facing tracking page should say \"delivered, awaiting sync\" rather than showing the parcel as still out for delivery. For more on this kind of system, see our page on <a href=\"/industries/logistics\">logistics apps</a>.</p><h2 id=\"common-mistakes-that-break-offline-mode\">Common mistakes that break offline mode</h2><p><strong>Treating offline as a later feature.</strong> If screens call the server directly, adding offline later means rewriting the data layer. Google's guidance puts the local data source at the centre from the start for a reason.</p><p><strong>Showing a spinner forever.</strong> A request with no timeout and no cached data is the worst of both. Show what you have, and say when it was last updated.</p><p><strong>Silently losing saved data.</strong> A queue held only in memory dies when Android kills the app. Queued and lazy writes should be stored on disk and handled by persistent work.</p><p><strong>Using last write wins everywhere.</strong> It is the common default. It is wrong for counts, balances and anything where two changes should combine.</p><p><strong>Promising offline on the web without reading the limits.</strong> Best-effort storage can be evicted, Safari has its seven-day rule, and Background Sync is not available in every browser.</p><p><strong>Downloading everything.</strong> Keeping a full year of data on a budget phone wastes storage and data. Sync what the user needs for the job. Our post on <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a> goes into storage and memory limits.</p><p><strong>Testing only on office Wi-Fi.</strong> Offline bugs show up on a moving train, not at a desk.</p><h2 id=\"a-checklist-to-give-your-developer\">A checklist to give your developer</h2><ul><li>Which screens read from local data, and how fresh that data is shown to be.</li><li>For every save action: online-only, queued or lazy.</li><li>Where the offline queue is stored, and what happens after the app is killed or the phone restarts.</li><li>The retry rule: backoff, maximum attempts, and which errors are not retried.</li><li>The conflict rule for every record two people can change.</li><li>What the user sees for saved, synced and failed items.</li><li>How much data is kept on the phone, and when it refreshes (Wi-Fi only, charging, or any network).</li><li>For web apps: service worker caching strategy, storage persistence request, and what happens in Safari.</li><li>How cached personal data is protected and cleared on sign-out.</li><li>A test plan that includes airplane mode, weak signal and restarts mid-sync.</li></ul><p>If you are planning an Android, iOS or cross-platform app, our <a href=\"/services/mobile-app-development\">mobile app development</a> page explains how we scope builds like this.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-an-offline-first-app\">What is an offline-first app?</h3><p>Android's guide defines it as an app that can perform all, or a critical subset, of its core functionality without internet access. At a minimum it must be able to read data without the network. The data on the phone is the source of truth, and the server is synchronised in the background.</p><h3 id=\"does-every-app-need-offline-mode\">Does every app need offline mode?</h3><p>No. An app that only makes payments or live bookings can stay online-only, as long as it tells users clearly when they are offline. Most business apps benefit from at least offline reading of recent data, because mobile signal in India is uneven.</p><h3 id=\"is-offline-support-expensive-to-add\">Is offline support expensive to add?</h3><p>It is cheaper to plan from the start than to add later, because it shapes how the app stores and reads data. I have not found reliable published figures on the extra cost, so ask for it as a separate line in your quotation.</p><h3 id=\"how-does-an-app-handle-two-people-editing-the-same-record-offline\">How does an app handle two people editing the same record offline?</h3><p>That is a conflict. Android's guide says conflict resolution usually needs versioning, and that last write wins is a common approach for mobile apps. For stock, balances or anything that should add up, decide a different rule and write it into the requirements.</p><h3 id=\"can-a-website-or-pwa-work-offline\">Can a website or PWA work offline?</h3><p>Yes, with a service worker, which needs HTTPS. Browser storage is best-effort by default and can be evicted, Safari may delete script data for sites not used in seven days, and the Background Sync API is not available in every browser.</p><h3 id=\"does-firebase-work-offline\">Does Firebase work offline?</h3><p>Cloud Firestore's offline persistence is on by default for Android and Apple apps and off by default on the web, where it is supported only in Chrome, Safari and Firefox. The default cache threshold is 100 MB.</p><h3 id=\"how-should-offline-mode-be-tested\">How should offline mode be tested?</h3><p>Turn on airplane mode, use a weak signal, kill the app during a sync and restart the phone with items still queued. Every case should end with the data on the server and nothing lost or duplicated.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developer.android.com/topic/architecture/data-layer/offline-first\" rel=\"noopener noreferrer nofollow\">Build an offline-first app, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/develop/background-work/background-tasks/persistent\" rel=\"noopener noreferrer nofollow\">Persistent work with WorkManager, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/training/data-storage/room\" rel=\"noopener noreferrer nofollow\">Save data in a local database using Room, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/develop/connectivity/network-ops/reading-network-state\" rel=\"noopener noreferrer nofollow\">Read network state, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers\" rel=\"noopener noreferrer nofollow\">Using Service Workers, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria\" rel=\"noopener noreferrer nofollow\">Storage quotas and eviction criteria, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Background_Synchronization_API\" rel=\"noopener noreferrer nofollow\">Background Synchronization API, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/offline-cookbook\" rel=\"noopener noreferrer nofollow\">The Offline Cookbook, web.dev</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/firestore/manage-data/enable-offline\" rel=\"noopener noreferrer nofollow\">Access data offline, Firebase documentation</a>, read 16 November 2026</li><li><a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322388\" rel=\"noopener noreferrer nofollow\">Indian Telecom Services Performance Indicators, April to June 2026, TRAI via PIB</a>, read 16 November 2026</li><li><a href=\"https://www.trai.gov.in/release-publication/reports/performance-indicators-reports\" rel=\"noopener noreferrer nofollow\">Performance indicators reports, Telecom Regulatory Authority of India</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian salesperson using a phone app in a shop with no signal, beside the words Offline-first apps",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian field salesman in a checked shirt with a shoulder bag, standing inside a small kirana shop with stacked shelves, tapping an order on his phone; a small crossed-out signal icon floats above the phone and a green tick icon next to it. Phone screen shows only abstract shapes, no readable text, no logos. Face fully in frame. Right half: the title 'Offline-first apps' in very large bold black sans-serif, left-aligned, on two lines ('Offline-first' / 'apps'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Android Developers offline-first guide showing the criteria for an offline-first app",
+   "url": "https://developer.android.com/topic/architecture/data-layer/offline-first",
+   "annotate": [
+    {
+     "text": "Remain usable without a reliable network connection",
+     "label": "The core test"
+    },
+    {
+     "text": "Write to the local data source first",
+     "label": "Most field apps need this"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the three write strategies: online-only, queued and lazy, with when to use each",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Three ways to save data offline'. Three columns, each with an icon and dark-blue rounded pills with white text. Column 1: bank icon, pill 'Online-only', orange arrow down, pill 'Payments, live bookings'. Column 2: queue icon, pill 'Queued', orange arrow down, pill 'Analytics, logs'. Column 3: phone-with-tick icon, pill 'Lazy: save on phone first', orange arrow down, pill 'Orders, visit notes, photos'. One-line bold takeaway at bottom: 'Pick one strategy for every save button.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of MDN's storage quotas page showing Safari's proactive eviction rule",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+   "annotate": [
+    {
+     "text": "Safari proactively evicts data when cross-site tracking prevention is turned on.",
+     "label": "Seven-day rule"
+    },
+    {
+     "text": "Best-effort: this is the way that data is stored by default.",
+     "label": "Default can be deleted"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a field salesperson taking an order on a phone inside a small kirana shop",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Inside a narrow Indian kirana shop with shelves of packets and a steel counter: a shopkeeper in a vest and lungi points at a shelf while a young salesman in a sage shirt types an order on his phone. A small crossed-out signal icon above the phone. No readable text on the phone or packets, no logos. Faces fully in frame."
+  }
+ ]
+}

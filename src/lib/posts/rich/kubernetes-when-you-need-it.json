@@ -1,0 +1,181 @@
+{
+ "slug": "kubernetes-when-you-need-it",
+ "locale": "en",
+ "title": "Do you need Kubernetes? A guide for Indian startups",
+ "description": "Do you need Kubernetes yet? EKS, GKE and AKS fees, the yearly upgrade cycle, simpler options like ECS and Cloud Run, and signs your startup is ready.",
+ "imageUrl": "/assets/blog/kubernetes-when-you-need-it/cover.webp",
+ "imageAlt": "Illustration of an Indian tech lead deciding on infrastructure beside the words Kubernetes yet?",
+ "ogImageUrl": null,
+ "tags": [
+  "Kubernetes",
+  "DevOps",
+  "cloud",
+  "startups"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-02-28T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "do-you-need-kubernetes-the-short-answer",
+   "text": "Do you need Kubernetes? The short answer",
+   "level": 2
+  },
+  {
+   "id": "what-kubernetes-actually-does-for-you",
+   "text": "What Kubernetes actually does for you",
+   "level": 2
+  },
+  {
+   "id": "what-it-costs-the-control-plane-fee-and-the-hidden-bill",
+   "text": "What it costs: the control plane fee and the hidden bill",
+   "level": 2
+  },
+  {
+   "id": "the-upgrade-treadmill",
+   "text": "The upgrade treadmill",
+   "level": 2
+  },
+  {
+   "id": "simpler-options-that-cover-most-startups",
+   "text": "Simpler options that cover most startups",
+   "level": 2
+  },
+  {
+   "id": "what-a-small-production-cluster-really-involves",
+   "text": "What a small production cluster really involves",
+   "level": 2
+  },
+  {
+   "id": "keeping-the-door-open-how-to-move-later-without-a-rewrite",
+   "text": "Keeping the door open: how to move later without a rewrite",
+   "level": 2
+  },
+  {
+   "id": "signs-you-are-ready-for-kubernetes",
+   "text": "Signs you are ready for Kubernetes",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-deciding-for-your-product",
+   "text": "Step by step: deciding for your product",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "an-exam-prep-platform-in-hyderabad",
+   "text": "An exam-prep platform in Hyderabad",
+   "level": 3
+  },
+  {
+   "id": "a-logistics-saas-selling-to-large-shippers",
+   "text": "A logistics SaaS selling to large shippers",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-booking-app",
+   "text": "A clinic booking app",
+   "level": 3
+  },
+  {
+   "id": "ways-the-kubernetes-decision-goes-wrong",
+   "text": "Ways the Kubernetes decision goes wrong",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-adopt-kubernetes",
+   "text": "A checklist before you adopt Kubernetes",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Does a startup need Kubernetes?",
+   "a": "Usually not at first. A product with a handful of services is well served by a managed container service such as Amazon ECS or Google Cloud Run, or a well-run virtual machine. Kubernetes pays off with many services, several teams, multi-environment deployments, and someone experienced to run it."
+  },
+  {
+   "q": "How much does managed Kubernetes cost per month?",
+   "a": "The cluster management fee on Amazon EKS and Google GKE is $0.10 per cluster per hour, about $73 for a full month. GKE's free tier gives $74.40 a month in credits per billing account. Azure AKS's Free tier has no management fee but no uptime SLA. Worker machines are charged separately."
+  },
+  {
+   "q": "What happens if I do not upgrade my EKS cluster?",
+   "a": "Amazon EKS gives each Kubernetes version 14 months of standard support at $0.10 per cluster per hour. After that the cluster moves to extended support for 12 months at $0.60 per cluster per hour."
+  },
+  {
+   "q": "How often does Kubernetes need upgrading?",
+   "a": "The Kubernetes project maintains only the three most recent minor releases, and versions 1.19 and newer get approximately 1 year of patch support. Plan to move to a newer minor version at least once a year."
+  },
+  {
+   "q": "What are the alternatives to Kubernetes?",
+   "a": "Managed container services such as Amazon ECS, which has no extra charge on EC2, AWS Fargate, which bills per vCPU and memory requested, and Google Cloud Run, which has a monthly free tier. A virtual machine with Docker Compose also works for early products."
+  },
+  {
+   "q": "Is the AKS Free tier fine for production?",
+   "a": "Microsoft recommends the Free tier for development, testing and non-production workloads, ideally with fewer than 10 nodes, and says it has no financially backed uptime SLA. For production, Microsoft points to the Standard tier or AKS Automatic."
+  },
+  {
+   "q": "How many companies use Kubernetes in production?",
+   "a": "The CNCF's 2025 annual survey says 82% of container users run Kubernetes in production, up from 66% in 2023. The respondents are cloud native practitioners, so the figure does not describe small businesses in general."
+  }
+ ],
+ "contentHtml": "<h2 id=\"do-you-need-kubernetes-the-short-answer\">Do you need Kubernetes? The short answer</h2><p><strong>In short:</strong> Most Indian startups with one product, one team and fewer than ten services do not need Kubernetes yet. A managed container service or a few well-run virtual machines will serve them for years at lower cost and with less to learn. Kubernetes starts to pay off when you run many services, several teams deploy independently, or a customer or platform requirement makes it the standard.</p><p>Kubernetes is not bad. It is very good at a specific job: running many containers across many machines, restarting what fails and rolling out changes safely. The question is whether you have that job yet, and whether you have someone who can run it when it breaks.</p><p>This guide was checked in November 2026, against the Kubernetes release page, the managed Kubernetes pricing pages of AWS, Google Cloud and Azure, the pricing pages of two simpler container services, and the CNCF's 2025 annual survey. Prices are in US dollars as the providers publish them.</p><h2 id=\"what-kubernetes-actually-does-for-you\">What Kubernetes actually does for you</h2><p>Kubernetes takes a set of machines (nodes) and treats them as one pool. You describe what should run: this many copies of this container, with this much memory, reachable at this address. Kubernetes keeps reality matching that description. If a container crashes it restarts it. If a node dies it moves the work. When you deploy a new version it rolls it out gradually and can roll it back.</p><p>Around that core sits a large ecosystem: ingress controllers for traffic, operators for databases, Helm charts for packaging, service meshes, autoscalers. That ecosystem is both the strength and the cost. Each piece is something your team chooses, configures, upgrades and debugs.</p><p>Adoption is high among teams already using containers. The <a href=\"https://www.cncf.io/announcements/2026/01/20/kubernetes-established-as-the-de-facto-operating-system-for-ai-as-production-use-hits-82-in-2025-cncf-annual-cloud-native-survey/\" rel=\"noopener noreferrer nofollow\">CNCF 2025 annual survey</a>, announced on 20 January 2026, says 82% of container users now run Kubernetes in production, up from 66% in 2023. The same survey lists the top challenges as cultural changes with the development team (47%), lack of training (36%), security (36%) and complexity (34%). Note who was asked: people already in the cloud native world, not a cross-section of small Indian businesses.</p><figure><img src=\"/assets/blog/kubernetes-when-you-need-it/1.webp\" alt=\"Infographic comparing a single server, a managed container service and Kubernetes by what the team must run\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Each step up gives more control and more to run yourself.</figcaption></figure><h2 id=\"what-it-costs-the-control-plane-fee-and-the-hidden-bill\">What it costs: the control plane fee and the hidden bill</h2><p>Every managed Kubernetes service charges for the worker machines you run. Most also charge for the control plane, the part that manages the cluster. Here is what each provider publishes.</p><p><em>Managed Kubernetes cluster management fees, from official pricing pages</em></p><table><thead><tr><th>Service</th><th>Cluster management fee</th><th>Notes</th></tr></thead><tbody><tr><td>Amazon EKS, standard support</td><td>$0.10 per cluster per hour</td><td>A Kubernetes version gets standard support for 14 months after release in EKS</td></tr><tr><td>Amazon EKS, extended support</td><td>$0.60 per cluster per hour</td><td>Charged for a further 12 months if you stay on an older version</td></tr><tr><td>Google Kubernetes Engine</td><td>$0.10 per cluster per hour, billed per second</td><td>Free tier gives $74.40 a month in credits per billing account, about one free Autopilot or zonal Standard cluster</td></tr><tr><td>Azure AKS, Free tier</td><td>Free cluster management</td><td>For development and test; no financially backed uptime SLA; recommended for fewer than 10 nodes</td></tr><tr><td>Azure AKS, Standard tier</td><td>Paid; see Azure's pricing page</td><td>Uptime SLA of 99.95% for the API server with availability zones, 99.9% without</td></tr></tbody></table><p><em>Source: </em><a href=\"https://aws.amazon.com/eks/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Amazon EKS pricing</em></a><em> and </em><a href=\"https://cloud.google.com/kubernetes-engine/pricing\" rel=\"noopener noreferrer nofollow\"><em>GKE pricing</em></a><em> and </em><a href=\"https://learn.microsoft.com/en-us/azure/aks/free-standard-pricing-tiers\" rel=\"noopener noreferrer nofollow\"><em>AKS pricing tiers, Microsoft Learn</em></a><em>, read 16 November 2026.</em></p><p>The arithmetic on the fee itself is small. At $0.10 an hour, a cluster running all month (about 730 hours) costs about $73 in management fees, before any machines. On GKE the free tier credit covers roughly one such cluster. If you fall behind on EKS upgrades, the fee rises to $0.60 an hour, about $438 a month per cluster for doing nothing differently.</p><figure><img src=\"/assets/blog/kubernetes-when-you-need-it/4.webp\" alt=\"Annotated Amazon EKS pricing page showing the standard and extended support fees\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Staying on an old version on EKS costs six times the normal fee.</figcaption></figure><p>The real bill is elsewhere:</p><ul><li><strong>Machines that sit idle.</strong> A cluster needs nodes running all the time, sized for peaks, plus spare room so pods can move when a node fails.</li><li><strong>The add-ons.</strong> Load balancers, logging, monitoring and storage each have their own charges.</li><li><strong>People.</strong> Someone has to understand networking, permissions, upgrades and the ten tools around the cluster. That is the line item a small team feels most.</li><li><strong>More clusters than planned.</strong> Most teams end up with at least a staging cluster and a production cluster, which doubles the fixed costs.</li></ul><h2 id=\"the-upgrade-treadmill\">The upgrade treadmill</h2><p>Kubernetes moves fast. The <a href=\"https://kubernetes.io/releases/\" rel=\"noopener noreferrer nofollow\">Kubernetes releases page</a> says the project maintains release branches for the most recent three minor releases, which when I checked were 1.37, 1.36 and 1.35, and that Kubernetes 1.19 and newer receive approximately 1 year of patch support. It lists end-of-life dates for 1.35 in February 2027 and 1.37 in October 2027.</p><p>In practice that means a cluster must move to a new minor version roughly once a year at the very least, and each move can deprecate APIs your manifests or Helm charts rely on. Managed services soften this but do not remove it. EKS's 14 months of standard support, followed by 12 months of extended support at six times the fee, is a clear financial nudge to keep up.</p><figure><img src=\"/assets/blog/kubernetes-when-you-need-it/2.webp\" alt=\"Annotated Kubernetes releases page showing three maintained minor releases and about one year of patch support\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The Kubernetes project supports only the three newest minor versions.</figcaption></figure><p>A small team that cannot set aside a few days a year for cluster upgrades, and test them on staging first, is better off on a service where the provider does the upgrading.</p><h2 id=\"simpler-options-that-cover-most-startups\">Simpler options that cover most startups</h2><p>Between \"one server\" and \"Kubernetes\" there are managed container services that run your containers without asking you to run a cluster.</p><p><em>Simpler container platforms and how they bill, from official pricing pages</em></p><table><thead><tr><th>Service</th><th>How it bills</th><th>What you still manage</th></tr></thead><tbody><tr><td>Amazon ECS on EC2</td><td>No additional charge for ECS; you pay for the EC2 instances, volumes and IPs you create</td><td>The instances and their patching</td></tr><tr><td>Amazon ECS on Fargate</td><td>The vCPU and memory each task requests, per second, with a one-minute minimum</td><td>Only the containers</td></tr><tr><td>Google Cloud Run</td><td>Per use; free tier of 2 million requests, 240,000 vCPU-seconds and 450,000 GiB-seconds a month (us-central1 basis)</td><td>Only the containers</td></tr></tbody></table><p><em>Source: </em><a href=\"https://aws.amazon.com/ecs/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Amazon ECS pricing</em></a><em> and </em><a href=\"https://cloud.google.com/run/pricing\" rel=\"noopener noreferrer nofollow\"><em>Cloud Run pricing</em></a><em>, read 16 November 2026.</em></p><p>For a typical startup backend, an API, a worker and a scheduled job, one of these does everything Kubernetes would, with no control plane to upgrade. Azure has comparable managed container services too; check its pricing page for the current terms.</p><p>A plain virtual machine with Docker Compose, good backups and a deploy script is also a respectable choice for an early product. It is not fashionable, but it is easy to understand and cheap. Our guide to <a href=\"/blogs/choosing-cloud-provider\">choosing a cloud provider</a> covers where to host it in India.</p><h2 id=\"what-a-small-production-cluster-really-involves\">What a small production cluster really involves</h2><p>When people say \"we will just use Kubernetes\", they usually picture the cluster. Here is the list of things a small team actually ends up owning in the first month, even on a managed service:</p><ul><li><strong>Ingress and TLS.</strong> A controller that routes outside traffic to the right service, plus automatic certificate renewal for your domains.</li><li><strong>Secrets.</strong> Database passwords and API keys stored in the cluster or pulled from the cloud's secret store, with access limited to the services that need them.</li><li><strong>Identity and permissions.</strong> Who on the team can deploy, who can read logs, which pods can call which cloud services. Mistakes here are the usual source of security incidents.</li><li><strong>Autoscaling.</strong> One autoscaler for pods and another for nodes, tuned so that a traffic spike adds machines in time and a quiet night removes them.</li><li><strong>Deployment pipeline.</strong> Builds container images, pushes them to a registry and applies manifests or Helm charts, ideally with a way to roll back in one step.</li><li><strong>Logs, metrics and alerts.</strong> Collected from every pod and node, kept for long enough to debug last week's incident.</li><li><strong>Backups.</strong> Of your databases, which should normally live outside the cluster in a managed database service, and of the cluster configuration itself.</li></ul><p>None of this is exotic, and each item has good open source and managed answers. But each is a decision, a configuration and an upgrade. On a managed container service, most of these are either built in or reduced to a setting.</p><h2 id=\"keeping-the-door-open-how-to-move-later-without-a-rewrite\">Keeping the door open: how to move later without a rewrite</h2><p>The good news is that the choice is not permanent if you build the app sensibly from the start. A few habits make a later move to Kubernetes, or away from it, a matter of weeks rather than months:</p><ul><li>Package every service as a container image, built the same way for every environment.</li><li>Read all configuration, such as database addresses and keys, from environment variables, not from files baked into the image.</li><li>Keep services stateless. Uploaded files go to object storage, sessions go to a database or cache, nothing important lives on the container's disk.</li><li>Add a health-check endpoint to each service, because every platform, from Cloud Run to Kubernetes, uses one to decide when a container is ready.</li><li>Write your infrastructure as code from day one, so the setup is a file in your repository rather than clicks nobody remembers.</li></ul><p>A team that follows these habits on ECS or Cloud Run can move to EKS or GKE when the signs below appear, and will already have done the hard part.</p><h2 id=\"signs-you-are-ready-for-kubernetes\">Signs you are ready for Kubernetes</h2><p>I would start to consider Kubernetes when several of these are true at the same time, not just one:</p><ul><li>You run more than about ten services that deploy separately, and the simpler platform's limits are getting in the way.</li><li>Several teams ship on their own schedules and need a shared, consistent way to deploy.</li><li>You need the same platform on more than one cloud or in a customer's own data centre, which is common for B2B software sold to Indian enterprises and banks.</li><li>You run workloads the simpler services handle badly, such as GPU jobs, long-running stateful processes or custom networking.</li><li>You have at least one person, ideally two, who has run Kubernetes in production and will own it.</li></ul><p>If you are breaking a product into many services mainly to justify Kubernetes, stop. Our post on <a href=\"/blogs/microservices-when\">when microservices make sense</a> covers that decision first.</p><h2 id=\"step-by-step-deciding-for-your-product\">Step by step: deciding for your product</h2><p><strong>Step 1. Count what you actually run.</strong> List every process in production: API, workers, cron jobs, admin panel. Most early products have fewer than five.</p><p><strong>Step 2. Write down your real traffic pattern.</strong> Steady, daily peaks, or rare large spikes such as exam results or sale days. Managed services with autoscaling handle spikes well.</p><p><strong>Step 3. Name the person who will run it.</strong> If nobody on the team has operated Kubernetes in production, the true cost includes hiring or training them.</p><p><strong>Step 4. Price both options for a month.</strong> Use the provider's calculator with your Indian region: Kubernetes nodes plus fees for staging and production, against the managed container service at your expected usage.</p><p><strong>Step 5. Check customer and compliance demands.</strong> Some enterprise buyers require deployment into their own environment. If so, Kubernetes may be the standard they expect.</p><p><strong>Step 6. Containerise anyway.</strong> Whatever you choose, package the app as containers with configuration in environment variables. That keeps the move to Kubernetes later a migration, not a rewrite.</p><p><strong>Step 7. Set up monitoring before scaling up.</strong> Whatever runs your containers, you need logs, metrics and alerts. Our guide to <a href=\"/blogs/observability-before-you-need-it\">observability before you need it</a> covers the basics.</p><p>If you want this worked through with a written answer, our ₹3,500 requirement analysis is a call with the people who will build your product, ending in a fixed quotation and timeline that includes the hosting plan (<a href=\"/book\">how it works</a>). The cloud account and credentials stay in your name.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients, and the figures are made up for the example.</p><h3 id=\"an-exam-prep-platform-in-hyderabad\">An exam-prep platform in Hyderabad</h3><p>A coaching institute's test app has quiet weekdays and a huge spike on the morning of each mock test. It runs an API, a scoring worker and a nightly report job. That is three services. I would put them on a managed container service that scales on requests, such as Cloud Run or ECS on Fargate, and spend the effort on load-testing the mock test morning. Kubernetes would add a cluster to babysit with no gain they would notice.</p><figure><img src=\"/assets/blog/kubernetes-when-you-need-it/3.webp\" alt=\"Illustration of a coaching institute's tech lead watching a traffic spike on exam morning\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A spiky but simple product is a job for autoscaling, not a cluster.</figcaption></figure><h3 id=\"a-logistics-saas-selling-to-large-shippers\">A logistics SaaS selling to large shippers</h3><p>A B2B product has around fifteen services across three teams, and two enterprise customers have asked to run it inside their own cloud accounts. Here Kubernetes earns its place: one packaging format for every environment, consistent deploys across teams, and a platform the customers' own IT teams recognise. I would use a managed service such as EKS, GKE or AKS, hire or contract someone who has run it before, and budget for the yearly upgrades from the start. Our <a href=\"/services/saas-paas-development\">SaaS development</a> page describes how we approach products like this.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>A small chain wants online booking, reminders and a staff dashboard. It is one backend, one database and a background job for reminders. A single well-sized server or a managed container service is enough, with automatic database backups and an uptime alert. The budget saved on platform work is better spent on making the booking flow work on low-cost phones.</p><h2 id=\"ways-the-kubernetes-decision-goes-wrong\">Ways the Kubernetes decision goes wrong</h2><ol><li><strong>Choosing it for the CV.</strong> Engineers like learning Kubernetes. That is a fair reason to learn it, not a reason for your product to carry it.</li><li><strong>Running it without an owner.</strong> A cluster nobody understands is a slow outage waiting to happen.</li><li><strong>Skipping upgrades.</strong> Falling off support means security patches stop and, on EKS, the fee jumps to $0.60 an hour.</li><li><strong>Self-managing the control plane.</strong> Running Kubernetes yourself on raw machines to save the management fee usually costs far more in time.</li><li><strong>Moving to Kubernetes to fix slowness.</strong> A slow database query is still slow on Kubernetes. Measure first.</li><li><strong>Forgetting staging.</strong> Upgrades and config changes need a cluster to test on, which doubles the fixed cost.</li></ol><h2 id=\"a-checklist-before-you-adopt-kubernetes\">A checklist before you adopt Kubernetes</h2><ol><li>You run, or will soon run, more services than a simpler platform handles comfortably.</li><li>A named person with production Kubernetes experience owns the cluster.</li><li>You have priced staging and production clusters, nodes and add-ons for a full month.</li><li>You use a managed service (EKS, GKE or AKS), not a self-built control plane.</li><li>There is a calendar for minor-version upgrades, tested on staging first.</li><li>Logs, metrics and alerts work before the first production deploy.</li><li>The app is containerised so you could move back to a simpler platform if needed.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"does-a-startup-need-kubernetes\">Does a startup need Kubernetes?</h3><p>Usually not at first. A product with a handful of services is well served by a managed container service such as Amazon ECS or Google Cloud Run, or a well-run virtual machine. Kubernetes pays off with many services, several teams, multi-environment deployments, and someone experienced to run it.</p><h3 id=\"how-much-does-managed-kubernetes-cost-per-month\">How much does managed Kubernetes cost per month?</h3><p>The cluster management fee on Amazon EKS and Google GKE is $0.10 per cluster per hour, about $73 for a full month. GKE's free tier gives $74.40 a month in credits per billing account. Azure AKS's Free tier has no management fee but no uptime SLA. Worker machines are charged separately.</p><h3 id=\"what-happens-if-i-do-not-upgrade-my-eks-cluster\">What happens if I do not upgrade my EKS cluster?</h3><p>Amazon EKS gives each Kubernetes version 14 months of standard support at $0.10 per cluster per hour. After that the cluster moves to extended support for 12 months at $0.60 per cluster per hour.</p><h3 id=\"how-often-does-kubernetes-need-upgrading\">How often does Kubernetes need upgrading?</h3><p>The Kubernetes project maintains only the three most recent minor releases, and versions 1.19 and newer get approximately 1 year of patch support. Plan to move to a newer minor version at least once a year.</p><h3 id=\"what-are-the-alternatives-to-kubernetes\">What are the alternatives to Kubernetes?</h3><p>Managed container services such as Amazon ECS, which has no extra charge on EC2, AWS Fargate, which bills per vCPU and memory requested, and Google Cloud Run, which has a monthly free tier. A virtual machine with Docker Compose also works for early products.</p><h3 id=\"is-the-aks-free-tier-fine-for-production\">Is the AKS Free tier fine for production?</h3><p>Microsoft recommends the Free tier for development, testing and non-production workloads, ideally with fewer than 10 nodes, and says it has no financially backed uptime SLA. For production, Microsoft points to the Standard tier or AKS Automatic.</p><h3 id=\"how-many-companies-use-kubernetes-in-production\">How many companies use Kubernetes in production?</h3><p>The CNCF's 2025 annual survey says 82% of container users run Kubernetes in production, up from 66% in 2023. The respondents are cloud native practitioners, so the figure does not describe small businesses in general.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://kubernetes.io/releases/\" rel=\"noopener noreferrer nofollow\">Releases, Kubernetes</a>, read 16 November 2026</li><li><a href=\"https://aws.amazon.com/eks/pricing/\" rel=\"noopener noreferrer nofollow\">Amazon EKS pricing, Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/kubernetes-engine/pricing\" rel=\"noopener noreferrer nofollow\">Google Kubernetes Engine pricing, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/azure/aks/free-standard-pricing-tiers\" rel=\"noopener noreferrer nofollow\">AKS Free, Standard and Premium pricing tiers, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://aws.amazon.com/ecs/pricing/\" rel=\"noopener noreferrer nofollow\">Amazon ECS pricing, Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/run/pricing\" rel=\"noopener noreferrer nofollow\">Cloud Run pricing, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://www.cncf.io/announcements/2026/01/20/kubernetes-established-as-the-de-facto-operating-system-for-ai-as-production-use-hits-82-in-2025-cncf-annual-cloud-native-survey/\" rel=\"noopener noreferrer nofollow\">CNCF annual cloud native survey announcement, Cloud Native Computing Foundation</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian tech lead deciding on infrastructure beside the words Kubernetes yet?",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian tech lead (woman in her early 30s, cotton shirt, hair tied back) at a whiteboard in a small startup office, sketching a few simple boxes on one side and a tangle of many connected boxes on the other (abstract shapes only, no readable text), a laptop on a nearby desk. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Kubernetes yet?' in very large bold black sans-serif, left-aligned, on two lines ('Kubernetes' / 'yet?'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic comparing a single server, a managed container service and Kubernetes by what the team must run",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Three ways to run your containers'. Three columns joined left to right by orange arrows: 1) single server icon with dark-blue pill 'One server + Docker' and smaller pill 'You run: the server'; 2) cloud with box icon, pill 'Managed containers (ECS, Cloud Run)' and smaller pill 'You run: the containers'; 3) ship's wheel style cluster icon, pill 'Kubernetes (EKS, GKE, AKS)' and smaller pill 'You run: cluster, add-ons, upgrades'. One-line bold takeaway at bottom: 'More control means more to run.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Kubernetes releases page showing three maintained minor releases and about one year of patch support",
+   "url": "https://kubernetes.io/releases/",
+   "annotate": [
+    {
+     "text": "most recent three minor releases",
+     "label": "Only 3 versions supported"
+    },
+    {
+     "text": "approximately 1 year of patch support",
+     "label": "Upgrade yearly"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a coaching institute's tech lead watching a traffic spike on exam morning",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Early morning in a coaching institute office in Hyderabad: a young Indian developer in a hoodie with a cup of chai watches a monitor showing an abstract rising line chart, through a glass partition students sit at desks with phones and tablets. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Amazon EKS pricing page showing the standard and extended support fees",
+   "url": "https://aws.amazon.com/eks/pricing/",
+   "annotate": [
+    {
+     "text": "$0.60 per cluster per hour",
+     "label": "Extended support fee"
+    }
+   ]
+  }
+ ]
+}

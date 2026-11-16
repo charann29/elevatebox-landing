@@ -1,0 +1,205 @@
+{
+ "slug": "choosing-a-database",
+ "locale": "en",
+ "title": "Choosing a database: Postgres, MySQL, MongoDB or Firebase",
+ "description": "Choosing a database for an Indian startup: Postgres, MySQL, MongoDB or Firebase, with managed prices in Mumbai and Central India, free tiers and a checklist.",
+ "imageUrl": "/assets/blog/choosing-a-database/cover.webp",
+ "imageAlt": "Illustration of an Indian developer sorting records into labelled drawers beside the words Pick a database",
+ "ogImageUrl": null,
+ "tags": [
+  "databases",
+  "PostgreSQL",
+  "MongoDB",
+  "Firebase"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-01-10T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "postgres-mysql-mongodb-or-firebase-the-short-answer",
+   "text": "Postgres, MySQL, MongoDB or Firebase: the short answer",
+   "level": 2
+  },
+  {
+   "id": "what-developers-actually-use",
+   "text": "What developers actually use",
+   "level": 2
+  },
+  {
+   "id": "the-four-options-in-plain-words",
+   "text": "The four options, in plain words",
+   "level": 2
+  },
+  {
+   "id": "postgresql",
+   "text": "PostgreSQL",
+   "level": 3
+  },
+  {
+   "id": "mysql",
+   "text": "MySQL",
+   "level": 3
+  },
+  {
+   "id": "mongodb",
+   "text": "MongoDB",
+   "level": 3
+  },
+  {
+   "id": "firebase-cloud-firestore-and-realtime-database",
+   "text": "Firebase (Cloud Firestore and Realtime Database)",
+   "level": 3
+  },
+  {
+   "id": "managed-database-prices-in-indian-regions",
+   "text": "Managed database prices in Indian regions",
+   "level": 2
+  },
+  {
+   "id": "free-tiers-for-prototypes",
+   "text": "Free tiers for prototypes",
+   "level": 2
+  },
+  {
+   "id": "where-the-database-lives-india-rules-in-brief",
+   "text": "Where the database lives: India rules in brief",
+   "level": 2
+  },
+  {
+   "id": "the-second-database-you-will-probably-add",
+   "text": "The second database you will probably add",
+   "level": 2
+  },
+  {
+   "id": "changing-your-mind-later",
+   "text": "Changing your mind later",
+   "level": 2
+  },
+  {
+   "id": "how-to-choose-the-questions-that-decide-it",
+   "text": "How to choose: the questions that decide it",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-pharmacy-chain-with-five-branches",
+   "text": "A pharmacy chain with five branches",
+   "level": 3
+  },
+  {
+   "id": "a-community-app-with-live-chat",
+   "text": "A community app with live chat",
+   "level": 3
+  },
+  {
+   "id": "an-edtech-content-platform",
+   "text": "An edtech content platform",
+   "level": 3
+  },
+  {
+   "id": "ways-the-database-decision-goes-wrong",
+   "text": "Ways the database decision goes wrong",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-go-live",
+   "text": "A checklist before you go live",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Which database is best for a startup in India?",
+   "a": "For most business apps, managed PostgreSQL in an Indian region is the safest default: it handles relational data and JSON, and is the most used database in the Stack Overflow 2025 survey. Choose Firebase for real-time, offline-first mobile apps, and MongoDB for genuinely document-shaped data."
+  },
+  {
+   "q": "PostgreSQL or MySQL: which should I choose?",
+   "a": "Both are mature relational databases and cost about the same on Amazon RDS in Mumbai. Choose the one your team knows better. For a new project with no preference, Postgres's JSON support and strong data rules make it a slightly better default."
+  },
+  {
+   "q": "How much does a managed database cost in Mumbai?",
+   "a": "On AWS's price list for ap-south-1, Amazon RDS db.t4g.micro for PostgreSQL or MySQL costs $0.021 per hour Single-AZ, about $15 a month, or $0.042 Multi-AZ. A db.m7g.large with 8 GiB costs $0.24 per hour. Storage is $0.131 per GB-month."
+  },
+  {
+   "q": "Is Firebase good enough for production?",
+   "a": "Yes, for apps whose core is real-time sync, offline use and simple data access from the phone. It is harder for complex reporting and joins. Firestore's free quota is 1 GiB stored, 50,000 reads and 20,000 writes per day, so model your reads before launch."
+  },
+  {
+   "q": "Does MongoDB Atlas have a free tier?",
+   "a": "Yes. MongoDB's pricing page lists a Free tier with 512 MB of storage, a Flex tier at $0.011 per hour up to $30 a month, and Dedicated clusters from $0.08 per hour, starting at $56.94 a month."
+  },
+  {
+   "q": "How long is a PostgreSQL version supported?",
+   "a": "Five years from its first release. When I checked, PostgreSQL 18 was current, 19 was at release candidate, and 14 reached its final release on 12 November 2026."
+  },
+  {
+   "q": "Can I use Azure's Burstable tier for my production database?",
+   "a": "Microsoft says the Burstable tier is not recommended for production workloads, because when CPU credits run out the server is held to baseline performance. Use General Purpose for production."
+  }
+ ],
+ "contentHtml": "<h2 id=\"postgres-mysql-mongodb-or-firebase-the-short-answer\">Postgres, MySQL, MongoDB or Firebase: the short answer</h2><p><strong>In short:</strong> For most Indian startups building a business app, choose PostgreSQL on a managed service in an Indian region. It handles relational data, JSON and search well, it is the most used database among developers, and a small managed instance in Mumbai starts at about $15 a month. Choose Firebase when you need real-time sync and offline support in a mobile app with a tiny team, and MongoDB when your data is genuinely document-shaped and changes structure often.</p><p>MySQL is also a sound choice, especially if your team or your existing software already uses it. The gap between MySQL and Postgres matters far less than the gap between a well-run managed database and a database on a server nobody backs up.</p><p>This guide was checked in November 2026, against AWS's price list for the Mumbai region (published 13 November 2026), Microsoft's retail prices API for Central India, MongoDB Atlas and Firebase pricing pages, the PostgreSQL versioning policy and the Stack Overflow 2025 Developer Survey. Prices are in US dollars as published; check your invoice currency and GST with your accountant.</p><h2 id=\"what-developers-actually-use\">What developers actually use</h2><p>Popularity is not a reason on its own, but it decides how easy it is to hire, find answers and find libraries. Here is the Stack Overflow 2025 survey.</p><p><em>Share of developers who used each database in the past year, Stack Overflow Developer Survey 2025</em></p><table><thead><tr><th>Database</th><th>All respondents</th><th>Professional developers</th></tr></thead><tbody><tr><td>PostgreSQL</td><td>55.6%</td><td>58.2%</td></tr><tr><td>MySQL</td><td>40.5%</td><td>39.6%</td></tr><tr><td>SQLite</td><td>37.5%</td><td>36.9%</td></tr><tr><td>Redis</td><td>28%</td><td>30.7%</td></tr><tr><td>MongoDB</td><td>24%</td><td>24.3%</td></tr><tr><td>Cloud Firestore</td><td>5.7%</td><td>5.7%</td></tr><tr><td>Firebase Realtime Database</td><td>5%</td><td>4.7%</td></tr></tbody></table><p><em>Source: </em><a href=\"https://survey.stackoverflow.co/2025/technology\" rel=\"noopener noreferrer nofollow\"><em>Stack Overflow Developer Survey 2025, Technology</em></a><em>, read 16 November 2026.</em></p><p>The survey is global and self-selected, not a census of Indian developers. Still, the order matches what I see in Indian hiring: Postgres and MySQL developers are easy to find, MongoDB is common in Node.js teams, and Firebase skills usually sit with mobile developers rather than backend specialists.</p><h2 id=\"the-four-options-in-plain-words\">The four options, in plain words</h2><h3 id=\"postgresql\">PostgreSQL</h3><p>A relational database: data lives in tables with defined columns, and you join tables to answer questions. It enforces rules such as \"every order must belong to a customer\" at the database level, so bad data is rejected rather than quietly stored. It also stores and queries JSON well, which covers many cases people reach for MongoDB for.</p><p>Postgres has a clear support policy. The <a href=\"https://www.postgresql.org/support/versioning/\" rel=\"noopener noreferrer nofollow\">PostgreSQL versioning page</a> says the project supports a major version for 5 years after its first release. When I checked, version 18 was current (first released 25 September 2025), version 19 was at release candidate, and version 14 reached its final release on 12 November 2026. If your database is on 14 or older, plan the upgrade now.</p><figure><img src=\"/assets/blog/choosing-a-database/1.webp\" alt=\"Annotated PostgreSQL versioning page showing the five-year support policy\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Each Postgres major version gets five years of fixes.</figcaption></figure><h3 id=\"mysql\">MySQL</h3><p>Also relational, older and very widely used, especially with PHP applications, WordPress and many off-the-shelf Indian business tools. Managed MySQL costs about the same as managed Postgres on AWS. If your team knows MySQL well, there is no need to switch for a new project.</p><h3 id=\"mongodb\">MongoDB</h3><p>A document database: each record is a JSON-like document, and documents in one collection can have different fields. It is quick to start with and natural for data such as product catalogues with very different attributes or content blocks. The cost is that rules about relationships move from the database into your code, and reporting across collections takes more work.</p><h3 id=\"firebase-cloud-firestore-and-realtime-database\">Firebase (Cloud Firestore and Realtime Database)</h3><p>Google's mobile backend. Apps read and write data directly from the phone, changes sync to other devices in real time, and offline use works out of the box. Security is written as rules rather than server code. It is excellent for chat, live status and collaborative features with a small team, and harder for complex reporting, joins and anything that needs strong server-side business logic.</p><figure><img src=\"/assets/blog/choosing-a-database/2.webp\" alt=\"Infographic showing which database fits which kind of app\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Match the database to the shape of your data, not to the trend.</figcaption></figure><h2 id=\"managed-database-prices-in-indian-regions\">Managed database prices in Indian regions</h2><p>These are on-demand prices from each provider's own data for Indian regions, read on 16 November 2026. They are list prices; reserved or committed pricing is lower.</p><p><em>Managed database list prices in Indian regions, from official price data</em></p><table><thead><tr><th>Service and size</th><th>Region</th><th>Price</th><th>About per month (730 hours)</th></tr></thead><tbody><tr><td>Amazon RDS for PostgreSQL or MySQL, db.t4g.micro (2 vCPU, 1 GiB), Single-AZ</td><td>Mumbai (ap-south-1)</td><td>$0.021 per hour</td><td>$15.33</td></tr><tr><td>Same, Multi-AZ (standby in a second zone)</td><td>Mumbai</td><td>$0.042 per hour</td><td>$30.66</td></tr><tr><td>Amazon RDS for PostgreSQL, db.m7g.large (2 vCPU, 8 GiB), Single-AZ</td><td>Mumbai</td><td>$0.24 per hour</td><td>$175.20</td></tr><tr><td>Amazon RDS gp3 storage, Single-AZ</td><td>Mumbai</td><td>$0.131 per GB-month</td><td>$2.62 for 20 GB</td></tr><tr><td>Azure Database for PostgreSQL Flexible Server, Burstable B1ms (1 vCore, 2 GiB)</td><td>Central India</td><td>$0.0245 per hour</td><td>$17.89</td></tr><tr><td>Azure PostgreSQL Flexible Server, General Purpose D2ds_v5 (2 vCores, 8 GiB)</td><td>Central India</td><td>$0.251 per hour</td><td>$183.23</td></tr><tr><td>Azure PostgreSQL Flexible Server storage</td><td>Central India</td><td>$0.131 per GB-month</td><td>$4.19 for the 32 GiB minimum</td></tr><tr><td>MongoDB Atlas Flex</td><td>Any (global list price)</td><td>$0.011 per hour</td><td>Up to $30</td></tr><tr><td>MongoDB Atlas Dedicated</td><td>Any (global list price)</td><td>From $0.08 per hour</td><td>From $56.94</td></tr></tbody></table><p><em>Source: </em><a href=\"https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.csv\" rel=\"noopener noreferrer nofollow\"><em>AWS Price List for Amazon RDS, ap-south-1</em></a><em> and </em><a href=\"https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices\" rel=\"noopener noreferrer nofollow\"><em>Azure Retail Prices API, centralindia</em></a><em> and </em><a href=\"https://learn.microsoft.com/en-us/azure/postgresql/compute-storage/concepts-compute\" rel=\"noopener noreferrer nofollow\"><em>Azure PostgreSQL compute options</em></a><em> and </em><a href=\"https://www.mongodb.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>MongoDB pricing</em></a><em>, read 16 November 2026.</em></p><p>The monthly column is my arithmetic: hourly price times 730 hours. Storage for the Azure row uses the 32 GiB minimum that Microsoft's compute page lists. A few things to read into the table:</p><ul><li><strong>Small is cheap; production is not tiny.</strong> The micro and burstable sizes suit development, staging and very early products. Microsoft's own page says the Burstable tier is not recommended for production workloads, because when CPU credits run out the server is held to a baseline that can cause timeouts.</li><li><strong>High availability doubles the bill.</strong> Multi-AZ on RDS runs a standby in a second zone, and the price doubles. For a database holding orders or payments, I think it is worth it once you have paying customers.</li><li><strong>Storage and backups are extra.</strong> Add storage, backup storage beyond the free allowance, and data transfer to every estimate.</li><li><strong>MongoDB Atlas prices are global list prices.</strong> The pricing page shows starting prices, not a Mumbai-specific rate. Check the exact price for your chosen cloud region in the Atlas console before committing.</li></ul><p>I could not read Google Cloud SQL's Mumbai prices: its <a href=\"https://cloud.google.com/sql/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> loads them through a region selector that did not render for me. Use the Google Cloud pricing calculator with asia-south1 selected if you are considering Cloud SQL.</p><h2 id=\"free-tiers-for-prototypes\">Free tiers for prototypes</h2><p><em>No-cost database tiers, from official pricing pages</em></p><table><thead><tr><th>Service</th><th>What is free</th></tr></thead><tbody><tr><td>MongoDB Atlas Free</td><td>512 MB of storage on shared resources, listed as free forever</td></tr><tr><td>Cloud Firestore</td><td>One free database per project: 1 GiB stored, 50,000 reads, 20,000 writes and 20,000 deletes per day, 10 GiB outbound data per month</td></tr><tr><td>Firebase Realtime Database (Spark plan)</td><td>1 GB stored; on Blaze, no cost up to 1 GB then $5 per GB</td></tr><tr><td>Firebase Spark plan</td><td>No-cost usage limits with no payment method needed</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.mongodb.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>MongoDB pricing</em></a><em> and </em><a href=\"https://cloud.google.com/firestore/pricing\" rel=\"noopener noreferrer nofollow\"><em>Firestore pricing</em></a><em> and </em><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>Firebase pricing</em></a><em>, read 16 November 2026.</em></p><p>Free tiers are for building and testing. Firestore's daily read quota in particular can be used up quickly by a popular screen that reads many documents each time it opens, so model your reads before launch.</p><figure><img src=\"/assets/blog/choosing-a-database/3.webp\" alt=\"Annotated MongoDB pricing page showing the free and Flex tiers\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>MongoDB Atlas lists a free tier and a Flex tier capped at $30 a month.</figcaption></figure><h2 id=\"where-the-database-lives-india-rules-in-brief\">Where the database lives: India rules in brief</h2><p>If your product operates a payment system, the RBI's <a href=\"https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11244&Mode=0\" rel=\"noopener noreferrer nofollow\">Storage of Payment System Data circular</a> of 6 April 2018 requires the entire payment data to be stored in a system only in India. That covers the primary database, its replicas and backups. For other personal data the DPDP framework is still being phased in, but keeping the primary database in an Indian region is the simplest position for almost every Indian startup, and it is also the fastest for Indian users.</p><p>The practical checks are short. Confirm the managed service you chose is offered in your Indian region, that its automated backups and any read replicas stay in India, and that analytics exports or support tools do not quietly copy production data abroad.</p><h2 id=\"the-second-database-you-will-probably-add\">The second database you will probably add</h2><p>Most products end up with a main database plus one or two helpers. It is worth knowing them in advance so they are added for a reason, not by habit.</p><ul><li><strong>A cache, usually Redis.</strong> Redis was used by 28% of all respondents in the Stack Overflow 2025 survey. It holds sessions, rate limits and the results of expensive queries in memory. Add it when a specific page or API is slow because the same query runs again and again, not before.</li><li><strong>Search.</strong> Postgres has built-in full-text search that is enough for many catalogues and admin panels. A dedicated search engine earns its place when you need typo tolerance, Indian language support tuned for your users, or ranking that the main database struggles with.</li><li><strong>Analytics.</strong> Heavy reports on the production database slow down the app. Once reports grow, copy data to a separate analytics store or a read replica and run reports there.</li><li><strong>Files.</strong> Images, PDFs and prescriptions belong in object storage, with only their address in the database. Storing files inside database rows makes backups slow and storage expensive.</li></ul><p>Each helper is another system to secure, monitor and pay for. If one database can do the job adequately, that is usually the right answer for the first year.</p><h2 id=\"changing-your-mind-later\">Changing your mind later</h2><p>Switching databases after launch is possible but rarely cheap. Moving between Postgres and MySQL is a known, mostly mechanical job if the code uses standard SQL through a common library. Moving from Firebase or MongoDB to a relational database usually means redesigning the data model and rewriting the parts of the app that read and write it, because the shape of the data changes, not just the engine.</p><p>Two habits keep the option open. Put all database access behind one layer in your code, rather than scattering queries across screens and handlers. And keep a clear written description of your main records and their relationships, even if your database does not enforce them. Both cost little at the start and save weeks if you ever move.</p><h2 id=\"how-to-choose-the-questions-that-decide-it\">How to choose: the questions that decide it</h2><p><strong>Step 1. Sketch your main records and how they relate.</strong> Customers, orders, items, payments, appointments. If most of your screens join two or more of these, you want a relational database.</p><p><strong>Step 2. List your reports.</strong> GST summaries, daily sales, stock by branch. Reports across many records are where relational databases are strongest.</p><p><strong>Step 3. Decide whether real-time sync and offline use are core.</strong> If the app must work on patchy mobile data and sync later, look hard at Firebase, or plan offline support carefully on your own backend. Our guide on <a href=\"/blogs/why-your-app-needs-offline-support\">why your app needs offline support</a> covers the trade-offs.</p><p><strong>Step 4. Check what your team knows.</strong> A team that has run MySQL for years will run it better than a Postgres they are learning.</p><p><strong>Step 5. Pick the managed service and region.</strong> Keep the database in an Indian region near your app servers. Our guide to <a href=\"/blogs/choosing-cloud-provider\">choosing a cloud provider</a> covers the India regions and data rules.</p><p><strong>Step 6. Price production, not the prototype.</strong> Use a production-suitable size with high availability, storage and backups, and write the monthly figure down.</p><p><strong>Step 7. Turn on backups and test a restore.</strong> A backup you have never restored is a hope, not a backup.</p><p>If you want the data model and database worked through with a written answer, our ₹3,500 requirement analysis is a call with the people who will build it, ending in a fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). The database and cloud account stay in your name.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients, and the volumes are invented for the example.</p><h3 id=\"a-pharmacy-chain-with-five-branches\">A pharmacy chain with five branches</h3><p>Stock, batches, expiry dates, purchase orders, sales and GST reports across branches. Every screen joins items to batches to branches. This is relational data, and I would use managed PostgreSQL in Mumbai or Hyderabad, starting on a small instance for testing and moving to a general purpose size with Multi-AZ before go-live. Our <a href=\"/technologies/sql-databases\">SQL databases</a> page covers how we set these up.</p><figure><img src=\"/assets/blog/choosing-a-database/4.webp\" alt=\"Illustration of a pharmacist checking stock on a tablet behind the counter\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Batches, expiry and GST reports are relational data.</figcaption></figure><h3 id=\"a-community-app-with-live-chat\">A community app with live chat</h3><p>A small team building an app for a residents' association: notices, chat, polls, and it must work when the lift lobby has one bar of signal. Real-time updates and offline support are the core features. I would use Firebase with Firestore, write the security rules carefully, and watch the daily read count as usage grows.</p><h3 id=\"an-edtech-content-platform\">An edtech content platform</h3><p>Thousands of lessons and questions, each with a different structure: some with images, some with code, some with nested sub-questions. That is a fair case for a document model. I would still compare MongoDB with Postgres's JSON columns, because student progress, payments and batches are relational and usually live better in tables. Our <a href=\"/technologies/nosql\">NoSQL</a> page covers when we use document databases.</p><h2 id=\"ways-the-database-decision-goes-wrong\">Ways the database decision goes wrong</h2><ol><li><strong>Choosing NoSQL to avoid designing a schema.</strong> The schema still exists; it just lives in scattered code instead of one place.</li><li><strong>Running production on a burstable instance.</strong> Fine for a demo, risky under steady load, as Microsoft warns.</li><li><strong>Self-hosting on a VM to save money.</strong> Backups, patching and failover become your job. A managed service usually costs less than the hours.</li><li><strong>Skipping high availability with paying customers.</strong> One zone failing should not take down checkout.</li><li><strong>Ignoring the version.</strong> Postgres 14 reached its final release on 12 November 2026. Unsupported versions stop getting security fixes.</li><li><strong>Putting the database far from the app.</strong> App servers in Mumbai and a database in another country add delay to every query.</li><li><strong>One database per customer too early.</strong> Our post on <a href=\"/blogs/saas-multi-tenancy-decisions\">SaaS multi-tenancy decisions</a> covers when that is worth it.</li></ol><h2 id=\"a-checklist-before-you-go-live\">A checklist before you go live</h2><ol><li>The database is managed and in an Indian region close to your app servers.</li><li>Production uses a non-burstable size, with Multi-AZ or a standby once customers pay.</li><li>Automated backups are on, with a retention period you have chosen deliberately.</li><li>You have restored a backup into a test environment at least once.</li><li>The engine version has at least two years of support left.</li><li>Monitoring alerts on CPU, storage space and connection count.</li><li>Only your app servers can reach the database; it has no public access.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"which-database-is-best-for-a-startup-in-india\">Which database is best for a startup in India?</h3><p>For most business apps, managed PostgreSQL in an Indian region is the safest default: it handles relational data and JSON, and is the most used database in the Stack Overflow 2025 survey. Choose Firebase for real-time, offline-first mobile apps, and MongoDB for genuinely document-shaped data.</p><h3 id=\"postgresql-or-mysql-which-should-i-choose\">PostgreSQL or MySQL: which should I choose?</h3><p>Both are mature relational databases and cost about the same on Amazon RDS in Mumbai. Choose the one your team knows better. For a new project with no preference, Postgres's JSON support and strong data rules make it a slightly better default.</p><h3 id=\"how-much-does-a-managed-database-cost-in-mumbai\">How much does a managed database cost in Mumbai?</h3><p>On AWS's price list for ap-south-1, Amazon RDS db.t4g.micro for PostgreSQL or MySQL costs $0.021 per hour Single-AZ, about $15 a month, or $0.042 Multi-AZ. A db.m7g.large with 8 GiB costs $0.24 per hour. Storage is $0.131 per GB-month.</p><h3 id=\"is-firebase-good-enough-for-production\">Is Firebase good enough for production?</h3><p>Yes, for apps whose core is real-time sync, offline use and simple data access from the phone. It is harder for complex reporting and joins. Firestore's free quota is 1 GiB stored, 50,000 reads and 20,000 writes per day, so model your reads before launch.</p><h3 id=\"does-mongodb-atlas-have-a-free-tier\">Does MongoDB Atlas have a free tier?</h3><p>Yes. MongoDB's pricing page lists a Free tier with 512 MB of storage, a Flex tier at $0.011 per hour up to $30 a month, and Dedicated clusters from $0.08 per hour, starting at $56.94 a month.</p><h3 id=\"how-long-is-a-postgresql-version-supported\">How long is a PostgreSQL version supported?</h3><p>Five years from its first release. When I checked, PostgreSQL 18 was current, 19 was at release candidate, and 14 reached its final release on 12 November 2026.</p><h3 id=\"can-i-use-azures-burstable-tier-for-my-production-database\">Can I use Azure's Burstable tier for my production database?</h3><p>Microsoft says the Burstable tier is not recommended for production workloads, because when CPU credits run out the server is held to baseline performance. Use General Purpose for production.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://survey.stackoverflow.co/2025/technology\" rel=\"noopener noreferrer nofollow\">2025 Developer Survey: Technology, Stack Overflow</a>, read 16 November 2026</li><li><a href=\"https://www.postgresql.org/support/versioning/\" rel=\"noopener noreferrer nofollow\">Versioning policy, PostgreSQL</a>, read 16 November 2026</li><li><a href=\"https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-south-1/index.csv\" rel=\"noopener noreferrer nofollow\">AWS Price List: Amazon RDS, Asia Pacific (Mumbai), Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://aws.amazon.com/rds/postgresql/pricing/\" rel=\"noopener noreferrer nofollow\">Amazon RDS for PostgreSQL pricing, Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices\" rel=\"noopener noreferrer nofollow\">Azure Retail Prices API, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/azure/postgresql/compute-storage/concepts-compute\" rel=\"noopener noreferrer nofollow\">Compute options in Azure Database for PostgreSQL, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://www.mongodb.com/pricing\" rel=\"noopener noreferrer nofollow\">Pricing, MongoDB</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/firestore/pricing\" rel=\"noopener noreferrer nofollow\">Firestore pricing, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">Firebase pricing, Google</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/sql/pricing\" rel=\"noopener noreferrer nofollow\">Cloud SQL pricing, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11244&Mode=0\" rel=\"noopener noreferrer nofollow\">Storage of Payment System Data, Reserve Bank of India</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian developer sorting records into labelled drawers beside the words Pick a database",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian backend developer (woman in her late 20s, cotton kurta, spectacles) in a small office, placing stacks of abstract record cards into a tall wooden cabinet of neat drawers, a laptop with abstract table shapes beside her (no readable text, no logos). Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Pick a database' in very large bold black sans-serif, left-aligned, on two lines ('Pick a' / 'database'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated PostgreSQL versioning page showing the five-year support policy",
+   "url": "https://www.postgresql.org/support/versioning/",
+   "annotate": [
+    {
+     "text": "supports a major version for 5 years",
+     "label": "5 years per version"
+    },
+    {
+     "text": "November 12, 2026",
+     "label": "Postgres 14 ends"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing which database fits which kind of app",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Which database fits your app?'. Four rows, each a flat icon -> orange arrow -> dark-blue rounded pill with white text: 1) linked tables icon 'Orders, stock, reports' -> pill 'PostgreSQL or MySQL'; 2) phone with sync arrows icon 'Live chat, offline mobile' -> pill 'Firebase'; 3) stack of differently shaped documents icon 'Varied content, changing fields' -> pill 'MongoDB'; 4) team icon 'Team already knows one well' -> pill 'Use what they know'. One-line bold takeaway at bottom: 'Most business apps start on managed Postgres.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated MongoDB pricing page showing the free and Flex tiers",
+   "url": "https://www.mongodb.com/pricing",
+   "annotate": [
+    {
+     "text": "Free forever",
+     "label": "512 MB free tier"
+    },
+    {
+     "text": "$0.011/hour",
+     "label": "Flex, capped at $30"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a pharmacist checking stock on a tablet behind the counter",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. An Indian neighbourhood pharmacy: a pharmacist in a white coat behind the counter checks a tablet showing abstract rows and bars, shelves of medicine boxes behind him, a customer waiting with a prescription paper. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  }
+ ]
+}

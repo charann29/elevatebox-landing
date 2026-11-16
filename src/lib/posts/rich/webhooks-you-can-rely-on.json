@@ -1,0 +1,195 @@
+{
+ "slug": "webhooks-you-can-rely-on",
+ "locale": "en",
+ "title": "Webhook best practices: retries, idempotency, signatures",
+ "description": "Reliable webhooks, checked November 2026: Razorpay's 24-hour retries, Stripe's three days, WhatsApp's seven, signature checks, duplicates and reconciliation.",
+ "imageUrl": "/assets/blog/webhooks-you-can-rely-on/cover.webp",
+ "imageAlt": "Illustration of an Indian developer watching payment events arrive on a laptop beside the words Reliable webhooks",
+ "ogImageUrl": null,
+ "tags": [
+  "webhooks",
+  "Razorpay",
+  "backend",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-10-11T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-a-reliable-webhook-handler-does",
+   "text": "What a reliable webhook handler does",
+   "level": 2
+  },
+  {
+   "id": "retry-rules-of-the-providers-indian-businesses-use",
+   "text": "Retry rules of the providers Indian businesses use",
+   "level": 2
+  },
+  {
+   "id": "the-four-rules-behind-every-reliable-handler",
+   "text": "The four rules behind every reliable handler",
+   "level": 2
+  },
+  {
+   "id": "rule-1-verify-the-signature-on-the-raw-body",
+   "text": "Rule 1: verify the signature on the raw body",
+   "level": 3
+  },
+  {
+   "id": "rule-2-reply-fast-work-later",
+   "text": "Rule 2: reply fast, work later",
+   "level": 3
+  },
+  {
+   "id": "rule-3-assume-every-event-arrives-twice",
+   "text": "Rule 3: assume every event arrives twice",
+   "level": 3
+  },
+  {
+   "id": "rule-4-never-trust-the-order",
+   "text": "Rule 4: never trust the order",
+   "level": 3
+  },
+  {
+   "id": "step-by-step-build-a-webhook-endpoint-that-holds-up",
+   "text": "Step by step: build a webhook endpoint that holds up",
+   "level": 2
+  },
+  {
+   "id": "test-webhooks-before-you-go-live",
+   "text": "Test webhooks before you go live",
+   "level": 2
+  },
+  {
+   "id": "if-you-send-webhooks-yourself",
+   "text": "If you send webhooks yourself",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-from-indian-businesses",
+   "text": "Worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-brand-taking-razorpay-payments",
+   "text": "A D2C brand taking Razorpay payments",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-answering-on-whatsapp",
+   "text": "A coaching institute answering on WhatsApp",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-receiving-lab-results-from-a-partner",
+   "text": "A clinic receiving lab results from a partner",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-that-make-webhooks-unreliable",
+   "text": "Common mistakes that make webhooks unreliable",
+   "level": 2
+  },
+  {
+   "id": "a-weekly-webhook-health-check",
+   "text": "A weekly webhook health check",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How long does Razorpay retry a failed webhook?",
+   "a": "Razorpay retries with exponential backoff for 24 hours after the event was created. If failures continue for 24 hours, the webhook is disabled and you must re-enable it from the Dashboard after fixing the problem. Razorpay emails the Alert Email Address set during webhook setup when this happens."
+  },
+  {
+   "q": "Why am I getting duplicate Razorpay webhooks?",
+   "a": "Usually because your server took longer than 5 seconds to reply, so Razorpay assumed the event was not processed and sent it again. Reply 200 straight after storing the event, and use the x-razorpay-event-id header to skip events you have already handled."
+  },
+  {
+   "q": "How do I verify a Razorpay webhook signature?",
+   "a": "Compute an HMAC with SHA256 over the raw request body, using your webhook secret as the key, and compare it with the X-Razorpay-Signature header. Razorpay says not to parse or cast the body before doing this."
+  },
+  {
+   "q": "How long does Stripe retry webhooks?",
+   "a": "In live mode, Stripe retries for up to three days with exponential backoff. In a sandbox it retries three times over a few hours. You can also resend an event manually from the Dashboard for up to 15 days, or with the Stripe CLI for up to 30 days."
+  },
+  {
+   "q": "Does WhatsApp retry webhooks if my server is down?",
+   "a": "Yes. Meta's WhatsApp webhooks overview says it retries with decreasing frequency for up to 7 days when your endpoint does not return HTTP 200, and that these retries can result in duplicate notifications."
+  },
+  {
+   "q": "Are webhooks delivered in order?",
+   "a": "Do not rely on it. Stripe says it does not guarantee order, and Razorpay says you may not always receive webhooks in order. Design each handler to move state forward only, or to fetch the latest state from the provider's API."
+  },
+  {
+   "q": "Do I still need reconciliation if webhooks are working?",
+   "a": "Yes. Webhooks can be delayed, dropped after the retry window, or disabled. A daily job that compares the provider's API with your database is the safety net that catches what webhooks miss."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-a-reliable-webhook-handler-does\">What a reliable webhook handler does</h2><p><strong>In short:</strong> A reliable webhook handler checks the signature on the raw body, saves the event and replies 2xx within seconds, then processes it from a queue. It ignores events it has already seen by event ID, does not trust delivery order, and has a daily job that fetches anything it missed.</p><p>This guide was checked in November 2026, against Razorpay's, Stripe's and Meta's own webhook documentation, listed at the end. Providers change retry windows, so if a number below matters to you, open the linked page.</p><p>Webhooks look simple: a provider sends your server a POST when something happens. Then a payment shows as captured in Razorpay but the order is still pending in your database, a WhatsApp reply never reaches your CRM, or a customer gets two confirmation SMSes. Nearly every one of these comes from the same handful of mistakes, and the providers' docs already tell you how to avoid them.</p><h2 id=\"retry-rules-of-the-providers-indian-businesses-use\">Retry rules of the providers Indian businesses use</h2><p>The first thing to know about any webhook source is how long it keeps trying when your server is down. That number is your recovery budget.</p><p><em>How Razorpay, Stripe and Meta deliver and retry webhooks</em></p><table><thead><tr><th>Provider</th><th>Success means</th><th>Retries for</th><th>Signature header</th><th>Duplicate guard</th></tr></thead><tbody><tr><td>Razorpay</td><td>A 2xx response within 5 seconds</td><td>24 hours, exponential backoff; webhook disabled if failures continue for 24 hours</td><td>X-Razorpay-Signature (HMAC SHA256 of the raw body)</td><td>x-razorpay-event-id header, unique per event</td></tr><tr><td>Stripe</td><td>A 2xx response; redirects count as failures</td><td>Up to three days in live mode, exponential backoff</td><td>Stripe-Signature (timestamp plus HMAC SHA-256)</td><td>Event ID; log processed IDs</td></tr><tr><td>Meta webhooks (Graph API)</td><td>200 OK</td><td>A few more tries over the next 36 hours, then dropped</td><td>X-Hub-Signature-256 (sha256= plus signature using the App Secret)</td><td>Handle each update individually</td></tr><tr><td>WhatsApp Business Platform</td><td>HTTP 200</td><td>Decreasing frequency for up to 7 days</td><td>X-Hub-Signature-256</td><td>Retries can cause duplicates</td></tr></tbody></table><p><em>Source: </em><a href=\"https://razorpay.com/docs/webhooks/best-practices/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay webhook best practices</em></a><em> and </em><a href=\"https://razorpay.com/docs/webhooks/validate-test/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay validation guide</em></a><em> and </em><a href=\"https://docs.stripe.com/webhooks\" rel=\"noopener noreferrer nofollow\"><em>Stripe webhooks docs</em></a><em> and </em><a href=\"https://developers.facebook.com/docs/graph-api/webhooks/getting-started\" rel=\"noopener noreferrer nofollow\"><em>Meta Graph API webhooks</em></a><em> and </em><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview\" rel=\"noopener noreferrer nofollow\"><em>WhatsApp webhooks overview</em></a><em>, read 16 November 2026.</em></p><p>Two things jump out. Razorpay gives you the shortest window, 24 hours, and then switches the webhook off until you re-enable it in the Dashboard. Razorpay notifies the Alert Email Address you set during webhook setup when that happens, so make sure that address goes to someone who reads it. And Razorpay counts a reply slower than 5 seconds as a failure, which is the single most common cause of duplicate payment events I see.</p><figure><img src=\"/assets/blog/webhooks-you-can-rely-on/1.webp\" alt=\"Annotated view of Razorpay's webhook best practices page\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Razorpay retries for 24 hours, then disables the webhook. A response slower than 5 seconds counts as not processed.</figcaption></figure><h2 id=\"the-four-rules-behind-every-reliable-handler\">The four rules behind every reliable handler</h2><h3 id=\"rule-1-verify-the-signature-on-the-raw-body\">Rule 1: verify the signature on the raw body</h3><p>Anyone can POST to a public URL. Razorpay's <a href=\"https://razorpay.com/docs/webhooks/validate-test/\" rel=\"noopener noreferrer nofollow\">validation guide</a> says the signature in X-Razorpay-Signature is an HMAC with SHA256, using your webhook secret as the key and the request body as the message. It warns: \"Do not parse or cast the webhook request body.\" Stripe says the same: any manipulation of the raw body makes verification fail. Meta signs with SHA256 using your App Secret and sends it as X-Hub-Signature-256, prefixed with sha256=.</p><p>The trap is your framework. Express, Next.js route handlers and Django all happily parse JSON before your code sees it. Re-serialising that JSON changes spacing and key order, and the signature no longer matches. Read the raw bytes for the webhook route, verify, then parse. Compare signatures with a constant-time comparison, as Stripe's manual verification steps require.</p><h3 id=\"rule-2-reply-fast-work-later\">Rule 2: reply fast, work later</h3><p>Stripe's docs say your endpoint must quickly return a 2xx \"before any complex logic that could cause a timeout.\" Razorpay's limit is 5 seconds. So the handler should do three things only: verify, write the raw event to a table or queue, return 200. Sending emails, updating stock, generating invoices and calling other APIs all happen in a worker afterwards.</p><p>Stripe also recommends an asynchronous queue because spikes happen, for example at the start of the month when subscriptions renew. In India the same spike comes with a festival sale or a results day.</p><h3 id=\"rule-3-assume-every-event-arrives-twice\">Rule 3: assume every event arrives twice</h3><p>Razorpay says your endpoint \"might receive the same webhook event multiple times\" and gives you x-razorpay-event-id, unique per event, to detect it. Stripe says to log processed event IDs and skip ones already logged, and notes that in some cases two separate Event objects are sent, so also check the object ID with the event type. Meta says WhatsApp retries can cause duplicate notifications.</p><p>The simplest reliable pattern is a processed_events table with a unique constraint on the event ID. Insert first; if the insert fails on the constraint, the event was already handled and you return 200. A database constraint is safer than a check-then-insert in code, because two retries can arrive at the same moment.</p><h3 id=\"rule-4-never-trust-the-order\">Rule 4: never trust the order</h3><p>Stripe states plainly that it does not guarantee delivery in the order events were generated, and that you should not use the created timestamp to order them. Razorpay says you \"may not always receive the webhooks in order.\" So a payment.failed can arrive after payment.captured for the same order on a retry.</p><p>The fix is to make each handler move state forward only. An order that is already paid stays paid if a late failure event arrives. When in doubt, fetch the current state from the provider's API instead of trusting the payload, which Stripe explicitly suggests for missing objects.</p><figure><img src=\"/assets/blog/webhooks-you-can-rely-on/2.webp\" alt=\"Annotated view of Stripe's webhook docs showing retry and ordering rules\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Stripe retries for up to three days in live mode and does not promise delivery order.</figcaption></figure><figure><img src=\"/assets/blog/webhooks-you-can-rely-on/3.webp\" alt=\"Infographic of a reliable webhook pipeline from provider to worker\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Verify, store, reply. Everything else happens in the worker.</figcaption></figure><h2 id=\"step-by-step-build-a-webhook-endpoint-that-holds-up\">Step by step: build a webhook endpoint that holds up</h2><p>This is the order I would build it in, whether the source is Razorpay, Stripe, WhatsApp or a courier partner.</p><p><strong>Step 1. Give each provider its own route.</strong> /webhooks/razorpay, /webhooks/whatsapp. Different secrets, different verification code, different logs. Razorpay requires webhook URLs on port 80 or 443 only, and Meta does not accept self-signed certificates, so use a proper HTTPS certificate from day one.</p><p><strong>Step 2. Subscribe only to events you use.</strong> Stripe says listening for extra events puts undue strain on your server. Fewer event types also means less code to get wrong.</p><p><strong>Step 3. Read the raw body and verify.</strong> Reject with 400 on a bad signature. For Stripe, also check the timestamp: its libraries default to a 5 minute tolerance against replayed requests, and Stripe warns never to set the tolerance to 0. Keep your server clock synced with NTP.</p><p><strong>Step 4. Store the event, then reply.</strong> Insert the event ID, type and raw payload into a table. Return 200. Aim to finish well inside Razorpay's 5 seconds even on a slow day.</p><p><strong>Step 5. Process from a queue with its own retries.</strong> A worker picks up stored events, runs the business logic, and marks each done. If your own code fails, the worker retries, not the provider. That way a bug in your invoice code does not burn through Razorpay's 24-hour window and disable the webhook.</p><p><strong>Step 6. Make each action idempotent.</strong> \"Mark order paid\" should be safe to run twice. \"Send confirmation\" should check whether it was already sent for that order.</p><p><strong>Step 7. Reconcile daily.</strong> Webhooks are a fast path, not the source of truth. Once a day, list payments from the provider's API for the last 48 hours and compare with your orders. Anything missing gets processed. This is what saves you when a webhook was disabled over a long weekend.</p><p><strong>Step 8. Alert on failure.</strong> Send an alert when signature failures spike, when the queue backs up, or when Razorpay's disable email arrives. Stripe shows delivery status per endpoint under Event deliveries in Workbench; check it after every deploy.</p><p><strong>Step 9. Plan secret rotation.</strong> Stripe lets you keep the old signing secret active for up to 7 days while you deploy the new one, and sends one signature per active secret. Razorpay warns that when retrying older requests after changing the secret, you must use the old one. Write the rotation steps down before you need them.</p><h2 id=\"test-webhooks-before-you-go-live\">Test webhooks before you go live</h2><p>Most webhook bugs show up only with real traffic, so test with something close to it. Stripe's docs suggest two routes when your server runs on a laptop: a tunnelling tool such as ngrok to get a temporary public HTTPS URL, or the Stripe CLI, where stripe listen --forward-to localhost:4242/webhook forwards events to your machine and stripe trigger payment_intent.succeeded fires a test event. Razorpay's <a href=\"https://razorpay.com/docs/webhooks/validate-test/\" rel=\"noopener noreferrer nofollow\">validate and test</a> page covers signature validation alongside testing.</p><p>Whatever the provider, I would run four tests before launch. Send the same event twice and confirm only one order changes. Send events out of order and confirm the final state is right. Stop the worker, send ten events, start it again and confirm all ten are processed. Change one byte of a captured payload and confirm the signature check rejects it. If all four pass, the handler is in better shape than most I am asked to fix.</p><p>Keep the raw payloads from these tests. When a provider changes an event's shape, replaying a saved payload against the new code is the fastest way to see what broke.</p><h2 id=\"if-you-send-webhooks-yourself\">If you send webhooks yourself</h2><p>Many Indian SaaS and logistics products now send webhooks to their own customers. The <a href=\"https://www.standardwebhooks.com/\" rel=\"noopener noreferrer nofollow\">Standard Webhooks</a> project, guided by a steering committee with members from companies including Zapier, Twilio, Supabase, Svix, ngrok and Kong, publishes a free spec for exactly this. It defines three headers: webhook-id, webhook-timestamp and webhook-signature. The signature is HMAC-SHA256 over msg_id.timestamp.payload, prefixed with v1.</p><p>The <a href=\"https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md\" rel=\"noopener noreferrer nofollow\">spec</a> recommends an exponential backoff schedule with random jitter, and gives an example schedule from immediate delivery to 24 hours, with retries at 5 seconds, 5 minutes, 30 minutes, then 2, 5, 10, 14, 20 and 24 hours. It suggests a request timeout of 15 to 30 seconds. Following a published spec means your customers can verify your webhooks with existing libraries instead of your custom code. Version your payloads too; I cover that in our post on <a href=\"/blogs/api-design-that-ages-well\">API versioning</a>.</p><h2 id=\"worked-examples-from-indian-businesses\">Worked examples from Indian businesses</h2><p>These three cases are illustrative. The businesses and volumes are invented to show the reasoning.</p><h3 id=\"a-d2c-brand-taking-razorpay-payments\">A D2C brand taking Razorpay payments</h3><p>A home-decor brand runs a sale and gets a burst of orders. Its webhook handler calls the courier API to book a pickup before replying to Razorpay. The courier API is slow that evening, replies take 8 seconds, and Razorpay treats each one as not processed and sends it again. Some orders get two pickups booked.</p><p>The fix is Rule 2 and Rule 3: store the payment.captured event with its x-razorpay-event-id under a unique constraint, reply 200 at once, and let a worker book the pickup once per order. A nightly job lists the day's captured payments from Razorpay's API and flags any order still marked pending. Our post on <a href=\"/blogs/payment-gateway-integration-pitfalls\">payment gateway integration pitfalls</a> covers the payment side in more depth.</p><h3 id=\"a-coaching-institute-answering-on-whatsapp\">A coaching institute answering on WhatsApp</h3><p>A NEET coaching institute uses the WhatsApp Business Platform for enquiries, and every incoming message is pushed to its CRM by webhook. The CRM server is restarted during a deploy for twenty minutes. Meta retries for up to 7 days with decreasing frequency, so nothing is lost, but the retries arrive in a burst and some messages are logged twice.</p><p>Here the duplicate guard is the WhatsApp message ID inside the payload. The handler verifies X-Hub-Signature-256 with the App Secret, inserts the message ID into a unique-keyed table, and replies 200. Meta's Graph API docs also say updates can be batched, up to 1,000 in one request, but batching is not guaranteed, so the handler loops over every entry rather than assuming one.</p><h3 id=\"a-clinic-receiving-lab-results-from-a-partner\">A clinic receiving lab results from a partner</h3><p>A clinic chain gets a webhook from a partner lab when a report is ready, and the app then notifies the patient. The lab's system sometimes sends report.updated before report.created.</p><p>Rule 4 handles this: the handler treats any report event as \"fetch the latest report by ID from the lab API and upsert it\". Order stops mattering, because each event is just a nudge to go and look. The patient notification fires only when the stored report moves from not ready to ready, which also stops duplicate pushes.</p><figure><img src=\"/assets/blog/webhooks-you-can-rely-on/4.webp\" alt=\"Illustration of a D2C brand owner checking orders on a laptop while parcels wait for pickup\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A slow webhook reply during a sale is how one order ends up with two pickups.</figcaption></figure><h2 id=\"common-mistakes-that-make-webhooks-unreliable\">Common mistakes that make webhooks unreliable</h2><ul><li><strong>Parsing JSON before verifying.</strong> The signature is over the raw bytes. Verify first.</li><li><strong>Doing the work inside the request.</strong> Anything slower than Razorpay's 5 seconds becomes a retry and a possible duplicate.</li><li><strong>Returning 500 for events you do not handle.</strong> An unknown event type should get 200 and a log line, not an error that triggers days of retries.</li><li><strong>Redirecting the webhook URL.</strong> Stripe treats 3xx redirects as failures. A move from http to https, or from a bare domain to www, can silently break delivery.</li><li><strong>Checking for duplicates in code only.</strong> Two simultaneous retries both pass a \"have I seen this?\" check. Use a unique database constraint.</li><li><strong>Trusting the order.</strong> None of the providers above guarantee it.</li><li><strong>No reconciliation.</strong> When Razorpay disables a webhook after 24 hours of failures, only a daily API check will catch what was missed.</li><li><strong>Ignoring the alert email.</strong> Razorpay sends the disable notice to the Alert Email Address set during setup. If that is a former developer's inbox, nobody knows.</li><li><strong>CSRF blocking the route.</strong> Stripe notes Rails and Django may reject webhook POSTs for lacking a CSRF token. Exempt the webhook route, and only that route.</li></ul><h2 id=\"a-weekly-webhook-health-check\">A weekly webhook health check</h2><p>Ten minutes a week is enough for most small teams.</p><ul><li>Open each provider's delivery log (Razorpay Dashboard webhooks, Stripe Event deliveries, Meta App Dashboard) and look for failures or disabled endpoints.</li><li>Check the count of signature failures in your logs. A sudden rise means a secret changed or someone is probing the URL.</li><li>Check the queue: how many stored events are unprocessed, and how old is the oldest?</li><li>Read the reconciliation report: orders paid at the provider but pending in your system, or the reverse.</li><li>Confirm the alert email address on each provider still reaches a person.</li><li>After any deploy that touched middleware, body parsing or domains, send a test event from each provider's dashboard.</li></ul><p>If you want a payments, WhatsApp or partner integration scoped properly before anything is built, including how webhooks, retries and reconciliation will work, that is what our ₹3,500 requirement analysis produces: a call with the people who would build it and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. We also build <a href=\"/ai-solutions/ai-agents-and-automation\">WhatsApp and AI automations</a> where these handlers do the plumbing.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-long-does-razorpay-retry-a-failed-webhook\">How long does Razorpay retry a failed webhook?</h3><p>Razorpay retries with exponential backoff for 24 hours after the event was created. If failures continue for 24 hours, the webhook is disabled and you must re-enable it from the Dashboard after fixing the problem. Razorpay emails the Alert Email Address set during webhook setup when this happens.</p><h3 id=\"why-am-i-getting-duplicate-razorpay-webhooks\">Why am I getting duplicate Razorpay webhooks?</h3><p>Usually because your server took longer than 5 seconds to reply, so Razorpay assumed the event was not processed and sent it again. Reply 200 straight after storing the event, and use the x-razorpay-event-id header to skip events you have already handled.</p><h3 id=\"how-do-i-verify-a-razorpay-webhook-signature\">How do I verify a Razorpay webhook signature?</h3><p>Compute an HMAC with SHA256 over the raw request body, using your webhook secret as the key, and compare it with the X-Razorpay-Signature header. Razorpay says not to parse or cast the body before doing this.</p><h3 id=\"how-long-does-stripe-retry-webhooks\">How long does Stripe retry webhooks?</h3><p>In live mode, Stripe retries for up to three days with exponential backoff. In a sandbox it retries three times over a few hours. You can also resend an event manually from the Dashboard for up to 15 days, or with the Stripe CLI for up to 30 days.</p><h3 id=\"does-whatsapp-retry-webhooks-if-my-server-is-down\">Does WhatsApp retry webhooks if my server is down?</h3><p>Yes. Meta's WhatsApp webhooks overview says it retries with decreasing frequency for up to 7 days when your endpoint does not return HTTP 200, and that these retries can result in duplicate notifications.</p><h3 id=\"are-webhooks-delivered-in-order\">Are webhooks delivered in order?</h3><p>Do not rely on it. Stripe says it does not guarantee order, and Razorpay says you may not always receive webhooks in order. Design each handler to move state forward only, or to fetch the latest state from the provider's API.</p><h3 id=\"do-i-still-need-reconciliation-if-webhooks-are-working\">Do I still need reconciliation if webhooks are working?</h3><p>Yes. Webhooks can be delayed, dropped after the retry window, or disabled. A daily job that compares the provider's API with your database is the safety net that catches what webhooks miss.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://razorpay.com/docs/webhooks/\" rel=\"noopener noreferrer nofollow\">About webhooks, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/webhooks/best-practices/\" rel=\"noopener noreferrer nofollow\">Webhook best practices, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/webhooks/validate-test/\" rel=\"noopener noreferrer nofollow\">Validate and test webhooks, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://docs.stripe.com/webhooks\" rel=\"noopener noreferrer nofollow\">Receive Stripe events in your webhook endpoint, Stripe Docs</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/graph-api/webhooks/getting-started\" rel=\"noopener noreferrer nofollow\">Getting started with webhooks, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview\" rel=\"noopener noreferrer nofollow\">WhatsApp webhooks overview, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://www.standardwebhooks.com/\" rel=\"noopener noreferrer nofollow\">Standard Webhooks</a>, read 16 November 2026</li><li><a href=\"https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md\" rel=\"noopener noreferrer nofollow\">Standard Webhooks specification, GitHub</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian developer watching payment events arrive on a laptop beside the words Reliable webhooks",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian man developer in a half-sleeve shirt at a desk in a small office, laptop open, a phone beside it showing a small bell notification icon, envelope-shaped arrows flying into the laptop from the left. Screens show only abstract shapes and tick marks, no readable text, no logos. Face fully in frame. Right half: the title text 'Reliable webhooks' in very large bold black sans-serif, left-aligned, on two lines ('Reliable' / 'webhooks'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Razorpay's webhook best practices page",
+   "url": "https://razorpay.com/docs/webhooks/best-practices/",
+   "annotate": [
+    {
+     "text": "If the webhooks continue to fail for 24 hours, the webhook is disabled.",
+     "label": "24-hour window"
+    },
+    {
+     "text": "x-razorpay-event-id",
+     "label": "Duplicate guard"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a reliable webhook pipeline from provider to worker",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'A webhook handler that holds up'. Left to right with orange arrows: cloud icon with dark-blue pill 'Provider sends event' -> shield icon with pill 'Verify signature on raw body' -> database icon with pill 'Save event ID (unique)' -> tick icon with pill 'Reply 200 fast'. Below, a second row joined by an orange arrow from the database: gear icon with pill 'Worker processes from queue' -> calendar icon with pill 'Daily check against provider API'. Small grey notes under the top row: 'Razorpay: reply within 5 seconds', 'Retries: Razorpay 24 h, Stripe 3 days, WhatsApp 7 days'. One-line bold takeaway at bottom: 'Verify, store, reply. Do the work later.' No logos, no other text."
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a D2C brand owner checking orders on a laptop while parcels wait for pickup",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian woman D2C brand owner in a small home studio, sitting on a stool with a laptop on a packing table, stacks of wrapped parcels and a roll of tape beside her, cushions and decor pieces on shelves behind. The laptop shows only abstract list rows and a small tick icon, no readable text, no logos. Face fully in frame."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Stripe's webhook docs showing retry and ordering rules",
+   "url": "https://docs.stripe.com/webhooks",
+   "annotate": [
+    {
+     "text": "Stripe attempts to deliver events to your destination for up to three days with an exponential backoff in live mode.",
+     "label": "Three-day retries"
+    },
+    {
+     "text": "Stripe doesn’t guarantee the delivery of events in the order that they’re generated.",
+     "label": "No ordering"
+    }
+   ]
+  }
+ ]
+}

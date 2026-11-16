@@ -1,0 +1,181 @@
+{
+ "slug": "realtime-features-without-websockets",
+ "locale": "en",
+ "title": "Polling vs SSE vs WebSockets for real-time apps",
+ "description": "Polling, SSE or WebSockets? Checked November 2026: when each fits, the 6-connection SSE limit, Firebase and Supabase real-time pricing, Indian examples.",
+ "imageUrl": "/assets/blog/realtime-features-without-websockets/cover.webp",
+ "imageAlt": "Illustration of an Indian restaurant owner watching live order updates on a tablet beside the words Real-time features",
+ "ogImageUrl": null,
+ "tags": [
+  "real-time",
+  "WebSockets",
+  "Firebase",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-02-14T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "which-real-time-option-fits-your-feature",
+   "text": "Which real-time option fits your feature",
+   "level": 2
+  },
+  {
+   "id": "polling-sse-and-websockets-compared",
+   "text": "Polling, SSE and WebSockets compared",
+   "level": 2
+  },
+  {
+   "id": "polling-the-option-people-dismiss-too-quickly",
+   "text": "Polling: the option people dismiss too quickly",
+   "level": 2
+  },
+  {
+   "id": "server-sent-events-real-time-for-one-way-updates",
+   "text": "Server-Sent Events: real-time for one-way updates",
+   "level": 2
+  },
+  {
+   "id": "websockets-when-you-really-need-them",
+   "text": "WebSockets: when you really need them",
+   "level": 2
+  },
+  {
+   "id": "firebase-and-supabase-real-time-without-running-sockets",
+   "text": "Firebase and Supabase: real-time without running sockets",
+   "level": 2
+  },
+  {
+   "id": "a-quick-cost-estimate-before-you-build",
+   "text": "A quick cost estimate before you build",
+   "level": 3
+  },
+  {
+   "id": "step-by-step-choose-and-build-a-real-time-feature",
+   "text": "Step by step: choose and build a real-time feature",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-from-indian-businesses",
+   "text": "Worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-cloud-kitchen-with-order-tracking",
+   "text": "A cloud kitchen with order tracking",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-running-live-quizzes",
+   "text": "A coaching institute running live quizzes",
+   "level": 3
+  },
+  {
+   "id": "a-logistics-firm-with-a-fleet-dashboard",
+   "text": "A logistics firm with a fleet dashboard",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-with-real-time-features",
+   "text": "Common mistakes with real-time features",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-ship-a-live-feature",
+   "text": "A checklist before you ship a live feature",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is SSE better than WebSockets?",
+   "a": "For one-way updates from server to browser, usually yes: it is plain HTTP, the browser reconnects by default, and it needs less server code. For constant two-way traffic like chat or live quizzes, WebSockets are the better fit."
+  },
+  {
+   "q": "What is the SSE connection limit?",
+   "a": "MDN says that without HTTP/2, browsers allow only 6 SSE connections per browser per domain, across all tabs, and Chrome and Firefox will not fix it. Over HTTP/2 the limit is negotiated and defaults to 100 streams."
+  },
+  {
+   "q": "Is polling bad practice?",
+   "a": "No. For updates where a delay of 10 to 30 seconds is acceptable, polling is the simplest and most robust option. Poll only while the screen is visible, back off when nothing changes, and stop at final states."
+  },
+  {
+   "q": "How are Firestore real-time listeners billed?",
+   "a": "Firestore charges a read each time a document in the listener's result set is added or updated, and also when a document leaves the result set because it changed. With offline persistence, a listener disconnected for more than 30 minutes is billed as a new query."
+  },
+  {
+   "q": "How many connections does Supabase Realtime allow?",
+   "a": "Supabase's quota page lists 200 concurrent connections on Free, 500 on Pro and 10,000 on Team. Above plan quota, peak connections cost $10 per 1,000 and messages $2.50 per million."
+  },
+  {
+   "q": "Can I host Firestore in India?",
+   "a": "Yes. Firestore lists two regional locations in India: asia-south1 in Mumbai and asia-south2 in Delhi. Choose the location when you create the database."
+  },
+  {
+   "q": "Do WebSockets work on Vercel?",
+   "a": "Vercel's guide now says Vercel Functions serve WebSocket connections natively, in public beta on all plans. It recommends SSE when data only flows from server to client."
+  }
+ ],
+ "contentHtml": "<h2 id=\"which-real-time-option-fits-your-feature\">Which real-time option fits your feature</h2><p><strong>In short:</strong> Use polling when updates every 10 to 30 seconds are fine, Server-Sent Events when only the server pushes (order status, live scores, AI replies), and WebSockets only when both sides talk constantly, like chat or a live quiz. Firebase and Supabase give you real-time without running sockets, but you pay per read or per message.</p><p>This guide was checked in November 2026, against MDN, Firebase, Supabase and Vercel documentation, listed at the end. Free quotas and prices change, so check the linked pages before you budget.</p><p>Founders ask for \"real-time\" a lot. When I ask what should update, and how fast, the answer is usually an order status that changes four times in forty minutes, or a dashboard someone glances at. That is not a WebSocket problem. Picking the simplest option that meets the real need saves weeks of build time and a class of bugs you would otherwise debug at night.</p><h2 id=\"polling-sse-and-websockets-compared\">Polling, SSE and WebSockets compared</h2><p>Here are the four common choices side by side, with what each one actually costs you to run.</p><p><em>Four ways to make a screen update without a refresh</em></p><table><thead><tr><th>Option</th><th>Direction</th><th>How it works</th><th>Good for</th><th>Watch out for</th></tr></thead><tbody><tr><td>Short polling</td><td>Client asks</td><td>App calls an API every N seconds</td><td>Order status, dashboards, anything where 10 to 30 seconds is fine</td><td>Wasted requests when nothing changed</td></tr><tr><td>Long polling</td><td>Client asks, server waits</td><td>Server holds the request open until there is news (RFC 6202)</td><td>Older stacks, chat fallbacks</td><td>Many open requests on the server</td></tr><tr><td>Server-Sent Events</td><td>Server to client</td><td>One HTTP response that stays open, MIME type text/event-stream; browser reconnects by default</td><td>Live status, notifications, streaming AI output</td><td>6 connections per browser per domain without HTTP/2</td></tr><tr><td>WebSockets</td><td>Both ways</td><td>A two-way session between browser and server</td><td>Chat, multiplayer, live quizzes, collaborative editing</td><td>No backpressure in the WebSocket interface; you manage reconnects and scaling</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.rfc-editor.org/rfc/rfc6202.html\" rel=\"noopener noreferrer nofollow\"><em>RFC 6202</em></a><em> and </em><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events\" rel=\"noopener noreferrer nofollow\"><em>MDN on server-sent events</em></a><em> and </em><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API\" rel=\"noopener noreferrer nofollow\"><em>MDN WebSockets API</em></a><em>, read 16 November 2026.</em></p><p>MDN's description of the WebSocket API is precise: it \"makes it possible to open a two-way interactive communication session between the user's browser and a server.\" If your feature does not need the two-way part, you are paying for something you do not use.</p><h2 id=\"polling-the-option-people-dismiss-too-quickly\">Polling: the option people dismiss too quickly</h2><p>Short polling is a timer that calls a normal API. It works through every proxy, CDN, corporate firewall and flaky mobile connection, because each request is ordinary HTTP. It needs no special server. It is easy to cache and easy to debug from browser tools.</p><p>The cost is wasted requests. If 2,000 people have an order screen open and poll every 15 seconds, that is about 133 requests a second, most of them returning \"no change\". That sounds like a lot, but a small API returning a cached status handles it comfortably. Make the polling smarter before you replace it:</p><ul><li>Poll only while the screen is visible. Browsers expose page visibility; stop the timer when the tab is hidden.</li><li>Slow down when nothing changes. Start at 5 seconds after an order is placed, back off to 30 seconds once it is being prepared.</li><li>Return almost nothing when nothing changed. A version number or ETag lets the server answer with an empty \"not modified\".</li><li>Stop polling at a final state. A delivered order does not need checking.</li></ul><p>Long polling, described in the informational RFC 6202 from April 2011, has the server hold the request open until something happens. It feels more real-time, but every waiting client is an open request on your server. Today I reach for SSE instead in almost every case where long polling used to be the answer.</p><h2 id=\"server-sent-events-real-time-for-one-way-updates\">Server-Sent Events: real-time for one-way updates</h2><p>With <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events\" rel=\"noopener noreferrer nofollow\">Server-Sent Events</a>, the browser opens one HTTP request with EventSource, and the server keeps the response open, writing lines of text in the text/event-stream format. Each message can carry an event name, data, an id and a retry value in milliseconds. MDN notes that by default, if the connection closes, the browser restarts it. You get reconnection without writing it.</p><p>That makes SSE a good fit for most of what Indian product teams call real-time: a food order moving from accepted to out for delivery, a payment status page waiting for confirmation, a live cricket score widget, an admin dashboard of new leads, or an AI assistant's answer streaming word by word.</p><p>There is one limit you must know. MDN warns that when not used over HTTP/2, SSE is limited to 6 open connections per browser per domain, across all tabs, and that Chrome and Firefox have marked the issue \"Won't fix\". Over HTTP/2, the limit is negotiated and defaults to 100 streams. So serve SSE over HTTP/2, which most hosting and CDNs do by default, and check it in your browser's network panel.</p><figure><img src=\"/assets/blog/realtime-features-without-websockets/1.webp\" alt=\"Annotated view of MDN's server-sent events guide showing the connection limit warning\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>MDN's warning: without HTTP/2, SSE is limited to 6 connections per browser per domain.</figcaption></figure><p>Hosting used to be the other catch, because serverless functions time out. That is changing. Vercel's own guide now says <a href=\"https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections\" rel=\"noopener noreferrer nofollow\">Vercel Functions serve WebSocket connections natively</a>, in public beta on all plans, and advises using SSE \"when data only flows from the server to the client.\" Check your own host's limits on long-lived responses before you commit.</p><h2 id=\"websockets-when-you-really-need-them\">WebSockets: when you really need them</h2><p>WebSockets earn their place when both sides send often and latency matters: a chat between a patient and a care coordinator, a live quiz where 300 students answer within ten seconds, a multiplayer game, or two people editing the same document.</p><p>They also bring work that polling and SSE do not. You must handle reconnects yourself, re-subscribe to rooms after a reconnect, and fetch whatever was missed while the phone was in a lift. MDN points out that the WebSocket interface <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API\" rel=\"noopener noreferrer nofollow\">does not support backpressure</a>: when messages arrive faster than the app can handle them, it buffers them in memory or locks up the CPU. MDN suggests the WebTransport API where backpressure matters.</p><p>Scaling is the other cost. Each socket is a long-lived connection pinned to one server process. With more than one server, you need a shared message layer, often Redis pub/sub, so a message sent to server A reaches a user connected to server B. Load balancers must be configured for long connections. None of this is hard, but it is real work, and it is why I suggest WebSockets last, not first.</p><h2 id=\"firebase-and-supabase-real-time-without-running-sockets\">Firebase and Supabase: real-time without running sockets</h2><p>Managed backends hide all of that. Your app subscribes to a document, a table or a channel, and the platform pushes changes. For an Indian startup with a small team, this is often the fastest route to a working chat or live tracker.</p><p><em>Real-time limits and billing on Firebase and Supabase</em></p><table><thead><tr><th>Service</th><th>Connection limit</th><th>How you pay for real-time</th><th>Free tier</th></tr></thead><tbody><tr><td>Firebase Realtime Database</td><td>200,000 simultaneous connections per database; 100 on the Spark plan</td><td>Plan-based; one device, browser tab or server app counts as one connection</td><td>Spark plan, 100 connections</td></tr><tr><td>Cloud Firestore listeners</td><td>Not stated as a connection cap</td><td>A read each time a document in the result set is added or updated; a listener offline for more than 30 minutes (with persistence) is billed as a new query</td><td>50,000 reads, 20,000 writes per day, 1 GiB stored</td></tr><tr><td>Supabase Realtime</td><td>200 concurrent on Free, 500 on Pro, 10,000 on Team</td><td>Messages at $2.50 per million and peak connections at $10 per 1,000, above plan quota</td><td>2 million messages, 200 peak connections</td></tr></tbody></table><p><em>Source: </em><a href=\"https://firebase.google.com/docs/database/usage/limits\" rel=\"noopener noreferrer nofollow\"><em>Firebase Realtime Database limits</em></a><em> and </em><a href=\"https://firebase.google.com/docs/firestore/pricing\" rel=\"noopener noreferrer nofollow\"><em>Firestore pricing</em></a><em> and </em><a href=\"https://supabase.com/docs/guides/realtime/quotas\" rel=\"noopener noreferrer nofollow\"><em>Supabase Realtime quotas</em></a><em> and </em><a href=\"https://supabase.com/docs/guides/realtime/pricing\" rel=\"noopener noreferrer nofollow\"><em>Supabase Realtime pricing</em></a><em>, read 16 November 2026.</em></p><p>The Firestore billing rule is the one that surprises people. A listener on a busy query, say the last 50 orders in a kitchen, is charged a read for every document added or updated in that result set, for every device listening. Ten kitchen tablets watching the same busy query multiply your reads by ten. Narrow queries and fewer listeners matter more than code speed here.</p><p>For Indian users, region matters too. Firestore offers <a href=\"https://firebase.google.com/docs/firestore/locations\" rel=\"noopener noreferrer nofollow\">two regional locations in India</a>: asia-south1 in Mumbai and asia-south2 in Delhi. Picking one keeps data close to your users, so decide the location before launch rather than after.</p><h3 id=\"a-quick-cost-estimate-before-you-build\">A quick cost estimate before you build</h3><p>You can estimate a listener's cost on paper. Take the kitchen example: suppose 10 tablets each listen to today's open orders, and orders change status 500 times a day across all of them. Every change is a billed read on each of the 10 listeners, so that is about 5,000 reads a day. Firestore's free quota is 50,000 document reads per day, so this fits with room to spare.</p><p>Now suppose the same tablets listen to the whole orders collection instead of today's open ones, and the collection also changes when riders update locations every 30 seconds. The read count can grow by an order of magnitude without a single new customer. The arithmetic is simple. The mistake is not doing it. Write down listeners times changes per day for each screen, and compare it with the free quota and the pricing page before you choose a query.</p><p>The same exercise works for Supabase: count expected peak connections and messages per month, and compare them with the plan quota of 2 million messages and 200 peak connections on Free, or 5 million and 500 on Pro.</p><figure><img src=\"/assets/blog/realtime-features-without-websockets/2.webp\" alt=\"Annotated view of Firestore's pricing page explaining how listeners are billed\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Firestore charges a read for each document added or updated in a listener's result set.</figcaption></figure><h2 id=\"step-by-step-choose-and-build-a-real-time-feature\">Step by step: choose and build a real-time feature</h2><p><strong>Step 1. Write down the real requirement.</strong> What changes, how often, who sees it, and how stale can it be? \"Rider location every 10 seconds to one customer\" is a requirement. \"Real-time\" is not.</p><p><strong>Step 2. Ask who talks.</strong> If only the server sends, rule out WebSockets. If the client sends rarely, it can use normal API calls alongside SSE.</p><p><strong>Step 3. Start with polling if staleness of 15 seconds or more is fine.</strong> Ship it, measure the load, and move on.</p><p><strong>Step 4. Use SSE for one-way pushes that need to feel instant.</strong> Serve over HTTP/2, send an id with each event so a reconnecting client can resume, and send a small comment line every 20 to 30 seconds so idle connections are not cut by proxies.</p><p><strong>Step 5. Use a managed service for chat-like features if your team is small.</strong> Firebase or Supabase. Estimate cost from their pricing pages using your expected listeners and changes per day.</p><p><strong>Step 6. Run your own WebSockets only for heavy two-way traffic.</strong> Plan reconnects, missed-message catch-up, a shared pub/sub layer and load balancer settings from day one.</p><p><strong>Step 7. Design for the phone going offline.</strong> Whatever you choose, the app must fetch current state on reconnect, not trust that it saw every event. Our post on <a href=\"/blogs/why-your-app-needs-offline-support\">offline support</a> goes deeper on this.</p><p><strong>Step 8. Use push notifications when the app is closed.</strong> No socket survives an app being swiped away. For \"your order is out for delivery\" when the app is closed, you need a push notification; see our post on <a href=\"/blogs/push-notifications-that-work\">push notifications that work</a>.</p><figure><img src=\"/assets/blog/realtime-features-without-websockets/3.webp\" alt=\"Infographic decision path for choosing polling, SSE, WebSockets or a managed service\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Most features stop at polling or SSE.</figcaption></figure><h2 id=\"worked-examples-from-indian-businesses\">Worked examples from Indian businesses</h2><p>These three cases are illustrative. The businesses and numbers are invented to show the reasoning.</p><h3 id=\"a-cloud-kitchen-with-order-tracking\">A cloud kitchen with order tracking</h3><p>A cloud kitchen in Bengaluru wants customers to see order status in its app, and the kitchen to see new orders appear instantly on a tablet. The customer side changes perhaps five times per order. Polling every 10 seconds while the order screen is open, stopping at delivered, is enough and costs almost nothing.</p><p>The kitchen tablet is different: a missed order is lost money. SSE from the order service to the tablet gives instant arrival with automatic reconnects, and the tablet re-fetches the open order list every time it reconnects, so a Wi-Fi drop cannot hide an order. No WebSocket server is needed.</p><h3 id=\"a-coaching-institute-running-live-quizzes\">A coaching institute running live quizzes</h3><p>A JEE coaching institute runs a 15-minute live quiz for 400 students during online classes. Students answer, and a leaderboard updates for everyone. This is genuinely two-way and bursty: hundreds of answers in a few seconds.</p><p>I would use a managed real-time channel, for example Supabase Realtime, to avoid running a socket cluster for one class a day. With 400 students, the Free plan's 200 concurrent connections are not enough, so this lands on Pro, whose quota is 500 peak connections, or Team for several parallel batches. The leaderboard should be computed on the server and broadcast every two seconds, not recalculated on every answer, which keeps the message count down.</p><h3 id=\"a-logistics-firm-with-a-fleet-dashboard\">A logistics firm with a fleet dashboard</h3><p>A regional logistics company shows 60 trucks on a map in its control room. GPS devices report every 30 seconds. The dashboard only receives; it never sends. SSE from the tracking service to the dashboard, with a position update per truck as it arrives, is the right fit. Customers checking a single shipment's location can simply poll every 30 seconds, matching the device's own report rate. Our post on <a href=\"/blogs/gps-tracking-for-fleets\">GPS tracking for fleets</a> covers the device side.</p><figure><img src=\"/assets/blog/realtime-features-without-websockets/4.webp\" alt=\"Illustration of a cloud kitchen staff member checking new orders on a tablet\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A kitchen tablet is the place where instant really matters.</figcaption></figure><h2 id=\"common-mistakes-with-real-time-features\">Common mistakes with real-time features</h2><ul><li><strong>Choosing WebSockets for one-way data.</strong> Order status, notifications and dashboards are one-way. SSE or polling is simpler and cheaper.</li><li><strong>Trusting the stream as the source of truth.</strong> Connections drop. Always re-fetch state after a reconnect.</li><li><strong>SSE over HTTP/1.1.</strong> Six connections per browser per domain, across every tab. Open a seventh tab and it hangs.</li><li><strong>Polling forever.</strong> Stop at final states and when the screen is hidden.</li><li><strong>Broad Firestore listeners.</strong> Every document change in the result set is a billed read per listener. Listen to what the screen shows, not the whole collection.</li><li><strong>Ignoring the free-tier connection cap.</strong> Firebase Realtime Database's Spark plan allows 100 simultaneous connections, and Supabase Free allows 200. A launch day can pass both.</li><li><strong>Expecting sockets in a closed app.</strong> Use push notifications for anything the user must see when the app is not open.</li></ul><h2 id=\"a-checklist-before-you-ship-a-live-feature\">A checklist before you ship a live feature</h2><ul><li>Written requirement: what updates, how often, maximum acceptable delay.</li><li>Chosen option and the reason, in one line.</li><li>Reconnect behaviour tested: turn on airplane mode for a minute, turn it off, confirm the screen catches up.</li><li>Load tested at your expected peak, for example a sale or a class start, not the average.</li><li>Monthly cost estimated from the provider's pricing page at that peak.</li><li>Push notification path for when the app is closed.</li><li>A way to switch the feature back to polling if the live path misbehaves.</li></ul><p>If you want a live feature scoped, with the right option and its running cost worked out before anything is built, that is what our ₹3,500 requirement analysis produces: a call with the people who would build it and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-sse-better-than-websockets\">Is SSE better than WebSockets?</h3><p>For one-way updates from server to browser, usually yes: it is plain HTTP, the browser reconnects by default, and it needs less server code. For constant two-way traffic like chat or live quizzes, WebSockets are the better fit.</p><h3 id=\"what-is-the-sse-connection-limit\">What is the SSE connection limit?</h3><p>MDN says that without HTTP/2, browsers allow only 6 SSE connections per browser per domain, across all tabs, and Chrome and Firefox will not fix it. Over HTTP/2 the limit is negotiated and defaults to 100 streams.</p><h3 id=\"is-polling-bad-practice\">Is polling bad practice?</h3><p>No. For updates where a delay of 10 to 30 seconds is acceptable, polling is the simplest and most robust option. Poll only while the screen is visible, back off when nothing changes, and stop at final states.</p><h3 id=\"how-are-firestore-real-time-listeners-billed\">How are Firestore real-time listeners billed?</h3><p>Firestore charges a read each time a document in the listener's result set is added or updated, and also when a document leaves the result set because it changed. With offline persistence, a listener disconnected for more than 30 minutes is billed as a new query.</p><h3 id=\"how-many-connections-does-supabase-realtime-allow\">How many connections does Supabase Realtime allow?</h3><p>Supabase's quota page lists 200 concurrent connections on Free, 500 on Pro and 10,000 on Team. Above plan quota, peak connections cost $10 per 1,000 and messages $2.50 per million.</p><h3 id=\"can-i-host-firestore-in-india\">Can I host Firestore in India?</h3><p>Yes. Firestore lists two regional locations in India: asia-south1 in Mumbai and asia-south2 in Delhi. Choose the location when you create the database.</p><h3 id=\"do-websockets-work-on-vercel\">Do WebSockets work on Vercel?</h3><p>Vercel's guide now says Vercel Functions serve WebSocket connections natively, in public beta on all plans. It recommends SSE when data only flows from server to client.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events\" rel=\"noopener noreferrer nofollow\">Using server-sent events, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API\" rel=\"noopener noreferrer nofollow\">The WebSocket API, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://www.rfc-editor.org/rfc/rfc6202.html\" rel=\"noopener noreferrer nofollow\">RFC 6202: Long Polling and Streaming in Bidirectional HTTP, IETF</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/database/usage/limits\" rel=\"noopener noreferrer nofollow\">Realtime Database limits, Firebase</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/firestore/pricing\" rel=\"noopener noreferrer nofollow\">Understand Cloud Firestore billing, Firebase</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/firestore/locations\" rel=\"noopener noreferrer nofollow\">Cloud Firestore locations, Firebase</a>, read 16 November 2026</li><li><a href=\"https://supabase.com/docs/guides/realtime/quotas\" rel=\"noopener noreferrer nofollow\">Realtime quotas, Supabase Docs</a>, read 16 November 2026</li><li><a href=\"https://supabase.com/docs/guides/realtime/pricing\" rel=\"noopener noreferrer nofollow\">Realtime pricing, Supabase Docs</a>, read 16 November 2026</li><li><a href=\"https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections\" rel=\"noopener noreferrer nofollow\">Do Vercel Functions support WebSocket connections, Vercel</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian restaurant owner watching live order updates on a tablet beside the words Real-time features",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian man in his 40s, owner of a small restaurant, in a kurta and apron, standing at a counter holding a tablet that shows abstract order cards with small pulsing dots, a delivery rider with a helmet waiting at the door behind. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame. Right half: the title text 'Real-time features' in very large bold black sans-serif, left-aligned, on two lines ('Real-time' / 'features'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of MDN's server-sent events guide showing the connection limit warning",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+   "annotate": [
+    {
+     "text": "SSE suffers from a limitation to the maximum number of open connections",
+     "label": "6 per domain on HTTP/1"
+    },
+    {
+     "text": "text/event-stream",
+     "label": "The MIME type"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Firestore's pricing page explaining how listeners are billed",
+   "url": "https://firebase.google.com/docs/firestore/pricing",
+   "annotate": [
+    {
+     "text": "you are charged for a read each time a document in the result set is added or updated",
+     "label": "Each change is a read"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "infographic",
+   "alt": "Infographic decision path for choosing polling, SSE, WebSockets or a managed service",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Which real-time option?'. Start pill on the left (dark-blue, white text): 'Is a 15-second delay fine?'. Orange arrow 'Yes' to a clock icon with pill 'Polling'. Orange arrow 'No' to a second dark-blue pill 'Does only the server send?'. From it, orange arrow 'Yes' to a broadcast icon with pill 'Server-Sent Events'. Orange arrow 'No' to a third pill 'Small team?'. From it, 'Yes' to a cloud icon with pill 'Firebase or Supabase', and 'No' to a two-way arrows icon with pill 'Your own WebSockets'. Small grey note at bottom right: 'App closed? Use push notifications'. One-line bold takeaway at bottom: 'Pick the simplest option that meets the delay you can live with.' No logos, no other text."
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a cloud kitchen staff member checking new orders on a tablet",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A busy small Indian cloud kitchen: a young woman cook in a sage apron and cap glancing at a wall-mounted tablet showing abstract order cards, a colleague packing food containers into paper bags, steel vessels and a stove behind. No readable text on any screen, no logos. Faces fully in frame."
+  }
+ ]
+}

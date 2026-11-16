@@ -1,0 +1,201 @@
+{
+ "slug": "tech-stack-for-a-new-startup",
+ "locale": "en",
+ "title": "Tech stack for a startup in India: a 2026 guide",
+ "description": "Tech stack for a startup in India: what developers use, Android first, Indian hosting, support windows for Node, Python and Postgres, and a default stack.",
+ "imageUrl": "/assets/blog/tech-stack-for-a-new-startup/cover.webp",
+ "imageAlt": "Illustration of Indian co-founders stacking building blocks for an app beside the words Pick your stack",
+ "ogImageUrl": null,
+ "tags": [
+  "tech stack",
+  "startups",
+  "software architecture",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-09-27T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "tech-stack-for-a-startup-in-india-the-short-answer",
+   "text": "Tech stack for a startup in India: the short answer",
+   "level": 2
+  },
+  {
+   "id": "what-developers-use-and-why-that-matters-for-hiring",
+   "text": "What developers use, and why that matters for hiring",
+   "level": 2
+  },
+  {
+   "id": "the-india-factors-that-should-shape-your-stack",
+   "text": "The India factors that should shape your stack",
+   "level": 2
+  },
+  {
+   "id": "android-first-for-consumer-apps",
+   "text": "Android first for consumer apps",
+   "level": 3
+  },
+  {
+   "id": "low-cost-phones-and-patchy-data",
+   "text": "Low-cost phones and patchy data",
+   "level": 3
+  },
+  {
+   "id": "data-location-and-payments",
+   "text": "Data location and payments",
+   "level": 3
+  },
+  {
+   "id": "indian-languages",
+   "text": "Indian languages",
+   "level": 3
+  },
+  {
+   "id": "a-sensible-default-stack-layer-by-layer",
+   "text": "A sensible default stack, layer by layer",
+   "level": 2
+  },
+  {
+   "id": "support-windows-the-hidden-cost-of-a-stack",
+   "text": "Support windows: the hidden cost of a stack",
+   "level": 2
+  },
+  {
+   "id": "adding-ai-features-without-changing-the-whole-stack",
+   "text": "Adding AI features without changing the whole stack",
+   "level": 2
+  },
+  {
+   "id": "security-choices-that-belong-in-the-stack-from-day-one",
+   "text": "Security choices that belong in the stack from day one",
+   "level": 2
+  },
+  {
+   "id": "build-buy-or-no-code",
+   "text": "Build, buy or no-code",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-choosing-your-stack-in-a-week",
+   "text": "Step by step: choosing your stack in a week",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-ghee-and-spices-brand",
+   "text": "A D2C ghee and spices brand",
+   "level": 3
+  },
+  {
+   "id": "a-physiotherapy-clinic-chain",
+   "text": "A physiotherapy clinic chain",
+   "level": 3
+  },
+  {
+   "id": "a-b2b-inventory-saas-for-distributors",
+   "text": "A B2B inventory SaaS for distributors",
+   "level": 3
+  },
+  {
+   "id": "ways-stack-decisions-go-wrong",
+   "text": "Ways stack decisions go wrong",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-commit-to-a-stack",
+   "text": "A checklist before you commit to a stack",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is the best tech stack for a startup in India?",
+   "a": "There is no single best stack. A sensible default is TypeScript or Python on the backend, PostgreSQL, React or Next.js for web, and Flutter or React Native for mobile, hosted in an Indian region. Prefer the mainstream option your team already knows."
+  },
+  {
+   "q": "Should an Indian startup build for Android or iOS first?",
+   "a": "For consumer apps, usually Android first. StatCounter put Android at 94.84% of mobile operating system share in India in October 2026. A cross-platform framework lets you add iOS later from the same code. B2B tools should check their own users' devices."
+  },
+  {
+   "q": "Which backend language is easiest to hire for?",
+   "a": "In the Stack Overflow 2025 survey, JavaScript was used by 66% of respondents, Python by 57.9% and TypeScript by 43.6%. Node.js with TypeScript and Python frameworks such as Django or FastAPI have large hiring pools. Check job portals in your city too."
+  },
+  {
+   "q": "Which Node.js version should I use in production?",
+   "a": "The Node.js project says production applications should only use Active LTS or Maintenance LTS releases, and LTS releases typically get critical fixes for 30 months. When I checked, v26, v24 and v22 were listed as LTS."
+  },
+  {
+   "q": "Do I need microservices or Kubernetes for a new startup?",
+   "a": "Almost never at the start. One backend with clear internal modules, on a managed container service or a well-run server in an Indian region, is faster to build and cheaper to run. Split services out only when a specific part needs it."
+  },
+  {
+   "q": "Should I use no-code tools instead of building?",
+   "a": "For internal tools and early experiments, often yes. For the part customers pay for, custom code usually wins once the product is validated. Buy commodity parts such as payments, SMS and login rather than building them."
+  },
+  {
+   "q": "How long is Python supported?",
+   "a": "The Python Developer's Guide says support ends five years after a release. When I checked, 3.14 and 3.15 were in bugfix, and 3.11 to 3.13 were receiving security fixes only."
+  }
+ ],
+ "contentHtml": "<h2 id=\"tech-stack-for-a-startup-in-india-the-short-answer\">Tech stack for a startup in India: the short answer</h2><p><strong>In short:</strong> Pick a boring, popular stack your team already knows: TypeScript or Python on the backend, PostgreSQL as the database, React or Next.js for the web, and Flutter or React Native for mobile, hosted on a managed service in an Indian region. Build Android first if your users are consumers, since Android ran on about 95% of mobile devices in India in October 2026 by StatCounter's count.</p><p>The stack rarely decides whether a startup succeeds. What it decides is how fast you can hire, how quickly a new developer becomes useful, and how painful the next three years of upgrades are. Popular, well-supported tools win on all three.</p><p>This guide was checked in November 2026, against the Stack Overflow 2025 Developer Survey, StatCounter's India mobile figures, the release and support pages of Node.js, Python and PostgreSQL, and AWS's region list. Treat any version number here as a snapshot and check the linked pages before you start.</p><h2 id=\"what-developers-use-and-why-that-matters-for-hiring\">What developers use, and why that matters for hiring</h2><p>Your stack is also the job advert you will post for years. The bigger the pool of developers who know it, the easier hiring and replacing people becomes.</p><p><em>Share of all respondents who used each technology in the past year, Stack Overflow Developer Survey 2025</em></p><table><thead><tr><th>Technology</th><th>Type</th><th>Share</th></tr></thead><tbody><tr><td>JavaScript</td><td>Language</td><td>66%</td></tr><tr><td>Python</td><td>Language</td><td>57.9%</td></tr><tr><td>TypeScript</td><td>Language</td><td>43.6%</td></tr><tr><td>Java</td><td>Language</td><td>29.4%</td></tr><tr><td>PHP</td><td>Language</td><td>18.9%</td></tr><tr><td>Kotlin</td><td>Language</td><td>10.8%</td></tr><tr><td>Dart</td><td>Language</td><td>5.9%</td></tr><tr><td>Node.js</td><td>Web technology</td><td>48.7%</td></tr><tr><td>React</td><td>Web framework</td><td>44.7%</td></tr><tr><td>Next.js</td><td>Web framework</td><td>20.8%</td></tr><tr><td>Angular</td><td>Web framework</td><td>18.2%</td></tr><tr><td>FastAPI</td><td>Web framework</td><td>14.8%</td></tr><tr><td>Spring Boot</td><td>Web framework</td><td>14.7%</td></tr><tr><td>Django</td><td>Web framework</td><td>12.6%</td></tr><tr><td>Laravel</td><td>Web framework</td><td>8.9%</td></tr></tbody></table><p><em>Source: </em><a href=\"https://survey.stackoverflow.co/2025/technology\" rel=\"noopener noreferrer nofollow\"><em>Stack Overflow Developer Survey 2025, Technology</em></a><em>, read 16 November 2026.</em></p><p>Two cautions. The survey is global and self-selected, not a count of Indian developers. And popularity is not quality: Laravel and Spring Boot run plenty of large Indian systems well. Use the table to rule out obscure choices, not to pick between the mainstream ones.</p><p>What I take from it: JavaScript and TypeScript give you one language across web, backend and (through React Native) mobile, with the largest hiring pool. Python is close behind and is the natural home for anything involving data or AI. Java and PHP remain safe for teams that already know them.</p><figure><img src=\"/assets/blog/tech-stack-for-a-new-startup/1.webp\" alt=\"Infographic of a simple startup stack from phone to database\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Four layers, each a popular and well-supported choice.</figcaption></figure><h2 id=\"the-india-factors-that-should-shape-your-stack\">The India factors that should shape your stack</h2><h3 id=\"android-first-for-consumer-apps\">Android first for consumer apps</h3><p><a href=\"https://gs.statcounter.com/os-market-share/mobile/india\" rel=\"noopener noreferrer nofollow\">StatCounter</a> put Android at 94.84% and iOS at 5.1% of mobile operating system share in India in October 2026. StatCounter measures web traffic, so treat it as a strong indication rather than a census. For a consumer product, that means your Android app on low-cost phones is your main product. For B2B tools used by senior staff, the iOS share among your actual users may be much higher, so check your own audience.</p><p>This tilts the mobile decision towards a cross-platform framework that does Android well and lets you add iOS later without a second team. Our comparison of <a href=\"/blogs/flutter-vs-react-native\">Flutter and React Native</a> covers that choice in detail.</p><h3 id=\"low-cost-phones-and-patchy-data\">Low-cost phones and patchy data</h3><p>Many Indian users are on budget Android phones and mobile data that drops in lifts, basements and trains. Stack choices follow: keep app download size small, keep API responses small, cache what you can on the device, and design key flows to survive a dropped connection. Our post on <a href=\"/blogs/building-for-bharat\">building for Bharat</a> goes deeper.</p><h3 id=\"data-location-and-payments\">Data location and payments</h3><p>Host in an Indian region: AWS lists Mumbai and Hyderabad, and Azure and Google Cloud also have Indian regions. If you build a product that operates a payment system, the RBI's <a href=\"https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11244&Mode=0\" rel=\"noopener noreferrer nofollow\">payment data storage circular</a> requires that data to be stored only in India. For most startups, payments go through a licensed gateway, which keeps that duty with the gateway. Our guide to <a href=\"/blogs/choosing-cloud-provider\">choosing a cloud provider</a> covers regions, data rules and startup credits.</p><h3 id=\"indian-languages\">Indian languages</h3><p>If your users read Hindi, Telugu, Tamil or other Indian languages, check early that your fonts, search and text rendering handle those scripts well, on cheap phones as well as laptops. It is far easier to choose libraries that support this on day one than to retrofit them.</p><h2 id=\"a-sensible-default-stack-layer-by-layer\">A sensible default stack, layer by layer</h2><p>Here is what I would pick for a typical Indian startup with no strong existing preference. Each choice is replaceable with a mainstream alternative your team knows better.</p><p><em>A default stack for a new product, with mainstream alternatives</em></p><table><thead><tr><th>Layer</th><th>Default</th><th>Fine alternatives</th><th>Why</th></tr></thead><tbody><tr><td>Mobile app</td><td>Flutter or React Native</td><td>Native Kotlin and Swift for heavy device work</td><td>One codebase for Android and iOS</td></tr><tr><td>Web front end</td><td>React with Next.js</td><td>Angular, Vue.js</td><td>Largest pool of web developers</td></tr><tr><td>Backend</td><td>Node.js with TypeScript, or Python with Django or FastAPI</td><td>Java with Spring Boot, PHP with Laravel</td><td>Popular, well supported, easy to hire for</td></tr><tr><td>Database</td><td>PostgreSQL, managed</td><td>MySQL, managed</td><td>Relational data, JSON, five-year version support</td></tr><tr><td>Hosting</td><td>Managed containers or a platform service in an Indian region</td><td>A well-run virtual machine</td><td>Less to operate than Kubernetes</td></tr><tr><td>Files</td><td>Object storage in the same region</td><td></td><td>Keeps the database small</td></tr><tr><td>Background jobs</td><td>A queue with workers</td><td>Scheduled functions</td><td>SMS, emails, reports off the main path</td></tr></tbody></table><p><em>Source: </em><a href=\"https://survey.stackoverflow.co/2025/technology\" rel=\"noopener noreferrer nofollow\"><em>Stack Overflow 2025</em></a><em> and </em><a href=\"https://www.postgresql.org/support/versioning/\" rel=\"noopener noreferrer nofollow\"><em>PostgreSQL versioning policy</em></a><em> and </em><a href=\"https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html\" rel=\"noopener noreferrer nofollow\"><em>AWS Regions</em></a><em>, read 16 November 2026.</em></p><p>Notice what is missing: no microservices, no Kubernetes, no exotic database. A single backend with clear modules is the right start for almost every new product. Martin Fowler's MonolithFirst argument, and our post on <a href=\"/blogs/microservices-when\">when microservices make sense</a>, explain why.</p><p>When should you deviate from the default? When the product's hard part demands it. Heavy Bluetooth, camera or background location work can justify native Kotlin and Swift. A large existing PHP or Java system in the business can justify staying with that language so one team can work on both. A data-heavy product with machine learning at its core can justify Python everywhere on the backend. In each case, write down the reason, so the next developer understands why the stack looks the way it does.</p><h2 id=\"support-windows-the-hidden-cost-of-a-stack\">Support windows: the hidden cost of a stack</h2><p>Every runtime and database has a support window. When it ends, security fixes stop and you must upgrade. A stack with predictable, long support windows is cheaper to own.</p><p><em>Official support policies for common backend runtimes and databases</em></p><table><thead><tr><th>Technology</th><th>Support policy</th><th>Versions when I checked</th></tr></thead><tbody><tr><td>Node.js</td><td>LTS releases typically get critical bug fixes for 30 months; production apps should use only Active LTS or Maintenance LTS releases</td><td>v26, v24 and v22 listed as LTS; v27 in alpha</td></tr><tr><td>Python</td><td>Support ends five years after a release</td><td>3.15 and 3.14 in bugfix; 3.11 to 3.13 security fixes only</td></tr><tr><td>PostgreSQL</td><td>Each major version supported for 5 years after first release</td><td>18 current; 14 reached final release on 12 November 2026</td></tr></tbody></table><p><em>Source: </em><a href=\"https://nodejs.org/en/about/previous-releases\" rel=\"noopener noreferrer nofollow\"><em>Node.js releases</em></a><em> and </em><a href=\"https://devguide.python.org/versions/\" rel=\"noopener noreferrer nofollow\"><em>Python versions, Python Developer's Guide</em></a><em> and </em><a href=\"https://www.postgresql.org/support/versioning/\" rel=\"noopener noreferrer nofollow\"><em>PostgreSQL versioning</em></a><em>, read 16 November 2026.</em></p><p>Plan a small upgrade every year rather than a big one every five. Pin versions in your project, run automated tests on every change, and put a recurring reminder in the calendar to check these pages.</p><figure><img src=\"/assets/blog/tech-stack-for-a-new-startup/2.webp\" alt=\"Annotated Node.js releases page showing that production apps should use LTS releases\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Node.js asks production apps to stay on LTS releases.</figcaption></figure><h2 id=\"adding-ai-features-without-changing-the-whole-stack\">Adding AI features without changing the whole stack</h2><p>Many Indian founders now want an AI feature in the first version: a chatbot, document reading, voice, or smart search. That does not require a different stack. In most products, AI is one more service your backend calls.</p><ul><li><strong>Call models from the backend, never from the app.</strong> API keys for model providers must live on your server. A key shipped inside a mobile app can be extracted and used on your bill.</li><li><strong>Python helps, but is not required.</strong> Python has the richest set of AI and data libraries, which is why it often wins when AI is central. For a product that only calls hosted model APIs, a TypeScript backend works just as well.</li><li><strong>Keep the AI part behind one module.</strong> Models, providers and prices change quickly. A single module that wraps model calls lets you switch provider without touching the rest of the app.</li><li><strong>Log inputs and outputs carefully.</strong> You need them to debug and improve answers, but they may contain personal data. Decide what you store, for how long and where, before launch.</li></ul><p>If AI is the product rather than a feature, the backend language and hosting deserve more thought, especially around GPU access and model hosting in India. For everything else, the default stack above holds.</p><h2 id=\"security-choices-that-belong-in-the-stack-from-day-one\">Security choices that belong in the stack from day one</h2><p>Security is cheapest when it is part of the stack rather than added later. None of these needs a specialist team, only a decision at the start:</p><ul><li><strong>Use a framework's built-in protections.</strong> Mainstream frameworks escape output, protect forms and handle sessions safely by default. Turning those defaults off is where many breaches begin.</li><li><strong>Keep secrets out of the code.</strong> Database passwords and API keys belong in the cloud provider's secret store or environment settings, never in the repository.</li><li><strong>Use a proven login system.</strong> Phone number OTP login is common in India; use an established provider or library, with rate limits so attackers cannot run up your SMS bill.</li><li><strong>Turn on multi-factor login everywhere.</strong> Cloud console, code repository, domain registrar, app store accounts and payment gateway dashboard.</li><li><strong>Automate dependency updates.</strong> A tool that opens a pull request when a library has a known vulnerability keeps you current with little effort.</li></ul><p>These habits cost a few days in the first month and save the kind of incident that can end an early-stage company's reputation with its first customers.</p><figure><img src=\"/assets/blog/tech-stack-for-a-new-startup/4.webp\" alt=\"Annotated Python Developer's Guide versions page showing the five-year support rule\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Each Python release gets five years of support.</figcaption></figure><h2 id=\"build-buy-or-no-code\">Build, buy or no-code</h2><p>Not every part of your product needs custom code. A good stack decision includes deciding what not to build.</p><ul><li><strong>Buy the commodity parts.</strong> Payments through a licensed gateway, SMS and WhatsApp through an established provider, email through a sending service, login through a proven auth library or service. These are solved problems with compliance work already done.</li><li><strong>Use a platform for the shop window.</strong> A D2C brand's storefront is often best on a commerce platform, with custom code only for what makes the brand different.</li><li><strong>Use no-code for internal tools early.</strong> Admin dashboards, simple approval flows and reports can start in spreadsheet-backed or low-code tools and be rebuilt once the process is stable.</li><li><strong>Build what is your product.</strong> The workflow, pricing logic, matching or content that customers pay for is where your engineering time belongs.</li></ul><h2 id=\"step-by-step-choosing-your-stack-in-a-week\">Step by step: choosing your stack in a week</h2><p><strong>Step 1. Write down who uses the product and on what device.</strong> Consumers on Android phones, staff on office laptops, or both.</p><p><strong>Step 2. List the hard parts.</strong> Real-time updates, offline use, payments, maps, video, AI features, Indian language content. These narrow the choices more than anything else.</p><p><strong>Step 3. Start from what your team knows.</strong> A team strong in Python should usually stay in Python. Only switch when the hard parts above demand it.</p><p><strong>Step 4. Check the hiring pool locally.</strong> Search job portals in your city for each candidate technology and count candidates, not openings.</p><p><strong>Step 5. Check support windows.</strong> Choose current LTS or supported versions with at least two years of support left.</p><p><strong>Step 6. Build one hard screen end to end.</strong> From phone to database and back, on the cheapest phone your users own. Fix the stack before you have built fifty screens on it.</p><p><strong>Step 7. Put everything in the company's name.</strong> Code repository, cloud account, app store accounts, domain and third-party services, with at least two admins.</p><p>If you want this worked through with a written answer, our ₹3,500 requirement analysis is a call with the people who will build your product, ending in a fixed quotation and timeline before any build starts, including the stack and why (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name.</p><figure><img src=\"/assets/blog/tech-stack-for-a-new-startup/3.webp\" alt=\"Illustration of an Indian founding team testing an app on low-cost Android phones\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Test the stack on the phones your users actually carry.</figcaption></figure><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients, and the details are invented for the example.</p><h3 id=\"a-d2c-ghee-and-spices-brand\">A D2C ghee and spices brand</h3><p>The brand sells online across India and on WhatsApp. I would run the storefront on a commerce platform with a licensed payment gateway, and write custom code only for a subscription feature and a WhatsApp ordering flow: a small Node.js and TypeScript service on PostgreSQL, hosted in Mumbai. No mobile app until repeat customers ask for one.</p><h3 id=\"a-physiotherapy-clinic-chain\">A physiotherapy clinic chain</h3><p>Patients book sessions and do exercises at home; therapists track progress. Patients are mostly on Android. I would build one Flutter app for patients and therapists, a Python backend with Django for its built-in admin panel, managed PostgreSQL in Hyderabad, and object storage for exercise videos. Telugu and Hindi text from the start.</p><h3 id=\"a-b2b-inventory-saas-for-distributors\">A B2B inventory SaaS for distributors</h3><p>Distributors use it on office laptops and tablets; sales reps use it on Android phones in the field with weak signal. I would use Next.js with TypeScript for the web app, React Native for the reps' app so the same developers can work on both, a Node.js backend in one codebase with clear modules, PostgreSQL, and offline order entry that syncs when the rep is back in signal. Our guide to <a href=\"/blogs/choosing-a-database\">choosing a database</a> covers why Postgres fits this kind of data.</p><h2 id=\"ways-stack-decisions-go-wrong\">Ways stack decisions go wrong</h2><ol><li><strong>Choosing what the loudest developer wants to learn.</strong> Learning is good. Making your product the training ground is expensive.</li><li><strong>Copying a giant's architecture.</strong> Large companies' stacks solve problems you do not have yet.</li><li><strong>Too many languages.</strong> One backend language and one front-end approach is plenty for a small team.</li><li><strong>Ignoring Android low-end performance.</strong> Testing only on flagship phones hides the experience most Indian users get.</li><li><strong>Unsupported versions on day one.</strong> Starting a project on a runtime close to end of life guarantees an early upgrade.</li><li><strong>Accounts in a freelancer's name.</strong> When they leave, so does access to your own product.</li><li><strong>Rewriting the stack after a year.</strong> If the product works, improve the slow parts. Rewrites cost far more than they promise.</li></ol><h2 id=\"a-checklist-before-you-commit-to-a-stack\">A checklist before you commit to a stack</h2><ol><li>You know which devices your users have, and Android is covered well if they are consumers.</li><li>Each hard part of the product has a proven library or service in your chosen stack.</li><li>At least three developers in your city could join and be productive in it within weeks.</li><li>Every runtime and database version has at least two years of support left.</li><li>Hosting is in an Indian region, managed, with backups and monitoring.</li><li>Commodity parts such as payments, SMS and login are bought, not built.</li><li>Every account is in the company's name with two admins.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-the-best-tech-stack-for-a-startup-in-india\">What is the best tech stack for a startup in India?</h3><p>There is no single best stack. A sensible default is TypeScript or Python on the backend, PostgreSQL, React or Next.js for web, and Flutter or React Native for mobile, hosted in an Indian region. Prefer the mainstream option your team already knows.</p><h3 id=\"should-an-indian-startup-build-for-android-or-ios-first\">Should an Indian startup build for Android or iOS first?</h3><p>For consumer apps, usually Android first. StatCounter put Android at 94.84% of mobile operating system share in India in October 2026. A cross-platform framework lets you add iOS later from the same code. B2B tools should check their own users' devices.</p><h3 id=\"which-backend-language-is-easiest-to-hire-for\">Which backend language is easiest to hire for?</h3><p>In the Stack Overflow 2025 survey, JavaScript was used by 66% of respondents, Python by 57.9% and TypeScript by 43.6%. Node.js with TypeScript and Python frameworks such as Django or FastAPI have large hiring pools. Check job portals in your city too.</p><h3 id=\"which-node-js-version-should-i-use-in-production\">Which Node.js version should I use in production?</h3><p>The Node.js project says production applications should only use Active LTS or Maintenance LTS releases, and LTS releases typically get critical fixes for 30 months. When I checked, v26, v24 and v22 were listed as LTS.</p><h3 id=\"do-i-need-microservices-or-kubernetes-for-a-new-startup\">Do I need microservices or Kubernetes for a new startup?</h3><p>Almost never at the start. One backend with clear internal modules, on a managed container service or a well-run server in an Indian region, is faster to build and cheaper to run. Split services out only when a specific part needs it.</p><h3 id=\"should-i-use-no-code-tools-instead-of-building\">Should I use no-code tools instead of building?</h3><p>For internal tools and early experiments, often yes. For the part customers pay for, custom code usually wins once the product is validated. Buy commodity parts such as payments, SMS and login rather than building them.</p><h3 id=\"how-long-is-python-supported\">How long is Python supported?</h3><p>The Python Developer's Guide says support ends five years after a release. When I checked, 3.14 and 3.15 were in bugfix, and 3.11 to 3.13 were receiving security fixes only.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://survey.stackoverflow.co/2025/technology\" rel=\"noopener noreferrer nofollow\">2025 Developer Survey: Technology, Stack Overflow</a>, read 16 November 2026</li><li><a href=\"https://gs.statcounter.com/os-market-share/mobile/india\" rel=\"noopener noreferrer nofollow\">Mobile operating system market share India, StatCounter</a>, read 16 November 2026</li><li><a href=\"https://nodejs.org/en/about/previous-releases\" rel=\"noopener noreferrer nofollow\">Node.js releases, Node.js</a>, read 16 November 2026</li><li><a href=\"https://devguide.python.org/versions/\" rel=\"noopener noreferrer nofollow\">Status of Python versions, Python Developer's Guide</a>, read 16 November 2026</li><li><a href=\"https://www.postgresql.org/support/versioning/\" rel=\"noopener noreferrer nofollow\">Versioning policy, PostgreSQL</a>, read 16 November 2026</li><li><a href=\"https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html\" rel=\"noopener noreferrer nofollow\">AWS Regions, AWS documentation</a>, read 16 November 2026</li><li><a href=\"https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11244&Mode=0\" rel=\"noopener noreferrer nofollow\">Storage of Payment System Data, Reserve Bank of India</a>, read 16 November 2026</li><li><a href=\"https://martinfowler.com/bliki/MonolithFirst.html\" rel=\"noopener noreferrer nofollow\">MonolithFirst, Martin Fowler</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of Indian co-founders stacking building blocks for an app beside the words Pick your stack",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of two Indian co-founders (a woman in a cotton saree with a laptop bag, a man in a polo shirt) in a small Bengaluru-style office, stacking four large flat blocks on a table, each block a different colour with a simple icon (phone, browser window, gear, database cylinder), no readable text, no logos. Terracotta, mustard and sage palette, soft shadows, faces fully in frame. Right half: the title text 'Pick your stack' in very large bold black sans-serif, left-aligned, on two lines ('Pick your' / 'stack'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a simple startup stack from phone to database",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'A simple stack for a new product'. Left to right, flat icons joined by orange arrows, each with a dark-blue rounded pill with white text: 1) Android phone icon 'Flutter or React Native'; 2) browser icon 'React / Next.js'; 3) gear icon 'Node.js (TypeScript) or Python'; 4) database cylinder icon 'PostgreSQL'; 5) cloud with small India outline icon 'Hosted in an India region'. One-line bold takeaway at bottom: 'Popular and boring beats clever and rare.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Node.js releases page showing that production apps should use LTS releases",
+   "url": "https://nodejs.org/en/about/previous-releases",
+   "annotate": [
+    {
+     "text": "Production applications should only use",
+     "label": "Use LTS in production"
+    },
+    {
+     "text": "30 months",
+     "label": "LTS support length"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian founding team testing an app on low-cost Android phones",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Three young Indian team members at a co-working table, each holding a different budget Android phone showing abstract app screens, one taking notes in a notebook, a laptop and chai glasses on the table, a window with a city view behind. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Python Developer's Guide versions page showing the five-year support rule",
+   "url": "https://devguide.python.org/versions/",
+   "annotate": [
+    {
+     "text": "Five years after a release, support ends.",
+     "label": "5-year support"
+    }
+   ]
+  }
+ ]
+}

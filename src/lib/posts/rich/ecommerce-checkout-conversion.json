@@ -1,206 +1,206 @@
 {
-  "slug": "ecommerce-checkout-conversion",
-  "locale": "en",
-  "title": "Cart abandonment in India: fix your checkout",
-  "description": "Cut cart abandonment and COD returns in your Indian online store: Baymard data, RTO costs, UPI, Shopify COD setup, guest checkout and WhatsApp recovery rules.",
-  "imageUrl": "/assets/blog/ecommerce-checkout-conversion/cover.webp",
-  "imageAlt": "Illustration of an Indian online store owner reviewing checkout orders on a laptop beside the words Fix your checkout",
-  "ogImageUrl": null,
-  "tags": [
-    "checkout conversion",
-    "cart abandonment",
-    "ecommerce",
-    "India"
-  ],
-  "readingTimeMinutes": 17,
-  "publishedAt": "2026-11-16T09:00:00.000Z",
-  "updatedAt": "2026-11-16T09:00:00.000Z",
-  "heading": null,
-  "eyebrow": null,
-  "standfirst": null,
-  "faqHeading": "Frequently asked questions",
-  "headline": null,
-  "breadcrumbLabel": null,
-  "faqPlacement": "body",
-  "toc": [
+ "slug": "ecommerce-checkout-conversion",
+ "locale": "en",
+ "title": "Cart abandonment in India: fix your checkout",
+ "description": "Cut cart abandonment and COD returns in your Indian online store: Baymard data, RTO costs, UPI, Shopify COD setup, guest checkout and WhatsApp recovery rules.",
+ "imageUrl": "/assets/blog/ecommerce-checkout-conversion/cover.webp",
+ "imageAlt": "Illustration of an Indian online store owner reviewing checkout orders on a laptop beside the words Fix your checkout",
+ "ogImageUrl": null,
+ "tags": [
+  "checkout conversion",
+  "cart abandonment",
+  "ecommerce",
+  "India"
+ ],
+ "readingTimeMinutes": 17,
+ "publishedAt": "2026-02-21T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "why-indian-shoppers-leave-at-checkout",
+   "text": "Why Indian shoppers leave at checkout",
+   "level": 2
+  },
+  {
+   "id": "what-the-research-says-about-abandonment",
+   "text": "What the research says about abandonment",
+   "level": 2
+  },
+  {
+   "id": "cod-vs-prepaid-what-returns-really-cost",
+   "text": "COD vs prepaid: what returns really cost",
+   "level": 2
+  },
+  {
+   "id": "upi-at-checkout",
+   "text": "UPI at checkout",
+   "level": 2
+  },
+  {
+   "id": "shopify-india-checkout-options",
+   "text": "Shopify India checkout options",
+   "level": 2
+  },
+  {
+   "id": "guest-checkout-and-fewer-fields",
+   "text": "Guest checkout and fewer fields",
+   "level": 2
+  },
+  {
+   "id": "address-and-pincode-checks",
+   "text": "Address and pincode checks",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-a-checkout-fix-you-can-do-this-month",
+   "text": "Step by step: a checkout fix you can do this month",
+   "level": 2
+  },
+  {
+   "id": "whatsapp-cart-recovery-without-breaking-metas-rules",
+   "text": "WhatsApp cart recovery without breaking Meta's rules",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-skincare-brand",
+   "text": "A D2C skincare brand",
+   "level": 3
+  },
+  {
+   "id": "a-saree-store",
+   "text": "A saree store",
+   "level": 3
+  },
+  {
+   "id": "a-phone-accessories-seller",
+   "text": "A phone accessories seller",
+   "level": 3
+  },
+  {
+   "id": "five-ways-checkout-advice-misleads-you",
+   "text": "Five ways checkout advice misleads you",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-checkout-checklist",
+   "text": "A monthly checkout checklist",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is a normal cart abandonment rate?",
+   "a": "Baymard Institute's average across 50 studies from 2006 to 2025 is 70.22%, with studies ranging from 55% to 84%. Baymard says there is no universal good rate. Compare your own rate month on month rather than against a benchmark."
+  },
+  {
+   "q": "Should I stop offering cash on delivery?",
+   "a": "I would not, without testing. COD is a large share of Indian ecommerce orders, about 60 to 65% by the ET Prime figure Amazon Shipping cites. Confirm COD orders before dispatch, watch pincodes with repeated returns and nudge people to prepay instead."
+  },
+  {
+   "q": "How much more do COD orders come back than prepaid ones?",
+   "a": "In Shipway's FY25 analysis of D2C shipments, less than 2% of prepaid orders were returned against nearly 26% of COD orders. City rates ranged from 18% in Vadodara to 35% in Patna."
+  },
+  {
+   "q": "Can I use Shopify Payments in India?",
+   "a": "No. India is not on Shopify's list of countries where Shopify Payments is available, so Indian stores use a third-party provider such as Razorpay for UPI, cards, wallets and netbanking. Shopify charges third-party transaction fees on those payments, which vary by plan."
+  },
+  {
+   "q": "How do I turn on COD in Shopify?",
+   "a": "In the Shopify admin go to Settings, Payments, and in the Payment providers section choose the Cash on Delivery manual method. Add details and payment instructions, then activate it. COD orders show as Pending until you mark them as paid."
+  },
+  {
+   "q": "Are WhatsApp cart reminders allowed?",
+   "a": "Yes, to people who opted in to hear from your business. Meta classes a cart reminder as a marketing message, even if the user asked for it, so it is priced as marketing. Order and COD confirmations without any promotion can be utility messages."
+  },
+  {
+   "q": "Does guest checkout really matter?",
+   "a": "In Baymard's 2026 US survey, 18% of shoppers had abandoned an order because they had to create an account. Let people buy without one and offer an account after the order, when tracking and reordering give them a reason."
+  }
+ ],
+ "contentHtml": "<h2 id=\"why-indian-shoppers-leave-at-checkout\">Why Indian shoppers leave at checkout</h2><p><strong>In short:</strong> About 7 in 10 online carts are abandoned, according to Baymard Institute's average of 50 studies. For an Indian store the bigger leak often comes after the order: cash on delivery parcels that come back. Show the full price early, make UPI the easy default, keep COD but confirm it, allow guest checkout and check the address before you ship.</p><p>Most advice on checkout conversion is written for American stores that take cards. An Indian store has a different problem set. A large share of orders are cash on delivery, a fair share of those never get accepted at the door, and the shopper is on a phone, often switching between your site and a UPI app.</p><p>If you want the scope and cost of a checkout rebuild written down before you commit, this is what our ₹3,500 requirement analysis produces: a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). The rest of this post needs nothing from us or anyone else.</p><p>This guide was checked in November 2026, against Baymard's list updated 28 October 2026, Shopify's help centre and Meta's WhatsApp documentation. Menu names in Shopify and Meta change, so if a label below has moved, look for the nearest one.</p><h2 id=\"what-the-research-says-about-abandonment\">What the research says about abandonment</h2><p>Baymard Institute keeps the most cited list of cart abandonment studies. Its <a href=\"https://baymard.com/lists/cart-abandonment-rate\" rel=\"noopener noreferrer nofollow\">cart abandonment page</a> gives an average documented rate of 70.22%, the unweighted average of 50 studies published from 2006 to 2025. The individual studies range from 55% to 84%. That range matters: there is no single \"normal\" rate, and your own number moving down is a better test than any benchmark.</p><p>Baymard also asks shoppers why they left. Its 2026 survey covered 1,083 US adults who had shopped online in the previous three months, with more than one answer allowed.</p><p><em>Reasons shoppers gave for abandoning a purchase at checkout, Baymard 2026 survey</em></p><table><thead><tr><th>Reason given</th><th>Share of shoppers</th></tr></thead><tbody><tr><td>Just browsing or not ready to buy</td><td>42%</td></tr><tr><td>Extra costs too high (shipping, tax, fees)</td><td>40%</td></tr><tr><td>Delivery was too slow</td><td>20%</td></tr><tr><td>Did not trust the site with card details</td><td>19%</td></tr><tr><td>Had to create an account</td><td>18%</td></tr><tr><td>Checkout too long or complicated</td><td>17%</td></tr><tr><td>Website had errors or crashed</td><td>17%</td></tr><tr><td>Returns policy not good enough</td><td>13%</td></tr><tr><td>Could not see the total cost up front</td><td>12%</td></tr><tr><td>Card was declined</td><td>10%</td></tr><tr><td>Not enough payment methods</td><td>9%</td></tr></tbody></table><p><em>Source: </em><a href=\"https://baymard.com/lists/cart-abandonment-rate\" rel=\"noopener noreferrer nofollow\"><em>Baymard Institute, Cart abandonment rate statistics</em></a><em>, read 16 November 2026.</em></p><p>This is US data. I did not find an Indian survey of the same kind with its method published, so read the table as a list of causes to check, not as Indian percentages. Several of the causes clearly travel: surprise costs, forced accounts, long forms and too few ways to pay.</p><p>Two more Baymard figures are worth knowing. In its benchmark, the average US checkout shows 23.48 form elements by default, while its testing found an ideal flow can be as short as 12 to 14. And it estimates that a large ecommerce site can gain a 35.26% increase in conversion rate through better checkout design alone. That is for large US and EU sites, not a promise for yours.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/1.webp\" alt=\"Explainer showing where an Indian online order is lost: at checkout, at payment, and at the door on delivery\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>An Indian store loses orders in three places, and only the first is in most checkout guides.</figcaption></figure><h2 id=\"cod-vs-prepaid-what-returns-really-cost\">COD vs prepaid: what returns really cost</h2><p>RTO, or return to origin, is when an order ships but never reaches the customer and comes back to you. The parcel went out, the courier was paid, and there was no sale.</p><p>The clearest recent Indian numbers I found are from Shipway, a logistics platform owned by Unicommerce. Its ShipNotes analysis of D2C shipments in FY25, <a href=\"https://mediabrief.com/shipnotes-reveals-26-rto-rate-on-cod-orders-across-india/\" rel=\"noopener noreferrer nofollow\">reported by MediaBrief</a>, found that less than 2% of prepaid orders were returned, against nearly 26% of cash on delivery orders. The same report lists failed delivery attempts, wrong addresses and customers refusing the parcel as the usual causes.</p><p>The report breaks that 26% down, and the breakdown is more useful than the average:</p><ul><li>By city: Vadodara had the lowest COD return rate at 18% and Patna the highest at 35%.</li><li>By delivery speed: orders attempted in 1 to 2 days came back 22% of the time, 3 to 5 days 27%, and after more than 5 days 35%.</li><li>By order value: orders between ₹500 and ₹1,000 had the highest rate at 28%, against 25% under ₹500 and 24% over ₹1,000.</li><li>By zone: intra-city shipments came back 20% of the time, inter-state non-metro 27% and special zones such as the North East 28%.</li></ul><p>How much does one return cost? Amazon Shipping's <a href=\"https://shipping.amazon.in/blog/what-is-rto-how-to-reduce-return-to-origin\" rel=\"noopener noreferrer nofollow\">guide to RTO for Indian sellers</a> gives an illustrative breakdown it credits to a 2025 estimate by bepragma.ai: forward shipping ₹60 to ₹100, reverse shipping ₹50 to ₹80, repacking and checks ₹20 to ₹40 and inventory held in transit ₹10 to ₹20, so roughly ₹180 to ₹240 per returned parcel before the cost of acquiring that customer. The same page, citing ET Prime research through Dazeinfo, says about 60 to 65% of Indian ecommerce orders are placed on COD.</p><p>So the case for nudging people to prepay is plain: on Shipway's average, every COD order carries about a one in four chance of costing you a couple of hundred rupees for nothing.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/2.webp\" alt=\"Explainer comparing return rates of prepaid and cash on delivery orders in India, with the cost of one returned parcel\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Prepaid orders rarely come back. COD orders come back about one time in four.</figcaption></figure><h2 id=\"upi-at-checkout\">UPI at checkout</h2><p>If you sell on Shopify from India, start with one fact: Shopify Payments is not offered here. Shopify's <a href=\"https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries\" rel=\"noopener noreferrer nofollow\">list of supported countries</a> does not include India, and it says that if your country is not listed you need a third-party payment provider.</p><p>That provider is where UPI comes from. Razorpay's <a href=\"https://razorpay.com/docs/payments/payment-gateway/ecommerce-plugins/shopify/\" rel=\"noopener noreferrer nofollow\">Shopify integration guide</a>, as one example, says its app accepts UPI, cards, wallets and netbanking, and that you add it in the Shopify admin under Settings, Payments, Add payment method, then search for the provider. Compare the fees and settlement times of other gateways before you choose.</p><p>Two things to budget for. Your gateway charges its own fee on each payment. And Shopify's <a href=\"https://help.shopify.com/en/manual/payments/third-party-providers\" rel=\"noopener noreferrer nofollow\">page on third-party providers</a> says third-party transaction fees apply to all transactions processed through third-party gateways. The rate depends on your plan, so check Shopify's pricing page for the current figure.</p><p>What I would do with UPI on the page itself:</p><ul><li>Put UPI first on mobile. A shopper on a phone who already has a UPI app open is two taps from paying.</li><li>Say why prepaying is better for them, in one line: faster dispatch, a small prepaid discount, or free shipping on prepaid. Keep it honest and keep it the same price everywhere it is shown.</li><li>Make the failed payment path clear. If a UPI payment times out, the shopper should land back on the payment step with their cart intact and COD still available, not on an error page.</li></ul><p>Payment failures and duplicate charges are their own topic; our post on <a href=\"/blogs/payment-gateway-integration-pitfalls\">payment gateway integration pitfalls</a> covers the ones we see most.</p><h2 id=\"shopify-india-checkout-options\">Shopify India checkout options</h2><p>Cash on delivery on Shopify is a manual payment method, not an app. Shopify's <a href=\"https://help.shopify.com/en/manual/payments/manual-payments\" rel=\"noopener noreferrer nofollow\">manual payments page</a> lists COD among the common manual methods and reserves the name \"Cash on Delivery (COD)\" for it. You turn it on from Settings, Payments, in the Payment providers section, then fill in two boxes: Additional details, shown next to the method at checkout, and Payment instructions, shown on the order confirmation page.</p><p>A COD order is marked Pending on the Orders page. After the courier remits the money, you mark the order as paid yourself. If you skip that step your sales reports will not match your bank, so make it part of your weekly routine.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/3.webp\" alt=\"Annotated view of Shopify's manual payment methods help page showing the reserved Cash on Delivery name and payment instructions box\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Step 2: COD is set up as a manual payment method in Shopify's Payments settings.</figcaption></figure><p>Two more Shopify settings matter for conversion. Shopify's <a href=\"https://help.shopify.com/en/manual/customers/customer-accounts\" rel=\"noopener noreferrer nofollow\">customer accounts page</a> describes passwordless sign-in: the customer enters an email and gets a one-time 6-digit code, with options to sign in with Shop or with Google and Facebook. If someone signs in with an email that has no profile yet, Shopify creates one automatically. And Shopify's <a href=\"https://help.shopify.com/en/manual/checkout-settings\" rel=\"noopener noreferrer nofollow\">checkout settings page</a> is where you choose how customer contact details are collected.</p><p>If your store is not on Shopify, the same choices exist on any platform, they are just named differently. We cover the build side on our <a href=\"/services/shopify-development\">Shopify development</a> and <a href=\"/services/ecommerce-development\">ecommerce development</a> pages.</p><h2 id=\"guest-checkout-and-fewer-fields\">Guest checkout and fewer fields</h2><p>In Baymard's survey, 18% of shoppers had abandoned an order because the site wanted them to create an account. Its FAQ puts guest checkout in its first three fixes, alongside showing the total cost early and cutting unnecessary fields.</p><p>For an Indian store I would go further on fields. Ask only for what the courier needs: name, phone, full address and pincode. A second address line, a company name and a separate landmark box can be optional. Every extra required box on a phone is a place to give up.</p><p>Offer an account after the order, on the thank-you page, when tracking and reordering give people a reason.</p><h2 id=\"address-and-pincode-checks\">Address and pincode checks</h2><p>A wrong address is one of the causes of RTO that Shipway names, and it is the one you can fix before the parcel leaves.</p><p>Amazon Shipping's guide suggests a watchlist of high-RTO pincodes built from your own last 30 days of orders, with an extra check for orders from those pincodes. It also suggests WhatsApp or SMS confirmation before dispatch for first-time COD buyers, and a call or OTP for high-value COD orders, giving above ₹1,000 as its example. For customers who have refused before, it suggests prepaid only, or COD with a part-payment or fee, applied selectively rather than to everyone.</p><p>What I would add on the storefront:</p><ul><li>A pincode box on the product page that shows the delivery estimate and whether COD is available there, before the shopper reaches checkout. That answers the 'delivery was too slow' worry early and stops COD orders to places your courier does not serve.</li><li>Check the pincode against the city and state the shopper typed. A mismatch is a cheap signal to ask them to confirm.</li><li>Keep the phone number mandatory and check it is ten digits. The courier calls that number, and so does your confirmation step.</li></ul><h2 id=\"step-by-step-a-checkout-fix-you-can-do-this-month\">Step by step: a checkout fix you can do this month</h2><p>This is the order I would work in. It goes from free changes to ones that need a developer.</p><p><strong>Step 1. Measure your two leaks.</strong> From your store analytics, note carts created and orders completed for the last 30 days. From your courier panel, note COD orders shipped and COD orders returned. Baymard's formula is simple: abandonment rate is one minus completed purchases divided by carts created.</p><p><strong>Step 2. Show the full price on the product page.</strong> Shipping fee, COD fee if you charge one, and the delivery estimate. In Baymard's survey, extra costs were the top fixable reason at 40%.</p><p><strong>Step 3. Turn on UPI through your gateway and put it first on mobile.</strong> Test a real payment on an Android phone and an iPhone, including one you cancel halfway.</p><p><strong>Step 4. Keep COD, with clear instructions.</strong> Use Shopify's Payment instructions box to say what happens next: the order is confirmed on WhatsApp or by call before it ships.</p><p><strong>Step 5. Remove forced sign-up and trim fields.</strong> Count the boxes on your checkout on a phone. Compare with Baymard's 12 to 14 elements.</p><p><strong>Step 6. Confirm COD orders before dispatch.</strong> A short utility message on WhatsApp, or a call for high-value orders. Cancel orders nobody confirms within the time you set.</p><p><strong>Step 7. Start cart recovery only for people who opted in.</strong> The rules are in the next section. Measure recovered orders against a group you did not message.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/4.webp\" alt=\"Illustration of an Indian store owner checking orders on a laptop while packing parcels\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Most of the fixes above are settings and copy, not a new website.</figcaption></figure><h2 id=\"whatsapp-cart-recovery-without-breaking-metas-rules\">WhatsApp cart recovery without breaking Meta's rules</h2><p>A cart reminder on WhatsApp is a marketing message, not a utility one. Meta's <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization\" rel=\"noopener noreferrer nofollow\">template categorization page</a> gives this exact example under retargeting: \"You left {items} in your cart! Don't worry, we saved them. Checkout now below.\" It classes such messages as marketing \"even if requested by users\".</p><p>That matters because marketing messages cost more than utility ones, and because the category is decided by content. Meta defines utility templates as follow-ups to a user's action or request, which must be non-promotional. A template that mixes the two, such as an order update with a promo, counts as marketing.</p><p>Before you send any of it, you need opt-in. Meta's <a href=\"https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in\" rel=\"noopener noreferrer nofollow\">opt-in page</a> says the person must have given you their number and agreed to receive messages from your business, that you must clearly state your business name, and that you must comply with applicable law. A tick box at checkout that says \"Send me order updates and offers from [your store] on WhatsApp\" does the job; two separate boxes for updates and for offers is better.</p><p>Timing has rules too. Meta's <a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> explains that when a customer messages you, a 24-hour customer service window opens and you can reply freely; outside it, you can only send approved templates. The same page lists a rate change for India marketing messages from 1 January 2026, so take current prices from Meta's rate card, not from an old blog post.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/5.webp\" alt=\"Annotated view of Meta's WhatsApp template categorization page showing that cart reminders and mixed templates are marketing\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Meta classes a cart reminder as marketing, even when the customer asked for it.</figcaption></figure><p>How I would use WhatsApp in a checkout flow:</p><ul><li>COD confirmation as a utility template: order number, amount, address, and two buttons to confirm or change. No offer in it.</li><li>One cart reminder, a few hours after the cart was left, to people who ticked the offers box. No second or third chase.</li></ul><p>If you want the replies and confirmations handled automatically, that is an <a href=\"/ai-solutions/ai-agents-and-automation\">AI agent and automation</a> job rather than a checkout change.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The stores and numbers below are made up to show the method. They are not real figures from any real business. The return rates come from Shipway's FY25 averages and the cost per return from the ₹180 to ₹240 estimate quoted by Amazon Shipping.</p><h3 id=\"a-d2c-skincare-brand\">A D2C skincare brand</h3><p>Illustrative: the brand ships 2,000 orders a month, 1,200 of them COD. At Shipway's 26% COD average, about 312 come back. At ₹180 to ₹240 each, that is roughly ₹56,000 to ₹75,000 a month spent on parcels that never became sales.</p><p>If a prepaid offer moves 300 of those COD orders to UPI, and those prepaid orders come back at Shipway's under 2% instead of 26%, about 72 fewer parcels come back (78 returns become about 6). That saves roughly ₹13,000 to ₹17,300 a month, before you count the inventory that is no longer stuck in transit. Weigh it against the cost of the prepaid discount.</p><h3 id=\"a-saree-store\">A saree store</h3><p>Illustrative: an ethnic wear store's typical order is ₹2,500, well above the ₹1,000 mark Amazon's guide uses for a confirmation call. Each return also ties up a piece that might sell elsewhere. Here I would call every first-time COD buyer before dispatch, and offer COD with a small part-payment by UPI for repeat refusers.</p><p>The fix that matters most here is product-page certainty: the delivery date for the pincode and the returns policy in one line. Baymard's 13% for an unsatisfactory returns policy is the reason.</p><h3 id=\"a-phone-accessories-seller\">A phone accessories seller</h3><p>Illustrative: the seller's orders sit between ₹500 and ₹1,000, the band where Shipway found the highest COD return rate at 28%. Impulse buys are common and so are second thoughts.</p><p>For this store I would make prepaid the default with a visible reason, keep COD, and send a utility confirmation within an hour of the order. I would also ship from the nearest warehouse where possible, because Shipway's data shows returns rising from 22% to 35% as delivery attempts move from 1 to 2 days to over 5.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/6.webp\" alt=\"Illustration of a young Indian seller confirming orders on a phone in a small stockroom\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For low-value impulse buys, a quick confirmation does more than a discount.</figcaption></figure><h2 id=\"five-ways-checkout-advice-misleads-you\">Five ways checkout advice misleads you</h2><p><strong>US survey numbers read as Indian ones.</strong> Baymard's reasons come from US adults who mostly pay by card. 'Did not trust the site with my card' may matter less for a UPI shopper, and COD refusals do not appear at all.</p><p><strong>The 70% average used as a target.</strong> Baymard itself says there is no universal good rate. Your own rate falling over time is the useful measure.</p><p><strong>Removing COD to cut returns.</strong> That cuts returns by cutting orders. With COD at 60 to 65% of orders by the figure Amazon's guide cites, I would confirm and filter COD rather than drop it, and test any change on a share of traffic first.</p><p><strong>Counting every recovered cart as a win.</strong> Some shoppers would have come back anyway. Without a group you did not message, you cannot tell how many reminders actually changed anything.</p><p><strong>Trusting the national average for your area.</strong> Shipway's city rates run from 18% to 35%. If most of your orders go to one region, your own courier data beats any average.</p><h2 id=\"a-monthly-checkout-checklist\">A monthly checkout checklist</h2><p>Once a month, after courier remittances arrive.</p><p><em>A monthly checkout and COD review</em></p><table><thead><tr><th>Check</th><th>Where to look</th><th>What you write down</th></tr></thead><tbody><tr><td>Cart abandonment rate</td><td>Store analytics: carts created and orders completed</td><td>This month's rate and last month's</td></tr><tr><td>COD share and COD return rate</td><td>Courier panel</td><td>Returned COD parcels and their cost at your actual rates</td></tr><tr><td>Pincodes with repeated returns</td><td>Courier panel, last 30 days</td><td>Pincodes to add to the confirmation list</td></tr><tr><td>Failed UPI payments</td><td>Payment gateway dashboard</td><td>Failure count and whether shoppers retried</td></tr><tr><td>Checkout fields on a phone</td><td>Your own checkout, on a cheap Android phone</td><td>Number of required boxes</td></tr><tr><td>WhatsApp templates</td><td>WhatsApp Manager</td><td>Any template Meta moved to marketing, opt-out spikes</td></tr><tr><td>Orders still marked Pending</td><td>Shopify Orders page</td><td>COD orders paid but not marked as paid</td></tr></tbody></table><p>After three months you will know your real cost of a COD order and which fix moved it. Our <a href=\"/industries/ecommerce\">ecommerce industry page</a> lists the kinds of store builds we take on if you get that far and want help.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-a-normal-cart-abandonment-rate\">What is a normal cart abandonment rate?</h3><p>Baymard Institute's average across 50 studies from 2006 to 2025 is 70.22%, with studies ranging from 55% to 84%. Baymard says there is no universal good rate. Compare your own rate month on month rather than against a benchmark.</p><h3 id=\"should-i-stop-offering-cash-on-delivery\">Should I stop offering cash on delivery?</h3><p>I would not, without testing. COD is a large share of Indian ecommerce orders, about 60 to 65% by the ET Prime figure Amazon Shipping cites. Confirm COD orders before dispatch, watch pincodes with repeated returns and nudge people to prepay instead.</p><h3 id=\"how-much-more-do-cod-orders-come-back-than-prepaid-ones\">How much more do COD orders come back than prepaid ones?</h3><p>In Shipway's FY25 analysis of D2C shipments, less than 2% of prepaid orders were returned against nearly 26% of COD orders. City rates ranged from 18% in Vadodara to 35% in Patna.</p><h3 id=\"can-i-use-shopify-payments-in-india\">Can I use Shopify Payments in India?</h3><p>No. India is not on Shopify's list of countries where Shopify Payments is available, so Indian stores use a third-party provider such as Razorpay for UPI, cards, wallets and netbanking. Shopify charges third-party transaction fees on those payments, which vary by plan.</p><h3 id=\"how-do-i-turn-on-cod-in-shopify\">How do I turn on COD in Shopify?</h3><p>In the Shopify admin go to Settings, Payments, and in the Payment providers section choose the Cash on Delivery manual method. Add details and payment instructions, then activate it. COD orders show as Pending until you mark them as paid.</p><h3 id=\"are-whatsapp-cart-reminders-allowed\">Are WhatsApp cart reminders allowed?</h3><p>Yes, to people who opted in to hear from your business. Meta classes a cart reminder as a marketing message, even if the user asked for it, so it is priced as marketing. Order and COD confirmations without any promotion can be utility messages.</p><h3 id=\"does-guest-checkout-really-matter\">Does guest checkout really matter?</h3><p>In Baymard's 2026 US survey, 18% of shoppers had abandoned an order because they had to create an account. Let people buy without one and offer an account after the order, when tracking and reordering give them a reason.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://baymard.com/lists/cart-abandonment-rate\" rel=\"noopener noreferrer nofollow\">Cart abandonment rate: 50 statistics, Baymard Institute</a>, read 16 November 2026</li><li><a href=\"https://mediabrief.com/shipnotes-reveals-26-rto-rate-on-cod-orders-across-india/\" rel=\"noopener noreferrer nofollow\">Shipway ShipNotes reveals 26% RTO rate on CoD orders across India, MediaBrief</a>, read 16 November 2026</li><li><a href=\"https://shipping.amazon.in/blog/what-is-rto-how-to-reduce-return-to-origin\" rel=\"noopener noreferrer nofollow\">What is RTO and how can Indian SMBs reduce it, Amazon Shipping India</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/payments/manual-payments\" rel=\"noopener noreferrer nofollow\">Manual payment methods, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/customers/customer-accounts\" rel=\"noopener noreferrer nofollow\">Customer accounts, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/checkout-settings\" rel=\"noopener noreferrer nofollow\">Checkout settings, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/payments/third-party-providers\" rel=\"noopener noreferrer nofollow\">Third-party payment providers, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries\" rel=\"noopener noreferrer nofollow\">Shopify Payments supported countries, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/payment-gateway/ecommerce-plugins/shopify/\" rel=\"noopener noreferrer nofollow\">Razorpay Shopify integration, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization\" rel=\"noopener noreferrer nofollow\">Template categorization, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in\" rel=\"noopener noreferrer nofollow\">Get opt-in for WhatsApp, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform, Meta for Developers</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian online store owner reviewing checkout orders on a laptop beside the words Fix your checkout",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian online store owner (man in his 30s, half-sleeve shirt) at a packing table in a small stockroom, looking at a laptop showing an abstract checkout form with a cart icon (no readable text, no logos), parcels and a phone beside him. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Fix your checkout' in very large bold black sans-serif, left-aligned, on two lines ('Fix your' / 'checkout'). No other text, no brand logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Explainer showing where an Indian online order is lost: at checkout, at payment, and at the door on delivery",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Where an Indian order gets lost'. Three stages left to right joined by orange arrows: 1) cart icon with dark-blue pill 'Checkout' and small line below 'about 70% of carts abandoned'; 2) phone with payment icon, pill 'Payment' and line 'UPI fails, no retry'; 3) parcel at a door icon, pill 'Delivery' and line 'COD parcel refused'. Small grey line under the stages: 'Cart figure: Baymard average of 50 studies'. One-line bold takeaway at bottom: 'Most guides only fix the first stage.' White text inside the pills. No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Explainer comparing return rates of prepaid and cash on delivery orders in India, with the cost of one returned parcel",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Prepaid vs COD returns in India'. Left column: UPI/phone icon with dark-blue pill 'Prepaid' and large text 'under 2% returned'. Right column: cash icon with dark-blue pill 'Cash on delivery' and large text 'about 26% returned'. Below the right column an orange arrow to a parcel icon with pill 'One return costs about ₹180 to ₹240'. Small grey line: 'Shipway ShipNotes FY25; cost estimate quoted by Amazon Shipping'. One-line bold takeaway at bottom: 'Confirm COD orders before they ship.' White text inside the pills. No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Shopify's manual payment methods help page showing the reserved Cash on Delivery name and payment instructions box",
+   "url": "https://help.shopify.com/en/manual/payments/manual-payments",
+   "annotate": [
     {
-      "id": "why-indian-shoppers-leave-at-checkout",
-      "text": "Why Indian shoppers leave at checkout",
-      "level": 2
+     "text": "Cash on Delivery (COD)",
+     "label": "Reserved COD method"
     },
     {
-      "id": "what-the-research-says-about-abandonment",
-      "text": "What the research says about abandonment",
-      "level": 2
+     "text": "Payment instructions",
+     "label": "Tell buyers what happens next"
     },
     {
-      "id": "cod-vs-prepaid-what-returns-really-cost",
-      "text": "COD vs prepaid: what returns really cost",
-      "level": 2
-    },
-    {
-      "id": "upi-at-checkout",
-      "text": "UPI at checkout",
-      "level": 2
-    },
-    {
-      "id": "shopify-india-checkout-options",
-      "text": "Shopify India checkout options",
-      "level": 2
-    },
-    {
-      "id": "guest-checkout-and-fewer-fields",
-      "text": "Guest checkout and fewer fields",
-      "level": 2
-    },
-    {
-      "id": "address-and-pincode-checks",
-      "text": "Address and pincode checks",
-      "level": 2
-    },
-    {
-      "id": "step-by-step-a-checkout-fix-you-can-do-this-month",
-      "text": "Step by step: a checkout fix you can do this month",
-      "level": 2
-    },
-    {
-      "id": "whatsapp-cart-recovery-without-breaking-metas-rules",
-      "text": "WhatsApp cart recovery without breaking Meta's rules",
-      "level": 2
-    },
-    {
-      "id": "three-worked-examples",
-      "text": "Three worked examples",
-      "level": 2
-    },
-    {
-      "id": "a-d2c-skincare-brand",
-      "text": "A D2C skincare brand",
-      "level": 3
-    },
-    {
-      "id": "a-saree-store",
-      "text": "A saree store",
-      "level": 3
-    },
-    {
-      "id": "a-phone-accessories-seller",
-      "text": "A phone accessories seller",
-      "level": 3
-    },
-    {
-      "id": "five-ways-checkout-advice-misleads-you",
-      "text": "Five ways checkout advice misleads you",
-      "level": 2
-    },
-    {
-      "id": "a-monthly-checkout-checklist",
-      "text": "A monthly checkout checklist",
-      "level": 2
-    },
-    {
-      "id": "frequently-asked-questions",
-      "text": "Frequently asked questions",
-      "level": 2
+     "text": "Mark a manual payment as paid",
+     "label": "Mark paid after remittance"
     }
-  ],
-  "faq": [
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian store owner checking orders on a laptop while packing parcels",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian woman running a small online skincare brand from a home studio: laptop open with abstract dashboard shapes, a phone showing abstract chat bubbles, small parcels and product bottles on shelves behind. No readable text on any screen, no logos. Face fully in frame."
+  },
+  {
+   "file": "5.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Meta's WhatsApp template categorization page showing that cart reminders and mixed templates are marketing",
+   "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+   "annotate": [
     {
-      "q": "What is a normal cart abandonment rate?",
-      "a": "Baymard Institute's average across 50 studies from 2006 to 2025 is 70.22%, with studies ranging from 55% to 84%. Baymard says there is no universal good rate. Compare your own rate month on month rather than against a benchmark."
+     "text": "Templates with mixed content",
+     "label": "Mixed = marketing"
     },
     {
-      "q": "Should I stop offering cash on delivery?",
-      "a": "I would not, without testing. COD is a large share of Indian ecommerce orders, about 60 to 65% by the ET Prime figure Amazon Shipping cites. Confirm COD orders before dispatch, watch pincodes with repeated returns and nudge people to prepay instead."
-    },
-    {
-      "q": "How much more do COD orders come back than prepaid ones?",
-      "a": "In Shipway's FY25 analysis of D2C shipments, less than 2% of prepaid orders were returned against nearly 26% of COD orders. City rates ranged from 18% in Vadodara to 35% in Patna."
-    },
-    {
-      "q": "Can I use Shopify Payments in India?",
-      "a": "No. India is not on Shopify's list of countries where Shopify Payments is available, so Indian stores use a third-party provider such as Razorpay for UPI, cards, wallets and netbanking. Shopify charges third-party transaction fees on those payments, which vary by plan."
-    },
-    {
-      "q": "How do I turn on COD in Shopify?",
-      "a": "In the Shopify admin go to Settings, Payments, and in the Payment providers section choose the Cash on Delivery manual method. Add details and payment instructions, then activate it. COD orders show as Pending until you mark them as paid."
-    },
-    {
-      "q": "Are WhatsApp cart reminders allowed?",
-      "a": "Yes, to people who opted in to hear from your business. Meta classes a cart reminder as a marketing message, even if the user asked for it, so it is priced as marketing. Order and COD confirmations without any promotion can be utility messages."
-    },
-    {
-      "q": "Does guest checkout really matter?",
-      "a": "In Baymard's 2026 US survey, 18% of shoppers had abandoned an order because they had to create an account. Let people buy without one and offer an account after the order, when tracking and reordering give them a reason."
+     "text": "These are marketing even if requested by users",
+     "label": "Cart reminders are marketing"
     }
-  ],
-  "contentHtml": "<h2 id=\"why-indian-shoppers-leave-at-checkout\">Why Indian shoppers leave at checkout</h2><p><strong>In short:</strong> About 7 in 10 online carts are abandoned, according to Baymard Institute's average of 50 studies. For an Indian store the bigger leak often comes after the order: cash on delivery parcels that come back. Show the full price early, make UPI the easy default, keep COD but confirm it, allow guest checkout and check the address before you ship.</p><p>Most advice on checkout conversion is written for American stores that take cards. An Indian store has a different problem set. A large share of orders are cash on delivery, a fair share of those never get accepted at the door, and the shopper is on a phone, often switching between your site and a UPI app.</p><p>If you want the scope and cost of a checkout rebuild written down before you commit, this is what our ₹3,500 requirement analysis produces: a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). The rest of this post needs nothing from us or anyone else.</p><p>This guide was checked in November 2026, against Baymard's list updated 28 October 2026, Shopify's help centre and Meta's WhatsApp documentation. Menu names in Shopify and Meta change, so if a label below has moved, look for the nearest one.</p><h2 id=\"what-the-research-says-about-abandonment\">What the research says about abandonment</h2><p>Baymard Institute keeps the most cited list of cart abandonment studies. Its <a href=\"https://baymard.com/lists/cart-abandonment-rate\" rel=\"noopener noreferrer nofollow\">cart abandonment page</a> gives an average documented rate of 70.22%, the unweighted average of 50 studies published from 2006 to 2025. The individual studies range from 55% to 84%. That range matters: there is no single \"normal\" rate, and your own number moving down is a better test than any benchmark.</p><p>Baymard also asks shoppers why they left. Its 2026 survey covered 1,083 US adults who had shopped online in the previous three months, with more than one answer allowed.</p><p><em>Reasons shoppers gave for abandoning a purchase at checkout, Baymard 2026 survey</em></p><table><thead><tr><th>Reason given</th><th>Share of shoppers</th></tr></thead><tbody><tr><td>Just browsing or not ready to buy</td><td>42%</td></tr><tr><td>Extra costs too high (shipping, tax, fees)</td><td>40%</td></tr><tr><td>Delivery was too slow</td><td>20%</td></tr><tr><td>Did not trust the site with card details</td><td>19%</td></tr><tr><td>Had to create an account</td><td>18%</td></tr><tr><td>Checkout too long or complicated</td><td>17%</td></tr><tr><td>Website had errors or crashed</td><td>17%</td></tr><tr><td>Returns policy not good enough</td><td>13%</td></tr><tr><td>Could not see the total cost up front</td><td>12%</td></tr><tr><td>Card was declined</td><td>10%</td></tr><tr><td>Not enough payment methods</td><td>9%</td></tr></tbody></table><p><em>Source: </em><a href=\"https://baymard.com/lists/cart-abandonment-rate\" rel=\"noopener noreferrer nofollow\"><em>Baymard Institute, Cart abandonment rate statistics</em></a><em>, read 16 November 2026.</em></p><p>This is US data. I did not find an Indian survey of the same kind with its method published, so read the table as a list of causes to check, not as Indian percentages. Several of the causes clearly travel: surprise costs, forced accounts, long forms and too few ways to pay.</p><p>Two more Baymard figures are worth knowing. In its benchmark, the average US checkout shows 23.48 form elements by default, while its testing found an ideal flow can be as short as 12 to 14. And it estimates that a large ecommerce site can gain a 35.26% increase in conversion rate through better checkout design alone. That is for large US and EU sites, not a promise for yours.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/1.webp\" alt=\"Explainer showing where an Indian online order is lost: at checkout, at payment, and at the door on delivery\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>An Indian store loses orders in three places, and only the first is in most checkout guides.</figcaption></figure><h2 id=\"cod-vs-prepaid-what-returns-really-cost\">COD vs prepaid: what returns really cost</h2><p>RTO, or return to origin, is when an order ships but never reaches the customer and comes back to you. The parcel went out, the courier was paid, and there was no sale.</p><p>The clearest recent Indian numbers I found are from Shipway, a logistics platform owned by Unicommerce. Its ShipNotes analysis of D2C shipments in FY25, <a href=\"https://mediabrief.com/shipnotes-reveals-26-rto-rate-on-cod-orders-across-india/\" rel=\"noopener noreferrer nofollow\">reported by MediaBrief</a>, found that less than 2% of prepaid orders were returned, against nearly 26% of cash on delivery orders. The same report lists failed delivery attempts, wrong addresses and customers refusing the parcel as the usual causes.</p><p>The report breaks that 26% down, and the breakdown is more useful than the average:</p><ul><li>By city: Vadodara had the lowest COD return rate at 18% and Patna the highest at 35%.</li><li>By delivery speed: orders attempted in 1 to 2 days came back 22% of the time, 3 to 5 days 27%, and after more than 5 days 35%.</li><li>By order value: orders between ₹500 and ₹1,000 had the highest rate at 28%, against 25% under ₹500 and 24% over ₹1,000.</li><li>By zone: intra-city shipments came back 20% of the time, inter-state non-metro 27% and special zones such as the North East 28%.</li></ul><p>How much does one return cost? Amazon Shipping's <a href=\"https://shipping.amazon.in/blog/what-is-rto-how-to-reduce-return-to-origin\" rel=\"noopener noreferrer nofollow\">guide to RTO for Indian sellers</a> gives an illustrative breakdown it credits to a 2025 estimate by bepragma.ai: forward shipping ₹60 to ₹100, reverse shipping ₹50 to ₹80, repacking and checks ₹20 to ₹40 and inventory held in transit ₹10 to ₹20, so roughly ₹180 to ₹240 per returned parcel before the cost of acquiring that customer. The same page, citing ET Prime research through Dazeinfo, says about 60 to 65% of Indian ecommerce orders are placed on COD.</p><p>So the case for nudging people to prepay is plain: on Shipway's average, every COD order carries about a one in four chance of costing you a couple of hundred rupees for nothing.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/2.webp\" alt=\"Explainer comparing return rates of prepaid and cash on delivery orders in India, with the cost of one returned parcel\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Prepaid orders rarely come back. COD orders come back about one time in four.</figcaption></figure><h2 id=\"upi-at-checkout\">UPI at checkout</h2><p>If you sell on Shopify from India, start with one fact: Shopify Payments is not offered here. Shopify's <a href=\"https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries\" rel=\"noopener noreferrer nofollow\">list of supported countries</a> does not include India, and it says that if your country is not listed you need a third-party payment provider.</p><p>That provider is where UPI comes from. Razorpay's <a href=\"https://razorpay.com/docs/payments/payment-gateway/ecommerce-plugins/shopify/\" rel=\"noopener noreferrer nofollow\">Shopify integration guide</a>, as one example, says its app accepts UPI, cards, wallets and netbanking, and that you add it in the Shopify admin under Settings, Payments, Add payment method, then search for the provider. Compare the fees and settlement times of other gateways before you choose.</p><p>Two things to budget for. Your gateway charges its own fee on each payment. And Shopify's <a href=\"https://help.shopify.com/en/manual/payments/third-party-providers\" rel=\"noopener noreferrer nofollow\">page on third-party providers</a> says third-party transaction fees apply to all transactions processed through third-party gateways. The rate depends on your plan, so check Shopify's pricing page for the current figure.</p><p>What I would do with UPI on the page itself:</p><ul><li>Put UPI first on mobile. A shopper on a phone who already has a UPI app open is two taps from paying.</li><li>Say why prepaying is better for them, in one line: faster dispatch, a small prepaid discount, or free shipping on prepaid. Keep it honest and keep it the same price everywhere it is shown.</li><li>Make the failed payment path clear. If a UPI payment times out, the shopper should land back on the payment step with their cart intact and COD still available, not on an error page.</li></ul><p>Payment failures and duplicate charges are their own topic; our post on <a href=\"/blogs/payment-gateway-integration-pitfalls\">payment gateway integration pitfalls</a> covers the ones we see most.</p><h2 id=\"shopify-india-checkout-options\">Shopify India checkout options</h2><p>Cash on delivery on Shopify is a manual payment method, not an app. Shopify's <a href=\"https://help.shopify.com/en/manual/payments/manual-payments\" rel=\"noopener noreferrer nofollow\">manual payments page</a> lists COD among the common manual methods and reserves the name \"Cash on Delivery (COD)\" for it. You turn it on from Settings, Payments, in the Payment providers section, then fill in two boxes: Additional details, shown next to the method at checkout, and Payment instructions, shown on the order confirmation page.</p><p>A COD order is marked Pending on the Orders page. After the courier remits the money, you mark the order as paid yourself. If you skip that step your sales reports will not match your bank, so make it part of your weekly routine.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/3.webp\" alt=\"Annotated view of Shopify's manual payment methods help page showing the reserved Cash on Delivery name and payment instructions box\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Step 2: COD is set up as a manual payment method in Shopify's Payments settings.</figcaption></figure><p>Two more Shopify settings matter for conversion. Shopify's <a href=\"https://help.shopify.com/en/manual/customers/customer-accounts\" rel=\"noopener noreferrer nofollow\">customer accounts page</a> describes passwordless sign-in: the customer enters an email and gets a one-time 6-digit code, with options to sign in with Shop or with Google and Facebook. If someone signs in with an email that has no profile yet, Shopify creates one automatically. And Shopify's <a href=\"https://help.shopify.com/en/manual/checkout-settings\" rel=\"noopener noreferrer nofollow\">checkout settings page</a> is where you choose how customer contact details are collected.</p><p>If your store is not on Shopify, the same choices exist on any platform, they are just named differently. We cover the build side on our <a href=\"/services/shopify-development\">Shopify development</a> and <a href=\"/services/ecommerce-development\">ecommerce development</a> pages.</p><h2 id=\"guest-checkout-and-fewer-fields\">Guest checkout and fewer fields</h2><p>In Baymard's survey, 18% of shoppers had abandoned an order because the site wanted them to create an account. Its FAQ puts guest checkout in its first three fixes, alongside showing the total cost early and cutting unnecessary fields.</p><p>For an Indian store I would go further on fields. Ask only for what the courier needs: name, phone, full address and pincode. A second address line, a company name and a separate landmark box can be optional. Every extra required box on a phone is a place to give up.</p><p>Offer an account after the order, on the thank-you page, when tracking and reordering give people a reason.</p><h2 id=\"address-and-pincode-checks\">Address and pincode checks</h2><p>A wrong address is one of the causes of RTO that Shipway names, and it is the one you can fix before the parcel leaves.</p><p>Amazon Shipping's guide suggests a watchlist of high-RTO pincodes built from your own last 30 days of orders, with an extra check for orders from those pincodes. It also suggests WhatsApp or SMS confirmation before dispatch for first-time COD buyers, and a call or OTP for high-value COD orders, giving above ₹1,000 as its example. For customers who have refused before, it suggests prepaid only, or COD with a part-payment or fee, applied selectively rather than to everyone.</p><p>What I would add on the storefront:</p><ul><li>A pincode box on the product page that shows the delivery estimate and whether COD is available there, before the shopper reaches checkout. That answers the 'delivery was too slow' worry early and stops COD orders to places your courier does not serve.</li><li>Check the pincode against the city and state the shopper typed. A mismatch is a cheap signal to ask them to confirm.</li><li>Keep the phone number mandatory and check it is ten digits. The courier calls that number, and so does your confirmation step.</li></ul><h2 id=\"step-by-step-a-checkout-fix-you-can-do-this-month\">Step by step: a checkout fix you can do this month</h2><p>This is the order I would work in. It goes from free changes to ones that need a developer.</p><p><strong>Step 1. Measure your two leaks.</strong> From your store analytics, note carts created and orders completed for the last 30 days. From your courier panel, note COD orders shipped and COD orders returned. Baymard's formula is simple: abandonment rate is one minus completed purchases divided by carts created.</p><p><strong>Step 2. Show the full price on the product page.</strong> Shipping fee, COD fee if you charge one, and the delivery estimate. In Baymard's survey, extra costs were the top fixable reason at 40%.</p><p><strong>Step 3. Turn on UPI through your gateway and put it first on mobile.</strong> Test a real payment on an Android phone and an iPhone, including one you cancel halfway.</p><p><strong>Step 4. Keep COD, with clear instructions.</strong> Use Shopify's Payment instructions box to say what happens next: the order is confirmed on WhatsApp or by call before it ships.</p><p><strong>Step 5. Remove forced sign-up and trim fields.</strong> Count the boxes on your checkout on a phone. Compare with Baymard's 12 to 14 elements.</p><p><strong>Step 6. Confirm COD orders before dispatch.</strong> A short utility message on WhatsApp, or a call for high-value orders. Cancel orders nobody confirms within the time you set.</p><p><strong>Step 7. Start cart recovery only for people who opted in.</strong> The rules are in the next section. Measure recovered orders against a group you did not message.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/4.webp\" alt=\"Illustration of an Indian store owner checking orders on a laptop while packing parcels\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Most of the fixes above are settings and copy, not a new website.</figcaption></figure><h2 id=\"whatsapp-cart-recovery-without-breaking-metas-rules\">WhatsApp cart recovery without breaking Meta's rules</h2><p>A cart reminder on WhatsApp is a marketing message, not a utility one. Meta's <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization\" rel=\"noopener noreferrer nofollow\">template categorization page</a> gives this exact example under retargeting: \"You left {items} in your cart! Don't worry, we saved them. Checkout now below.\" It classes such messages as marketing \"even if requested by users\".</p><p>That matters because marketing messages cost more than utility ones, and because the category is decided by content. Meta defines utility templates as follow-ups to a user's action or request, which must be non-promotional. A template that mixes the two, such as an order update with a promo, counts as marketing.</p><p>Before you send any of it, you need opt-in. Meta's <a href=\"https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in\" rel=\"noopener noreferrer nofollow\">opt-in page</a> says the person must have given you their number and agreed to receive messages from your business, that you must clearly state your business name, and that you must comply with applicable law. A tick box at checkout that says \"Send me order updates and offers from [your store] on WhatsApp\" does the job; two separate boxes for updates and for offers is better.</p><p>Timing has rules too. Meta's <a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> explains that when a customer messages you, a 24-hour customer service window opens and you can reply freely; outside it, you can only send approved templates. The same page lists a rate change for India marketing messages from 1 January 2026, so take current prices from Meta's rate card, not from an old blog post.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/5.webp\" alt=\"Annotated view of Meta's WhatsApp template categorization page showing that cart reminders and mixed templates are marketing\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Meta classes a cart reminder as marketing, even when the customer asked for it.</figcaption></figure><p>How I would use WhatsApp in a checkout flow:</p><ul><li>COD confirmation as a utility template: order number, amount, address, and two buttons to confirm or change. No offer in it.</li><li>One cart reminder, a few hours after the cart was left, to people who ticked the offers box. No second or third chase.</li></ul><p>If you want the replies and confirmations handled automatically, that is an <a href=\"/ai-solutions/ai-agents-and-automation\">AI agent and automation</a> job rather than a checkout change.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The stores and numbers below are made up to show the method. They are not real figures from any real business. The return rates come from Shipway's FY25 averages and the cost per return from the ₹180 to ₹240 estimate quoted by Amazon Shipping.</p><h3 id=\"a-d2c-skincare-brand\">A D2C skincare brand</h3><p>Illustrative: the brand ships 2,000 orders a month, 1,200 of them COD. At Shipway's 26% COD average, about 312 come back. At ₹180 to ₹240 each, that is roughly ₹56,000 to ₹75,000 a month spent on parcels that never became sales.</p><p>If a prepaid offer moves 300 of those COD orders to UPI, and those prepaid orders come back at Shipway's under 2% instead of 26%, about 72 fewer parcels come back (78 returns become about 6). That saves roughly ₹13,000 to ₹17,300 a month, before you count the inventory that is no longer stuck in transit. Weigh it against the cost of the prepaid discount.</p><h3 id=\"a-saree-store\">A saree store</h3><p>Illustrative: an ethnic wear store's typical order is ₹2,500, well above the ₹1,000 mark Amazon's guide uses for a confirmation call. Each return also ties up a piece that might sell elsewhere. Here I would call every first-time COD buyer before dispatch, and offer COD with a small part-payment by UPI for repeat refusers.</p><p>The fix that matters most here is product-page certainty: the delivery date for the pincode and the returns policy in one line. Baymard's 13% for an unsatisfactory returns policy is the reason.</p><h3 id=\"a-phone-accessories-seller\">A phone accessories seller</h3><p>Illustrative: the seller's orders sit between ₹500 and ₹1,000, the band where Shipway found the highest COD return rate at 28%. Impulse buys are common and so are second thoughts.</p><p>For this store I would make prepaid the default with a visible reason, keep COD, and send a utility confirmation within an hour of the order. I would also ship from the nearest warehouse where possible, because Shipway's data shows returns rising from 22% to 35% as delivery attempts move from 1 to 2 days to over 5.</p><figure><img src=\"/assets/blog/ecommerce-checkout-conversion/6.webp\" alt=\"Illustration of a young Indian seller confirming orders on a phone in a small stockroom\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For low-value impulse buys, a quick confirmation does more than a discount.</figcaption></figure><h2 id=\"five-ways-checkout-advice-misleads-you\">Five ways checkout advice misleads you</h2><p><strong>US survey numbers read as Indian ones.</strong> Baymard's reasons come from US adults who mostly pay by card. 'Did not trust the site with my card' may matter less for a UPI shopper, and COD refusals do not appear at all.</p><p><strong>The 70% average used as a target.</strong> Baymard itself says there is no universal good rate. Your own rate falling over time is the useful measure.</p><p><strong>Removing COD to cut returns.</strong> That cuts returns by cutting orders. With COD at 60 to 65% of orders by the figure Amazon's guide cites, I would confirm and filter COD rather than drop it, and test any change on a share of traffic first.</p><p><strong>Counting every recovered cart as a win.</strong> Some shoppers would have come back anyway. Without a group you did not message, you cannot tell how many reminders actually changed anything.</p><p><strong>Trusting the national average for your area.</strong> Shipway's city rates run from 18% to 35%. If most of your orders go to one region, your own courier data beats any average.</p><h2 id=\"a-monthly-checkout-checklist\">A monthly checkout checklist</h2><p>Once a month, after courier remittances arrive.</p><p><em>A monthly checkout and COD review</em></p><table><thead><tr><th>Check</th><th>Where to look</th><th>What you write down</th></tr></thead><tbody><tr><td>Cart abandonment rate</td><td>Store analytics: carts created and orders completed</td><td>This month's rate and last month's</td></tr><tr><td>COD share and COD return rate</td><td>Courier panel</td><td>Returned COD parcels and their cost at your actual rates</td></tr><tr><td>Pincodes with repeated returns</td><td>Courier panel, last 30 days</td><td>Pincodes to add to the confirmation list</td></tr><tr><td>Failed UPI payments</td><td>Payment gateway dashboard</td><td>Failure count and whether shoppers retried</td></tr><tr><td>Checkout fields on a phone</td><td>Your own checkout, on a cheap Android phone</td><td>Number of required boxes</td></tr><tr><td>WhatsApp templates</td><td>WhatsApp Manager</td><td>Any template Meta moved to marketing, opt-out spikes</td></tr><tr><td>Orders still marked Pending</td><td>Shopify Orders page</td><td>COD orders paid but not marked as paid</td></tr></tbody></table><p>After three months you will know your real cost of a COD order and which fix moved it. Our <a href=\"/industries/ecommerce\">ecommerce industry page</a> lists the kinds of store builds we take on if you get that far and want help.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-a-normal-cart-abandonment-rate\">What is a normal cart abandonment rate?</h3><p>Baymard Institute's average across 50 studies from 2006 to 2025 is 70.22%, with studies ranging from 55% to 84%. Baymard says there is no universal good rate. Compare your own rate month on month rather than against a benchmark.</p><h3 id=\"should-i-stop-offering-cash-on-delivery\">Should I stop offering cash on delivery?</h3><p>I would not, without testing. COD is a large share of Indian ecommerce orders, about 60 to 65% by the ET Prime figure Amazon Shipping cites. Confirm COD orders before dispatch, watch pincodes with repeated returns and nudge people to prepay instead.</p><h3 id=\"how-much-more-do-cod-orders-come-back-than-prepaid-ones\">How much more do COD orders come back than prepaid ones?</h3><p>In Shipway's FY25 analysis of D2C shipments, less than 2% of prepaid orders were returned against nearly 26% of COD orders. City rates ranged from 18% in Vadodara to 35% in Patna.</p><h3 id=\"can-i-use-shopify-payments-in-india\">Can I use Shopify Payments in India?</h3><p>No. India is not on Shopify's list of countries where Shopify Payments is available, so Indian stores use a third-party provider such as Razorpay for UPI, cards, wallets and netbanking. Shopify charges third-party transaction fees on those payments, which vary by plan.</p><h3 id=\"how-do-i-turn-on-cod-in-shopify\">How do I turn on COD in Shopify?</h3><p>In the Shopify admin go to Settings, Payments, and in the Payment providers section choose the Cash on Delivery manual method. Add details and payment instructions, then activate it. COD orders show as Pending until you mark them as paid.</p><h3 id=\"are-whatsapp-cart-reminders-allowed\">Are WhatsApp cart reminders allowed?</h3><p>Yes, to people who opted in to hear from your business. Meta classes a cart reminder as a marketing message, even if the user asked for it, so it is priced as marketing. Order and COD confirmations without any promotion can be utility messages.</p><h3 id=\"does-guest-checkout-really-matter\">Does guest checkout really matter?</h3><p>In Baymard's 2026 US survey, 18% of shoppers had abandoned an order because they had to create an account. Let people buy without one and offer an account after the order, when tracking and reordering give them a reason.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://baymard.com/lists/cart-abandonment-rate\" rel=\"noopener noreferrer nofollow\">Cart abandonment rate: 50 statistics, Baymard Institute</a>, read 16 November 2026</li><li><a href=\"https://mediabrief.com/shipnotes-reveals-26-rto-rate-on-cod-orders-across-india/\" rel=\"noopener noreferrer nofollow\">Shipway ShipNotes reveals 26% RTO rate on CoD orders across India, MediaBrief</a>, read 16 November 2026</li><li><a href=\"https://shipping.amazon.in/blog/what-is-rto-how-to-reduce-return-to-origin\" rel=\"noopener noreferrer nofollow\">What is RTO and how can Indian SMBs reduce it, Amazon Shipping India</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/payments/manual-payments\" rel=\"noopener noreferrer nofollow\">Manual payment methods, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/customers/customer-accounts\" rel=\"noopener noreferrer nofollow\">Customer accounts, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/checkout-settings\" rel=\"noopener noreferrer nofollow\">Checkout settings, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/payments/third-party-providers\" rel=\"noopener noreferrer nofollow\">Third-party payment providers, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries\" rel=\"noopener noreferrer nofollow\">Shopify Payments supported countries, Shopify Help Center</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/payment-gateway/ecommerce-plugins/shopify/\" rel=\"noopener noreferrer nofollow\">Razorpay Shopify integration, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization\" rel=\"noopener noreferrer nofollow\">Template categorization, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in\" rel=\"noopener noreferrer nofollow\">Get opt-in for WhatsApp, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform, Meta for Developers</a>, read 16 November 2026</li></ul></aside>",
-  "images": [
-    {
-      "file": "cover.webp",
-      "kind": "illustration",
-      "alt": "Illustration of an Indian online store owner reviewing checkout orders on a laptop beside the words Fix your checkout",
-      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian online store owner (man in his 30s, half-sleeve shirt) at a packing table in a small stockroom, looking at a laptop showing an abstract checkout form with a cart icon (no readable text, no logos), parcels and a phone beside him. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Fix your checkout' in very large bold black sans-serif, left-aligned, on two lines ('Fix your' / 'checkout'). No other text, no brand logos."
-    },
-    {
-      "file": "1.webp",
-      "kind": "infographic",
-      "alt": "Explainer showing where an Indian online order is lost: at checkout, at payment, and at the door on delivery",
-      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Where an Indian order gets lost'. Three stages left to right joined by orange arrows: 1) cart icon with dark-blue pill 'Checkout' and small line below 'about 70% of carts abandoned'; 2) phone with payment icon, pill 'Payment' and line 'UPI fails, no retry'; 3) parcel at a door icon, pill 'Delivery' and line 'COD parcel refused'. Small grey line under the stages: 'Cart figure: Baymard average of 50 studies'. One-line bold takeaway at bottom: 'Most guides only fix the first stage.' White text inside the pills. No logos, no other text."
-    },
-    {
-      "file": "2.webp",
-      "kind": "infographic",
-      "alt": "Explainer comparing return rates of prepaid and cash on delivery orders in India, with the cost of one returned parcel",
-      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Prepaid vs COD returns in India'. Left column: UPI/phone icon with dark-blue pill 'Prepaid' and large text 'under 2% returned'. Right column: cash icon with dark-blue pill 'Cash on delivery' and large text 'about 26% returned'. Below the right column an orange arrow to a parcel icon with pill 'One return costs about ₹180 to ₹240'. Small grey line: 'Shipway ShipNotes FY25; cost estimate quoted by Amazon Shipping'. One-line bold takeaway at bottom: 'Confirm COD orders before they ship.' White text inside the pills. No logos, no other text."
-    },
-    {
-      "file": "3.webp",
-      "kind": "screenshot",
-      "alt": "Annotated view of Shopify's manual payment methods help page showing the reserved Cash on Delivery name and payment instructions box",
-      "url": "https://help.shopify.com/en/manual/payments/manual-payments",
-      "annotate": [
-        {
-          "text": "Cash on Delivery (COD)",
-          "label": "Reserved COD method"
-        },
-        {
-          "text": "Payment instructions",
-          "label": "Tell buyers what happens next"
-        },
-        {
-          "text": "Mark a manual payment as paid",
-          "label": "Mark paid after remittance"
-        }
-      ]
-    },
-    {
-      "file": "4.webp",
-      "kind": "illustration",
-      "alt": "Illustration of an Indian store owner checking orders on a laptop while packing parcels",
-      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian woman running a small online skincare brand from a home studio: laptop open with abstract dashboard shapes, a phone showing abstract chat bubbles, small parcels and product bottles on shelves behind. No readable text on any screen, no logos. Face fully in frame."
-    },
-    {
-      "file": "5.webp",
-      "kind": "screenshot",
-      "alt": "Annotated view of Meta's WhatsApp template categorization page showing that cart reminders and mixed templates are marketing",
-      "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
-      "annotate": [
-        {
-          "text": "Templates with mixed content",
-          "label": "Mixed = marketing"
-        },
-        {
-          "text": "These are marketing even if requested by users",
-          "label": "Cart reminders are marketing"
-        }
-      ]
-    },
-    {
-      "file": "6.webp",
-      "kind": "illustration",
-      "alt": "Illustration of a young Indian seller confirming orders on a phone in a small stockroom",
-      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian man in a small stockroom of phone accessories (cables, cases in bins), holding a phone to his ear while ticking a printed order list on a clipboard, stacked courier parcels nearby. No readable text, no logos. Face fully in frame."
-    }
-  ]
+   ]
+  },
+  {
+   "file": "6.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a young Indian seller confirming orders on a phone in a small stockroom",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian man in a small stockroom of phone accessories (cables, cases in bins), holding a phone to his ear while ticking a printed order list on a clipboard, stacked courier parcels nearby. No readable text, no logos. Face fully in frame."
+  }
+ ]
 }

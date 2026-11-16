@@ -1,0 +1,191 @@
+{
+ "slug": "qa-that-catches-real-bugs",
+ "locale": "en",
+ "title": "Mobile app testing in India: devices, Play and Test Lab",
+ "description": "A mobile app testing process for India: which phones to test on, Play pre-launch reports, Firebase Test Lab quotas, and the crash rates Play allows.",
+ "imageUrl": "/assets/blog/qa-that-catches-real-bugs/cover.webp",
+ "imageAlt": "Illustration of an Indian tester checking an app on several phones beside the words Test apps that work",
+ "ogImageUrl": null,
+ "tags": [
+  "app testing",
+  "QA",
+  "Android",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-11-22T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "how-to-test-an-app-for-indian-users-the-short-answer",
+   "text": "How to test an app for Indian users: the short answer",
+   "level": 2
+  },
+  {
+   "id": "which-phones-indian-users-carry",
+   "text": "Which phones Indian users carry",
+   "level": 2
+  },
+  {
+   "id": "the-bar-google-play-holds-you-to",
+   "text": "The bar Google Play holds you to",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-a-test-process-for-a-small-team",
+   "text": "Step by step: a test process for a small team",
+   "level": 2
+  },
+  {
+   "id": "what-the-pre-launch-report-does-and-does-not-do",
+   "text": "What the pre-launch report does and does not do",
+   "level": 2
+  },
+  {
+   "id": "testing-ios-when-most-users-are-on-android",
+   "text": "Testing iOS when most users are on Android",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-booking-app",
+   "text": "A clinic booking app",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-before-a-festive-sale",
+   "text": "A D2C brand before a festive sale",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-test-series-app",
+   "text": "A coaching institute's test-series app",
+   "level": 3
+  },
+  {
+   "id": "ways-app-testing-misleads-you",
+   "text": "Ways app testing misleads you",
+   "level": 2
+  },
+  {
+   "id": "if-you-are-hiring-a-team-to-build-or-test",
+   "text": "If you are hiring a team to build or test",
+   "level": 2
+  },
+  {
+   "id": "a-release-checklist-for-every-update",
+   "text": "A release checklist for every update",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is the Google Play pre-launch report?",
+   "a": "A free automatic test. When you upload an app bundle or save a production release, Google installs your app on test devices, crawls it for several minutes and reports stability, performance and accessibility issues with screenshots, where lab capacity permits."
+  },
+  {
+   "q": "Is Firebase Test Lab free?",
+   "a": "On the Spark plan you get 10 test runs a day on virtual devices and 5 on physical devices. On the Blaze plan you get 30 minutes a day free on physical devices and 60 on virtual devices, then $5 per physical device hour and $1 per virtual device hour."
+  },
+  {
+   "q": "How many devices should I test on for India?",
+   "a": "There is no official number. I would start with five or six real Android phones across Samsung, vivo, OPPO and Xiaomi, at least two with 4 GB of RAM or less, plus an iPhone if you ship on iOS, and adjust using Play Console's device data."
+  },
+  {
+   "q": "What crash rate does Google Play allow?",
+   "a": "Android vitals sets the bad behaviour threshold for user-perceived crash rate at 1.09% overall and 8% per phone model, and for user-perceived ANR rate at 0.47% overall and 8% per phone model. Exceeding them can reduce your visibility on Play."
+  },
+  {
+   "q": "Do I need 12 testers before publishing on Google Play?",
+   "a": "Personal developer accounts created after 13 November 2023 must run a closed test with at least 12 testers opted in continuously for at least 14 days before applying for production access."
+  },
+  {
+   "q": "Why does Crashlytics show a different crash rate from Play Console?",
+   "a": "Android vitals counts issues per daily active user, while Crashlytics counts per session. Vitals also only counts certified devices, apps installed from Play and users who share data. Use vitals to see what Play judges you on."
+  },
+  {
+   "q": "Does the pre-launch report replace manual testing?",
+   "a": "No. The crawler finds crashes, slow screens and accessibility issues, but it does not know your business rules. Payments, OTP delivery, invoice amounts and bookings still need a written test plan run by a person."
+  }
+ ],
+ "contentHtml": "<h2 id=\"how-to-test-an-app-for-indian-users-the-short-answer\">How to test an app for Indian users: the short answer</h2><p><strong>In short:</strong> Test on the phones your users actually own, not the ones your team owns: mostly Android, across the big brands, and including devices with 4 GB of RAM or less. Combine three layers: a written test plan run by a person on a few real phones, Google Play's free pre-launch report on every upload, and Firebase Test Lab for wider device coverage. Then watch Android vitals after release, because Play judges your app on crash and ANR rates from real users.</p><p>I wrote this for founders and product owners in India who are about to launch or update an app and want testing that catches the bugs customers hit, not just the ones that show up on the developer's flagship phone. It uses Google's own documentation for every number, and is honest about what each free tool does not do.</p><p>This guide was checked in November 2026, against the Play Console Help pages on pre-launch reports and testing requirements, Firebase Test Lab's quotas and pricing page, Android Developers' Android vitals page, Apple's TestFlight page and Counterpoint Research's India smartphone market report for Q3 2026.</p><h2 id=\"which-phones-indian-users-carry\">Which phones Indian users carry</h2><p>The device list is where most QA plans go wrong. A team in a Hyderabad office tests on its own phones, and those are rarely what a customer in Guntur or Nagpur uses.</p><p>Counterpoint Research's report on India's July to September 2026 quarter put Samsung at 17% of smartphone shipments, vivo (excluding iQOO) at 16%, and OPPO and Xiaomi (including POCO) at 12% each. It also reported shipments fell 20% year on year, and that sub-₹20,000 shipments fell by 47%, as higher device prices weighed on demand.</p><p>Shipments in one quarter are not the same as the phones in use, which include years of older devices. But the report tells you two practical things. No single brand dominates, so test across at least the top four. And the cheaper end of the market is large enough that a test plan with only flagship phones misses real customers.</p><p><em>Free and low-cost testing tools for Indian app teams, and what each one covers</em></p><table><thead><tr><th>Tool</th><th>What it does</th><th>Cost and limits</th><th>What it misses</th></tr></thead><tbody><tr><td>Google Play pre-launch report</td><td>Installs your app on test devices, launches and crawls it for several minutes, reports stability, performance and accessibility issues with screenshots</td><td>Free, runs automatically on upload where capacity permits; device set includes Android 9 and above; you cannot pick the devices</td><td>Your business logic, payments, OTP flows, WebView sign-in</td></tr><tr><td>Firebase Test Lab, Spark plan</td><td>Runs your tests on virtual and physical devices you choose</td><td>10 test runs a day on virtual devices and 5 on physical devices</td><td>Anything your tests do not cover</td></tr><tr><td>Firebase Test Lab, Blaze plan</td><td>Same, with more runs</td><td>30 minutes a day free on physical and 60 on virtual devices, then $5 per physical device hour and $1 per virtual device hour</td><td>Same</td></tr><tr><td>Play closed testing</td><td>Real people install from Play before production</td><td>Personal accounts created after 13 November 2023 need at least 12 testers opted in for 14 days before production access</td><td>Structured coverage, unless you give testers a script</td></tr><tr><td>TestFlight (iOS)</td><td>Beta builds for internal and external testers</td><td>Up to 100 internal and 10,000 external testers; external builds go to App Review</td><td>Android, which is most of the Indian market</td></tr><tr><td>Android vitals</td><td>Crash, ANR, battery and memory data from real users after release</td><td>Free in Play Console; only from users who share data, on certified devices</td><td>Bugs that do not crash or freeze</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.google.com/googleplay/android-developer/answer/9842757?hl=en\" rel=\"noopener noreferrer nofollow\"><em>Play Console Help, pre-launch report</em></a><em> and </em><a href=\"https://firebase.google.com/docs/test-lab/usage-quotas-pricing\" rel=\"noopener noreferrer nofollow\"><em>Firebase Test Lab quotas and pricing</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/14151465?hl=en\" rel=\"noopener noreferrer nofollow\"><em>Play Console Help, testing requirements</em></a><em> and </em><a href=\"https://developer.apple.com/testflight/\" rel=\"noopener noreferrer nofollow\"><em>Apple TestFlight</em></a><em> and </em><a href=\"https://developer.android.com/topic/performance/vitals\" rel=\"noopener noreferrer nofollow\"><em>Android vitals</em></a><em>, read 16 November 2026.</em></p><h2 id=\"the-bar-google-play-holds-you-to\">The bar Google Play holds you to</h2><p>After release, Google Play scores your app on real-world quality. Android Developers' vitals page lists the core vitals as user-perceived crash rate, user-perceived ANR rate (the app not responding), excessive partial wake locks, memory usage and bitmap memory usage.</p><p>The bad behaviour thresholds for stability are specific. User-perceived crash rate should stay under 1.09% overall and 8% on any single phone model. User-perceived ANR rate should stay under 0.47% overall and 8% per phone model. If your app exceeds a threshold, Play may reduce its visibility and may show users a warning on your store listing.</p><figure><img src=\"/assets/blog/qa-that-catches-real-bugs/1.webp\" alt=\"Annotated view of the Android vitals page showing the crash rate threshold and Play's 28-day window\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Android vitals: the crash and ANR thresholds, judged on the last 28 days of data.</figcaption></figure><p>Two details matter for Indian apps. First, Play uses the last 28 days of data, so a bad release keeps hurting you for weeks after you fix it. Second, memory thresholds now vary by RAM tier, and the vitals page says apps exceeding the memory, bitmap memory or code optimisation thresholds may see store visibility impact starting from February 2027. Phones with less RAM are exactly where memory problems show first.</p><p>The page also explains why vitals numbers will not match your crash tool. Vitals counts issues per daily active user, while Crashlytics counts per session. Its own example: a user who opens a game three times in a day and crashes once shows as 100% in vitals and 33% in Crashlytics. Use vitals when you want to know what Play sees.</p><h2 id=\"step-by-step-a-test-process-for-a-small-team\">Step by step: a test process for a small team</h2><p>This is the process I would set up for a team of two to ten, shipping every week or two.</p><p><strong>Step 1. Write down your device list.</strong> Pick five or six real Android phones across the big brands, at least two with 4 GB of RAM or less, and at least one on an older Android version your app still supports. Add one iPhone if you ship on iOS. Check Play Console's device reports once you have users and adjust the list to match.</p><p><strong>Step 2. Write a test plan around money and trust.</strong> List the flows where a bug costs money or a customer: sign-up with OTP, login, payment, booking or order, and anything that sends a message. For each, write the steps and the expected result. Ten flows done well beat a hundred-row spreadsheet nobody runs.</p><p><strong>Step 3. Add the Indian conditions.</strong> Run each flow on a slow or patchy connection, with the phone switching between Wi-Fi and mobile data, in the app's other languages if you support them, with a payment app opening and returning, and with the app sent to the background mid-flow. These are where real bugs live.</p><p><strong>Step 4. Automate the boring checks first.</strong> A handful of automated tests for login and the main flow, run on every build. Firebase Test Lab's free Spark quota is enough to run them daily on a few devices you choose.</p><p><strong>Step 5. Read the pre-launch report on every upload.</strong> It runs automatically on app bundle upload or when you save a production release, where capacity permits. Results usually arrive within an hour. If your app has a sign-in screen, give it a dedicated test account. The Help page notes that credentials do not work with WebView-based sign-in or OpenGL custom controls, and that apps checking for root access are not supported.</p><p><strong>Step 6. Use closed testing with real users.</strong> If you are on a new personal developer account, Play requires at least 12 testers opted in for 14 days before production access. Use it well: give testers a short script and a way to report bugs with screenshots.</p><p><strong>Step 7. Release in stages and watch vitals.</strong> Roll out to a small share of users first, watch crash and ANR rates for a few days, then widen. Set up Play Console email alerts.</p><p><strong>Step 8. Turn every production bug into a test.</strong> When a customer finds something, add it to the test plan or the automated suite, so the same bug cannot return.</p><figure><img src=\"/assets/blog/qa-that-catches-real-bugs/2.webp\" alt=\"Infographic of an eight-step mobile app testing process for Indian apps\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Three layers: people on real phones, automated runs, and Play's own data after release.</figcaption></figure><h2 id=\"what-the-pre-launch-report-does-and-does-not-do\">What the pre-launch report does and does not do</h2><p>The pre-launch report is the best free test most teams ignore. It is also easy to over-trust.</p><p>According to the Play Console Help page, Google installs your app on a set of devices in its test lab, launches it and crawls it for several minutes, typing, tapping and swiping. It then reports stability, performance and accessibility issues, with screenshots. The device set covers phones, tablets, Wear OS and Chromebooks, and includes Android 9 and above. Google picks devices for breadth, considering popularity, crash frequency, screen resolution, manufacturer and Android version, and the selection may vary. You cannot choose the devices in Play Console; for that, the page points you to Firebase.</p><figure><img src=\"/assets/blog/qa-that-catches-real-bugs/3.webp\" alt=\"Annotated view of the Play Console Help page explaining how the pre-launch report works\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Play's pre-launch report crawls your app on Google's test devices for several minutes.</figcaption></figure><p>What it cannot do is know what your app is supposed to do. A crawler that taps around will find a crash on launch or a button too small to tap. It will not notice that the GST on an invoice is wrong, that an OTP never arrives, or that a booking was saved for the wrong date. That is what your written test plan is for.</p><h2 id=\"testing-ios-when-most-users-are-on-android\">Testing iOS when most users are on Android</h2><p>The four largest brands in Counterpoint's figures all sell Android phones. But if you ship on iOS too, it needs its own real test pass, and the tooling is different.</p><p>Apple's TestFlight lets you designate up to 100 members of your team with App Store Connect roles as internal testers, and invite up to 10,000 external testers. The first build you send to external testers is reviewed by App Review, and later builds are sent for review automatically when they are added to a group, so plan for that delay before a launch date. There is no equivalent of the Play pre-launch crawler built in, which makes your written test plan and one or two real iPhones more important, not less.</p><p>I would keep one older iPhone on the device list alongside a recent one, run the same money and trust flows on both, and test the handoff to UPI apps and back on iOS as its own case, rather than assuming the Android result carries over.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses and figures below are illustrative, to show how the tools fit together. The tool limits and thresholds come from Google's and Apple's documentation.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>Say a chain of eye clinics in Andhra Pradesh launches an app for booking appointments and paying a deposit. The developer tested on a recent flagship phone. On launch week, several patients on older phones report the app freezing at the payment step.</p><p>A freeze is exactly what the ANR rate measures, and the per-phone-model threshold is 8%. I would add two low-RAM phones to the device list, write the payment flow into the test plan with the payment app opening and returning, and run it on both before every release. I would also read the pre-launch report's performance tab, and roll out the fix in stages while watching vitals.</p><h3 id=\"a-d2c-brand-before-a-festive-sale\">A D2C brand before a festive sale</h3><p>Say a snacks brand is shipping a new checkout a week before a festive sale. The team is small and nervous about breaking something.</p><p>I would freeze new features a few days early, run the money flows (cart, coupon, UPI and card payment, order confirmation message) on the device list by hand, and run the automated checks on Firebase Test Lab across a wider set of devices on the Blaze plan for that week. At $5 per physical device hour after the free 30 minutes a day, a few hours of extra coverage before a sale is cheap compared with a failed checkout. Then a staged rollout, with someone watching vitals and order numbers each day.</p><h3 id=\"a-coaching-institutes-test-series-app\">A coaching institute's test-series app</h3><p>Say a coaching institute runs mock tests in its app, and students sit a timed test at the same hour across the state.</p><p>Here the risk is load and background behaviour, not just the screens. I would test what happens when a student takes a call mid-test, when the network drops for thirty seconds and when the app is killed and reopened. Answers should be saved locally and synced, which our post on <a href=\"/blogs/why-your-app-needs-offline-support\">offline support</a> covers. I would also run a load test on the server before the first big test day, because no phone test will find that problem.</p><h2 id=\"ways-app-testing-misleads-you\">Ways app testing misleads you</h2><ul><li><strong>Green automated tests.</strong> They pass because they test what someone thought of. Production bugs are usually what nobody thought of.</li><li><strong>A clean pre-launch report.</strong> It means the crawler did not crash the app. It says nothing about your business logic.</li><li><strong>Testing on the team's phones.</strong> Usually newer and faster than your customers' phones, on office Wi-Fi.</li><li><strong>Comparing Crashlytics with vitals.</strong> Different denominators: per session versus per daily active user. Play uses vitals.</li><li><strong>Testers without a script.</strong> Twelve closed testers who just open the app once satisfy the rule but find little.</li><li><strong>Forgetting the platform deadline.</strong> From 31 August 2026, Play requires new apps and updates to target Android 16 (API level 36). That upgrade needs a full regression run, not a quick check.</li></ul><p>Performance on cheaper phones is a design problem as much as a testing one. Our post on <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a> covers that side, and <a href=\"/blogs/app-store-rejections\">app store rejections</a> covers the review problems testing will not catch.</p><h2 id=\"if-you-are-hiring-a-team-to-build-or-test\">If you are hiring a team to build or test</h2><p>Ask any development company three questions: which real phones they test on, whether they read the pre-launch report on every upload, and who watches Android vitals after release. At ElevateBox, the test plan and device list are part of the scope we write down in our ₹3,500 requirement analysis, which ends in a written fixed quotation and timeline before any build starts (<a href=\"/book\">book here</a>). The Play Console and App Store accounts stay in the client's name, so you can read the vitals yourself.</p><figure><img src=\"/assets/blog/qa-that-catches-real-bugs/4.webp\" alt=\"Illustration of a tester checking an app on several Android phones at a desk\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Real phones, a written plan and a slow connection find the bugs customers hit.</figcaption></figure><h2 id=\"a-release-checklist-for-every-update\">A release checklist for every update</h2><ol><li>Device list covers the top brands, at least two phones with 4 GB of RAM or less, and the oldest Android version you support.</li><li>Money and trust flows run by hand on the device list: sign-up, OTP, login, payment, booking or order, messages.</li><li>Each flow tried on a slow connection, with a network switch, and with the app sent to the background.</li><li>Automated checks pass on every build, on Firebase Test Lab or locally.</li><li>Pre-launch report read: stability, performance and accessibility tabs, with a test account provided.</li><li>Closed or internal testers given a short script and a bug report route.</li><li>Target API level meets Play's current requirement.</li><li>Staged rollout, with crash and ANR rates watched against 1.09% and 0.47% overall.</li><li>Every production bug added to the test plan or automated suite.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-the-google-play-pre-launch-report\">What is the Google Play pre-launch report?</h3><p>A free automatic test. When you upload an app bundle or save a production release, Google installs your app on test devices, crawls it for several minutes and reports stability, performance and accessibility issues with screenshots, where lab capacity permits.</p><h3 id=\"is-firebase-test-lab-free\">Is Firebase Test Lab free?</h3><p>On the Spark plan you get 10 test runs a day on virtual devices and 5 on physical devices. On the Blaze plan you get 30 minutes a day free on physical devices and 60 on virtual devices, then $5 per physical device hour and $1 per virtual device hour.</p><h3 id=\"how-many-devices-should-i-test-on-for-india\">How many devices should I test on for India?</h3><p>There is no official number. I would start with five or six real Android phones across Samsung, vivo, OPPO and Xiaomi, at least two with 4 GB of RAM or less, plus an iPhone if you ship on iOS, and adjust using Play Console's device data.</p><h3 id=\"what-crash-rate-does-google-play-allow\">What crash rate does Google Play allow?</h3><p>Android vitals sets the bad behaviour threshold for user-perceived crash rate at 1.09% overall and 8% per phone model, and for user-perceived ANR rate at 0.47% overall and 8% per phone model. Exceeding them can reduce your visibility on Play.</p><h3 id=\"do-i-need-12-testers-before-publishing-on-google-play\">Do I need 12 testers before publishing on Google Play?</h3><p>Personal developer accounts created after 13 November 2023 must run a closed test with at least 12 testers opted in continuously for at least 14 days before applying for production access.</p><h3 id=\"why-does-crashlytics-show-a-different-crash-rate-from-play-console\">Why does Crashlytics show a different crash rate from Play Console?</h3><p>Android vitals counts issues per daily active user, while Crashlytics counts per session. Vitals also only counts certified devices, apps installed from Play and users who share data. Use vitals to see what Play judges you on.</p><h3 id=\"does-the-pre-launch-report-replace-manual-testing\">Does the pre-launch report replace manual testing?</h3><p>No. The crawler finds crashes, slow screens and accessibility issues, but it does not know your business rules. Payments, OTP delivery, invoice amounts and bookings still need a written test plan run by a person.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://support.google.com/googleplay/android-developer/answer/9842757?hl=en\" rel=\"noopener noreferrer nofollow\">Use pre-launch reports to identify issues, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/14151465?hl=en\" rel=\"noopener noreferrer nofollow\">App testing requirements for new personal developer accounts, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/test-lab/usage-quotas-pricing\" rel=\"noopener noreferrer nofollow\">Usage levels, quotas, and pricing, Firebase Test Lab</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/vitals\" rel=\"noopener noreferrer nofollow\">Android vitals, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/google/play/requirements/target-sdk\" rel=\"noopener noreferrer nofollow\">Meet Google Play's target API level requirement, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/testflight/\" rel=\"noopener noreferrer nofollow\">TestFlight, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://www.counterpointresearch.com/en/insights/india-smartphone-market-slumps-20-yoy-in-q3-sub-inr-20000-shipments-nearly-halve\" rel=\"noopener noreferrer nofollow\">India smartphone market slumps 20% YoY in Q3, Counterpoint Research</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian tester checking an app on several phones beside the words Test apps that work",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. A young Indian woman tester in a kurti sits at a desk in a small Hyderabad office with five different Android phones laid out in a row and a notebook with tick marks (no readable words), holding one phone and tapping it, a Wi-Fi router on a shelf. Faces fully in frame. No readable text on screens, no logos. Right half: the title text 'Test apps that work' in very large bold black sans-serif, left-aligned, on three lines ('Test apps' / 'that' / 'work'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Android vitals page showing the crash rate threshold and Play's 28-day window",
+   "url": "https://developer.android.com/topic/performance/vitals",
+   "annotate": [
+    {
+     "text": "1.09%",
+     "label": "Crash rate limit"
+    },
+    {
+     "text": "Play uses the last 28 days of data to assess your app's quality.",
+     "label": "28-day window"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of an eight-step mobile app testing process for Indian apps",
+   "prompt": "16:9 process infographic, cream background #FBF6EC, flat icons. Bold black heading at top: 'An app testing process for India'. Eight steps in two rows of four joined by orange arrows, each a flat icon above a dark-blue rounded pill with white text: 1) row of phones icon 'Pick real phones'; 2) rupee and lock icon 'Plan money flows'; 3) weak signal icon 'Test slow networks'; 4) gear icon 'Automate basics'; 5) robot crawler icon 'Read pre-launch report'; 6) group icon 'Closed testing'; 7) staircase icon 'Staged rollout'; 8) loop arrow icon 'Bug becomes a test'. One-line bold takeaway at bottom: 'Test on the phones your customers own.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Play Console Help page explaining how the pre-launch report works",
+   "url": "https://support.google.com/googleplay/android-developer/answer/9842757?hl=en",
+   "annotate": [
+    {
+     "text": "We then automatically launch and crawl your app for several minutes.",
+     "label": "Automatic crawl"
+    },
+    {
+     "text": "Our device set includes devices Android 9 and above.",
+     "label": "Android 9 and up"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a tester checking an app on several Android phones at a desk",
+   "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. An Indian male tester in his 20s and a woman product owner stand at a counter in a small office comparing the same app on three different Android phones, one phone showing a loading spinner, a mobile data toggle icon visible as an abstract shape. No readable text on screens, no logos. Faces fully in frame."
+  },
+  {
+   "file": "5.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Firebase Test Lab's quota and pricing page",
+   "url": "https://firebase.google.com/docs/test-lab/usage-quotas-pricing",
+   "annotate": [
+    {
+     "text": "5 test runs per day on physical devices",
+     "label": "Free daily quota"
+    },
+    {
+     "text": "$5 per hour for each physical device",
+     "label": "Paid rate"
+    }
+   ]
+  }
+ ]
+}

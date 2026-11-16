@@ -1,0 +1,170 @@
+{
+ "slug": "rpa-where-it-pays",
+ "locale": "en",
+ "title": "RPA for small business in India: tools and costs",
+ "description": "RPA for Indian small businesses: Power Automate and UiPath prices from official pages, when an API beats a bot, and how to check if automation pays.",
+ "imageUrl": "/assets/blog/rpa-where-it-pays/cover.webp",
+ "imageAlt": "Illustration of an Indian office manager watching a desktop automation run beside the words RPA that pays",
+ "ogImageUrl": null,
+ "tags": [
+  "RPA",
+  "Business automation",
+  "Power Automate",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-03-14T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-rpa-is-and-when-it-pays-for-a-small-business",
+   "text": "What RPA is, and when it pays for a small business",
+   "level": 2
+  },
+  {
+   "id": "rpa-pricing-in-india-the-official-numbers",
+   "text": "RPA pricing in India: the official numbers",
+   "level": 2
+  },
+  {
+   "id": "the-free-option-already-on-your-windows-pc",
+   "text": "The free option already on your Windows PC",
+   "level": 2
+  },
+  {
+   "id": "rpa-or-an-api-connection-the-decision-that-sets-the-cost",
+   "text": "RPA or an API connection: the decision that sets the cost",
+   "level": 2
+  },
+  {
+   "id": "which-tasks-pay-back-and-which-do-not",
+   "text": "Which tasks pay back, and which do not",
+   "level": 2
+  },
+  {
+   "id": "how-to-work-out-if-rpa-pays-for-you",
+   "text": "How to work out if RPA pays for you",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-distributor-posting-online-orders-into-tally",
+   "text": "A distributor posting online orders into Tally",
+   "level": 3
+  },
+  {
+   "id": "a-ca-practice-downloading-statements-every-morning",
+   "text": "A CA practice downloading statements every morning",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-sending-appointment-reminders",
+   "text": "A clinic sending appointment reminders",
+   "level": 3
+  },
+  {
+   "id": "ways-rpa-projects-go-wrong",
+   "text": "Ways RPA projects go wrong",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-20-minute-bot-check",
+   "text": "A monthly 20-minute bot check",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How much does RPA cost in India?",
+   "a": "On Microsoft's India page, Power Automate Premium is ₹1,250 per user a month and the unattended Process plan is ₹12,480 per bot a month, both paid yearly with GST extra. UiPath has a free Community plan, a Basic plan from $25 a month, and sales pricing above that. Building and maintaining bots costs extra."
+  },
+  {
+   "q": "Is Power Automate free in India?",
+   "a": "Windows 11 includes the Power Automate for desktop app, which you can use to record and run automations on your own PC. Microsoft's India page also lists a 30-day free trial for cloud flows. Unattended and premium features need a paid licence."
+  },
+  {
+   "q": "What is the difference between attended and unattended RPA?",
+   "a": "Attended automation runs on a staff member's PC while they are logged in, usually started by them. Unattended automation runs on its own, on a schedule, with nobody present. On Microsoft's India prices, attended comes with Premium at ₹1,250 a user a month and unattended needs Process at ₹12,480 a bot a month."
+  },
+  {
+   "q": "Can RPA automate Tally?",
+   "a": "It can, but it is often the wrong tool. TallyPrime accepts XML requests over its HTTP server, on port 9000 by default, for imports and exports. Posting vouchers through that route is usually more reliable than a bot typing into Tally's screens."
+  },
+  {
+   "q": "Should I use RPA to send WhatsApp messages?",
+   "a": "No. A bot typing into WhatsApp Web breaks easily and does not suit bulk business messaging. Use the WhatsApp Business Platform, which Meta prices per delivered message by category, with 1,000 free service messages a month per number since October 2026."
+  },
+  {
+   "q": "Is UiPath free for small businesses?",
+   "a": "UiPath's pricing page lists a Community plan as free forever. Its Basic plan starts at $25 a month and allows up to 5 Basic, 5 Plus and 1 Pro user and 2 robots, hosted in UiPath's European region. Standard and Enterprise are priced through sales."
+  },
+  {
+   "q": "Which tasks should a small business automate first?",
+   "a": "Pick a task that is frequent, rule-based, uses clean typed data, runs on screens that rarely change, and where a mistake is caught quickly. Downloading the same statement daily or building the same report from the same exports are typical first wins."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-rpa-is-and-when-it-pays-for-a-small-business\">What RPA is, and when it pays for a small business</h2><p><strong>In short:</strong> RPA (robotic process automation) is software that clicks and types through your existing screens the way a staff member would. For an Indian small business it pays when one dull, rule-based task eats hours every week and the screens rarely change. Microsoft's India price for Power Automate Premium is ₹1,250 per user a month, paid yearly, plus GST, and UiPath has a free Community plan and a Basic plan from $25 a month.</p><p>This guide was checked in November 2026, against Microsoft's, UiPath's, Zoho's, Tally's and Meta's own pages, all read on 16 November 2026.</p><p>The phrase business process automation covers more than RPA. A lot of what Indian owners ask for, such as sending WhatsApp reminders, posting online orders into Tally or copying form leads into a sheet, is better done by connecting systems directly through their APIs. RPA is the fallback for screens that have no other way in. Knowing which of the two you need is most of the decision, and it changes the cost by a factor of ten.</p><h2 id=\"rpa-pricing-in-india-the-official-numbers\">RPA pricing in India: the official numbers</h2><p>I read the two pricing pages most Indian buyers start with. Microsoft shows rupee prices on its India page. UiPath shows dollars and asks you to contact sales above its Basic plan.</p><p><em>Published automation prices, as shown on the vendors' own pages</em></p><table><thead><tr><th>Plan</th><th>Price shown</th><th>What it covers</th></tr></thead><tbody><tr><td>Power Automate free trial</td><td>Free for 30 days</td><td>Cloud flows with standard connectors</td></tr><tr><td>Power Automate Premium</td><td>₹1,250 per user a month, paid yearly, GST extra</td><td>Cloud flows, desktop flows (RPA) in attended mode, process and task mining</td></tr><tr><td>Power Automate Process</td><td>₹12,480 per bot a month, paid yearly, GST extra</td><td>Cloud flows and desktop flows in unattended mode</td></tr><tr><td>Power Automate Hosted Process</td><td>₹17,885 per bot a month, paid yearly, GST extra</td><td>Unattended desktop flows on a virtual machine Microsoft manages on Azure</td></tr><tr><td>UiPath Community</td><td>Free forever</td><td>Build and run automations, help from the community forum</td></tr><tr><td>UiPath Basic</td><td>From $25 a month</td><td>Up to 5 Basic, 5 Plus and 1 Pro user, 2 robots, hosted in UiPath's European region</td></tr><tr><td>UiPath Standard and Enterprise</td><td>Contact sales</td><td>No stated limits on users or robots</td></tr><tr><td>Zoho Flow free edition</td><td>Free</td><td>Up to 5 flows and 100 tasks a month (API connections, not RPA)</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.microsoft.com/en-in/power-platform/products/power-automate/pricing\" rel=\"noopener noreferrer nofollow\"><em>Microsoft Power Automate pricing, India</em></a><em> and </em><a href=\"https://www.uipath.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>UiPath plans and pricing</em></a><em> and </em><a href=\"https://www.zoho.com/flow/pricing.html\" rel=\"noopener noreferrer nofollow\"><em>Zoho Flow pricing</em></a><em>, read 16 November 2026.</em></p><p>Three things on these pages matter more than the headline price.</p><p><strong>Attended and unattended are different products.</strong> Attended means the bot runs on a staff member's PC while they are logged in, usually when they press a button. Unattended means it runs on its own, on a schedule, with nobody watching. Microsoft's Premium plan covers attended desktop flows. Unattended needs the Process plan at ₹12,480 a bot a month, which is ₹1,49,760 a year before GST. Microsoft's <a href=\"https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/types\" rel=\"noopener noreferrer nofollow\">licence guide</a> adds a catch: the machine a Process licence is allocated to must first be registered by a Premium user, so in practice unattended means a Premium seat plus a Process bot.</p><p><strong>One bot runs one thing at a time.</strong> Microsoft's footnote says a bot assigned to a machine can execute one unattended desktop flow run at a time, and you need more bots for runs at the same moment. If you want three reports built in parallel at 9 a.m., that is three bots.</p><p><strong>Microsoft says the price is indicative.</strong> The page notes that prices are shown for marketing purposes and the actual price appears at checkout. Treat the table as the starting figure, not the invoice.</p><figure><img src=\"/assets/blog/rpa-where-it-pays/2.webp\" alt=\"Annotated view of Microsoft's India pricing page for Power Automate showing the Premium and Process plan prices in rupees\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Microsoft's India page lists rupee prices. The jump from attended to unattended is the one to notice.</figcaption></figure><h2 id=\"the-free-option-already-on-your-windows-pc\">The free option already on your Windows PC</h2><p>Before you pay for anything, look at the Start menu. Microsoft's <a href=\"https://learn.microsoft.com/en-us/power-automate/desktop-flows/getting-started-windows-11\" rel=\"noopener noreferrer nofollow\">Windows 11 guide</a> says Windows 11 lets you create automations through the preinstalled Power Automate for desktop app, with a catalogue of hundreds of prebuilt actions and a recorder that captures mouse and keyboard steps.</p><p>Microsoft's examples are the same jobs Indian offices do by hand: filling forms, entering data into regularly used applications, creating backups and converting files. The guide points to a sign-in account comparison for what each version offers, and the paid features, such as running from the cloud or without a person present, need the licences in the table above.</p><p>The same guide says basic Power Automate is included at no cost for work or school accounts in a Microsoft Entra tenant, covering cloud flows with standard connectors and running desktop flows locally in attended mode. If your business already uses Microsoft 365 work accounts, check what your staff can do before buying anything.</p><p>For a first test this is the honest starting point. Record the task once on the PC where it already happens, run it for two weeks, and count what breaks. If it holds up, you know RPA fits the job. If it breaks every other day, a paid plan will break just as often, only more expensively.</p><h2 id=\"rpa-or-an-api-connection-the-decision-that-sets-the-cost\">RPA or an API connection: the decision that sets the cost</h2><p>Microsoft's own licence guide puts it plainly: RPA is needed to interact with applications that lack a prebuilt connector and do not have APIs that could be used to build one. That is the vendor of an RPA product telling you to look for a connector first.</p><p>RPA reads screens. An API connection talks to the system directly, using the door the vendor built for other software. When a door exists, use it. It is faster, it does not break when a button moves, and it usually costs less to run.</p><p>Two examples I checked today show how often the door exists in Indian setups:</p><ul><li><strong>TallyPrime</strong> accepts XML requests over HTTP. Tally's <a href=\"https://help.tallysolutions.com/xml-integration/\" rel=\"noopener noreferrer nofollow\">XML integration page</a> says you enable the HTTP server from F1 (Help), Settings, Advanced Configuration, and that the default port is 9000. Requests can Import, Export or Execute. So posting sales vouchers into Tally does not need a bot typing into Tally's screens.</li><li><strong>WhatsApp</strong> has the WhatsApp Business Platform. Meta's <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> charges per delivered message by category and market, and since 1 October 2026 gives each business phone number 1,000 free service messages a month. A bot that types into WhatsApp Web is fragile and against the spirit of how Meta wants businesses to send in bulk; the platform is the proper route.</li></ul><p>Where RPA genuinely earns its place is the system with no door: an old desktop billing program, a government or bank portal you can only use through a browser, or a supplier's website where you download a statement every morning. Even then, check the portal's terms. Some portals use captchas or one-time passwords precisely to stop automated logins, and a bot cannot and should not get around those.</p><figure><img src=\"/assets/blog/rpa-where-it-pays/1.webp\" alt=\"Explainer showing when to use an API connection and when to use RPA for business automation\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Use the vendor's door when it exists. RPA is for screens with no other way in.</figcaption></figure><h2 id=\"which-tasks-pay-back-and-which-do-not\">Which tasks pay back, and which do not</h2><p>I sort candidate tasks with five questions. A task that gets four or five yes answers is worth automating. Two or fewer and it is usually cheaper to keep doing it by hand or fix the process first.</p><ol><li><strong>Is it frequent?</strong> Daily or many times a day, not once a quarter.</li><li><strong>Is it rule-based?</strong> A new person could do it from a written checklist with no judgement calls.</li><li><strong>Are the inputs clean?</strong> Typed data in fixed columns, not handwritten notes or photos of bills.</li><li><strong>Are the screens stable?</strong> The software has not changed its layout in the last year.</li><li><strong>Is a mistake cheap to catch?</strong> A wrong entry shows up in a daily report, not three months later in an audit.</li></ol><p>Good fits in Indian offices tend to be: downloading the same bank or payment gateway statement every morning, copying online orders into a desktop billing program with no API, renaming and filing scanned documents by a fixed pattern, and building the same Excel summary from the same exports.</p><figure><img src=\"/assets/blog/rpa-where-it-pays/4.webp\" alt=\"Annotated view of UiPath's pricing page showing the free Community plan and the Basic plan price\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>UiPath's free Community plan is enough to test whether a task suits a bot at all.</figcaption></figure><p>Poor fits are anything that needs a judgement, such as approving discounts or reading a customer's complaint, and anything that touches a screen your vendor redesigns every few months. Those are where bots break silently and somebody discovers it at month end.</p><h2 id=\"how-to-work-out-if-rpa-pays-for-you\">How to work out if RPA pays for you</h2><p>Use your own numbers. The arithmetic is simple, and doing it before any demo protects you from a salesperson's spreadsheet.</p><p><strong>Step 1. Time the task.</strong> Sit with the person who does it and time five runs. Write down the average minutes and how many times a month it happens.</p><p><strong>Step 2. Price an hour of that person's time.</strong> Monthly cost to company divided by working hours in the month. Use the real figure, including PF and other costs.</p><p><strong>Step 3. Check for a door.</strong> Does the software have an API, an import file format or a webhook? If yes, price an API connection first. If no, carry on with RPA.</p><p><strong>Step 4. Pick the licence you actually need.</strong> If a person can press start each morning, attended is enough. Only pay for unattended if the job must run at night or with nobody there.</p><p><strong>Step 5. Add build and upkeep.</strong> Someone has to build the bot and fix it when screens change. Budget time every month for that, not just the first build.</p><p><strong>Step 6. Run it alongside the person for a month.</strong> Keep the manual process going and compare results daily. Switch off the manual path only when they match.</p><p><strong>Step 7. Compare and decide.</strong> If the yearly hours saved, priced at Step 2, comfortably beat licences plus upkeep, go ahead. If they barely match, do not. A tight margin disappears the first time the portal changes.</p><aside data-callout=\"accent\"><p data-callout-title>A quick rule of thumb</p><p>If the task takes less than 30 minutes a day in total, a ₹1,49,760 a year unattended bot will rarely pay back on time saved alone. The free Windows app, an attended licence or a direct API connection is usually the better first step.</p></aside><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses, times and salaries below are illustrative, made up to show the method. They are not real customers, and your figures will differ.</p><h3 id=\"a-distributor-posting-online-orders-into-tally\">A distributor posting online orders into Tally</h3><p>A distributor takes about 80 orders a day from a B2B ordering site, and an accounts assistant spends roughly two hours a day typing them into TallyPrime as sales vouchers. The owner was quoted an unattended RPA bot to do the typing.</p><p>The check at Step 3 changes the answer. TallyPrime accepts XML imports over its HTTP port, so a small connector can post each order as a voucher directly, using the order number as the reference so a retry never creates a duplicate. That needs no RPA licence at all, and it does not break when someone resizes a Tally window.</p><p>What this tells you: before pricing a bot for Tally, price an XML or JSON import. Our post on <a href=\"/blogs/erp-integration-without-a-rewrite\">ERP integration without a rewrite</a> covers the Tally, Zoho Books and SAP options in detail.</p><h3 id=\"a-ca-practice-downloading-statements-every-morning\">A CA practice downloading statements every morning</h3><p>A chartered accountancy practice downloads bank statements for 40 clients from internet banking every morning and renames them into client folders. It takes a junior about 90 minutes a day. The banks involved offer no API to the practice.</p><p>This is a genuine RPA fit on the questions above: frequent, rule-based, clean inputs, and a mistake shows up the same day. But there is a hard limit. Where a bank login asks for an OTP on a phone, the bot cannot complete it alone, and should not try. The workable design is attended: the junior starts the run, enters each OTP when asked, and the bot does the downloading, renaming and filing.</p><figure><img src=\"/assets/blog/rpa-where-it-pays/3.webp\" alt=\"Illustration of a junior accountant at a CA office starting an automated download while checking an OTP on her phone\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Attended automation: the person handles the OTP, the bot does the repetitive filing.</figcaption></figure><p>What this tells you: an attended licence at ₹1,250 a user a month fits this better than an unattended bot, because a person has to be present for the logins anyway.</p><h3 id=\"a-clinic-sending-appointment-reminders\">A clinic sending appointment reminders</h3><p>A clinic wants every patient to get a WhatsApp reminder the evening before an appointment. The receptionist currently copies names and numbers from the clinic software into WhatsApp one by one, about 40 a day.</p><p>RPA would mean a bot typing into WhatsApp Web, which breaks whenever WhatsApp changes its page and does not suit bulk business messaging. The better route is the WhatsApp Business Platform with an approved utility template, triggered from the appointment list. Meta charges per delivered message by category, and the clinic's replies to patients fall under service messages, with 1,000 free a month per number since October 2026.</p><p>What this tells you: messaging is almost never an RPA job. Use the messaging platform built for it.</p><h2 id=\"ways-rpa-projects-go-wrong\">Ways RPA projects go wrong</h2><p><strong>Automating a broken process.</strong> If the manual process has five exceptions nobody wrote down, the bot will meet all five in week one. Write the checklist first and remove steps that are not needed.</p><p><strong>Paying for unattended when attended would do.</strong> On Microsoft's India prices the gap is ₹1,250 against ₹12,480 a month. Ask whether anyone really needs the job to run at 2 a.m.</p><p><strong>Bots on screens that change.</strong> Web portals and SaaS tools redesign often. Every change is a repair job. Prefer APIs and import files wherever they exist.</p><p><strong>No owner.</strong> A bot that nobody watches fails quietly. Name one person who reads the run log every day and who is called when it stops.</p><p><strong>Credentials in the wrong hands.</strong> Bots log in as someone. Use a separate login with the least access the job needs, keep it in your company's name, and change the password when the person who built the bot leaves.</p><p><strong>Counting only the licence.</strong> Building, testing and fixing the bot is real work, every month. A quote that shows licences and no upkeep is incomplete.</p><p><strong>Ignoring the per-bot limit.</strong> One unattended bot runs one flow at a time on Microsoft's terms. Parallel jobs need more bots, and the cost scales with them.</p><h2 id=\"a-monthly-20-minute-bot-check\">A monthly 20-minute bot check</h2><p>Once a bot is live, keep it honest with a short routine on the same day each month.</p><p><em>A monthly check for any automation you run</em></p><table><thead><tr><th>Time</th><th>What to check</th><th>What you write down</th></tr></thead><tbody><tr><td>First 5 minutes</td><td>Runs that failed or were retried in the log</td><td>The screen or step that broke most often</td></tr><tr><td>Next 5 minutes</td><td>Output against a manual sample of ten records</td><td>Any mismatch and its cause</td></tr><tr><td>Next 5 minutes</td><td>Licences in use against licences paid for</td><td>Bots or users you can drop</td></tr><tr><td>Last 5 minutes</td><td>Logins, passwords and who has them</td><td>Anything to rotate, and who owns it</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.microsoft.com/en-in/power-platform/products/power-automate/pricing\" rel=\"noopener noreferrer nofollow\"><em>Microsoft Power Automate pricing, India</em></a><em> and </em><a href=\"https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/types\" rel=\"noopener noreferrer nofollow\"><em>Types of Power Automate licences, Microsoft Learn</em></a><em>, read 16 November 2026.</em></p><p>If a bot fails more than once a week for two months running, stop and look for an API or import route, or go back to doing the task by hand while you fix the underlying process.</p><p>If you want a task list scoped and priced before anyone builds a bot, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our <a href=\"/services/robotic-process-automation\">RPA services page</a> and the page on <a href=\"/ai-solutions/ai-agents-and-automation\">AI agents and automation</a> describe the wider work, including WhatsApp and AI automations.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-much-does-rpa-cost-in-india\">How much does RPA cost in India?</h3><p>On Microsoft's India page, Power Automate Premium is ₹1,250 per user a month and the unattended Process plan is ₹12,480 per bot a month, both paid yearly with GST extra. UiPath has a free Community plan, a Basic plan from $25 a month, and sales pricing above that. Building and maintaining bots costs extra.</p><h3 id=\"is-power-automate-free-in-india\">Is Power Automate free in India?</h3><p>Windows 11 includes the Power Automate for desktop app, which you can use to record and run automations on your own PC. Microsoft's India page also lists a 30-day free trial for cloud flows. Unattended and premium features need a paid licence.</p><h3 id=\"what-is-the-difference-between-attended-and-unattended-rpa\">What is the difference between attended and unattended RPA?</h3><p>Attended automation runs on a staff member's PC while they are logged in, usually started by them. Unattended automation runs on its own, on a schedule, with nobody present. On Microsoft's India prices, attended comes with Premium at ₹1,250 a user a month and unattended needs Process at ₹12,480 a bot a month.</p><h3 id=\"can-rpa-automate-tally\">Can RPA automate Tally?</h3><p>It can, but it is often the wrong tool. TallyPrime accepts XML requests over its HTTP server, on port 9000 by default, for imports and exports. Posting vouchers through that route is usually more reliable than a bot typing into Tally's screens.</p><h3 id=\"should-i-use-rpa-to-send-whatsapp-messages\">Should I use RPA to send WhatsApp messages?</h3><p>No. A bot typing into WhatsApp Web breaks easily and does not suit bulk business messaging. Use the WhatsApp Business Platform, which Meta prices per delivered message by category, with 1,000 free service messages a month per number since October 2026.</p><h3 id=\"is-uipath-free-for-small-businesses\">Is UiPath free for small businesses?</h3><p>UiPath's pricing page lists a Community plan as free forever. Its Basic plan starts at $25 a month and allows up to 5 Basic, 5 Plus and 1 Pro user and 2 robots, hosted in UiPath's European region. Standard and Enterprise are priced through sales.</p><h3 id=\"which-tasks-should-a-small-business-automate-first\">Which tasks should a small business automate first?</h3><p>Pick a task that is frequent, rule-based, uses clean typed data, runs on screens that rarely change, and where a mistake is caught quickly. Downloading the same statement daily or building the same report from the same exports are typical first wins.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.microsoft.com/en-in/power-platform/products/power-automate/pricing\" rel=\"noopener noreferrer nofollow\">Power Automate pricing, India, Microsoft</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/power-automate/desktop-flows/getting-started-windows-11\" rel=\"noopener noreferrer nofollow\">Get started with Power Automate in Windows 11, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/types\" rel=\"noopener noreferrer nofollow\">Types of Power Automate licences, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://www.uipath.com/pricing\" rel=\"noopener noreferrer nofollow\">UiPath plans and pricing, UiPath</a>, read 16 November 2026</li><li><a href=\"https://www.zoho.com/flow/pricing.html\" rel=\"noopener noreferrer nofollow\">Zoho Flow pricing, Zoho</a>, read 16 November 2026</li><li><a href=\"https://help.tallysolutions.com/xml-integration/\" rel=\"noopener noreferrer nofollow\">Integration using XML, TallyHelp, Tally Solutions</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform, Meta for Developers</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian office manager watching a desktop automation run beside the words RPA that pays",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian small business back office: a middle-aged man in a half-sleeve shirt sitting at a desktop PC, watching abstract form fields fill in on the screen by themselves, a stack of paper files beside him and a steel tea tumbler on the desk. A small friendly robot arm icon floats near the screen. No readable text, no logos. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'RPA that pays' in very large bold black sans-serif, left-aligned, on two lines ('RPA' / 'that pays'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Explainer showing when to use an API connection and when to use RPA for business automation",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'API first, RPA second'. On the left a question icon with a dark-blue rounded pill in white text: 'Does the software have an API or import?'. An orange arrow up-right to a plug icon with pill 'Yes: connect directly', and under it two small pills 'Tally XML import' and 'WhatsApp Business Platform'. An orange arrow down-right to a robot icon with pill 'No: use RPA', and under it two small pills 'Old desktop billing app' and 'Portal with no API'. One-line bold takeaway at bottom: 'Bots read screens. Screens change.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Microsoft's India pricing page for Power Automate showing the Premium and Process plan prices in rupees",
+   "url": "https://www.microsoft.com/en-in/power-platform/products/power-automate/pricing",
+   "annotate": [
+    {
+     "text": "₹ 1,250.00",
+     "label": "Attended, per user"
+    },
+    {
+     "text": "₹ 12,480.00",
+     "label": "Unattended, per bot"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a junior accountant at a CA office starting an automated download while checking an OTP on her phone",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. An Indian chartered accountant's office: a young woman in a kurta at a desk with a desktop monitor showing abstract folders and download bars, holding her phone up to read a code, a senior accountant with glasses in the background at a shelf of box files. Screens and phone show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of UiPath's pricing page showing the free Community plan and the Basic plan price",
+   "url": "https://www.uipath.com/pricing",
+   "annotate": [
+    {
+     "text": "Free forever",
+     "label": "Community plan"
+    },
+    {
+     "text": "$25 per month",
+     "label": "Basic plan"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,187 @@
+{
+ "slug": "ab-testing-small-traffic",
+ "locale": "en",
+ "title": "A/B testing with low traffic: sample size and alternatives",
+ "description": "A/B testing with low traffic: the sample size maths with worked numbers, how Firebase A/B Testing works, the peeking trap and what to do instead in India.",
+ "imageUrl": "/assets/blog/ab-testing-small-traffic/cover.webp",
+ "imageAlt": "Illustration of an Indian business owner comparing two versions of a web page on a laptop beside the words Small traffic tests",
+ "ogImageUrl": null,
+ "tags": [
+  "A/B testing",
+  "conversion",
+  "Firebase",
+  "small business"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-09-13T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "can-you-a-b-test-with-low-traffic",
+   "text": "Can you A/B test with low traffic?",
+   "level": 2
+  },
+  {
+   "id": "the-sample-size-maths-without-the-jargon",
+   "text": "The sample size maths, without the jargon",
+   "level": 2
+  },
+  {
+   "id": "how-long-would-your-test-take",
+   "text": "How long would your test take?",
+   "level": 2
+  },
+  {
+   "id": "the-peeking-problem",
+   "text": "The peeking problem",
+   "level": 2
+  },
+  {
+   "id": "firebase-a-b-testing-for-apps",
+   "text": "Firebase A/B Testing for apps",
+   "level": 2
+  },
+  {
+   "id": "what-about-website-a-b-testing-tools",
+   "text": "What about website A/B testing tools?",
+   "level": 2
+  },
+  {
+   "id": "alternatives-when-traffic-is-small",
+   "text": "Alternatives when traffic is small",
+   "level": 2
+  },
+  {
+   "id": "picking-what-to-test-first",
+   "text": "Picking what to test first",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-deciding-whether-to-run-a-test",
+   "text": "Step by step: deciding whether to run a test",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-saree-brands-product-page",
+   "text": "A D2C saree brand's product page",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-enquiry-form",
+   "text": "A coaching institute's enquiry form",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-apps-reminder-notification",
+   "text": "A clinic app's reminder notification",
+   "level": 3
+  },
+  {
+   "id": "six-ways-a-b-tests-mislead-small-businesses",
+   "text": "Six ways A/B tests mislead small businesses",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-experimentation-routine",
+   "text": "A monthly experimentation routine",
+   "level": 2
+  },
+  {
+   "id": "when-it-is-worth-building-experiments-in",
+   "text": "When it is worth building experiments in",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How many visitors do I need for an A/B test?",
+   "a": "It depends on your conversion rate and the lift you want to detect. Using Evan Miller's rule of thumb, n = 16 × p(1 − p) ÷ δ² per variant, a 2% conversion rate and a lift to 2.4% needs about 19,600 visitors per variant, or 39,200 in total."
+  },
+  {
+   "q": "Is Firebase A/B Testing free?",
+   "a": "Firebase's pricing page lists A/B Testing as no-cost. It needs Google Analytics enabled in the project and works with Remote Config and the Notifications composer."
+  },
+  {
+   "q": "How long should an A/B test run?",
+   "a": "Long enough to reach the sample size you fixed in advance, and at least two weeks, which Firebase recommends as the minimum for a typical Remote Config experiment. Firebase stops experiments automatically after 90 days."
+  },
+  {
+   "q": "Can I stop a test early if it shows a winner?",
+   "a": "Not if you want to trust the result. Evan Miller shows that checking repeatedly and stopping at significance inflates false positives. Decide the sample size first and wait until it is reached."
+  },
+  {
+   "q": "Is Google Optimize still available?",
+   "a": "No. Google's help page says Google Optimize and Optimize 360 are no longer available as of September 30, 2023."
+  },
+  {
+   "q": "What can I do instead of A/B testing with low traffic?",
+   "a": "Test bolder changes, measure an earlier step with more people, run usability tests with about five users, watch session recordings, or compare carefully before and after a change."
+  },
+  {
+   "q": "What statistics does Firebase A/B Testing use?",
+   "a": "Firebase says it uses frequentist inference, with a p-value below 0.05 treated as a statistically significant difference between a variant and the baseline, and shows confidence intervals for each metric."
+  }
+ ],
+ "contentHtml": "<h2 id=\"can-you-a-b-test-with-low-traffic\">Can you A/B test with low traffic?</h2><p><strong>In short:</strong> Often not in the way tools suggest. A rule of thumb from Evan Miller puts the sample per variant at 16 × p(1 − p) ÷ δ². At a 2% conversion rate, spotting a 20% lift needs about 19,600 visitors per variant. With small traffic, test bigger changes, measure an earlier step, or use usability tests instead.</p><p>This guide was checked in November 2026, against Firebase's A/B Testing documentation, Evan Miller's writing on sample sizes, Nielsen Norman Group and Google's own help pages. The sample size numbers below are my own arithmetic with that formula, and I show the working.</p><p>Most A/B testing advice comes from companies with millions of visitors. An Indian clinic, coaching institute or D2C brand with a few thousand visits a month can run the same tool, get a green \"winner\" badge and be fooled by noise. This post is about knowing when a test can answer your question, and what to do when it cannot.</p><h2 id=\"the-sample-size-maths-without-the-jargon\">The sample size maths, without the jargon</h2><p>Evan Miller, whose calculators many marketers use, gives this rule of thumb in <a href=\"https://www.evanmiller.org/how-not-to-run-an-ab-test.html\" rel=\"noopener noreferrer nofollow\">How Not To Run an A/B Test</a>: n = 16 × σ² ÷ δ². Here δ is \"the minimum effect you wish to detect\" and σ² is the variance. For a conversion rate p, he gives σ² = p × (1 − p).</p><p>Where does the 16 come from? I checked it. At the usual 5% significance level and 80% power, the two statistics in his fuller formula are about 1.96 and 0.84. Two times (1.96 + 0.84) squared is about 15.7, which rounds to 16. The n is per variant, so a test of A against B needs twice that in total.</p><p>Here is what that gives for typical small-business numbers.</p><p><em>Visitors needed per variant, using n = 16 × p(1 − p) ÷ δ² (my calculation)</em></p><table><thead><tr><th>Baseline conversion</th><th>Change you want to detect</th><th>δ (absolute)</th><th>Per variant</th><th>Total for A and B</th></tr></thead><tbody><tr><td>2%</td><td>2% to 2.4% (20% relative lift)</td><td>0.4 points</td><td>19,600</td><td>39,200</td></tr><tr><td>2%</td><td>2% to 3% (50% relative lift)</td><td>1 point</td><td>3,136</td><td>6,272</td></tr><tr><td>5%</td><td>5% to 6% (20% relative lift)</td><td>1 point</td><td>7,600</td><td>15,200</td></tr><tr><td>10%</td><td>10% to 13% (30% relative lift)</td><td>3 points</td><td>1,600</td><td>3,200</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.evanmiller.org/how-not-to-run-an-ab-test.html\" rel=\"noopener noreferrer nofollow\"><em>Evan Miller, How Not To Run an A/B Test</em></a><em>, read 16 November 2026.</em></p><p>Two patterns stand out. Small improvements on low conversion rates need huge samples. And the bigger the change you are trying to detect, the faster the test, because δ is squared. Halve the effect you want to see and you need four times the visitors.</p><p>If you want different settings, Evan Miller's <a href=\"https://www.evanmiller.org/ab-testing/sample-size.html\" rel=\"noopener noreferrer nofollow\">sample size calculator</a> lets you set the minimum detectable effect, the power and the significance level, and gives the sample \"per variation\".</p><figure><img src=\"/assets/blog/ab-testing-small-traffic/1.webp\" alt=\"Infographic showing how required sample size grows as the effect you want to detect shrinks\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Halve the lift you want to detect and you need four times the visitors.</figcaption></figure><h2 id=\"how-long-would-your-test-take\">How long would your test take?</h2><p>Turn the per-variant number into weeks. Take the total for A and B, divide by the visitors per week who actually reach the page being tested, not your whole site.</p><p>An illustrative example: a product page gets 750 visits a week and converts at 2%. To detect a lift to 2.4%, you need 39,200 visits in total, which is about 52 weeks. To detect a lift to 3%, you need 6,272, which is about 8 or 9 weeks. The first test is not worth running. The second might be, if the change is bold enough to plausibly move conversion by half.</p><p>There is a floor too. Firebase's <a href=\"https://firebase.google.com/docs/ab-testing/ab-concepts\" rel=\"noopener noreferrer nofollow\">A/B Testing concepts page</a> says \"Two weeks is the recommended minimum runtime for a typical Remote Config experiment\", so the results include different days of the week. I would apply the same floor to website tests: Indian buying patterns shift around salary days, weekends and festivals, and one week can mislead.</p><h2 id=\"the-peeking-problem\">The peeking problem</h2><p>The most common way small businesses fool themselves is checking the dashboard every day and stopping when it turns green. Evan Miller calls these \"repeated significance testing errors\". His explanation: the significance calculation assumes \"the sample size was fixed in advance\". If you instead run until you see a significant difference, \"all the reported significance levels become meaningless.\"</p><p>He gives a striking example: if you peek at an ongoing experiment ten times, \"what you think is 1% significance is actually just 5% significance.\" In his worst case, testing after every observation, the real false positive rate reaches 26.1%.</p><p>His advice: \"Decide on a sample size in advance and wait until the experiment is over\". Looking is fine. Stopping early because it looks good is not.</p><figure><img src=\"/assets/blog/ab-testing-small-traffic/2.webp\" alt=\"Annotated view of Evan Miller's article advising a fixed sample size decided in advance\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Evan Miller's rule: fix the sample size first, then wait.</figcaption></figure><h2 id=\"firebase-a-b-testing-for-apps\">Firebase A/B Testing for apps</h2><p>For mobile apps, <a href=\"https://firebase.google.com/docs/ab-testing\" rel=\"noopener noreferrer nofollow\">Firebase A/B Testing</a> is the free option most Indian teams already have access to. Firebase's <a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> lists A/B Testing as no-cost. It works with Remote Config, for changing app behaviour or screens, and with the Notifications composer, for testing message variants.</p><p>What its documentation says about the parts that matter for small apps:</p><ul><li><strong>Statistics.</strong> Firebase \"uses frequentist inference\". A p-value below 0.05 is treated as a statistically significant difference, and the <a href=\"https://firebase.google.com/docs/ab-testing/ab-concepts\" rel=\"noopener noreferrer nofollow\">concepts page</a> explains p-values and confidence intervals for each metric.</li><li><strong>No required sample size.</strong> Firebase says its inference \"does not require the identification of a minimum sample size prior to starting an experiment\", and advises picking the largest exposure you are comfortable with. That is a convenience, not a free pass: the maths above still decides whether you can see a small effect.</li><li><strong>Exposure and baseline.</strong> On the <a href=\"https://firebase.google.com/docs/ab-testing/abtest-config\" rel=\"noopener noreferrer nofollow\">setup page</a>, you set an exposure percentage of matching users, split evenly between a baseline and one or more variants.</li><li><strong>Runtime.</strong> Two weeks is the recommended minimum for a typical Remote Config experiment, and experiment data is processed for a maximum of 90 days, after which the experiment stops automatically.</li><li><strong>Limits.</strong> Up to 300 experiments per project, including rollouts, of which up to 24 can be running.</li><li><strong>Analytics required.</strong> Google Analytics must be enabled in the project, because goals and audiences come from it.</li></ul><p>For an app with a few thousand monthly users, the most testable things are usually upstream: onboarding completion, notification open rates, or whether people reach the booking screen. Notification copy is a good first experiment, which we covered in <a href=\"/blogs/push-notifications-that-work\">push notifications that work</a>.</p><figure><img src=\"/assets/blog/ab-testing-small-traffic/3.webp\" alt=\"Annotated view of Firebase's A/B Testing concepts page showing the recommended two-week minimum runtime\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Firebase recommends at least two weeks for a typical Remote Config experiment.</figcaption></figure><h2 id=\"what-about-website-a-b-testing-tools\">What about website A/B testing tools?</h2><p>Many Indian small businesses used Google Optimize because it was free. It is gone. Google's <a href=\"https://support.google.com/optimize/answer/12979939\" rel=\"noopener noreferrer nofollow\">Analytics help page</a> says Google Optimize and Optimize 360 \"are no longer available as of September 30, 2023.\"</p><p>Paid testing tools and the experiment features in some analytics and store platforms fill the gap. I am not listing prices, because they change often and depend on traffic. Whatever tool you use, the sample size maths is the same. A tool cannot make 2,000 visitors behave like 200,000.</p><h2 id=\"alternatives-when-traffic-is-small\">Alternatives when traffic is small</h2><p><strong>Test bigger changes.</strong> A new headline will not move conversion by 50%. A new offer, a different price display, a shorter form or a different page structure might. Bigger changes mean a bigger δ and a test that finishes.</p><p><strong>Measure an earlier step.</strong> Fewer people buy than add to cart, and fewer add to cart than click a product. Testing a step with a higher rate and more people gives faster answers. Just check later that the final number did not fall.</p><p><strong>Run usability tests with five people.</strong> Nielsen Norman Group's <a href=\"https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/\" rel=\"noopener noreferrer nofollow\">classic article</a> argues that \"the best results come from testing no more than 5 users and running as many small tests as you can afford.\" Watching five customers try to book an appointment on your site often finds the problem faster than any split test. It answers why, not how much.</p><p><strong>Watch recordings and heatmaps.</strong> <a href=\"https://clarity.microsoft.com/\" rel=\"noopener noreferrer nofollow\">Microsoft Clarity</a> describes itself as free heatmaps and session recordings, \"free forever\". Watching where people stop scrolling or tap a non-clickable image is a good way to find what to change.</p><p><strong>Use before and after, carefully.</strong> Change the page and compare with the previous period. It is weaker evidence, because seasons, ads and festivals change too. Compare like with like, such as four weeks against the same four weeks last year, and note anything else that changed.</p><p><strong>Ship fixes that need no test.</strong> A broken button on mobile, a slow page or a form that rejects valid Indian phone numbers does not need an experiment. Fix it. We wrote about such checkout fixes in <a href=\"/blogs/ecommerce-checkout-conversion\">e-commerce checkout conversion</a>.</p><h2 id=\"picking-what-to-test-first\">Picking what to test first</h2><p>With little traffic, you get only a few tests a year, so choose them carefully. I rank candidate tests on three questions.</p><ul><li><strong>How many people see it?</strong> The home page hero, the product page and the checkout see the most visitors. A rarely visited About page is not worth testing.</li><li><strong>How big could the effect be?</strong> Price display, delivery promises, form length and the main offer can move behaviour a lot. Colours and button labels usually move it a little.</li><li><strong>How costly is a wrong guess?</strong> If a change is cheap to undo and unlikely to hurt, you may not need a test at all. Ship it and watch the numbers. Save experiments for changes that could plausibly lose you sales.</li></ul><p>Write the candidates in a list, score each from one to three on those questions, and test the highest scorer whose sample size fits in a few weeks. Everything else is either a fix you ship or a question for a usability session.</p><h2 id=\"step-by-step-deciding-whether-to-run-a-test\">Step by step: deciding whether to run a test</h2><p><strong>Step 1. Write the question and the metric.</strong> One sentence: \"Does showing the delivery date on the product page increase orders?\" Pick one primary metric before you start.</p><p><strong>Step 2. Get your real numbers.</strong> Weekly visitors to that exact page or screen, and its current conversion rate, from your analytics. Use the last four to eight weeks.</p><p><strong>Step 3. Decide the smallest lift worth knowing about.</strong> Be honest about what the change could achieve. That is δ.</p><p><strong>Step 4. Calculate the sample.</strong> 16 × p(1 − p) ÷ δ² per variant, or use a calculator. Double it for A and B.</p><p><strong>Step 5. Convert to weeks.</strong> Divide by weekly visitors. Under two weeks, run it for two anyway. Over about eight to twelve weeks, I would not run it: too much else changes in that time.</p><p><strong>Step 6. If it is too long, change the plan.</strong> Make the change bolder, test an earlier step, or switch to usability testing and recordings.</p><p><strong>Step 7. If you run it, fix the end date and do not stop early.</strong> Write the sample size and end date down before you start.</p><p><strong>Step 8. Record the result either way.</strong> Keep a simple log: question, dates, sample, result, decision. A flat result is still an answer.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are illustrative businesses with made-up traffic numbers, to show the maths in practice. They are not clients.</p><h3 id=\"a-d2c-saree-brands-product-page\">A D2C saree brand's product page</h3><p>Imagine a Kanchipuram silk brand whose product pages get 3,000 visits a month and convert at 2%. The team wants to test a new photo layout and hopes for a 20% lift. The table says 39,200 visits in total, or about thirteen months. Not a test.</p><p>A better plan: test a bolder change, like adding a video of the saree being draped plus a clear delivery date, and look for a 50% lift. That is 6,272 visits, about two months. Meanwhile, watch session recordings on mobile to see where shoppers drop off.</p><figure><img src=\"/assets/blog/ab-testing-small-traffic/4.webp\" alt=\"Illustration of a D2C saree brand owner and her assistant reviewing website results on a laptop in a small studio\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a small store, a bold change or a recording often teaches more than a tiny split test.</figcaption></figure><h3 id=\"a-coaching-institutes-enquiry-form\">A coaching institute's enquiry form</h3><p>Imagine a JEE coaching institute's landing page with 1,500 visits a month and a 10% form submission rate. It wants to know whether a three-field form beats the current eight-field form, and expects a jump of at least 3 points. That needs 1,600 per variant, 3,200 in total, about two months.</p><p>That is runnable, because the base rate is high and the change is big. The team should fix the end date in advance, and also check whether the extra leads turn into admissions, not just form fills.</p><h3 id=\"a-clinic-apps-reminder-notification\">A clinic app's reminder notification</h3><p>Imagine a clinic chain's app with 8,000 monthly active users, testing two versions of an appointment reminder in Firebase. The metric is whether the patient opens the app within a day. A notification goes to most users, the open rate is well above a purchase rate, and the change in wording can matter.</p><p>This is a good small-scale test: high volume relative to the app, an early metric, and Firebase's two-week minimum is easy to meet. The team should still decide the runtime before starting and leave it alone.</p><h2 id=\"six-ways-a-b-tests-mislead-small-businesses\">Six ways A/B tests mislead small businesses</h2><p><strong>1. Stopping at the first green badge.</strong> Peeking and stopping inflates false positives, as Evan Miller shows.</p><p><strong>2. Testing tiny changes on tiny traffic.</strong> Button colours on a page with 500 visits a week will never reach a clear answer.</p><p><strong>3. Running during a festival or sale.</strong> Diwali week shoppers are not your normal shoppers. Avoid big sale periods or run full weeks either side.</p><p><strong>4. Changing the ads mid-test.</strong> If your Meta or Google ads change targeting, the visitors change too. Keep traffic sources steady.</p><p><strong>5. Measuring too many metrics.</strong> Look at twenty metrics and one will look significant by chance. Pick one primary metric in advance.</p><p><strong>6. Trusting the tool's wording over the maths.</strong> \"95% chance to beat original\" on 300 visitors does not mean what it seems.</p><h2 id=\"a-monthly-experimentation-routine\">A monthly experimentation routine</h2><ul><li>List the three pages or screens that matter most and their weekly visitors and conversion rates.</li><li>Watch ten session recordings on each, on mobile.</li><li>Pick one problem to fix outright and one question worth testing.</li><li>Run the sample size check before building anything.</li><li>If the test is feasible, write the end date down and start it. If not, run a five-person usability test instead.</li><li>Log every result, including flat ones, in one shared sheet.</li></ul><h2 id=\"when-it-is-worth-building-experiments-in\">When it is worth building experiments in</h2><p>If your product will grow into enough traffic to test, it is cheaper to build feature flags, analytics events and Remote Config hooks in from the start than to bolt them on. That belongs in the scope, which we discuss in <a href=\"/blogs/mvp-scope-that-holds\">MVP scope that holds</a>. Our ₹3,500 requirement analysis is a call with the people who will build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-many-visitors-do-i-need-for-an-a-b-test\">How many visitors do I need for an A/B test?</h3><p>It depends on your conversion rate and the lift you want to detect. Using Evan Miller's rule of thumb, n = 16 × p(1 − p) ÷ δ² per variant, a 2% conversion rate and a lift to 2.4% needs about 19,600 visitors per variant, or 39,200 in total.</p><h3 id=\"is-firebase-a-b-testing-free\">Is Firebase A/B Testing free?</h3><p>Firebase's pricing page lists A/B Testing as no-cost. It needs Google Analytics enabled in the project and works with Remote Config and the Notifications composer.</p><h3 id=\"how-long-should-an-a-b-test-run\">How long should an A/B test run?</h3><p>Long enough to reach the sample size you fixed in advance, and at least two weeks, which Firebase recommends as the minimum for a typical Remote Config experiment. Firebase stops experiments automatically after 90 days.</p><h3 id=\"can-i-stop-a-test-early-if-it-shows-a-winner\">Can I stop a test early if it shows a winner?</h3><p>Not if you want to trust the result. Evan Miller shows that checking repeatedly and stopping at significance inflates false positives. Decide the sample size first and wait until it is reached.</p><h3 id=\"is-google-optimize-still-available\">Is Google Optimize still available?</h3><p>No. Google's help page says Google Optimize and Optimize 360 are no longer available as of September 30, 2023.</p><h3 id=\"what-can-i-do-instead-of-a-b-testing-with-low-traffic\">What can I do instead of A/B testing with low traffic?</h3><p>Test bolder changes, measure an earlier step with more people, run usability tests with about five users, watch session recordings, or compare carefully before and after a change.</p><h3 id=\"what-statistics-does-firebase-a-b-testing-use\">What statistics does Firebase A/B Testing use?</h3><p>Firebase says it uses frequentist inference, with a p-value below 0.05 treated as a statistically significant difference between a variant and the baseline, and shows confidence intervals for each metric.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.evanmiller.org/how-not-to-run-an-ab-test.html\" rel=\"noopener noreferrer nofollow\">How Not To Run an A/B Test, Evan Miller</a>, read 16 November 2026</li><li><a href=\"https://www.evanmiller.org/ab-testing/sample-size.html\" rel=\"noopener noreferrer nofollow\">Sample Size Calculator, Evan Miller</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/ab-testing\" rel=\"noopener noreferrer nofollow\">Firebase A/B Testing, Firebase documentation</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/ab-testing/ab-concepts\" rel=\"noopener noreferrer nofollow\">About Firebase A/B tests, Firebase documentation</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/ab-testing/abtest-config\" rel=\"noopener noreferrer nofollow\">Create Firebase Remote Config experiments with A/B Testing, Firebase documentation</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">Firebase pricing, Google</a>, read 16 November 2026</li><li><a href=\"https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/\" rel=\"noopener noreferrer nofollow\">Why You Only Need to Test with 5 Users, Nielsen Norman Group</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/optimize/answer/12979939\" rel=\"noopener noreferrer nofollow\">Sunset September 2023: Google Optimize, Analytics Help</a>, read 16 November 2026</li><li><a href=\"https://clarity.microsoft.com/\" rel=\"noopener noreferrer nofollow\">Microsoft Clarity, Microsoft</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian business owner comparing two versions of a web page on a laptop beside the words Small traffic tests",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian man in his 30s in a checked shirt, owner of a small online store, sitting at a wooden table with a laptop showing two abstract page layouts side by side labelled only with large letters A and B, a notebook with a hand-drawn bar chart (no numbers), a cup of filter coffee. Face fully in frame. No logos, no other readable text. Right half: the title text 'Small traffic tests' in very large bold black sans-serif, left-aligned, on three lines ('Small' / 'traffic' / 'tests'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing how required sample size grows as the effect you want to detect shrinks",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Visitors needed per variant at 2% conversion'. Two rows, each starting with a dark-blue rounded pill and an orange arrow to a stack of small person icons: row 1 pill 'Detect 2% to 3%' arrow to a short stack and pill '3,136 per variant'; row 2 pill 'Detect 2% to 2.4%' arrow to a much taller stack and pill '19,600 per variant'. A small grey formula note: 'n = 16 x p(1 - p) / d squared'. One-line bold takeaway at bottom: 'Halve the lift you want to detect, need four times the visitors.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Evan Miller's article advising a fixed sample size decided in advance",
+   "url": "https://www.evanmiller.org/how-not-to-run-an-ab-test.html",
+   "annotate": [
+    {
+     "text": "Decide on a sample size in advance and wait until the experiment is over",
+     "label": "Fix the sample first"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Firebase's A/B Testing concepts page showing the recommended two-week minimum runtime",
+   "url": "https://firebase.google.com/docs/ab-testing/ab-concepts",
+   "annotate": [
+    {
+     "text": "Two weeks is the recommended minimum runtime for a typical Remote Config experiment.",
+     "label": "Two weeks minimum"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a D2C saree brand owner and her assistant reviewing website results on a laptop in a small studio",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian saree studio with folded silk sarees on shelves: a woman owner in her 40s in a cotton saree and a young male assistant lean over a laptop showing an abstract line chart and two page thumbnails, no readable text or numbers. A mannequin draped in a saree in the background. No logos. Faces fully in frame."
+  }
+ ]
+}

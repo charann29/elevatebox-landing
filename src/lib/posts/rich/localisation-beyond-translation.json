@@ -1,0 +1,192 @@
+{
+ "slug": "localisation-beyond-translation",
+ "locale": "en",
+ "title": "App localisation for Indian languages: a practical guide",
+ "description": "App localisation for Indian languages beyond translation: Unicode, fonts, lakh and crore numbers, date formats, plurals, Android and iOS setup, step by step.",
+ "imageUrl": "/assets/blog/localisation-beyond-translation/cover.webp",
+ "imageAlt": "Illustration of an Indian app developer switching an app between languages on two phones beside the words Beyond translation",
+ "ogImageUrl": null,
+ "tags": [
+  "localisation",
+  "Indian languages",
+  "app development",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-01-31T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-localising-for-indian-languages-involves",
+   "text": "What localising for Indian languages involves",
+   "level": 2
+  },
+  {
+   "id": "translation-versus-localisation-in-one-table",
+   "text": "Translation versus localisation, in one table",
+   "level": 2
+  },
+  {
+   "id": "unicode-first-store-and-send-every-script-correctly",
+   "text": "Unicode first: store and send every script correctly",
+   "level": 2
+  },
+  {
+   "id": "fonts-coverage-shaping-and-page-weight",
+   "text": "Fonts: coverage, shaping and page weight",
+   "level": 2
+  },
+  {
+   "id": "numbers-currency-and-dates-for-indian-users",
+   "text": "Numbers, currency and dates for Indian users",
+   "level": 2
+  },
+  {
+   "id": "plurals-and-grammar-why-string-concatenation-breaks",
+   "text": "Plurals and grammar: why string concatenation breaks",
+   "level": 2
+  },
+  {
+   "id": "android-and-ios-what-the-platforms-give-you",
+   "text": "Android and iOS: what the platforms give you",
+   "level": 2
+  },
+  {
+   "id": "android",
+   "text": "Android",
+   "level": 3
+  },
+  {
+   "id": "ios",
+   "text": "iOS",
+   "level": 3
+  },
+  {
+   "id": "step-by-step-localising-a-product-the-right-way",
+   "text": "Step by step: localising a product the right way",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-chains-patient-app-in-telugu-and-english",
+   "text": "A clinic chain's patient app in Telugu and English",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-talking-to-customers-in-hinglish",
+   "text": "A D2C brand talking to customers in Hinglish",
+   "level": 3
+  },
+  {
+   "id": "a-loan-app-showing-amounts-in-lakhs",
+   "text": "A loan app showing amounts in lakhs",
+   "level": 3
+  },
+  {
+   "id": "six-common-mistakes",
+   "text": "Six common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-launch-checklist-for-each-new-language",
+   "text": "A launch checklist for each new language",
+   "level": 2
+  },
+  {
+   "id": "getting-it-scoped-before-you-build",
+   "text": "Getting it scoped before you build",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How do I show numbers in lakhs and crores in an app?",
+   "a": "Use the platform's locale-aware number formatter with an Indian locale such as en-IN, hi-IN or te-IN. MDN's Intl.NumberFormat example shows en-IN output as 1,23,456.789. Never insert commas by hand."
+  },
+  {
+   "q": "Which font should I use for Telugu, Hindi or Tamil on a website?",
+   "a": "Use a font that covers and correctly shapes the script, such as the free Noto family, which has separate families per script. Declare each with unicode-range so the browser downloads it only when the page uses that script."
+  },
+  {
+   "q": "Does Android let users pick a different language for my app?",
+   "a": "Yes. Android 13 introduced per-app language preferences in system settings. Enable automatic per-app language support so the LocaleConfig is generated and your app's languages show up there."
+  },
+  {
+   "q": "Why does my Android app crash in another language?",
+   "a": "Android's localisation guide warns that if a string is missing from the default res/values/strings.xml, a device in another language can show an error and a Force Close button. Every key must exist in the default resource file."
+  },
+  {
+   "q": "Is machine translation good enough for Indian languages?",
+   "a": "As a first draft, it can save time. For anything a customer relies on, such as prices, medical instructions, loan terms or legal text, have a native speaker review it in context on the actual screen."
+  },
+  {
+   "q": "How are plurals different in Hindi?",
+   "a": "CLDR's plural rules put 0 and 1 in Hindi's \"one\" category, unlike English, where 0 is plural. Use Android quantity strings or Xcode's Vary by Plural so each language gets its own forms."
+  },
+  {
+   "q": "What date format do Indian users expect?",
+   "a": "Day before month. When I ran Intl.DateTimeFormat, en-IN and hi-IN short dates came out as 16/11/26 and te-IN as 16-11-26. Use the locale formatter rather than a fixed pattern."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-localising-for-indian-languages-involves\">What localising for Indian languages involves</h2><p><strong>In short:</strong> Localising an app or website for Indian languages means more than translating strings. You need Unicode text throughout, fonts that render Telugu, Hindi or Tamil correctly, lakh and crore number grouping, Indian date formats, plural rules per language, and Android and iOS set up to switch language. Most of it is set in the first sprint, or paid for twice later.</p><p>This guide was checked in November 2026, against the Unicode Consortium's data, the Android and Apple developer documentation and MDN. Where I show formatting output, I ran it myself in Node.js 22 (ICU 78.2, CLDR 48) on 16 November 2026, and say so.</p><p>Translation is the visible part. The rest is engineering: how text is stored, how it is drawn, how numbers and dates are shown, how screens stretch when a word is longer, and how a user picks a language. Those decisions are cheap at the start and slow to change once an app has a few hundred screens.</p><h2 id=\"translation-versus-localisation-in-one-table\">Translation versus localisation, in one table</h2><p>Here is what changes when a product goes from English-only to, say, English, Hindi and Telugu.</p><p><em>What localisation covers beyond translated words</em></p><table><thead><tr><th>Area</th><th>What goes wrong if ignored</th><th>Where the rule comes from</th></tr></thead><tbody><tr><td>Text encoding</td><td>Boxes or question marks instead of letters in the database, SMS or PDF</td><td>Unicode: one number for every character</td></tr><tr><td>Fonts</td><td>Missing glyphs, broken conjuncts, a slow page from a huge font file</td><td>Font coverage per script, CSS unicode-range</td></tr><tr><td>Numbers and currency</td><td>₹12,345,678 instead of ₹1,23,45,678</td><td>CLDR locale data, via Intl or platform formatters</td></tr><tr><td>Dates</td><td>11/16/26 shown to a user who reads 16/11/26</td><td>CLDR locale data</td></tr><tr><td>Plurals</td><td>\"1 items\" or wrong grammar in Hindi for zero</td><td>CLDR plural rules, Android quantity strings, Xcode plural variants</td></tr><tr><td>Layout</td><td>Buttons that cut off longer translated labels</td><td>Pseudolocale testing on Android, device variants on iOS</td></tr><tr><td>Language choice</td><td>User stuck in the phone's system language</td><td>Android 13 per-app languages, in-app switcher</td></tr><tr><td>Markup</td><td>Screen readers mispronounce Telugu as English</td><td>The HTML lang attribute</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.unicode.org/standard/WhatIsUnicode.html\" rel=\"noopener noreferrer nofollow\"><em>Unicode Consortium</em></a><em> and </em><a href=\"https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html\" rel=\"noopener noreferrer nofollow\"><em>CLDR plural rules</em></a><em> and </em><a href=\"https://developer.android.com/guide/topics/resources/app-languages\" rel=\"noopener noreferrer nofollow\"><em>Android Developers</em></a><em> and </em><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang\" rel=\"noopener noreferrer nofollow\"><em>MDN</em></a><em>, read 16 November 2026.</em></p><h2 id=\"unicode-first-store-and-send-every-script-correctly\">Unicode first: store and send every script correctly</h2><p>The <a href=\"https://www.unicode.org/standard/WhatIsUnicode.html\" rel=\"noopener noreferrer nofollow\">Unicode Standard</a> \"provides a unique number for every character, no matter what the platform\". Every major Indian script has its own block. From the Unicode Character Database's <a href=\"https://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt\" rel=\"noopener noreferrer nofollow\">Blocks.txt</a>: Devanagari is U+0900 to U+097F, Bengali U+0980 to U+09FF, Gurmukhi U+0A00 to U+0A7F, Gujarati U+0A80 to U+0AFF, Odia (listed as Oriya) U+0B00 to U+0B7F, Tamil U+0B80 to U+0BFF, Telugu U+0C00 to U+0C7F, Kannada U+0C80 to U+0CFF and Malayalam U+0D00 to U+0D7F.</p><p>What that means in practice:</p><ul><li>Use UTF-8 end to end: database columns and connections, APIs, CSV exports, log files and email templates. One legacy table in a different encoding is enough to corrupt a customer's name.</li><li>Do not store Indian-language text as images or in old font-specific encodings. Text typed in a legacy non-Unicode font looks right on one PC and becomes gibberish everywhere else, including in search.</li><li>Test SMS separately. Ask your SMS provider how Indian-script messages are encoded and billed, and how many characters fit in one message, before you write OTP and alert templates. Then send real ones to real phones, including older handsets, and read what arrives.</li><li>Search and sort need care. A search for a name typed in Telugu should match the same name stored in Telugu, and sorting rules differ from English alphabetical order.</li></ul><h2 id=\"fonts-coverage-shaping-and-page-weight\">Fonts: coverage, shaping and page weight</h2><p>A font has to contain the script, and it has to shape it. Indian scripts combine consonants and vowel signs into conjuncts, and a font or renderer that does not handle this shows broken letters even when the encoding is correct. Google's <a href=\"https://notofonts.github.io/\" rel=\"noopener noreferrer nofollow\">Noto</a> family is the common free choice: the Noto project describes it as fonts \"in more than 1,000 languages and over 150 writing systems\", with separate families per script such as Noto Sans Bengali.</p><p>On the web, page weight is the catch. Indian-script fonts are larger than Latin ones, and loading Hindi, Telugu and Tamil fonts for every visitor is waste. MDN's page on <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range\" rel=\"noopener noreferrer nofollow\">unicode-range</a> explains the fix: if a page does not use any character in a font's declared range, \"the font is not downloaded\". Declare each script's font with its Unicode range and the browser fetches only what the page needs. That matters for speed on budget phones, which we covered in <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a>.</p><p>On Android and iOS, system fonts cover the major Indian scripts, but test on real, older devices. Brand fonts bought for English almost never include Indian scripts, so pick a matching Indian-script font early and get it approved with the brand.</p><figure><img src=\"/assets/blog/localisation-beyond-translation/1.webp\" alt=\"Infographic of the localisation stack for Indian languages, from Unicode storage to in-app language choice\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Localisation is a stack: get the lower layers right and translation is the easy part.</figcaption></figure><h2 id=\"numbers-currency-and-dates-for-indian-users\">Numbers, currency and dates for Indian users</h2><p>Indian English groups large numbers in lakhs and crores: 1,23,45,678, not 12,345,678. MDN's <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat\" rel=\"noopener noreferrer nofollow\">Intl.NumberFormat page</a> shows it with the comment \"India uses thousands/lakh/crore separators\" and the output 1,23,456.789 for the en-IN locale. Never hand-code commas. Use the platform formatter with the right locale and the data comes from Unicode CLDR.</p><p>When I ran the formatters in Node.js on 16 November 2026, this is what came back for 12345678.9 and today's date:</p><p><em>Intl formatting output by locale, run in Node.js 22 (ICU 78.2, CLDR 48)</em></p><table><thead><tr><th>Locale</th><th>Number</th><th>Rupees</th><th>Short date</th><th>Long date</th></tr></thead><tbody><tr><td>en-US</td><td>12,345,678.9</td><td>₹12,345,678.90</td><td>11/16/26</td><td>November 16, 2026</td></tr><tr><td>en-IN</td><td>1,23,45,678.9</td><td>₹1,23,45,678.90</td><td>16/11/26</td><td>16 November 2026</td></tr><tr><td>hi-IN</td><td>1,23,45,678.9</td><td>₹1,23,45,678.90</td><td>16/11/26</td><td>16 नवंबर 2026</td></tr><tr><td>te-IN</td><td>1,23,45,678.9</td><td>₹1,23,45,678.90</td><td>16-11-26</td><td>16 నవంబర్, 2026</td></tr><tr><td>ta-IN</td><td>1,23,45,678.9</td><td>₹1,23,45,678.90</td><td>16/11/26</td><td>16 நவம்பர், 2026</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat\" rel=\"noopener noreferrer nofollow\"><em>MDN Intl.NumberFormat, plus my own run of Intl.NumberFormat and Intl.DateTimeFormat</em></a><em>, read 16 November 2026.</em></p><p>Three things in that table matter. First, en-US formatting on an Indian app is a real bug I see often, usually because the app was set to a default locale. Second, Telugu short dates use hyphens in this data, so do not assume slashes everywhere. Third, compact notation follows the locale too: in the same run, en-IN compact formatting of 12345678 gave \"1.2Cr\".</p><p>Some practical rules:</p><ul><li>Store amounts as numbers in paise or a decimal type, and format only at display time.</li><li>Store dates in UTC or with a time zone, and display in Asia/Kolkata unless the user is elsewhere.</li><li>Let the user's chosen language drive the display locale, but keep invoices and GST documents in the format your accountant and the law expect.</li><li>Decide on digits. Most Indian users read Western digits in apps, even in Hindi or Telugu. Native digits are available through locale extensions, but use them only if your users want them.</li></ul><p>On iOS, Apple's guidance on <a href=\"https://developer.apple.com/documentation/xcode/supporting-multiple-languages-in-your-app\" rel=\"noopener noreferrer nofollow\">supporting multiple languages</a> is to \"use localized versions of the string formatters\". On Android, the same applies with the platform's locale-aware formatters. The rule is the same everywhere: format by locale, never by string concatenation.</p><figure><img src=\"/assets/blog/localisation-beyond-translation/2.webp\" alt=\"Annotated view of MDN's Intl.NumberFormat page showing the Indian lakh and crore grouping example\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>MDN's Intl.NumberFormat example: en-IN groups by thousands, lakhs and crores.</figcaption></figure><h2 id=\"plurals-and-grammar-why-string-concatenation-breaks\">Plurals and grammar: why string concatenation breaks</h2><p>English has two plural forms. Other languages do not follow English. The Unicode <a href=\"https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html\" rel=\"noopener noreferrer nofollow\">CLDR plural rules</a> list Hindi's \"one\" category as covering 0 and 1, so \"0 items\" in Hindi takes the same form as \"1 item\", unlike English. When I checked with Intl.PluralRules, Hindi returned \"one\" for 0 and 1, and English returned \"other\" for 0.</p><p>Both platforms handle this if you let them. Android's <a href=\"https://developer.android.com/guide/topics/resources/string-resource\" rel=\"noopener noreferrer nofollow\">string resources</a> support quantity strings, and the full set of categories Android supports is \"zero, one, two, few, many, and other\". Apple's <a href=\"https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog\" rel=\"noopener noreferrer nofollow\">String Catalogs</a> let you choose Vary by Plural, and Xcode adds the plural forms each language needs.</p><p>Gender is a third trap. In Hindi, verbs and adjectives can change with the gender of the subject, so a single string like \"{name} has placed an order\" may need variants, or a rewrite that avoids the problem. Ask your translator which strings need this before the screens are final.</p><p>The other grammar trap is word order. Building a sentence from pieces (\"You have\" + count + \"orders\") assumes English order. Hindi and Telugu put the verb at the end. Always translate whole sentences with placeholders, so the translator can move the number where it belongs.</p><h2 id=\"android-and-ios-what-the-platforms-give-you\">Android and iOS: what the platforms give you</h2><h3 id=\"android\">Android</h3><ul><li><strong>Always ship default resources.</strong> Android's <a href=\"https://developer.android.com/guide/topics/resources/localization\" rel=\"noopener noreferrer nofollow\">localisation guide</a> warns that if the default res/values/strings.xml is missing a string, then on a device set to another language, the user can see \"an error message and a Force Close button\". Every key must exist in the default file.</li><li><strong>Per-app language.</strong> <a href=\"https://developer.android.com/guide/topics/resources/app-languages\" rel=\"noopener noreferrer nofollow\">Android 13 introduces</a> per-app language preferences in system settings, so a user can run your app in Telugu while the phone stays in English. Enable automatic per-app language support to generate the LocaleConfig.</li><li><strong>Pseudolocales.</strong> Android's <a href=\"https://developer.android.com/guide/topics/resources/pseudolocales\" rel=\"noopener noreferrer nofollow\">pseudolocale testing</a> has an English (XA) mode that adds accents, expands text and brackets each string, which exposes hardcoded strings and layouts that cannot stretch.</li></ul><h3 id=\"ios\">iOS</h3><ul><li><strong>String Catalogs.</strong> Apple's <a href=\"https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog\" rel=\"noopener noreferrer nofollow\">documentation</a> says that when you build, \"Xcode discovers the localizable strings in your app and adds them to string catalogs in your project automatically.\"</li><li><strong>Plural and device variants.</strong> The same catalog can vary a string by plural and by device, for when a long Tamil label fits on an iPad but not on a small iPhone.</li><li><strong>Formatters.</strong> Use the localised date, number and currency formatters, as above.</li></ul><p>If you are choosing a cross-platform framework, check its localisation tooling early. Both Flutter and React Native support it, but the setup differs. We compared them in <a href=\"/blogs/flutter-vs-react-native\">Flutter vs React Native</a>.</p><figure><img src=\"/assets/blog/localisation-beyond-translation/3.webp\" alt=\"Annotated view of Android's localisation guide warning about missing default resources\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Android's warning: a missing default string can crash the app in another language.</figcaption></figure><h2 id=\"step-by-step-localising-a-product-the-right-way\">Step by step: localising a product the right way</h2><p><strong>Step 1. Pick the languages from data.</strong> Look at where your customers are and what they type in support chats. Two well-done languages beat six half-done ones.</p><p><strong>Step 2. Internationalise before you translate.</strong> Move every user-facing string out of code into resource files or a catalog. Use placeholders for numbers and names. Run a pseudolocale build and fix anything that still shows unaccented.</p><p><strong>Step 3. Set encoding, fonts and formatting.</strong> UTF-8 everywhere, script fonts chosen and loaded by unicode-range on the web, and locale-aware formatters for numbers, rupees and dates.</p><p><strong>Step 4. Design for longer and taller text.</strong> Translated labels can run longer than English, and Indian scripts often need more line height for vowel signs above and below. Avoid fixed-width buttons and single-line titles that truncate.</p><p><strong>Step 5. Translate with context.</strong> Give translators screenshots and notes for each string. \"Book\" as a noun and \"Book\" as a verb are different words in Hindi and Telugu. Machine translation is a draft, not a final.</p><p><strong>Step 6. Let users choose.</strong> An in-app language switcher, plus Android 13 per-app language support. Remember the choice across sessions and devices if users log in.</p><p><strong>Step 7. Set the HTML lang attribute on the web.</strong> MDN notes that it allows assistive technologies such as screen readers \"to invoke the correct pronunciation\". Mark Telugu pages lang=\"te\" and Hindi pages lang=\"hi\". This is accessibility too, covered in <a href=\"/blogs/accessibility-is-cheaper-early\">accessibility is cheaper early</a>.</p><p><strong>Step 8. Test with native speakers on real phones.</strong> Read every screen, send real SMS and emails, generate a real invoice PDF, and search for a name in each script.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are illustrative businesses, made up to show how priorities shift. They are not clients.</p><h3 id=\"a-clinic-chains-patient-app-in-telugu-and-english\">A clinic chain's patient app in Telugu and English</h3><p>Imagine a clinic chain across Telangana and Andhra Pradesh. Many older patients prefer Telugu, while doctors write prescriptions in English. The app needs Telugu for navigation, booking and reminders, but prescriptions stay in the doctor's English. Mixed-language screens are normal here and should be designed for, with the lang attribute or platform locale set per block of text.</p><p>SMS reminders in Telugu need testing with the SMS provider for length and encoding. Dates in reminders should use the Telugu locale data, not a hand-made format.</p><figure><img src=\"/assets/blog/localisation-beyond-translation/4.webp\" alt=\"Illustration of an older Indian woman reading an appointment reminder in her own language on a phone at a clinic\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a clinic, reminders and booking in the patient's language matter most.</figcaption></figure><h3 id=\"a-d2c-brand-talking-to-customers-in-hinglish\">A D2C brand talking to customers in Hinglish</h3><p>Imagine a D2C snack brand whose Instagram audience writes in Hinglish: Hindi in Latin letters. Translating the store into formal Devanagari Hindi may read stiffly to that audience. The right call might be English UI with Hinglish marketing copy, plus Devanagari Hindi for product names and search.</p><p>The engineering lesson is search: customers will type \"namkeen\" in Latin letters and नमकीन in Devanagari. Both should find the product.</p><h3 id=\"a-loan-app-showing-amounts-in-lakhs\">A loan app showing amounts in lakhs</h3><p>Imagine a lending app for small traders in Maharashtra, in Marathi, Hindi and English. Amounts are the product, so formatting is everything: ₹1,50,000 must never appear as ₹150,000 to a customer who thinks in lakhs. Every amount goes through the locale formatter, and every legal document is reviewed by a native speaker before release.</p><h2 id=\"six-common-mistakes\">Six common mistakes</h2><p><strong>1. Translating last.</strong> Strings hardcoded in code are found one by one, months later. Internationalise in the first sprint.</p><p><strong>2. Hand-formatting numbers and dates.</strong> Formatting code copied from an American tutorial shows 12,345,678 to Indian customers. Use locale formatters.</p><p><strong>3. Concatenating sentences.</strong> It breaks Hindi and Telugu word order and plurals. Translate whole sentences with placeholders.</p><p><strong>4. Fixed-size buttons.</strong> A label that fits in English gets cut off in Tamil. Test with a pseudolocale and with real translations.</p><p><strong>5. Forgetting non-UI text.</strong> Push notifications, SMS, emails, PDF invoices, error messages from the server and app store listings all need localising.</p><p><strong>6. Loading every font for everyone.</strong> Use unicode-range on the web so a Hindi reader does not download Tamil and Telugu fonts.</p><h2 id=\"a-launch-checklist-for-each-new-language\">A launch checklist for each new language</h2><ul><li>Every string in the default resource file and the new language file; pseudolocale build is clean.</li><li>Fonts render conjuncts correctly on an old Android phone and an iPhone.</li><li>Numbers, rupees and dates use locale formatters; lakh and crore grouping checked.</li><li>Plural strings use quantity strings or Xcode plural variants.</li><li>Language switcher works in the app and through Android 13 system settings.</li><li>SMS, push, email and PDF templates translated and tested end to end.</li><li>Web pages have the correct lang attribute; fonts load by unicode-range.</li><li>A native speaker has read every screen in context.</li></ul><h2 id=\"getting-it-scoped-before-you-build\">Getting it scoped before you build</h2><p>Localisation is easiest when it is in the scope from day one: which languages, which screens, which documents and who reviews translations. If you are planning an app or site for Indian-language users, our ₹3,500 requirement analysis is a call with the people who will build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. For the build itself, see our <a href=\"/services/mobile-app-development\">mobile app development page</a>.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-do-i-show-numbers-in-lakhs-and-crores-in-an-app\">How do I show numbers in lakhs and crores in an app?</h3><p>Use the platform's locale-aware number formatter with an Indian locale such as en-IN, hi-IN or te-IN. MDN's Intl.NumberFormat example shows en-IN output as 1,23,456.789. Never insert commas by hand.</p><h3 id=\"which-font-should-i-use-for-telugu-hindi-or-tamil-on-a-website\">Which font should I use for Telugu, Hindi or Tamil on a website?</h3><p>Use a font that covers and correctly shapes the script, such as the free Noto family, which has separate families per script. Declare each with unicode-range so the browser downloads it only when the page uses that script.</p><h3 id=\"does-android-let-users-pick-a-different-language-for-my-app\">Does Android let users pick a different language for my app?</h3><p>Yes. Android 13 introduced per-app language preferences in system settings. Enable automatic per-app language support so the LocaleConfig is generated and your app's languages show up there.</p><h3 id=\"why-does-my-android-app-crash-in-another-language\">Why does my Android app crash in another language?</h3><p>Android's localisation guide warns that if a string is missing from the default res/values/strings.xml, a device in another language can show an error and a Force Close button. Every key must exist in the default resource file.</p><h3 id=\"is-machine-translation-good-enough-for-indian-languages\">Is machine translation good enough for Indian languages?</h3><p>As a first draft, it can save time. For anything a customer relies on, such as prices, medical instructions, loan terms or legal text, have a native speaker review it in context on the actual screen.</p><h3 id=\"how-are-plurals-different-in-hindi\">How are plurals different in Hindi?</h3><p>CLDR's plural rules put 0 and 1 in Hindi's \"one\" category, unlike English, where 0 is plural. Use Android quantity strings or Xcode's Vary by Plural so each language gets its own forms.</p><h3 id=\"what-date-format-do-indian-users-expect\">What date format do Indian users expect?</h3><p>Day before month. When I ran Intl.DateTimeFormat, en-IN and hi-IN short dates came out as 16/11/26 and te-IN as 16-11-26. Use the locale formatter rather than a fixed pattern.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.unicode.org/standard/WhatIsUnicode.html\" rel=\"noopener noreferrer nofollow\">What is Unicode?, Unicode Consortium</a>, read 16 November 2026</li><li><a href=\"https://www.unicode.org/Public/UCD/latest/ucd/Blocks.txt\" rel=\"noopener noreferrer nofollow\">Blocks.txt, Unicode Character Database</a>, read 16 November 2026</li><li><a href=\"https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html\" rel=\"noopener noreferrer nofollow\">Language plural rules, Unicode CLDR</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat\" rel=\"noopener noreferrer nofollow\">Intl.NumberFormat, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range\" rel=\"noopener noreferrer nofollow\">unicode-range, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang\" rel=\"noopener noreferrer nofollow\">lang global attribute, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://notofonts.github.io/\" rel=\"noopener noreferrer nofollow\">Noto fonts dashboard, Noto project</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/localization\" rel=\"noopener noreferrer nofollow\">Localize your app, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/app-languages\" rel=\"noopener noreferrer nofollow\">Per-app language preferences, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/pseudolocales\" rel=\"noopener noreferrer nofollow\">Test your app with pseudolocales, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/string-resource\" rel=\"noopener noreferrer nofollow\">String resources, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog\" rel=\"noopener noreferrer nofollow\">Localizing and varying text with a string catalog, Apple Developer Documentation</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/documentation/xcode/supporting-multiple-languages-in-your-app\" rel=\"noopener noreferrer nofollow\">Supporting multiple languages in your app, Apple Developer Documentation</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian app developer switching an app between languages on two phones beside the words Beyond translation",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian woman developer in a mustard kurta at a desk, holding two phones side by side that show the same app layout with abstract text lines of different lengths (no readable letters, no real script), a laptop behind with abstract code lines, a small potted tulsi plant. Face fully in frame. No logos. Right half: the title text 'Beyond translation' in very large bold black sans-serif, left-aligned, on two lines ('Beyond' / 'translation'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the localisation stack for Indian languages, from Unicode storage to in-app language choice",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Localisation is a stack'. A vertical stack of six dark-blue rounded pills with white text, bottom to top, joined by small orange upward arrows, each with a flat icon on its left: database icon 'Unicode (UTF-8) everywhere', letter icon 'Script fonts that shape correctly', rupee icon 'Lakh and crore number format', calendar icon 'Day-first dates', speech bubble icon 'Plural rules per language', phone icon 'Per-app language choice'. On the right, a single terracotta pill at the top labelled 'Translation'. One-line bold takeaway at bottom: 'Get the lower layers right and translation is the easy part.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of MDN's Intl.NumberFormat page showing the Indian lakh and crore grouping example",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat",
+   "annotate": [
+    {
+     "text": "// India uses thousands/lakh/crore separators",
+     "label": "Lakh and crore grouping"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Android's localisation guide warning about missing default resources",
+   "url": "https://developer.android.com/guide/topics/resources/localization",
+   "annotate": [
+    {
+     "text": "the user sees an error message and a Force Close button",
+     "label": "Missing default string"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an older Indian woman reading an appointment reminder in her own language on a phone at a clinic",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian clinic waiting area: an older woman in a cotton saree with a bindi sits on a bench smiling at her phone, which shows an abstract reminder card with a calendar icon and blurred lines, no readable letters in any script. A young nurse in a sage uniform walks past with a clipboard. A potted plant and a wall clock behind. No logos. Faces fully in frame."
+  }
+ ]
+}
