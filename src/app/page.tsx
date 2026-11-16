@@ -229,34 +229,31 @@ export default function Home() {
         />
 
         {/* ── Hero: the 3D band, headline and the fan of live app screens ── */}
-        <section className="hero-3d overflow-hidden px-4 pt-12 text-center lg:h-[740px] lg:pt-[64px]">
-          <a href={VOICE_APP} className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 py-1.5 pl-1.5 pr-4 text-left text-sm text-white">
+        <section className="hero-3d flex flex-col items-center overflow-hidden px-4 pt-6 text-center sm:block sm:pt-12 lg:h-[740px] lg:pt-[64px]">
+          <a href={VOICE_APP} className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 py-1 pl-1 pr-3 text-left text-xs text-white sm:gap-2.5 sm:py-1.5 sm:pl-1.5 sm:pr-4 sm:text-sm">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-live px-2.5 py-1 text-[11px] font-bold text-[#04210f]">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#04210f]" />
               NEW
             </span>
-            Voice AI calls your leads in Telugu, Hindi and English
+            <span className="sm:hidden">AI calls leads in Telugu, Hindi, English</span>
+            <span className="hidden sm:inline">Voice AI calls your leads in Telugu, Hindi and English</span>
           </a>
-          <h1 className="mx-auto mt-6 max-w-3xl text-base font-medium text-electric-2 sm:text-lg">
+          <h1 className="order-1 mx-auto mt-5 max-w-3xl text-sm font-medium sm:order-none sm:mt-6 sm:text-base text-electric-2 sm:text-lg">
             Mobile App &amp; AI Development Company in <span className="text-white">Hyderabad</span>
           </h1>
-          <p className="mx-auto mt-3 max-w-[15ch] text-[40px] font-[700] leading-[1.04] tracking-[-0.03em] text-white lg:text-[68px]">
+          <p className="mx-auto mt-5 max-w-[15ch] text-[36px] sm:mt-3 font-[700] leading-[1.04] sm:text-[40px] tracking-[-0.03em] text-white lg:text-[68px]">
             We build apps people <span className="text-gradient">actually use</span>
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/book" className="inline-flex h-[52px] items-center rounded-full bg-white px-[26px] text-base font-semibold text-navy hover:bg-sky">
+          <div className="mt-6 flex items-center justify-center gap-2.5 sm:mt-8 sm:gap-3">
+            <Link href="/book" className="inline-flex h-12 items-center whitespace-nowrap rounded-full bg-white px-5 text-[15px] font-semibold sm:h-[52px] sm:px-[26px] sm:text-base text-navy hover:bg-sky">
               Get quote now
             </Link>
-            <a href={VOICE_APP} className="inline-flex h-[52px] items-center gap-2 rounded-full px-[26px] text-base font-semibold text-white ring-[1.5px] ring-inset ring-white hover:bg-white/10">
+            <a href={VOICE_APP} className="inline-flex h-12 items-center gap-2 whitespace-nowrap rounded-full px-5 text-[15px] font-semibold sm:h-[52px] sm:px-[26px] sm:text-base text-white ring-[1.5px] ring-inset ring-white hover:bg-white/10">
               <span aria-hidden="true" className="size-2 rounded-full bg-live" />
               Try Roopa free
             </a>
           </div>
-          <p className="mx-auto mt-5 max-w-[34em] text-sm leading-relaxed text-white/75">
-            <b className="font-semibold text-white">What is Roopa?</b> Our AI phone agent that calls your leads in Telugu,
-            Hindi and English, and books the next step. Just try it for free.
-          </p>
-          <div aria-hidden="true" className="relative -mb-[110px] mt-20 h-[330px] w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-0 lg:mt-0 lg:h-[520px] lg:w-[1100px] lg:origin-bottom lg:scale-[0.65]">
+          <div aria-hidden="true" className="relative order-2 self-start -mb-[110px] mt-8 h-[330px] shrink-0 sm:order-none sm:mt-20 w-[600px] max-w-none -translate-x-1/2 left-1/2 lg:absolute lg:bottom-0 lg:mt-0 lg:h-[520px] lg:w-[1100px] lg:origin-bottom lg:scale-[0.65]">
             {FAN.map((f) => (
               <span key={f.src} className={`absolute bottom-0 block w-[130px] rounded-[30px] bg-[#0A1024] p-1.5 shadow-[0_40px_80px_-30px_rgba(1,20,70,0.55),0_0_0_1px_rgba(255,255,255,0.08)] lg:w-[220px] ${f.cls}`}>
                 <Image src={f.src} alt="" width={520} height={1126} className="w-full rounded-[24px]" priority={f.centre} />
