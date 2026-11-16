@@ -157,6 +157,9 @@ export function FloatingActions() {
   );
 }
 
+// Header "Book a call": WhatsApp with a pre-filled line, not the paid /book page.
+const BOOK_CALL = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hi ElevateBox, I'd like to book a call")}`;
+
 const ARROW_UP_RIGHT = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5" aria-hidden="true">
     <path d="M7 17 17 7M8 7h9v9" />
@@ -248,9 +251,9 @@ export function Header() {
           </ul>
         </nav>
 
-        <Link href="/book" className="hidden h-11 items-center rounded-full bg-navy px-5 text-[15px] font-semibold text-white transition-colors hover:bg-deep xl:inline-flex">
+        <a href={BOOK_CALL} className="hidden h-11 items-center rounded-full bg-navy px-5 text-[15px] font-semibold text-white transition-colors hover:bg-deep xl:inline-flex">
           Book a call
-        </Link>
+        </a>
 
         {/* Mobile */}
         <details className="xl:hidden">
@@ -298,9 +301,9 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <Link href="/book" className="mt-4 block rounded-full bg-navy px-5 py-3 text-center text-sm font-semibold text-white">
+            <a href={BOOK_CALL} className="mt-4 block rounded-full bg-navy px-5 py-3 text-center text-sm font-semibold text-white">
               Book a call
-            </Link>
+            </a>
             <div className="mt-4 space-y-1 border-t border-line pt-4 text-sm">
               <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="block font-semibold text-ink">{COMPANY.phone}</a>
               <a href={`mailto:${COMPANY.email}`} className="block text-ink-3">{COMPANY.email}</a>
