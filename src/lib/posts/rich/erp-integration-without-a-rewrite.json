@@ -1,0 +1,195 @@
+{
+  "slug": "erp-integration-without-a-rewrite",
+  "locale": "en",
+  "title": "ERP integration in India: Tally, Zoho, SAP B1",
+  "description": "How to connect TallyPrime, Zoho Books or SAP Business One to apps and stores in India, with GST e-invoice IRP rules, e-way bill limits and sync patterns.",
+  "imageUrl": "/assets/blog/erp-integration-without-a-rewrite/cover.webp",
+  "imageAlt": "Illustration of an Indian accountant and a developer connecting an accounting system to an online store beside the words ERP integration",
+  "ogImageUrl": null,
+  "tags": [
+    "ERP integration",
+    "Tally",
+    "GST e-invoicing",
+    "India"
+  ],
+  "readingTimeMinutes": 17,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "what-erp-integration-means-for-an-indian-business",
+      "text": "What ERP integration means for an Indian business",
+      "level": 2
+    },
+    {
+      "id": "three-erps-three-doors",
+      "text": "Three ERPs, three doors",
+      "level": 2
+    },
+    {
+      "id": "tallyprime-xml-json-and-odbc",
+      "text": "TallyPrime: XML, JSON and ODBC",
+      "level": 2
+    },
+    {
+      "id": "zoho-books-the-rest-api-and-its-limits",
+      "text": "Zoho Books: the REST API and its limits",
+      "level": 2
+    },
+    {
+      "id": "sap-business-one-the-service-layer",
+      "text": "SAP Business One: the Service Layer",
+      "level": 2
+    },
+    {
+      "id": "gst-e-invoicing-who-must-and-how-the-irp-works",
+      "text": "GST e-invoicing: who must, and how the IRP works",
+      "level": 2
+    },
+    {
+      "id": "e-way-bills-from-the-same-data",
+      "text": "E-way bills from the same data",
+      "level": 2
+    },
+    {
+      "id": "sync-patterns-that-hold-up",
+      "text": "Sync patterns that hold up",
+      "level": 2
+    },
+    {
+      "id": "step-by-step-connecting-an-app-or-store-to-your-erp",
+      "text": "Step by step: connecting an app or store to your ERP",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples",
+      "text": "Three worked examples",
+      "level": 2
+    },
+    {
+      "id": "a-d2c-brand-on-shopify-and-tallyprime",
+      "text": "A D2C brand on Shopify and TallyPrime",
+      "level": 3
+    },
+    {
+      "id": "a-distributor-with-a-sales-app-on-zoho-books",
+      "text": "A distributor with a sales app on Zoho Books",
+      "level": 3
+    },
+    {
+      "id": "a-manufacturer-on-sap-business-one-with-a-dealer-portal",
+      "text": "A manufacturer on SAP Business One with a dealer portal",
+      "level": 3
+    },
+    {
+      "id": "seven-common-failures",
+      "text": "Seven common failures",
+      "level": 2
+    },
+    {
+      "id": "a-monthly-30-minute-reconciliation",
+      "text": "A monthly 30-minute reconciliation",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can TallyPrime connect to an online store or app?",
+      "a": "Yes. TallyPrime can act as a server over HTTP, on port 9000 by default, and accepts XML, and from version 7.0 native JSON, to import and export data. Because Tally usually runs on an office PC, a cloud store needs a small connector on that network to push orders in."
+    },
+    {
+      "q": "Does Tally have a REST API?",
+      "a": "Not in the usual cloud sense. Tally exposes XML and JSON requests over HTTP on the machine where it runs, and ODBC for SQL Select queries. There is no hosted endpoint on the internet, so you build or buy a connector that talks to the local port."
+    },
+    {
+      "q": "What are the Zoho Books API limits?",
+      "a": "Zoho's API page lists 100 requests per minute per organisation and daily caps of 1,000 on Free, 2,000 on Standard, 5,000 on Professional and 10,000 on Premium, Elite and Ultimate. Concurrent calls are capped at 5 on Free and 10 on paid plans. Going over returns HTTP 429."
+    },
+    {
+      "q": "Who needs to generate e-invoices in India?",
+      "a": "Businesses whose aggregate turnover exceeded ₹5 crore in any financial year from 2017-18, for B2B invoices, since 1 August 2023 under notification 10/2023-Central Tax. From 1 April 2025, those with turnover of ₹10 crore and above must report invoices to the IRP within 30 days."
+    },
+    {
+      "q": "Can my app call the IRP API directly?",
+      "a": "It depends on the IRP and your turnover. GSTN's comparison says the NIC portals offer Direct API registration only at ₹100 crore turnover or more, while some private IRPs are open to all e-invoicing taxpayers. Most SMEs go through their accounting software or a GST Suvidha Provider."
+    },
+    {
+      "q": "What is the SAP Business One Service Layer?",
+      "a": "It is SAP Business One's web API, built on HTTP and OData. You log in with the company database and user details, get a session cookie, and then read or write business objects such as items and orders. SAP's guide added webhook support in January 2026."
+    },
+    {
+      "q": "Do I need to replace my ERP to sell online?",
+      "a": "Usually not. All three ERPs here have official ways for other software to read and write data. Replacing the ERP is a bigger, riskier job that is worth doing only if the ERP itself no longer fits the business."
+    }
+  ],
+  "contentHtml": "<h2 id=\"what-erp-integration-means-for-an-indian-business\">What ERP integration means for an Indian business</h2><p><strong>In short:</strong> You can connect TallyPrime, Zoho Books or SAP Business One to your website, store or app without replacing them. TallyPrime accepts XML and, from version 7.0, JSON over HTTP on port 9000; Zoho Books has a REST API with OAuth and daily call limits by plan; SAP Business One has the Service Layer, an OData API. If your aggregate turnover has crossed ₹5 crore in any year since 2017-18, your B2B invoices also have to go to the GST Invoice Registration Portal for an IRN, and that step belongs in the same design.</p><p>This guide was checked in November 2026, against Tally's, Zoho's and SAP's own developer documents and the GSTN, e-invoice and e-way bill portals, all read on 16 November 2026.</p><p>The phrase \"without a rewrite\" is the point. Most Indian businesses have years of ledgers, stock items and party masters in their accounting system, and an accountant who knows it well. A new app or online store does not need a new ERP. It needs a clean, boring pipe between the two, and a clear rule about which system owns which piece of data.</p><h2 id=\"three-erps-three-doors\">Three ERPs, three doors</h2><p>Each of the three systems exposes its data differently. Here is the short version before the detail.</p><p><em>The official integration options for the three ERPs most Indian SMEs use</em></p><table><thead><tr><th></th><th>TallyPrime</th><th>Zoho Books</th><th>SAP Business One</th></tr></thead><tbody><tr><td>Main door</td><td>XML over HTTP; JSON from TallyPrime 7.0</td><td>REST API, v3</td><td>Service Layer (OData v3 and v4)</td></tr><tr><td>Where it runs</td><td>On the machine running Tally, default port 9000</td><td>Zoho's cloud, India data centre at zohoapis.in</td><td>On the customer's server, example port 50000</td></tr><tr><td>How you log in</td><td>No login on the HTTP port; you control network access</td><td>OAuth 2.0, with organization_id on every call</td><td>POST to /Login, then a session cookie</td></tr><tr><td>Read only option</td><td>ODBC with SQL Select statements</td><td>Not needed; the API reads</td><td>Not needed; the API reads</td></tr><tr><td>Push on change</td><td>Not built in; poll, or write TDL to post out</td><td>Webhooks from workflow rules</td><td>Webhooks added in the 2026 Service Layer guide</td></tr><tr><td>Published limits</td><td>None stated</td><td>100 calls a minute per organisation, daily caps by plan</td><td>None stated in the guide</td></tr></tbody></table><p><em>Source: </em><a href=\"https://help.tallysolutions.com/xml-integration/\" rel=\"noopener noreferrer nofollow\"><em>Tally XML integration</em></a><em> and </em><a href=\"https://help.tallysolutions.com/tally-prime-integration-using-json-1/\" rel=\"noopener noreferrer nofollow\"><em>Tally JSON integration</em></a><em> and </em><a href=\"https://www.zoho.com/books/api/v3/introduction/\" rel=\"noopener noreferrer nofollow\"><em>Zoho Books API introduction</em></a><em> and </em><a href=\"https://help.sap.com/doc/fc2f5477516c404c8bf9ad1315a17238/10.0/en-US/Working_with_SAP_Business_One_Service_Layer.pdf\" rel=\"noopener noreferrer nofollow\"><em>SAP's Working with Service Layer guide</em></a><em>, read 16 November 2026.</em></p><p>The 'no login' entry for Tally is my reading of the setup steps, which enable the HTTP server and give no authentication step. Treat port 9000 as something that should never face the internet.</p><figure><img src=\"/assets/blog/erp-integration-without-a-rewrite/1.webp\" alt=\"Explainer comparing how TallyPrime, Zoho Books and SAP Business One expose data to other software\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Three systems, three ways in. The pipe you build depends on which one you run.</figcaption></figure><h2 id=\"tallyprime-xml-json-and-odbc\">TallyPrime: XML, JSON and ODBC</h2><p>Tally's <a href=\"https://help.tallysolutions.com/xml-integration/\" rel=\"noopener noreferrer nofollow\">XML integration page</a> says TallyPrime exposes its data and operations as XML over HTTP and can act as both server and client. To turn it on, you go to F1 (Help), then Settings, then Advanced Configuration, and enable the HTTP Server. The default port is 9000. Every message is an ENVELOPE with a HEADER and a BODY, and the header says whether the request is an Import or an Export.</p><p>From TallyPrime 7.0, Tally's <a href=\"https://help.tallysolutions.com/tally-prime-integration-using-json-1/\" rel=\"noopener noreferrer nofollow\">JSON page</a> says native JSON is available as a default feature, like XML. If your data is in Tally's native JSON structure, Tally can import it directly, with no extra TDL code. The Tally help site banner said TallyPrime 7.2 was live when I checked.</p><p>The third door is ODBC. Tally's <a href=\"https://help.tallysolutions.com/odbc-integrations/\" rel=\"noopener noreferrer nofollow\">ODBC page</a> shows SQL Select statements on Tally collections, such as Select $Name, $ClosingBalance from Ledger. It is good for reports and dashboards. For writing vouchers, use XML or JSON imports.</p><p>Two practical limits matter more than the format. Tally has to be running, with the right company open, for the HTTP port to answer. And it usually sits on one office PC or a local server, so a cloud app cannot reach it without a small connector program on that network that pushes data out. That, more than the XML format, is what shapes the design.</p><figure><img src=\"/assets/blog/erp-integration-without-a-rewrite/2.webp\" alt=\"Annotated view of Tally's XML integration help page showing how to enable the HTTP server on port 9000\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Tally's own setup steps: enable the HTTP server, default port 9000.</figcaption></figure><h2 id=\"zoho-books-the-rest-api-and-its-limits\">Zoho Books: the REST API and its limits</h2><p>Zoho Books is the easiest of the three to reach, because it already lives on the internet. The <a href=\"https://www.zoho.com/books/api/v3/introduction/\" rel=\"noopener noreferrer nofollow\">API introduction</a> lists a base URL for each data centre, and Indian organisations use https://www.zohoapis.in/books/. Every request carries an organization_id, and access is through OAuth 2.0 with access and refresh tokens.</p><p>The limits are published, and they are the thing to design around:</p><ul><li>100 requests per minute per organisation.</li><li>Daily caps by plan: Free 1,000, Standard 2,000, Professional 5,000, and Premium, Elite and Ultimate 10,000.</li><li>Concurrent calls: 5 on the Free plan, 10 on paid plans as a soft limit.</li><li>Going over any of these returns HTTP 429.</li></ul><p>A store doing a few hundred orders a day fits easily if each order is one or two calls. A sync that re-reads every invoice every hour does not. Zoho Books also supports <a href=\"https://www.zoho.com/us/books/help/settings/automation/workflow-actions/webhooks.html\" rel=\"noopener noreferrer nofollow\">webhooks from workflow rules</a>, so it can call your app when, for example, a sales order is created, instead of you asking every few minutes. Zoho's page says the daily webhook limit varies by plan.</p><p>On GST, Zoho says it is a registered GST Suvidha Provider, and its <a href=\"https://www.zoho.com/in/books/help/e-invoicing/\" rel=\"noopener noreferrer nofollow\">e-invoicing help</a> describes pushing invoices to the IRP from inside Zoho Books to get the IRN and QR code. If you are on Zoho Books, let Zoho do the IRP step and have your app create the invoice in Zoho, rather than talking to the IRP yourself.</p><figure><img src=\"/assets/blog/erp-integration-without-a-rewrite/3.webp\" alt=\"Annotated view of the Zoho Books API page showing the per-minute and daily call limits\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Zoho publishes its limits by plan. Design your sync around the daily cap.</figcaption></figure><h2 id=\"sap-business-one-the-service-layer\">SAP Business One: the Service Layer</h2><p>SAP's <a href=\"https://help.sap.com/doc/fc2f5477516c404c8bf9ad1315a17238/10.0/en-US/Working_with_SAP_Business_One_Service_Layer.pdf\" rel=\"noopener noreferrer nofollow\">Working with SAP Business One Service Layer</a> guide describes it as an API built on HTTP and OData, exposing full business objects. You log in with a POST to /b1s/v1/Login or /b1s/v2/Login with the company database, user name and password, and get back a B1SESSION cookie; the guide's example shows a session timeout of 30 minutes. /b1s/v1 is OData version 3 and /b1s/v2 is version 4.</p><p>The guide's history table has a change worth knowing about: version 1.28, dated 7 January 2026, added basic webhook support with event subscription, notification delivery and retries, and version 1.29 in July 2026 added filters on those events. If your partner's integration still polls SAP every few minutes, ask whether your version supports webhooks.</p><p>Like Tally, Service Layer usually runs on the customer's own server, so a cloud app needs a VPN, an allow-listed address or a small relay. Each session is tied to one company database, which matters if you run several companies.</p><h2 id=\"gst-e-invoicing-who-must-and-how-the-irp-works\">GST e-invoicing: who must, and how the IRP works</h2><p>If you are above the threshold, an integration that creates invoices has to deal with e-invoicing. The rules I verified:</p><p><em>The e-invoicing rules that shape an integration, as published</em></p><table><thead><tr><th>Rule</th><th>What it says</th><th>Source</th></tr></thead><tbody><tr><td>Threshold</td><td>Mandatory from 1 August 2023 for aggregate turnover above ₹5 crore</td><td>Notification 10/2023-Central Tax, 10 May 2023</td></tr><tr><td>What the IRP returns</td><td>A unique Invoice Reference Number, a digitally signed e-invoice and a QR code, for B2B invoices</td><td>e-invoice portal</td></tr><tr><td>30-day limit</td><td>From 1 April 2025, taxpayers with AATO of ₹10 crore and above cannot report invoices older than 30 days</td><td>GSTN advisory</td></tr><tr><td>Below ₹10 crore</td><td>No such reporting time limit as of the advisory</td><td>GSTN advisory</td></tr><tr><td>Direct API on NIC IRP</td><td>Offered only if turnover is ₹100 crore or more; otherwise through a GSP or ERP</td><td>GSTN's IRP API guide, as on 29 November 2023</td></tr><tr><td>Cost of core APIs</td><td>Free of cost on the IRPs</td><td>GSTN's IRP API guide</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.gstcouncil.gov.in/node/4365\" rel=\"noopener noreferrer nofollow\"><em>GST Council, notification 10/2023</em></a><em> and </em><a href=\"https://einvoice1.gst.gov.in/\" rel=\"noopener noreferrer nofollow\"><em>e-invoice portal</em></a><em> and </em><a href=\"https://einvoice1.gst.gov.in/Documents/advisory270325.pdf\" rel=\"noopener noreferrer nofollow\"><em>GSTN advisory on the 30-day limit</em></a><em> and </em><a href=\"https://tutorial.gst.gov.in/downloads/news/e-invoice_api_integration_guide_irps.pdf\" rel=\"noopener noreferrer nofollow\"><em>API details of all 6 IRPs</em></a><em>, read 16 November 2026.</em></p><p>The direct API row surprises people. On the NIC portals, the option to register as a Direct API user appears only at ₹100 crore turnover or more, according to GSTN's comparison of the six IRPs. Some private IRPs in that same document say they are open to direct integration for all e-invoicing taxpayers. Most SMEs reach the IRP through their accounting software or a GST Suvidha Provider, and that is usually the right call.</p><p>The NIC sandbox's <a href=\"https://einv-apisandbox.nic.in/onboarding.html\" rel=\"noopener noreferrer nofollow\">onboarding page</a> also sets conditions for anyone using the API, starting with having automated invoice generation and keeping traffic free of malware, and NIC reserves the right to block users whose traffic harms the system.</p><p>For integration design, the 30-day rule is the one that bites. If your online orders sit in a queue because a sync failed over a long weekend and nobody noticed, a ₹10 crore business can run out of days to report them.</p><figure><img src=\"/assets/blog/erp-integration-without-a-rewrite/4.webp\" alt=\"Explainer of the flow from online order to ERP invoice to IRN to e-way bill\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>One order, four systems. The IRN step has a clock on it for larger businesses.</figcaption></figure><h2 id=\"e-way-bills-from-the-same-data\">E-way bills from the same data</h2><p>An e-way bill is needed where the value of a consignment exceeds ₹50,000, as <a href=\"https://cbic-gst.gov.in/pdf/press-release/Press_Note_E-way_bill.pdf\" rel=\"noopener noreferrer nofollow\">CBIC's press note</a> puts it. The e-way bill system has its own API, and its <a href=\"https://docs.ewaybillgst.gov.in/apidocs/release-notes.html\" rel=\"noopener noreferrer nofollow\">release notes</a> record several rules that a sync has to respect:</p><ul><li>Validity was changed from 100 km per day to 200 km per day, following a notification dated 22 December 2020.</li><li>From 1 January 2025, an e-way bill can only be generated within 180 days of the document date.</li><li>From the same date, an e-way bill cannot be extended beyond 360 days from its generation.</li><li>A November 2020 note says generation directly through the e-way bill system was blocked for GSTINs eligible for e-invoicing, for B2B and export invoices dated after 1 October 2020.</li></ul><p>The last point means that for e-invoicing businesses, the e-way bill should come off the same data as the IRN, not be typed again. Zoho's e-invoicing help, for example, has separate setup paths depending on whether you generate e-way bills through Zoho Books.</p><h2 id=\"sync-patterns-that-hold-up\">Sync patterns that hold up</h2><p>The format matters less than these four decisions. Make them on paper before anyone writes code.</p><p><strong>One owner per field.</strong> Prices and stock might be owned by the ERP; customer phone numbers by the app. Write it down field by field. Two systems that both edit the same field will disagree within a week.</p><p><strong>Push where you can, poll where you must.</strong> Zoho Books and newer SAP B1 versions can call your app with webhooks. Tally generally cannot, so a connector reads it on a schedule. Polling is fine; polling everything every minute is not.</p><p><strong>Every write must be safe to repeat.</strong> Networks fail halfway. If your connector retries creating invoice 1042, the ERP must end up with one invoice 1042, not two. Use the order number as the key and check before you create.</p><p><strong>Queue, log and alert.</strong> Every message goes into a queue, every failure into a log someone reads, and anything stuck longer than a few hours raises an alert. Our post on <a href=\"/blogs/webhooks-you-can-rely-on\">webhooks you can rely on</a> covers the retry side in more detail.</p><h2 id=\"step-by-step-connecting-an-app-or-store-to-your-erp\">Step by step: connecting an app or store to your ERP</h2><p><strong>Step 1. List the documents that cross over.</strong> Usually customers, items, sales orders, invoices, payments and stock. Ignore everything else for now.</p><p><strong>Step 2. Decide the owner of each field.</strong> One table, one owner per field, signed off by the accountant.</p><p><strong>Step 3. Check your GST position.</strong> Is your turnover above ₹5 crore in any year since 2017-18? Above ₹10 crore? Who generates the IRN and the e-way bill today?</p><p><strong>Step 4. Pick the door.</strong> Tally: XML or JSON over HTTP through a connector on the office network, ODBC for reports. Zoho Books: REST API with OAuth plus webhooks. SAP B1: Service Layer with a session cache.</p><p><strong>Step 5. Build against a copy.</strong> A test company in Tally, a test organisation in Zoho, a test database in SAP, and the IRP sandbox. Never test against live books.</p><p><strong>Step 6. Run both in parallel for a month.</strong> Keep entering data the old way and compare totals daily. Switch off the manual path only when they match.</p><p><strong>Step 7. Hand over the runbook.</strong> Who to call when the queue backs up, how to replay a failed invoice, and where the credentials live, in your name.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses and volumes below are illustrative, made up to show the method. They are not real customers.</p><h3 id=\"a-d2c-brand-on-shopify-and-tallyprime\">A D2C brand on Shopify and TallyPrime</h3><p>A brand sells about 150 orders a day online and keeps books in TallyPrime on an office PC. Its turnover is under ₹5 crore, so no e-invoicing yet.</p><p>The pipe: a small connector on the office network reads paid orders from the store each hour and posts sales vouchers to Tally through the HTTP port, using the store order number as the voucher reference so a retry never duplicates. Stock stays owned by the store; Tally gets totals. The accountant gets a daily mismatch report.</p><p>What this tells you: for Tally, the connector's location is the design decision. If the PC is off, nothing syncs, so the alert for a stuck queue matters more than any code. <a href=\"/services/shopify-development\">Shopify work</a> often starts with exactly this.</p><h3 id=\"a-distributor-with-a-sales-app-on-zoho-books\">A distributor with a sales app on Zoho Books</h3><p>A distributor has 25 field salespeople taking orders on a mobile app and runs Zoho Books Professional. Turnover is above ₹5 crore, so B2B invoices need an IRN.</p><p>The pipe: the app creates sales orders in Zoho Books through the API, Zoho's own e-invoicing pushes invoices to the IRP, and a webhook tells the app when an invoice is created so the salesperson can share it. At 5,000 calls a day on Professional, the app cannot fetch the full price list on every screen; it caches items and refreshes them once a day.</p><figure><img src=\"/assets/blog/erp-integration-without-a-rewrite/5.webp\" alt=\"Illustration of a distributor's salesperson taking an order on a phone at a shop counter\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a field sales app, the order goes into Zoho Books and the GST steps stay there.</figcaption></figure><p>What this tells you: with Zoho, the daily cap is the budget. Count calls per order before you build, and let Zoho handle the GST steps it already supports.</p><h3 id=\"a-manufacturer-on-sap-business-one-with-a-dealer-portal\">A manufacturer on SAP Business One with a dealer portal</h3><p>A manufacturer runs SAP Business One on its own server and wants dealers to see stock, place orders and download invoices online. Turnover is above ₹10 crore, so the 30-day IRP limit applies.</p><p>The pipe: a portal backend holds one Service Layer session per company database, reads stock through OData queries, and creates sales orders. Invoices and IRNs stay in SAP, through the partner's e-invoicing add-on. Webhooks, if the version supports them, update the portal when an order changes. A daily check lists any invoice older than 20 days without an IRN.</p><p>What this tells you: for SAP, keep tax steps inside SAP and keep the portal thin. The 30-day rule turns a sync failure into a compliance problem, so the IRN age check is the most important report on the portal.</p><h2 id=\"seven-common-failures\">Seven common failures</h2><p><strong>Duplicate invoices on retry.</strong> The connector timed out, retried and created the voucher twice. Fix: an idempotency key, usually the source order number.</p><p><strong>Master data drift.</strong> A party or stock item is renamed in the ERP and every later sync fails to match. Fix: sync by ID or code, never by name.</p><p><strong>Tally closed, company not open.</strong> The HTTP port does not answer. Fix: alert on silence, not only on errors.</p><p><strong>Rate limits hit at month end.</strong> Zoho returns 429 on the busiest day. Fix: batch, cache masters and spread retries.</p><p><strong>Expired sessions and tokens.</strong> SAP sessions time out and Zoho access tokens need refreshing. Fix: refresh on 401 and log it.</p><p><strong>GST rounding and HSN mismatches.</strong> The store rounds tax per line, the ERP per invoice, and the IRP rejects the difference. Fix: agree one rounding rule and send the ERP's figures to the IRP.</p><p><strong>Late IRNs.</strong> A queue backs up and invoices age past 30 days. Fix: a daily report of invoices without an IRN, by age.</p><h2 id=\"a-monthly-30-minute-reconciliation\">A monthly 30-minute reconciliation</h2><p>Same day each month, after the books close.</p><p><em>A monthly integration check, split across 30 minutes</em></p><table><thead><tr><th>Time</th><th>What to check</th><th>What you write down</th></tr></thead><tbody><tr><td>First 10 minutes</td><td>Order count and value in the app or store against invoices in the ERP</td><td>Any gap and the orders behind it</td></tr><tr><td>Next 5 minutes</td><td>Failed and retried messages in the integration log</td><td>Repeat failures to fix at the source</td></tr><tr><td>Next 5 minutes</td><td>Invoices without an IRN, by age</td><td>Anything near the 30-day limit</td></tr><tr><td>Next 5 minutes</td><td>API usage against plan limits</td><td>Whether you need a bigger plan or fewer calls</td></tr><tr><td>Last 5 minutes</td><td>Credentials, tokens and certificates due to expire</td><td>Who renews them and when</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.zoho.com/books/api/v3/introduction/\" rel=\"noopener noreferrer nofollow\"><em>Zoho Books API limits</em></a><em> and </em><a href=\"https://einvoice1.gst.gov.in/Documents/advisory270325.pdf\" rel=\"noopener noreferrer nofollow\"><em>GSTN advisory on the 30-day limit</em></a><em>, read 16 November 2026.</em></p><p>If you want the integration scoped and priced before anyone builds it, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our <a href=\"/services/erp-software-development\">ERP software page</a> describes the wider work.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"can-tallyprime-connect-to-an-online-store-or-app\">Can TallyPrime connect to an online store or app?</h3><p>Yes. TallyPrime can act as a server over HTTP, on port 9000 by default, and accepts XML, and from version 7.0 native JSON, to import and export data. Because Tally usually runs on an office PC, a cloud store needs a small connector on that network to push orders in.</p><h3 id=\"does-tally-have-a-rest-api\">Does Tally have a REST API?</h3><p>Not in the usual cloud sense. Tally exposes XML and JSON requests over HTTP on the machine where it runs, and ODBC for SQL Select queries. There is no hosted endpoint on the internet, so you build or buy a connector that talks to the local port.</p><h3 id=\"what-are-the-zoho-books-api-limits\">What are the Zoho Books API limits?</h3><p>Zoho's API page lists 100 requests per minute per organisation and daily caps of 1,000 on Free, 2,000 on Standard, 5,000 on Professional and 10,000 on Premium, Elite and Ultimate. Concurrent calls are capped at 5 on Free and 10 on paid plans. Going over returns HTTP 429.</p><h3 id=\"who-needs-to-generate-e-invoices-in-india\">Who needs to generate e-invoices in India?</h3><p>Businesses whose aggregate turnover exceeded ₹5 crore in any financial year from 2017-18, for B2B invoices, since 1 August 2023 under notification 10/2023-Central Tax. From 1 April 2025, those with turnover of ₹10 crore and above must report invoices to the IRP within 30 days.</p><h3 id=\"can-my-app-call-the-irp-api-directly\">Can my app call the IRP API directly?</h3><p>It depends on the IRP and your turnover. GSTN's comparison says the NIC portals offer Direct API registration only at ₹100 crore turnover or more, while some private IRPs are open to all e-invoicing taxpayers. Most SMEs go through their accounting software or a GST Suvidha Provider.</p><h3 id=\"what-is-the-sap-business-one-service-layer\">What is the SAP Business One Service Layer?</h3><p>It is SAP Business One's web API, built on HTTP and OData. You log in with the company database and user details, get a session cookie, and then read or write business objects such as items and orders. SAP's guide added webhook support in January 2026.</p><h3 id=\"do-i-need-to-replace-my-erp-to-sell-online\">Do I need to replace my ERP to sell online?</h3><p>Usually not. All three ERPs here have official ways for other software to read and write data. Replacing the ERP is a bigger, riskier job that is worth doing only if the ERP itself no longer fits the business.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://help.tallysolutions.com/xml-integration/\" rel=\"noopener noreferrer nofollow\">Integration using XML, TallyHelp, Tally Solutions</a>, read 16 November 2026</li><li><a href=\"https://help.tallysolutions.com/tally-prime-integration-using-json-1/\" rel=\"noopener noreferrer nofollow\">Integration using JSON, TallyHelp, Tally Solutions</a>, read 16 November 2026</li><li><a href=\"https://help.tallysolutions.com/odbc-integrations/\" rel=\"noopener noreferrer nofollow\">Integration using ODBC interface, TallyHelp, Tally Solutions</a>, read 16 November 2026</li><li><a href=\"https://www.zoho.com/books/api/v3/introduction/\" rel=\"noopener noreferrer nofollow\">Zoho Books API v3 introduction, Zoho</a>, read 16 November 2026</li><li><a href=\"https://www.zoho.com/us/books/help/settings/automation/workflow-actions/webhooks.html\" rel=\"noopener noreferrer nofollow\">Webhooks, Zoho Books help, Zoho</a>, read 16 November 2026</li><li><a href=\"https://www.zoho.com/in/books/help/e-invoicing/\" rel=\"noopener noreferrer nofollow\">Overview: e-Invoicing, Zoho Books help, Zoho</a>, read 16 November 2026</li><li><a href=\"https://help.sap.com/doc/fc2f5477516c404c8bf9ad1315a17238/10.0/en-US/Working_with_SAP_Business_One_Service_Layer.pdf\" rel=\"noopener noreferrer nofollow\">Working with SAP Business One Service Layer, SAP</a>, read 16 November 2026</li><li><a href=\"https://www.gstcouncil.gov.in/node/4365\" rel=\"noopener noreferrer nofollow\">Notification 10/2023-Central Tax, GST Council</a>, read 16 November 2026</li><li><a href=\"https://einvoice1.gst.gov.in/\" rel=\"noopener noreferrer nofollow\">e-Invoice System, Invoice Registration Portal, GSTN and NIC</a>, read 16 November 2026</li><li><a href=\"https://einvoice1.gst.gov.in/Documents/advisory270325.pdf\" rel=\"noopener noreferrer nofollow\">Advisory: time limit for reporting e-invoice on the IRP portal, GSTN</a>, read 16 November 2026</li><li><a href=\"https://tutorial.gst.gov.in/downloads/news/e-invoice_api_integration_guide_irps.pdf\" rel=\"noopener noreferrer nofollow\">E-Invoice Portal: API details of all 6 IRPs, GSTN</a>, read 16 November 2026</li><li><a href=\"https://einv-apisandbox.nic.in/onboarding.html\" rel=\"noopener noreferrer nofollow\">On-boarding, e-invoice API sandbox, NIC</a>, read 16 November 2026</li><li><a href=\"https://cbic-gst.gov.in/pdf/press-release/Press_Note_E-way_bill.pdf\" rel=\"noopener noreferrer nofollow\">Press release regarding e-way bill, CBIC</a>, read 16 November 2026</li><li><a href=\"https://docs.ewaybillgst.gov.in/apidocs/release-notes.html\" rel=\"noopener noreferrer nofollow\">E-way bill API release notes, NIC</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian accountant and a developer connecting an accounting system to an online store beside the words ERP integration",
+      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian small business office: a woman accountant in a saree at a desktop computer showing abstract ledger columns, and a young developer in a t-shirt beside her with a laptop showing an abstract online shop grid, a curved orange cable linking the two screens. No readable text, no logos. Terracotta, mustard and sage palette, soft shadows, faces fully in frame. Right half: the title text 'ERP integration' in very large bold black sans-serif, left-aligned, on two lines ('ERP' / 'integration'). No other text."
+    },
+    {
+      "file": "1.webp",
+      "kind": "infographic",
+      "alt": "Explainer comparing how TallyPrime, Zoho Books and SAP Business One expose data to other software",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Three ERPs, three ways in'. Three columns, each with a flat icon and a dark-blue rounded label pill with white text, and two smaller pills below: 1) desktop PC icon, pill 'TallyPrime', below 'XML or JSON over HTTP' and 'Port 9000 on your network'; 2) cloud icon, pill 'Zoho Books', below 'REST API with OAuth' and '100 calls a minute'; 3) server rack icon, pill 'SAP Business One', below 'Service Layer (OData)' and 'Login, then session'. An orange arrow from each column down to a shared box labelled 'Your app or store'. One-line bold takeaway at bottom: 'No rewrite needed: each one has an official door.' No logos, no other text."
+    },
+    {
+      "file": "2.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Tally's XML integration help page showing how to enable the HTTP server on port 9000",
+      "url": "https://help.tallysolutions.com/xml-integration/",
+      "annotate": [
+        {
+          "text": "Enable the HTTP Server",
+          "label": "Turn this on"
+        },
+        {
+          "text": "The default port is 9000.",
+          "label": "Default port"
+        }
+      ]
+    },
+    {
+      "file": "3.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of the Zoho Books API page showing the per-minute and daily call limits",
+      "url": "https://www.zoho.com/books/api/v3/introduction/",
+      "annotate": [
+        {
+          "text": "You can make 100 requests per minute per organization.",
+          "label": "Per minute"
+        },
+        {
+          "text": "Professional Plan- 5000 requests/day",
+          "label": "Daily cap by plan"
+        },
+        {
+          "text": "https://www.zohoapis.in/books/",
+          "label": "India data centre"
+        }
+      ]
+    },
+    {
+      "file": "4.webp",
+      "kind": "infographic",
+      "alt": "Explainer of the flow from online order to ERP invoice to IRN to e-way bill",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'From order to e-way bill'. A left-to-right flow of four dark-blue rounded pills with white text, joined by orange arrows, each with a small flat icon above: 1) shopping bag icon, pill 'Order in app or store'; 2) ledger icon, pill 'Invoice in ERP'; 3) QR code icon, pill 'IRN and QR from IRP'; 4) truck icon, pill 'E-way bill over ₹50,000'. Under pill 3 a small grey note: 'AATO ₹10 crore+: report within 30 days'. Under pill 4 a small grey note: '200 km a day validity'. One-line bold takeaway at bottom: 'Enter the data once. Every later step reads it.' No logos, no other text."
+    },
+    {
+      "file": "5.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a distributor's salesperson taking an order on a phone at a shop counter",
+      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. An Indian kirana or hardware shop counter: a field salesperson in a collared shirt holding a phone showing abstract order rows, the shop owner behind the counter with shelves of boxed goods, a small delivery van visible outside the shop entrance. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+    }
+  ]
+}

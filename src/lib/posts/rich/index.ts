@@ -10,6 +10,8 @@ import freelanceVsCompany from "./freelance-vs-app-development-company-hyderabad
 import mvpScope from "./mvp-scope-that-holds.json";
 import paymentGateway from "./payment-gateway-integration-pitfalls.json";
 import appOrWebsite from "./when-not-to-build-an-app.json";
+import fleetGps from "./gps-tracking-for-fleets.json";
+import erpIntegration from "./erp-integration-without-a-rewrite.json";
 
 // Long-form posts in Growth Studio's shape (see src/lib/cms.ts). Add a post: drop <slug>.json here,
 // its images in public/assets/blog/<slug>/, and add it to the list below.
@@ -23,5 +25,5 @@ const rich = (p: Omit<CmsPost, "imageUrl" | "ogImageUrl"> & { imageUrl: string |
 });
 
 export const RICH_POSTS: CmsPost[] = (
-  [appCost, whatsappApi, gbp, appMaintenance, appStoreRejections, devPartner, checkout, freelanceVsCompany, mvpScope, paymentGateway, appOrWebsite] as Parameters<typeof rich>[0][]
+  [appCost, whatsappApi, gbp, appMaintenance, appStoreRejections, devPartner, checkout, freelanceVsCompany, mvpScope, paymentGateway, appOrWebsite, fleetGps, erpIntegration] as Parameters<typeof rich>[0][]
 ).map(rich);
