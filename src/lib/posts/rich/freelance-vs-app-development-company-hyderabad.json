@@ -1,0 +1,185 @@
+{
+  "slug": "freelance-vs-app-development-company-hyderabad",
+  "locale": "en",
+  "title": "Freelancer vs app development company in Hyderabad",
+  "description": "Freelancer or app development company in Hyderabad? Platform fees, who owns the code under Indian copyright law, milestone escrow and how to check either.",
+  "imageUrl": "/assets/blog/freelance-vs-app-development-company-hyderabad/cover.webp",
+  "imageAlt": "Illustration of a Hyderabad business owner comparing a freelance developer and a development team beside the words Freelancer or company",
+  "ogImageUrl": null,
+  "tags": [
+    "hiring developers",
+    "app development",
+    "Hyderabad",
+    "IP ownership"
+  ],
+  "readingTimeMinutes": 16,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "freelancer-or-company-the-short-answer",
+      "text": "Freelancer or company: the short answer",
+      "level": 2
+    },
+    {
+      "id": "what-hiring-platforms-charge-from-their-own-pages",
+      "text": "What hiring platforms charge, from their own pages",
+      "level": 2
+    },
+    {
+      "id": "who-owns-the-code-under-indian-law",
+      "text": "Who owns the code under Indian law",
+      "level": 2
+    },
+    {
+      "id": "the-same-rule-applies-to-a-company",
+      "text": "The same rule applies to a company",
+      "level": 3
+    },
+    {
+      "id": "accounts-in-your-name-not-theirs",
+      "text": "Accounts in your name, not theirs",
+      "level": 2
+    },
+    {
+      "id": "risks-side-by-side",
+      "text": "Risks side by side",
+      "level": 2
+    },
+    {
+      "id": "how-to-check-a-freelancer-step-by-step",
+      "text": "How to check a freelancer, step by step",
+      "level": 2
+    },
+    {
+      "id": "how-to-check-a-company",
+      "text": "How to check a company",
+      "level": 2
+    },
+    {
+      "id": "escrow-and-milestones",
+      "text": "Escrow and milestones",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples",
+      "text": "Three worked examples",
+      "level": 2
+    },
+    {
+      "id": "a-clinic-adding-appointment-booking",
+      "text": "A clinic adding appointment booking",
+      "level": 3
+    },
+    {
+      "id": "a-d2c-brand-building-its-own-app",
+      "text": "A D2C brand building its own app",
+      "level": 3
+    },
+    {
+      "id": "a-coaching-institute-with-videos-and-tests",
+      "text": "A coaching institute with videos and tests",
+      "level": 3
+    },
+    {
+      "id": "five-mistakes-i-see-often",
+      "text": "Five mistakes I see often",
+      "level": 2
+    },
+    {
+      "id": "a-checklist-before-you-sign",
+      "text": "A checklist before you sign",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is a freelancer cheaper than an app development company in Hyderabad?",
+      "a": "Often, because a freelancer carries less overhead. But you take on project management, testing and the risk of one person leaving. Compare total cost, including your own time and the cost of a rescue if it goes wrong, not just the quote."
+    },
+    {
+      "q": "Who owns the code a freelancer writes for me in India?",
+      "a": "By default, the freelancer. Section 17 of the Copyright Act makes the author the first owner, and the employer exception in section 17(c) covers employees, not independent contractors. Ownership moves to you through an assignment that is in writing and signed, under section 19(1)."
+    },
+    {
+      "q": "Does paying in full transfer copyright to me?",
+      "a": "Not by itself. Payment is evidence of the deal, but section 19(1) says an assignment is not valid unless it is in writing and signed by the assignor. Get the assignment signed, ideally before work starts, since section 18(1) allows assigning a future work."
+    },
+    {
+      "q": "What happens if the assignment does not say how long or where?",
+      "a": "Section 19(5) deems the period to be five years and section 19(6) presumes the territory is India only. Section 19(4) also says the assignment lapses if you do not exercise the rights within a year, unless it says otherwise. A good clause covers all three."
+    },
+    {
+      "q": "Is it safe to hire a freelancer through Upwork?",
+      "a": "Upwork holds fixed-price milestone money until you approve, which protects both sides. Remember that funds are released automatically if you take no action within 14 days of submission. The platform does not replace the IP assignment or your own checks."
+    },
+    {
+      "q": "Should my app be published from the developer's Play Store account?",
+      "a": "No. Open your own Google Play developer account, which costs a one-time $25, and your own Apple Developer Program membership at 99 USD a year, and add the developer as a user. Moving an app between accounts later needs the current owner's cooperation."
+    },
+    {
+      "q": "How do I check a freelancer's past work?",
+      "a": "Ask for live apps, install them and note the developer name on each store listing. Read their public GitHub code, call two past clients, and pay for a small test task before the real project."
+    }
+  ],
+  "contentHtml": "<h2 id=\"freelancer-or-company-the-short-answer\">Freelancer or company: the short answer</h2><p><strong>In short:</strong> Hire a freelance app developer when the job is small, well defined and you can review the work yourself. Hire an app development company when you need design, testing and someone accountable if a person leaves. Either way, under Indian copyright law the code is not yours by default: get a signed written assignment, and keep the store accounts, cloud and code repository in your own name.</p><p>I get asked this question in Hyderabad more than almost any other, usually after someone has already been burned once. The honest answer is that both routes work, and both fail in predictable ways. This guide is about those ways, and about the checks that take an afternoon and save a year.</p><p>This guide was checked in November 2026, against the Copyright Act, 1957 as published by the Copyright Office, and the fee pages of Upwork, Fiverr and Freelancer.com. Platform fees change often, so open those pages again before you sign anything.</p><p>If you want the scope, price and timeline written down before choosing anyone, that is what our ₹3,500 requirement analysis produces (<a href=\"/book\">how it works</a>). Nothing below depends on it.</p><h2 id=\"what-hiring-platforms-charge-from-their-own-pages\">What hiring platforms charge, from their own pages</h2><p>Many founders in India find freelancers on Upwork, Fiverr or Freelancer.com. Each platform takes a fee from the client, from the freelancer, or from both. The freelancer's fee matters to you too: it is usually built into the rate they quote.</p><p><em>Fees on the three big platforms, as stated on their help and fee pages</em></p><table><thead><tr><th>Platform</th><th>What the client pays</th><th>What the freelancer pays</th><th>Payment protection</th></tr></thead><tbody><tr><td>Upwork</td><td>Client Marketplace Fee of up to 7.99% on payments on the free Basic plan, plus a one-time Contract Initiation Fee of $0.99 to $14.99 per contract</td><td>Freelancer Service Fee of 0% to 15% per contract, fixed once the contract starts</td><td>Fixed-price milestones are funded before work starts and released on approval</td></tr><tr><td>Fiverr</td><td>Service fee of 5.5% of the purchase, plus a small-order fee on smaller orders</td><td>Not covered on the client pages I read</td><td>If an order is cancelled, the order amount and service fee go back to your Fiverr balance</td></tr><tr><td>Freelancer.com</td><td>3% or $3.00, whichever is greater, on fixed-price projects; 3% of each hourly payment</td><td>10% or $5.00, whichever is greater, on fixed-price projects; 10% on hourly</td><td>Milestone payments</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.upwork.com/hc/en-us/articles/4660220468499-What-is-the-Client-Marketplace-Fee\" rel=\"noopener noreferrer nofollow\"><em>Upwork Client Marketplace Fee</em></a><em> and </em><a href=\"https://support.upwork.com/hc/en-us/articles/26106318334611-What-is-the-Contract-Initiation-Fee-on-Upwork\" rel=\"noopener noreferrer nofollow\"><em>Upwork Contract Initiation Fee</em></a><em> and </em><a href=\"https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee\" rel=\"noopener noreferrer nofollow\"><em>Upwork Freelancer Service Fee</em></a><em> and </em><a href=\"https://help.fiverr.com/hc/en-us/articles/360050216133-Paying-for-orders-extras-or-custom-offers\" rel=\"noopener noreferrer nofollow\"><em>Fiverr help on paying for orders</em></a><em> and </em><a href=\"https://help.fiverr.com/hc/en-us/articles/360011454477-FAQs-for-clients\" rel=\"noopener noreferrer nofollow\"><em>Fiverr FAQs for clients</em></a><em> and </em><a href=\"https://www.freelancer.com/feesandcharges\" rel=\"noopener noreferrer nofollow\"><em>Freelancer.com fees and charges</em></a><em>, read 16 November 2026.</em></p><p>Two of Fiverr's own help pages gave me different thresholds for the small-order fee ($3.50 under $200 on one, $3.00 under $100 on the other), so I have left the exact figure out. Check the checkout screen before you pay.</p><p>Upwork says the freelancer's fee is shown when they send a proposal and does not change once the contract begins. If a freelancer quotes you a fixed price on Upwork, part of it goes to Upwork. That is fine, but it explains why the same person may quote less for a direct contract.</p><figure><img src=\"/assets/blog/freelance-vs-app-development-company-hyderabad/1.webp\" alt=\"Annotated view of Upwork's help page showing the Freelancer Service Fee range\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Upwork's own help page: the freelancer's fee ranges from 0% to 15% per contract.</figcaption></figure><h2 id=\"who-owns-the-code-under-indian-law\">Who owns the code under Indian law</h2><p>This is the part most people get wrong, and it applies whether you hire one freelancer or a company of two hundred.</p><p>The Copyright Act, 1957 treats software as a literary work: section 2(o) says a literary work includes computer programmes. Section 17 then says the author of a work is the first owner of the copyright in it. The author of your app's code is whoever wrote it.</p><p>There is an exception in section 17(c). When a work is made in the course of the author's employment under a contract of service, the employer is the first owner, unless they agree otherwise. That covers salaried staff. A freelancer is not your employee. As a law firm's 2026 note on the Act puts it, where work is created by an independent contractor or freelancer, the creator usually keeps ownership unless the rights are expressly assigned.</p><p>So paying for the code does not, on its own, make it yours. What moves it is an assignment, and the Act is specific about that:</p><ul><li><strong>Section 19(1):</strong> an assignment is not valid unless it is in writing and signed by the assignor or their authorised agent. A WhatsApp message saying \"the code is yours\" is not that.</li><li><strong>Section 18(1):</strong> you can assign copyright in a future work, and the assignment takes effect when the work comes into existence. So you can sign it before the first line of code.</li><li><strong>Section 19(5):</strong> if the assignment does not state a period, it is deemed to be five years.</li><li><strong>Section 19(6):</strong> if it does not state the territory, it is presumed to cover only India.</li><li><strong>Section 19(4):</strong> if the assignee does not exercise the rights within one year, the assignment is deemed to lapse, unless the assignment says otherwise.</li></ul><p>Read sections 19(4), (5) and (6) together and the practical point is clear. A one-line \"all rights transferred\" clause can leave you with five years, India only, and a lapse risk. A proper clause names the work, the rights, says worldwide and for the full term of copyright, and says the one-year lapse rule does not apply.</p><aside data-callout=\"accent\"><p data-callout-title>Not legal advice</p><p>I am summarising the Act as published by the Copyright Office, not giving legal advice. For a contract that matters to your business, pay a lawyer to read the IP clause. It costs far less than a dispute over who owns your app.</p></aside><h3 id=\"the-same-rule-applies-to-a-company\">The same rule applies to a company</h3><p>People assume a company is safer here. It is, but only one step. The company's own salaried developers create code under a contract of service, so under section 17(c) the company owns it. You still need the company to assign it to you, in writing, signed, with the same detail. If a company's contract says it keeps the IP and grants you a licence, that is a business choice, and you should know you made it.</p><h2 id=\"accounts-in-your-name-not-theirs\">Accounts in your name, not theirs</h2><p>Copyright is only half of owning an app. The other half is control of the accounts it lives in. I would insist on these, whoever builds it:</p><ul><li><strong>Google Play developer account.</strong> Google charges a one-time $25 registration fee (<a href=\"https://support.google.com/android-developer-console/answer/16604405?hl=en\" rel=\"noopener noreferrer nofollow\">Android Developer Console help</a>). New personal accounts must run a closed test with at least 12 opted-in testers continuously for 14 days before applying for production access (<a href=\"https://support.google.com/googleplay/android-developer/answer/14151465?hl=en\" rel=\"noopener noreferrer nofollow\">Play Console help</a>). Build that fortnight into the plan.</li><li><strong>Apple Developer Program.</strong> Apple charges 99 USD per membership year (<a href=\"https://developer.apple.com/programs/enroll/\" rel=\"noopener noreferrer nofollow\">Apple Developer</a>). An app in a freelancer's personal Apple account is their app as far as the store is concerned.</li><li><strong>Code repository.</strong> A GitHub or GitLab organisation you own, with the developer added as a member. Not a repository on their personal account that they share with you.</li><li><strong>Cloud, domain and third-party services.</strong> Your card, your login, their access as a user you can remove.</li></ul><p>Apps can be moved later. Google's help page on transferring apps to a different developer account lists the steps and the extra work around signing keys (<a href=\"https://support.google.com/googleplay/android-developer/answer/6230247?hl=en\" rel=\"noopener noreferrer nofollow\">Play Console help</a>). But moving an app requires the current owner's cooperation, and that is exactly what you may not have after a falling out.</p><h2 id=\"risks-side-by-side\">Risks side by side</h2><p>This is my reading from projects I have seen, not a survey. The risks are different in kind, not just in size.</p><ul><li><strong>Single point of failure.</strong> A freelancer who falls ill, takes a full-time job or goes quiet takes the project's knowledge with them. A company can put another developer on it, although the new person still needs time to learn the code.</li><li><strong>Skills coverage.</strong> An app needs design, front end, back end, testing and store submission. One freelancer is rarely strong at all five. A company has those roles, and you pay for them.</li><li><strong>Overhead.</strong> A company's quote carries project management, office and sales costs. A good freelancer with low overhead can be much cheaper for the same code.</li><li><strong>Your time.</strong> With a freelancer you are the project manager. If you cannot review progress weekly, that saving disappears.</li><li><strong>Accountability.</strong> A company signs a contract as a legal entity you can look up. A freelancer signs as an individual, which is fine, but recovering money from an individual is slow.</li></ul><p>For how these choices change the budget, see our guide to <a href=\"/blogs/mobile-app-development-cost-india\">app development cost in India</a>.</p><h2 id=\"how-to-check-a-freelancer-step-by-step\">How to check a freelancer, step by step</h2><p>I would do every step below before paying anything beyond a small test task.</p><p><strong>Step 1. Ask for apps, not screenshots.</strong> Ask for two or three live apps they built, with their exact role on each. Open each listing on Google Play or the App Store. Note the developer name shown under the app title. If it is a company, ask whether they worked there or for them, and how you can confirm it.</p><p><strong>Step 2. Install the app and use it.</strong> Ten minutes of tapping tells you more than a portfolio PDF. Look at the update history and the most recent reviews. An app last updated years ago says something about what happens after launch.</p><p><strong>Step 3. Look at their GitHub.</strong> Public repositories show how they write code, name things and document. Most client work is private, and GitHub lets a user show anonymised activity from private repositories as counts only, without details (<a href=\"https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/manage-visibility-settings-for-private-contributions-and-achievements\" rel=\"noopener noreferrer nofollow\">GitHub Docs</a>). A busy graph is a weak signal. A repository you can read is a strong one.</p><p><strong>Step 4. Call two past clients.</strong> Ask for phone numbers, not testimonials. Ask three things: did they deliver what was agreed, what happened when something broke after launch, and would you hire them again.</p><p><strong>Step 5. Pay for a small test task.</strong> One screen, one API, a fixed fee and a deadline of a few days. You learn how they communicate, whether they ask questions, and whether the code lands in your repository.</p><p><strong>Step 6. Sign before the real work.</strong> A short written contract with scope, milestones, the IP assignment described above, confidentiality and a handover list. Then start.</p><figure><img src=\"/assets/blog/freelance-vs-app-development-company-hyderabad/2.webp\" alt=\"Infographic of the six checks to run on a freelance app developer\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Six checks, in order, before you pay for real work.</figcaption></figure><h2 id=\"how-to-check-a-company\">How to check a company</h2><p>The same logic applies, with more you can verify in public records: whether the company is registered, whether its GST registration is active, who its directors are, and whether its reviews are real. I have put that checklist in a separate post on <a href=\"/blogs/choosing-a-development-partner\">how to choose a software development company in India</a>, so I will not repeat it here.</p><p>The one thing I would add for Hyderabad: ask who will actually write your code, and meet them. A company that sells with senior people and builds with whoever is free has the freelancer's risk at the company's price.</p><h2 id=\"escrow-and-milestones\">Escrow and milestones</h2><p>Money is where most of these relationships go wrong. The fix is the same on and off platforms: pay for finished, checked pieces of work, not for time passed.</p><p>On Upwork, fixed-price milestones are funded up front and held until you approve. Upwork's help page says that if the client takes no action within 14 days of work being submitted, the funds are released automatically (<a href=\"https://support.upwork.com/hc/en-us/articles/211063718-How-payments-for-milestones-and-fixed-price-contracts-work\" rel=\"noopener noreferrer nofollow\">Upwork help</a>). Put a reminder in your calendar the day a milestone is submitted.</p><p>Freelancer.com uses milestone payments, and its fee page says an awarded project can be cancelled within seven days for a full refund of the project fee (<a href=\"https://www.freelancer.com/feesandcharges\" rel=\"noopener noreferrer nofollow\">Freelancer.com</a>).</p><figure><img src=\"/assets/blog/freelance-vs-app-development-company-hyderabad/4.webp\" alt=\"Annotated view of Freelancer.com's fees page showing employer project fees\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Freelancer.com's fee page: 3% or $3.00 for the client on fixed-price projects.</figcaption></figure><p>Off platform, with a company or a direct freelancer, I would structure it like this:</p><ul><li>A small advance to start, then payments tied to milestones you can test: a working login, a payment flow, a build on testers' phones.</li><li>Each milestone defined by what you can check, with the code pushed to your repository before the invoice.</li><li>A final payment held until the app is live in your store accounts and the handover list is complete.</li><li>A bug-fix period after launch, written into the contract with a length and what counts as a bug.</li></ul><p>Milestones only work if the scope is fixed. Our note on <a href=\"/blogs/mvp-scope-that-holds\">MVP scope that holds</a> covers how to write one that survives the first month.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses below are illustrative, not clients, and the choices are mine. They show how the same question has different answers.</p><h3 id=\"a-clinic-adding-appointment-booking\">A clinic adding appointment booking</h3><p>A two-doctor clinic wants patients to book slots and get reminders. The need is narrow and well understood. A single experienced freelancer, checked through the six steps, can do this, especially on a ready-made booking backend. I would still put the Play and Apple accounts in the clinic's name, and I would ask for a short handover document so another developer can take over.</p><figure><img src=\"/assets/blog/freelance-vs-app-development-company-hyderabad/3.webp\" alt=\"Illustration of a clinic owner in Hyderabad reviewing an appointment app with a developer\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A narrow, well-defined app is where a checked freelancer fits best.</figcaption></figure><h3 id=\"a-d2c-brand-building-its-own-app\">A D2C brand building its own app</h3><p>A brand already selling on a Shopify store wants an app with login, wishlist, offers and order tracking. That touches design, the store's data, payments and push notifications, and the app has to keep working through sale seasons. I would lean to a company, or to a small team with a named lead, because the risk of one person disappearing during a sale is too high.</p><h3 id=\"a-coaching-institute-with-videos-and-tests\">A coaching institute with videos and tests</h3><p>An institute wants recorded classes, timed tests and parent reports. The hard parts are video protection, load at exam time and data about minors. I would choose a company with past apps of this kind that I could install, and I would ask how they test under load before I asked about price.</p><h2 id=\"five-mistakes-i-see-often\">Five mistakes I see often</h2><ol><li><strong>No written assignment.</strong> Everything else in this post is secondary to section 19's writing requirement.</li><li><strong>The app published from the developer's account.</strong> It feels faster. It is the hardest thing to undo.</li><li><strong>Paying for time, not milestones.</strong> \"50% now, 50% at the end\" leaves no checkpoints in between.</li><li><strong>Hiring on a portfolio alone.</strong> A screenshot proves nothing. A live listing, a call with a past client and a small paid task do.</li><li><strong>Forgetting the year after launch.</strong> Operating system updates, store policy changes and bugs keep coming. Plan for it, as our post on the <a href=\"/blogs/app-maintenance-budget\">app maintenance budget</a> explains.</li></ol><h2 id=\"a-checklist-before-you-sign\">A checklist before you sign</h2><p>Whoever you pick, I would not sign until each of these is true:</p><ul><li>I have installed at least two live apps they built and confirmed their role.</li><li>I have spoken to at least two past clients on the phone.</li><li>The contract contains a signed IP assignment that names the work and says worldwide, full term, and that the one-year lapse rule does not apply.</li><li>The Play Console, Apple developer account, code repository, cloud account and domain are in my name.</li><li>Payments are tied to milestones I can test, with code in my repository before each invoice.</li><li>There is a written bug-fix period after launch and a handover list: source code, build instructions, credentials, design files.</li><li>I know who will write the code, and I have met them.</li></ul><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-a-freelancer-cheaper-than-an-app-development-company-in-hyderabad\">Is a freelancer cheaper than an app development company in Hyderabad?</h3><p>Often, because a freelancer carries less overhead. But you take on project management, testing and the risk of one person leaving. Compare total cost, including your own time and the cost of a rescue if it goes wrong, not just the quote.</p><h3 id=\"who-owns-the-code-a-freelancer-writes-for-me-in-india\">Who owns the code a freelancer writes for me in India?</h3><p>By default, the freelancer. Section 17 of the Copyright Act makes the author the first owner, and the employer exception in section 17(c) covers employees, not independent contractors. Ownership moves to you through an assignment that is in writing and signed, under section 19(1).</p><h3 id=\"does-paying-in-full-transfer-copyright-to-me\">Does paying in full transfer copyright to me?</h3><p>Not by itself. Payment is evidence of the deal, but section 19(1) says an assignment is not valid unless it is in writing and signed by the assignor. Get the assignment signed, ideally before work starts, since section 18(1) allows assigning a future work.</p><h3 id=\"what-happens-if-the-assignment-does-not-say-how-long-or-where\">What happens if the assignment does not say how long or where?</h3><p>Section 19(5) deems the period to be five years and section 19(6) presumes the territory is India only. Section 19(4) also says the assignment lapses if you do not exercise the rights within a year, unless it says otherwise. A good clause covers all three.</p><h3 id=\"is-it-safe-to-hire-a-freelancer-through-upwork\">Is it safe to hire a freelancer through Upwork?</h3><p>Upwork holds fixed-price milestone money until you approve, which protects both sides. Remember that funds are released automatically if you take no action within 14 days of submission. The platform does not replace the IP assignment or your own checks.</p><h3 id=\"should-my-app-be-published-from-the-developers-play-store-account\">Should my app be published from the developer's Play Store account?</h3><p>No. Open your own Google Play developer account, which costs a one-time $25, and your own Apple Developer Program membership at 99 USD a year, and add the developer as a user. Moving an app between accounts later needs the current owner's cooperation.</p><h3 id=\"how-do-i-check-a-freelancers-past-work\">How do I check a freelancer's past work?</h3><p>Ask for live apps, install them and note the developer name on each store listing. Read their public GitHub code, call two past clients, and pay for a small test task before the real project.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://copyright.gov.in/documents/copyrightrules1957.pdf\" rel=\"noopener noreferrer nofollow\">The Copyright Act, 1957, Copyright Office, Government of India</a>, read 16 November 2026</li><li><a href=\"https://kayserlegal.com/blog/copyright-ownership-in-employment-and-freelance-agreements/\" rel=\"noopener noreferrer nofollow\">Copyright ownership in employment and freelance agreements, Kayser Legal</a>, read 16 November 2026</li><li><a href=\"https://support.upwork.com/hc/en-us/articles/4660220468499-What-is-the-Client-Marketplace-Fee\" rel=\"noopener noreferrer nofollow\">What is the Client Marketplace Fee, Upwork Help</a>, read 16 November 2026</li><li><a href=\"https://support.upwork.com/hc/en-us/articles/26106318334611-What-is-the-Contract-Initiation-Fee-on-Upwork\" rel=\"noopener noreferrer nofollow\">What is the Contract Initiation Fee on Upwork, Upwork Help</a>, read 16 November 2026</li><li><a href=\"https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee\" rel=\"noopener noreferrer nofollow\">Learn about the Freelancer Service Fee, Upwork Help</a>, read 16 November 2026</li><li><a href=\"https://support.upwork.com/hc/en-us/articles/211063718-How-payments-for-milestones-and-fixed-price-contracts-work\" rel=\"noopener noreferrer nofollow\">How payments for milestones and fixed-price contracts work, Upwork Help</a>, read 16 November 2026</li><li><a href=\"https://help.fiverr.com/hc/en-us/articles/360050216133-Paying-for-orders-extras-or-custom-offers\" rel=\"noopener noreferrer nofollow\">Paying for orders, extras, or custom offers, Fiverr Help</a>, read 16 November 2026</li><li><a href=\"https://help.fiverr.com/hc/en-us/articles/360011454477-FAQs-for-clients\" rel=\"noopener noreferrer nofollow\">FAQs for clients, Fiverr Help</a>, read 16 November 2026</li><li><a href=\"https://help.fiverr.com/hc/en-us/articles/360010558038-How-Fiverr-works-for-clients\" rel=\"noopener noreferrer nofollow\">How Fiverr works for clients, Fiverr Help</a>, read 16 November 2026</li><li><a href=\"https://www.freelancer.com/feesandcharges\" rel=\"noopener noreferrer nofollow\">Freelancer fees and charges, Freelancer.com</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/android-developer-console/answer/16604405?hl=en\" rel=\"noopener noreferrer nofollow\">Get started with an Android Developer Console account, Google</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/14151465?hl=en\" rel=\"noopener noreferrer nofollow\">App testing requirements for new personal developer accounts, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/6230247?hl=en\" rel=\"noopener noreferrer nofollow\">Transfer apps to a different developer account, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/programs/enroll/\" rel=\"noopener noreferrer nofollow\">Become a member, Apple Developer Program</a>, read 16 November 2026</li><li><a href=\"https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/manage-visibility-settings-for-private-contributions-and-achievements\" rel=\"noopener noreferrer nofollow\">Manage visibility settings for private contributions, GitHub Docs</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a Hyderabad business owner comparing a freelance developer and a development team beside the words Freelancer or company",
+      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. An Indian business owner (man in his 40s, half-sleeve shirt) at a desk in a small Hyderabad office, looking at two options on the table: on one side a single young developer with a laptop, on the other a small team of three around a laptop. No readable text on screens, no logos. Right half: the title text 'Freelancer or company?' in very large bold black sans-serif, left-aligned, on two lines ('Freelancer' / 'or company?'). No other text."
+    },
+    {
+      "file": "1.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Upwork's help page showing the Freelancer Service Fee range",
+      "url": "https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee",
+      "annotate": [
+        {
+          "text": "The fee ranges from 0% to 15% per contract",
+          "label": "Freelancer fee"
+        },
+        {
+          "text": "Once your contract begins, the fee is fixed and won’t change.",
+          "label": "Locked at start"
+        }
+      ]
+    },
+    {
+      "file": "2.webp",
+      "kind": "infographic",
+      "alt": "Infographic of the six checks to run on a freelance app developer",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Six checks before you hire a freelancer'. Six steps left to right in two rows of three, each a flat icon above a dark-blue rounded label pill with white text, joined by orange arrows: 1) phone with app icon, pill 'Ask for live apps'; 2) hand tapping phone, pill 'Install and use them'; 3) code brackets icon, pill 'Read their GitHub'; 4) telephone icon, pill 'Call two past clients'; 5) small box with tick, pill 'Pay for a test task'; 6) signed document icon, pill 'Sign the IP assignment'. One-line bold takeaway at bottom: 'Check the work, then sign, then pay.' No logos, no other text."
+    },
+    {
+      "file": "3.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a clinic owner in Hyderabad reviewing an appointment app with a developer",
+      "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. A small Indian clinic office: a woman doctor in a white coat sitting beside a young freelance developer, both looking at a phone showing an abstract calendar grid with coloured blocks, a laptop open on the desk, a stethoscope and a potted plant nearby. No readable text on any screen, no logos. Faces fully in frame."
+    },
+    {
+      "file": "4.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Freelancer.com's fees page showing employer project fees",
+      "url": "https://www.freelancer.com/feesandcharges",
+      "annotate": [
+        {
+          "text": "For fixed price projects, a fee of 3% or $3.00 USD (whichever is greater) is levied at the time a project has been awarded by you.",
+          "label": "Client fee"
+        },
+        {
+          "text": "For hourly projects, a fee of 3% is levied on each payment that you make to the freelancer.",
+          "label": "Hourly"
+        }
+      ]
+    }
+  ]
+}

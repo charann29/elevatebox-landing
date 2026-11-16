@@ -1,0 +1,180 @@
+{
+  "slug": "choosing-a-development-partner",
+  "locale": "en",
+  "title": "How to choose a software development company in India",
+  "description": "A checklist for choosing a software or app development company in India: questions to ask, MCA and GST lookups, review sites, contract clauses, red flags.",
+  "imageUrl": "/assets/blog/choosing-a-development-partner/cover.webp",
+  "imageAlt": "Illustration of an Indian founder checking a development company's details on a laptop beside the words Choose a dev partner",
+  "ogImageUrl": null,
+  "tags": [
+    "choosing a developer",
+    "software development",
+    "India",
+    "contracts"
+  ],
+  "readingTimeMinutes": 15,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "how-to-choose-a-development-company-the-short-answer",
+      "text": "How to choose a development company: the short answer",
+      "level": 2
+    },
+    {
+      "id": "what-you-can-check-yourself-for-free",
+      "text": "What you can check yourself, for free",
+      "level": 2
+    },
+    {
+      "id": "step-by-step-choosing-in-the-right-order",
+      "text": "Step by step: choosing in the right order",
+      "level": 2
+    },
+    {
+      "id": "what-the-gst-and-mca-records-actually-show",
+      "text": "What the GST and MCA records actually show",
+      "level": 2
+    },
+    {
+      "id": "questions-to-ask-on-the-first-call",
+      "text": "Questions to ask on the first call",
+      "level": 2
+    },
+    {
+      "id": "reading-clutch-and-goodfirms-properly",
+      "text": "Reading Clutch and GoodFirms properly",
+      "level": 2
+    },
+    {
+      "id": "contract-clauses-that-matter",
+      "text": "Contract clauses that matter",
+      "level": 2
+    },
+    {
+      "id": "red-flags",
+      "text": "Red flags",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples",
+      "text": "Three worked examples",
+      "level": 2
+    },
+    {
+      "id": "a-diagnostic-lab-with-report-downloads",
+      "text": "A diagnostic lab with report downloads",
+      "level": 3
+    },
+    {
+      "id": "a-jewellery-retailer-adding-an-app-to-its-stores",
+      "text": "A jewellery retailer adding an app to its stores",
+      "level": 3
+    },
+    {
+      "id": "a-coaching-institute-moving-tests-online",
+      "text": "A coaching institute moving tests online",
+      "level": 3
+    },
+    {
+      "id": "mistakes-when-comparing-quotes",
+      "text": "Mistakes when comparing quotes",
+      "level": 2
+    },
+    {
+      "id": "a-30-minute-verification-routine",
+      "text": "A 30-minute verification routine",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I check if a software company in India is genuine?",
+      "a": "Get their CIN and GSTIN. Look up the GSTIN on the GST portal's Search Taxpayer page and the company on the MCA portal's Master Data service, and check that the legal name matches your contract. Then install their apps and call two past clients."
+    },
+    {
+      "q": "Is the MCA company search free?",
+      "a": "The master data view is a free government service, but when I opened it on 16 November 2026 it asked me to log in or register on the MCA portal first. Viewing filed documents is a separate service."
+    },
+    {
+      "q": "Are Clutch reviews reliable?",
+      "a": "Clutch says every review is checked by a human editor before it goes live. But its default directory order puts sponsored providers first, and Verified status is paid. Read recent reviews in full and contact a reviewer yourself rather than trusting rank."
+    },
+    {
+      "q": "Who owns the code a development company writes for me?",
+      "a": "Under the Copyright Act, the company owns what its employees write. It becomes yours only through a written, signed assignment under section 19(1), which should state worldwide scope and full term, since silence means five years and India only."
+    },
+    {
+      "q": "Should the app be in my Google Play account or theirs?",
+      "a": "Yours. Open your own Google Play developer account and Apple Developer Program membership, and add the company as a user. Moving an app between accounts later is possible but needs the current owner's cooperation."
+    },
+    {
+      "q": "What payment terms are fair for app development?",
+      "a": "A small advance, then payments tied to milestones you can test on a phone, with code in your repository before each invoice and the final payment after the app is live in your accounts. Avoid paying most of the amount up front."
+    },
+    {
+      "q": "What warranty should I ask for?",
+      "a": "A written bug-fix period after launch, with a length in days and a definition of a bug against the agreed scope, plus a stated price for support after it ends."
+    }
+  ],
+  "contentHtml": "<h2 id=\"how-to-choose-a-development-company-the-short-answer\">How to choose a development company: the short answer</h2><p><strong>In short:</strong> Shortlist three to five companies that have shipped apps like yours, then verify them: install their live apps, call two past clients, look the company up on the MCA and GST portals, and read their reviews knowing how those sites rank. Choose the one whose contract gives you the code, the accounts and payments tied to milestones, not the one with the lowest quote.</p><p>Most guides on choosing a software development company in India end at \"check the portfolio\". A portfolio is a sales document. This guide is about what you can verify yourself, in public records and on the app stores, and what to put in the contract so that a bad choice is recoverable.</p><p>This guide was checked in November 2026, against the GST portal's taxpayer search, the MCA portal, the Companies Act, 2013 and Copyright Act, 1957, and the published methods of Clutch and GoodFirms. Portals change their screens, so expect small differences.</p><p>If you want a written scope, fixed quotation and timeline from us to compare against others, that is what our ₹3,500 requirement analysis produces (<a href=\"/book\">how it works</a>). The checklist below works for any company, us included.</p><h2 id=\"what-you-can-check-yourself-for-free\">What you can check yourself, for free</h2><p>Before any meeting, these checks tell you whether a company is what it says it is. None needs a paid tool.</p><p><em>Public checks on an Indian software company and what each one tells you</em></p><table><thead><tr><th>Check</th><th>Where</th><th>What it tells you</th><th>What it does not</th></tr></thead><tbody><tr><td>Company registration</td><td>MCA portal, Master Data service</td><td>Whether it is a registered company or LLP, its status and directors</td><td>Whether it is any good at building apps</td></tr><tr><td>Corporate Identity Number</td><td>Their letterhead, invoice or quote</td><td>Section 12(3)(c) of the Companies Act requires the CIN on business letters and bill heads</td><td>Anything, if you do not then look it up</td></tr><tr><td>GST registration</td><td>GST portal, Search Taxpayer</td><td>Legal name, date of registration, constitution of business, GSTIN status</td><td>Size or quality of work</td></tr><tr><td>Live apps</td><td>Google Play and the App Store</td><td>Whether the apps exist, who is named as developer, update history, user reviews</td><td>What part the company actually built</td></tr><tr><td>Reviews</td><td>Clutch, GoodFirms</td><td>What verified clients said</td><td>How a listing's position was bought</td></tr><tr><td>Code</td><td>GitHub</td><td>How their developers write code, if any is public</td><td>Private client work</td></tr></tbody></table><p><em>Source: </em><a href=\"https://prsindia.org/files/bills_acts/bills_parliament/2016/Companies%20Act%202013.pdf\" rel=\"noopener noreferrer nofollow\"><em>Companies Act, 2013, section 12</em></a><em> and </em><a href=\"https://services.gst.gov.in/services/searchtp\" rel=\"noopener noreferrer nofollow\"><em>GST portal taxpayer search</em></a><em> and </em><a href=\"https://clutch.co/methodology\" rel=\"noopener noreferrer nofollow\"><em>Clutch methodology</em></a><em> and </em><a href=\"https://www.goodfirms.co/\" rel=\"noopener noreferrer nofollow\"><em>GoodFirms</em></a><em>, read 16 November 2026.</em></p><p>One note on the MCA portal. Several guides say the company master data view needs no login. When I opened the Master Data service on 16 November 2026, it sent me to the MCA user login and registration page. Plan to register on the portal, or ask the company to send you its master data and certificate of incorporation and check the CIN against them.</p><figure><img src=\"/assets/blog/choosing-a-development-partner/1.webp\" alt=\"Annotated view of the GST portal's Search Taxpayer page with the GSTIN field\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The GST portal's taxpayer search: enter the GSTIN from their quote.</figcaption></figure><h2 id=\"step-by-step-choosing-in-the-right-order\">Step by step: choosing in the right order</h2><p>The order matters. Most people start with price and end with verification, which means they verify only the cheapest option.</p><p><strong>Step 1. Write a one-page brief.</strong> Who uses the app, the five things it must do, what it connects to (payments, your billing software, WhatsApp), and your deadline. Without this, every quote prices a different app.</p><p><strong>Step 2. Shortlist three to five companies with similar work.</strong> Look for apps in your category that you can install. A company that has shipped a booking app will price a booking app more accurately than one that has not.</p><p><strong>Step 3. Verify the company exists.</strong> Take the CIN from their letterhead or quote and the GSTIN from their invoice format. Look up the GSTIN on the GST portal and the company on the MCA portal. The legal name on both should match the name on the contract you will sign.</p><p><strong>Step 4. Verify past work.</strong> Open each app they claim on Google Play or the App Store. Note the developer name shown under the title. If it is their client's name, that is normal: client apps should be in the client's account. Then ask for that client's contact, and call.</p><p><strong>Step 5. Read reviews with their ranking in mind.</strong> More on this below.</p><p><strong>Step 6. Meet the people who will build it.</strong> Ask for the names of the lead developer and designer, and a call with them. Ask what they would build first and what they think is risky.</p><p><strong>Step 7. Compare written quotes on the same brief.</strong> Line by line: screens, integrations, testing, store submission, post-launch support. A quote that leaves out testing is not cheaper, it is incomplete.</p><p><strong>Step 8. Read the contract before the price.</strong> The clauses listed further down decide what happens if things go wrong.</p><figure><img src=\"/assets/blog/choosing-a-development-partner/2.webp\" alt=\"Infographic of the eight steps for choosing a software development company\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Verify before you compare prices, not after.</figcaption></figure><h2 id=\"what-the-gst-and-mca-records-actually-show\">What the GST and MCA records actually show</h2><p>It helps to know what you are looking at before you look it up.</p><p>The GST portal's Search Taxpayer page takes a GSTIN and, with no login, shows the Legal Name of Business, Effective Date of registration, Constitution of Business (for example a private limited company, an LLP or a proprietorship), GSTIN status, Taxpayer Type and Principal Place of Business, along with the nature of business activities. There is also a Show Filing Table option for return filing history.</p><p>What I look for:</p><ul><li><strong>Status.</strong> An active registration. A cancelled or suspended one needs an explanation before you go further.</li><li><strong>Legal name.</strong> It should match the name on the quote and the contract. A brand name on the website and a different legal name is common and fine, as long as you know which entity you are signing with.</li><li><strong>Constitution of business.</strong> A proprietorship is one person in law. That is not a problem, but it changes who you are contracting with.</li><li><strong>Date of registration.</strong> A company claiming ten years of work with a registration from last year may have restructured. Ask.</li><li><strong>Filing history.</strong> Regular filings suggest a business that is running. Long gaps are worth a question.</li></ul><p>On the MCA side, guides to the portal describe the master data as showing the company's status, registered address and directors; I could not open it without logging in. Check that the people you meet are directors, or ask what their role is.</p><h2 id=\"questions-to-ask-on-the-first-call\">Questions to ask on the first call</h2><p>I would ask every company the same questions, and write down the answers:</p><ul><li>Which two apps of yours can I install today, and what exactly did you build in each?</li><li>Can I speak to those two clients?</li><li>Who will work on my project, and will they stay on it until launch?</li><li>How do you test before a release? On which phones?</li><li>Will the code be in a repository I own from the first week?</li><li>Will the app be published from my Google Play and Apple developer accounts?</li><li>What happens after launch: for how long do you fix bugs at no charge, and what does support cost after that?</li><li>How do you handle a change in scope halfway through?</li><li>What do you need from me each week?</li></ul><p>Good companies answer these directly. Vague answers to the repository and account questions are the clearest warning I know.</p><h2 id=\"reading-clutch-and-goodfirms-properly\">Reading Clutch and GoodFirms properly</h2><p>Review directories are useful, but only if you know how they order companies.</p><p>Clutch publishes its method. It says every Clutch review is checked by a human editor before it goes live. It also says the default directory order puts Sponsored providers first, then Premier Verified, then Verified, then everyone else by Clutch Rank. Verified status is paid, through a subscription or an advertising product that includes it (<a href=\"https://clutch.co/methodology\" rel=\"noopener noreferrer nofollow\">Clutch methodology</a>). So the top of a Clutch list is partly bought. That does not make those companies bad. It means position is not a quality score.</p><p>GoodFirms says reviews require email verification and a client-relationship check, with random samples getting a phone or video call from its research team (<a href=\"https://www.goodfirms.co/\" rel=\"noopener noreferrer nofollow\">GoodFirms</a>). It also sells a PRO listing at $49 a month (<a href=\"https://www.goodfirms.co/goodfirms-pro\" rel=\"noopener noreferrer nofollow\">GoodFirms Pro</a>).</p><p>How I read either site:</p><ul><li>Ignore the overall rating. Read the five most recent reviews in full.</li><li>Look for reviews from businesses like yours, in size and in type of app.</li><li>Read what the reviewer says went wrong. Every real project has something. A review with nothing negative tells you little.</li><li>Check dates. Ten reviews from four years ago describe a different team.</li><li>Use the review to find the reviewer's company, then call or email them yourself.</li></ul><figure><img src=\"/assets/blog/choosing-a-development-partner/3.webp\" alt=\"Annotated view of Clutch's methodology page explaining review verification and directory order\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Clutch's own methodology page: reviews are checked by an editor, and sponsored listings sort first.</figcaption></figure><h2 id=\"contract-clauses-that-matter\">Contract clauses that matter</h2><p>These are the clauses I would read before the price. None is unusual, and a serious company will not object to any of them.</p><ul><li><strong>IP assignment.</strong> Under the Copyright Act, 1957, software is a literary work and the author is the first owner, and the company owns what its employees write. Ownership reaches you only through an assignment that is in writing and signed (section 19(1)). If the assignment is silent on period, it is deemed five years (section 19(5)); if silent on territory, India only (section 19(6)); and it lapses if the rights are not exercised within a year unless it says otherwise (section 19(4)). The clause should cover all of these (<a href=\"https://copyright.gov.in/documents/copyrightrules1957.pdf\" rel=\"noopener noreferrer nofollow\">Copyright Act, 1957</a>).</li><li><strong>Source code delivery.</strong> Code pushed to a repository you own, throughout the project, not handed over at the end. Include build instructions and any design files.</li><li><strong>Accounts.</strong> Google Play, Apple developer, cloud, domain and third-party services opened in your name, with the company as a user.</li><li><strong>Third-party and open-source code.</strong> A list of libraries and paid components used, with their licences, so you know what you depend on.</li><li><strong>Confidentiality (NDA).</strong> Covering your business data, customer data and the idea itself, with a period that outlasts the project.</li><li><strong>Payment milestones.</strong> Each payment tied to something you can test on a phone, with the final payment after the app is live in your accounts.</li><li><strong>Warranty.</strong> A bug-fix period after launch, with a length in days and a definition of a bug against the agreed scope.</li><li><strong>Change requests.</strong> How new features are priced and approved, in writing, before work starts.</li><li><strong>Exit and handover.</strong> What you get if either side ends the contract early: all code to date, credentials, documentation, and a short handover call.</li></ul><aside data-callout=\"accent\"><p data-callout-title>Not legal advice</p><p>This is a reading of the Acts and of common practice, not legal advice. Have a lawyer read the IP and exit clauses of any contract your business depends on.</p></aside><p>One account detail is worth planning for. Google's help page says new personal developer accounts must run a closed test with at least 12 opted-in testers continuously for 14 days before applying for production access (<a href=\"https://support.google.com/googleplay/android-developer/answer/14151465?hl=en\" rel=\"noopener noreferrer nofollow\">Play Console help</a>). If the account is new and personal, put those two weeks in the timeline. Apple's program is 99 USD per membership year (<a href=\"https://developer.apple.com/programs/enroll/\" rel=\"noopener noreferrer nofollow\">Apple Developer</a>).</p><h2 id=\"red-flags\">Red flags</h2><ul><li>The legal name on the contract does not match the GST or MCA record.</li><li>They will publish the app from their own developer account \"to save time\".</li><li>They will share the code only at the end, or only after the final payment.</li><li>The contract says they keep the IP and give you a licence, and nobody mentioned it.</li><li>No past client will take your call.</li><li>The quote has no line for testing or store submission.</li><li>Most of the payment is asked for up front.</li><li>The people on the sales call are not the people who will build it, and you cannot meet those who will.</li><li>Every answer is yes, including to a deadline you know is tight.</li></ul><p>Some of these show up as optimistic estimates rather than refusals. Our note on <a href=\"/blogs/estimating-software-honestly\">estimating software honestly</a> covers what an honest estimate looks like.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients. Each shows which checks matter most for a different kind of app.</p><h3 id=\"a-diagnostic-lab-with-report-downloads\">A diagnostic lab with report downloads</h3><p>A lab wants patients to book home collection and download reports. The data is health data, so I would weight the security questions heavily: where data is stored, who at the company can see it, and how access is removed when someone leaves. I would ask to install an app they built that handles personal data, and I would read the confidentiality clause twice. Our <a href=\"/blogs/security-basics-for-startups\">security basics for startups</a> lists the questions I would start with.</p><figure><img src=\"/assets/blog/choosing-a-development-partner/4.webp\" alt=\"Illustration of a lab owner and a developer discussing an app on a laptop\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For health data, security questions come before price.</figcaption></figure><h3 id=\"a-jewellery-retailer-adding-an-app-to-its-stores\">A jewellery retailer adding an app to its stores</h3><p>A family jewellery business with three showrooms wants an app for catalogue, gold rate display and appointment booking. The app connects to their billing software. I would choose a company that has integrated with existing business software before and ask exactly how they would do it, because the integration is where these projects slip.</p><h3 id=\"a-coaching-institute-moving-tests-online\">A coaching institute moving tests online</h3><p>An institute wants timed tests and results for students and parents. The risk is everyone logging in at the same minute. I would ask each company how they test for load, and I would ask a past education client what happened on their first busy exam day.</p><h2 id=\"mistakes-when-comparing-quotes\">Mistakes when comparing quotes</h2><ol><li><strong>Comparing totals, not scope.</strong> Put the quotes side by side, line by line. The cheapest often leaves out testing, admin panels or support.</li><li><strong>Treating a big portfolio as proof.</strong> Ask which apps you can install and which clients you can call. Those are the only ones that count.</li><li><strong>Choosing by directory rank.</strong> On Clutch, sponsored listings sort first by default. Rank is a starting list, not a verdict.</li><li><strong>Leaving the contract to the end.</strong> By then you have chosen emotionally. Ask for the draft contract with the quote.</li><li><strong>Skipping the year after launch.</strong> Ask what support costs after the warranty, before you sign.</li></ol><h2 id=\"a-30-minute-verification-routine\">A 30-minute verification routine</h2><p>For each company on the shortlist, I would block half an hour and do this, in this order:</p><ol><li>Search the GSTIN on the GST portal and note the legal name, status and date of registration. (5 minutes)</li><li>Look up the company on the MCA portal and note its status and directors. (5 minutes)</li><li>Install two of their apps, use them, and read the latest store reviews and update dates. (10 minutes)</li><li>Read the five most recent reviews on Clutch or GoodFirms, and note one reviewer to contact. (5 minutes)</li><li>Look at any public GitHub organisation or code samples they share. (5 minutes)</li></ol><p>On GitHub, note that a developer can choose to show anonymised activity from private repositories as counts only (<a href=\"https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/manage-visibility-settings-for-private-contributions-and-achievements\" rel=\"noopener noreferrer nofollow\">GitHub Docs</a>). A full contribution graph is a weak signal; readable code is a strong one.</p><p>If you are still deciding between a company and a single freelancer, our comparison of <a href=\"/blogs/freelance-vs-app-development-company-hyderabad\">freelancers and app development companies in Hyderabad</a> covers that choice.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-do-i-check-if-a-software-company-in-india-is-genuine\">How do I check if a software company in India is genuine?</h3><p>Get their CIN and GSTIN. Look up the GSTIN on the GST portal's Search Taxpayer page and the company on the MCA portal's Master Data service, and check that the legal name matches your contract. Then install their apps and call two past clients.</p><h3 id=\"is-the-mca-company-search-free\">Is the MCA company search free?</h3><p>The master data view is a free government service, but when I opened it on 16 November 2026 it asked me to log in or register on the MCA portal first. Viewing filed documents is a separate service.</p><h3 id=\"are-clutch-reviews-reliable\">Are Clutch reviews reliable?</h3><p>Clutch says every review is checked by a human editor before it goes live. But its default directory order puts sponsored providers first, and Verified status is paid. Read recent reviews in full and contact a reviewer yourself rather than trusting rank.</p><h3 id=\"who-owns-the-code-a-development-company-writes-for-me\">Who owns the code a development company writes for me?</h3><p>Under the Copyright Act, the company owns what its employees write. It becomes yours only through a written, signed assignment under section 19(1), which should state worldwide scope and full term, since silence means five years and India only.</p><h3 id=\"should-the-app-be-in-my-google-play-account-or-theirs\">Should the app be in my Google Play account or theirs?</h3><p>Yours. Open your own Google Play developer account and Apple Developer Program membership, and add the company as a user. Moving an app between accounts later is possible but needs the current owner's cooperation.</p><h3 id=\"what-payment-terms-are-fair-for-app-development\">What payment terms are fair for app development?</h3><p>A small advance, then payments tied to milestones you can test on a phone, with code in your repository before each invoice and the final payment after the app is live in your accounts. Avoid paying most of the amount up front.</p><h3 id=\"what-warranty-should-i-ask-for\">What warranty should I ask for?</h3><p>A written bug-fix period after launch, with a length in days and a definition of a bug against the agreed scope, plus a stated price for support after it ends.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://services.gst.gov.in/services/searchtp\" rel=\"noopener noreferrer nofollow\">Search Taxpayer by GSTIN/UIN, Goods and Services Tax portal</a>, read 16 November 2026</li><li><a href=\"https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html\" rel=\"noopener noreferrer nofollow\">Master Data service, Ministry of Corporate Affairs</a>, read 16 November 2026</li><li><a href=\"https://prsindia.org/files/bills_acts/bills_parliament/2016/Companies%20Act%202013.pdf\" rel=\"noopener noreferrer nofollow\">The Companies Act, 2013, PRS Legislative Research</a>, read 16 November 2026</li><li><a href=\"https://copyright.gov.in/documents/copyrightrules1957.pdf\" rel=\"noopener noreferrer nofollow\">The Copyright Act, 1957, Copyright Office, Government of India</a>, read 16 November 2026</li><li><a href=\"https://clutch.co/methodology\" rel=\"noopener noreferrer nofollow\">How Clutch evaluates and ranks service providers, Clutch</a>, read 16 November 2026</li><li><a href=\"https://www.goodfirms.co/\" rel=\"noopener noreferrer nofollow\">GoodFirms home page, GoodFirms</a>, read 16 November 2026</li><li><a href=\"https://www.goodfirms.co/goodfirms-pro\" rel=\"noopener noreferrer nofollow\">GoodFirms Pro, GoodFirms</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/14151465?hl=en\" rel=\"noopener noreferrer nofollow\">App testing requirements for new personal developer accounts, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/6230247?hl=en\" rel=\"noopener noreferrer nofollow\">Transfer apps to a different developer account, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/programs/enroll/\" rel=\"noopener noreferrer nofollow\">Become a member, Apple Developer Program</a>, read 16 November 2026</li><li><a href=\"https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/manage-visibility-settings-for-private-contributions-and-achievements\" rel=\"noopener noreferrer nofollow\">Manage visibility settings for private contributions, GitHub Docs</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian founder checking a development company's details on a laptop beside the words Choose a dev partner",
+      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. An Indian woman founder in her 30s in a kurta, seated at a cafe table in Hyderabad with a laptop, a phone and a printed checklist with tick boxes (no readable words), pen in hand, looking thoughtful. No readable text on screens, no logos. Right half: the title text 'Choose a dev partner' in very large bold black sans-serif, left-aligned, on two lines ('Choose a' / 'dev partner'). No other text."
+    },
+    {
+      "file": "1.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of the GST portal's Search Taxpayer page with the GSTIN field",
+      "url": "https://services.gst.gov.in/services/searchtp",
+      "annotate": [
+        {
+          "text": "GSTIN/UIN of the Taxpayer",
+          "label": "Enter their GSTIN"
+        },
+        {
+          "text": "Search Result based on GSTIN/UIN :",
+          "label": "Check legal name and status"
+        }
+      ]
+    },
+    {
+      "file": "2.webp",
+      "kind": "infographic",
+      "alt": "Infographic of the eight steps for choosing a software development company",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Choosing a development company, in order'. Eight steps in two rows of four, each a flat icon above a dark-blue rounded label pill with white text, joined by orange arrows: 1) page icon, pill 'Write a one-page brief'; 2) list icon, pill 'Shortlist 3 to 5'; 3) government building icon, pill 'Check MCA and GST'; 4) phone with app icon, pill 'Install their apps'; 5) star icon, pill 'Read recent reviews'; 6) two people icon, pill 'Meet the builders'; 7) two documents icon, pill 'Compare quotes line by line'; 8) signed contract icon, pill 'Read the contract'. One-line bold takeaway at bottom: 'Verify first, compare prices last.' No logos, no other text."
+    },
+    {
+      "file": "3.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Clutch's methodology page explaining review verification and directory order",
+      "url": "https://clutch.co/methodology",
+      "annotate": [
+        {
+          "text": "every Clutch review is checked by a human editor before it goes live",
+          "label": "Human-checked reviews"
+        },
+        {
+          "text": "Sponsored providers first, then Premier Verified, then Verified, then everyone else by Clutch Rank",
+          "label": "Paid listings sort first"
+        }
+      ]
+    },
+    {
+      "file": "4.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a lab owner and a developer discussing an app on a laptop",
+      "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. A small Indian diagnostic lab office: a middle-aged lab owner in a sage lab coat seated across a desk from a developer from a software company, both looking at a laptop showing abstract shapes and a padlock icon, sample tube racks on a shelf behind. No readable text on any screen, no logos. Faces fully in frame."
+    }
+  ]
+}

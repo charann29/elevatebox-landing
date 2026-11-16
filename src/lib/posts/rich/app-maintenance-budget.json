@@ -1,0 +1,224 @@
+{
+  "slug": "app-maintenance-budget",
+  "locale": "en",
+  "title": "App maintenance cost in India: a yearly budget",
+  "description": "App maintenance in India costs 15 to 25% of the build a year. Store deadlines, hosting, API price changes, AMC contracts and a yearly budget template.",
+  "imageUrl": "/assets/blog/app-maintenance-budget/cover.webp",
+  "imageAlt": "Illustration of an Indian shop owner planning a yearly app maintenance budget beside the words App upkeep budget",
+  "ogImageUrl": null,
+  "tags": [
+    "app maintenance",
+    "mobile apps",
+    "small business",
+    "India"
+  ],
+  "readingTimeMinutes": 16,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "what-app-maintenance-costs-per-year-in-india",
+      "text": "What app maintenance costs per year in India",
+      "level": 2
+    },
+    {
+      "id": "what-published-estimates-say",
+      "text": "What published estimates say",
+      "level": 2
+    },
+    {
+      "id": "what-maintenance-actually-covers",
+      "text": "What maintenance actually covers",
+      "level": 2
+    },
+    {
+      "id": "android-google-plays-target-api-deadline",
+      "text": "Android: Google Play's target API deadline",
+      "level": 3
+    },
+    {
+      "id": "iphone-apples-sdk-and-xcode-requirements",
+      "text": "iPhone: Apple's SDK and Xcode requirements",
+      "level": 3
+    },
+    {
+      "id": "hosting-and-backend",
+      "text": "Hosting and backend",
+      "level": 3
+    },
+    {
+      "id": "monitoring-and-crash-reports",
+      "text": "Monitoring and crash reports",
+      "level": 3
+    },
+    {
+      "id": "security-patches",
+      "text": "Security patches",
+      "level": 3
+    },
+    {
+      "id": "store-fees",
+      "text": "Store fees",
+      "level": 3
+    },
+    {
+      "id": "third-party-api-price-changes",
+      "text": "Third-party API price changes",
+      "level": 3
+    },
+    {
+      "id": "amc-contracts-in-india",
+      "text": "AMC contracts in India",
+      "level": 2
+    },
+    {
+      "id": "how-to-build-your-yearly-budget-step-by-step",
+      "text": "How to build your yearly budget, step by step",
+      "level": 2
+    },
+    {
+      "id": "a-yearly-budget-template",
+      "text": "A yearly budget template",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples",
+      "text": "Three worked examples",
+      "level": 2
+    },
+    {
+      "id": "a-clinic-booking-app",
+      "text": "A clinic booking app",
+      "level": 3
+    },
+    {
+      "id": "a-d2c-brands-shopping-app",
+      "text": "A D2C brand's shopping app",
+      "level": 3
+    },
+    {
+      "id": "a-coaching-institutes-student-app",
+      "text": "A coaching institute's student app",
+      "level": 3
+    },
+    {
+      "id": "five-ways-maintenance-budgets-mislead-you",
+      "text": "Five ways maintenance budgets mislead you",
+      "level": 2
+    },
+    {
+      "id": "a-quarterly-maintenance-check",
+      "text": "A quarterly maintenance check",
+      "level": 2
+    },
+    {
+      "id": "frequently-asked-questions",
+      "text": "Frequently asked questions",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does app maintenance cost per year in India?",
+      "a": "Published estimates from development firms put it at 15 to 25 percent of the original build cost a year (SolGuruz), or 15 to 20 percent (Zartek and Vrinsofts). Add Apple's 99 USD yearly fee, hosting and any per-use services such as SMS, WhatsApp or maps."
+    },
+    {
+      "q": "Can I skip maintenance if the app works fine?",
+      "a": "Not for long. Since 31 August 2026, Google Play shows apps that target Android 14 or lower only to people on older phones, and Apple requires uploads to be built with Xcode 26. Skipping a year makes the next update bigger."
+    },
+    {
+      "q": "What is an AMC for an app?",
+      "a": "An annual maintenance contract: a fixed yearly fee for a defined set of support work. What it covers varies by vendor, so get the scope in writing, including whether the yearly Android and Apple updates are inside it."
+    },
+    {
+      "q": "Is Google Play's fee yearly?",
+      "a": "No. Google Play has a US$25 one-time registration fee. Apple's Developer Program is 99 USD every year, in local currency where available."
+    },
+    {
+      "q": "What happens if my Android app misses the target API deadline?",
+      "a": "It stays on Google Play, but new users on phones running a newer Android version than your target cannot find or install it. People who already installed it can keep using it, according to Google's help page."
+    },
+    {
+      "q": "Why did my Google Maps bill change?",
+      "a": "On 1 March 2025, Google replaced the 200 USD monthly credit with free monthly usage per service. Depending on which services you use and how much, the bill can go up or down. Google's March 2025 page has India examples of both."
+    },
+    {
+      "q": "Should maintenance be with the same company that built the app?",
+      "a": "It is usually easiest, because they know the code. But keep the code, cloud and store accounts in your own name so you can move to someone else without rebuilding."
+    }
+  ],
+  "contentHtml": "<h2 id=\"what-app-maintenance-costs-per-year-in-india\">What app maintenance costs per year in India</h2><p><strong>In short:</strong> Most published estimates put yearly app maintenance at 15 to 25 percent of what the app cost to build. On a ₹10 lakh app, plan for roughly ₹1.5 lakh to ₹2.5 lakh a year in developer time, plus hosting, Apple's 99 USD yearly fee and whatever your third-party services charge. Some of that work is forced on you: Google Play and Apple both set deadlines your app has to meet to stay listed.</p><p>Owners usually budget carefully for the build and then treat year two as free. It is not. The phone your customer bought last month runs a newer operating system than the one your app was tested on, and the stores will not wait for you to catch up.</p><p>If you want the build and the first year of upkeep written down before you commit, that is part of what our ₹3,500 requirement analysis produces: a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Everything below works without us.</p><p>This guide was checked in November 2026, against Google Play's target API page and Apple's upcoming requirements page as they stood on 16 November 2026. Both change every year, so check them again before you sign next year's budget.</p><h2 id=\"what-published-estimates-say\">What published estimates say</h2><p>There is no official figure for maintenance. What exists is a handful of estimates from development firms, and they agree more than I expected.</p><p><em>Published yearly maintenance estimates, as a share of the original build cost</em></p><table><thead><tr><th>Source</th><th>Yearly maintenance</th><th>What they say it covers</th></tr></thead><tbody><tr><td>SolGuruz (India)</td><td>15 to 25% of initial development cost</td><td>Updates, bug fixes, OS compatibility patches, new feature releases; its FAQ adds server costs and API subscriptions</td></tr><tr><td>Zartek (India)</td><td>15 to 20% of the original budget</td><td>Keeping the app working through OS updates</td></tr><tr><td>Vrinsofts</td><td>15 to 20% of the original budget</td><td>Hosting, monitoring, bug fixes, security updates, performance work, support</td></tr></tbody></table><p><em>Source: </em><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\"><em>SolGuruz</em></a><em> and </em><a href=\"https://www.zartek.in/app-development-cost-in-india-2026/\" rel=\"noopener noreferrer nofollow\"><em>Zartek</em></a><em> and </em><a href=\"https://www.vrinsofts.com/mobile-app-maintenance-costs-guide/\" rel=\"noopener noreferrer nofollow\"><em>Vrinsofts</em></a><em>, read 16 November 2026.</em></p><p>Two things stand out. First, the floor is consistent: nobody I read suggests less than 15 percent. Second, the sources do not agree on what the percentage includes. SolGuruz's FAQ folds server costs and API subscriptions into its 15 to 25 percent. Vrinsofts breaks hosting and monitoring out as separate monthly lines. So when a vendor quotes you a maintenance percentage, ask what is inside it before you compare it with anyone else's.</p><p>Vrinsofts also says the first year after launch is often the most expensive, because that is when real users find the bugs, and gives monthly ranges in US dollars: hosting from $70 to $500 or more, monitoring tools from $50 to $500, and total maintenance between $500 and $4,000 a month for most businesses. Those are global agency numbers, not Indian freelancer rates, so treat them as an upper reference rather than a target.</p><p>For where the build cost itself comes from, our breakdown of <a href=\"/blogs/mobile-app-development-cost-india\">mobile app development cost in India</a> covers published ranges and hourly rates.</p><figure><img src=\"/assets/blog/app-maintenance-budget/1.webp\" alt=\"Infographic of the seven things yearly app maintenance pays for: OS updates, store rules, hosting, monitoring, security patches, store fees and third-party API prices\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Seven lines that keep coming back every year, whether or not you add a single feature.</figcaption></figure><h2 id=\"what-maintenance-actually-covers\">What maintenance actually covers</h2><p>Here is the list I would use, in roughly the order it bites. The first two are not optional: they come from the stores, with dates.</p><h3 id=\"android-google-plays-target-api-deadline\">Android: Google Play's target API deadline</h3><p>Every Android app declares a target API level, which tells the phone which version of Android it was built for. Google Play raises the minimum every year. According to <a href=\"https://support.google.com/googleplay/android-developer/answer/11926878?hl=en\" rel=\"noopener noreferrer nofollow\">Google Play's target API page</a>, starting 31 August 2026 new apps and app updates must target Android 16 (API level 36) or higher to be submitted.</p><p>Existing apps that do nothing are not removed, but they shrink. Apps must target Android 15 (API level 35) or higher to stay available to new users on newer phones. An app that targets Android 14 or lower is shown only to people whose phones run that version or older. Google's page says people who already installed it are not affected, but new customers on new phones cannot find or download it.</p><p>Google offered an extension to 1 November 2026 for developers who asked through Play Console. That date has passed as I write this, so if your app still targets API level 34 or lower, it is already invisible to new users on current phones.</p><p>Moving up a level is not a setting you flip. The <a href=\"https://developer.android.com/google/play/requirements/target-sdk\" rel=\"noopener noreferrer nofollow\">Android migration guide</a> lists behaviour changes for each version, and each one can touch permissions, notifications, background work or storage. Your third-party SDKs (payments, analytics, maps) also have to support the new level. This is real developer time, every year.</p><figure><img src=\"/assets/blog/app-maintenance-budget/2.webp\" alt=\"Google Play Console Help page stating that from 31 August 2026 new apps and updates must target Android 16, API level 36\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google Play's rule for 2026: new apps and updates must target API level 36.</figcaption></figure><h3 id=\"iphone-apples-sdk-and-xcode-requirements\">iPhone: Apple's SDK and Xcode requirements</h3><p>Apple works the same way with a different lever. Its <a href=\"https://developer.apple.com/news/upcoming-requirements/\" rel=\"noopener noreferrer nofollow\">upcoming requirements page</a> says that since 28 April 2026, apps uploaded to App Store Connect must be built with Xcode 26 or later, using the iOS 26 SDK. Since 9 September 2026, iOS and iPadOS apps uploaded must target iOS 13 or later.</p><p>The practical effect: you cannot ship even a one-line bug fix to an iPhone app that was last built with an older toolchain until someone rebuilds it with the current one. If the app has not been touched for a year or two, that rebuild is when old libraries break. The page has dated entries going back years, including an age rating update all apps had to respond to by 31 January 2026, so expect at least one Apple change a year.</p><figure><img src=\"/assets/blog/app-maintenance-budget/3.webp\" alt=\"Apple Developer upcoming requirements page showing that apps uploaded since 28 April 2026 must be built with Xcode 26\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple's rule: uploads must be built with Xcode 26 and the iOS 26 SDK.</figcaption></figure><h3 id=\"hosting-and-backend\">Hosting and backend</h3><p>Your app talks to a server: a database, a login system, file storage, perhaps an admin panel. That runs on a cloud bill that grows with users. Many small apps start on Firebase, whose <a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> offers a no-cost Spark plan with usage limits and a pay-as-you-go Blaze plan that keeps the Spark no-cost usage and bills above it. Other stacks run on AWS, Azure or Google Cloud with similar pay-for-what-you-use billing.</p><p>Hosting is the line that surprises people in good years, because more customers means more reads, more storage and more bandwidth. Ask your developer for last month's bill and the main thing driving it.</p><h3 id=\"monitoring-and-crash-reports\">Monitoring and crash reports</h3><p>Someone has to notice when the app breaks. Crash reporting, uptime checks and error logs are cheap or free at small scale, but someone still has to read them. Vrinsofts lists monitoring tools at $50 to $500 a month for the bigger setups. The bigger cost is the hour a week a developer spends looking. We go into this in <a href=\"/blogs/observability-before-you-need-it\">observability before you need it</a>.</p><h3 id=\"security-patches\">Security patches</h3><p>Libraries your app depends on publish security fixes, and the operating systems change their permission rules. Google's target API page says each new Android version brings security, privacy and performance improvements, and some of them only apply once your app targets that version. Keeping dependencies current is the unglamorous part of maintenance that prevents the expensive part. Our <a href=\"/blogs/security-basics-for-startups\">security basics for startups</a> lists what to check first.</p><h3 id=\"store-fees\">Store fees</h3><p>These are the only fixed numbers in this post. Apple's <a href=\"https://developer.apple.com/support/purchase-activation/\" rel=\"noopener noreferrer nofollow\">enrolment page</a> says the Apple Developer Program costs 99 USD a year, in local currency where available, and that enrolment in India is only available through the Apple Developer app. Google Play has a <a href=\"https://support.google.com/googleplay/android-developer/answer/6112435?hl=en\" rel=\"noopener noreferrer nofollow\">US$25 one-time registration fee</a>. So iPhone costs you every year; Android costs you once.</p><h3 id=\"third-party-api-price-changes\">Third-party API price changes</h3><p>This is the line nobody budgets for, because the price is set by someone else and can move under you. Two recent examples.</p><p>Google Maps. On 1 March 2025, Google replaced its 200 USD monthly credit with free monthly usage per service. Its <a href=\"https://developers.google.com/maps/billing-and-pricing/march-2025\" rel=\"noopener noreferrer nofollow\">own India example</a>: an India-based customer making 90,000 Geocoding (India) requests a month paid $0 under the old credit, and from March 2025 gets 70,000 free requests and pays $30 a month for the rest. Another India example in the same page went the other way, from $241 a month to $0. Same app, different bill, because the rules changed.</p><p>WhatsApp. Meta <a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">replaced conversation-based pricing with per-message pricing</a> on 1 July 2025, and its pricing page says rates may change on the first day of each quarter. If your app sends order updates or OTPs on WhatsApp, that line can change four times a year.</p><p>The same applies to SMS, payment gateways, AI APIs and anything else billed per use. The defence is a list of every paid service the app calls, with its current rate and the page where the provider publishes changes.</p><h2 id=\"amc-contracts-in-india\">AMC contracts in India</h2><p>In India, ongoing upkeep is usually sold as an AMC, an annual maintenance contract: a fixed yearly fee for a defined set of support work. The term comes from hardware and has carried over to software.</p><p>What an AMC includes varies a lot. As one example, <a href=\"https://mobisoftinfotech.com/services/software-annual-maintenance-contract\" rel=\"noopener noreferrer nofollow\">Mobisoft Infotech's software AMC page</a> lists security patches, routine upgrades, performance work, support for third-party integrations and APIs, monthly performance reports and incident logs, and a support SLA with response and resolution times set by issue severity. That is a fuller contract than many small apps get.</p><p>Before you sign one, I would get answers to these in writing:</p><ul><li><strong>Is the yearly Android target API update included?</strong> It is the one piece of work you know will be needed every year.</li><li><strong>Is the Apple Xcode rebuild included?</strong> Same reason.</li><li><strong>How many developer hours a month does the fee cover,</strong> and what is the rate beyond them?</li><li><strong>What are the response times,</strong> by severity, and do they apply on weekends?</li><li><strong>Are hosting and third-party bills inside the fee or passed through?</strong> Passed through at cost is easier to check.</li><li><strong>What counts as a new feature</strong> and is therefore outside the AMC?</li><li><strong>Whose name are the cloud, store and code accounts in?</strong> They should be yours, so you can change vendors without a rebuild.</li></ul><p>That last point matters more than any rate. At ElevateBox, code, cloud and credentials stay in the client's name, and I would ask the same of any vendor.</p><h2 id=\"how-to-build-your-yearly-budget-step-by-step\">How to build your yearly budget, step by step</h2><p>Here is how I would put the number together for a small business app, starting from what you already know.</p><p><strong>Step 1. Write down the build cost.</strong> Use the total you paid for the first version, including design and backend, not only the app screens. This is the base for the percentage.</p><p><strong>Step 2. Apply the labour range.</strong> Multiply by 15 percent for a low estimate and 25 percent for a high one. That is the developer time for updates, fixes and compatibility work.</p><p><strong>Step 3. Add the store fees.</strong> Apple's 99 USD a year if you are on iPhone. Google Play's US$25 is already paid if you are live.</p><p><strong>Step 4. List every paid service.</strong> Hosting, database, SMS, WhatsApp, maps, payments, email, crash reporting, AI. For each, write the current monthly cost and where the provider publishes price changes.</p><p><strong>Step 5. Mark the dated work.</strong> Put Google Play's August deadline and Apple's spring SDK change in the calendar, and ask your developer for an estimate for each.</p><p><strong>Step 6. Add a buffer.</strong> I would hold back 10 percent of the total for a price change or a library that breaks. Then review the budget every quarter against the real bills.</p><h2 id=\"a-yearly-budget-template\">A yearly budget template</h2><p>Copy this into a spreadsheet. Fill the right-hand column with your own numbers; the middle column tells you where each one comes from.</p><p><em>Yearly app maintenance budget template</em></p><table><thead><tr><th>Line</th><th>How to estimate it</th><th>Your figure (₹)</th></tr></thead><tbody><tr><td>Developer time: updates and fixes</td><td>15 to 25% of build cost</td><td></td></tr><tr><td>Android target API update</td><td>Developer estimate, before August</td><td></td></tr><tr><td>iPhone SDK and Xcode rebuild</td><td>Developer estimate, before Apple's spring deadline</td><td></td></tr><tr><td>Apple Developer Program</td><td>99 USD a year in local currency</td><td></td></tr><tr><td>Google Play registration</td><td>US$25 once; nothing if already paid</td><td></td></tr><tr><td>Hosting and database</td><td>Last 3 months of bills, times 4, plus growth</td><td></td></tr><tr><td>Monitoring and crash reporting</td><td>Tool bill plus review time</td><td></td></tr><tr><td>SMS, WhatsApp, maps, payments</td><td>Per-use rate times expected volume</td><td></td></tr><tr><td>Security and dependency updates</td><td>Usually inside developer time; check</td><td></td></tr><tr><td>Buffer for price changes</td><td>About 10% of the total</td><td></td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.apple.com/support/purchase-activation/\" rel=\"noopener noreferrer nofollow\"><em>Apple Developer</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/6112435?hl=en\" rel=\"noopener noreferrer nofollow\"><em>Google Play Console Help</em></a><em> and </em><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\"><em>SolGuruz</em></a><em>, read 16 November 2026.</em></p><figure><img src=\"/assets/blog/app-maintenance-budget/4.webp\" alt=\"Infographic of a yearly app maintenance calendar with Apple's spring SDK change, Google Play's 31 August target API deadline, quarterly WhatsApp rate dates and Apple's yearly fee renewal\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The dates that drive the budget: two store deadlines and four possible WhatsApp rate changes.</figcaption></figure><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses and build costs below are illustrative, chosen to show how the arithmetic works. They are not quotes.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>Say a two-doctor clinic paid ₹6 lakh for a booking app on Android and iPhone, with a small admin panel for the receptionist (illustrative).</p><p>Developer time at 15 to 25 percent: ₹90,000 to ₹1,50,000 a year. Apple: 99 USD. Hosting for a few hundred patients a month may fit inside a free tier such as Firebase's Spark plan, but check the bill rather than assume. SMS or WhatsApp reminders are the per-use line to watch.</p><p>What this tells you: for a small clinic, the yearly cost is mostly developer time, and most of that is the two store deadlines. If the AMC does not name them, it is not covering the work you know is coming. Clinics that want online booking without an app at all can start smaller; see <a href=\"/industries/healthcare-appointments\">appointment systems</a>.</p><h3 id=\"a-d2c-brands-shopping-app\">A D2C brand's shopping app</h3><p>Say a clothing brand paid ₹15 lakh for a shopping app with payments, order tracking and push notifications (illustrative).</p><p>Developer time: ₹2,25,000 to ₹3,75,000 a year. Hosting grows with sale days. The payment gateway, WhatsApp order updates and any maps or address lookup are all per use, and each provider can change its price.</p><p>What this tells you: a shopping app has the most third-party lines, so Step 4 matters most here. A Google Maps style change that moves you from free to paid at your volume is a real monthly bill. Ask for a list of every SDK in the app with its pricing page.</p><figure><img src=\"/assets/blog/app-maintenance-budget/5.webp\" alt=\"Illustration of a D2C brand owner and a developer reviewing a monthly cloud bill on a laptop in a small studio\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a shopping app, the third-party bills are where surprises come from.</figcaption></figure><h3 id=\"a-coaching-institutes-student-app\">A coaching institute's student app</h3><p>Say a coaching institute paid ₹8 lakh for a student app with video lessons, tests and OTP login (illustrative).</p><p>Developer time: ₹1,20,000 to ₹2,00,000 a year. Video storage and streaming will likely be the biggest hosting cost, and it rises with every batch. OTP login means an SMS or WhatsApp bill that grows with admissions.</p><p>What this tells you: plan hosting around the academic calendar, because usage peaks before exams. If the institute also sends batch updates on WhatsApp, that is another per-message line to add in Step 4.</p><h2 id=\"five-ways-maintenance-budgets-mislead-you\">Five ways maintenance budgets mislead you</h2><p><strong>Treating the percentage as all-in.</strong> SolGuruz puts servers and APIs inside its range; Vrinsofts lists them separately. Two quotes at 20 percent can cover very different things.</p><p><strong>Budgeting for year two as if it were year five.</strong> Vrinsofts says the first year after launch is often the most expensive. Real users find bugs that testers did not.</p><p><strong>Skipping a year of updates.</strong> Each skipped Android or Apple change makes the next one bigger, because the jumps stack. An app untouched for two years can need weeks of work just to upload a fix.</p><p><strong>Ignoring prices you do not set.</strong> Google Maps and WhatsApp both changed how they bill in 2025. Your budget is only as stable as your least stable provider.</p><p><strong>Paying for maintenance with no list of what was done.</strong> Ask for a monthly note: what was updated, what was fixed, what is due next. If an update gets rejected by a store, our post on <a href=\"/blogs/app-store-rejections\">app store rejections</a> covers the usual reasons.</p><h2 id=\"a-quarterly-maintenance-check\">A quarterly maintenance check</h2><p>Once a quarter, sit with your developer for half an hour and go through this.</p><p><em>A 30-minute quarterly app maintenance check</em></p><table><thead><tr><th>Minutes</th><th>What to check</th><th>What you write down</th></tr></thead><tbody><tr><td>First 10</td><td>Google Play Console and App Store Connect for warnings and policy notices</td><td>Any deadline and the estimate to meet it</td></tr><tr><td>Next 10</td><td>Hosting and every per-use bill against last quarter</td><td>Lines that grew, and why</td></tr><tr><td>Next 5</td><td>Crash reports and reviews mentioning bugs</td><td>Top three fixes for next quarter</td></tr><tr><td>Last 5</td><td>Provider pricing pages for maps, messaging and payments</td><td>Any announced change and its effect</td></tr></tbody></table><p>After a year of this, you will know your real maintenance number, and next year's budget stops being a guess.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-much-does-app-maintenance-cost-per-year-in-india\">How much does app maintenance cost per year in India?</h3><p>Published estimates from development firms put it at 15 to 25 percent of the original build cost a year (SolGuruz), or 15 to 20 percent (Zartek and Vrinsofts). Add Apple's 99 USD yearly fee, hosting and any per-use services such as SMS, WhatsApp or maps.</p><h3 id=\"can-i-skip-maintenance-if-the-app-works-fine\">Can I skip maintenance if the app works fine?</h3><p>Not for long. Since 31 August 2026, Google Play shows apps that target Android 14 or lower only to people on older phones, and Apple requires uploads to be built with Xcode 26. Skipping a year makes the next update bigger.</p><h3 id=\"what-is-an-amc-for-an-app\">What is an AMC for an app?</h3><p>An annual maintenance contract: a fixed yearly fee for a defined set of support work. What it covers varies by vendor, so get the scope in writing, including whether the yearly Android and Apple updates are inside it.</p><h3 id=\"is-google-plays-fee-yearly\">Is Google Play's fee yearly?</h3><p>No. Google Play has a US$25 one-time registration fee. Apple's Developer Program is 99 USD every year, in local currency where available.</p><h3 id=\"what-happens-if-my-android-app-misses-the-target-api-deadline\">What happens if my Android app misses the target API deadline?</h3><p>It stays on Google Play, but new users on phones running a newer Android version than your target cannot find or install it. People who already installed it can keep using it, according to Google's help page.</p><h3 id=\"why-did-my-google-maps-bill-change\">Why did my Google Maps bill change?</h3><p>On 1 March 2025, Google replaced the 200 USD monthly credit with free monthly usage per service. Depending on which services you use and how much, the bill can go up or down. Google's March 2025 page has India examples of both.</p><h3 id=\"should-maintenance-be-with-the-same-company-that-built-the-app\">Should maintenance be with the same company that built the app?</h3><p>It is usually easiest, because they know the code. But keep the code, cloud and store accounts in your own name so you can move to someone else without rebuilding.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://support.google.com/googleplay/android-developer/answer/11926878?hl=en\" rel=\"noopener noreferrer nofollow\">Target API level requirements for Google Play apps, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/google/play/requirements/target-sdk\" rel=\"noopener noreferrer nofollow\">Meet Google Play's target API level requirement, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/news/upcoming-requirements/\" rel=\"noopener noreferrer nofollow\">Upcoming requirements, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/support/purchase-activation/\" rel=\"noopener noreferrer nofollow\">Program enrollment, Apple Developer Account Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/6112435?hl=en\" rel=\"noopener noreferrer nofollow\">Get started with Play Console, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">Firebase pricing plans, Firebase</a>, read 16 November 2026</li><li><a href=\"https://developers.google.com/maps/billing-and-pricing/march-2025\" rel=\"noopener noreferrer nofollow\">Google Maps Platform March 2025 changes, Google for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\">App Development Cost in India 2026, SolGuruz</a>, read 16 November 2026</li><li><a href=\"https://www.zartek.in/app-development-cost-in-india-2026/\" rel=\"noopener noreferrer nofollow\">App Development Cost in India 2026, Zartek</a>, read 16 November 2026</li><li><a href=\"https://www.vrinsofts.com/mobile-app-maintenance-costs-guide/\" rel=\"noopener noreferrer nofollow\">Mobile App Maintenance Costs in 2026, Vrinsofts</a>, read 16 November 2026</li><li><a href=\"https://mobisoftinfotech.com/services/software-annual-maintenance-contract\" rel=\"noopener noreferrer nofollow\">Software Annual Maintenance Contract Services, Mobisoft Infotech</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian shop owner planning a yearly app maintenance budget beside the words App upkeep budget",
+      "prompt": "16:9 cover. Warm cream background (#FBF6EC). Left half: flat warm editorial illustration in terracotta, mustard and sage of an Indian man in his 40s, a small business owner in a shirt, at a wooden desk in his shop office with a phone, a laptop and a paper wall calendar, writing figures in a notebook; screens and paper show only abstract shapes, no readable text. Faces fully in frame. Right half: the title in very large bold black sans-serif, left-aligned, on two lines, exactly: \"App upkeep\" / \"budget\". No logos, no other text."
+    },
+    {
+      "file": "1.webp",
+      "kind": "infographic",
+      "alt": "Infographic of the seven things yearly app maintenance pays for",
+      "prompt": "Clean flat explainer infographic, 16:9, warm cream background (#FBF6EC), simple flat illustration icons, dark-blue rounded label pills with white text, orange arrows, bold black sans-serif heading at the top, one-line bold black takeaway at the bottom. Use exactly the text given, spelled exactly, and no other text, logos or numbers. Heading: \"What app maintenance pays for\". Centre: a phone icon with orange arrows pointing in from seven pills, each with a small icon: \"Android target API update\" (robot-free generic phone with up arrow), \"Apple SDK rebuild\" (hammer and phone, no Apple logo), \"Hosting\" (cloud), \"Monitoring\" (heartbeat line), \"Security patches\" (shield), \"Store fees\" (receipt), \"Third-party API prices\" (plug). Bottom takeaway: \"Budget 15 to 25% of build cost a year, plus bills.\""
+    },
+    {
+      "file": "2.webp",
+      "kind": "screenshot",
+      "alt": "Google Play Console Help page stating that from 31 August 2026 new apps and updates must target Android 16, API level 36",
+      "url": "https://support.google.com/googleplay/android-developer/answer/11926878?hl=en",
+      "annotate": [
+        {
+          "text": "Starting August 31, 2026:",
+          "label": "Deadline"
+        },
+        {
+          "text": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play",
+          "label": "New apps and updates"
+        },
+        {
+          "text": "Existing apps must target Android 15 (API level 35) or higher",
+          "label": "Live apps"
+        }
+      ]
+    },
+    {
+      "file": "3.webp",
+      "kind": "screenshot",
+      "alt": "Apple Developer upcoming requirements page showing that apps uploaded since 28 April 2026 must be built with Xcode 26",
+      "url": "https://developer.apple.com/news/upcoming-requirements/",
+      "annotate": [
+        {
+          "text": "SDK minimum requirements",
+          "label": "Apple rule"
+        },
+        {
+          "text": "Since April 28, 2026",
+          "label": "Date"
+        },
+        {
+          "text": "iOS and iPadOS apps uploaded to App Store Connect must target iOS 13 or later.",
+          "label": "Minimum iOS"
+        }
+      ]
+    },
+    {
+      "file": "4.webp",
+      "kind": "infographic",
+      "alt": "Infographic of a yearly app maintenance calendar with store deadlines and WhatsApp rate dates",
+      "prompt": "Clean flat explainer infographic, 16:9, warm cream background (#FBF6EC), simple flat illustration icons, dark-blue rounded label pills with white text, orange arrows, bold black sans-serif heading at the top, one-line bold black takeaway at the bottom. Use exactly the text given, spelled exactly, and no other text, logos or numbers. Heading: \"Your app's maintenance calendar\". A horizontal 12-month timeline from \"Jan\" to \"Dec\" with month labels. Pills placed on it: at Jan, Apr, Jul and Oct a small pill \"WhatsApp rates may change\" (chat bubble icon, one pill shown once with four orange tick marks pointing to Jan, Apr, Jul, Oct); at Apr a pill \"Apple: new Xcode required\" (hammer icon); at Aug a pill \"Google Play: 31 Aug target API deadline\" (calendar icon); a pill at the right end \"Apple fee: every year\" (receipt icon). Bottom takeaway: \"Put the deadlines in the calendar before they find you.\""
+    },
+    {
+      "file": "5.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a D2C brand owner and a developer reviewing a monthly cloud bill on a laptop in a small studio",
+      "prompt": "3:2 scene illustration, warm cream background (#FBF6EC), flat warm editorial style, terracotta, mustard and sage palette, soft shadows. A young Indian woman who runs a clothing D2C brand sits beside a young Indian developer at a table in her small studio, shelves of folded fabric and packed parcels behind; the laptop shows an abstract bar chart, no readable text, no logos. Both faces fully in frame."
+    }
+  ]
+}

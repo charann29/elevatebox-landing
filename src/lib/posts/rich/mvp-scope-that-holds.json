@@ -1,0 +1,195 @@
+{
+  "slug": "mvp-scope-that-holds",
+  "locale": "en",
+  "title": "How to scope an MVP: guide for Indian startups",
+  "description": "How to scope an MVP in India: Eric Ries's definition, MoSCoW with the 60% rule, a scope document, fixed price vs time and materials, and DPIIT benefits.",
+  "imageUrl": "/assets/blog/mvp-scope-that-holds/cover.webp",
+  "imageAlt": "Illustration of an Indian founder sorting MVP features on sticky notes beside the words Scope your MVP",
+  "ogImageUrl": null,
+  "tags": [
+    "MVP",
+    "startups",
+    "product scope",
+    "India"
+  ],
+  "readingTimeMinutes": 16,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "what-an-mvp-actually-is",
+      "text": "What an MVP actually is",
+      "level": 2
+    },
+    {
+      "id": "must-have-vs-later-the-four-moscow-buckets",
+      "text": "Must-have vs later: the four MoSCoW buckets",
+      "level": 2
+    },
+    {
+      "id": "a-quick-test-for-every-feature",
+      "text": "A quick test for every feature",
+      "level": 2
+    },
+    {
+      "id": "writing-a-scope-document-a-developer-can-price",
+      "text": "Writing a scope document a developer can price",
+      "level": 2
+    },
+    {
+      "id": "step-by-step-scoping-your-mvp-in-a-week",
+      "text": "Step by step: scoping your MVP in a week",
+      "level": 2
+    },
+    {
+      "id": "fixed-price-or-time-and-materials",
+      "text": "Fixed price or time and materials",
+      "level": 2
+    },
+    {
+      "id": "what-an-mvp-costs-and-what-moves-the-number",
+      "text": "What an MVP costs, and what moves the number",
+      "level": 2
+    },
+    {
+      "id": "startup-india-recognition-what-helps-an-early-founder",
+      "text": "Startup India recognition: what helps an early founder",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples",
+      "text": "Three worked examples",
+      "level": 2
+    },
+    {
+      "id": "a-clinic-booking-app",
+      "text": "A clinic booking app",
+      "level": 3
+    },
+    {
+      "id": "a-distributors-ordering-app",
+      "text": "A distributor's ordering app",
+      "level": 3
+    },
+    {
+      "id": "a-coaching-institute-app",
+      "text": "A coaching institute app",
+      "level": 3
+    },
+    {
+      "id": "six-scope-creep-traps",
+      "text": "Six scope-creep traps",
+      "level": 2
+    },
+    {
+      "id": "a-one-page-scope-checklist",
+      "text": "A one-page scope checklist",
+      "level": 2
+    },
+    {
+      "id": "frequently-asked-questions",
+      "text": "Frequently asked questions",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is an MVP in simple words?",
+      "a": "It is the first version of a product that lets you learn whether customers want it, with the least effort. Eric Ries, who popularised the term, defined it in 2009 as the version that collects the maximum validated learning about customers with the least effort, and wrote that it is not about creating minimal products."
+    },
+    {
+      "q": "How many features should an MVP have?",
+      "a": "There is no right number. What matters is effort: the Agile Business Consortium's MoSCoW guidance says Must Have effort should not exceed 60% of the total, with around 20% in Could Haves you can drop if estimates slip."
+    },
+    {
+      "q": "What does MoSCoW stand for?",
+      "a": "Must Have, Should Have, Could Have and Won't Have this time. The Agile Business Consortium says MUST stands for Minimum Usable SubseT."
+    },
+    {
+      "q": "Should I choose fixed price or time and materials for my MVP?",
+      "a": "For a first MVP built by an outside team, I lean towards fixed price on a written scope, because it forces the scoping to happen first. Time and materials suits work nobody can scope yet; cap it by weeks and budget."
+    },
+    {
+      "q": "How much does an MVP cost in India?",
+      "a": "It depends on hours and rate, and the hours depend on user roles, platforms, integrations and how clear the scope is. I do not quote a single figure without a scope. Write the scope first and get it priced by more than one team."
+    },
+    {
+      "q": "Do I need DPIIT recognition before building an MVP?",
+      "a": "No, but check eligibility early. Recognition is free, applied for through the National Single Window System, and some benefits, such as the 80-IAC tax holiday, need a private limited company or LLP incorporated after 1 April 2016."
+    },
+    {
+      "q": "Who should own the code of my MVP?",
+      "a": "Your company. The contract should say that code, cloud accounts and app store accounts are in your company's name from the start, whoever builds it."
+    }
+  ],
+  "contentHtml": "<h2 id=\"what-an-mvp-actually-is\">What an MVP actually is</h2><p><strong>In short:</strong> An MVP is the smallest version of your product that lets you learn whether real customers want it, not the smallest app you can afford. Scope it by writing down the one job it must do, sorting every feature with MoSCoW, keeping Must Haves to about 60% of the effort, and getting a written scope priced before anyone writes code.</p><p>The term comes from Eric Ries. In a post on his blog dated 3 August 2009, he defined the <a href=\"http://www.startuplessonslearned.com/2009/08/minimum-viable-product-guide.html\" rel=\"noopener noreferrer nofollow\">minimum viable product</a> as \"that version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort.\" In the same post he wrote that \"MVP, despite the name, is not about creating minimal products.\"</p><figure><img src=\"/assets/blog/mvp-scope-that-holds/5.webp\" alt=\"Annotated view of Eric Ries's 2009 post defining the minimum viable product\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Ries's 2009 definition: an MVP is about learning, not about being small.</figcaption></figure><p>That second line is the one founders skip. The <a href=\"https://theleanstartup.com/principles\" rel=\"noopener noreferrer nofollow\">Lean Startup principles</a> describe a startup's basic activity as turning ideas into products, measuring how customers respond, and learning whether to pivot or persevere. The MVP is the first turn of that loop. If it cannot tell you something you did not know, it is too small, however little it cost.</p><p>If you want your scope and cost written down before you commit, this is what our ₹3,500 requirement analysis produces: a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). The rest of this post needs nothing from us.</p><p>This guide was checked in November 2026, against Startup India's recognition pages and the Agile Business Consortium's MoSCoW guidance. Government scheme details change, so check the linked pages before you apply for anything.</p><h2 id=\"must-have-vs-later-the-four-moscow-buckets\">Must-have vs later: the four MoSCoW buckets</h2><p>MoSCoW is a way of sorting requirements that comes from DSDM, the agile framework whose guidance the Agile Business Consortium publishes. Its four buckets are below, in the consortium's own words where it gives them.</p><p><em>The four MoSCoW buckets and what they mean for an MVP</em></p><table><thead><tr><th>Bucket</th><th>Agile Business Consortium definition</th><th>What it means for your MVP</th></tr></thead><tbody><tr><td>Must Have</td><td>The Minimum Usable SubseT (MUST) of requirements which the project guarantees to deliver</td><td>Without it, the product cannot do its one job or cannot legally go live</td></tr><tr><td>Should Have</td><td>Important but not vital</td><td>Painful to leave out, but there is a workaround for now</td></tr><tr><td>Could Have</td><td>Wanted or desirable but less important</td><td>The first thing to drop when time runs short</td></tr><tr><td>Won't Have this time</td><td>Requirements the project team has agreed will not be delivered in this timeframe</td><td>Written down on purpose, so nobody asks again mid-build</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.agilebusiness.org/?p=1907\" rel=\"noopener noreferrer nofollow\"><em>Agile Business Consortium, What is MoSCoW prioritization</em></a><em>, read 16 November 2026.</em></p><p>The guidance that makes MoSCoW work is about effort, not about counting features. The consortium says Must Have effort should not exceed 60% of the total, with a pool of Could Haves typically around 20%. The point of that split is a buffer: if estimates turn out wrong, the team drops Could Haves and still ships every Must.</p><p>An MVP where every feature is a Must Have has no buffer at all. Any delay becomes a missed date, and any missed date becomes an argument.</p><figure><img src=\"/assets/blog/mvp-scope-that-holds/1.webp\" alt=\"Explainer of MoSCoW for an MVP: Must Have about 60% of effort, Should Have, Could Have about 20%, and Won't Have this time\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Keep Must Haves to about 60% of the effort so there is room to drop something.</figcaption></figure><h2 id=\"a-quick-test-for-every-feature\">A quick test for every feature</h2><p>When a founder sends me a feature list, I ask four questions of each line. They are mine, not part of any framework, but they map onto the buckets.</p><ul><li><strong>Does the core job fail without it?</strong> A booking app without booking fails. A booking app without a referral programme does not. Yes means Must Have.</li><li><strong>Will a real user hit it in their first week?</strong> If not, it can wait for the second release.</li><li><strong>Is there a manual workaround?</strong> Admins approving accounts by hand, invoices sent from your accounting software, reports pulled into a spreadsheet. If a person can do it for the first hundred customers, it is a Should or Could.</li><li><strong>Does it help you learn the thing you are testing?</strong> If the MVP exists to test whether clinics will pay, payment collection is a Must. A dashboard of vanity numbers is not.</li></ul><p>The manual workaround question removes more scope than the other three together. Many 'must have' admin panels are really a founder not wanting to do something by hand for three months.</p><h2 id=\"writing-a-scope-document-a-developer-can-price\">Writing a scope document a developer can price</h2><p>A feature list is not a scope. Two developers can read 'user login' and quote very different amounts, because one pictures phone OTP and the other pictures OTP, Google sign-in, password reset and account deletion. A scope document closes that gap.</p><p>What I would put in one, in this order:</p><ol><li><strong>The one job.</strong> One sentence: who uses it, to do what, instead of what they do today.</li><li><strong>Users and roles.</strong> Customer, staff, admin. What each can see and change.</li><li><strong>Screens or flows.</strong> Each Must Have as a short flow: what the user taps, what they see, what happens next. Rough sketches on paper are fine.</li><li><strong>Integrations.</strong> Payment gateway, SMS or WhatsApp, maps, an existing ERP or accounting tool. Each one named, because each one is work.</li><li><strong>Platforms.</strong> Android, iPhone, web, or which of them first.</li><li><strong>Won't Have list.</strong> The features you have agreed to leave out. This list is what protects the price.</li><li><strong>Acceptance.</strong> How you will decide each feature is done, in plain words a non-developer can test.</li><li><strong>Ownership.</strong> Code, cloud accounts and app store accounts in your company's name from day one.</li></ol><p>How a developer turns this into hours is its own subject; our post on <a href=\"/blogs/estimating-software-honestly\">estimating software honestly</a> explains what a good estimate shows its working on.</p><h2 id=\"step-by-step-scoping-your-mvp-in-a-week\">Step by step: scoping your MVP in a week</h2><p>This is the order I would do it in, one step a day or so, before talking to anyone about price.</p><p><strong>Step 1. Write the one job and the one question.</strong> The job is what the product does. The question is what you need to learn from it, such as 'will 20 clinics pay a monthly fee to take bookings online?'</p><p><strong>Step 2. List every feature anyone has mentioned.</strong> Yours, your co-founder's, an investor's, a competitor's. Do not argue yet.</p><p><strong>Step 3. Run the four-question test on each line.</strong> Mark each as Must, Should, Could or Won't.</p><p><strong>Step 4. Cut Musts until they feel uncomfortable.</strong> If more than about half the list is Must Have, you have not finished. Push features to Should where a manual workaround exists.</p><p><strong>Step 5. Sketch the Must Have flows.</strong> On paper or in a design tool. Every screen you cannot draw is a decision you have not made.</p><p><strong>Step 6. Write the scope document.</strong> Use the eight sections above. Put the Won't Have list in the same document, not in your head.</p><p><strong>Step 7. Get it priced as written, by more than one team.</strong> Ask each to list what they assumed. Differences in assumptions tell you more than differences in price.</p><figure><img src=\"/assets/blog/mvp-scope-that-holds/2.webp\" alt=\"Illustration of two Indian founders sorting feature sticky notes on a wall into columns\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Sorting the list takes an afternoon. Agreeing on it takes longer.</figcaption></figure><h2 id=\"fixed-price-or-time-and-materials\">Fixed price or time and materials</h2><p>Once the scope is written, you choose how to pay for it. There are two common models, and neither is always right.</p><p><em>Fixed price and time and materials, compared for an MVP</em></p><table><thead><tr><th></th><th>Fixed price</th><th>Time and materials</th></tr></thead><tbody><tr><td>What you agree</td><td>A scope, a price and a timeline</td><td>A rate per hour or month, and a team</td></tr><tr><td>Who carries estimate risk</td><td>Mostly the developer, within the agreed scope</td><td>Mostly you</td></tr><tr><td>How change is handled</td><td>A written change request, priced separately</td><td>Absorbed into the next weeks of work, and the bill</td></tr><tr><td>Works best when</td><td>Scope is written down and stable</td><td>Scope is genuinely unknown, such as research or a prototype</td></tr><tr><td>Main risk for you</td><td>Quality cut to protect the price, or arguments over what was 'in scope'</td><td>No natural end date, cost that grows with indecision</td></tr><tr><td>What protects you</td><td>A detailed scope and a Won't Have list</td><td>Weekly demos, a budget cap and the right to stop</td></tr></tbody></table><p>For a first MVP built by an outside team, I lean towards fixed price on a written scope, because it forces the scoping work to happen before money is spent. Time and materials suits a team you already trust, or work where nobody can write the scope yet. In that case, cap it: a fixed number of weeks, then a decision.</p><p>Whichever you choose, the contract should say who owns the code, the cloud accounts and the app store listings. With us, those stay in the client's name; ask any team you talk to the same question.</p><h2 id=\"what-an-mvp-costs-and-what-moves-the-number\">What an MVP costs, and what moves the number</h2><p>I am not going to give a single rupee figure for an MVP, because I would be making it up. The price is the hours your scope needs multiplied by the team's rate, and both vary widely. What I can tell you is what moves the hours:</p><ul><li><strong>Number of user roles.</strong> A customer app plus a staff app plus an admin panel is three products sharing a database.</li><li><strong>Platforms.</strong> Android and iPhone from one cross-platform codebase often costs less than two native apps; our <a href=\"/blogs/flutter-vs-react-native\">Flutter vs React Native</a> post covers the trade-off.</li><li><strong>Integrations.</strong> Each payment gateway, messaging provider or existing system adds testing and failure cases.</li><li><strong>Real-time features.</strong> Live tracking, chat and live dashboards cost more than screens that refresh when you open them.</li><li><strong>Unclear scope.</strong> The most expensive item of all, because it shows up as rework.</li></ul><p>For the ranges we have seen and how they break down by app type, read our <a href=\"/blogs/mobile-app-development-cost-india\">mobile app development cost guide for India</a>. Then budget for running costs after launch, which are not part of the build price.</p><h2 id=\"startup-india-recognition-what-helps-an-early-founder\">Startup India recognition: what helps an early founder</h2><p>DPIIT recognition under Startup India is free and worth checking before you spend on the build, because some of its benefits bite in the first years. The <a href=\"https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html\" rel=\"noopener noreferrer nofollow\">recognition page on startupindia.gov.in</a> sets these eligibility rules:</p><ul><li>Incorporated as a private limited company, or registered as a partnership firm, LLP or cooperative society.</li><li>Turnover below ₹200 crore (₹300 crore for DeepTech startups) in every previous financial year.</li><li>Counted as a startup for up to 10 years from incorporation (20 years for DeepTech).</li><li>Working towards innovation or improvement of products, services or processes, with potential to create jobs or wealth. A business formed by splitting up or reconstructing an existing one does not qualify.</li></ul><p>You apply through the <a href=\"https://www.nsws.gov.in/\" rel=\"noopener noreferrer nofollow\">National Single Window System</a> by adding the form \"Registration as a Startup\". The same page says the Ministry of Commerce and Industry charges no fee for recognition and has not appointed any agency or representative for it, so anyone selling you \"DPIIT registration\" is selling form-filling.</p><figure><img src=\"/assets/blog/mvp-scope-that-holds/3.webp\" alt=\"Annotated view of the Startup India recognition page showing the turnover limit, the 10-year rule and the no-fee notice\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Step 1 for DPIIT recognition: check the eligibility list on the official page.</figcaption></figure><p>The benefits most relevant to an early founder, from the <a href=\"https://www.startupindia.gov.in/content/sih/en/startup-scheme.html\" rel=\"noopener noreferrer nofollow\">Startup India scheme page</a> and the recognition page:</p><ul><li><strong>Income tax holiday under Section 80-IAC.</strong> After recognition, a startup can apply for a tax holiday for 3 consecutive financial years out of its first ten. Only private limited companies and LLPs incorporated after 1 April 2016 are eligible, and it is a separate application.</li><li><strong>Self-certification.</strong> The scheme page says startups can self-certify compliance with 6 labour laws and 3 environmental laws online, with no labour law inspections for 5 years. I saw other official documents give a different count of labour laws, so check the current list for your case.</li><li><strong>Patent fees.</strong> The scheme page says startups get an 80% rebate on patent filing fees compared with other companies, plus fast-tracked patent applications.</li><li><strong>Winding up.</strong> Under the Insolvency and Bankruptcy Code, startups with simple debt structures can be wound up within 90 days of applying.</li><li><strong>Public procurement.</strong> The scheme page says manufacturing startups are exempt from 'prior experience or turnover' criteria in government tenders, without relaxing quality standards.</li></ul><p>The recognition page also links to an exemption under Section 56 of the Income Tax Act, often called angel tax. Tax rules on this have changed in recent budgets, so ask your CA whether it still matters for your fundraise before you count on it.</p><p>None of this changes how you scope the MVP. It changes when you incorporate and in what form, which is worth deciding before you sign a build contract in a company's name.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These products and feature lists are made up to show the method. They are not real clients or real figures.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>Illustrative. The one job: patients book a slot with a doctor at a two-doctor clinic without calling. The question: will patients book online if the clinic shares a link on WhatsApp?</p><p>Must Have: doctor availability, slot booking, booking confirmation, a staff view of the day's bookings. Should Have: reminders the day before, cancellation by the patient. Could Have: online payment at booking. Won't Have this time: video consultations, patient records, multiple branches. Payment drops to Could because the test is about booking, and patients can pay at the counter for now.</p><h3 id=\"a-distributors-ordering-app\">A distributor's ordering app</h3><p>Illustrative. The one job: shopkeepers reorder stock from a distributor on their phone instead of calling a salesman. The question: will shopkeepers place repeat orders without a call?</p><p>Must Have: product list with the shop's own prices, cart, order placement, an order list for the distributor's staff. Should Have: order status updates. Could Have: credit limit display. Won't Have this time: online payment, delivery tracking, sync with the distributor's accounting software. The accounting sync is the trap here: it feels essential, but staff can enter orders by hand for the first months while you find out if shopkeepers use the app at all.</p><h3 id=\"a-coaching-institute-app\">A coaching institute app</h3><p>Illustrative. The one job: students of one institute see their batch timetable, notes and test scores in one place. The question: do students open it weekly without being told to?</p><p>Must Have: phone login, batch timetable, notes as PDFs, test scores entered by staff. Should Have: announcements. Could Have: doubt-posting. Won't Have this time: live classes, fee payment, a parent app. Live classes are the feature most likely to sneak back in, and they would roughly turn this into a different product.</p><figure><img src=\"/assets/blog/mvp-scope-that-holds/4.webp\" alt=\"Explainer showing an MVP scope document with the one job, Must Have flows, integrations and a Won't Have list\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>A scope a developer can price has a Won't Have list in it.</figcaption></figure><h2 id=\"six-scope-creep-traps\">Six scope-creep traps</h2><p><strong>The investor feature.</strong> Someone on a call suggests AI, a marketplace or a referral system. It goes on the list as a Should or Won't, with a note of who asked, not into the build.</p><p><strong>The admin panel that grows.</strong> Reports, exports, filters and role permissions for a team of two. Start with the smallest admin that lets staff do the Must Have flows.</p><p><strong>'While you are in there.'</strong> Small requests made during the build, each reasonable, together a month of work. Collect them in one list and price them together after launch.</p><p><strong>Building for scale you do not have.</strong> Designing for a million users before you have a hundred. Sensible foundations, yes; our <a href=\"/blogs/tech-stack-for-a-new-startup\">tech stack post</a> covers that, but load testing for a launch to fifty clinics is not an MVP job.</p><p><strong>Copying a competitor's feature list.</strong> Their product is years old. Their feature list is the result of what they learnt, not where they started.</p><p><strong>No Won't Have list.</strong> If the scope only says what is in, everything not mentioned becomes an argument. Writing down what is out is the cheapest protection you have.</p><h2 id=\"a-one-page-scope-checklist\">A one-page scope checklist</h2><p>Before you send your scope to anyone for a price, check it against this.</p><p><em>MVP scope checklist</em></p><table><thead><tr><th>Check</th><th>Done when</th></tr></thead><tbody><tr><td>One job, one question</td><td>Both fit in one sentence each</td></tr><tr><td>MoSCoW sort</td><td>Every feature has a bucket, and Musts are roughly 60% of the effort or less</td></tr><tr><td>Manual workarounds</td><td>Every Should and Could has a note on how you will manage without it</td></tr><tr><td>Flows sketched</td><td>Every Must Have has a screen-by-screen flow</td></tr><tr><td>Integrations named</td><td>Each third-party service is listed with what it does</td></tr><tr><td>Won't Have list</td><td>Written in the same document, agreed by all founders</td></tr><tr><td>Acceptance tests</td><td>Each Must Have has a plain-words test you can run yourself</td></tr><tr><td>Ownership</td><td>Code, cloud and store accounts in the company's name</td></tr><tr><td>Company form</td><td>Incorporation and DPIIT eligibility checked before signing</td></tr></tbody></table><p>If you would like a team to do this with you rather than for you, our <a href=\"/mvp-development-company-hyderabad\">MVP development page</a> describes how we work.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-an-mvp-in-simple-words\">What is an MVP in simple words?</h3><p>It is the first version of a product that lets you learn whether customers want it, with the least effort. Eric Ries, who popularised the term, defined it in 2009 as the version that collects the maximum validated learning about customers with the least effort, and wrote that it is not about creating minimal products.</p><h3 id=\"how-many-features-should-an-mvp-have\">How many features should an MVP have?</h3><p>There is no right number. What matters is effort: the Agile Business Consortium's MoSCoW guidance says Must Have effort should not exceed 60% of the total, with around 20% in Could Haves you can drop if estimates slip.</p><h3 id=\"what-does-moscow-stand-for\">What does MoSCoW stand for?</h3><p>Must Have, Should Have, Could Have and Won't Have this time. The Agile Business Consortium says MUST stands for Minimum Usable SubseT.</p><h3 id=\"should-i-choose-fixed-price-or-time-and-materials-for-my-mvp\">Should I choose fixed price or time and materials for my MVP?</h3><p>For a first MVP built by an outside team, I lean towards fixed price on a written scope, because it forces the scoping to happen first. Time and materials suits work nobody can scope yet; cap it by weeks and budget.</p><h3 id=\"how-much-does-an-mvp-cost-in-india\">How much does an MVP cost in India?</h3><p>It depends on hours and rate, and the hours depend on user roles, platforms, integrations and how clear the scope is. I do not quote a single figure without a scope. Write the scope first and get it priced by more than one team.</p><h3 id=\"do-i-need-dpiit-recognition-before-building-an-mvp\">Do I need DPIIT recognition before building an MVP?</h3><p>No, but check eligibility early. Recognition is free, applied for through the National Single Window System, and some benefits, such as the 80-IAC tax holiday, need a private limited company or LLP incorporated after 1 April 2016.</p><h3 id=\"who-should-own-the-code-of-my-mvp\">Who should own the code of my MVP?</h3><p>Your company. The contract should say that code, cloud accounts and app store accounts are in your company's name from the start, whoever builds it.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"http://www.startuplessonslearned.com/2009/08/minimum-viable-product-guide.html\" rel=\"noopener noreferrer nofollow\">Minimum Viable Product: a guide, Eric Ries, Startup Lessons Learned</a>, read 16 November 2026</li><li><a href=\"https://theleanstartup.com/principles\" rel=\"noopener noreferrer nofollow\">The Lean Startup methodology principles, The Lean Startup</a>, read 16 November 2026</li><li><a href=\"https://www.agilebusiness.org/?p=1907\" rel=\"noopener noreferrer nofollow\">What is MoSCoW prioritization, Agile Business Consortium</a>, read 16 November 2026</li><li><a href=\"https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html\" rel=\"noopener noreferrer nofollow\">DPIIT Startup Recognition and Tax Exemption, Startup India</a>, read 16 November 2026</li><li><a href=\"https://www.startupindia.gov.in/content/sih/en/startup-scheme.html\" rel=\"noopener noreferrer nofollow\">Startup India Scheme, Startup India</a>, read 16 November 2026</li><li><a href=\"https://www.nsws.gov.in/\" rel=\"noopener noreferrer nofollow\">National Single Window System, Government of India</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian founder sorting MVP features on sticky notes beside the words Scope your MVP",
+      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian startup founder (woman in her late 20s, kurta and jeans) at a desk in a small co-working space, placing blank sticky notes into columns on a whiteboard, laptop open with abstract wireframe shapes (no readable text, no logos). Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Scope your MVP' in very large bold black sans-serif, left-aligned, on two lines ('Scope' / 'your MVP'). No other text, no logos."
+    },
+    {
+      "file": "1.webp",
+      "kind": "infographic",
+      "alt": "Explainer of MoSCoW for an MVP: Must Have about 60% of effort, Should Have, Could Have about 20%, and Won't Have this time",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'MoSCoW for your MVP'. A horizontal bar split into three parts with dark-blue label pills above each: 'Must Have: up to 60% of effort' (largest part), 'Should Have', 'Could Have: about 20%'. To the right, separate from the bar, a crossed-out box icon with pill 'Won't Have this time'. Orange arrow from 'Could Have' pointing down to small text 'drop these first if time runs short'. Small grey line: 'Effort guidance from the Agile Business Consortium'. One-line bold takeaway at bottom: 'Leave room to drop something.' White text in pills. No logos, no other text."
+    },
+    {
+      "file": "2.webp",
+      "kind": "illustration",
+      "alt": "Illustration of two Indian founders sorting feature sticky notes on a wall into columns",
+      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Two young Indian co-founders (a man and a woman) in a small office, moving blank sticky notes between four columns on a wall, one holding a marker and a cup of chai, a laptop on a table. Sticky notes and columns have no readable text. Faces fully in frame. No logos."
+    },
+    {
+      "file": "3.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of the Startup India recognition page showing the turnover limit, the 10-year rule and the no-fee notice",
+      "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "annotate": [
+        {
+          "text": "Turnover should be less than INR 200 Crores",
+          "label": "Turnover limit"
+        },
+        {
+          "text": "An entity shall be considered a startup for up to 10 years",
+          "label": "10-year rule"
+        },
+        {
+          "text": "does not charge any fee",
+          "label": "Recognition is free"
+        }
+      ]
+    },
+    {
+      "file": "4.webp",
+      "kind": "infographic",
+      "alt": "Explainer showing an MVP scope document with the one job, Must Have flows, integrations and a Won't Have list",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'What goes in an MVP scope'. A large flat document icon in the centre; around it, five dark-blue pills joined to it by orange arrows: 'The one job', 'Users and roles', 'Must Have flows', 'Integrations', 'Won't Have list'. A small padlock icon next to 'Won't Have list'. One-line bold takeaway at bottom: 'Writing down what is out protects the price.' White text in pills. No logos, no other text."
+    },
+    {
+      "file": "5.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Eric Ries's 2009 post defining the minimum viable product",
+      "url": "http://www.startuplessonslearned.com/2009/08/minimum-viable-product-guide.html",
+      "annotate": [
+        {
+          "text": "the minimum viable product is that version of a new product",
+          "label": "Ries's definition"
+        },
+        {
+          "text": "MVP, despite the name, is not about creating minimal products",
+          "label": "Not the smallest app"
+        }
+      ]
+    }
+  ]
+}

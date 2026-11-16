@@ -1,0 +1,241 @@
+{
+  "slug": "app-store-rejections",
+  "locale": "en",
+  "title": "App store rejections: why Indian apps fail review",
+  "description": "Why apps get rejected on the App Store and Google Play, with Apple's guideline numbers, India loan and health rules, D-U-N-S, testing and how to appeal.",
+  "imageUrl": "/assets/blog/app-store-rejections/cover.webp",
+  "imageAlt": "Illustration of an Indian founder reading an app rejection email on a laptop beside the words App store rejections",
+  "ogImageUrl": null,
+  "tags": [
+    "App Store",
+    "Google Play",
+    "app rejection",
+    "India"
+  ],
+  "readingTimeMinutes": 17,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "why-apps-get-rejected",
+      "text": "Why apps get rejected",
+      "level": 2
+    },
+    {
+      "id": "the-most-common-rejection-reasons-by-store",
+      "text": "The most common rejection reasons, by store",
+      "level": 2
+    },
+    {
+      "id": "apple-the-guidelines-that-catch-most-apps",
+      "text": "Apple: the guidelines that catch most apps",
+      "level": 2
+    },
+    {
+      "id": "2-1-app-completeness",
+      "text": "2.1 App Completeness",
+      "level": 3
+    },
+    {
+      "id": "2-3-accurate-metadata",
+      "text": "2.3 Accurate Metadata",
+      "level": 3
+    },
+    {
+      "id": "4-2-minimum-functionality-and-4-3-spam",
+      "text": "4.2 Minimum Functionality and 4.3 Spam",
+      "level": 3
+    },
+    {
+      "id": "5-1-1-data-collection-privacy-and-account-deletion",
+      "text": "5.1.1 Data collection, privacy and account deletion",
+      "level": 3
+    },
+    {
+      "id": "3-1-payments-in-app-purchase-or-not",
+      "text": "3.1 Payments: in-app purchase or not",
+      "level": 3
+    },
+    {
+      "id": "1-4-1-medical-apps-and-4-8-login-services",
+      "text": "1.4.1 Medical apps and 4.8 Login Services",
+      "level": 3
+    },
+    {
+      "id": "google-play-the-rules-that-stop-indian-apps",
+      "text": "Google Play: the rules that stop Indian apps",
+      "level": 2
+    },
+    {
+      "id": "the-testing-rule-for-new-personal-accounts",
+      "text": "The testing rule for new personal accounts",
+      "level": 3
+    },
+    {
+      "id": "organisation-accounts-and-the-d-u-n-s-number",
+      "text": "Organisation accounts and the D-U-N-S number",
+      "level": 3
+    },
+    {
+      "id": "personal-loan-apps-in-india",
+      "text": "Personal loan apps in India",
+      "level": 3
+    },
+    {
+      "id": "health-apps-declaration",
+      "text": "Health apps declaration",
+      "level": 3
+    },
+    {
+      "id": "the-data-safety-form",
+      "text": "The Data safety form",
+      "level": 3
+    },
+    {
+      "id": "account-deletion",
+      "text": "Account deletion",
+      "level": 3
+    },
+    {
+      "id": "target-api-level",
+      "text": "Target API level",
+      "level": 3
+    },
+    {
+      "id": "step-by-step-a-submission-that-passes-first-time",
+      "text": "Step by step: a submission that passes first time",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples",
+      "text": "Three worked examples",
+      "level": 2
+    },
+    {
+      "id": "a-clinic-booking-app",
+      "text": "A clinic booking app",
+      "level": 3
+    },
+    {
+      "id": "a-d2c-clothing-brand",
+      "text": "A D2C clothing brand",
+      "level": 3
+    },
+    {
+      "id": "a-coaching-institute",
+      "text": "A coaching institute",
+      "level": 3
+    },
+    {
+      "id": "how-to-reply-to-a-rejection-and-how-to-appeal",
+      "text": "How to reply to a rejection, and how to appeal",
+      "level": 2
+    },
+    {
+      "id": "ways-the-advice-online-misleads-you",
+      "text": "Ways the advice online misleads you",
+      "level": 2
+    },
+    {
+      "id": "a-pre-submission-checklist",
+      "text": "A pre-submission checklist",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the most common reason Apple rejects apps?",
+      "a": "Apple says that on average over 40% of unresolved issues relate to guideline 2.1, App Completeness. That covers crashes, placeholder content, broken links and missing information such as a demo login. Testing on a real device and giving the reviewer a working demo account removes most of it."
+    },
+    {
+      "q": "How long does app review take?",
+      "a": "Apple says it reviews at least 50% of submissions in under 24 hours and 90% in under 48 hours. Google says review for certain developer accounts can take up to seven days or longer in exceptional cases. New personal Google accounts also need a 14-day closed test before they can apply for production."
+    },
+    {
+      "q": "Do I need 12 testers to publish on Google Play?",
+      "a": "Only if you have a personal developer account created after 13 November 2023. Those accounts must run a closed test with at least 12 testers opted in continuously for 14 days, then apply for production access. The rule is written for personal accounts, so organisation accounts avoid it."
+    },
+    {
+      "q": "Is a D-U-N-S number free in India?",
+      "a": "Yes. Apple and Google both say the number is free from Dun &amp; Bradstreet, and Google warns about services that charge high fees for it. Apple says to allow up to 5 business days for the number and up to 2 more business days before Apple receives it."
+    },
+    {
+      "q": "Can I use Razorpay or PhonePe inside my app?",
+      "a": "For physical goods and services used outside the app, yes, and both stores require it. For digital content or features, such as recorded courses or premium features, Apple's guideline 3.1.1 and Google's Payments policy require the stores' own billing. Apple allows other payment methods for live one-to-one services."
+    },
+    {
+      "q": "Can I publish a personal loan app in India?",
+      "a": "Only if your app is on the RBI's list of digital lending apps deployed by regulated entities and you submit a licence, according to Google's Financial Services policy. You also need an organisation account, the Finance category and full disclosure of APR and repayment terms. Loans cannot require full repayment in 60 days or less."
+    },
+    {
+      "q": "How do I appeal an App Store rejection?",
+      "a": "Reply to App Review in App Store Connect first, since many issues are fixed that way. If you think the review was wrong, appeal to the App Review Board with specific reasons why the app complies. Apple allows one appeal per rejected submission."
+    }
+  ],
+  "contentHtml": "<h2 id=\"why-apps-get-rejected\">Why apps get rejected</h2><p><strong>In short:</strong> Most rejections are not about clever policy traps. On the App Store, Apple says over 40% of unresolved issues fall under guideline 2.1, App Completeness: crashes, placeholder content, missing demo logins. On Google Play, Indian teams can get stuck before review even starts, on the testing rule for new personal accounts, the Data safety form, account deletion, or the wrong account type for a health or loan app.</p><p>I read Apple's App Review Guidelines (last updated 16 October 2026) and the Google Play Console help pages that matter for Indian businesses, and wrote down only what they actually say. Where I quote a rule, I give the guideline number or the policy name, so your developer can check it in two minutes.</p><p>This guide was checked in November 2026. Both stores change these rules, so treat the numbers below as correct on the day I read them and look again before a big launch.</p><h2 id=\"the-most-common-rejection-reasons-by-store\">The most common rejection reasons, by store</h2><p><em>Common rejection reasons and the rule behind each</em></p><table><thead><tr><th>What went wrong</th><th>App Store rule</th><th>Google Play rule</th></tr></thead><tbody><tr><td>App crashes, has placeholder text, or the reviewer cannot log in</td><td>2.1 App Completeness</td><td>New personal accounts must pass a 14-day closed test before production</td></tr><tr><td>Screenshots or description promise more than the app does</td><td>2.3 Accurate Metadata (2.3.3 for screenshots)</td><td>Metadata policy</td></tr><tr><td>The app is mostly a website in a wrapper</td><td>4.2 Minimum Functionality</td><td>Spam policy bans webviews of a site only without the owner's permission</td></tr><tr><td>Several near-identical apps (one per city or branch)</td><td>4.3 Spam</td><td>Spam policy: Repetitive Content</td></tr><tr><td>No privacy policy, or one that does not match the app</td><td>5.1.1(i) Privacy Policies</td><td>Data safety form plus privacy policy link, required for every app</td></tr><tr><td>Users can sign up but cannot delete their account</td><td>5.1.1(v) Account Sign-In</td><td>Account deletion requirement: in-app path and a web link</td></tr><tr><td>Health, finance or loan app from an individual developer</td><td>5.1.1(ix) regulated fields</td><td>Organisation account required for financial and health apps</td></tr><tr><td>Digital content sold without the store's billing</td><td>3.1.1 In-App Purchase</td><td>Payments policy: Google Play's billing system</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.apple.com/distribute/app-review/\" rel=\"noopener noreferrer nofollow\"><em>Apple App Review, Avoiding common issues</em></a><em> and </em><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\"><em>App Review Guidelines</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/13634885\" rel=\"noopener noreferrer nofollow\"><em>Google Play Console Help</em></a><em>, read 16 November 2026.</em></p><figure><img src=\"/assets/blog/app-store-rejections/4.webp\" alt=\"Screenshot of Apple's App Review page showing the common issues section\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple's App Review page, where it says over 40% of unresolved issues relate to guideline 2.1.</figcaption></figure><p>Apple publishes the 40% figure itself on its App Review page, under \"Avoiding common issues\". I found no equivalent figure from Google.</p><p>Apple says at least 50% of submissions are reviewed in under 24 hours and 90% in under 48 hours. Google's publishing page says that for certain developer accounts, review can take up to seven days or longer in exceptional cases.</p><figure><img src=\"/assets/blog/app-store-rejections/1.webp\" alt=\"Infographic of the five most common app rejection reasons and the guideline behind each\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The five rejections I would check for first, and the rule each one comes from.</figcaption></figure><h2 id=\"apple-the-guidelines-that-catch-most-apps\">Apple: the guidelines that catch most apps</h2><p>Apple's guidelines have five sections. These are the rules Indian business apps trip on most.</p><h3 id=\"2-1-app-completeness\">2.1 App Completeness</h3><p>Apple asks for final versions with all metadata and working URLs, and says placeholder text, empty websites and other temporary content should be removed before submission. It also asks you to test on a device and to include demo account details, with your back-end switched on, if the app has a login.</p><p>That last part is easy to miss for Indian apps. The app logs in with an OTP to an Indian mobile number, the reviewer is not in India, and there is no way in. Give the reviewer a demo account that works without an Indian SIM, write the steps in the App Review Information section, and keep the test server running until the app is approved.</p><h3 id=\"2-3-accurate-metadata\">2.3 Accurate Metadata</h3><p>Your description, screenshots and previews must reflect the app's core experience. Apple also wants new features described with specificity in the Notes for Review; it says generic descriptions will be rejected.</p><h3 id=\"4-2-minimum-functionality-and-4-3-spam\">4.2 Minimum Functionality and 4.3 Spam</h3><p>Guideline 4.2 says an app should offer features, content and interface that take it beyond a repackaged website, and that apps should not be mainly marketing material, web clippings or a collection of links.</p><p>Guideline 4.3 targets duplicates. Apple's own example is a separate map app for every city instead of one app that lets users search any city. For an Indian business that has a branch in Hyderabad and another in Bengaluru, the answer is one app with a city picker, not two apps.</p><h3 id=\"5-1-1-data-collection-privacy-and-account-deletion\">5.1.1 Data collection, privacy and account deletion</h3><p>Under 5.1.1(i), every app needs a privacy policy link both in App Store Connect and inside the app. The policy must say what data you collect, how, and every use of it, and confirm that third parties you share it with protect it to the same standard. Apple's App Review page adds that it must explain retention and deletion, and how a user can revoke consent or ask for deletion.</p><p>Under 5.1.1(v), if your app supports account creation, you must also offer account deletion within the app.</p><p>Under 5.1.1(ix), apps in highly regulated fields, which Apple lists as including banking and financial services, healthcare, gambling, air travel and crypto exchanges, should be submitted by the legal entity that provides the services, not by an individual developer.</p><h3 id=\"3-1-payments-in-app-purchase-or-not\">3.1 Payments: in-app purchase or not</h3><p>Guideline 3.1.1 says that if you want to make features or content available for payment inside the app, such as subscriptions, premium content or a full version, you must use in-app purchase. But 3.1.3(e) says the opposite for physical goods and services consumed outside the app: there you must use other payment methods, such as Apple Pay or card entry. And 3.1.3(d) allows other payment methods for real-time person-to-person services between two people, like one-to-one tutoring or a medical consultation, while one-to-few and one-to-many real-time services must use in-app purchase.</p><figure><img src=\"/assets/blog/app-store-rejections/5.webp\" alt=\"Explainer of which payment method each kind of in-app sale must use on the App Store and Google Play\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>What you sell decides whether you use the store's billing or your own gateway.</figcaption></figure><p>This matters a lot for India, where your Razorpay or PhonePe checkout is probably already built. A grocery or clothing app can keep it. A recorded-course app cannot.</p><h3 id=\"1-4-1-medical-apps-and-4-8-login-services\">1.4.1 Medical apps and 4.8 Login Services</h3><p>Guideline 1.4.1 says medical apps that could give inaccurate data, or be used to diagnose or treat patients, may get greater scrutiny. Apps that claim to measure blood pressure, blood glucose or blood oxygen with only the phone's sensors are not permitted, and apps should remind users to check with a doctor.</p><p>Guideline 4.8 says that if you use a third-party or social login, such as Google Sign-In or Facebook Login, as the user's primary account, you must also offer an equivalent login option that limits data collection to name and email and lets users keep their email private.</p><h2 id=\"google-play-the-rules-that-stop-indian-apps\">Google Play: the rules that stop Indian apps</h2><p>On Google Play, I would worry as much about the setup around review as about review itself.</p><h3 id=\"the-testing-rule-for-new-personal-accounts\">The testing rule for new personal accounts</h3><p>Google Play requires personal developer accounts created after 13 November 2023 to run a closed test with at least 12 testers who have been opted in continuously for at least 14 days. Only then can you apply for production access on the Play Console dashboard, where you answer questions about the app, the testing and whether it is ready. Until then, the Production track stays switched off.</p><p>Many Indian founders open a personal account because it is quicker, then discover a two-week wait at launch. The rule is written for personal accounts, so an organisation account avoids it.</p><figure><img src=\"/assets/blog/app-store-rejections/2.webp\" alt=\"Screenshot of Google's help page on testing requirements for new personal developer accounts\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's own wording: 12 testers, opted in for 14 days, for personal accounts created after 13 November 2023.</figcaption></figure><h3 id=\"organisation-accounts-and-the-d-u-n-s-number\">Organisation accounts and the D-U-N-S number</h3><p>Google says you must choose an organisation account if you provide financial products and services (including loans), health apps such as medical apps, VPN apps, or government apps. To create one, you need a D-U-N-S number, which Google uses to verify your organisation. Google points out that applying through Dun &amp; Bradstreet is free, and warns about third-party services that charge high fees for this free registration.</p><p>Apple asks for the same number when you enrol as an organisation. Its D-U-N-S page says to allow up to 5 business days to receive the number from D&amp;B, and then up to 2 more business days before Apple has your details. So start this a fortnight before you need the account, not the day before launch.</p><h3 id=\"personal-loan-apps-in-india\">Personal loan apps in India</h3><p>Google's Financial Services policy has an India section. Only apps that submit a licence and appear on the RBI's list of \"Digital lending apps (DLAs) deployed by Regulated Entities\" may submit personal loan apps. If you are a platform connecting users to registered NBFCs or banks rather than lending yourself, you must say so in the declaration and name every NBFC and bank prominently in the app description.</p><p>Everywhere, Google requires loan apps to sit in the Finance category and to show the minimum and maximum repayment period, the maximum APR and a representative example of the total cost. Loans must not require full repayment in 60 days or less, and lending apps may not access contacts or photos. Apple's guideline 3.2.2(ix) has a similar rule: disclose the maximum APR and due date, no maximum APR above 36% including fees, and no full repayment in 60 days or less.</p><h3 id=\"health-apps-declaration\">Health apps declaration</h3><p>Google requires some developers to complete the Health apps declaration on the App content page in Play Console. Its help page counts medical apps, health and fitness apps and health research apps as health apps, so a clinic booking app or a diet tracker is likely in scope.</p><h3 id=\"the-data-safety-form\">The Data safety form</h3><p>Every app published on Google Play must complete the Data safety form, including apps on closed, open or production tracks. Only apps active solely on internal testing are exempt. Even an app that collects nothing must fill it in and link a privacy policy. The declaration covers data collected through third-party libraries and SDKs too, so your analytics, crash reporting and ads SDKs count. Google says that when it finds a discrepancy between your app's behaviour and your declaration, it may take enforcement action.</p><h3 id=\"account-deletion\">Account deletion</h3><p>If your app lets users create an account, Google's User Data policy requires two things: an in-app path to delete the account and its data, and a web link where users can request deletion without the app. The web link is the part teams forget, and it is shown on your store listing.</p><h3 id=\"target-api-level\">Target API level</h3><p>Since 31 August 2026, new apps and app updates must target Android 16 (API level 36) to be submitted to Google Play, with exceptions for Wear OS, Automotive, TV and XR apps. The extension Google offered ran to 1 November 2026, so it has now passed.</p><figure><img src=\"/assets/blog/app-store-rejections/3.webp\" alt=\"Illustration of an Indian app developer and a business owner checking a store submission checklist together\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Most of these checks take an afternoon, if you do them before submission.</figcaption></figure><h2 id=\"step-by-step-a-submission-that-passes-first-time\">Step by step: a submission that passes first time</h2><p><strong>Step 1. Pick the right account type.</strong> If you are a business, and especially if you are in health, finance or loans, open organisation accounts on both stores. Get the D-U-N-S number first.</p><p><strong>Step 2. Check which payment rule applies.</strong> Physical goods and services: your own gateway. Digital content and features: the store's billing, under Apple 3.1.1 and Google's Payments policy. Live one-to-one services on iOS: either.</p><p><strong>Step 3. Build account deletion and a privacy policy into the first version.</strong> In-app deletion for both stores, plus the web deletion link for Google. A privacy policy that names your SDKs and says how long you keep data.</p><p><strong>Step 4. Fill in the declarations from the code, not from memory.</strong> Ask your developer for the list of SDKs and the permissions the app requests. Use that to answer the Data safety form, Apple's privacy details and, if relevant, the Health apps or financial features declarations.</p><p><strong>Step 5. Run the closed test.</strong> For a new personal Google account, line up 12 real testers and keep them opted in for 14 days. Even if you do not need it, a short closed test catches the crash that would otherwise fail guideline 2.1.</p><p><strong>Step 6. Prepare the reviewer's path.</strong> A demo account that works without an Indian mobile number or OTP, written steps for any feature behind a login, and a test server that stays up.</p><p><strong>Step 7. Check the listing against the app.</strong> Every screenshot shows something the reviewer can reach. No \"coming soon\". The support link and privacy link both open.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses below are illustrative. They are not clients, and the details are there to show how the rules combine.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>A two-doctor clinic in Hyderabad wants patients to book slots, see reports and pay the consultation fee. On Google Play, a medical app needs an organisation account and probably the Health apps declaration. On iOS, guideline 5.1.1(ix) means the clinic's own legal entity should submit it. A paid video consultation between one doctor and one patient falls under 3.1.3(d), so the clinic's existing gateway can be used. If the app showed anything like a blood pressure reading from the phone camera, 1.4.1 would stop it.</p><h3 id=\"a-d2c-clothing-brand\">A D2C clothing brand</h3><p>A small kurta brand wants an app version of its Shopify store. Physical goods mean Apple's 3.1.3(e) and Google's Payments policy both require it to use its own checkout, not the stores' billing. The real risk is 4.2: if the app is the website in a wrapper, Apple may reject it. Features that only make sense on a phone, such as saved sizes, order tracking and back-in-stock alerts, are what get it through. Customers create accounts, so in-app deletion and Google's web deletion link are required.</p><h3 id=\"a-coaching-institute\">A coaching institute</h3><p>A NEET coaching institute wants to sell recorded lectures and run live batch classes. Recorded lectures are digital content, so on iOS they fall under 3.1.1 and need in-app purchase, and on Android they fall under Google Play's billing rule. A live class for a batch of 40 students is one-to-many, which Apple's 3.1.3(d) says must use in-app purchase too. One-to-one doubt sessions could use the institute's own gateway on iOS. Read guideline 3.1.3 in full with your developer before deciding the flow.</p><h2 id=\"how-to-reply-to-a-rejection-and-how-to-appeal\">How to reply to a rejection, and how to appeal</h2><p>Apple's rejections name the guideline the app did not follow, and you can reply to App Review in App Store Connect before resubmitting. A missing demo login is often fixed in a reply.</p><p>If you think Apple misunderstood the app or treated you unfairly, you can appeal to the App Review Board. Apple asks you to give specific reasons why the app complies, to submit only one appeal per rejected submission, and to answer any requests for information first. Apple also offers 30-minute Webex appointments with App Review to talk through guidelines and common rejections, which I would use before a complex launch rather than after a rejection.</p><p>On Google Play, you can submit one appeal per app removal, suspension or other enforcement action. Google says it reinstates apps in appropriate circumstances, including when it made an error. Two details worth knowing: if your app was suspended after a warning, an appeal is required, and Google can only respond to appeals in Chinese, English, Japanese and Korean. Write the appeal in English, even if the app is in Telugu or Hindi.</p><h2 id=\"ways-the-advice-online-misleads-you\">Ways the advice online misleads you</h2><p>\"A web wrapper is fine if it looks like an app.\" Guideline 4.2 is about what the app does, not how it looks. A good design does not rescue a repackaged website.</p><p>\"A personal account is fine for a business.\" It is quicker to open, but it adds the 14-day test, and it is the wrong account for health or loan apps on Google Play.</p><p>\"The Data safety form is a formality.\" Google checks it against app behaviour, and the SDKs you include count as your data collection.</p><h2 id=\"a-pre-submission-checklist\">A pre-submission checklist</h2><p><em>A pre-submission check, both stores</em></p><table><thead><tr><th>Check</th><th>Store</th><th>Done when</th></tr></thead><tbody><tr><td>Demo account works without an Indian OTP</td><td>Both</td><td>A colleague outside your network logs in using only the notes</td></tr><tr><td>Privacy policy link in the listing and inside the app</td><td>Both</td><td>Both links open the same, current policy</td></tr><tr><td>In-app account deletion</td><td>Both</td><td>A test account is fully deleted from the app</td></tr><tr><td>Web link for account deletion</td><td>Google Play</td><td>Link works without installing the app</td></tr><tr><td>Data safety form matches the SDK list</td><td>Google Play</td><td>Every SDK's data use is declared</td></tr><tr><td>Target API level is current</td><td>Google Play</td><td>Build targets API 36 for phone apps</td></tr><tr><td>Right payment method for each item sold</td><td>Both</td><td>Digital items use store billing, physical items use your gateway</td></tr><tr><td>Health or financial declaration, if relevant</td><td>Google Play</td><td>Submitted from an organisation account</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\"><em>App Review Guidelines</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/10787469\" rel=\"noopener noreferrer nofollow\"><em>Data safety help</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/13327111\" rel=\"noopener noreferrer nofollow\"><em>Account deletion help</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/11926878\" rel=\"noopener noreferrer nofollow\"><em>Target API help</em></a><em>, read 16 November 2026.</em></p><p>If you want a second pair of eyes on a store submission, or on the app before it is built, our team builds and publishes <a href=\"/services/mobile-app-development\">mobile apps</a> with the store accounts, code and cloud kept in the client's name. Our ₹3,500 requirement analysis is a call with the people who will build it and ends in a written fixed quotation and timeline before any build starts (<a href=\"/book\">book it here</a>). For the security side of the same checklist, see our <a href=\"/blogs/mobile-app-security-checklist\">mobile app security checklist</a>, and for budgets, our guide to <a href=\"/blogs/mobile-app-development-cost-india\">app development cost in India</a>.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-the-most-common-reason-apple-rejects-apps\">What is the most common reason Apple rejects apps?</h3><p>Apple says that on average over 40% of unresolved issues relate to guideline 2.1, App Completeness. That covers crashes, placeholder content, broken links and missing information such as a demo login. Testing on a real device and giving the reviewer a working demo account removes most of it.</p><h3 id=\"how-long-does-app-review-take\">How long does app review take?</h3><p>Apple says it reviews at least 50% of submissions in under 24 hours and 90% in under 48 hours. Google says review for certain developer accounts can take up to seven days or longer in exceptional cases. New personal Google accounts also need a 14-day closed test before they can apply for production.</p><h3 id=\"do-i-need-12-testers-to-publish-on-google-play\">Do I need 12 testers to publish on Google Play?</h3><p>Only if you have a personal developer account created after 13 November 2023. Those accounts must run a closed test with at least 12 testers opted in continuously for 14 days, then apply for production access. The rule is written for personal accounts, so organisation accounts avoid it.</p><h3 id=\"is-a-d-u-n-s-number-free-in-india\">Is a D-U-N-S number free in India?</h3><p>Yes. Apple and Google both say the number is free from Dun &amp; Bradstreet, and Google warns about services that charge high fees for it. Apple says to allow up to 5 business days for the number and up to 2 more business days before Apple receives it.</p><h3 id=\"can-i-use-razorpay-or-phonepe-inside-my-app\">Can I use Razorpay or PhonePe inside my app?</h3><p>For physical goods and services used outside the app, yes, and both stores require it. For digital content or features, such as recorded courses or premium features, Apple's guideline 3.1.1 and Google's Payments policy require the stores' own billing. Apple allows other payment methods for live one-to-one services.</p><h3 id=\"can-i-publish-a-personal-loan-app-in-india\">Can I publish a personal loan app in India?</h3><p>Only if your app is on the RBI's list of digital lending apps deployed by regulated entities and you submit a licence, according to Google's Financial Services policy. You also need an organisation account, the Finance category and full disclosure of APR and repayment terms. Loans cannot require full repayment in 60 days or less.</p><h3 id=\"how-do-i-appeal-an-app-store-rejection\">How do I appeal an App Store rejection?</h3><p>Reply to App Review in App Store Connect first, since many issues are fixed that way. If you think the review was wrong, appeal to the App Review Board with specific reasons why the app complies. Apple allows one appeal per rejected submission.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\">App Review Guidelines, Apple</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/distribute/app-review/\" rel=\"noopener noreferrer nofollow\">App Review, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/support/D-U-N-S/\" rel=\"noopener noreferrer nofollow\">D-U-N-S Number, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/14151465\" rel=\"noopener noreferrer nofollow\">App testing requirements for new personal developer accounts, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/13634885\" rel=\"noopener noreferrer nofollow\">Choose a developer account type, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/13628312\" rel=\"noopener noreferrer nofollow\">Required information to create a Play Console developer account, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/9876821\" rel=\"noopener noreferrer nofollow\">Financial Services policy, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/13996367\" rel=\"noopener noreferrer nofollow\">Health app categories and additional information, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/10787469\" rel=\"noopener noreferrer nofollow\">Data safety section, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/13327111\" rel=\"noopener noreferrer nofollow\">Understanding Google Play's app account deletion requirements, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/11926878\" rel=\"noopener noreferrer nofollow\">Target API level requirements for Google Play apps, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/9858738\" rel=\"noopener noreferrer nofollow\">Payments policy, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/9859751\" rel=\"noopener noreferrer nofollow\">Publish your app, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/2477981\" rel=\"noopener noreferrer nofollow\">My app has been removed from Google Play, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/9899034\" rel=\"noopener noreferrer nofollow\">Spam policy, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/9898842\" rel=\"noopener noreferrer nofollow\">Metadata policy, Play Console Help</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian founder reading an app rejection email on a laptop beside the words App store rejections",
+      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian founder (man in his 30s, half-sleeve shirt) at a small office desk, looking thoughtfully at a laptop while a phone beside him shows an abstract app screen with a small red cross badge (no readable text, no Apple or Google logos). Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'App store rejections' in very large bold black sans-serif, left-aligned, on two lines ('App store' / 'rejections'). No other text, no logos."
+    },
+    {
+      "file": "1.webp",
+      "kind": "infographic",
+      "alt": "Infographic of the five most common app rejection reasons and the guideline behind each",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Why apps get rejected'. Five columns, each with a flat icon and a dark-blue rounded label pill with white text, and a smaller grey line below: 1) broken-phone icon, pill 'Crashes and placeholders', below 'Apple 2.1'; 2) key icon, pill 'No demo login', below 'Apple 2.1'; 3) globe-in-a-box icon, pill 'Website in a wrapper', below 'Apple 4.2'; 4) shield icon, pill 'No privacy policy', below 'Apple 5.1.1 / Play Data safety'; 5) trash-can icon, pill 'No account deletion', below 'Apple 5.1.1(v) / Play User Data'. Orange arrows linking columns 1 and 2 with a small note 'over 40% of unresolved issues are 2.1 (Apple)'. One-line bold takeaway at bottom: 'Most rejections are fixed before you submit.' No logos, no other text."
+    },
+    {
+      "file": "2.webp",
+      "kind": "screenshot",
+      "alt": "Screenshot of Google's help page on testing requirements for new personal developer accounts",
+      "url": "https://support.google.com/googleplay/android-developer/answer/14151465",
+      "annotate": [
+        {
+          "text": "must run a closed test for their app with a minimum of 12 testers who have been opted in continuously for at least 14 days",
+          "label": "12 testers, 14 days"
+        },
+        {
+          "text": "Google Play requires personal developer accounts created after November 13, 2023, to test their apps",
+          "label": "Who it applies to"
+        }
+      ]
+    },
+    {
+      "file": "3.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian app developer and a business owner checking a store submission checklist together",
+      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian office: a young woman developer with a laptop and a middle-aged business owner in a kurta sit side by side, a clipboard with tick boxes (no readable text) on the table, two phones showing abstract app screens, a potted plant and a window. No readable text on screens, no logos. Faces fully in frame."
+    },
+    {
+      "file": "4.webp",
+      "kind": "screenshot",
+      "alt": "Screenshot of Apple's App Review page showing the common issues section",
+      "url": "https://developer.apple.com/distribute/app-review/",
+      "annotate": [
+        {
+          "text": "On average, over 40% of unresolved issues are related to",
+          "label": "40% are guideline 2.1"
+        },
+        {
+          "text": "If some features require signing in, provide a valid demo account username and password.",
+          "label": "Demo account"
+        }
+      ]
+    },
+    {
+      "file": "5.webp",
+      "kind": "infographic",
+      "alt": "Explainer of which payment method each kind of in-app sale must use on the App Store and Google Play",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Store billing or your own gateway?'. Three rows, each starting with a flat icon and a dark-blue rounded pill with white text, then an orange arrow to a second pill: row 1: shopping-bag icon, pill 'Physical goods and services' -> orange arrow -> pill 'Your own gateway' with small grey note 'Apple 3.1.3(e), Play Payments policy'; row 2: play-button icon, pill 'Digital content and features' -> orange arrow -> pill 'Store billing' with note 'Apple 3.1.1, Play Payments policy'; row 3: two-people icon, pill 'Live one-to-one service on iOS' -> orange arrow -> pill 'Either is allowed' with note 'Apple 3.1.3(d)'. One-line bold takeaway at bottom: 'What you sell decides how you charge.' No logos, no other text."
+    }
+  ]
+}
