@@ -312,7 +312,7 @@ export default function Home() {
                   {`Our flagship · Roopa by ${COMPANY.name}`}
                 </p>
                 <h2 id="voice" className="mt-6 text-4xl font-semibold leading-[1.04] text-white sm:text-6xl">
-                  India&apos;s best <span className="text-gradient">conversational voice agent</span>
+                  India&apos;s most natural-sounding <span className="text-gradient">AI telecalling software</span>
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
                   An AI phone employee for your business. Describe the job in plain words; it calls every new lead within
