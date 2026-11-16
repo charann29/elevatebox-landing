@@ -41,7 +41,7 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
           Press send in WhatsApp and it reaches the team directly. We reply within one working day.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a href={sent.wa} target="_blank" rel="noopener" className="rounded-full bg-[#22c55e] px-6 py-3 text-center text-sm font-bold text-night">
+          <a href={sent.wa} target="_blank" rel="noopener" className="rounded-full bg-[#ffb020] px-6 py-3 text-center text-sm font-bold text-white">
             Open WhatsApp again
           </a>
           <a href={sent.mail} className="rounded-full border border-line px-6 py-3 text-center text-sm font-semibold text-ink">

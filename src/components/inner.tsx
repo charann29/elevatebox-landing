@@ -272,7 +272,7 @@ export function TrustStrip() {
             <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : "pl-1 lg:pl-0"} ${k === 2 ? "lg:border-l lg:border-white/20 lg:pl-7" : ""}`}>
               <dt className="sr-only">{s.l}</dt>
               <dd>
-                <p className="text-[34px] font-light leading-none tracking-[-0.02em] lg:text-[52px]">
+                <p className="text-[34px] font-bold leading-none tracking-[-0.02em] lg:text-[52px]">
                   <CountUp value={s.v} />
                   <span className="text-amber">+</span>
                 </p>

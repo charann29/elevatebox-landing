@@ -56,7 +56,7 @@ function VoiceCard() {
       <span>
         <span className="block text-xl font-semibold leading-snug text-white">India&apos;s most natural-sounding AI telecalling software</span>
         <span className="mt-1.5 block text-xs text-white/70">8 lakh calls a day · Telugu, Hindi, English</span>
-        <span className="mt-4 inline-flex items-center gap-1 rounded-full bg-live px-4 py-2 text-sm font-semibold text-[#04210f]">
+        <span className="mt-4 inline-flex items-center gap-1 rounded-full bg-live px-4 py-2 text-sm font-semibold text-white">
           Try it free <span aria-hidden="true">→</span>
         </span>
       </span>
@@ -150,7 +150,7 @@ export function FloatingActions() {
       <a
         href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
         aria-label="Chat on WhatsApp"
-        className="eb-float fixed bottom-6 right-6 z-40 grid size-12 place-items-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110"
+        className="eb-float fixed bottom-6 right-6 z-40 grid size-12 place-items-center rounded-full bg-amber text-white shadow-lg transition-transform hover:scale-110"
       >
         <WhatsAppIcon className="size-7" />
       </a>
@@ -267,8 +267,8 @@ export function Header() {
             </svg>
           </summary>
           <div className="absolute inset-x-0 top-full mt-2 max-h-[80vh] overflow-y-auto rounded-3xl border border-line bg-white p-5 shadow-[0_30px_60px_-30px_rgba(1,30,90,0.35)]">
-            <a href={VOICE_APP} className="mb-3 flex items-center justify-center gap-2 rounded-full bg-live px-5 py-3 text-sm font-semibold text-[#04210f]">
-              <span aria-hidden="true" className="size-2 rounded-full bg-[#04210f]" />
+            <a href={VOICE_APP} className="mb-3 flex items-center justify-center gap-2 rounded-full bg-live px-5 py-3 text-sm font-semibold text-white">
+              <span aria-hidden="true" className="size-2 rounded-full bg-white" />
               {`Try Roopa by ${COMPANY.name}`}
             </a>
             <nav className="flex flex-col gap-1" aria-label="Mobile">

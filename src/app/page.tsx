@@ -114,7 +114,7 @@ function Heading({ id, eyebrow, title, lead, dark, action }: { id: string; eyebr
 const FAN = [
   { src: "/assets/real-medibag.jpg", cls: "left-0 rotate-[-14deg] translate-y-[60px]" },
   { src: "/assets/real-vamshi-farms.jpg", cls: "left-[110px] rotate-[-7deg] translate-y-[10px] lg:left-[200px]" },
-  { src: "/assets/trh-app.webp", cls: "left-[230px] z-[2] !w-[140px] -translate-y-[30px] !shadow-[0_0_0_3px_#22c55e,0_50px_90px_-30px_rgba(0,0,0,0.7)] lg:left-[440px] lg:!w-[240px]", centre: true },
+  { src: "/assets/trh-app.webp", cls: "left-[230px] z-[2] !w-[140px] -translate-y-[30px] !shadow-[0_0_0_3px_#ffb020,0_50px_90px_-30px_rgba(0,0,0,0.7)] lg:left-[440px] lg:!w-[240px]", centre: true },
   { src: "/assets/real-oneasy.jpg", cls: "right-[110px] rotate-[7deg] translate-y-[10px] lg:right-[200px]" },
   { src: "/assets/autopilot-app.webp", cls: "right-0 rotate-[14deg] translate-y-[60px]" },
 ];
@@ -219,8 +219,8 @@ export default function Home() {
         {/* ── Hero: the 3D band, headline and the fan of live app screens ── */}
         <section className="hero-3d flex flex-col items-center overflow-hidden px-4 pt-6 text-center sm:block sm:pt-12 lg:h-[740px] lg:pt-[64px]">
           <a href={VOICE_APP} className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/20 bg-white/10 py-1 pl-1 pr-3 text-left text-xs text-white sm:gap-2.5 sm:py-1.5 sm:pl-1.5 sm:pr-4 sm:text-sm">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-live px-2.5 py-1 text-[11px] font-bold text-[#04210f]">
-              <span aria-hidden="true" className="size-1.5 rounded-full bg-[#04210f]" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-live px-2.5 py-1 text-[11px] font-bold text-white">
+              <span aria-hidden="true" className="size-1.5 rounded-full bg-white" />
               NEW
             </span>
             <span className="sm:hidden">AI calls leads in Telugu, Hindi, English</span>
@@ -291,7 +291,7 @@ export default function Home() {
               <div key={s.l} className={`px-4 lg:px-7 ${k % 2 ? "border-l border-white/20" : ""} ${k === 2 ? "lg:border-l lg:border-white/20" : ""} ${k === 0 || k === 2 ? "pl-0 lg:pl-0" : ""} ${k === 2 ? "lg:pl-7" : ""}`}>
                 <dt className="sr-only">{s.l}</dt>
                 <dd>
-                  <p className="text-[44px] font-light leading-none tracking-[-0.02em] lg:text-[72px]">
+                  <p className="text-[40px] font-bold leading-none tracking-[-0.02em] lg:text-[60px]">
                     <CountUp value={s.v} />
                     <span className="text-amber">+</span>
                   </p>
@@ -307,8 +307,8 @@ export default function Home() {
           <div className="relative overflow-hidden">
             <div className={`${COL} relative py-14 sm:py-20 lg:py-28`}>
               <div className="mx-auto max-w-3xl text-center">
-                <p className="inline-flex items-center gap-2 rounded-full bg-[#22c55e]/10 px-4 py-1.5 text-sm font-semibold text-[#4ade80] ring-1 ring-[#22c55e]/30">
-                  <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#22c55e]" />
+                <p className="inline-flex items-center gap-2 rounded-full bg-amber/10 px-4 py-1.5 text-sm font-semibold text-amber ring-1 ring-amber/30">
+                  <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-[#ffb020]" />
                   {`Our flagship · Roopa by ${COMPANY.name}`}
                 </p>
                 <h2 id="voice" className="mt-6 text-4xl font-semibold leading-[1.04] text-white sm:text-6xl">
@@ -321,9 +321,9 @@ export default function Home() {
                 <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
                   <a
                     href={VOICE_APP}
-                    className="flex items-center justify-center gap-2 rounded-full bg-[#22c55e] px-8 py-4 text-base font-semibold text-[#04210f] transition-colors hover:bg-[#16a34a]"
+                    className="flex items-center justify-center gap-2 rounded-full bg-[#ffb020] px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-[#e89a0c]"
                   >
-                    <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-night" />
+                    <span aria-hidden="true" className="size-2 animate-pulse rounded-full bg-white" />
                     Get a free demo call
                   </a>
                   <a href={VOICE_APP} className="rounded-full border border-white/15 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5">
@@ -666,7 +666,7 @@ export default function Home() {
                         <td key={v} className="p-6 text-ink-3">
                           <span className="flex items-start gap-2">
                             {v.startsWith("+") ? (
-                              <Check className="mt-0.5 size-4 shrink-0 text-[#16a34a]" />
+                              <Check className="mt-0.5 size-4 shrink-0 text-brand" />
                             ) : (
                               <Cross className="mt-0.5 size-4 shrink-0 text-ink-4" />
                             )}

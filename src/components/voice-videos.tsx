@@ -26,7 +26,7 @@ export function VoiceVideos() {
               aria-checked={lang === l}
               onClick={() => setLang(l)}
               className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
-                lang === l ? "bg-[#22c55e] text-night" : "text-white/75 hover:text-white"
+                lang === l ? "bg-[#ffb020] text-white" : "text-white/75 hover:text-white"
               }`}
             >
               {l === "te" ? "తెలుగు" : "English"}
