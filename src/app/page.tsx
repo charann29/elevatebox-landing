@@ -20,7 +20,7 @@ import { VoiceVideos } from "@/components/voice-videos";
 import { CountUp } from "@/components/count-up";
 import { JsonLd, ORG, faqPage, ld } from "@/lib/schema";
 
-export const metadata: Metadata = pageMeta("App, Web & AI Development Company in Hyderabad | ElevateBox", "ElevateBox builds mobile apps, websites and AI in Hyderabad: 380+ apps shipped, code in your name, and Roopa by ElevateBox AI calls in Telugu, Hindi, English.", "/");
+export const metadata: Metadata = pageMeta("Mobile App & AI Development Company | ElevateBox", "Mobile app and AI development company from Hyderabad, building for India, the Middle East, US, UK and Europe. 380+ apps shipped, code in your name.", "/");
 
 const COL = "mx-auto w-[min(1216px,100%-32px)]";
 const WA = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
@@ -330,6 +330,9 @@ export default function Home() {
                     Start free — 10 minutes on us
                   </a>
                 </div>
+                <Link href="/ai-voice-calling-agent-hyderabad" className="mt-6 inline-block text-sm font-semibold text-white/70 underline-offset-4 hover:text-white hover:underline">
+                  AI voice calling agent in Hyderabad and Telangana →
+                </Link>
               </div>
 
               <dl className="mx-auto mt-10 grid max-w-4xl sm:mt-14 grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">

@@ -1105,8 +1105,8 @@ export const CATEGORIES: Category[] = [
     label: "AI Solutions",
     base: "/ai-solutions",
     blurb: "AI built into products where it measurably reduces work — and skipped where it does not.",
-    seoTitle: "AI Development Solutions in Hyderabad | ElevateBox",
-    meta: "AI agents, generative AI, computer vision and predictive analytics from ElevateBox, Hyderabad, built where it cuts work. 3,000+ processes automated so far.",
+    seoTitle: "AI Solutions and AI Development in Hyderabad | ElevateBox",
+    meta: "AI solutions from ElevateBox, Hyderabad: AI agents, generative AI, computer vision and predictive analytics where they cut work. 3,000+ processes automated.",
     items: AI_SOLUTIONS,
   },
   {

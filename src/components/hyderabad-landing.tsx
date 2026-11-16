@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CLIENTS, COMPANY, PROJECTS, VOICE_APP, VOICE_SEO, clientLogo } from "@/lib/content";
-import { AREAS, type HydPage } from "@/lib/hyderabad";
+import { AREAS, VOICE_PILLAR, type HydPage } from "@/lib/hyderabad";
+import { clustersOf } from "@/lib/global";
 import { Header, Footer, PillCta } from "@/components/site";
 import { Crumbs, DiscoveryOffer, Faq } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, faqPage, ld, service } from "@/lib/schema";
@@ -35,6 +36,24 @@ function Band({ id, tint, children }: { id: string; tint?: boolean; children: Re
   );
 }
 
+/** The row of related-page chips; also the pillar pages' link-down row to their cluster pages. */
+export function RelatedLinks({ links }: { links: { label: string; href: string }[] }) {
+  if (!links.length) return null;
+  return (
+    <section aria-label="Related pages">
+      <ul className={`${COL} flex flex-wrap gap-2 py-12`}>
+        {links.map((r) => (
+          <li key={r.href}>
+            <Link href={r.href} className="block rounded-full border border-line px-4 py-2 text-sm text-ink-2 hover:border-ink">
+              {`${r.label} →`}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 /** One Hyderabad landing page, laid out in the order the page-1 study recommends.
  *  With page.intl (lib/global.ts) it serves clients abroad: no prices, WhatsApp/email booking. */
 export function HyderabadLanding({ page }: { page: HydPage }) {
@@ -43,6 +62,8 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
   const book = intl ? `${WA}?text=${encodeURIComponent(`Hi, I'd like to book a call about ${page.serviceType.toLowerCase()} (${intl.country}).`)}` : undefined;
   const crumbs = intl ? [{ label: "Global", href: "/global" }, { label: page.h1 }] : [{ label: page.h1 }];
   const proof = intl ? PROOF.map((p) => (p.v === "8 lakh" ? { ...p, v: "800,000" } : p)) : PROOF;
+  // Cluster pages link up to their pillar first; a pillar page links down to its clusters.
+  const related = [...(page.pillar ? [page.pillar] : []), ...page.related.filter((r) => r.href !== page.pillar?.href), ...clustersOf(page.path)];
   return (
     <>
       <Header />
@@ -170,7 +191,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
               {!intl && <div className="mt-10 border-t border-brand/10 pt-8">
                 <p className="text-sm font-semibold text-ink">AI voice agents in Hyderabad</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
-                  {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.realEstateHyd, VOICE_SEO.clinicsHyd, VOICE_SEO.coachingHyd, VOICE_SEO.loansHyd].map((l) => (
+                  {[VOICE_PILLAR, VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.realEstateHyd, VOICE_SEO.clinicsHyd, VOICE_SEO.coachingHyd, VOICE_SEO.loansHyd].filter((l) => l.href !== page.path).map((l) => (
                     <li key={l.href}>
                       <a href={l.href} className="block rounded-full bg-white px-3.5 py-1.5 text-xs text-ink-2 border border-line hover:bg-brand-wash hover:text-ink sm:text-sm">
                         {l.label}
@@ -300,7 +321,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
         <Band id="faq">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <H2 id="faq">{`${page.h1.replace(intl ? / Company/ : / Company| in Hyderabad/g, "")} FAQs`}</H2>
+              <H2 id="faq">{`${page.h1.replace(intl ? / Company/ : / Company| in Hyderabad.*/g, "")} FAQs`}</H2>
               <p className="mt-5 text-ink-3">
                 Something else?{" "}
                 <a href={WA} className="font-semibold text-electric hover:underline">Ask us on WhatsApp</a>
@@ -346,17 +367,7 @@ export function HyderabadLanding({ page }: { page: HydPage }) {
           </div>
         </section>
 
-        <section aria-label="Related pages">
-          <ul className={`${COL} flex flex-wrap gap-2 py-12`}>
-            {page.related.map((r) => (
-              <li key={r.href}>
-                <Link href={r.href} className="block rounded-full border border-line px-4 py-2 text-sm text-ink-2 hover:border-ink">
-                  {`${r.label} →`}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <RelatedLinks links={related} />
       </main>
       <Footer />
     </>

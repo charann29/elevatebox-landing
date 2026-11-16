@@ -63,7 +63,8 @@ export const BLOG_TAILS = [
 /** Meta description for a /services, /technologies, /industries, /ai-solutions or /locations entry. */
 export const entryDesc = (cat: Category, e: Entry) => {
   if (e.meta) return e.meta;
-  const subject = cat.key === "services" || cat.key === "ai-solutions" ? e.name : e.title;
+  // The H1's keyword (before any ":") so title, description and H1 share it.
+  const subject = e.title.split(":")[0];
   return withTail(`${subject} in Hyderabad by ElevateBox. ${e.tagline}`, cat.key === "ai-solutions" ? AI_TAILS : BUILD_TAILS);
 };
 
@@ -71,6 +72,6 @@ export const entryDesc = (cat: Category, e: Entry) => {
 export const entryTitle = (cat: Category, e: Entry) =>
   [
     `${e.title} | ElevateBox`,
-    ...(cat.key === "locations" ? [] : [`${e.title} in Hyderabad | ElevateBox`, `${e.name} in Hyderabad | ElevateBox`]),
+    ...(cat.key === "locations" ? [] : [`${e.title.split(":")[0]} in Hyderabad | ElevateBox`, `${e.title.split(":")[0]} | ElevateBox`, `${e.name} in Hyderabad | ElevateBox`]),
     `${e.name} | ElevateBox`,
   ].find((t) => t.length >= 30 && t.length <= 60) ?? `${e.title} | ElevateBox`;

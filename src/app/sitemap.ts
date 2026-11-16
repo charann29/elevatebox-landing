@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/flutter-app-development-company-hyderabad",
     "/mvp-development-company-hyderabad",
     "/ai-development-company-hyderabad",
+    "/ai-voice-calling-agent-hyderabad",
     "/app-development-company-telangana",
     "/global",
     ...GLOBAL_PAGES.map((p) => p.path),

@@ -390,7 +390,7 @@ export function Footer() {
                 {`Roopa by ${COMPANY.name}`}
               </a>
               <ul className="mt-2.5 grid gap-2.5">
-                {[VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.pricing].map((l) => (
+                {[{ label: "AI voice calling agent in Hyderabad and Telangana", href: "/ai-voice-calling-agent-hyderabad" }, VOICE_SEO.hyderabad, VOICE_SEO.telugu, VOICE_SEO.pricing].map((l) => (
                   <li key={l.href}>
                     <a href={l.href} className="hover:text-navy">{l.label}</a>
                   </li>

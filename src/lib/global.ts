@@ -1,7 +1,7 @@
 // Pages for clients outside India: 7 markets x 3 services, rendered by the Hyderabad template
 // (components/hyderabad-landing.tsx) with page.intl set. Owner rules: book a call, no prices,
 // no foreign offices or client names; contract is with our Indian company.
-import type { HydPage } from "@/lib/hyderabad";
+import { AI_PILLAR, APP_PILLAR, HYD_PAGES, VOICE_PILLAR, type HydPage } from "@/lib/hyderabad";
 
 type Country = {
   key: string;
@@ -131,6 +131,7 @@ type Service = {
   phrase: string;
   noun: string;
   serviceType: string;
+  pillar: { label: string; href: string };
   sub: string;
   lead: (c: Country) => string;
   items: { t: string; d: string; href: string }[];
@@ -147,6 +148,7 @@ const SERVICES: Service[] = [
     phrase: "AI Development Company",
     noun: "AI development",
     serviceType: "AI software development",
+    pillar: AI_PILLAR,
     sub: "Co-pilots and autopilots built on your own data and your own cloud, measured before launch, sized to pay back within six months.",
     lead: (c) =>
       `ElevateBox is an AI development company working with businesses in ${c.in}: we build co-pilots that help your team and autopilots that run a process end to end, trained on your rules and documents so they answer the same way every time. Everything runs in your cloud account, and we size each build to pay for itself within six months.`,
@@ -190,6 +192,7 @@ const SERVICES: Service[] = [
     phrase: "AI Voice Agent Company",
     noun: "AI voice agents",
     serviceType: "AI voice agent development",
+    pillar: VOICE_PILLAR,
     sub: "AI phone agents that answer, call back and follow up, built on Roopa by ElevateBox, our own voice product in daily production.",
     lead: (c) =>
       `ElevateBox builds AI voice agents for businesses in ${c.in}: phone agents that answer enquiries, qualify leads, confirm appointments and chase follow-ups, around the clock. They run on Roopa by ElevateBox, the voice product we operate in production every day, and connect to your phone lines, CRM and calendar.`,
@@ -233,6 +236,7 @@ const SERVICES: Service[] = [
     phrase: "App Development Company",
     noun: "app development",
     serviceType: "Mobile and web app development",
+    pillar: APP_PILLAR,
     sub: "iOS, Android, Flutter, React Native and web apps, designed, built and maintained by one team that has shipped 380+ apps.",
     lead: (c) =>
       `ElevateBox is an app development company working with businesses in ${c.in}: we design, build and maintain iOS, Android, Flutter, React Native and web apps, from the first screen to the App Store, Google Play and production, and keep them running afterwards. The team has shipped 380+ apps.`,
@@ -335,6 +339,7 @@ function build(s: Service, c: Country): HydPage {
       ...COUNTRIES.filter((o) => o !== c).slice(0, 4).map((o) => ({ label: title(s, o), href: path(s, o) })),
       { label: "All countries we work with", href: "/global" },
     ],
+    pillar: s.pillar,
     areas: [c.country, ...c.chips],
     intl: {
       country: c.country,
@@ -353,4 +358,9 @@ export const GLOBAL_GROUPS = COUNTRIES.map((c) => ({
   in: c.in,
   pages: SERVICES.map((s) => ({ label: s.phrase, href: path(s, c) })),
 }));
+/** Cluster pages (Hyderabad, Telangana, country) that link up to this pillar, for its link-down row. */
+export const clustersOf = (pillar: string) =>
+  [...HYD_PAGES, ...GLOBAL_PAGES, { h1: "AI Developers in Hyderabad", path: "/best-ai-developers-in-hyderabad", pillar: AI_PILLAR }]
+    .filter((p) => p.pillar?.href === pillar)
+    .map((p) => ({ label: p.h1, href: p.path }));
 export const globalPage = (slug: string) => GLOBAL_PAGES.find((p) => p.path === `/global/${slug}`);
