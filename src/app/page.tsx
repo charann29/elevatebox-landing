@@ -327,7 +327,7 @@ export default function Home() {
                     Get a free demo call
                   </a>
                   <a href={VOICE_APP} className="rounded-full border border-white/15 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5">
-                    Start free — 10 minutes on us
+                    Start free — ₹50 of calls on us
                   </a>
                 </div>
                 <Link href="/ai-voice-calling-agent-hyderabad" className="mt-6 inline-block text-sm font-semibold text-white/70 underline-offset-4 hover:text-white hover:underline">

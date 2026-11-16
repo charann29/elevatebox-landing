@@ -808,9 +808,9 @@ const PAGES: HydPage[] = [
     },
     ai: {
       h2: "Try Roopa before you decide",
-      lead: "Start free with 10 minutes of calls on us, or book a 30-minute Roopa consultation and hear a demo call made with your own business details.",
+      lead: "Start free with ₹50 of calls on us, or book a 30-minute Roopa consultation and hear a demo call made with your own business details.",
       items: [
-        { t: "Start free", d: "10 minutes on us when you sign up. Describe the job in plain words and hear Roopa make the call." },
+        { t: "Start free", d: "₹50 of calls on us when you sign up. Describe the job in plain words and hear Roopa make the call." },
         { t: "Demo with your business", d: "In a ₹499 Roopa consultation we set up a demo call with your own business details." },
         { t: "Script in your language", d: "A call script in Telugu, Hindi or English, built from your brochure and website." },
         { t: "Hand-over to your team", d: "The calls a person should still take, and how Roopa hands them over." },
@@ -863,7 +863,7 @@ const PAGES: HydPage[] = [
       { q: "Is Roopa AI telecalling software?", a: "Yes. Roopa is AI telecalling software: the AI makes the calls, not a call centre. Your team keeps the calls a person should still take, and Roopa hands them over." },
       { q: "Which languages does Roopa speak?", a: "Telugu, Hindi and English are in production today." },
       { q: "Which calls can Roopa make?", a: "New enquiries, follow-ups on old leads, COD order confirmations, appointment booking and reminders, payment or renewal reminders, and answering incoming calls." },
-      { q: "How much does an AI voice calling agent cost in Hyderabad?", a: "It depends on your call types, languages, call volume and integrations. In a 30-minute Roopa consultation (₹499) we set up a demo call with your business details and work out your monthly cost at your call volume. You also get 10 minutes free when you sign up." },
+      { q: "How much does an AI voice calling agent cost in Hyderabad?", a: "It depends on your call types, languages, call volume and integrations. In a 30-minute Roopa consultation (₹499) we set up a demo call with your business details and work out your monthly cost at your call volume. New accounts also get ₹50 of calls free." },
       { q: "Will callers know they are talking to an AI?", a: "We recommend the agent says so at the start of the call. It hands over to a person whenever the caller asks or the question is outside its script." },
       { q: "Can Roopa use our existing phone numbers?", a: "In most cases, yes: the agent connects to your telephony provider over SIP. We confirm what your provider supports on the first call, and test calls run before any live traffic." },
       { q: "Do you work with businesses outside Hyderabad?", a: "Yes. We work with businesses across Telangana and India over video calls and WhatsApp, and build voice agents for clients in the UAE, Saudi Arabia, Qatar, the USA, the UK, Germany and the Netherlands." },
