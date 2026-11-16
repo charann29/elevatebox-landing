@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
+import fs from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { POSTS, POST_CATEGORIES, postCover } from "@/lib/content";
@@ -17,6 +19,12 @@ const fmt = (iso: string) =>
     year: "numeric",
   });
 
+// ponytail: category SVG only when the file exists, else a generic cover (Studio categories are free text).
+const coverFor = (category: string) => {
+  const c = postCover(category);
+  return fs.existsSync(path.join(process.cwd(), "public", c)) ? c : "/assets/cover-technology.svg";
+};
+
 type Card = { slug: string; title: string; category: string; date: string; readMins: number; excerpt: string; cover: string };
 
 export default async function BlogIndex() {
@@ -26,9 +34,9 @@ export default async function BlogIndex() {
   const cards: Card[] = [
     ...studio.map((s) => {
       const category = s.eyebrow ?? s.tags[0] ?? "Article";
-      return { slug: s.slug, title: s.heading ?? s.title, category, date: s.publishedAt ?? s.updatedAt ?? "", readMins: s.readingTimeMinutes, excerpt: s.description, cover: s.imageUrl ?? postCover(category) };
+      return { slug: s.slug, title: s.heading ?? s.title, category, date: s.publishedAt ?? s.updatedAt ?? "", readMins: s.readingTimeMinutes, excerpt: s.description, cover: s.imageUrl ?? pageImage(`blog-${s.slug}`) ?? coverFor(category) };
     }),
-    ...POSTS.filter((p) => !taken.has(p.slug)).map((p) => ({ ...p, cover: pageImage(`blog-${p.slug}`) ?? postCover(p.category) })),
+    ...POSTS.filter((p) => !taken.has(p.slug)).map((p) => ({ ...p, cover: pageImage(`blog-${p.slug}`) ?? coverFor(p.category) })),
   ];
   const [featured, ...rest] = cards;
 
