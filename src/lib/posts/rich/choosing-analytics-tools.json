@@ -1,0 +1,192 @@
+{
+ "slug": "choosing-analytics-tools",
+ "locale": "en",
+ "title": "GA4 vs Mixpanel vs PostHog: analytics for Indian startups",
+ "description": "Which analytics tool should an Indian startup use: GA4, Firebase, Mixpanel or PostHog? Free tiers, retention limits and DPDP consent rules compared.",
+ "imageUrl": "/assets/blog/choosing-analytics-tools/cover.webp",
+ "imageAlt": "Illustration of an Indian startup founder comparing analytics charts on a laptop beside the words Pick your analytics",
+ "ogImageUrl": null,
+ "tags": [
+  "analytics",
+  "GA4",
+  "DPDP Act",
+  "startups"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2025-08-16T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "which-analytics-tool-an-indian-startup-should-use",
+   "text": "Which analytics tool an Indian startup should use",
+   "level": 2
+  },
+  {
+   "id": "the-four-tools-side-by-side",
+   "text": "The four tools side by side",
+   "level": 2
+  },
+  {
+   "id": "ga4-the-default-for-websites",
+   "text": "GA4: the default for websites",
+   "level": 2
+  },
+  {
+   "id": "firebase-analytics-the-default-for-mobile-apps",
+   "text": "Firebase Analytics: the default for mobile apps",
+   "level": 2
+  },
+  {
+   "id": "mixpanel-and-posthog-for-product-questions",
+   "text": "Mixpanel and PostHog: for product questions",
+   "level": 2
+  },
+  {
+   "id": "what-dpdp-consent-means-for-your-analytics",
+   "text": "What DPDP consent means for your analytics",
+   "level": 2
+  },
+  {
+   "id": "apps-used-by-children",
+   "text": "Apps used by children",
+   "level": 3
+  },
+  {
+   "id": "google-consent-mode",
+   "text": "Google consent mode",
+   "level": 3
+  },
+  {
+   "id": "how-to-set-up-analytics-properly-step-by-step",
+   "text": "How to set up analytics properly, step by step",
+   "level": 2
+  },
+  {
+   "id": "a-starter-event-plan-you-can-copy",
+   "text": "A starter event plan you can copy",
+   "level": 2
+  },
+  {
+   "id": "when-you-outgrow-the-free-tiers",
+   "text": "When you outgrow the free tiers",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-for-three-indian-businesses",
+   "text": "Worked examples for three Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-brand-selling-on-its-own-website",
+   "text": "A D2C brand selling on its own website",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-booking-app",
+   "text": "A clinic booking app",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-learning-app",
+   "text": "A coaching institute's learning app",
+   "level": 3
+  },
+  {
+   "id": "ways-analytics-misleads-you",
+   "text": "Ways analytics misleads you",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-analytics-routine",
+   "text": "A monthly analytics routine",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is GA4 free for a small business?",
+   "a": "Yes, standard GA4 properties have no charge. The paid version is Analytics 360, which adds longer data retention options of 26, 38 and 50 months."
+  },
+  {
+   "q": "How long does GA4 keep my data?",
+   "a": "Standard properties can keep user-level and event data for 2 or 14 months. The setting affects explorations and funnel reports, not standard aggregated reports. Set it to 14 months on day one."
+  },
+  {
+   "q": "Is Firebase Analytics free?",
+   "a": "Yes. Firebase's documentation describes Google Analytics as an unlimited analytics solution available at no charge, with unlimited reporting on up to 500 distinct events."
+  },
+  {
+   "q": "Mixpanel or PostHog: which is cheaper for a startup?",
+   "a": "Both start free at 1 million events a month. PostHog's free tier also includes 5K session replay recordings and 1M feature flag requests. Pick by the features you need, then check each pricing page for your expected volume."
+  },
+  {
+   "q": "Do I need user consent for analytics under the DPDP Act?",
+   "a": "Where you rely on consent, section 6 requires it to be free, specific, informed, unconditional and unambiguous with a clear affirmative action, and as easy to withdraw as to give. The notice and consent provisions apply from May 2027. Confirm your setup with a lawyer."
+  },
+  {
+   "q": "Can I track children's behaviour in my app?",
+   "a": "Section 9(3) of the DPDP Act says a Data Fiduciary shall not undertake tracking or behavioural monitoring of children or targeted advertising directed at children. A child is anyone under eighteen. Keep analytics on such apps to aggregate counts."
+  },
+  {
+   "q": "Can PostHog host my data in India?",
+   "a": "PostHog's pricing page lists US (Virginia) and EU (Frankfurt) as the cloud hosting choices. I did not find an India region listed."
+  }
+ ],
+ "contentHtml": "<h2 id=\"which-analytics-tool-an-indian-startup-should-use\">Which analytics tool an Indian startup should use</h2><p><strong>In short:</strong> For most Indian startups, GA4 covers a marketing website and Firebase Analytics covers a mobile app, both at no charge. Add Mixpanel or PostHog, each free up to 1 million events a month, when you need product questions answered: funnels, retention by cohort, what users do after signing up. Whatever you pick, plan for DPDP consent, which applies from May 2027.</p><p>This guide was checked in November 2026, against each tool's own pricing and help pages and the text of the DPDP Act and Rules. Prices and free tiers change often, so check the page before you commit. I am not a lawyer, and the DPDP section is not legal advice.</p><p>It is common to install three analytics tools in week one and look at none of them by month three. The tool matters less than two decisions: which ten events you track, and whether you have the user's consent to track them.</p><h2 id=\"the-four-tools-side-by-side\">The four tools side by side</h2><p>Here is what each one is for, with the free allowance from its own page.</p><p><em>GA4, Firebase, Mixpanel and PostHog compared for an Indian startup</em></p><table><thead><tr><th>Tool</th><th>Best at</th><th>Free allowance (published)</th><th>Watch out for</th></tr></thead><tbody><tr><td>GA4</td><td>Website traffic, ad and campaign attribution, Google Ads</td><td>No charge for standard properties</td><td>User and event data retention is 2 or 14 months in explorations and funnels</td></tr><tr><td>Firebase Analytics</td><td>Mobile apps on Android and iOS</td><td>Unlimited reporting on up to 500 distinct events, at no charge</td><td>Built around Google's ecosystem; deep product analysis usually needs export</td></tr><tr><td>Mixpanel</td><td>Product funnels, retention, cohorts</td><td>Free plan up to 1M events a month; Growth starts at $0 with 1M events included</td><td>Costs rise with events once you pass the free amount</td></tr><tr><td>PostHog</td><td>Product analytics plus session replay and feature flags in one</td><td>1M events, 5K recordings and 1M feature flag requests a month; 1-year retention on free</td><td>Choose US or EU hosting at sign-up; there is no India region option listed</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.google.com/analytics/answer/7667196\" rel=\"noopener noreferrer nofollow\"><em>Google Analytics Help</em></a><em> and </em><a href=\"https://firebase.google.com/docs/analytics\" rel=\"noopener noreferrer nofollow\"><em>Firebase docs</em></a><em> and </em><a href=\"https://mixpanel.com/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Mixpanel pricing</em></a><em> and </em><a href=\"https://posthog.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>PostHog pricing</em></a><em>, read 16 November 2026.</em></p><p>Two of these, GA4 and Firebase, are really one family. Firebase's documentation says \"At the heart of Firebase is Google Analytics, an unlimited analytics solution available at no charge.\" If you have a website and an app, they can report into one Google Analytics property.</p><h2 id=\"ga4-the-default-for-websites\">GA4: the default for websites</h2><p>GA4 is where your marketing team will want to live. It connects to Google Ads and Search Console and answers \"which campaign brought this customer.\" For a website that sells or collects leads, it is the first thing I install.</p><p>One setting surprises almost everyone. Google's <a href=\"https://support.google.com/analytics/answer/7667196\" rel=\"noopener noreferrer nofollow\">data retention help page</a> says standard properties can keep user-level and event data for <strong>2 months or 14 months</strong>. Longer options (26, 38 and 50 months) are for Analytics 360, the paid version. The same page says \"The data retention setting only affects explorations and funnel reports,\" and that it \"does not affect standard aggregated reports.\"</p><p>In practice: your monthly traffic charts stay. But if in March 2027 you want to build a funnel exploration comparing Diwali 2025 with Diwali 2026, the 2025 event data may be gone. Change the setting from 2 to 14 months on day one. If you need longer, export the raw events to a warehouse.</p><figure><img src=\"/assets/blog/choosing-analytics-tools/1.webp\" alt=\"Annotated view of Google Analytics help page on GA4 data retention settings\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's own page on retention. The default is worth changing on the day you set up GA4.</figcaption></figure><h2 id=\"firebase-analytics-the-default-for-mobile-apps\">Firebase Analytics: the default for mobile apps</h2><p>For an Android or iOS app, Firebase is the usual starting point. It is free, it records installs, sessions and screens without much setup, and it connects to Crashlytics, push notifications and remote config in the same console.</p><p>The limit to know is in the docs: \"Analytics provides unlimited reporting on up to 500 distinct events.\" 500 is far more than a startup needs, if you name events sensibly. If every button gets its own event name, you will run out, and the reports become unreadable long before that.</p><figure><img src=\"/assets/blog/choosing-analytics-tools/2.webp\" alt=\"Annotated view of the Firebase Analytics documentation showing the 500 distinct events limit\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Firebase's limit is on distinct event names, not on the number of times they fire.</figcaption></figure><h2 id=\"mixpanel-and-posthog-for-product-questions\">Mixpanel and PostHog: for product questions</h2><p>GA4 and Firebase are good at \"how many\" and \"from where.\" They are weaker at the questions a product team asks every week: of users who signed up in October, how many booked a second appointment? Which step of onboarding loses the most people? Do users who use feature X stay longer?</p><p>That is what Mixpanel and PostHog are built for. Both are free to start:</p><ul><li><strong>Mixpanel</strong>: the <a href=\"https://mixpanel.com/pricing/\" rel=\"noopener noreferrer nofollow\">pricing page</a> lists the Free plan at \"Up to 1M events / month,\" and the Growth plan \"Starts at $0\" with \"1M events included in the base price.\" Its funnels and retention reports are fast and easy for non-engineers.</li><li><strong>PostHog</strong>: the <a href=\"https://posthog.com/pricing\" rel=\"noopener noreferrer nofollow\">pricing page</a> lists 1M product analytics events, 5K session replay recordings and 1M feature flag requests a month on the free tier, with 1-year data retention for one project. You choose US (Virginia) or EU (Frankfurt) cloud hosting. Session replay, watching an anonymised recording of what a user did, is often what convinces a founder to pick it.</li></ul><p>I would pick one, not both. If your team wants product analytics plus replays and feature flags in one place, PostHog. If you want the cleanest funnel and retention reports for a product manager, Mixpanel.</p><h2 id=\"what-dpdp-consent-means-for-your-analytics\">What DPDP consent means for your analytics</h2><p>India's Digital Personal Data Protection Act, 2023 sets the consent standard. Section 6(1), in the <a href=\"https://dpdpact.net/reader/section-6\" rel=\"noopener noreferrer nofollow\">Act’s text</a>, says consent \"shall be free, specific, informed, unconditional and unambiguous with a clear affirmative action.\" Section 6(4) gives the user the right to withdraw consent at any time, \"with the ease of doing so being comparable to the ease with which such consent was given.\"</p><p>Timing matters. Rule 1(4) of the <a href=\"https://dpdpa.com/dpdparules/rule1.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules, 2025</a> says \"Rules 3, 5 to 16, 22 and 23 shall come into force eighteen months after the date of publication.\" The Rules were notified on 13 November 2025, so the notice rule and most duties apply from May 2027. That gives you time, but analytics touches every screen, and retrofitting consent into a live app is slow work.</p><p>Rule 3 of the <a href=\"https://dpdpa.com/dpdparules/rule3.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules</a> says the notice must include, at the minimum, \"an itemised description of such personal data\" and the specified purpose. For analytics, that means your notice should say what you collect (device, app usage events, approximate location if you use it) and why (to improve the app, to measure ads).</p><h3 id=\"apps-used-by-children\">Apps used by children</h3><p>If your users include anyone under eighteen, which covers most coaching and school apps, section 9 is stricter. Section 9(1) requires \"verifiable consent of the parent\" before processing a child's data, and <a href=\"https://dpdpact.net/reader/section-9\" rel=\"noopener noreferrer nofollow\">section 9(3)</a> says a Data Fiduciary \"shall not undertake tracking or behavioural monitoring of children or targeted advertising directed at children.\" Session replay and ad attribution on a children's app need a careful look with your lawyer.</p><h3 id=\"google-consent-mode\">Google consent mode</h3><p>If you use GA4 on a website, Google's <a href=\"https://support.google.com/analytics/answer/9976101\" rel=\"noopener noreferrer nofollow\">consent mode</a> \"lets you communicate your users’ cookie or app identifier consent status to Google.\" In the basic setup, Google tags are blocked until consent is granted. In the advanced setup, tags load before the consent dialog and \"send cookieless pings when cookie consent declined.\" Whether cookieless pings fit your reading of DPDP is a question for your lawyer. The basic setup is the cautious choice.</p><figure><img src=\"/assets/blog/choosing-analytics-tools/3.webp\" alt=\"Infographic showing analytics events flowing only after a user gives consent\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Consent first, then tracking. The same rule for website, app and product analytics.</figcaption></figure><h2 id=\"how-to-set-up-analytics-properly-step-by-step\">How to set up analytics properly, step by step</h2><p><strong>Step 1. Write your ten events.</strong> Before installing anything, write the ten actions that matter for your business: sign up, first booking, payment, second purchase, and so on. Give each a clear name in one style, such as booking_completed.</p><p><strong>Step 2. Pick one tool per job.</strong> GA4 for the website and ads. Firebase for the app. One of Mixpanel or PostHog if you need product analysis. Stop there.</p><p><strong>Step 3. Fix the settings on day one.</strong> GA4 retention to 14 months. Time zone to India. Currency to INR. Exclude your own office traffic.</p><p><strong>Step 4. Build consent in.</strong> A clear notice listing what you collect and why, a consent choice that is not pre-ticked, and a way to withdraw that is as easy as giving consent. Load analytics only after consent where your lawyer says you need it.</p><p><strong>Step 5. Keep personal data out of events.</strong> Do not send phone numbers, email addresses, names, Aadhaar numbers or health details as event properties. Use an internal user id.</p><p><strong>Step 6. Test every event.</strong> Use each tool's debug view to confirm each of your ten events fires once, with the right properties, on Android, iOS and web.</p><p><strong>Step 7. Build one weekly report.</strong> Signups, activation, payments and one retention number. If nobody opens it for a month, the setup needs fewer events, not more.</p><figure><img src=\"/assets/blog/choosing-analytics-tools/4.webp\" alt=\"Illustration of an Indian product team reviewing an analytics funnel on a large screen\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Ten well-named events beat two hundred badly named ones.</figcaption></figure><h2 id=\"a-starter-event-plan-you-can-copy\">A starter event plan you can copy</h2><p>Here is a first event plan for a typical Indian booking or ordering app. Adjust the names to your product, but keep the pattern: object, then past-tense action, all lower case with underscores.</p><p><em>A starter set of ten events, with the properties worth sending and the ones to leave out</em></p><table><thead><tr><th>Event</th><th>When it fires</th><th>Useful properties</th><th>Leave out</th></tr></thead><tbody><tr><td>app_opened</td><td>App comes to the foreground</td><td>platform, app version</td><td>Device identifiers you do not need</td></tr><tr><td>signup_started</td><td>User opens the signup screen</td><td>source screen</td><td>Phone number</td></tr><tr><td>signup_completed</td><td>OTP verified, account created</td><td>signup method</td><td>Phone number, OTP</td></tr><tr><td>item_viewed</td><td>A product, doctor or course page opens</td><td>category, price band</td><td>Free-text search terms with names in them</td></tr><tr><td>cart_updated</td><td>Item added or removed</td><td>item count, cart value band</td><td>Address</td></tr><tr><td>checkout_started</td><td>Payment screen opens</td><td>payment method shown</td><td>Card or UPI details</td></tr><tr><td>payment_completed</td><td>Backend confirms payment</td><td>amount, method, order id</td><td>Card or UPI details</td></tr><tr><td>booking_completed</td><td>Order or appointment confirmed</td><td>type, city</td><td>Health or personal notes</td></tr><tr><td>second_order_completed</td><td>A returning user orders again</td><td>days since first order</td><td>Name, email</td></tr><tr><td>support_contacted</td><td>User taps WhatsApp or call support</td><td>screen it was tapped from</td><td>Message text</td></tr></tbody></table><p><em>Event plan is my own suggestion, not from a vendor. Fire payment_completed from your backend after the gateway confirms, not from the app, so a closed browser does not lose the sale.</em></p><p>Ten events like these answer most questions a founder asks in the first year: where people come from, where they drop off, and whether they come back.</p><h2 id=\"when-you-outgrow-the-free-tiers\">When you outgrow the free tiers</h2><p>Most startups stay inside the free allowances for a long time. The signs that you are about to leave them are predictable.</p><ul><li><strong>Event volume.</strong> An app that fires an event on every scroll or every screen refresh burns through 1 million events quickly. Sample high-volume events or drop them before you upgrade.</li><li><strong>Session replay.</strong> Recordings are usually the first thing to hit a limit on PostHog's free tier. Record only key flows, such as signup and checkout.</li><li><strong>Longer history.</strong> If you need event data older than GA4's 14 months, exporting raw events to a warehouse is usually cheaper than a paid analytics plan.</li><li><strong>More people asking questions.</strong> When the sales and operations teams want reports too, look at seat limits and sharing on each plan before you pay.</li></ul><p>Before paying, check each tool's pricing page against your actual last-month volume, which every tool shows in its billing or usage screen.</p><h2 id=\"worked-examples-for-three-indian-businesses\">Worked examples for three Indian businesses</h2><p>These examples are illustrative. The businesses are invented to show the decisions, not taken from real clients.</p><h3 id=\"a-d2c-brand-selling-on-its-own-website\">A D2C brand selling on its own website</h3><p>Say a snacks brand in Bengaluru sells through its own website and runs Meta and Google ads. GA4 is the core tool: it tracks product views, add to cart, checkout started and purchase, and connects to Google Ads. The founder changes retention to 14 months so next Diwali can be compared with this one.</p><p>A consent banner loads before the tags, with the basic consent mode setup. No product analytics tool yet: the questions are about campaigns, and GA4 answers them. Our page on <a href=\"/industries/ecommerce\">ecommerce development</a> covers the store side.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>Say a group of clinics has an Android and iOS app for bookings and reports. Firebase tracks installs, signups and bookings. The product team adds PostHog to see where people drop off in the booking flow, and chooses its hosting region at sign-up.</p><p>Health data stays out of analytics entirely: events say report_viewed, never which test or which result. Session replay is turned off on screens showing reports. The DPDP notice lists the analytics data separately from the health data, with its own purpose.</p><p>The weekly report for the clinic group has four numbers: new signups, first bookings, repeat bookings within 60 days, and the share of bookings that drop off at the payment screen. When that last number moves, the team opens the PostHog funnel to see which step changed, and checks whether a release went out that week. That loop, one number, one funnel, one release check, is what product analytics is for.</p><h3 id=\"a-coaching-institutes-learning-app\">A coaching institute's learning app</h3><p>Say an institute in Hyderabad has an app used by students aged 14 to 18. This is a children's app under section 9. Analytics is kept to aggregate counts: lessons started, tests completed, app crashes. No ad attribution, no behavioural profiles, no session replay.</p><p>Parent consent is collected at signup, and the institute's lawyer reviews the setup before launch. Our <a href=\"/industries/education\">education page</a> has more on apps for this sector.</p><h2 id=\"ways-analytics-misleads-you\">Ways analytics misleads you</h2><ul><li><strong>Too many events.</strong> Two hundred event names and no definitions. Nobody trusts any of them.</li><li><strong>Duplicate events.</strong> A purchase event fires on the thank-you page and again on refresh. Revenue in GA4 is double the bank's.</li><li><strong>Default retention.</strong> GA4's 2-month setting quietly removes the data you need for a year-on-year funnel.</li><li><strong>Bots and your own team.</strong> Office traffic and test devices inflate numbers, especially for a new app.</li><li><strong>Personal data in properties.</strong> A phone number in an event property is now personal data in a third-party tool.</li><li><strong>Comparing tools.</strong> GA4, Firebase and Mixpanel count users differently. Pick one as the source for each number.</li><li><strong>Consent as an afterthought.</strong> Retrofitting consent into a live app means touching every screen. Plan for May 2027 now.</li></ul><h2 id=\"a-monthly-analytics-routine\">A monthly analytics routine</h2><ul><li>Check that each of your ten key events fired in the last week on every platform.</li><li>Compare purchases in analytics with orders in your backend. A gap above a few percent means a tracking bug.</li><li>Review the free tier usage on Mixpanel or PostHog so a bill does not surprise you.</li><li>Look for any new event names someone added, and give each a definition or remove it.</li><li>Check a sample of event properties for phone numbers, emails or names.</li><li>Confirm the consent banner and withdrawal option still work after the latest release.</li></ul><p>For turning analytics and sales data into one owner's dashboard, see our guide to <a href=\"/blogs/data-pipelines-that-dont-lie\">business dashboards for small businesses</a>. If you want analytics and consent scoped into a new app or website, our ₹3,500 requirement analysis gives you a written scope, fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). Accounts and data stay in your company's name.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-ga4-free-for-a-small-business\">Is GA4 free for a small business?</h3><p>Yes, standard GA4 properties have no charge. The paid version is Analytics 360, which adds longer data retention options of 26, 38 and 50 months.</p><h3 id=\"how-long-does-ga4-keep-my-data\">How long does GA4 keep my data?</h3><p>Standard properties can keep user-level and event data for 2 or 14 months. The setting affects explorations and funnel reports, not standard aggregated reports. Set it to 14 months on day one.</p><h3 id=\"is-firebase-analytics-free\">Is Firebase Analytics free?</h3><p>Yes. Firebase's documentation describes Google Analytics as an unlimited analytics solution available at no charge, with unlimited reporting on up to 500 distinct events.</p><h3 id=\"mixpanel-or-posthog-which-is-cheaper-for-a-startup\">Mixpanel or PostHog: which is cheaper for a startup?</h3><p>Both start free at 1 million events a month. PostHog's free tier also includes 5K session replay recordings and 1M feature flag requests. Pick by the features you need, then check each pricing page for your expected volume.</p><h3 id=\"do-i-need-user-consent-for-analytics-under-the-dpdp-act\">Do I need user consent for analytics under the DPDP Act?</h3><p>Where you rely on consent, section 6 requires it to be free, specific, informed, unconditional and unambiguous with a clear affirmative action, and as easy to withdraw as to give. The notice and consent provisions apply from May 2027. Confirm your setup with a lawyer.</p><h3 id=\"can-i-track-childrens-behaviour-in-my-app\">Can I track children's behaviour in my app?</h3><p>Section 9(3) of the DPDP Act says a Data Fiduciary shall not undertake tracking or behavioural monitoring of children or targeted advertising directed at children. A child is anyone under eighteen. Keep analytics on such apps to aggregate counts.</p><h3 id=\"can-posthog-host-my-data-in-india\">Can PostHog host my data in India?</h3><p>PostHog's pricing page lists US (Virginia) and EU (Frankfurt) as the cloud hosting choices. I did not find an India region listed.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://support.google.com/analytics/answer/7667196\" rel=\"noopener noreferrer nofollow\">Data retention, Google Analytics Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/analytics/answer/9976101\" rel=\"noopener noreferrer nofollow\">About consent mode, Google Analytics Help</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/analytics\" rel=\"noopener noreferrer nofollow\">Google Analytics for Firebase, Firebase Documentation</a>, read 16 November 2026</li><li><a href=\"https://mixpanel.com/pricing/\" rel=\"noopener noreferrer nofollow\">Pricing, Mixpanel</a>, read 16 November 2026</li><li><a href=\"https://posthog.com/pricing\" rel=\"noopener noreferrer nofollow\">Pricing, PostHog</a>, read 16 November 2026</li><li><a href=\"https://dpdpact.net/reader/section-6\" rel=\"noopener noreferrer nofollow\">DPDP Act 2023, section 6 (consent), DPDP Act reader</a>, read 16 November 2026</li><li><a href=\"https://dpdpact.net/reader/section-9\" rel=\"noopener noreferrer nofollow\">DPDP Act 2023, section 9 (children), DPDP Act reader</a>, read 16 November 2026</li><li><a href=\"https://dpdpa.com/dpdparules/rule1.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules 2025, rule 1 (commencement), dpdpa.com</a>, read 16 November 2026</li><li><a href=\"https://dpdpa.com/dpdparules/rule3.html\" rel=\"noopener noreferrer nofollow\">DPDP Rules 2025, rule 3 (notice), dpdpa.com</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian startup founder comparing analytics charts on a laptop beside the words Pick your analytics",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian man founder in a t-shirt and open overshirt, seated at a co-working desk, looking at a laptop showing an abstract funnel chart and line chart (no readable text), a phone beside it showing an abstract bar chart, sticky notes on the desk. Face fully in frame. Right half: the title text 'Pick your analytics' in very large bold black sans-serif, left-aligned, on three lines ('Pick' / 'your' / 'analytics'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Google Analytics help page on GA4 data retention settings",
+   "url": "https://support.google.com/analytics/answer/7667196",
+   "annotate": [
+    {
+     "text": "The data retention setting only affects explorations and funnel reports.",
+     "label": "Explorations only"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Firebase Analytics documentation showing the 500 distinct events limit",
+   "url": "https://firebase.google.com/docs/analytics",
+   "annotate": [
+    {
+     "text": "Analytics provides unlimited reporting on up to 500 distinct events",
+     "label": "500 event names"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing analytics events flowing only after a user gives consent",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Analytics with consent'. Left to right with orange arrows. Step 1: phone icon, dark-blue rounded pill with white text 'Clear notice: what and why'. Step 2: hand tapping a toggle icon, pill 'User says yes'. Step 3: chart icon, pill 'Events sent'. Below step 2, a second branch with an orange arrow down to a pill 'User says no' and then pill 'No tracking'. At the far right, a small undo icon with pill 'Withdraw as easily as giving'. One-line bold takeaway at bottom: 'DPDP notice and consent rules apply from May 2027.' No logos, no other text."
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian product team reviewing an analytics funnel on a large screen",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian startup meeting room: a woman product manager in a kurta points at a large wall screen showing an abstract funnel of narrowing coloured bars (no readable text), two colleagues, a man with a laptop and a woman with a notebook, sit at a table with chai glasses. Faces fully in frame. No logos."
+  }
+ ]
+}

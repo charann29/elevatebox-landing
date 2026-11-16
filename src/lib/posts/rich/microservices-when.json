@@ -1,0 +1,201 @@
+{
+ "slug": "microservices-when",
+ "locale": "en",
+ "title": "Microservices vs monolith: which should a startup use?",
+ "description": "Microservices vs monolith for a startup: what AWS, Martin Fowler, Segment and Shopify found, when to split a service, and a checklist before you do.",
+ "imageUrl": "/assets/blog/microservices-when/cover.webp",
+ "imageAlt": "Illustration of an Indian founder weighing one big block against many small blocks beside the words Monolith first",
+ "ogImageUrl": null,
+ "tags": [
+  "microservices",
+  "software architecture",
+  "startups",
+  "backend"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-11-15T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "microservices-vs-monolith-the-short-answer",
+   "text": "Microservices vs monolith: the short answer",
+   "level": 2
+  },
+  {
+   "id": "what-the-two-words-actually-mean",
+   "text": "What the two words actually mean",
+   "level": 2
+  },
+  {
+   "id": "how-they-compare-according-to-aws",
+   "text": "How they compare, according to AWS",
+   "level": 2
+  },
+  {
+   "id": "what-the-evidence-says",
+   "text": "What the evidence says",
+   "level": 2
+  },
+  {
+   "id": "fowler-monolith-first",
+   "text": "Fowler: monolith first",
+   "level": 3
+  },
+  {
+   "id": "fowler-the-prerequisites",
+   "text": "Fowler: the prerequisites",
+   "level": 3
+  },
+  {
+   "id": "segment-140-services-back-into-one",
+   "text": "Segment: 140 services back into one",
+   "level": 3
+  },
+  {
+   "id": "shopify-a-modular-monolith-at-very-large-scale",
+   "text": "Shopify: a modular monolith at very large scale",
+   "level": 3
+  },
+  {
+   "id": "conways-law-why-team-shape-matters-more-than-code",
+   "text": "Conway's law: why team shape matters more than code",
+   "level": 2
+  },
+  {
+   "id": "the-india-angle-small-teams-rupee-budgets-real-phones",
+   "text": "The India angle: small teams, rupee budgets, real phones",
+   "level": 2
+  },
+  {
+   "id": "what-a-good-monolith-still-needs",
+   "text": "What a good monolith still needs",
+   "level": 2
+  },
+  {
+   "id": "when-splitting-out-a-service-does-make-sense",
+   "text": "When splitting out a service does make sense",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-structuring-a-new-product",
+   "text": "Step by step: structuring a new product",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-food-delivery-startup-in-one-city",
+   "text": "A food delivery startup in one city",
+   "level": 3
+  },
+  {
+   "id": "a-b2b-hr-and-payroll-saas-in-pune",
+   "text": "A B2B HR and payroll SaaS in Pune",
+   "level": 3
+  },
+  {
+   "id": "a-fintech-app-with-kyc-and-payments",
+   "text": "A fintech app with KYC and payments",
+   "level": 3
+  },
+  {
+   "id": "ways-the-microservices-decision-goes-wrong",
+   "text": "Ways the microservices decision goes wrong",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-split-out-a-service",
+   "text": "A checklist before you split out a service",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Should a startup use microservices or a monolith?",
+   "a": "Most startups should start with a well-structured monolith: one application with clear internal modules. Martin Fowler observed that almost all successful microservice stories started with a monolith that got too big. Split out services later, one at a time, when a specific part needs it."
+  },
+  {
+   "q": "What is a modular monolith?",
+   "a": "A modular monolith is one deployable application whose code is divided into modules with strict boundaries, as if they were separate services. Shopify describes building one to get the advantages of both monoliths and microservices without so many of the downsides."
+  },
+  {
+   "q": "When should you move from a monolith to microservices?",
+   "a": "When a specific part scales, fails, is regulated, is owned or changes very differently from the rest, and when you can already provision, monitor and deploy quickly. Fowler lists rapid provisioning, basic monitoring and rapid deployment as prerequisites."
+  },
+  {
+   "q": "Did any company move from microservices back to a monolith?",
+   "a": "Yes. Segment wrote in 2018 that it consolidated over 140 services into a single service after operational overhead grew with each new service and 3 full-time engineers spent most of their time keeping the system alive. Shared library improvements rose from 32 to 46 in the following year."
+  },
+  {
+   "q": "Are microservices more scalable than a monolith?",
+   "a": "They let you scale individual services, which AWS notes can save scaling costs. A monolith has to scale as a whole. For most early products, scaling the whole application with a background queue for heavy work is simpler and enough."
+  },
+  {
+   "q": "What is Conway's law?",
+   "a": "Melvin Conway's 1968 observation that any organisation designing a system will produce a design whose structure copies the organisation's communication structure. Microservices fit best when separate teams own separate services."
+  },
+  {
+   "q": "How many engineers do you need for microservices?",
+   "a": "There is no official number. My rule of thumb is that microservices start to pay off when you have several teams that need to release independently. A single team of under about twenty engineers usually moves faster with a modular monolith."
+  }
+ ],
+ "contentHtml": "<h2 id=\"microservices-vs-monolith-the-short-answer\">Microservices vs monolith: the short answer</h2><p><strong>In short:</strong> Start with a well-structured monolith. For an Indian startup with one product and a team of under about twenty engineers, one deployable application with clear internal modules is faster to build, cheaper to run and easier to debug. Split out a service only when a specific part needs to scale, deploy or be owned separately, and you have the deployment and monitoring basics in place.</p><p>This is not a fashionable answer, but it is the one with the most evidence behind it. Martin Fowler, who helped popularise the term microservices, wrote in 2015 that almost all the successful microservice stories he knew began as a monolith that got too big and was broken up. Shopify, running one of the largest Ruby on Rails codebases in existence, chose to make its monolith modular instead of splitting it.</p><p>This guide was checked in November 2026, against Martin Fowler's articles, AWS's own comparison of the two styles, and published engineering write-ups from Segment and Shopify. Where I give team sizes as rules of thumb, they are my judgement, not a statistic.</p><h2 id=\"what-the-two-words-actually-mean\">What the two words actually mean</h2><p>A <strong>monolith</strong> is one application, built and deployed as a single unit. It can still be well organised inside: a module for orders, one for payments, one for users, each with its own folder, tests and rules about what it may call.</p><p><strong>Microservices</strong> split those modules into separate applications. Each has its own codebase or folder, its own deployment, usually its own database, and talks to the others over the network through APIs or a message queue.</p><p>Between the two sits the <strong>modular monolith</strong>: one deployment, but with boundaries inside the code enforced as strictly as if they were separate services. That is what Shopify describes building, aiming for \"the advantages of both monoliths and microservices without so many of the downsides\".</p><figure><img src=\"/assets/blog/microservices-when/1.webp\" alt=\"Infographic comparing a monolith, a modular monolith and microservices\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Same modules, three ways to package and deploy them.</figcaption></figure><h2 id=\"how-they-compare-according-to-aws\">How they compare, according to AWS</h2><p>AWS sells the infrastructure for both styles, so its comparison is a reasonably neutral place to start.</p><p><em>Monolith and microservices compared, from AWS's own explainer</em></p><table><thead><tr><th>Area</th><th>Monolith</th><th>Microservices</th></tr></thead><tbody><tr><td>Development</td><td>Less planning at the start, but gets increasingly complex to understand and maintain</td><td>More planning and infrastructure at the start, easier to manage over time</td></tr><tr><td>Deployment</td><td>Entire application deployed as a single entity</td><td>Each service deployed independently, usually as a container</td></tr><tr><td>Debugging</td><td>Trace the code path in the same environment</td><td>Needs advanced tools to trace data between services</td></tr><tr><td>Changes</td><td>Small changes carry more risk because they touch the whole codebase</td><td>Change one service without affecting the whole application</td></tr><tr><td>Scaling</td><td>Scale the whole application even if one area is busy</td><td>Scale individual services as required</td></tr><tr><td>Investment</td><td>Low upfront, higher ongoing maintenance effort</td><td>Extra time and cost to set up infrastructure and build team skills</td></tr></tbody></table><p><em>Source: </em><a href=\"https://aws.amazon.com/compare/the-difference-between-monolithic-and-microservices-architecture/\" rel=\"noopener noreferrer nofollow\"><em>The difference between monolithic and microservices architecture, AWS</em></a><em>, read 16 November 2026.</em></p><p>AWS also says plainly that \"the monolithic approach is more suitable when designing a simple application or prototype\". Most products in their first two years are exactly that, even if the pitch deck says otherwise.</p><p>Read the table as a set of trades, not a scorecard. Every advantage in the right-hand column is paid for in the \"Investment\" row: more infrastructure, more tooling, and a team that knows how to run distributed systems.</p><h2 id=\"what-the-evidence-says\">What the evidence says</h2><h3 id=\"fowler-monolith-first\">Fowler: monolith first</h3><p>In <a href=\"https://martinfowler.com/bliki/MonolithFirst.html\" rel=\"noopener noreferrer nofollow\">MonolithFirst</a>, dated 3 June 2015, Martin Fowler describes two patterns. Almost all the successful microservice stories started with a monolith that got too big and was broken up, and almost all the systems he heard of that were built as microservices from scratch ended up in serious trouble. He names the cost the \"MicroservicePremium\": the cost of managing a suite of services, which slows a team down.</p><figure><img src=\"/assets/blog/microservices-when/2.webp\" alt=\"Annotated Martin Fowler article stating that successful microservice stories started with a monolith\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Fowler's MonolithFirst, the most cited argument for starting simple.</figcaption></figure><h3 id=\"fowler-the-prerequisites\">Fowler: the prerequisites</h3><p>A year earlier, in <a href=\"https://martinfowler.com/bliki/MicroservicePrerequisites.html\" rel=\"noopener noreferrer nofollow\">MicroservicePrerequisites</a>, Fowler listed three things a team needs before microservices make sense: rapid provisioning (you should be able to fire up a new server in a matter of hours), basic monitoring that detects serious problems quickly, and rapid application deployment to both test and production. If your team cannot do those three for one application, it will struggle to do them for twenty.</p><h3 id=\"segment-140-services-back-into-one\">Segment: 140 services back into one</h3><p>Segment, the customer data company now owned by Twilio, wrote one of the best-known reversal stories. In <a href=\"https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices\" rel=\"noopener noreferrer nofollow\">Goodbye Microservices</a>, published on 10 July 2018, the team explains that its operational overhead increased linearly with each new destination service, until 3 full-time engineers were spending most of their time just keeping the system alive. They consolidated over 140 services into a single service.</p><p>The result, in their own numbers: while the microservice architecture was in place they made 32 improvements to their shared libraries, and in the year after the move they made 46. One engineer could deploy the whole service in minutes. They are honest about the costs too: fault isolation got harder and a bad dependency update can now break several destinations at once.</p><figure><img src=\"/assets/blog/microservices-when/4.webp\" alt=\"Annotated Segment engineering post describing the move from over 140 services to one\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Segment merged more than 140 services back into one.</figcaption></figure><h3 id=\"shopify-a-modular-monolith-at-very-large-scale\">Shopify: a modular monolith at very large scale</h3><p>Shopify's <a href=\"https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity\" rel=\"noopener noreferrer nofollow\">Deconstructing the Monolith</a>, published 21 February 2019, describes a codebase worked on by more than a thousand developers over a decade. Rather than splitting it into services, Shopify wanted to increase modularity without increasing the number of deployment units, because microservices would add infrastructure overhead and network latency. If a company at that scale chose boundaries inside one deployment, a twelve-person startup probably can too.</p><h2 id=\"conways-law-why-team-shape-matters-more-than-code\">Conway's law: why team shape matters more than code</h2><p>In 1968 Melvin Conway published the observation now called <a href=\"https://www.melconway.com/Home/Conways_Law.html\" rel=\"noopener noreferrer nofollow\">Conway</a>'s law: any organisation that designs a system will produce a design whose structure is a copy of the organisation's communication structure. Microservices work best when each service is owned by a separate team that can release on its own. If one team of six owns all fifteen services, you get the costs of independence without the benefit.</p><p>So the honest first question is not \"how big is our code\" but \"how many teams need to ship without waiting for each other\". For most startups the answer is one, maybe two.</p><h2 id=\"the-india-angle-small-teams-rupee-budgets-real-phones\">The India angle: small teams, rupee budgets, real phones</h2><p>Most of the famous microservice stories come from American companies with hundreds of engineers. The typical Indian startup I talk to looks different: a founding team, three to ten engineers, often a mix of in-house and agency developers, and a cloud bill that the founder reads line by line in rupees.</p><p>That shape changes the maths in three ways.</p><ul><li><strong>Every service has a floor cost.</strong> Each one needs at least one running container or function, its own logs, often its own database and sometimes its own load balancer. On a small product, ten services can cost several times what one well-sized application does, before a single extra customer arrives.</li><li><strong>People change often.</strong> Startups lose and gain engineers regularly. A monolith is easier for a new developer to clone, run on a laptop and understand in a week. Fifteen services with their own setup steps take much longer, and the knowledge of how they fit together tends to live in one or two heads.</li><li><strong>The bottleneck is usually not the server.</strong> For Indian consumer apps, slow screens on low-cost Android phones and patchy mobile data hurt users far more than backend architecture. Effort spent on caching, smaller payloads and offline support often helps more than any split.</li></ul><p>None of this means Indian teams cannot run microservices well. Plenty do. It means the bar for each new service should be a clear, written reason, and that reason should be about your product, not about what large foreign companies do.</p><h2 id=\"what-a-good-monolith-still-needs\">What a good monolith still needs</h2><p>\"Monolith first\" is not permission to write one tangled codebase. The monoliths that age well share a few habits:</p><ul><li><strong>Enforced boundaries.</strong> Modules talk through a small public interface. A code review rule, or an automated check in the build, stops one module reaching into another's tables.</li><li><strong>One way to do common things.</strong> One logging library, one HTTP client, one way to read configuration. Consistency is what makes a large single codebase readable.</li><li><strong>Fast tests.</strong> Unit tests per module that run in minutes, plus a small set of end-to-end tests for the money paths such as sign-up and checkout.</li><li><strong>Background jobs from the start.</strong> Anything slow or dependent on a third party runs on a queue, so the main request path stays fast and a failing SMS provider does not take down login.</li><li><strong>Feature flags.</strong> New work ships switched off and is turned on gradually, which gives you most of the release safety people expect from independent services.</li></ul><p>A monolith with these habits can grow to a large team and a large codebase before it needs splitting, and when it does, the boundaries are already drawn.</p><h2 id=\"when-splitting-out-a-service-does-make-sense\">When splitting out a service does make sense</h2><p>I would consider pulling a part out of the monolith when one or more of these is clearly true for that part:</p><ul><li><strong>It scales very differently.</strong> Video transcoding, PDF generation or an AI model call that needs much more CPU, memory or a GPU than the rest of the app.</li><li><strong>It fails differently.</strong> A third-party integration that is slow or flaky, which you do not want blocking checkout or login.</li><li><strong>It has different rules.</strong> A component that handles payment data or health records and must be audited, isolated or hosted separately.</li><li><strong>It has a separate owner.</strong> A team that genuinely ships on its own schedule and is slowed by waiting for the main release.</li><li><strong>It changes at a different speed.</strong> A stable core that rarely changes next to an experimental feature that ships daily.</li></ul><p>Notice that each reason is specific to one part. \"We might need to scale one day\" is not on the list. Neither is \"it is the modern way\".</p><h2 id=\"step-by-step-structuring-a-new-product\">Step by step: structuring a new product</h2><p><strong>Step 1. Draw your modules on paper.</strong> Orders, payments, users, notifications, reporting. Write what each owns and which others it calls.</p><p><strong>Step 2. Build one application with those modules as folders.</strong> Each module exposes a small internal interface. Other modules call only that, never its database tables directly.</p><p><strong>Step 3. Use one database, with tables grouped by module.</strong> A schema or table prefix per module makes a later split possible without data archaeology.</p><p><strong>Step 4. Put slow work on a queue.</strong> Emails, SMS, WhatsApp messages, report generation and webhooks go to background workers. This gives you most of the resilience people want from microservices, inside one codebase.</p><p><strong>Step 5. Get Fowler's three prerequisites working.</strong> Infrastructure as code, monitoring with alerts, and a one-command deploy. You need these anyway.</p><p><strong>Step 6. Revisit every six months.</strong> Ask which module, if any, now meets one of the reasons in the list above. Extract only that one, behind the interface you already have.</p><p><strong>Step 7. Design the APIs between modules carefully from day one.</strong> Clean internal interfaces are what make a later split cheap. Our guide to <a href=\"/blogs/api-design-that-ages-well\">API design that ages well</a> covers the principles.</p><p>If you want your product's structure worked through with a written answer, our ₹3,500 requirement analysis is a call with the people who will build it, ending in a fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). The code and cloud stay in your name.</p><figure><img src=\"/assets/blog/microservices-when/3.webp\" alt=\"Illustration of an Indian engineering team mapping product modules on a whiteboard\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Drawing module boundaries is the work; deployment is a later choice.</figcaption></figure><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients, and the figures are invented for the example.</p><h3 id=\"a-food-delivery-startup-in-one-city\">A food delivery startup in one city</h3><p>Five engineers, one customer app, one restaurant app, one rider app and an admin panel. All four talk to the same backend. I would build one backend with modules for orders, menus, riders, payments and notifications, with notifications and payout reports on a background queue. A separate service per app would mean four deployments to coordinate every time the order format changes, for no real gain.</p><h3 id=\"a-b2b-hr-and-payroll-saas-in-pune\">A B2B HR and payroll SaaS in Pune</h3><p>Twenty engineers in three teams, a product sold to mid-size companies. The payroll calculation runs heavily at month end and has strict audit needs. Here I would keep the core as a modular monolith and extract the payroll engine as its own service: it scales on a different rhythm, it has a clear owner team, and its audit trail benefits from isolation. Everything else stays in the main application.</p><h3 id=\"a-fintech-app-with-kyc-and-payments\">A fintech app with KYC and payments</h3><p>A small team building a lending app that calls KYC providers and a payment partner. The external calls are slow and sometimes fail. I would not make each integration a microservice. I would put them behind a module with retries, timeouts and a queue, inside the monolith, so a slow KYC check never blocks the rest of the app. If the payments part later needs separate hosting for compliance, the module boundary makes that a contained job.</p><h2 id=\"ways-the-microservices-decision-goes-wrong\">Ways the microservices decision goes wrong</h2><ol><li><strong>Splitting by technical layer.</strong> A \"database service\" and an \"API service\" is not microservices. It is a monolith with a network in the middle.</li><li><strong>Sharing one database between services.</strong> Then every schema change still needs every team, and you have lost the independence you paid for.</li><li><strong>Splitting before the domain is clear.</strong> In year one, module boundaries move. Moving a folder is cheap; moving a service and its data is not.</li><li><strong>No tracing.</strong> When a request crosses five services, you need distributed tracing and correlated logs. Our guide on <a href=\"/blogs/observability-before-you-need-it\">observability before you need it</a> covers the basics.</li><li><strong>Adding Kubernetes because there are now many services.</strong> That adds a second large decision on top of the first. Our post on <a href=\"/blogs/kubernetes-when-you-need-it\">when you need Kubernetes</a> covers it separately.</li><li><strong>A big-bang rewrite.</strong> Extract one service at a time from a working system. Rewrites into microservices are where many of Fowler's \"serious trouble\" cases come from.</li></ol><h2 id=\"a-checklist-before-you-split-out-a-service\">A checklist before you split out a service</h2><ol><li>You can name the specific reason: scale, failure, rules, owner or speed of change.</li><li>A named team will own the new service, including being on call for it.</li><li>The service gets its own data, not a shared database.</li><li>You can provision, deploy and monitor it as easily as the monolith.</li><li>Tracing or correlated logs follow a request across the boundary.</li><li>The interface already exists inside the monolith and is stable.</li><li>You have agreed how the two talk when one is down: retry, queue or fail gracefully.</li></ol><p>If most of those boxes are empty, the split can wait. A clean monolith that ships every day is a stronger position than a set of services nobody fully understands. And if parts of an older system already feel tangled, our post on <a href=\"/blogs/technical-debt-conversations\">talking about technical debt</a> covers how to raise it with founders and managers.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"should-a-startup-use-microservices-or-a-monolith\">Should a startup use microservices or a monolith?</h3><p>Most startups should start with a well-structured monolith: one application with clear internal modules. Martin Fowler observed that almost all successful microservice stories started with a monolith that got too big. Split out services later, one at a time, when a specific part needs it.</p><h3 id=\"what-is-a-modular-monolith\">What is a modular monolith?</h3><p>A modular monolith is one deployable application whose code is divided into modules with strict boundaries, as if they were separate services. Shopify describes building one to get the advantages of both monoliths and microservices without so many of the downsides.</p><h3 id=\"when-should-you-move-from-a-monolith-to-microservices\">When should you move from a monolith to microservices?</h3><p>When a specific part scales, fails, is regulated, is owned or changes very differently from the rest, and when you can already provision, monitor and deploy quickly. Fowler lists rapid provisioning, basic monitoring and rapid deployment as prerequisites.</p><h3 id=\"did-any-company-move-from-microservices-back-to-a-monolith\">Did any company move from microservices back to a monolith?</h3><p>Yes. Segment wrote in 2018 that it consolidated over 140 services into a single service after operational overhead grew with each new service and 3 full-time engineers spent most of their time keeping the system alive. Shared library improvements rose from 32 to 46 in the following year.</p><h3 id=\"are-microservices-more-scalable-than-a-monolith\">Are microservices more scalable than a monolith?</h3><p>They let you scale individual services, which AWS notes can save scaling costs. A monolith has to scale as a whole. For most early products, scaling the whole application with a background queue for heavy work is simpler and enough.</p><h3 id=\"what-is-conways-law\">What is Conway's law?</h3><p>Melvin Conway's 1968 observation that any organisation designing a system will produce a design whose structure copies the organisation's communication structure. Microservices fit best when separate teams own separate services.</p><h3 id=\"how-many-engineers-do-you-need-for-microservices\">How many engineers do you need for microservices?</h3><p>There is no official number. My rule of thumb is that microservices start to pay off when you have several teams that need to release independently. A single team of under about twenty engineers usually moves faster with a modular monolith.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://martinfowler.com/bliki/MonolithFirst.html\" rel=\"noopener noreferrer nofollow\">MonolithFirst, Martin Fowler</a>, read 16 November 2026</li><li><a href=\"https://martinfowler.com/bliki/MicroservicePrerequisites.html\" rel=\"noopener noreferrer nofollow\">MicroservicePrerequisites, Martin Fowler</a>, read 16 November 2026</li><li><a href=\"https://aws.amazon.com/compare/the-difference-between-monolithic-and-microservices-architecture/\" rel=\"noopener noreferrer nofollow\">The difference between monolithic and microservices architecture, Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices\" rel=\"noopener noreferrer nofollow\">Goodbye Microservices: from 100s of problem children to 1 superstar, Twilio Segment</a>, read 16 November 2026</li><li><a href=\"https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity\" rel=\"noopener noreferrer nofollow\">Deconstructing the Monolith, Shopify Engineering</a>, read 16 November 2026</li><li><a href=\"https://www.melconway.com/Home/Conways_Law.html\" rel=\"noopener noreferrer nofollow\">Conway's Law, Mel Conway</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian founder weighing one big block against many small blocks beside the words Monolith first",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian startup founder (man in his late 20s, kurta over jeans) in a small office, holding a single large sturdy block in one hand while many small loose blocks sit scattered on the desk beside a laptop (abstract shapes, no readable text). Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Monolith first' in very large bold black sans-serif, left-aligned, on two lines ('Monolith' / 'first'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic comparing a monolith, a modular monolith and microservices",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Three ways to package one product'. Three columns joined left to right by orange arrows: 1) a single big box icon with dark-blue pill 'Monolith' and smaller pill '1 deploy, loose insides'; 2) a big box divided into neat compartments with pill 'Modular monolith' and smaller pill '1 deploy, strict modules'; 3) several small separate boxes linked by lines with pill 'Microservices' and smaller pill 'Many deploys, network calls'. One-line bold takeaway at bottom: 'Start in the middle, split only what needs it.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Martin Fowler article stating that successful microservice stories started with a monolith",
+   "url": "https://martinfowler.com/bliki/MonolithFirst.html",
+   "annotate": [
+    {
+     "text": "Almost all the successful microservice stories",
+     "label": "Started as a monolith"
+    },
+    {
+     "text": "MicroservicePremium",
+     "label": "Cost of many services"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian engineering team mapping product modules on a whiteboard",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Three Indian engineers (a woman in a salwar kameez, a man in a checked shirt, a younger man in a t-shirt) at a whiteboard in a startup office, drawing labelled-looking boxes and arrows with only abstract squiggles inside (no readable text), sticky notes in mustard and sage, laptops on a table. Faces fully in frame, no logos."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Segment engineering post describing the move from over 140 services to one",
+   "url": "https://www.twilio.com/en-us/blog/developers/best-practices/goodbye-microservices",
+   "annotate": [
+    {
+     "text": "over 140 services into a single service",
+     "label": "140+ services to 1"
+    }
+   ]
+  }
+ ]
+}

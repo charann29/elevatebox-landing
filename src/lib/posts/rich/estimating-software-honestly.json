@@ -1,0 +1,165 @@
+{
+ "slug": "estimating-software-honestly",
+ "locale": "en",
+ "title": "Software development quotes in India: why they differ",
+ "description": "Why software development quotes in India differ for the same brief, how estimates narrow as scope is decided, and how to get quotes you can compare.",
+ "imageUrl": "/assets/blog/estimating-software-honestly/cover.webp",
+ "imageAlt": "Illustration of an Indian business owner comparing three software quotes at a desk beside the words Honest estimates",
+ "ogImageUrl": null,
+ "tags": [
+  "Software estimation",
+  "Quotations",
+  "Project planning",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-10-25T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "why-software-development-quotes-in-india-differ-so-much",
+   "text": "Why software development quotes in India differ so much",
+   "level": 2
+  },
+  {
+   "id": "the-cone-of-uncertainty-in-plain-terms",
+   "text": "The Cone of Uncertainty, in plain terms",
+   "level": 2
+  },
+  {
+   "id": "five-reasons-quotes-differ-for-the-same-brief",
+   "text": "Five reasons quotes differ for the same brief",
+   "level": 2
+  },
+  {
+   "id": "how-a-careful-vendor-builds-an-estimate",
+   "text": "How a careful vendor builds an estimate",
+   "level": 2
+  },
+  {
+   "id": "questions-to-ask-about-any-estimate",
+   "text": "Questions to ask about any estimate",
+   "level": 2
+  },
+  {
+   "id": "how-to-get-quotes-you-can-compare-step-by-step",
+   "text": "How to get quotes you can compare, step by step",
+   "level": 2
+  },
+  {
+   "id": "fixed-price-time-and-materials-or-phased",
+   "text": "Fixed price, time and materials, or phased",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-asking-for-a-booking-app",
+   "text": "A clinic asking for a booking app",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-adding-features-to-its-store",
+   "text": "A D2C brand adding features to its store",
+   "level": 3
+  },
+  {
+   "id": "a-logistics-company-replacing-spreadsheets",
+   "text": "A logistics company replacing spreadsheets",
+   "level": 3
+  },
+  {
+   "id": "ways-estimates-mislead-you",
+   "text": "Ways estimates mislead you",
+   "level": 2
+  },
+  {
+   "id": "a-quote-comparison-checklist",
+   "text": "A quote comparison checklist",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Why do software quotes for the same project vary so much?",
+   "a": "Because each vendor is estimating a different version of the project. At the idea stage, Construx's write-up of the Cone of Uncertainty says skilled estimates can be off by 4x either way, a 16x range. Written requirements, screens and a clear out-of-scope list narrow the gap."
+  },
+  {
+   "q": "How accurate can a software estimate be?",
+   "a": "It depends on how much has been decided. Construx describes about 1.6x variability once requirements and user interface design are complete, and about plus or minus 25% for teams that define most requirements up front and then build in short iterations."
+  },
+  {
+   "q": "Should I choose the cheapest software quote?",
+   "a": "Only after comparing them line by line. The cheapest quote often covers the narrowest scope, with no admin panel, testing or launch support. Put every quote in one table with the same rows and check which ones are empty."
+  },
+  {
+   "q": "Is fixed price or time and materials better?",
+   "a": "Fixed price suits projects with written requirements and screens. Time and materials suits work still being discovered, with weekly visibility. A phased approach, fixing the price one phase at a time, often works best when requirements are still moving."
+  },
+  {
+   "q": "Can more time make an estimate more accurate?",
+   "a": "Not on its own. Construx says giving an estimator another week does not reduce the uncertainty, because the uncertainty is in the project itself. Making decisions about scope and screens is what narrows the estimate."
+  },
+  {
+   "q": "What happens if a client pays a small software vendor late in India?",
+   "a": "The Ministry of MSME's Samadhaan portal says a buyer who does not pay within 45 days of acceptance is liable for compound interest with monthly rests at three times the RBI bank rate. Micro and small enterprises with Udyam Registration can apply to their state's facilitation council."
+  },
+  {
+   "q": "What should a software quotation include?",
+   "a": "Scope included and excluded, integrations, team, testing and acceptance, milestones, the change request rate, support after launch, running costs, ownership of code and accounts, and whether GST is included."
+  }
+ ],
+ "contentHtml": "<h2 id=\"why-software-development-quotes-in-india-differ-so-much\">Why software development quotes in India differ so much</h2><p><strong>In short:</strong> Quotes for the same app or website differ because each vendor is guessing at a different version of it. At the idea stage, even skilled estimators can be off by 4x either way, a 16x spread from lowest to highest, according to the Cone of Uncertainty research summarised by Construx. Quotes converge only when the requirements are written down, including what is out of scope.</p><p>This guide was checked in November 2026, against Construx's write-up of the Cone of Uncertainty and the Ministry of MSME's Samadhaan portal, both read on 16 November 2026.</p><p>Every owner who has asked three agencies for a price has seen it. One says ₹3 lakh, one says ₹9 lakh, one says ₹20 lakh, all for the same one-paragraph brief. The instinct is to assume two of them are cheating. Usually none of them is. They have each imagined a different product, and the brief did not stop them.</p><h2 id=\"the-cone-of-uncertainty-in-plain-terms\">The Cone of Uncertainty, in plain terms</h2><p>The idea comes from software estimation research and is explained in Construx's <a href=\"https://www.construx.com/books/the-cone-of-uncertainty/\" rel=\"noopener noreferrer nofollow\">chapter on the Cone of Uncertainty</a>. Early in a project, the details of what will be built, how, and by whom are unclear. That variability flows into the estimate. As decisions get made, the spread narrows.</p><p><em>How much an estimate can be off at each stage, from Construx's Cone of Uncertainty</em></p><table><thead><tr><th>Stage</th><th>What has been decided</th><th>How far off an estimate can be</th></tr></thead><tbody><tr><td>Initial concept</td><td>An idea and a one-line brief</td><td>4x high or 4x low (0.25x), a 16x total range</td></tr><tr><td>Approved product definition</td><td>An agreed vision of the software</td><td>About 4x from high to low estimate</td></tr><tr><td>Requirements complete and UI design complete</td><td>Written requirements and screens</td><td>About 1.6x</td></tr><tr><td>Middle ground: sequential to UI design, then iterations</td><td>Most requirements defined up front</td><td>About ±25%</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.construx.com/books/the-cone-of-uncertainty/\" rel=\"noopener noreferrer nofollow\"><em>Construx, The Cone of Uncertainty</em></a><em>, read 16 November 2026.</em></p><p>Three points from that chapter change how you should read a quote.</p><p><strong>The cone is the best case.</strong> Construx says it represents the error in estimates by skilled estimators. It is easily possible to do worse. It is not possible to be more accurate, only luckier.</p><p><strong>More time does not narrow it.</strong> Giving a vendor another week to refine an estimate does not reduce the uncertainty. Only reducing the uncertainty in the project itself does, by making decisions: what the software does, what it does not do, what the screens look like.</p><p><strong>Early commitments are the risk.</strong> Construx says committing at initial concept or product definition carries a 2x to 4x error, and that meaningful commitments become possible about 30% of the way into the project, once that work is done.</p><figure><img src=\"/assets/blog/estimating-software-honestly/2.webp\" alt=\"Annotated view of Construx's Cone of Uncertainty page showing the 4x high and low error range at initial concept\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>At the idea stage, a skilled estimate can be four times too high or too low.</figcaption></figure><figure><img src=\"/assets/blog/estimating-software-honestly/1.webp\" alt=\"Explainer of the Cone of Uncertainty narrowing from a 16x range at the idea stage to about 1.6x once requirements and screens are done\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The spread narrows only as decisions get made, not as time passes.</figcaption></figure><h2 id=\"five-reasons-quotes-differ-for-the-same-brief\">Five reasons quotes differ for the same brief</h2><p>Apart from the cone, I see the same five causes behind most gaps between quotes.</p><p><strong>1. Different products in different heads.</strong> \"A booking app\" can mean one screen that sends a WhatsApp message, or patient records, payments, reminders, a doctor's app and an admin dashboard. Each vendor fills the gaps with its own guess.</p><p><strong>2. Different scope boundaries.</strong> One quote includes the admin panel, hosting set-up, testing on real phones and app store submission. Another includes the app screens only. Neither may say so clearly.</p><p><strong>3. Different risk margins.</strong> A fixed price has to cover the vendor's uncertainty. A vendor who has built ten similar apps carries less risk than one building its first, and prices accordingly. A suspiciously low fixed price often means the vendor expects to recover the difference through change requests.</p><p><strong>4. Different teams.</strong> A solo freelancer, a small studio with a designer and a tester, and an agency with a project manager and a QA team all cost different amounts per month, and deliver different amounts of review and testing.</p><p><strong>5. Different things after launch.</strong> Bug fixes for a month, a year of maintenance, server costs, or nothing at all. Our post on the <a href=\"/blogs/app-maintenance-budget\">app maintenance budget</a> covers what tends to come after go-live.</p><h2 id=\"how-a-careful-vendor-builds-an-estimate\">How a careful vendor builds an estimate</h2><p>It helps to know what good estimating looks like from the inside, so you can tell a considered quote from a number picked to win the job. A careful estimate usually has four parts.</p><p><strong>A breakdown into small pieces.</strong> The project is split into features, and each feature into tasks small enough to judge: the login screen, the OTP flow, the booking calendar, the reminder job, the admin list. Small pieces are easier to estimate than one big guess, and the list itself shows you what the vendor thinks is in scope.</p><p><strong>A range for each piece, not a single number.</strong> Many estimators write three figures per task: a best case, a likely case and a worst case. One common way to combine them weights the likely case most heavily, adding the best case, four times the likely case and the worst case, then dividing by six. The method matters less than the habit of admitting a range.</p><p><strong>Work that is not coding.</strong> Design, project management, testing on real phones, app store submission, deployment, and fixing what testing finds. In my experience these are the lines most often missing from a low quote, and together they are a large part of the real effort.</p><p><strong>Named assumptions and risks.</strong> 'Assumes the hospital system has an API.' 'Assumes content is supplied by the client.' 'Payment gateway approval timeline is outside our control.' Every assumption is a place where the price can change, and a good quote lists them so you can remove them before signing.</p><p>If a vendor cannot show you any of this, ask for it. A vendor who has done the thinking will have it. One who has not will produce a number with nothing behind it.</p><figure><img src=\"/assets/blog/estimating-software-honestly/4.webp\" alt=\"Explainer of the four parts of a careful software estimate: breakdown, ranges, non-coding work and named assumptions\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Four things to look for behind any quote. A bare number shows none of them.</figcaption></figure><h2 id=\"questions-to-ask-about-any-estimate\">Questions to ask about any estimate</h2><p>These questions are short, and the answers tell you a lot about how a vendor thinks.</p><ul><li>Which parts of this estimate are you least sure about, and why?</li><li>What would make the price go up, and by roughly how much?</li><li>What have you assumed that I have not told you?</li><li>Have you built something similar, and how close was your estimate then?</li><li>If I cut one feature to save money, which would you cut?</li><li>What happens if the project runs over: who pays, and how is it agreed?</li></ul><p>A vendor who answers the first question with 'nothing, we are confident about all of it' is either very experienced in exactly your kind of project or has not looked closely. At the idea stage, the Cone of Uncertainty says some doubt is the honest answer.</p><h2 id=\"how-to-get-quotes-you-can-compare-step-by-step\">How to get quotes you can compare, step by step</h2><p><strong>Step 1. Write the brief as a list of jobs.</strong> Not features, jobs: a patient books a slot, the clinic sees the day's list, the patient gets a reminder. Who does what, on which device.</p><p><strong>Step 2. Write down what is out of scope.</strong> Construx stresses that committing to what you will not do narrows the cone. Payments, multiple languages, an iOS app, an admin panel: say yes or no to each.</p><p><strong>Step 3. Sketch the main screens.</strong> Paper is fine. Screens turn vague requirements into concrete ones, which is the stage where the cone narrows to about 1.6x.</p><p><strong>Step 4. List the outside systems.</strong> Payment gateway, WhatsApp, SMS, Tally, a hospital system, maps. Each integration is a source of surprises and should appear in every quote.</p><p><strong>Step 5. Ask every vendor the same questions.</strong> What is included, what is not, team size, timeline, how change requests are priced, what happens after launch, and who owns the code and accounts.</p><p><strong>Step 6. Put the quotes in one table.</strong> Line by line, with the same rows for each vendor. Gaps become obvious: the cheap quote usually has empty rows.</p><p><strong>Step 7. Pay for discovery if the spread is still wide.</strong> If quotes still differ by several times, the project is still at the wide end of the cone. A short, paid requirements phase that produces a written specification is cheaper than committing to a guess.</p><h2 id=\"fixed-price-time-and-materials-or-phased\">Fixed price, time and materials, or phased</h2><p>How you pay shapes how a vendor estimates.</p><ul><li><strong>Fixed price</strong> suits a project whose requirements and screens are written down. The vendor carries the risk, so expect a margin for it, and expect a firm line on what counts as a change.</li><li><strong>Time and materials</strong> suits a project that is still being discovered. You pay for the hours used and carry the risk yourself, so you need weekly visibility of what was built.</li><li><strong>Phased</strong> combines the two: a fixed price for a discovery phase, then a fixed price for a first release, then the next. Each commitment is made further down the cone. This is close to the middle ground Construx describes, where most requirements are defined up front and building happens in short iterations.</li></ul><p>Whatever the model, tie payments to things you can check: a signed-off specification, a working build on your phone, an app approved in the stores. Not to dates alone.</p><p>A typical phased schedule for a small app might be a fixed fee for discovery, then payments on design sign-off, on a working test build, on store approval and after the first month of fixes. Each payment matches something you can see and check, and nobody is paid far ahead of the work. Our post on <a href=\"/blogs/choosing-a-development-partner\">choosing a development partner</a> covers the contract side in more detail.</p><p>If your vendor is a registered micro or small enterprise, payment terms also have legal weight. The Ministry of MSME's <a href=\"https://samadhaan.msme.gov.in/MyMsme/MSEFC/MSEFC_Welcome.aspx\" rel=\"noopener noreferrer nofollow\">Samadhaan portal</a> says a buyer who does not pay for goods or services within 45 days of acceptance is liable to pay compound interest with monthly rests at three times the bank rate notified by RBI, and that any micro or small enterprise with a valid Udyam Registration can apply to its state's Micro and Small Enterprise Facilitation Council. Agree milestones and acceptance criteria in writing so both sides know when the clock starts.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses, quotes and figures below are illustrative, made up to show the method. They are not real quotes or customers.</p><h3 id=\"a-clinic-asking-for-a-booking-app\">A clinic asking for a booking app</h3><p>A clinic owner sends a two-line brief, an app for patients to book appointments, to three vendors and gets ₹2.5 lakh, ₹7 lakh and ₹16 lakh. That is a 6.4x spread, comfortably inside the cone's 16x range for a project at the idea stage.</p><p>Reading the quotes line by line shows why. The lowest is an Android app with a booking form that emails the clinic. The middle adds an iOS app, WhatsApp reminders and a reception dashboard. The highest adds online payments, patient records and a doctor's app. Each is a fair price for a different product.</p><p>What this tells you: the fix is not haggling. It is deciding which product you want, writing it down, and asking all three to quote again on the same document.</p><h3 id=\"a-d2c-brand-adding-features-to-its-store\">A D2C brand adding features to its store</h3><p>A brand on Shopify wants a loyalty programme, a subscription option and a custom bundle builder. Quotes come back from ₹1.5 lakh to ₹6 lakh.</p><figure><img src=\"/assets/blog/estimating-software-honestly/3.webp\" alt=\"Illustration of a D2C brand founder comparing printed quotes line by line at a packing table\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Put the quotes side by side, row by row. The empty rows explain the price gaps.</figcaption></figure><p>The gap here is mostly build versus buy. The lowest quote configures existing Shopify apps with monthly fees. The highest builds custom features with no app fees. Over two or three years the totals may be closer than the quotes suggest, once app subscriptions are added.</p><p>What this tells you: compare the cost over the life of the feature, not just the build. Ask each vendor to list recurring costs separately.</p><h3 id=\"a-logistics-company-replacing-spreadsheets\">A logistics company replacing spreadsheets</h3><p>A transport company wants to replace its trip and driver spreadsheets with a web dashboard and a driver app. It has never written requirements before, and the operations head keeps adding ideas during calls.</p><p>The answer here is a phased contract. A short paid discovery produces a written list of jobs, screens and integrations, with a fixed quote for the first release, perhaps trips and proof of delivery only. Billing and fuel tracking come in later phases, each quoted when the first release has taught everyone what they actually need. Our post on <a href=\"/blogs/mvp-scope-that-holds\">MVP scope that holds</a> covers how to draw that first line.</p><p>What this tells you: when requirements are moving, a fixed price for everything is a guess dressed up as a commitment. Fix the price one phase at a time.</p><h2 id=\"ways-estimates-mislead-you\">Ways estimates mislead you</h2><p><strong>A single number with no range.</strong> At the idea stage, an honest estimate is a range. A single figure only hides the uncertainty.</p><p><strong>Hours without a list of what they cover.</strong> \"400 hours\" means nothing unless you can see which features those hours build.</p><p><strong>Treating the cheapest quote as the market price.</strong> It is often the narrowest scope. Check which rows are empty.</p><p><strong>Asking for a re-estimate instead of a decision.</strong> As Construx points out, more estimating time does not narrow the range. Deciding scope does.</p><p><strong>Change requests priced later.</strong> If the rate for changes is not in the contract, the first change becomes a negotiation. Agree the rate up front.</p><p><strong>Forgetting the running costs.</strong> Servers, app store fees, SMS and WhatsApp charges, third-party app subscriptions and maintenance continue after launch. Ask for them as separate lines.</p><p><strong>GST and taxes unclear.</strong> Ask whether each quote includes GST, so you compare like with like.</p><h2 id=\"a-quote-comparison-checklist\">A quote comparison checklist</h2><p><em>Rows to put in one table for every quote you receive</em></p><table><thead><tr><th>Row</th><th>What to ask each vendor</th></tr></thead><tbody><tr><td>Scope included</td><td>Which jobs and screens, on which platforms</td></tr><tr><td>Scope excluded</td><td>What is explicitly not in the price</td></tr><tr><td>Integrations</td><td>Which outside systems, and who pays their fees</td></tr><tr><td>Team</td><td>Who works on it, and for how many months</td></tr><tr><td>Testing</td><td>On which devices, by whom, and how you accept the work</td></tr><tr><td>Timeline and milestones</td><td>Dates tied to things you can check</td></tr><tr><td>Change requests</td><td>The rate, and how changes are approved</td></tr><tr><td>After launch</td><td>Weeks of fixes included, then maintenance cost</td></tr><tr><td>Running costs</td><td>Servers, stores, messaging and app fees, per month</td></tr><tr><td>Ownership</td><td>Code, cloud accounts and credentials in your name</td></tr><tr><td>Taxes</td><td>Whether GST is included in the figure</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.construx.com/books/the-cone-of-uncertainty/\" rel=\"noopener noreferrer nofollow\"><em>Construx, The Cone of Uncertainty</em></a><em> and </em><a href=\"https://samadhaan.msme.gov.in/MyMsme/MSEFC/MSEFC_Welcome.aspx\" rel=\"noopener noreferrer nofollow\"><em>MSME Samadhaan, MSEFC</em></a><em>, read 16 November 2026.</em></p><p>This is the problem our ₹3,500 requirement analysis is built for: a call with the people who would build your project, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. For typical price ranges, see our guide to <a href=\"/blogs/mobile-app-development-cost-india\">mobile app development cost in India</a>.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"why-do-software-quotes-for-the-same-project-vary-so-much\">Why do software quotes for the same project vary so much?</h3><p>Because each vendor is estimating a different version of the project. At the idea stage, Construx's write-up of the Cone of Uncertainty says skilled estimates can be off by 4x either way, a 16x range. Written requirements, screens and a clear out-of-scope list narrow the gap.</p><h3 id=\"how-accurate-can-a-software-estimate-be\">How accurate can a software estimate be?</h3><p>It depends on how much has been decided. Construx describes about 1.6x variability once requirements and user interface design are complete, and about plus or minus 25% for teams that define most requirements up front and then build in short iterations.</p><h3 id=\"should-i-choose-the-cheapest-software-quote\">Should I choose the cheapest software quote?</h3><p>Only after comparing them line by line. The cheapest quote often covers the narrowest scope, with no admin panel, testing or launch support. Put every quote in one table with the same rows and check which ones are empty.</p><h3 id=\"is-fixed-price-or-time-and-materials-better\">Is fixed price or time and materials better?</h3><p>Fixed price suits projects with written requirements and screens. Time and materials suits work still being discovered, with weekly visibility. A phased approach, fixing the price one phase at a time, often works best when requirements are still moving.</p><h3 id=\"can-more-time-make-an-estimate-more-accurate\">Can more time make an estimate more accurate?</h3><p>Not on its own. Construx says giving an estimator another week does not reduce the uncertainty, because the uncertainty is in the project itself. Making decisions about scope and screens is what narrows the estimate.</p><h3 id=\"what-happens-if-a-client-pays-a-small-software-vendor-late-in-india\">What happens if a client pays a small software vendor late in India?</h3><p>The Ministry of MSME's Samadhaan portal says a buyer who does not pay within 45 days of acceptance is liable for compound interest with monthly rests at three times the RBI bank rate. Micro and small enterprises with Udyam Registration can apply to their state's facilitation council.</p><h3 id=\"what-should-a-software-quotation-include\">What should a software quotation include?</h3><p>Scope included and excluded, integrations, team, testing and acceptance, milestones, the change request rate, support after launch, running costs, ownership of code and accounts, and whether GST is included.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.construx.com/books/the-cone-of-uncertainty/\" rel=\"noopener noreferrer nofollow\">The Cone of Uncertainty, Construx</a>, read 16 November 2026</li><li><a href=\"https://samadhaan.msme.gov.in/MyMsme/MSEFC/MSEFC_Welcome.aspx\" rel=\"noopener noreferrer nofollow\">Micro and Small Enterprise Facilitation Council, MSME Samadhaan, Ministry of MSME</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian business owner comparing three software quotes at a desk beside the words Honest estimates",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian business owner, a woman in her forties in a kurta, at an office desk with three printed documents spread out side by side, each with a different-height abstract bar chart, a calculator and a cup of chai beside them, her pen pointing at one document. No readable text, no logos, no numbers. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Honest estimates' in very large bold black sans-serif, left-aligned, on two lines ('Honest' / 'estimates'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Explainer of the Cone of Uncertainty narrowing from a 16x range at the idea stage to about 1.6x once requirements and screens are done",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Estimates narrow as you decide'. A horizontal cone shape, wide on the left and narrow on the right, in soft sage. Along the bottom, three dark-blue rounded pills with white text joined by orange arrows, each with a flat icon above: 1) lightbulb icon, pill 'Idea', note above the cone at that point '4x high or 4x low'; 2) document icon, pill 'Product defined', note 'About 4x range'; 3) phone screen icon, pill 'Requirements and screens done', note 'About 1.6x'. One-line bold takeaway at bottom: 'Decisions narrow the range. Waiting does not.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Construx's Cone of Uncertainty page showing the 4x high and low error range at initial concept",
+   "url": "https://www.construx.com/books/the-cone-of-uncertainty/",
+   "annotate": [
+    {
+     "text": "inaccurate by a factor of 4x on the high side or 4x on the low side",
+     "label": "Idea stage error"
+    },
+    {
+     "text": "it’s not possible to deliver on that request",
+     "label": "More time won't fix it"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "infographic",
+   "alt": "Explainer of the four parts of a careful software estimate: breakdown, ranges, non-coding work and named assumptions",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'What sits behind a careful quote'. Four columns, each with a flat icon and a dark-blue rounded pill with white text, and a small grey note below: 1) puzzle pieces icon, pill 'Small pieces', note 'Features split into tasks'; 2) slider icon, pill 'A range per task', note 'Best, likely, worst'; 3) checklist icon, pill 'Non-coding work', note 'Design, testing, launch'; 4) warning triangle icon, pill 'Named assumptions', note 'Where the price can change'. Orange arrows join the four columns left to right into a final document icon labelled 'Quote you can trust'. One-line bold takeaway at bottom: 'A bare number shows none of this.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a D2C brand founder comparing printed quotes line by line at a packing table",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian D2C brand's packing room: a young male founder in a t-shirt standing at a packing table with cardboard boxes and product jars, laying out three printed sheets side by side and running a finger across matching rows, a colleague taping a box in the background. Sheets show only abstract lines and blocks, no readable text, no logos, no numbers. Faces fully in frame."
+  }
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "slug": "running-effective-standups",
+ "locale": "en",
+ "title": "How to run a daily stand-up meeting (Scrum Guide 2020)",
+ "description": "Run a daily stand-up the Scrum Guide 2020 way: 15 minutes, for Developers, ending in a plan. Formats for Indian teams, outsourced work and US time zones.",
+ "imageUrl": "/assets/blog/running-effective-standups/cover.webp",
+ "imageAlt": "Illustration of an Indian development team standing at a task board beside the words Better daily stand-ups",
+ "ogImageUrl": null,
+ "tags": [
+  "daily stand-up",
+  "Scrum",
+  "engineering management",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-01-03T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-a-daily-stand-up-is-for-in-one-paragraph",
+   "text": "What a daily stand-up is for, in one paragraph",
+   "level": 2
+  },
+  {
+   "id": "what-the-scrum-guide-2020-actually-says",
+   "text": "What the Scrum Guide 2020 actually says",
+   "level": 2
+  },
+  {
+   "id": "the-three-questions-were-removed-in-2020",
+   "text": "The three questions were removed in 2020",
+   "level": 2
+  },
+  {
+   "id": "who-should-be-in-the-room-and-who-should-not",
+   "text": "Who should be in the room, and who should not",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-a-15-minute-stand-up-that-works",
+   "text": "Step by step: a 15-minute stand-up that works",
+   "level": 2
+  },
+  {
+   "id": "running-stand-ups-across-india-and-us-or-uk-time-zones",
+   "text": "Running stand-ups across India and US or UK time zones",
+   "level": 2
+  },
+  {
+   "id": "why-a-short-live-meeting-still-matters",
+   "text": "Why a short live meeting still matters",
+   "level": 2
+  },
+  {
+   "id": "is-your-stand-up-working-four-signs-to-check",
+   "text": "Is your stand-up working? Four signs to check",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinics-in-house-team-of-four",
+   "text": "A clinic's in-house team of four",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-with-an-outsourced-app-team",
+   "text": "A D2C brand with an outsourced app team",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-team-across-two-cities-and-a-us-advisor",
+   "text": "A coaching institute's team across two cities and a US advisor",
+   "level": 3
+  },
+  {
+   "id": "ways-stand-ups-go-wrong",
+   "text": "Ways stand-ups go wrong",
+   "level": 2
+  },
+  {
+   "id": "if-your-team-is-an-outside-company",
+   "text": "If your team is an outside company",
+   "level": 2
+  },
+  {
+   "id": "a-stand-up-checklist-to-pin-on-the-wall",
+   "text": "A stand-up checklist to pin on the wall",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How long should a daily stand-up be?",
+   "a": "The Scrum Guide 2020 makes the Daily Scrum a 15-minute event. If yours runs longer every day, the usual causes are too many people, too much work in progress, or problem-solving that should happen after the meeting."
+  },
+  {
+   "q": "Are the three stand-up questions still in the Scrum Guide?",
+   "a": "No. The Scrum Guide revision history says the 2020 version removed the Daily Scrum questions to make the guide less prescriptive. Teams can still use them, but the guide lets Developers choose any structure that focuses on the Sprint Goal and ends with a plan."
+  },
+  {
+   "q": "Who should attend the Daily Scrum?",
+   "a": "It is an event for the Developers of the Scrum Team. The Product Owner and Scrum Master participate as Developers if they are actively working on Sprint Backlog items. Stakeholders and clients meet the team at the Sprint Review."
+  },
+  {
+   "q": "Does the Scrum Master have to run the stand-up?",
+   "a": "No. The guide makes the Scrum Master responsible for ensuring all Scrum events take place and are positive, productive and kept within the timebox. The Developers own the Daily Scrum and choose how to run it."
+  },
+  {
+   "q": "Should the client attend our daily stand-up?",
+   "a": "I would not make it the default. Give the client a separate, short daily update and bring them to the Sprint Review, where the guide has the Scrum Team and stakeholders review the work together."
+  },
+  {
+   "q": "Can a stand-up be done on Slack or WhatsApp instead of a call?",
+   "a": "The guide does not require a call, only the same time and place, a focus on the Sprint Goal and a plan for the next day. Written check-ins work on some days, but GitLab's handbook warns that fully async work can leave new hires feeling isolated."
+  },
+  {
+   "q": "Do we need a stand-up if we do not use Scrum?",
+   "a": "The 15-minute rule and the Developers-only rule come from the Scrum Guide, so they bind only Scrum teams. Many teams that use a simple task board still benefit from a short daily look at the board, ending with blockers owned and a plan for the day. Keep it short and keep the board at the centre."
+  },
+  {
+   "q": "What time should an India-based team hold its stand-up with US clients?",
+   "a": "Hold the Daily Scrum at a time that suits the Developers, usually early in the Indian working day. Handle the client's daily update separately, through the team lead or Product Owner."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-a-daily-stand-up-is-for-in-one-paragraph\">What a daily stand-up is for, in one paragraph</h2><p><strong>In short:</strong> Under the Scrum Guide 2020, the Daily Scrum is a 15-minute event for the Developers, held at the same time and place every working day, to inspect progress toward the Sprint Goal and agree a plan for the next day. The guide no longer prescribes the three questions. A good stand-up ends with a plan and a list of blockers with owners, not a round of status reports to the manager.</p><p>I wrote this for founders, engineering managers and team leads in India whose stand-ups have turned into a 40-minute status call, often with a client on the line. It sets out what the official text actually says, what it leaves to you, and a format that works for in-office, remote and India-to-US teams.</p><p>This guide was checked in November 2026, against the Scrum Guide's web version of the November 2020 text, the Scrum Guide revision history, the Agile Manifesto's principles and GitLab's handbook page on sync and async work.</p><h2 id=\"what-the-scrum-guide-2020-actually-says\">What the Scrum Guide 2020 actually says</h2><p>Most arguments about stand-ups are about rules the guide does not contain. Here is what it does contain.</p><p><em>The Daily Scrum in the Scrum Guide 2020, rule by rule</em></p><table><thead><tr><th>Question</th><th>What the guide says</th></tr></thead><tbody><tr><td>Purpose</td><td>Inspect progress toward the Sprint Goal and adapt the Sprint Backlog as necessary, adjusting the upcoming planned work</td></tr><tr><td>Length</td><td>A 15-minute event</td></tr><tr><td>Who it is for</td><td>The Developers of the Scrum Team</td></tr><tr><td>Product Owner and Scrum Master</td><td>If they are actively working on items in the Sprint Backlog, they participate as Developers</td></tr><tr><td>When and where</td><td>Same time and place every working day of the Sprint, to reduce complexity</td></tr><tr><td>Format</td><td>Developers can select whatever structure and techniques they want</td></tr><tr><td>What it must produce</td><td>Focus on progress toward the Sprint Goal and an actionable plan for the next day of work</td></tr><tr><td>Is it the only planning moment?</td><td>No. Developers often meet throughout the day to adapt or re-plan</td></tr><tr><td>Scrum Master's part</td><td>Ensuring all Scrum events take place and are positive, productive and kept within the timebox</td></tr></tbody></table><p><em>Source: </em><a href=\"https://scrumguides.org/scrum-guide.html\" rel=\"noopener noreferrer nofollow\"><em>The Scrum Guide, November 2020</em></a><em> and </em><a href=\"https://scrumguides.org/revisions.html\" rel=\"noopener noreferrer nofollow\"><em>Scrum Guide revision history</em></a><em>, read 16 November 2026.</em></p><p>Two things stand out. The stand-up belongs to the Developers, not to the manager or the client. And it has an output: an actionable plan for the next day. If your stand-up ends with nobody's plan changing, it was a report, not a Daily Scrum.</p><figure><img src=\"/assets/blog/running-effective-standups/1.webp\" alt=\"Annotated view of the Daily Scrum section of the Scrum Guide\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The Daily Scrum in the official text: 15 minutes, for the Developers, ending in a plan.</figcaption></figure><h2 id=\"the-three-questions-were-removed-in-2020\">The three questions were removed in 2020</h2><p>Many teams still run the familiar round of what I did yesterday, what I will do today and what is blocking me. That format came from earlier versions of the guide. The revision history for 2020 says the guide became even less prescriptive, and lists removed Daily Scrum questions as one example.</p><p>That does not make the three questions wrong. It makes them optional. The guide says the Developers can pick any structure, as long as the meeting focuses on the Sprint Goal and ends in a plan. The problem with the three questions is that they invite each person to justify their day to whoever is listening. Fifteen minutes of that is a status meeting.</p><p>The 2020 guide also says Daily Scrums improve communication, identify impediments, promote quick decisions and consequently eliminate the need for other meetings. If yours adds a follow-up meeting every day, something has gone wrong.</p><h2 id=\"who-should-be-in-the-room-and-who-should-not\">Who should be in the room, and who should not</h2><p>This is the most common problem I see in Indian service and product teams: the stand-up has an audience.</p><ul><li><strong>Developers:</strong> everyone doing the Sprint's work. The guide's word covers testers, designers and anyone else building the increment, not only people who write code.</li><li><strong>Product Owner and Scrum Master:</strong> they join as Developers if they are actively working on Sprint Backlog items. Otherwise, the guide does not make them participants.</li><li><strong>The founder or a senior manager:</strong> welcome to listen occasionally. If they start assigning work or asking for status, the team will start performing for them.</li><li><strong>The client:</strong> for an outsourced team, the client is a stakeholder. The Sprint Review is where the guide brings the Scrum Team and stakeholders together. A daily client call is a separate meeting and should be named as one.</li></ul><p>The Scrum Guide also says a Scrum Team is typically 10 or fewer people. If your stand-up has fifteen people, two teams are sharing one meeting. Split it.</p><h2 id=\"step-by-step-a-15-minute-stand-up-that-works\">Step by step: a 15-minute stand-up that works</h2><p>Here is the format I would start a team on. Change it once it works, not before.</p><p><strong>Step 1. Put the Sprint Goal on the screen.</strong> One sentence, visible to everyone. The Scrum Guide calls it the single objective for the Sprint. Every update is about that.</p><p><strong>Step 2. Walk the board, not the people.</strong> Go through the work items from the one closest to done to the one furthest away. For each one: is it moving, and what does it need? People speak when their item comes up.</p><p><strong>Step 3. Name blockers with an owner and a time.</strong> \"Payment gateway sandbox keys missing: Ravi will ask the client by noon.\" A blocker without an owner will be read out again tomorrow.</p><p><strong>Step 4. Park anything that needs more than a minute.</strong> Write it down, name who needs to talk, and let everyone else leave. The guide says Developers often meet throughout the day for detailed discussions. That is where these go.</p><p><strong>Step 5. Agree the plan for the next day.</strong> One or two sentences: what the team will finish, and any change to who does what. This is the guide's required output.</p><p><strong>Step 6. Stop at 15 minutes.</strong> Use a visible timer. If you run over every day, the board has too many items in progress, or the meeting has an audience.</p><p><strong>Step 7. Write two lines in the team channel.</strong> Blockers and owners, and the plan. Anyone who missed it can catch up in a minute, and the record helps when a client asks what happened last week.</p><figure><img src=\"/assets/blog/running-effective-standups/2.webp\" alt=\"Infographic of a seven-step, 15-minute daily stand-up\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Walk the board, not the people, and end with a plan.</figcaption></figure><h2 id=\"running-stand-ups-across-india-and-us-or-uk-time-zones\">Running stand-ups across India and US or UK time zones</h2><p>Many Indian teams work with clients in the US or UK. India Standard Time is UTC plus 5 hours 30 minutes, and does not change for daylight saving, while those countries do. In the US winter, 9:00 am in New York is 7:30 pm in India. An evening stand-up for the client's convenience means your team's working day stretches into the night.</p><p>The Daily Scrum is for the Developers, so hold it at a time that suits the Developers, usually early in the Indian working day. Keep the client's daily touchpoint separate and shorter, with the team lead or Product Owner, not the whole team.</p><p>For teams spread across cities, an asynchronous stand-up in a chat channel can work for status, but be careful about making everything async. GitLab, a company known for working asynchronously, writes in its handbook that in a completely async culture new hires were telling them they felt lonely when they started. I would keep a short live stand-up on most days, and use written check-ins to replace it only on days when the team is heads-down.</p><figure><img src=\"/assets/blog/running-effective-standups/3.webp\" alt=\"Illustration of an Indian development team holding a short stand-up around a board in the morning\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Hold the Daily Scrum at a time that suits the Developers, not the client.</figcaption></figure><h2 id=\"why-a-short-live-meeting-still-matters\">Why a short live meeting still matters</h2><p>It is fair to ask why a team that already has a task board, a chat channel and a pull request queue needs to talk every day at all. The Agile Manifesto's principles give the older answer: the most efficient and effective method of conveying information to and within a development team is face-to-face conversation. On a video call, that means cameras on and a real conversation, not a read-out.</p><p>The practical answer is that a board shows what people have chosen to update. A conversation shows what they have not. The developer who has been stuck on the same payment bug for two days rarely writes that in the ticket. They mention it when someone asks, in front of the board, whether the card is moving. That one question, asked daily, is worth the fifteen minutes.</p><p>In mixed-language teams, let people speak in the language they think in. A stand-up in a mix of English and Telugu or Hindi that surfaces a blocker is better than a fluent English one that hides it. The written summary in the channel can be in English, so that clients and new joiners can follow it.</p><h2 id=\"is-your-stand-up-working-four-signs-to-check\">Is your stand-up working? Four signs to check</h2><p>You do not need a tool to measure this. Check these four things over two weeks.</p><ul><li><strong>It ends on time.</strong> Most days under 15 minutes, without anyone being cut off mid-sentence.</li><li><strong>Blockers clear quickly.</strong> A blocker named today has an owner and is usually gone within a day or two. The same blocker read out all week is the warning sign.</li><li><strong>Plans change.</strong> At least sometimes, the stand-up moves work between people or drops something. If plans never change, nobody is inspecting anything.</li><li><strong>The Sprint Goal is met more often than not.</strong> The whole point of the Daily Scrum is progress toward it.</li></ul><p>The principles also say that at regular intervals the team reflects on how to become more effective, then tunes and adjusts its behaviour. The Sprint Retrospective is the place to do that for the stand-up too. Ask the team once a Sprint whether the format still helps, and change one thing at a time.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The teams and details below are illustrative, to show how the guide applies. The rules quoted come from the Scrum Guide.</p><h3 id=\"a-clinics-in-house-team-of-four\">A clinic's in-house team of four</h3><p>Say a diagnostics chain in Hyderabad has four people building its patient app: two developers, a tester and a designer. The operations head joins the stand-up every day and asks each person what they did yesterday. It takes 35 minutes.</p><p>I would move the operations head to the Sprint Review, where stakeholders are meant to be, and give them a two-line written summary each day. The team walks the board in 15 minutes with the Sprint Goal on screen. If the operations head has a new urgent request, it goes to the Product Owner, not to whichever developer is speaking.</p><h3 id=\"a-d2c-brand-with-an-outsourced-app-team\">A D2C brand with an outsourced app team</h3><p>Say a jewellery brand in Mumbai works with a development company in Hyderabad. The brand's founder wants to be on the stand-up every day to feel in control.</p><p>I would separate the two meetings clearly. The development team holds its own 15-minute Daily Scrum in the morning. The founder gets a short daily call or message with the team lead: what moved, what is blocked on the brand side (product photos, payment keys, approvals) and what ships next. The Sprint Review every week or two is where the founder sees the working app and changes priorities. Blockers on the client's side should be named in the daily message with a date, because they are often the real delay.</p><h3 id=\"a-coaching-institutes-team-across-two-cities-and-a-us-advisor\">A coaching institute's team across two cities and a US advisor</h3><p>Say a coaching institute has developers in Vijayawada and Pune and a product advisor in California. The stand-up was set at 8:30 pm IST so the advisor could join.</p><p>I would move the Daily Scrum to the Indian morning, without the advisor, and send the advisor a written summary. The advisor joins the Sprint Review, scheduled at a time that is reasonable for both sides once every Sprint. The team gets its evenings back, and the advisor sees the product working rather than hearing about it.</p><h2 id=\"ways-stand-ups-go-wrong\">Ways stand-ups go wrong</h2><ul><li><strong>The status report to the boss.</strong> Everyone faces the manager, not the board. Fix: walk the board, and let the manager listen.</li><li><strong>Problem-solving in the meeting.</strong> Two people debug while eight wait. Fix: park it, and let them meet straight after.</li><li><strong>No Sprint Goal.</strong> Without one, there is nothing to inspect progress toward. Fix: write the goal before the next Sprint starts.</li><li><strong>Blockers that repeat every day.</strong> Read out, never owned. Fix: owner and time on every blocker, written in the channel.</li><li><strong>A client on every call.</strong> The team performs instead of planning. Fix: a separate daily touchpoint for the client, and the Sprint Review.</li><li><strong>Evening stand-ups for overseas convenience.</strong> Long days and tired teams. Fix: Developers' morning for the Daily Scrum.</li><li><strong>All async, all the time.</strong> Status stays visible but people drift apart, especially new joiners. Fix: live stand-up most days.</li></ul><p>Stand-ups expose problems that start elsewhere. A Sprint that tries to do everything shows up as a board with twenty items in progress, which our post on <a href=\"/blogs/mvp-scope-that-holds\">MVP scope that holds</a> addresses. Slow reviews show up as cards stuck in review for days, covered in <a href=\"/blogs/code-review-that-helps\">code review that helps</a>.</p><h2 id=\"if-your-team-is-an-outside-company\">If your team is an outside company</h2><p>If you work with an outside development company, ask in the first meeting how their team runs its Daily Scrum and how you will hear about blockers. At ElevateBox, scope is set up front: our ₹3,500 requirement analysis is a call with the people who will build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">book here</a>). Code, cloud and credentials stay in the client's name, so you can see the board and the repository yourself rather than relying on a daily call.</p><p>If you are adding outside developers to your own team instead, they should join your stand-up as Developers, on your board. Our <a href=\"/services/resource-augmentation\">resource augmentation</a> page covers that setup.</p><h2 id=\"a-stand-up-checklist-to-pin-on-the-wall\">A stand-up checklist to pin on the wall</h2><ol><li>Sprint Goal written in one sentence and visible during the stand-up.</li><li>Same time and place every working day, set for the Developers.</li><li>15-minute timer on screen.</li><li>Walk the board from closest-to-done to furthest-away.</li><li>Every blocker gets an owner and a time.</li><li>Anything longer than a minute is parked, with names.</li><li>The meeting ends with the plan for the next day.</li><li>Two-line summary posted in the team channel.</li><li>Stakeholders and clients see the product at the Sprint Review, not every morning.</li><li>If the stand-up runs over three days in a row, look at work in progress and attendance, not the timer.</li></ol><figure><img src=\"/assets/blog/running-effective-standups/4.webp\" alt=\"Annotated view of the Scrum Guide revision history noting removed Daily Scrum questions\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The 2020 revision history: the Daily Scrum questions were removed to make the guide less prescriptive.</figcaption></figure><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-long-should-a-daily-stand-up-be\">How long should a daily stand-up be?</h3><p>The Scrum Guide 2020 makes the Daily Scrum a 15-minute event. If yours runs longer every day, the usual causes are too many people, too much work in progress, or problem-solving that should happen after the meeting.</p><h3 id=\"are-the-three-stand-up-questions-still-in-the-scrum-guide\">Are the three stand-up questions still in the Scrum Guide?</h3><p>No. The Scrum Guide revision history says the 2020 version removed the Daily Scrum questions to make the guide less prescriptive. Teams can still use them, but the guide lets Developers choose any structure that focuses on the Sprint Goal and ends with a plan.</p><h3 id=\"who-should-attend-the-daily-scrum\">Who should attend the Daily Scrum?</h3><p>It is an event for the Developers of the Scrum Team. The Product Owner and Scrum Master participate as Developers if they are actively working on Sprint Backlog items. Stakeholders and clients meet the team at the Sprint Review.</p><h3 id=\"does-the-scrum-master-have-to-run-the-stand-up\">Does the Scrum Master have to run the stand-up?</h3><p>No. The guide makes the Scrum Master responsible for ensuring all Scrum events take place and are positive, productive and kept within the timebox. The Developers own the Daily Scrum and choose how to run it.</p><h3 id=\"should-the-client-attend-our-daily-stand-up\">Should the client attend our daily stand-up?</h3><p>I would not make it the default. Give the client a separate, short daily update and bring them to the Sprint Review, where the guide has the Scrum Team and stakeholders review the work together.</p><h3 id=\"can-a-stand-up-be-done-on-slack-or-whatsapp-instead-of-a-call\">Can a stand-up be done on Slack or WhatsApp instead of a call?</h3><p>The guide does not require a call, only the same time and place, a focus on the Sprint Goal and a plan for the next day. Written check-ins work on some days, but GitLab's handbook warns that fully async work can leave new hires feeling isolated.</p><h3 id=\"do-we-need-a-stand-up-if-we-do-not-use-scrum\">Do we need a stand-up if we do not use Scrum?</h3><p>The 15-minute rule and the Developers-only rule come from the Scrum Guide, so they bind only Scrum teams. Many teams that use a simple task board still benefit from a short daily look at the board, ending with blockers owned and a plan for the day. Keep it short and keep the board at the centre.</p><h3 id=\"what-time-should-an-india-based-team-hold-its-stand-up-with-us-clients\">What time should an India-based team hold its stand-up with US clients?</h3><p>Hold the Daily Scrum at a time that suits the Developers, usually early in the Indian working day. Handle the client's daily update separately, through the team lead or Product Owner.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://scrumguides.org/scrum-guide.html\" rel=\"noopener noreferrer nofollow\">The Scrum Guide (November 2020), Ken Schwaber and Jeff Sutherland, Scrum Guides</a>, read 16 November 2026</li><li><a href=\"https://scrumguides.org/revisions.html\" rel=\"noopener noreferrer nofollow\">Scrum Guide revision history, Scrum Guides</a>, read 16 November 2026</li><li><a href=\"https://agilemanifesto.org/principles.html\" rel=\"noopener noreferrer nofollow\">Principles behind the Agile Manifesto, Agile Manifesto</a>, read 16 November 2026</li><li><a href=\"https://handbook.gitlab.com/handbook/communication/sync-vs-async-culture/\" rel=\"noopener noreferrer nofollow\">Sync vs. async culture, The GitLab Handbook</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian development team standing at a task board beside the words Better daily stand-ups",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. Four Indian team members, mixed men and women in casual office wear, stand in a loose half-circle around a wall board with coloured sticky notes (no readable words) in a bright Hyderabad office; one woman points at a card, a small round timer on the wall. Faces fully in frame. No readable text, no logos. Right half: the title text 'Better daily stand-ups' in very large bold black sans-serif, left-aligned, on three lines ('Better' / 'daily' / 'stand-ups'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Daily Scrum section of the Scrum Guide",
+   "url": "https://scrumguides.org/scrum-guide.html",
+   "annotate": [
+    {
+     "text": "The Daily Scrum is a 15-minute event for the Developers of the Scrum Team.",
+     "label": "15 minutes, for Developers"
+    },
+    {
+     "text": "produces an actionable plan for the next day of work",
+     "label": "The required output"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a seven-step, 15-minute daily stand-up",
+   "prompt": "16:9 process infographic, cream background #FBF6EC, flat icons. Bold black heading at top: 'A 15-minute stand-up'. Seven steps in a row joined by orange arrows, each a flat icon above a dark-blue rounded pill with white text: 1) target icon 'Show the Sprint Goal'; 2) kanban board icon 'Walk the board'; 3) flag icon 'Blockers get an owner'; 4) parking sign icon 'Park long topics'; 5) checklist icon 'Agree next-day plan'; 6) timer icon 'Stop at 15 minutes'; 7) chat bubble icon 'Post two lines'. One-line bold takeaway at bottom: 'Walk the board, not the people.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian development team holding a short stand-up around a board in the morning",
+   "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. Morning light in a small Indian tech office: five young Indian developers, one on a laptop video call showing a colleague's face (no readable text), standing around a task board with coloured cards, coffee and chai cups on a side table. Relaxed, focused mood. No readable text on screens or cards, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Scrum Guide revision history noting removed Daily Scrum questions",
+   "url": "https://scrumguides.org/revisions.html",
+   "annotate": [
+    {
+     "text": "Even Less Prescriptive",
+     "label": "2020 change"
+    },
+    {
+     "text": "removed Daily Scrum questions",
+     "label": "Three questions gone"
+    }
+   ]
+  }
+ ]
+}

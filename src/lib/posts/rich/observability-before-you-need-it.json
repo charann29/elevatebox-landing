@@ -1,0 +1,191 @@
+{
+ "slug": "observability-before-you-need-it",
+ "locale": "en",
+ "title": "CERT-In log retention: the 180-day rule for app owners",
+ "description": "CERT-In's 180-day log retention rule for Indian apps: which logs to keep, where to store them, the 6-hour reporting rule, and a setup that meets it.",
+ "imageUrl": "/assets/blog/observability-before-you-need-it/cover.webp",
+ "imageAlt": "Illustration of an Indian business owner checking app logs on a laptop beside the words App logs, 180 days",
+ "ogImageUrl": null,
+ "tags": [
+  "CERT-In",
+  "logging",
+  "monitoring",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-01-24T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-cert-ins-log-rule-asks-of-a-business-app",
+   "text": "What CERT-In's log rule asks of a business app",
+   "level": 2
+  },
+  {
+   "id": "the-four-rules-in-the-cert-in-directions-that-touch-your-app",
+   "text": "The four rules in the CERT-In directions that touch your app",
+   "level": 2
+  },
+  {
+   "id": "what-the-faq-clarifies-about-logs",
+   "text": "What the FAQ clarifies about logs",
+   "level": 2
+  },
+  {
+   "id": "where-the-logs-can-be-stored",
+   "text": "Where the logs can be stored",
+   "level": 3
+  },
+  {
+   "id": "which-logs-count",
+   "text": "Which logs count",
+   "level": 3
+  },
+  {
+   "id": "who-reports-when-a-vendor-is-breached",
+   "text": "Who reports when a vendor is breached",
+   "level": 3
+  },
+  {
+   "id": "the-incidents-you-must-report-in-6-hours",
+   "text": "The incidents you must report in 6 hours",
+   "level": 2
+  },
+  {
+   "id": "why-free-monitoring-tiers-do-not-meet-the-180-days",
+   "text": "Why free monitoring tiers do not meet the 180 days",
+   "level": 2
+  },
+  {
+   "id": "how-to-set-up-logging-that-covers-you-step-by-step",
+   "text": "How to set up logging that covers you, step by step",
+   "level": 2
+  },
+  {
+   "id": "monitoring-hearing-about-problems-before-customers-do",
+   "text": "Monitoring: hearing about problems before customers do",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-for-three-indian-businesses",
+   "text": "Worked examples for three Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-with-a-patient-booking-app",
+   "text": "A clinic with a patient booking app",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-on-a-hosted-store-with-its-own-order-app",
+   "text": "A D2C brand on a hosted store with its own order app",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-with-a-learning-app",
+   "text": "A coaching institute with a learning app",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes",
+   "text": "Common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-logging-check",
+   "text": "A monthly logging check",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Does the CERT-In 180-day log rule apply to small businesses?",
+   "a": "Yes. The directions apply to service providers, intermediaries, data centres, body corporate and government organisations, and CERT-In's FAQ defines body corporate to include a firm or sole proprietorship engaged in commercial or professional activities."
+  },
+  {
+   "q": "Do logs have to be stored in India?",
+   "a": "The directions say logs shall be maintained within the Indian jurisdiction. CERT-In's May 2022 FAQ adds that logs may be stored outside India as long as you can produce them to CERT-In in a reasonable time. Records of financial transactions for Indian users must be kept in Indian jurisdiction."
+  },
+  {
+   "q": "Which logs do I need to keep for 180 days?",
+   "a": "Logs of all your ICT systems. The FAQ gives examples including firewall, web, database, mail and proxy server logs, application logs, and SSH and VPN logs, and says both successful and unsuccessful events should be recorded."
+  },
+  {
+   "q": "How fast must I report a cyber incident to CERT-In?",
+   "a": "Within 6 hours of noticing it or being told about it, for incident types listed in Annexure I. You can report by email to incident@cert-in.org.in or phone 1800-11-4949, and send missing details later."
+  },
+  {
+   "q": "If my hosting company is hacked, who reports?",
+   "a": "CERT-In's FAQ says any entity that notices the incident shall report it, and that the obligation cannot be transferred or indemnified away by contract."
+  },
+  {
+   "q": "Is a free monitoring plan enough?",
+   "a": "Not for retention. Grafana Cloud's free tier lists 14 day log retention and Sentry's free plan a 30-day lookback. Keep a second copy of logs in storage set to at least 180 days."
+  },
+  {
+   "q": "What time source should my servers use?",
+   "a": "The directions say to connect to the NTP servers of NIC or NPL, or servers traceable to them. The FAQ allows other accurate sources as long as they conform to NPL and NIC time."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-cert-ins-log-rule-asks-of-a-business-app\">What CERT-In's log rule asks of a business app</h2><p><strong>In short:</strong> CERT-In's directions of 28 April 2022 tell every body corporate in India, which includes a sole proprietorship, to keep logs of all its ICT systems for a rolling 180 days, sync clocks to NIC or NPL time, and report listed cyber incidents within 6 hours. For an app or website, that means turning logs on, keeping them for at least 180 days, and being able to hand them over.</p><p>This guide was checked in November 2026, against CERT-In's own directions, its May 2022 FAQ and the cloud providers' documentation listed at the end. I am not a lawyer and this is not legal advice. Where I quote the rule, I quote CERT-In's words.</p><p>The old version of this post was about monitoring before you need it. That advice still holds, and in India it now has a legal floor under it. The good news is that the logs that keep you compliant are the same logs that let you fix a bug at 2 am.</p><h2 id=\"the-four-rules-in-the-cert-in-directions-that-touch-your-app\">The four rules in the CERT-In directions that touch your app</h2><p>The directions are short, eight pages with the annexures. These are the parts a typical business app or website must act on.</p><p><em>CERT-In directions of 28 April 2022: the parts that apply to a business app</em></p><table><thead><tr><th>Direction</th><th>What it says</th><th>What it means for your app</th></tr></thead><tbody><tr><td>(i) Clock sync</td><td>Connect to the NTP server of NIC or NPL, or NTP servers traceable to them, for all ICT system clocks</td><td>Every server, database and log tool shows the same correct time</td></tr><tr><td>(ii) Incident reporting</td><td>Report Annexure I incidents to CERT-In within 6 hours of noticing them</td><td>Someone named can report quickly, with logs in hand</td></tr><tr><td>(iii) Point of contact</td><td>Designate a Point of Contact to interface with CERT-In</td><td>A named person, and a backup, on record</td></tr><tr><td>(iv) Logs</td><td>Enable logs of all ICT systems and keep them securely for a rolling period of 180 days</td><td>Retention set to at least 180 days on every log source</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\"><em>CERT-In directions dated 28 April 2022</em></a><em>, read 16 November 2026.</em></p><p>The directions say they became effective 60 days after issue. Not following them \"may invite punitive action under sub-section (7) of the section 70B of the IT Act, 2000.\"</p><p>Who counts? The <a href=\"https://www.cert-in.org.in/PDF/FAQs_on_CyberSecurityDirections_May2022.pdf\" rel=\"noopener noreferrer nofollow\">CERT-In FAQ of May 2022</a> answers it directly by quoting section 43A of the IT Act: a body corporate \"means any company and includes a firm, sole proprietorship or other association of individuals engaged in commercial or professional activities.\" A clinic, a coaching institute or a shop with a website is in scope.</p><figure><img src=\"/assets/blog/observability-before-you-need-it/1.webp\" alt=\"Annotated view of CERT-In's directions page listing the 2022 directions and FAQ\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>CERT-In's directions page. The directions and the FAQ are both linked from here.</figcaption></figure><h2 id=\"what-the-faq-clarifies-about-logs\">What the FAQ clarifies about logs</h2><p>The directions themselves say the logs \"shall be maintained within the Indian jurisdiction.\" The FAQ, published a few weeks later, adds three answers that matter for a small business.</p><h3 id=\"where-the-logs-can-be-stored\">Where the logs can be stored</h3><p>Question 35 of the FAQ asks whether logs must be stored in India only. CERT-In's answer: \"The logs may be stored outside India also as long as the obligation to produce logs to CERT-In is adhered to by the entities in a reasonable time.\" Question 36 adds that a service provider offering services to users in India \"needs to enable and maintain logs and records of financial transactions in Indian jurisdiction.\"</p><p>My reading: if your app runs on a server outside India, you are not automatically in breach, but you must be able to produce the logs quickly. If you are choosing a cloud region today, hosting in India removes the question. AWS, for example, has two Indian regions: Asia Pacific (Mumbai), ap-south-1, and Asia Pacific (Hyderabad), ap-south-2, which AWS's region list marks as opt-in.</p><h3 id=\"which-logs-count\">Which logs count</h3><p>Question 37 says the logs depend on the sector, and lists examples: \"Firewall logs, Intrusion Prevention Systems logs, SIEM logs, web / database/ mail / FTP / Proxy server logs, Event logs of critical systems, Application logs\" and SSH and VPN logs, among others. It says the list is not exhaustive, and that \"both successful as well as unsuccessful events shall be recorded.\" A failed login matters as much as a successful one.</p><h3 id=\"who-reports-when-a-vendor-is-breached\">Who reports when a vendor is breached</h3><p>Question 13 covers the case most small businesses are in: your data sits with a hosting company or software vendor. CERT-In says \"Any entity which notices the cyber security incident, shall report to CERT-In,\" and that the obligation \"is neither transferrable nor indemnified or dispense with.\" A contract clause saying your vendor will handle it does not move the duty off you.</p><h2 id=\"the-incidents-you-must-report-in-6-hours\">The incidents you must report in 6 hours</h2><p>Annexure I lists the incident types. For a business app or website, these are the ones I would print and pin up:</p><ul><li>Compromise of critical systems or information</li><li>Unauthorised access of IT systems or data</li><li>Defacement of a website, or intrusion into a website with unauthorised changes such as inserting malicious code</li><li>Malicious code attacks, including ransomware</li><li>Attacks on servers such as database, mail and DNS</li><li>Identity theft, spoofing and phishing attacks</li><li>Denial of service and distributed denial of service attacks</li><li>Data breach and data leak</li><li>Attacks or incidents affecting digital payment systems</li><li>Attacks through malicious mobile apps, and fake mobile apps</li><li>Unauthorised access to social media accounts</li><li>Attacks or suspicious activity affecting cloud systems</li></ul><p>The directions give three ways to report: email to incident@cert-in.org.in, phone 1800-11-4949 and fax 1800-11-6969. The FAQ says that if you do not have every detail within 6 hours, you \"may provide information to the extent available at the time of reporting\" and send the rest later. Six hours is about speed, not completeness.</p><figure><img src=\"/assets/blog/observability-before-you-need-it/2.webp\" alt=\"Infographic of the CERT-In timeline from noticing an incident to reporting and handing over logs\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Six hours to report, 180 days of logs to back it up.</figcaption></figure><h2 id=\"why-free-monitoring-tiers-do-not-meet-the-180-days\">Why free monitoring tiers do not meet the 180 days</h2><p>Many small apps run on free plans of monitoring tools. They are useful, but their retention is far shorter than 180 days.</p><p><em>Log and error retention on common tools, as published in November 2026</em></p><table><thead><tr><th>Tool</th><th>Plan</th><th>Published retention or default</th><th>Meets 180 days on its own?</th></tr></thead><tbody><tr><td>AWS CloudWatch Logs</td><td>Pay as you go</td><td>Stored indefinitely by default; retention set per log group, with values including 180 days</td><td>Yes, if you set it to 180 days or more</td></tr><tr><td>Grafana Cloud</td><td>Free</td><td>Logs limited to 50 GB a month with 14 day retention</td><td>No</td></tr><tr><td>Sentry</td><td>Developer (free)</td><td>One user, 5k errors, 30-day lookback</td><td>No, and it holds errors, not all logs</td></tr></tbody></table><p><em>Source: </em><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\" rel=\"noopener noreferrer nofollow\"><em>AWS CloudWatch Logs documentation</em></a><em> and </em><a href=\"https://grafana.com/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Grafana pricing</em></a><em> and </em><a href=\"https://sentry.io/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Sentry pricing</em></a><em>, read 16 November 2026.</em></p><p>The AWS page is worth reading in full. It says \"By default, log data is stored in CloudWatch Logs indefinitely,\" and that you can set retention per log group. Account-level retention policies accept fixed values that include 30, 90, 180 and 365 days. One warning on the same page: an account-level policy \"replaces the retention period set on a log group, including when the log group's own retention period is longer.\" A well-meant cost-saving policy of 90 days can quietly undo your 180.</p><figure><img src=\"/assets/blog/observability-before-you-need-it/3.webp\" alt=\"Annotated view of the AWS CloudWatch Logs documentation on log retention\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>AWS's own wording on retention. Check both the log group setting and any account-level policy.</figcaption></figure><p>A sensible pattern for a small app: keep 14 to 30 days in a fast search tool for debugging, and send everything to cheaper storage in India for 180 days or more. Errors go to an error tracker like Sentry for the developer, but the raw logs live somewhere you control.</p><h2 id=\"how-to-set-up-logging-that-covers-you-step-by-step\">How to set up logging that covers you, step by step</h2><p>This is the order I would follow for a typical app: a website or mobile app, an API server, a database and a few third-party services.</p><p><strong>Step 1. List every system that produces logs.</strong> Web server, API, database, background jobs, admin panel, email service, payment gateway dashboard, cloud console, office firewall. CERT-In's wording is \"all their ICT systems.\" A list on one page is enough.</p><p><strong>Step 2. Fix the clocks.</strong> Point every server at NTP servers of NIC or NPL, or a time source traceable to them. The FAQ explains why: \"Without an accurate time stamp it is extremely challenging to re-create accurate sequence of events.\" Store log times with the time zone included.</p><p><strong>Step 3. Decide what each log line holds.</strong> At minimum: time, user id, the action, the result (success or failure), the IP address and a request id. Leave out passwords, OTPs, full card numbers and health details. Logs are data too, and they leak.</p><p><strong>Step 4. Use one standard format.</strong> Structured JSON lines, or <a href=\"https://opentelemetry.io/docs/what-is-opentelemetry/\" rel=\"noopener noreferrer nofollow\">OpenTelemetry</a>, which describes itself as \"vendor- and tool-agnostic,\" so you can switch log tools later without changing your code.</p><p><strong>Step 5. Ship logs off the server.</strong> A server that is hacked or deleted takes its local logs with it. Send logs to a central store in a separate account, with write access for the app and delete access for almost nobody.</p><p><strong>Step 6. Set retention to at least 180 days, everywhere.</strong> Check each log group, bucket and tool. Then check for account-level policies that override them. Write the setting and the date you checked it in your list from Step 1.</p><p><strong>Step 7. Name the Point of Contact and a backup.</strong> Send the details to CERT-In in the Annexure II format, as the directions ask. Give both people the reporting email, phone number and a copy of the incident form.</p><p><strong>Step 8. Rehearse once.</strong> Pick a fake incident: an admin account logged in from an unknown country. Time how long it takes to find the login in the logs, decide it is reportable and draft the email. If it takes more than an hour, fix the gap now.</p><figure><img src=\"/assets/blog/observability-before-you-need-it/4.webp\" alt=\"Illustration of an Indian developer and business owner reviewing server logs together\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>The first rehearsal usually finds a log source nobody had switched on.</figcaption></figure><h2 id=\"monitoring-hearing-about-problems-before-customers-do\">Monitoring: hearing about problems before customers do</h2><p>Logs answer \"what happened.\" Monitoring answers \"is something wrong right now.\" CERT-In's rule is about logs, but the 6-hour clock starts when you notice an incident, and you cannot notice what nobody is watching. For a small app I would set up four alerts and nothing more at first.</p><ul><li><strong>Is it up?</strong> An outside check that loads your home page and your login API every minute or so, and messages a named person when it fails twice in a row.</li><li><strong>Are errors jumping?</strong> An alert when the error rate in your error tracker is several times its normal level.</li><li><strong>Is someone guessing passwords?</strong> An alert when failed logins from one IP or for one account pass a threshold you pick after looking at a normal week.</li><li><strong>Did an admin do something unusual?</strong> A message for every new admin user, every change to payment or bank settings, and every login to the cloud console's root account.</li></ul><p>Send alerts to a phone, not a shared inbox nobody reads. Start with thresholds that fire rarely. An alert that fires every day gets muted within a week, and then it is worse than none. If you host on AWS, our <a href=\"/technologies/aws\">AWS page</a> covers how we set these up.</p><h2 id=\"worked-examples-for-three-indian-businesses\">Worked examples for three Indian businesses</h2><p>These examples are illustrative. The businesses are invented to show the method, not taken from real clients.</p><h3 id=\"a-clinic-with-a-patient-booking-app\">A clinic with a patient booking app</h3><p>Say a clinic in Hyderabad has a booking app, a small API on a cloud server and a managed database. Logins, bookings, report downloads and admin changes are logged with user id and time, never the report contents. Logs ship to a separate storage account in an Indian region, with 365-day retention set at the account level so nobody can shorten it by accident.</p><p>The clinic's IT vendor runs the server, but CERT-In's FAQ is clear that the duty to report does not transfer. The clinic owner is the Point of Contact, the vendor's lead is the backup, and both have the reporting email on their phones. Our <a href=\"/industries/healthcare-appointments\">healthcare appointments page</a> covers this kind of app.</p><h3 id=\"a-d2c-brand-on-a-hosted-store-with-its-own-order-app\">A D2C brand on a hosted store with its own order app</h3><p>Say a brand sells on a hosted store platform and runs its own small app for order tracking and returns. It cannot change how the store platform keeps its logs, but it can keep its own: admin logins to the store, changes to payment settings, its own app's API logs and its email sending logs.</p><p>The incident it is most likely to face is not a hacked server but a phished admin account or a fake app using its brand, both on CERT-In's list. Its logs need admin login history from the platform exported regularly, because platform dashboards may not keep it for 180 days.</p><h3 id=\"a-coaching-institute-with-a-learning-app\">A coaching institute with a learning app</h3><p>Say an institute in Vijayawada runs a video learning app with logins for a few thousand students. Its biggest log volume is video playback, which it samples, and its most important logs are logins, password resets and payment callbacks, which it keeps in full.</p><p>Its developer used a free monitoring plan with 14-day retention. That stays for debugging, and a second copy of all logs goes to cheap storage for 180 days. The extra cost is small next to explaining to CERT-In that the logs are gone. Our <a href=\"/industries/education\">education page</a> has more on this sector.</p><h2 id=\"common-mistakes\">Common mistakes</h2><ul><li><strong>Trusting the free plan.</strong> 14 or 30 days of retention is useful for debugging and short of 180 days.</li><li><strong>Logs only on the server.</strong> When the server is the thing that was attacked, the logs go with it.</li><li><strong>An account-level policy overriding everything.</strong> AWS says it replaces longer log group settings. Check for one.</li><li><strong>Logging secrets.</strong> OTPs, passwords and tokens in logs turn a small leak into a big one.</li><li><strong>Only successful events.</strong> CERT-In's FAQ asks for unsuccessful events too. Failed logins are how you spot an attack.</li><li><strong>Clocks that disagree.</strong> A server in UTC, a database in IST and a vendor tool in US time make the sequence of events impossible to rebuild.</li><li><strong>Assuming the vendor reports.</strong> The FAQ says the obligation is not transferable.</li><li><strong>Nobody named.</strong> At 2 am, \"the team\" does not send emails. A named person with a backup does.</li></ul><h2 id=\"a-monthly-logging-check\">A monthly logging check</h2><p>Once set up, this takes about half an hour a month.</p><ul><li>Open the list of log sources. Confirm each one received logs in the last 24 hours.</li><li>Confirm retention is still 180 days or more on each, and that no new account-level policy shortens it.</li><li>Search for a log line from 170 days ago to prove it is still there.</li><li>Check that failed logins and admin changes are being logged.</li><li>Search the logs for the words password, otp and token. If they appear, fix the code.</li><li>Confirm the Point of Contact and backup are still the right people, and their phones have the reporting details.</li><li>Once a quarter, rerun the fake incident rehearsal.</li></ul><p>For the app-side security that sits next to this, see our <a href=\"/blogs/mobile-app-security-checklist\">mobile app security checklist</a>. If you want logging and monitoring scoped into a new build or an existing app, our ₹3,500 requirement analysis gives you a written scope, fixed quotation and timeline before any work starts (<a href=\"/book\">how it works</a>). The cloud accounts and logs stay in your company's name.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"does-the-cert-in-180-day-log-rule-apply-to-small-businesses\">Does the CERT-In 180-day log rule apply to small businesses?</h3><p>Yes. The directions apply to service providers, intermediaries, data centres, body corporate and government organisations, and CERT-In's FAQ defines body corporate to include a firm or sole proprietorship engaged in commercial or professional activities.</p><h3 id=\"do-logs-have-to-be-stored-in-india\">Do logs have to be stored in India?</h3><p>The directions say logs shall be maintained within the Indian jurisdiction. CERT-In's May 2022 FAQ adds that logs may be stored outside India as long as you can produce them to CERT-In in a reasonable time. Records of financial transactions for Indian users must be kept in Indian jurisdiction.</p><h3 id=\"which-logs-do-i-need-to-keep-for-180-days\">Which logs do I need to keep for 180 days?</h3><p>Logs of all your ICT systems. The FAQ gives examples including firewall, web, database, mail and proxy server logs, application logs, and SSH and VPN logs, and says both successful and unsuccessful events should be recorded.</p><h3 id=\"how-fast-must-i-report-a-cyber-incident-to-cert-in\">How fast must I report a cyber incident to CERT-In?</h3><p>Within 6 hours of noticing it or being told about it, for incident types listed in Annexure I. You can report by email to incident@cert-in.org.in or phone 1800-11-4949, and send missing details later.</p><h3 id=\"if-my-hosting-company-is-hacked-who-reports\">If my hosting company is hacked, who reports?</h3><p>CERT-In's FAQ says any entity that notices the incident shall report it, and that the obligation cannot be transferred or indemnified away by contract.</p><h3 id=\"is-a-free-monitoring-plan-enough\">Is a free monitoring plan enough?</h3><p>Not for retention. Grafana Cloud's free tier lists 14 day log retention and Sentry's free plan a 30-day lookback. Keep a second copy of logs in storage set to at least 180 days.</p><h3 id=\"what-time-source-should-my-servers-use\">What time source should my servers use?</h3><p>The directions say to connect to the NTP servers of NIC or NPL, or servers traceable to them. The FAQ allows other accurate sources as long as they conform to NPL and NIC time.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.cert-in.org.in/Directions70B.jsp\" rel=\"noopener noreferrer nofollow\">Directions by CERT-In under Section 70B, CERT-In</a>, read 16 November 2026</li><li><a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\">Directions under section 70B(6) of the IT Act dated 28 April 2022 (PDF), CERT-In</a>, read 16 November 2026</li><li><a href=\"https://www.cert-in.org.in/PDF/FAQs_on_CyberSecurityDirections_May2022.pdf\" rel=\"noopener noreferrer nofollow\">Frequently Asked Questions on Cyber Security Directions of 28.04.2022 (PDF), CERT-In</a>, read 16 November 2026</li><li><a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\" rel=\"noopener noreferrer nofollow\">Working with log groups and log streams, Amazon CloudWatch Logs User Guide</a>, read 16 November 2026</li><li><a href=\"https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html\" rel=\"noopener noreferrer nofollow\">AWS Regions, AWS Documentation</a>, read 16 November 2026</li><li><a href=\"https://grafana.com/pricing/\" rel=\"noopener noreferrer nofollow\">Pricing, Grafana Labs</a>, read 16 November 2026</li><li><a href=\"https://sentry.io/pricing/\" rel=\"noopener noreferrer nofollow\">Pricing, Sentry</a>, read 16 November 2026</li><li><a href=\"https://opentelemetry.io/docs/what-is-opentelemetry/\" rel=\"noopener noreferrer nofollow\">What is OpenTelemetry?, OpenTelemetry</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian business owner checking app logs on a laptop beside the words App logs, 180 days",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian woman in her 40s, owner of a small clinic, in a cotton saree with a shawl, seated at a desk in a small office, looking at a laptop that shows abstract horizontal lines of a log list and a small calendar icon (no readable text), a desk clock and a phone beside her. Face fully in frame. Right half: the title text 'App logs, 180 days' in very large bold black sans-serif, left-aligned, on two lines ('App logs,' / '180 days'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of CERT-In's directions page listing the 2022 directions and FAQ",
+   "url": "https://www.cert-in.org.in/Directions70B.jsp",
+   "annotate": [
+    {
+     "text": "Frequently Asked Questions on Cyber Security Directions of 28.04.2022",
+     "label": "Read the FAQ too"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the CERT-In timeline from noticing an incident to reporting and handing over logs",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'CERT-In rules for your app'. Left to right with orange arrows between steps. Step 1: clock icon, dark-blue rounded pill with white text 'Clocks synced to NIC or NPL'. Step 2: server icon with a stack of pages, pill 'Logs kept 180 days'. Step 3: alarm icon, pill 'Incident noticed'. Step 4: envelope icon, pill 'Report within 6 hours'. Step 5: folder icon, pill 'Logs handed to CERT-In'. Below the row, a small person icon with pill 'Named Point of Contact'. One-line bold takeaway at bottom: 'Set retention to 180 days before you need the logs.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the AWS CloudWatch Logs documentation on log retention",
+   "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html",
+   "annotate": [
+    {
+     "text": "By default, log data is stored in CloudWatch Logs indefinitely.",
+     "label": "Default: kept forever"
+    },
+    {
+     "text": "An account-level retention policy replaces the retention period set on a log group, including when the log group's own retention period is longer.",
+     "label": "Can undo your 180 days"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian developer and business owner reviewing server logs together",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian office at night with a window showing city lights: a young male developer in a hoodie and an older male business owner in a half-sleeve shirt lean over a laptop showing abstract lines and a red alert dot (no readable text). A steel tea glass and a phone on the desk. Faces fully in frame. No logos."
+  }
+ ]
+}

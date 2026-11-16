@@ -1,0 +1,176 @@
+{
+ "slug": "onboarding-that-reduces-churn",
+ "locale": "en",
+ "title": "App onboarding best practices to reduce early churn",
+ "description": "App onboarding that cuts early churn in India: Apple and Google guidance, login after value, OTP autofill, permissions in context, DPDP consent and metrics.",
+ "imageUrl": "/assets/blog/onboarding-that-reduces-churn/cover.webp",
+ "imageAlt": "Illustration of an Indian founder reviewing app onboarding screens on a phone, beside the words Onboarding that keeps users",
+ "ogImageUrl": null,
+ "tags": [
+  "app onboarding",
+  "user retention",
+  "UX design",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-10-04T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-onboarding-that-reduces-churn-looks-like",
+   "text": "What onboarding that reduces churn looks like",
+   "level": 2
+  },
+  {
+   "id": "what-apple-and-google-say-in-one-table",
+   "text": "What Apple and Google say, in one table",
+   "level": 2
+  },
+  {
+   "id": "apples-onboarding-guidelines-explained",
+   "text": "Apple's onboarding guidelines, explained",
+   "level": 2
+  },
+  {
+   "id": "the-login-wall-is-the-biggest-decision",
+   "text": "The login wall is the biggest decision",
+   "level": 2
+  },
+  {
+   "id": "indias-otp-habit-make-it-painless",
+   "text": "India's OTP habit: make it painless",
+   "level": 2
+  },
+  {
+   "id": "consent-and-language-under-the-dpdp-act",
+   "text": "Consent and language under the DPDP Act",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-rebuild-an-onboarding-flow",
+   "text": "Step by step: rebuild an onboarding flow",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples-from-indian-businesses",
+   "text": "Three worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-ecommerce-app",
+   "text": "A D2C ecommerce app",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-booking-app",
+   "text": "A clinic booking app",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-learning-app",
+   "text": "A coaching institute's learning app",
+   "level": 3
+  },
+  {
+   "id": "mistakes-that-drive-early-churn",
+   "text": "Mistakes that drive early churn",
+   "level": 2
+  },
+  {
+   "id": "the-numbers-to-watch-every-week",
+   "text": "The numbers to watch every week",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is early churn in an app?",
+   "a": "Early churn is users who install and open an app once or a few times, then stop using it. It usually happens in the first session or first week, which is why onboarding has such a large effect on it."
+  },
+  {
+   "q": "Should my app ask users to sign up before they can use it?",
+   "a": "Only if the account is the product, such as banking or health records. Apple's guideline 5.1.1(v) says that if your app doesn't include significant account-based features, let people use it without a login."
+  },
+  {
+   "q": "How do I make OTP login easier on Android?",
+   "a": "Use Google's SMS Retriever API, which verifies the phone number without the user typing the code and without extra permissions. If you can't control the SMS format, the SMS User Consent API asks the user to allow reading one message."
+  },
+  {
+   "q": "When should an app ask for location or camera permission?",
+   "a": "When the user starts to use the feature that needs it. Android's guidance says to ask in context, let users cancel any explanation screen, and keep the app working if they refuse. Apple allows asking during onboarding only if the app cannot function without it."
+  },
+  {
+   "q": "Do I need a tutorial or welcome slides?",
+   "a": "Usually not. Apple says people should ideally understand the app by using it, recommends context-specific tips over one long flow, and says any tutorial should be optional and not shown again once skipped."
+  },
+  {
+   "q": "Does the DPDP Act affect onboarding screens?",
+   "a": "Yes. Consent must be free, specific, informed, unconditional and unambiguous, and as easy to withdraw as to give. Users must be able to read the notice in English or any Eighth Schedule language. The DPDP Rules give an 18-month phased compliance timeline from November 2025."
+  },
+  {
+   "q": "How do I measure whether onboarding is working?",
+   "a": "Track the path from Google Analytics' automatic first_open event to one event that marks the first useful result, with an event for each screen in between. Fix the screen with the biggest drop first, then measure again."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-onboarding-that-reduces-churn-looks-like\">What onboarding that reduces churn looks like</h2><p><strong>In short:</strong> App onboarding reduces early churn when it gets a new user to the first useful result fast: no forced sign-up before they see value, OTP that fills itself in, permissions asked only when a feature needs them, and setup postponed. Apple's guidelines say onboarding should be fast, fun and optional. Measure where people drop off between first open and that first result, and fix the biggest drop first.</p><p>This guide was checked in November 2026, against Apple's Human Interface Guidelines and App Store Review Guidelines, Android Developers, Google Identity and Play Console Help, Google Analytics Help, and the DPDP Act and Rules.</p><p>Early churn is the user who installs your app, opens it once or twice and never comes back. It is the most expensive loss in the funnel, because you have already paid to get the install. Most of it happens in the first few minutes, and much of that is the onboarding flow.</p><p>I will cover what Apple and Google actually say about onboarding, the India-specific parts such as phone number login and language, a step-by-step way to rebuild a flow, three worked examples, the mistakes I see most and the numbers worth watching. I have not found trustworthy published benchmarks for onboarding drop-off, so I will not quote one. Your own funnel is the number that matters.</p><h2 id=\"what-apple-and-google-say-in-one-table\">What Apple and Google say, in one table</h2><p>There is more official guidance on onboarding than most product teams realise. It is spread across design guidelines, review rules and developer docs.</p><p><em>Official guidance that shapes a mobile onboarding flow</em></p><table><thead><tr><th>Topic</th><th>What the guidance says</th><th>Source</th></tr></thead><tbody><tr><td>Overall flow</td><td>If onboarding is necessary, design a flow that's fast, fun and optional</td><td>Apple HIG, Onboarding</td></tr><tr><td>Setup steps</td><td>Postpone nonessential setup flows or customisation steps; provide reasonable defaults</td><td>Apple HIG, Onboarding</td></tr><tr><td>Ratings and purchases</td><td>Prefer letting people experience the app before prompting for ratings or purchases</td><td>Apple HIG, Onboarding</td></tr><tr><td>Login</td><td>If your app doesn't include significant account-based features, let people use it without a login</td><td>App Store guideline 5.1.1(v)</td></tr><tr><td>Social login</td><td>If you offer a third-party login such as Google Sign-In, also offer an equivalent privacy-focused option</td><td>App Store guideline 4.8</td></tr><tr><td>Permissions</td><td>Ask for a permission in context, when the user starts to interact with the feature that needs it</td><td>Android Developers</td></tr><tr><td>OTP</td><td>SMS Retriever verifies a phone number without the user typing the code and without extra permissions</td><td>Google Identity</td></tr><tr><td>Account deletion</td><td>Apps that support account creation must offer account deletion in the app</td><td>Apple and Google Play</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.apple.com/design/human-interface-guidelines/onboarding\" rel=\"noopener noreferrer nofollow\"><em>Apple HIG Onboarding</em></a><em> and </em><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\"><em>App Store Review Guidelines</em></a><em> and </em><a href=\"https://developer.android.com/training/permissions/requesting\" rel=\"noopener noreferrer nofollow\"><em>Android permissions</em></a><em> and </em><a href=\"https://developers.google.com/identity/sms-retriever/overview\" rel=\"noopener noreferrer nofollow\"><em>SMS Retriever API</em></a><em> and </em><a href=\"https://support.google.com/googleplay/android-developer/answer/13327111\" rel=\"noopener noreferrer nofollow\"><em>Play Console Help</em></a><em>, read 16 November 2026.</em></p><p>Read together, these say the same thing: let people reach value first, and ask for accounts, data and permissions only when the reason is obvious.</p><h2 id=\"apples-onboarding-guidelines-explained\">Apple's onboarding guidelines, explained</h2><p>Apple's <a href=\"https://developer.apple.com/design/human-interface-guidelines/onboarding\" rel=\"noopener noreferrer nofollow\">onboarding guidance</a> starts with a line I would put on every product team's wall: ideally, people can understand your app simply by experiencing it. Onboarding is a fallback, not a feature.</p><p>When you do need it, Apple's points are practical:</p><ul><li><strong>Teach through interactivity.</strong> People retain more when they perform the task than when they read about it. Let them try the action safely.</li><li><strong>Prefer context-specific tips over one long flow.</strong> A tip next to the button it explains, at the moment it matters, beats five intro slides.</li><li><strong>Keep any required flow brief.</strong> If you try to teach too much, people feel overwhelmed and remember less.</li><li><strong>Make tutorials optional.</strong> If someone skips it, don't show it again on the next launch, but keep it findable in help or settings.</li><li><strong>Don't make people wait for downloads.</strong> Ship enough content in the app that people can start straight away.</li><li><strong>Postpone setup.</strong> Use sensible defaults so most people can start without configuring anything.</li></ul><p>On permissions, Apple allows a request inside onboarding only if the app needs that access before it can work at all. Otherwise, ask when people first use the feature that relies on it.</p><figure><img src=\"/assets/blog/onboarding-that-reduces-churn/1.webp\" alt=\"Annotated view of Apple's onboarding guidelines showing advice to teach through interactivity and postpone setup\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple's onboarding guidance: teach by doing, and push setup later.</figcaption></figure><h2 id=\"the-login-wall-is-the-biggest-decision\">The login wall is the biggest decision</h2><p>Many Indian apps open with a phone number screen before showing anything. Sometimes that is right. Often it is not.</p><p>Apple's <a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\">App Store Review Guidelines</a> are direct about it. Guideline 5.1.1(v) says that if your app doesn't include significant account-based features, let people use it without a login. It also says apps may not require users to enter personal information to function, except when directly relevant to the core functionality or required by law.</p><p>In practice: a store app can let people browse products and fill a cart before asking for a number at checkout. A news or recipe app may not need a login at all. A banking or health records app needs one from the start, because the account is the product.</p><p>If you do offer Google or other social sign-in as the main login, guideline 4.8 requires an equivalent option that limits data collection to name and email, lets users keep their email private, and does not collect interactions for advertising without consent. Sign in with Apple is the usual way apps meet that.</p><p>On Android, Google's <a href=\"https://developer.android.com/identity/sign-in/credential-manager\" rel=\"noopener noreferrer nofollow\">Credential Manager</a> is the recommended Jetpack API for sign-in. It supports passkeys, Sign in with Google and other federated sign-in, and passwords through one interface. Fewer typed passwords means fewer people stuck on a forgotten one at their second visit.</p><h2 id=\"indias-otp-habit-make-it-painless\">India's OTP habit: make it painless</h2><p>Phone number and OTP is the default login for a huge number of Indian apps. Done badly, it is also where many users give up: the SMS is slow, they switch to the messages app, copy the code, come back, and the screen has reset.</p><p>Google's <a href=\"https://developers.google.com/identity/sms-retriever/overview\" rel=\"noopener noreferrer nofollow\">SMS Retriever API</a> removes most of that on Android. Google says it lets your app verify a user's phone number automatically, without the user manually typing the code and without extra app permissions. Your server sends an SMS containing the code and a hash that identifies your app, and Google Play services passes that message to your app.</p><p>If you don't control the SMS format, the <a href=\"https://developers.google.com/identity/sms-retriever/user-consent/overview\" rel=\"noopener noreferrer nofollow\">SMS User Consent API</a> asks the user to allow the app to read a single message. Google notes the user should still be able to type the code, in case the SMS arrives on a different device.</p><p>On iOS, marking the code field with the <a href=\"https://developer.apple.com/documentation/uikit/uitextcontenttype/onetimecode\" rel=\"noopener noreferrer nofollow\">oneTimeCode</a> content type tells the system the field holds a one-time code, so the keyboard can offer it. Ask your developer whether both are done. It is a small piece of work with a visible effect on the first screen.</p><figure><img src=\"/assets/blog/onboarding-that-reduces-churn/2.webp\" alt=\"Annotated view of Google's SMS Retriever API page showing verification without extra permissions\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's SMS Retriever API fills in the OTP without extra permissions.</figcaption></figure><h2 id=\"consent-and-language-under-the-dpdp-act\">Consent and language under the DPDP Act</h2><p>Onboarding is also where most apps collect consent for personal data, so India's data protection law belongs in the design.</p><p>Section 6 of the <a href=\"https://dpdpact.net/reader/section-6\" rel=\"noopener noreferrer nofollow\">DPDP Act, 2023</a> says consent must be free, specific, informed, unconditional and unambiguous, with a clear affirmative action, and limited to the data necessary for the stated purpose. It also says users can withdraw consent at any time, with the ease of doing so comparable to the ease of giving it.</p><p>Section 5(3) adds a point few onboarding flows handle: the user must have the option to read the notice in English or any language in the Eighth Schedule to the Constitution. If your app is in Telugu or Hindi, the privacy notice should be too.</p><p>For onboarding, that points to a few design choices: a consent screen that names the purpose in one or two plain sentences, no pre-ticked boxes, separate choices for separate purposes such as marketing, and a settings page where the same choices can be changed later.</p><p>The government's <a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014\" rel=\"noopener noreferrer nofollow\">announcement of the DPDP Rules</a>, posted on 14 November 2025, says the Rules give an 18-month phased compliance timeline and require standalone, clear and simple consent notices. I am not a lawyer, and this is not legal advice, but designing a short, plain consent screen now is cheaper than redesigning it later.</p><h2 id=\"step-by-step-rebuild-an-onboarding-flow\">Step by step: rebuild an onboarding flow</h2><p><strong>Step 1. Define the first useful result.</strong> One action that shows the app's value: a first order tracked, a first appointment booked, a first lesson watched. Write it down. Everything in onboarding should lead there.</p><p><strong>Step 2. Measure the funnel.</strong> Google Analytics collects a <a href=\"https://support.google.com/analytics/answer/9234069\" rel=\"noopener noreferrer nofollow\">first_open</a> event automatically the first time a user launches the app after installing it. Log one event for each onboarding screen and one for the first useful result. The gap between first_open and that result is your onboarding funnel.</p><p>Count users, not sessions, and split the funnel by Android and iOS. The two platforms often fail at different screens: OTP autofill, permission dialogs and sign-in options all behave differently.</p><p><strong>Step 3. Remove screens before improving them.</strong> Intro slides, a language picker the phone already answered, a profile form, a referral code box. For each screen, ask whether the user could reach the first result without it.</p><p><strong>Step 4. Move the login to the moment it is needed.</strong> Browse first, sign in at checkout or booking, unless the account is the product.</p><p><strong>Step 5. Make OTP fill itself in.</strong> SMS Retriever on Android, the one-time code field type on iOS, a typed fallback and a visible resend timer.</p><p><strong>Step 6. Ask for permissions in context.</strong> Location when the user taps \"use my location\", camera when they tap \"scan\". Google says to let users cancel any explanation screen and to degrade gracefully if they say no.</p><p><strong>Step 7. Replace the tour with tips.</strong> One tip next to the feature, the first time it is relevant.</p><p><strong>Step 8. Ship, watch the funnel for two weeks, fix the biggest drop.</strong> Then repeat. Small, measured changes beat a redesign.</p><figure><img src=\"/assets/blog/onboarding-that-reduces-churn/3.webp\" alt=\"Infographic of a short onboarding path from first open to first useful result, with login and permissions moved later\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Get to the first useful result first; ask for login and permissions when they are needed.</figcaption></figure><h2 id=\"three-worked-examples-from-indian-businesses\">Three worked examples from Indian businesses</h2><p>These are illustrative. The businesses and flows are made up to show the decisions, not taken from real clients.</p><h3 id=\"a-d2c-ecommerce-app\">A D2C ecommerce app</h3><p>A home-décor brand's app opened with four welcome slides, then phone number, OTP, name, email and a style quiz before showing any product.</p><p>The rebuilt flow opens on the catalogue. People browse and add to cart as guests. Phone number and OTP come at checkout, with the code read automatically on Android. Name and address are asked once, during the first order. The style quiz becomes an optional card on the home screen. Notification permission is asked on the order confirmation screen, where it is obviously useful. Our post on <a href=\"/blogs/push-notifications-that-work\">push notifications</a> covers that moment in detail.</p><figure><img src=\"/assets/blog/onboarding-that-reduces-churn/4.webp\" alt=\"Illustration of a young woman browsing a home decor app on her sofa before signing in\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Let people browse before you ask who they are.</figcaption></figure><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>A multi-specialty clinic wants patients to book appointments. The account matters here, because records and prescriptions are tied to it.</p><p>Even so, the first screen can be the list of doctors and open slots, which needs no login. Phone and OTP come when the patient taps a slot. Family members are added later, not during sign-up. Location permission is asked only if the patient taps \"clinics near me\". The consent notice is short, in the patient's chosen language, and separate from the terms. For larger builds, see our <a href=\"/industries/healthcare-appointments\">healthcare appointments</a> page.</p><h3 id=\"a-coaching-institutes-learning-app\">A coaching institute's learning app</h3><p>A coaching institute's app asked students to pick an exam, a batch, a language, upload a photo and fill a profile before any lesson.</p><p>The rebuilt flow asks one question: which exam. Then it plays a free sample lesson immediately, which is the first useful result. Sign-in is needed to save progress or join a batch. The photo and profile move to settings. A first-week tip points to the doubt-solving feature the first time a student pauses a video. Our page on <a href=\"/industries/education\">education apps</a> has more on such builds.</p><h2 id=\"mistakes-that-drive-early-churn\">Mistakes that drive early churn</h2><p><strong>Login before value.</strong> Unless the account is the product, a sign-up wall asks for commitment before the user has a reason to give it. Apple's guideline 5.1.1(v) says apps without significant account-based features should work without one.</p><p><strong>Asking every permission on the first screen.</strong> Location, contacts, camera and notifications in a row, before the user knows why. Google's guidance is to ask in context, one feature at a time.</p><p><strong>Long welcome carousels.</strong> Apple says to teach through doing. Slides describing the app are rarely read.</p><p><strong>Typed OTP only.</strong> On Android, SMS Retriever removes the copy-paste trip to the messages app.</p><p><strong>Profile forms nobody needs yet.</strong> Date of birth and gender at sign-up, used by nothing in the first week.</p><p><strong>Showing the tutorial again.</strong> Apple says that if someone skips it, don't present it again on later launches.</p><p><strong>Making leaving hard.</strong> Both Apple and Google Play require in-app account deletion for apps that let users create accounts, and Apple says offering only to deactivate is insufficient. Under the DPDP Act, withdrawing consent should be as easy as giving it.</p><p><strong>No measurement.</strong> Without screen-level events, every change is a guess.</p><h2 id=\"the-numbers-to-watch-every-week\">The numbers to watch every week</h2><ul><li>Installs to first_open, from Play Console and App Store Connect against analytics.</li><li>First_open to first useful result, as a percentage, by platform and by app version.</li><li>Drop-off on each onboarding screen, especially login and OTP.</li><li>Time from first_open to first useful result.</li><li>OTP requested versus OTP verified, and resend rate.</li><li>Permission grant rate, by where the prompt was shown.</li><li>Users who return on day 1 and day 7 after first_open.</li></ul><p>Read these as a chain, not a scoreboard. If OTP verified is far below OTP requested, the problem is SMS delivery or autofill, not your design. If people verify but never reach the first useful result, the screens after login are the issue. If they reach it but do not come back on day 7, onboarding has done its job and the product itself, or the reason to return, needs attention. Change one thing at a time, and compare the same app version on the same platform.</p><p>If you want the onboarding flow and its events written into the scope before a build, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">book it here</a>). Code, cloud and credentials stay in your name.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-early-churn-in-an-app\">What is early churn in an app?</h3><p>Early churn is users who install and open an app once or a few times, then stop using it. It usually happens in the first session or first week, which is why onboarding has such a large effect on it.</p><h3 id=\"should-my-app-ask-users-to-sign-up-before-they-can-use-it\">Should my app ask users to sign up before they can use it?</h3><p>Only if the account is the product, such as banking or health records. Apple's guideline 5.1.1(v) says that if your app doesn't include significant account-based features, let people use it without a login.</p><h3 id=\"how-do-i-make-otp-login-easier-on-android\">How do I make OTP login easier on Android?</h3><p>Use Google's SMS Retriever API, which verifies the phone number without the user typing the code and without extra permissions. If you can't control the SMS format, the SMS User Consent API asks the user to allow reading one message.</p><h3 id=\"when-should-an-app-ask-for-location-or-camera-permission\">When should an app ask for location or camera permission?</h3><p>When the user starts to use the feature that needs it. Android's guidance says to ask in context, let users cancel any explanation screen, and keep the app working if they refuse. Apple allows asking during onboarding only if the app cannot function without it.</p><h3 id=\"do-i-need-a-tutorial-or-welcome-slides\">Do I need a tutorial or welcome slides?</h3><p>Usually not. Apple says people should ideally understand the app by using it, recommends context-specific tips over one long flow, and says any tutorial should be optional and not shown again once skipped.</p><h3 id=\"does-the-dpdp-act-affect-onboarding-screens\">Does the DPDP Act affect onboarding screens?</h3><p>Yes. Consent must be free, specific, informed, unconditional and unambiguous, and as easy to withdraw as to give. Users must be able to read the notice in English or any Eighth Schedule language. The DPDP Rules give an 18-month phased compliance timeline from November 2025.</p><h3 id=\"how-do-i-measure-whether-onboarding-is-working\">How do I measure whether onboarding is working?</h3><p>Track the path from Google Analytics' automatic first_open event to one event that marks the first useful result, with an event for each screen in between. Fix the screen with the biggest drop first, then measure again.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developer.apple.com/design/human-interface-guidelines/onboarding\" rel=\"noopener noreferrer nofollow\">Onboarding, Apple Human Interface Guidelines</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/app-store/review/guidelines/\" rel=\"noopener noreferrer nofollow\">App Store Review Guidelines, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/support/offering-account-deletion-in-your-app/\" rel=\"noopener noreferrer nofollow\">Offering account deletion in your app, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/documentation/uikit/uitextcontenttype/onetimecode\" rel=\"noopener noreferrer nofollow\">oneTimeCode, Apple Developer Documentation</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/training/permissions/requesting\" rel=\"noopener noreferrer nofollow\">Request runtime permissions, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/privacy-and-security/minimize-permission-requests\" rel=\"noopener noreferrer nofollow\">Minimize your permission requests, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/identity/sign-in/credential-manager\" rel=\"noopener noreferrer nofollow\">Sign in your user with Credential Manager, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.google.com/identity/sms-retriever/overview\" rel=\"noopener noreferrer nofollow\">Automatic SMS verification with the SMS Retriever API, Google for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.google.com/identity/sms-retriever/user-consent/overview\" rel=\"noopener noreferrer nofollow\">SMS User Consent API, Google for Developers</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/13327111\" rel=\"noopener noreferrer nofollow\">Understanding Google Play's app account deletion requirements, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/analytics/answer/9234069\" rel=\"noopener noreferrer nofollow\">Automatically collected events, Google Analytics Help</a>, read 16 November 2026</li><li><a href=\"https://dpdpact.net/reader/section-5\" rel=\"noopener noreferrer nofollow\">DPDP Act 2023, section 5 (notice), DPDP Act reader</a>, read 16 November 2026</li><li><a href=\"https://dpdpact.net/reader/section-6\" rel=\"noopener noreferrer nofollow\">DPDP Act 2023, section 6 (consent), DPDP Act reader</a>, read 16 November 2026</li><li><a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014\" rel=\"noopener noreferrer nofollow\">Government notifies DPDP Rules, Press Information Bureau</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian founder reviewing app onboarding screens on a phone, beside the words Onboarding that keeps users",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian founder in a mustard kurta sitting at a co-working desk, holding up a phone and comparing it with three paper sketches of app screens pinned on a board, one sketch crossed out. Screens and sketches show only abstract shapes, no readable text, no logos. Face fully in frame. Right half: the title 'Onboarding that keeps users' in very large bold black sans-serif, left-aligned, on three lines ('Onboarding' / 'that keeps' / 'users'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Apple's onboarding guidelines showing advice to teach through interactivity and postpone setup",
+   "url": "https://developer.apple.com/design/human-interface-guidelines/onboarding",
+   "annotate": [
+    {
+     "text": "Teach through interactivity.",
+     "label": "Let them do it"
+    },
+    {
+     "text": "Postpone nonessential setup flows or customization steps.",
+     "label": "Setup can wait"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Google's SMS Retriever API page showing verification without extra permissions",
+   "url": "https://developers.google.com/identity/sms-retriever/overview",
+   "annotate": [
+    {
+     "text": "without requiring any extra app permissions",
+     "label": "No SMS permission"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a short onboarding path from first open to first useful result, with login and permissions moved later",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'A shorter path to the first result'. Top row, greyed and crossed out: small pills 'Welcome slides', 'Sign up', 'Profile form', 'All permissions'. Main row below, left to right, dark-blue rounded pills with white text joined by orange arrows: phone icon 'First open', then shop icon 'Browse or try', then key icon 'Phone + OTP when needed', then tick icon 'First useful result'. A small orange side arrow from 'Browse or try' to a pill 'Ask permission when the feature is used'. One-line bold takeaway at bottom: 'Value first, questions later.' No logos, no other text."
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a young woman browsing a home decor app on her sofa before signing in",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian woman in a cotton kurta relaxing on a sofa in a small apartment living room with a brass lamp and a potted plant, scrolling a shopping app on her phone that shows abstract product tiles of cushions and lamps. No readable text on the phone, no logos. Face fully in frame."
+  }
+ ]
+}

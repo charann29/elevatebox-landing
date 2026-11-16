@@ -1,0 +1,206 @@
+{
+ "slug": "choosing-cloud-provider",
+ "locale": "en",
+ "title": "AWS vs Azure vs Google Cloud for Indian startups",
+ "description": "AWS vs Azure vs Google Cloud for Indian startups: India regions, the RBI payment data rule, DPDP transfers and startup credits from official pages.",
+ "imageUrl": "/assets/blog/choosing-cloud-provider/cover.webp",
+ "imageAlt": "Illustration of an Indian founder comparing three cloud options beside the words Pick your cloud",
+ "ogImageUrl": null,
+ "tags": [
+  "cloud",
+  "AWS",
+  "Azure",
+  "Google Cloud"
+ ],
+ "readingTimeMinutes": 16,
+ "publishedAt": "2025-11-29T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "aws-vs-azure-vs-google-cloud-for-an-indian-startup-the-short-answer",
+   "text": "AWS vs Azure vs Google Cloud for an Indian startup: the short answer",
+   "level": 2
+  },
+  {
+   "id": "india-regions-where-each-cloud-has-data-centres",
+   "text": "India regions: where each cloud has data centres",
+   "level": 2
+  },
+  {
+   "id": "data-localisation-what-the-rbi-and-the-dpdp-act-actually-say",
+   "text": "Data localisation: what the RBI and the DPDP Act actually say",
+   "level": 2
+  },
+  {
+   "id": "payment-data-the-rbi-circular-of-6-april-2018",
+   "text": "Payment data: the RBI circular of 6 April 2018",
+   "level": 3
+  },
+  {
+   "id": "personal-data-the-dpdp-act-2023-and-rules-2025",
+   "text": "Personal data: the DPDP Act 2023 and Rules 2025",
+   "level": 3
+  },
+  {
+   "id": "startup-credits-what-each-programme-offers-today",
+   "text": "Startup credits: what each programme offers today",
+   "level": 2
+  },
+  {
+   "id": "beyond-credits-what-really-separates-the-three",
+   "text": "Beyond credits: what really separates the three",
+   "level": 2
+  },
+  {
+   "id": "team-skills-and-hiring",
+   "text": "Team skills and hiring",
+   "level": 3
+  },
+  {
+   "id": "what-your-customers-already-use",
+   "text": "What your customers already use",
+   "level": 3
+  },
+  {
+   "id": "managed-services-you-will-actually-use",
+   "text": "Managed services you will actually use",
+   "level": 3
+  },
+  {
+   "id": "lock-in",
+   "text": "Lock-in",
+   "level": 3
+  },
+  {
+   "id": "step-by-step-choosing-your-cloud-in-one-afternoon",
+   "text": "Step by step: choosing your cloud in one afternoon",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-lending-or-payments-startup-in-bengaluru",
+   "text": "A lending or payments startup in Bengaluru",
+   "level": 3
+  },
+  {
+   "id": "a-multi-branch-clinic-in-hyderabad",
+   "text": "A multi-branch clinic in Hyderabad",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-skincare-brand-selling-across-india",
+   "text": "A D2C skincare brand selling across India",
+   "level": 3
+  },
+  {
+   "id": "ways-this-decision-goes-wrong",
+   "text": "Ways this decision goes wrong",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-sign-up",
+   "text": "A checklist before you sign up",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Which cloud is best for startups in India?",
+   "a": "None is best for every startup. All three have regions in India: AWS in Mumbai and Hyderabad, Azure in Pune, Hyderabad, Chennai and Mumbai, Google Cloud in Mumbai and Delhi. Choose on the services you need in an Indian region, the credits you qualify for and your team's skills."
+  },
+  {
+   "q": "Does AWS have a data centre in Hyderabad?",
+   "a": "Yes. AWS lists Asia Pacific (Hyderabad), code ap-south-2, with three availability zones. It is disabled by default, so you must enable it in your account before you can use it. Asia Pacific (Mumbai), ap-south-1, is enabled by default."
+  },
+  {
+   "q": "Does RBI require payment data to be stored in India?",
+   "a": "Yes, for payment system operators. The RBI circular of 6 April 2018 requires the entire payment system data, including end-to-end transaction details, to be stored only in India. The RBI FAQ allows processing abroad if the data is brought back within one business day or 24 hours, whichever is earlier."
+  },
+  {
+   "q": "Does the DPDP Act stop me storing personal data outside India?",
+   "a": "Not in general. The DPDP Act 2023 is generally permissive on transfers abroad. The DPDP Rules 2025 were notified on 13 November 2025, and the cross-border rule starts on 13 May 2027, subject to any conditions the government sets. Significant Data Fiduciaries may face restrictions on named data categories."
+  },
+  {
+   "q": "How much free cloud credit can an Indian startup get?",
+   "a": "On the official pages I read: AWS Activate offers up to $5,000 for self-funded startups and up to $200,000 through an Activate Provider; Microsoft for Startups offers up to $150,000 over time; Google for Startups offers $2,000 at Start and $200,000 to $350,000 for funded startups."
+  },
+  {
+   "q": "Which Azure regions are in India?",
+   "a": "Microsoft lists Central India in Pune and India South Central in Hyderabad, each with three availability zones, plus South India in Chennai and West India in Mumbai, which show no availability zones."
+  },
+  {
+   "q": "Should a startup use more than one cloud?",
+   "a": "Usually not at the start. Two clouds double the skills, security settings and bills you have to manage. Most startups are better served by running one cloud well, keeping their code portable, and revisiting the question when a customer or regulator requires it."
+  }
+ ],
+ "contentHtml": "<h2 id=\"aws-vs-azure-vs-google-cloud-for-an-indian-startup-the-short-answer\">AWS vs Azure vs Google Cloud for an Indian startup: the short answer</h2><p><strong>In short:</strong> All three have at least two regions inside India, so all three can keep your data in the country. For most Indian startups the choice comes down to which startup credit programme you qualify for, which cloud your first engineers already know, and whether you handle payment data that the RBI says must be stored only in India.</p><p>I would not pick a cloud on brand or on a blog benchmark. I would pick it on three checks: the India regions it offers for the services you need, the credits you can actually get on its official page today, and the skills of the person who will be paged at 2 a.m. when something breaks.</p><p>This guide was checked in November 2026, against each provider's own region lists and startup programme pages, the RBI circular and FAQ on payment data storage, and a law firm's summary of the DPDP Rules 2025. Credit amounts and region lists change often, so open the linked pages before you sign up.</p><h2 id=\"india-regions-where-each-cloud-has-data-centres\">India regions: where each cloud has data centres</h2><p>A region is a cluster of data centres in one area. An availability zone (AZ) is a separate building or group of buildings inside a region with its own power and network. Running across two or three zones is how you survive one data centre going down. Here is what each provider lists for India.</p><p><em>Cloud regions located in India, from each provider's own region list</em></p><table><thead><tr><th>Provider</th><th>Region (code)</th><th>City</th><th>Availability zones</th><th>Note</th></tr></thead><tbody><tr><td>AWS</td><td>Asia Pacific (Mumbai), ap-south-1</td><td>Mumbai</td><td>3</td><td>Enabled by default</td></tr><tr><td>AWS</td><td>Asia Pacific (Hyderabad), ap-south-2</td><td>Hyderabad</td><td>3</td><td>Opt-in required</td></tr><tr><td>Azure</td><td>Central India, centralindia</td><td>Pune</td><td>3</td><td>Paired with South India</td></tr><tr><td>Azure</td><td>India South Central, indiasouthcentral</td><td>Hyderabad</td><td>3</td><td>Paired with Central India</td></tr><tr><td>Azure</td><td>South India, southindia</td><td>Chennai</td><td>N/A</td><td>No availability zones</td></tr><tr><td>Azure</td><td>West India, westindia</td><td>Mumbai</td><td>N/A</td><td>No availability zones</td></tr><tr><td>Google Cloud</td><td>asia-south1</td><td>Mumbai</td><td>3 (a, b, c)</td><td></td></tr><tr><td>Google Cloud</td><td>asia-south2</td><td>Delhi</td><td>3 (a, b, c)</td><td></td></tr></tbody></table><p><em>Source: </em><a href=\"https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html\" rel=\"noopener noreferrer nofollow\"><em>AWS Regions, AWS documentation</em></a><em> and </em><a href=\"https://learn.microsoft.com/en-us/azure/reliability/regions-list\" rel=\"noopener noreferrer nofollow\"><em>List of Azure regions, Microsoft Learn</em></a><em> and </em><a href=\"https://docs.cloud.google.com/compute/docs/regions-zones\" rel=\"noopener noreferrer nofollow\"><em>Regions and zones, Google Cloud documentation</em></a><em>, read 16 November 2026.</em></p><p>Three things in that table matter more than they look.</p><ul><li><strong>AWS Hyderabad is switched off until you enable it.</strong> AWS's region page says any region introduced after 20 March 2019 must be enabled before you can use it, and lists Asia Pacific (Hyderabad) under regions disabled by default. Mumbai works from day one.</li><li><strong>Two of Azure's four Indian regions have no availability zones.</strong> South India (Chennai) and West India (Mumbai) show N/A in Microsoft's list. If you want zone redundancy inside India on Azure, Central India (Pune) or India South Central (Hyderabad) are the ones to look at.</li><li><strong>Google Cloud has two regions, both with three zones.</strong> Mumbai and Delhi. Google's locations page says every new region launches with at least Compute Engine, Google Kubernetes Engine, Cloud Storage, Persistent Disk and Cloud SQL, with more products arriving within six months.</li></ul><p>A region existing is not the same as every service being available in it. Before you commit, open each provider's services-by-region page and check the exact managed database, AI model or queue you plan to use is offered in your Indian region. AI services in particular often arrive in India later than in the US.</p><figure><img src=\"/assets/blog/choosing-cloud-provider/1.webp\" alt=\"Annotated AWS documentation table showing the Mumbai and Hyderabad regions\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>AWS lists Mumbai as enabled by default and Hyderabad as opt-in.</figcaption></figure><figure><img src=\"/assets/blog/choosing-cloud-provider/4.webp\" alt=\"Annotated Microsoft Learn list of Azure regions showing the Indian regions\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Microsoft lists four Indian regions; two have no availability zones.</figcaption></figure><h2 id=\"data-localisation-what-the-rbi-and-the-dpdp-act-actually-say\">Data localisation: what the RBI and the DPDP Act actually say</h2><p>Founders often hear \"Indian data must stay in India\" and stop there. The real rules are narrower and depend on what data you hold.</p><h3 id=\"payment-data-the-rbi-circular-of-6-april-2018\">Payment data: the RBI circular of 6 April 2018</h3><p>The rule most startups run into is the RBI's <a href=\"https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11244&Mode=0\" rel=\"noopener noreferrer nofollow\">Storage of Payment System Data circular</a> (RBI/2017-18/153, dated 6 April 2018). It says that \"all system providers shall ensure that the entire data relating to payment systems operated by them\" is stored in a system only in India, including the full end-to-end transaction details. For the foreign leg of a cross-border transaction, the data may also be stored abroad. Providers had six months to comply, and the circular also required a System Audit Report by a CERT-In empanelled auditor.</p><p>The RBI's <a href=\"https://www.rbi.org.in/Scripts/FAQView.aspx?Id=130\" rel=\"noopener noreferrer nofollow\">FAQ on the same circular</a>, dated 26 June 2019, adds the details engineers ask about. It says \"there is no bar on processing of payment transactions outside India\", but if processing happens abroad the data must be deleted there and brought back to India \"not later than the one business day or 24 hours from payment processing, whichever is earlier\". It also says the directions apply to all banks operating in India.</p><p>Who does this hit? The circular is addressed to authorised payment system operators and banks. If you are a D2C brand taking UPI or card payments through a licensed payment gateway, the gateway is the system provider, not you. If you are building a payment aggregator, wallet, card or lending product that operates a payment system, or you work for one as a vendor, this rule applies to the stack you build, and your cloud region must be in India.</p><figure><img src=\"/assets/blog/choosing-cloud-provider/2.webp\" alt=\"Infographic showing where payment data may be processed and where it must be stored under the RBI rule\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Processing abroad is allowed; storage must come back to India within a day.</figcaption></figure><h3 id=\"personal-data-the-dpdp-act-2023-and-rules-2025\">Personal data: the DPDP Act 2023 and Rules 2025</h3><p>For ordinary personal data, the Digital Personal Data Protection Act 2023 is generally permissive about sending data abroad. A <a href=\"https://www.hlc.com/en/publications/indias-digital-personal-data-protection-act-2023-brought-into-force-\" rel=\"noopener noreferrer nofollow\">Hogan Lovells summary of the Rules</a> notes that MeitY notified the DPDP Rules on 13 November 2025, with most obligations, including the cross-border transfer rule (Rule 15), starting after 18 months, on 13 May 2027. Under Rule 15 transfers are allowed subject to conditions the Central Government may set by order.</p><p>The same summary says Significant Data Fiduciaries can be told that certain categories of personal data must not leave India, once the government names those categories. So the practical position in November 2026 is: no general rule forces an ordinary startup's personal data to stay in India, but the rules are tightening, and keeping your primary database in an Indian region removes a whole class of future questions.</p><p>Sector regulators can add their own rules on top: insurance, telecom, health and government work each have their own. I am not covering them here because I have not read each one today. If you are in a regulated sector, ask your compliance adviser which applies before you choose a region.</p><h2 id=\"startup-credits-what-each-programme-offers-today\">Startup credits: what each programme offers today</h2><p>Credits are often the deciding factor for a pre-revenue startup. These are the amounts on each provider's official page when I checked.</p><p><em>Cloud startup credit programmes and free tiers, from official pages</em></p><table><thead><tr><th>Programme</th><th>What it offers</th><th>Who qualifies</th></tr></thead><tbody><tr><td>AWS Activate, Founders tier</td><td>Up to $5,000 in Activate Credits, starting with $1,000</td><td>Self-funded startups, pre-Series B, founded in the last 10 years, on a paid-tier AWS account</td></tr><tr><td>AWS Activate, Portfolio tier</td><td>Up to $200,000 in Activate Credits</td><td>Pre-Series B startups with an Org ID from an Activate Provider such as an accelerator or VC firm</td></tr><tr><td>AWS Free Tier (new accounts)</td><td>$100 in credits on sign-up, up to $100 more by exploring services; the free plan closes after 6 months or when credits run out</td><td>Any new AWS customer</td></tr><tr><td>Microsoft for Startups</td><td>Up to $5,000 in Startup credits through business verification, and up to $150,000 over time</td><td>Early-stage startups building software products, after approval</td></tr><tr><td>Google for Startups Cloud Program, Start</td><td>$2,000</td><td>Founded in the past 2 years, working MVP, plans to seek venture funding</td></tr><tr><td>Google for Startups Cloud Program, Scale and Scale AI</td><td>$200,000 to $350,000</td><td>Verifiable pre-seed to Series A funding within the last 3 to 5 years, depending on tier</td></tr><tr><td>Google Cloud free trial</td><td>$300 in free credits and 20+ always-free products</td><td>New Google Cloud customers</td></tr></tbody></table><p><em>Source: </em><a href=\"https://aws.amazon.com/startups/credits\" rel=\"noopener noreferrer nofollow\"><em>AWS Activate credits</em></a><em> and </em><a href=\"https://aws.amazon.com/free/\" rel=\"noopener noreferrer nofollow\"><em>AWS Free Tier</em></a><em> and </em><a href=\"https://www.microsoft.com/en-us/startups\" rel=\"noopener noreferrer nofollow\"><em>Microsoft for Startups</em></a><em> and </em><a href=\"https://cloud.google.com/startup\" rel=\"noopener noreferrer nofollow\"><em>Google for Startups Cloud Program</em></a><em> and </em><a href=\"https://cloud.google.com/about/locations\" rel=\"noopener noreferrer nofollow\"><em>Google Cloud locations</em></a><em>, read 16 November 2026.</em></p><p>How I read that table for an Indian founder:</p><ul><li><strong>The big numbers need an investor.</strong> AWS's $200,000 needs an Org ID from an Activate Provider. Google's $200,000 to $350,000 needs verifiable funding. If you are bootstrapped, your realistic numbers are AWS's $1,000 to $5,000, Microsoft's $5,000 to start, or Google's $2,000.</li><li><strong>Ask your accelerator or investor first.</strong> Many Indian incubators and VC firms are registered with one or more of these programmes. One email to them can be worth more than a week of comparing prices.</li><li><strong>Credits expire and run out.</strong> None of the three pages I read gave a single expiry date for startup credits, so read the terms you are given at approval. Plan what the bill looks like the month after credits end.</li><li><strong>Credits are in US dollars, your bill may be in rupees.</strong> Check how your account is billed and whether GST applies to the invoice your business receives, with your accountant.</li></ul><figure><img src=\"/assets/blog/choosing-cloud-provider/3.webp\" alt=\"Illustration of two Indian co-founders comparing cloud credit offers at a co-working desk\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>The best credit offer is often the one your investor or incubator can get you.</figcaption></figure><h2 id=\"beyond-credits-what-really-separates-the-three\">Beyond credits: what really separates the three</h2><p>Once data residency and credits are settled, the differences that matter to a small team are practical ones.</p><h3 id=\"team-skills-and-hiring\">Team skills and hiring</h3><p>Whoever runs your production system needs to know the console, the identity and access model, and the billing alerts of that cloud. If your first backend engineer has five years on AWS, choosing Google Cloud to save a few thousand dollars in credits can cost you more in mistakes. Our pages on <a href=\"/technologies/aws\">AWS</a>, <a href=\"/technologies/azure\">Azure</a> and <a href=\"/technologies/google-cloud\">Google Cloud</a> describe how we build on each.</p><h3 id=\"what-your-customers-already-use\">What your customers already use</h3><p>If you sell to Indian enterprises that run Microsoft 365 and Active Directory, Azure can make single sign-on and procurement easier. If your product is built around Firebase or BigQuery, Google Cloud is the natural home. If you need the widest choice of managed services and partners, AWS has the longest list. These are tendencies, not rules.</p><h3 id=\"managed-services-you-will-actually-use\">Managed services you will actually use</h3><p>A small startup typically needs a managed Postgres or MySQL database, object storage, a way to run containers or functions, a queue, email or SMS, and logs. All three clouds have all of these. The question is not \"which cloud has a database\" but \"which managed database is available in my Indian region, with backups and zone redundancy, at a price I can see\". Our guide to <a href=\"/blogs/choosing-a-database\">choosing a database</a> covers that decision.</p><h3 id=\"lock-in\">Lock-in</h3><p>The more proprietary services you use, the harder it is to move. A container on a standard Postgres database moves between clouds in days. A system built on one cloud's serverless functions, queue and NoSQL store can take months. That is fine if you choose it knowingly. It is not fine if nobody noticed.</p><h2 id=\"step-by-step-choosing-your-cloud-in-one-afternoon\">Step by step: choosing your cloud in one afternoon</h2><figure><img src=\"/assets/blog/choosing-cloud-provider/5.webp\" alt=\"Infographic of the four checks for choosing a cloud provider in India\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Answer these four before comparing prices.</figcaption></figure><p><strong>Step 1. Write down what data you hold.</strong> Payment transaction data, health records, Aadhaar-linked data, ordinary contact details, or none of these. This decides whether region is a legal requirement or a preference.</p><p><strong>Step 2. List the managed services you need.</strong> Database engine and version, storage, containers or functions, queues, AI models. Be specific.</p><p><strong>Step 3. Check each service in each Indian region.</strong> Use each provider's services-by-region page. Cross out any cloud that lacks a service you need in India.</p><p><strong>Step 4. Check credits you actually qualify for.</strong> Read the eligibility on the official page and ask your incubator or investor which programmes they can get you into.</p><p><strong>Step 5. Ask who will run it.</strong> Your engineer or agency's real experience with that cloud's identity, networking and billing matters more than a feature list.</p><p><strong>Step 6. Estimate the bill after credits.</strong> Use each provider's pricing calculator with your Indian region selected. Write the monthly number down.</p><p><strong>Step 7. Set up the account properly on day one.</strong> In your company's name, with a company email, multi-factor login on the root account, a billing alert, and at least two people with admin access. Our <a href=\"/blogs/security-basics-for-startups\">security basics for startups</a> covers the rest.</p><p>If you would like this worked through for your product with a written answer, our ₹3,500 requirement analysis is a call with the people who will build it, ending in a fixed quotation and timeline before any build starts, including the cloud and region choice (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients, and the numbers are made up for the example.</p><h3 id=\"a-lending-or-payments-startup-in-bengaluru\">A lending or payments startup in Bengaluru</h3><p>A small team is building a product that operates a payment flow and will be audited against RBI rules. The payment data must be stored only in India, so the primary database, backups and logs that contain transaction details all sit in an Indian region. I would pick the cloud whose Indian region has every managed service on their list, use at least two availability zones, and keep a written map of where each type of data lives for the system audit. AWS Mumbai, Azure Central India or Google Cloud Mumbai would all qualify on paper.</p><h3 id=\"a-multi-branch-clinic-in-hyderabad\">A multi-branch clinic in Hyderabad</h3><p>A clinic group wants an appointment app and patient records. Health data is sensitive and the DPDP Rules are tightening, so I would keep the database in India even though no general rule forces it today. Being in Hyderabad, AWS ap-south-2 or Azure India South Central would put the data close by, with three zones each. I would check that the exact database version and backup features they need are offered in that region before choosing, and fall back to Mumbai or Pune if not.</p><h3 id=\"a-d2c-skincare-brand-selling-across-india\">A D2C skincare brand selling across India</h3><p>The brand sells through a Shopify store and a licensed payment gateway, and wants a small custom app for loyalty points. The gateway handles payment data, so the RBI rule falls on the gateway. The brand's own choice is about cost and skills. Its freelance developer knows Firebase well and the founders have no investor, so Google Cloud's $300 trial and $2,000 Start tier, with Firestore in the Mumbai region, is a sensible fit. If their developer knew AWS instead, I would say the same about AWS.</p><h2 id=\"ways-this-decision-goes-wrong\">Ways this decision goes wrong</h2><ol><li><strong>Choosing on credits alone.</strong> $100,000 of credits used badly is gone in months. The bill afterwards is permanent.</li><li><strong>Assuming every service is in India.</strong> Regions differ. Check the exact service and version in your region.</li><li><strong>Forgetting the backups and logs.</strong> If the RBI rule applies, backups, logs and analytics copies that hold transaction data count too.</li><li><strong>Using a region with no availability zones for production.</strong> On Azure, South India and West India list no zones. That may be fine for a test system, not for a payment database.</li><li><strong>Opening the account in a developer's personal name.</strong> When the freelancer leaves, so does access. Keep the root account in the company's name.</li><li><strong>Running multi-cloud from day one.</strong> Two clouds means two sets of skills, bills and security settings. One cloud, done well, is enough for most startups for years.</li></ol><h2 id=\"a-checklist-before-you-sign-up\">A checklist before you sign up</h2><ol><li>You know whether you hold payment system data, and if so, every copy of it is planned for an Indian region.</li><li>Every managed service you need is available in your chosen Indian region.</li><li>Production uses a region with at least two availability zones.</li><li>You have applied for the credit programme you qualify for, and know when credits end.</li><li>The account is in the company's name, with multi-factor login and two admins.</li><li>A billing alert is set at a rupee amount you would notice.</li><li>Someone on the team has run production on this cloud before.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"which-cloud-is-best-for-startups-in-india\">Which cloud is best for startups in India?</h3><p>None is best for every startup. All three have regions in India: AWS in Mumbai and Hyderabad, Azure in Pune, Hyderabad, Chennai and Mumbai, Google Cloud in Mumbai and Delhi. Choose on the services you need in an Indian region, the credits you qualify for and your team's skills.</p><h3 id=\"does-aws-have-a-data-centre-in-hyderabad\">Does AWS have a data centre in Hyderabad?</h3><p>Yes. AWS lists Asia Pacific (Hyderabad), code ap-south-2, with three availability zones. It is disabled by default, so you must enable it in your account before you can use it. Asia Pacific (Mumbai), ap-south-1, is enabled by default.</p><h3 id=\"does-rbi-require-payment-data-to-be-stored-in-india\">Does RBI require payment data to be stored in India?</h3><p>Yes, for payment system operators. The RBI circular of 6 April 2018 requires the entire payment system data, including end-to-end transaction details, to be stored only in India. The RBI FAQ allows processing abroad if the data is brought back within one business day or 24 hours, whichever is earlier.</p><h3 id=\"does-the-dpdp-act-stop-me-storing-personal-data-outside-india\">Does the DPDP Act stop me storing personal data outside India?</h3><p>Not in general. The DPDP Act 2023 is generally permissive on transfers abroad. The DPDP Rules 2025 were notified on 13 November 2025, and the cross-border rule starts on 13 May 2027, subject to any conditions the government sets. Significant Data Fiduciaries may face restrictions on named data categories.</p><h3 id=\"how-much-free-cloud-credit-can-an-indian-startup-get\">How much free cloud credit can an Indian startup get?</h3><p>On the official pages I read: AWS Activate offers up to $5,000 for self-funded startups and up to $200,000 through an Activate Provider; Microsoft for Startups offers up to $150,000 over time; Google for Startups offers $2,000 at Start and $200,000 to $350,000 for funded startups.</p><h3 id=\"which-azure-regions-are-in-india\">Which Azure regions are in India?</h3><p>Microsoft lists Central India in Pune and India South Central in Hyderabad, each with three availability zones, plus South India in Chennai and West India in Mumbai, which show no availability zones.</p><h3 id=\"should-a-startup-use-more-than-one-cloud\">Should a startup use more than one cloud?</h3><p>Usually not at the start. Two clouds double the skills, security settings and bills you have to manage. Most startups are better served by running one cloud well, keeping their code portable, and revisiting the question when a customer or regulator requires it.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html\" rel=\"noopener noreferrer nofollow\">AWS Regions, AWS documentation</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/azure/reliability/regions-list\" rel=\"noopener noreferrer nofollow\">List of Azure regions, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://docs.cloud.google.com/compute/docs/regions-zones\" rel=\"noopener noreferrer nofollow\">Regions and zones, Google Cloud documentation</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/about/locations\" rel=\"noopener noreferrer nofollow\">Cloud locations, Google Cloud</a>, read 16 November 2026</li><li><a href=\"https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11244&Mode=0\" rel=\"noopener noreferrer nofollow\">Storage of Payment System Data, Reserve Bank of India</a>, read 16 November 2026</li><li><a href=\"https://www.rbi.org.in/Scripts/FAQView.aspx?Id=130\" rel=\"noopener noreferrer nofollow\">FAQ: Storage of Payment System Data, Reserve Bank of India</a>, read 16 November 2026</li><li><a href=\"https://www.hlc.com/en/publications/indias-digital-personal-data-protection-act-2023-brought-into-force-\" rel=\"noopener noreferrer nofollow\">India's Digital Personal Data Protection Act 2023 brought into force, Hogan Lovells</a>, read 16 November 2026</li><li><a href=\"https://aws.amazon.com/startups/credits\" rel=\"noopener noreferrer nofollow\">AWS Activate credits, Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://aws.amazon.com/free/\" rel=\"noopener noreferrer nofollow\">AWS Free Tier, Amazon Web Services</a>, read 16 November 2026</li><li><a href=\"https://www.microsoft.com/en-us/startups\" rel=\"noopener noreferrer nofollow\">Microsoft for Startups, Microsoft</a>, read 16 November 2026</li><li><a href=\"https://azure.microsoft.com/en-in/pricing/free-services\" rel=\"noopener noreferrer nofollow\">Azure free services, Microsoft</a>, read 16 November 2026</li><li><a href=\"https://cloud.google.com/startup\" rel=\"noopener noreferrer nofollow\">Google for Startups Cloud Program, Google Cloud</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian founder comparing three cloud options beside the words Pick your cloud",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian startup founder (man in his early 30s, half-sleeve shirt, spectacles) at a desk in a small Hyderabad office, looking at a laptop showing three abstract cloud shapes connected to a small map outline of India with two dots (no readable text, no logos), a chai glass beside the laptop. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Pick your cloud' in very large bold black sans-serif, left-aligned, on two lines ('Pick your' / 'cloud'). No other text, no AWS, Azure or Google logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated AWS documentation table showing the Mumbai and Hyderabad regions",
+   "url": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html",
+   "annotate": [
+    {
+     "text": "ap-south-2",
+     "label": "Hyderabad: opt-in"
+    },
+    {
+     "text": "ap-south-1",
+     "label": "Mumbai: on by default"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing where payment data may be processed and where it must be stored under the RBI rule",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'RBI rule on payment data'. A left-to-right flow: phone-with-rupee icon with dark-blue pill 'Payment made in India' -> orange arrow -> globe icon with pill 'Processing abroad allowed' -> orange arrow -> clock icon with pill 'Back within 1 business day or 24 hours' -> orange arrow -> server icon with small India outline and pill 'Stored only in India'. One-line bold takeaway at bottom: 'Applies to payment system operators and banks.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of two Indian co-founders comparing cloud credit offers at a co-working desk",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Two Indian co-founders (a woman in a kurta and a man in a hoodie) at a co-working desk, one pointing at a laptop showing abstract bar shapes, the other holding a phone, sticky notes and a notebook on the table, a window with a city skyline behind. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Microsoft Learn list of Azure regions showing the Indian regions",
+   "url": "https://learn.microsoft.com/en-us/azure/reliability/regions-list",
+   "annotate": [
+    {
+     "text": "indiasouthcentral",
+     "label": "Hyderabad, 3 zones"
+    },
+    {
+     "text": "westindia",
+     "label": "Mumbai, no zones"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the four checks for choosing a cloud provider in India",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Four checks before you pick a cloud'. Four flat icons left to right, each above a dark-blue rounded label pill with white text, joined by orange arrows: 1) shield icon 'What data do you hold?'; 2) map pin on India outline 'Services in an India region?'; 3) coin stack icon 'Credits you qualify for'; 4) person with headset icon 'Who will run it?'. One-line bold takeaway at bottom: 'Skills and data rules beat brand names.' No logos, no other text."
+  }
+ ]
+}

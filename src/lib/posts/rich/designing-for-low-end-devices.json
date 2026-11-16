@@ -1,0 +1,176 @@
+{
+ "slug": "designing-for-low-end-devices",
+ "locale": "en",
+ "title": "Designing apps for low-end Android phones in India",
+ "description": "How to design apps for budget Android phones in India: Go edition RAM specs, Play vitals crash and memory limits, app size, images, examples and a checklist.",
+ "imageUrl": "/assets/blog/designing-for-low-end-devices/cover.webp",
+ "imageAlt": "Illustration of an Indian shop owner using a budget phone at his counter, beside the words Built for budget phones",
+ "ogImageUrl": null,
+ "tags": [
+  "app performance",
+  "Android",
+  "low-end devices",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-05-02T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-designing-for-low-end-devices-means",
+   "text": "What designing for low-end devices means",
+   "level": 2
+  },
+  {
+   "id": "the-official-numbers-to-design-against",
+   "text": "The official numbers to design against",
+   "level": 2
+  },
+  {
+   "id": "find-out-which-phones-your-users-actually-have",
+   "text": "Find out which phones your users actually have",
+   "level": 2
+  },
+  {
+   "id": "what-android-go-edition-tells-you-about-budget-phones",
+   "text": "What Android (Go edition) tells you about budget phones",
+   "level": 2
+  },
+  {
+   "id": "design-rules-for-screens-images-and-data",
+   "text": "Design rules for screens, images and data",
+   "level": 2
+  },
+  {
+   "id": "engineering-choices-that-make-the-biggest-difference",
+   "text": "Engineering choices that make the biggest difference",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-a-low-end-device-plan-for-your-app",
+   "text": "Step by step: a low-end device plan for your app",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples-from-indian-businesses",
+   "text": "Three worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-grocery-delivery-app-in-a-tier-2-city",
+   "text": "A grocery delivery app in a tier-2 city",
+   "level": 3
+  },
+  {
+   "id": "an-agri-input-app-for-farmers",
+   "text": "An agri-input app for farmers",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-video-app",
+   "text": "A coaching institute's video app",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes",
+   "text": "Common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-release-checklist-for-budget-phones",
+   "text": "A release checklist for budget phones",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What counts as a low-end Android phone?",
+   "a": "There is no single standard. Android's isLowRamDevice() generally means 1 GB of RAM or less, and Android 13 (Go edition) needs at least 2 GB. In practice, define your own floor phone from the RAM distribution in your Play Console device catalog."
+  },
+  {
+   "q": "How do I see what phones my app's users have?",
+   "a": "In Play Console, go to Monitor and improve, then Reach and devices, then Device catalog. Play Console Help says each device's page shows its distribution by RAM and Android version for your app."
+  },
+  {
+   "q": "What crash rate is acceptable on Google Play?",
+   "a": "Android vitals sets a bad behaviour threshold of 1.09% for user-perceived crash rate and 0.47% for user-perceived ANR rate overall, and 8% for either on a single phone model. Google says core vitals affect your app's visibility on Play."
+  },
+  {
+   "q": "Does Google Play now measure memory usage?",
+   "a": "Yes. Android vitals lists memory usage and bitmap memory usage as core vitals with thresholds per RAM tier, and says apps exceeding them may see store visibility impact starting from February 2027."
+  },
+  {
+   "q": "How big can an Android app be?",
+   "a": "Google Play enforces a 200 MB compressed download limit for apps published as app bundles, with larger sizes possible through Play Feature Delivery and Play Asset Delivery. Google warns bigger apps can hurt install success and increase uninstalls."
+  },
+  {
+   "q": "Should I just exclude low-RAM phones from my app?",
+   "a": "Only if a feature truly needs the hardware. Play Console lets you exclude devices by RAM or system on chip, but each excluded phone is a customer who cannot install your app. A lighter app is usually the better answer."
+  },
+  {
+   "q": "Do websites need the same care?",
+   "a": "Yes. web.dev's Core Web Vitals targets are LCP within 2.5 seconds, INP of 200 milliseconds or less and CLS of 0.1 or less, measured at the 75th percentile of page loads, which includes visitors on slow phones."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-designing-for-low-end-devices-means\">What designing for low-end devices means</h2><p><strong>In short:</strong> Designing for low-end Android phones means building an app that installs small, starts fast, stays inside a tight memory budget and does not crash on a phone with little RAM and storage. Google publishes the targets: Android (Go edition) specs, Android vitals crash and ANR thresholds, and Core Web Vitals for websites. Check your own users' phones in Play Console's device catalog before you design anything.</p><p>This guide was checked in November 2026, against the Android Developers, Play Console Help, web.dev and MDN pages listed at the end.</p><p>Many apps are designed on a new iPhone or a flagship Android and tested on the developer's own phone. Then they ship to customers using a two-year-old budget phone with 30 apps installed, half its storage full and a weak signal. The app that felt quick in the office feels broken in the field.</p><p>I will cover the official numbers you can design against, how to find out what phones your customers actually use, the practical rules for screens, images and code, three worked examples from Indian businesses, and a release checklist.</p><h2 id=\"the-official-numbers-to-design-against\">The official numbers to design against</h2><p>There is no single \"low-end\" standard, but Google publishes several numbers that together describe the target.</p><p><em>Official thresholds and limits that matter on budget phones</em></p><table><thead><tr><th>What</th><th>Number</th><th>Who sets it</th></tr></thead><tbody><tr><td>Minimum RAM for Android 13 (Go edition)</td><td>2 GB</td><td>Android Developers</td></tr><tr><td>Minimum RAM for Android 11 and 12 (Go edition)</td><td>1 GB</td><td>Android Developers</td></tr><tr><td>isLowRamDevice() true</td><td>Generally 1 GB of RAM or less</td><td>Android API reference</td></tr><tr><td>User-perceived crash rate, overall bad behaviour threshold</td><td>1.09%</td><td>Android vitals</td></tr><tr><td>User-perceived ANR rate, overall bad behaviour threshold</td><td>0.47%</td><td>Android vitals</td></tr><tr><td>Crash or ANR rate on a single phone model</td><td>8%</td><td>Android vitals</td></tr><tr><td>Compressed download size limit for app bundles</td><td>200 MB</td><td>Android Developers</td></tr><tr><td>Largest Contentful Paint (web), good</td><td>2.5 seconds or less</td><td>web.dev</td></tr><tr><td>Interaction to Next Paint (web), good</td><td>200 milliseconds or less</td><td>web.dev</td></tr><tr><td>Cumulative Layout Shift (web), good</td><td>0.1 or less</td><td>web.dev</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.android.com/guide/topics/androidgo\" rel=\"noopener noreferrer nofollow\"><em>Android (Go edition) overview</em></a><em> and </em><a href=\"https://developer.android.com/topic/performance/vitals\" rel=\"noopener noreferrer nofollow\"><em>Android vitals</em></a><em> and </em><a href=\"https://developer.android.com/topic/performance/reduce-apk-size\" rel=\"noopener noreferrer nofollow\"><em>Reduce your app size</em></a><em> and </em><a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\"><em>web.dev Web Vitals</em></a><em>, read 16 November 2026.</em></p><p>The vitals thresholds matter for business reasons, not just engineering pride. Google's Android vitals page says core vitals affect the visibility of your app on Google Play. An app above the crash or ANR threshold can be shown less. And the per-model threshold of 8% means one popular budget phone where your app keeps crashing is a problem even if your overall average looks fine.</p><p>There is a newer change worth planning for. The vitals page now lists memory usage and bitmap memory usage as core vitals, with different thresholds for each device RAM tier, and says apps exceeding the memory thresholds may see store visibility impact starting from February 2027. Memory, which is exactly what budget phones lack, is becoming something Play measures you on.</p><figure><img src=\"/assets/blog/designing-for-low-end-devices/4.webp\" alt=\"Infographic of the four numbers to design against: crash rate, ANR rate, per-model limit and app size\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Four numbers from Google that every release should be checked against.</figcaption></figure><p>Treat these as ceilings, not goals. An app sitting just under 1.09% still means roughly one in a hundred daily users sees a crash. On a budget phone, where memory runs out sooner, the same code often crashes more than it does on the phone in your pocket. That is why the per-model view matters more than the headline figure.</p><figure><img src=\"/assets/blog/designing-for-low-end-devices/1.webp\" alt=\"Annotated view of the Android vitals page showing core vitals and the February 2027 memory note\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Android vitals lists the thresholds Play uses, including the new memory metrics.</figcaption></figure><h2 id=\"find-out-which-phones-your-users-actually-have\">Find out which phones your users actually have</h2><p>I could not find an official source that publishes the RAM or price split of smartphones in use in India, so I will not quote one. Market-research estimates exist, but your own users are a better guide than a national average anyway.</p><p>If your app is already on Google Play, open the <a href=\"https://support.google.com/googleplay/android-developer/answer/7353455?hl=en\" rel=\"noopener noreferrer nofollow\">device catalog</a> in Play Console (Monitor and improve, then Reach and devices, then Device catalog). Play Console Help says the device detail page shows distributions of each device model by RAM and Android version for your app. That tells you, from your own installs, how many of your users are on 2 GB, 3 GB or 4 GB phones.</p><p>If you do not have an app yet, look at the people who will use it. A field sales team issued company phones is one answer. Farmers or shopkeepers buying their own entry-level phones is another. For a website, your analytics tool's device report is the starting point.</p><p>India's mobile scale makes this worth doing. TRAI reported 1,066.43 million wireless internet subscribers for the quarter ending 30 June 2026, and rural internet subscribers at 49.07 per 100 people against 129.03 in urban areas. Many of the users you are trying to reach outside the metros are on mobile data and on phones they bought on a budget.</p><h2 id=\"what-android-go-edition-tells-you-about-budget-phones\">What Android (Go edition) tells you about budget phones</h2><p>Google built <a href=\"https://developer.android.com/guide/topics/androidgo\" rel=\"noopener noreferrer nofollow\">Android (Go edition)</a> for entry-level phones. Google says that when Go edition was announced in 2017, entry-level phones accounted for more than half of all device shipments globally. The minimum RAM by version is in the table above: 512 MB up to Android 10, 1 GB for Android 11 and 12, 2 GB for Android 13.</p><p>Two points from that page are useful even if your users are not on Go phones.</p><p>First, the system kills apps to reclaim memory. Go edition uses a kernel that understands app priority and reclaims program memory. Android's general <a href=\"https://developer.android.com/topic/performance/memory-overview\" rel=\"noopener noreferrer nofollow\">memory overview</a> says the same in milder form: as the system runs low on memory, it kills cached processes, and it accounts for which processes hold the most memory. The less memory your app uses in the background, the better its chance of resuming quickly instead of restarting.</p><p>Second, some features are switched off. Go edition disables picture-in-picture, the draw-over-other-apps permission, split-screen, live wallpapers and launcher shortcuts by default, among others. If your app relies on a floating bubble or a shortcut, it needs a fallback.</p><p>Google's <a href=\"https://developer.android.com/guide/topics/androidgo/optimize\" rel=\"noopener noreferrer nofollow\">Go optimisation guide</a> also gives a sensible process: define KPIs such as startup time, crash rate and ANRs, break them into signals, benchmark, fix the bottleneck, repeat, and add regression tests so the gains do not slip. It even says not to publish changes that fail your KPI goals unless you decide to change the targets.</p><figure><img src=\"/assets/blog/designing-for-low-end-devices/2.webp\" alt=\"Annotated view of the Android (Go edition) page showing the minimum RAM table\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The Go edition page lists minimum RAM by Android version.</figcaption></figure><h2 id=\"design-rules-for-screens-images-and-data\">Design rules for screens, images and data</h2><p>This is the part a business owner can check without reading code.</p><p><strong>Keep the first screen light.</strong> The first screen after opening should show something useful from local data, not wait for five network calls. Fewer images, no autoplay video, no carousel of large banners. Android recommends always optimising for a cold start, when the app starts from scratch, because that is the slowest case.</p><p><strong>Use small, right-sized images.</strong> Android's app size guide recommends the WebP format, and Android Studio can convert existing PNG and JPG files. Serve images at the size they are shown. A 4000-pixel product photo shrunk into a 300-pixel thumbnail wastes memory and data on every phone, and on a 2 GB phone it can push the app out of memory.</p><p><strong>Paginate long lists.</strong> Load 20 orders, not 2,000. Long lists that load everything at once are a common cause of slow screens and memory crashes.</p><p><strong>Respect data costs.</strong> On the web, the <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Save-Data\" rel=\"noopener noreferrer nofollow\">Save-Data request header</a> tells your server the user has opted into reduced data use. MDN describes it as a client hint for reasons such as high transfer costs or slow connections. Serve lighter images and skip optional video when you see it. Check MDN's browser support table before relying on it.</p><p><strong>Make text and tap targets readable on small screens.</strong> Budget phones often have smaller or lower-resolution displays. Test the real phone, in sunlight, with the font size the user has set.</p><p><strong>Design for offline.</strong> Weak signal and a slow phone usually come together. Our post on <a href=\"/blogs/why-your-app-needs-offline-support\">offline support</a> covers how to keep an app usable when the network drops.</p><h2 id=\"engineering-choices-that-make-the-biggest-difference\">Engineering choices that make the biggest difference</h2><p>These are the conversations to have with your developer. You do not need to know how they work, only to ask whether they are done.</p><p><strong>Publish as an Android App Bundle.</strong> The <a href=\"https://developer.android.com/topic/performance/reduce-apk-size\" rel=\"noopener noreferrer nofollow\">app size guide</a> explains that Play uses the bundle to generate optimised APKs for each device, so users download only the code and resources they need. Play enforces a 200 MB compressed download limit for bundles. The same page warns that increasing app size can hurt install success and increase uninstalls.</p><p><strong>Turn on code and resource shrinking.</strong> Android's R8 optimiser and shrinkResources remove unused code and resources. Ask whether both are on for release builds.</p><p><strong>Ship Baseline Profiles.</strong> Google's <a href=\"https://developer.android.com/topic/performance/baselineprofiles/overview\" rel=\"noopener noreferrer nofollow\">Baseline Profiles overview</a> says they improve code execution speed by about 30% from the first launch, by telling the system which code to compile ahead of time. That helps most on slower phones, where every millisecond of startup is longer.</p><p><strong>Use the low-RAM signal.</strong> Android's ActivityManager.isLowRamDevice() returns true on low-RAM devices, which the reference says currently generally means 1 GB or less. An app can use it to switch off heavy extras: smaller caches, no animated backgrounds, lower-resolution images.</p><p><strong>Watch third-party SDKs.</strong> Every analytics, chat, ads and attribution SDK adds size, startup time and memory. I would ask for a list of every SDK in the app with a reason for each.</p><p><strong>Measure in Play, not just on a test phone.</strong> Android vitals reports crash rate, ANR rate and memory from real users. Look at the per-device breakdown, where budget models show up first.</p><h2 id=\"step-by-step-a-low-end-device-plan-for-your-app\">Step by step: a low-end device plan for your app</h2><p><strong>Step 1. Name your floor phone.</strong> Pick the slowest phone that real users carry, by RAM and Android version, from your device catalog or your field team. Buy one. It is the cheapest testing tool you will own.</p><p><strong>Step 2. Set KPIs before you build.</strong> Startup time on the floor phone, crash rate under 1.09%, ANR rate under 0.47%, install size, and Core Web Vitals for any web screens. Write them into the requirements.</p><p><strong>Step 3. Design the first screen and the busiest screen on the floor phone.</strong> Check the mock-ups on that phone's actual screen size, not a large monitor.</p><p><strong>Step 4. Agree the image and list rules.</strong> WebP, right-sized, lazy-loaded, lists paginated.</p><p><strong>Step 5. Agree the build settings.</strong> App bundle, R8 and resource shrinking, Baseline Profiles, a reviewed SDK list.</p><p><strong>Step 6. Test on the floor phone every release.</strong> With other apps open, storage nearly full and a slow network. Note startup time and any crash.</p><p><strong>Step 7. Watch vitals after launch.</strong> Check crash, ANR and memory per device model in Play Console each week, and fix the worst budget model first.</p><p>If you want this scoped and priced before anything is built, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">book it here</a>). Code, cloud and credentials stay in your name.</p><h2 id=\"three-worked-examples-from-indian-businesses\">Three worked examples from Indian businesses</h2><p>These are illustrative. The businesses, phones and numbers are made up to show the decisions.</p><h3 id=\"a-grocery-delivery-app-in-a-tier-2-city\">A grocery delivery app in a tier-2 city</h3><p>A local grocery chain in, say, Warangal launches an ordering app. The device catalog after a month shows many installs on 3 GB and 4 GB phones.</p><p>The home screen originally had a large auto-scrolling banner carousel, high-resolution product photos and a chat widget SDK. On the floor phone it took several seconds to show anything. The fixes: one static offer banner, WebP thumbnails at display size, a paginated product list, and the chat SDK loaded only when the user taps help. The checkout stays simple, because a crash at payment costs a real order. Our page on <a href=\"/industries/grocery\">grocery apps</a> covers the rest of such a build.</p><figure><img src=\"/assets/blog/designing-for-low-end-devices/3.webp\" alt=\"Illustration of a shopkeeper checking a grocery order on a budget phone at a shop counter\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Test on the phone your customers actually carry, not the one on your desk.</figcaption></figure><h3 id=\"an-agri-input-app-for-farmers\">An agri-input app for farmers</h3><p>A seed and fertiliser distributor builds an app for farmers to check prices and book stock. Users are on entry-level phones with patchy rural signal.</p><p>Here the floor phone is low indeed, perhaps a 2 GB device on an older Android version. The app is kept small, with crop images downloaded only when opened, not bundled. The price list is cached for offline reading. Telugu and Hindi text use system fonts rather than large bundled font files. Voice notes are compressed before upload. The app uses the low-RAM signal to skip animations.</p><h3 id=\"a-coaching-institutes-video-app\">A coaching institute's video app</h3><p>A coaching institute offers recorded lectures and tests. Video is the heaviest thing any app can do on a budget phone.</p><p>Lectures stream at a lower default quality on mobile data, with downloads allowed for Wi-Fi. The test screen, where a crash means a student loses an attempt, is kept free of video and heavy images, and answers are saved on the phone as they go. The institute watches ANR rate per device in Play, because a frozen test screen is the complaint that reaches the owner fastest.</p><h2 id=\"common-mistakes\">Common mistakes</h2><p><strong>Designing only on a flagship.</strong> If every review happens on a new phone, nobody sees the slow startup.</p><p><strong>Trusting the average crash rate.</strong> Android vitals has an 8% per-model threshold for a reason. One popular budget phone can be failing while the overall number looks fine.</p><p><strong>Adding SDKs without a cost.</strong> Each one looks small. Ten of them are not.</p><p><strong>Large images everywhere.</strong> The single most common fix I would look for first.</p><p><strong>Excluding low-RAM phones as the first answer.</strong> Play Console lets you exclude devices by RAM or system on chip. It is a tool for genuine hardware needs, such as a heavy AR feature, not a substitute for a light app. Every excluded phone is a customer who cannot install you.</p><p><strong>Forgetting the web.</strong> A heavy landing page fails the same users. Core Web Vitals use the 75th percentile of page loads, so your slow-phone visitors count. Our post on <a href=\"/blogs/core-web-vitals-that-matter\">Core Web Vitals</a> goes further.</p><h2 id=\"a-release-checklist-for-budget-phones\">A release checklist for budget phones</h2><ul><li>The floor phone is named, owned and used for every release test.</li><li>Cold start on the floor phone is measured and recorded.</li><li>Crash and ANR rates are under the Android vitals thresholds, checked per device model.</li><li>Memory usage per RAM tier is checked in Android vitals, ahead of the February 2027 change.</li><li>Release builds use an app bundle, R8 and resource shrinking.</li><li>Baseline Profiles are included.</li><li>Images are WebP and served at display size; long lists are paginated.</li><li>Every SDK has a named reason; unused ones are removed.</li><li>The app degrades gracefully on low-RAM phones and on Go edition, where some features are off.</li><li>Web screens pass Core Web Vitals at the 75th percentile on mobile.</li></ul><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-counts-as-a-low-end-android-phone\">What counts as a low-end Android phone?</h3><p>There is no single standard. Android's isLowRamDevice() generally means 1 GB of RAM or less, and Android 13 (Go edition) needs at least 2 GB. In practice, define your own floor phone from the RAM distribution in your Play Console device catalog.</p><h3 id=\"how-do-i-see-what-phones-my-apps-users-have\">How do I see what phones my app's users have?</h3><p>In Play Console, go to Monitor and improve, then Reach and devices, then Device catalog. Play Console Help says each device's page shows its distribution by RAM and Android version for your app.</p><h3 id=\"what-crash-rate-is-acceptable-on-google-play\">What crash rate is acceptable on Google Play?</h3><p>Android vitals sets a bad behaviour threshold of 1.09% for user-perceived crash rate and 0.47% for user-perceived ANR rate overall, and 8% for either on a single phone model. Google says core vitals affect your app's visibility on Play.</p><h3 id=\"does-google-play-now-measure-memory-usage\">Does Google Play now measure memory usage?</h3><p>Yes. Android vitals lists memory usage and bitmap memory usage as core vitals with thresholds per RAM tier, and says apps exceeding them may see store visibility impact starting from February 2027.</p><h3 id=\"how-big-can-an-android-app-be\">How big can an Android app be?</h3><p>Google Play enforces a 200 MB compressed download limit for apps published as app bundles, with larger sizes possible through Play Feature Delivery and Play Asset Delivery. Google warns bigger apps can hurt install success and increase uninstalls.</p><h3 id=\"should-i-just-exclude-low-ram-phones-from-my-app\">Should I just exclude low-RAM phones from my app?</h3><p>Only if a feature truly needs the hardware. Play Console lets you exclude devices by RAM or system on chip, but each excluded phone is a customer who cannot install your app. A lighter app is usually the better answer.</p><h3 id=\"do-websites-need-the-same-care\">Do websites need the same care?</h3><p>Yes. web.dev's Core Web Vitals targets are LCP within 2.5 seconds, INP of 200 milliseconds or less and CLS of 0.1 or less, measured at the 75th percentile of page loads, which includes visitors on slow phones.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developer.android.com/guide/topics/androidgo\" rel=\"noopener noreferrer nofollow\">Android (Go edition), Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/androidgo/optimize\" rel=\"noopener noreferrer nofollow\">Optimize for Android (Go edition): approach, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/vitals\" rel=\"noopener noreferrer nofollow\">Android vitals, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/vitals/launch-time\" rel=\"noopener noreferrer nofollow\">App startup time, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/memory-overview\" rel=\"noopener noreferrer nofollow\">Overview of memory management, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/reduce-apk-size\" rel=\"noopener noreferrer nofollow\">Reduce your app size, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/baselineprofiles/overview\" rel=\"noopener noreferrer nofollow\">Baseline Profiles overview, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/reference/android/app/ActivityManager#isLowRamDevice()\" rel=\"noopener noreferrer nofollow\">ActivityManager reference, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/7353455?hl=en\" rel=\"noopener noreferrer nofollow\">View and restrict your app's compatible devices, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/vitals\" rel=\"noopener noreferrer nofollow\">Web Vitals, web.dev</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Save-Data\" rel=\"noopener noreferrer nofollow\">Save-Data header, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322388\" rel=\"noopener noreferrer nofollow\">Indian Telecom Services Performance Indicators, April to June 2026, TRAI via PIB</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian shop owner using a budget phone at his counter, beside the words Built for budget phones",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A middle-aged Indian shop owner with a moustache and a half-sleeve shirt behind a small shop counter, holding a slightly worn budget Android phone with a cracked corner, looking pleased as the app loads; a small speed-gauge icon floats beside the phone. Phone screen shows only abstract shapes, no readable text, no logos. Face fully in frame. Right half: the title 'Built for budget phones' in very large bold black sans-serif, left-aligned, on three lines ('Built for' / 'budget' / 'phones'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Android vitals page showing core vitals and the February 2027 memory note",
+   "url": "https://developer.android.com/topic/performance/vitals",
+   "annotate": [
+    {
+     "text": "User-perceived crash rate",
+     "label": "Keep under 1.09%"
+    },
+    {
+     "text": "February 2027",
+     "label": "Memory starts to count"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Android (Go edition) page showing the minimum RAM table",
+   "url": "https://developer.android.com/guide/topics/androidgo",
+   "annotate": [
+    {
+     "text": "Min RAM",
+     "label": "Go edition floor"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a shopkeeper checking a grocery order on a budget phone at a shop counter",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian grocery shop counter with sacks of rice and dal and a weighing scale: a woman shopkeeper in a cotton saree holds a budget phone and checks an order while a delivery boy with a cloth bag waits. A tiny lightning icon above the phone suggests speed. No readable text on the phone or sacks, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the four numbers to design against: crash rate, ANR rate, per-model limit and app size",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Numbers Google Play checks'. Four cards in a row, each with an icon and dark-blue rounded pills with white text. Card 1: broken-phone icon, pill 'Crash rate', pill 'under 1.09%'. Card 2: frozen-hourglass icon, pill 'ANR rate', pill 'under 0.47%'. Card 3: single-phone icon, pill 'Any one phone model', pill 'under 8%'. Card 4: download icon, pill 'App bundle download', pill '200 MB limit'. Orange arrows link the cards left to right. One-line bold takeaway at bottom: 'Test every release on your slowest real phone.' No logos, no other text."
+  }
+ ]
+}

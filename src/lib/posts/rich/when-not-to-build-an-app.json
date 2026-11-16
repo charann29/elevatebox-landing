@@ -1,0 +1,222 @@
+{
+ "slug": "when-not-to-build-an-app",
+ "locale": "en",
+ "title": "App vs website vs PWA for small business in India",
+ "description": "Do you need an app or a website? Compare Google Business Profile, WhatsApp catalogue, mobile site, PWA and native app for Indian small businesses.",
+ "imageUrl": "/assets/blog/when-not-to-build-an-app/cover.webp",
+ "imageAlt": "Illustration of an Indian shop owner comparing a website and an app on her phone beside the words App or website",
+ "ogImageUrl": null,
+ "tags": [
+  "mobile apps",
+  "PWA",
+  "small business",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-04-18T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "do-you-need-an-app-or-a-website",
+   "text": "Do you need an app or a website?",
+   "level": 2
+  },
+  {
+   "id": "the-five-options-side-by-side",
+   "text": "The five options side by side",
+   "level": 2
+  },
+  {
+   "id": "google-business-profile-the-free-first-step",
+   "text": "Google Business Profile: the free first step",
+   "level": 2
+  },
+  {
+   "id": "whatsapp-business-catalogue-a-storefront-in-a-chat",
+   "text": "WhatsApp Business catalogue: a storefront in a chat",
+   "level": 2
+  },
+  {
+   "id": "mobile-website-the-one-you-should-have-anyway",
+   "text": "Mobile website: the one you should have anyway",
+   "level": 2
+  },
+  {
+   "id": "what-a-pwa-can-and-cant-do-on-android-and-iphone",
+   "text": "What a PWA can and can't do on Android and iPhone",
+   "level": 2
+  },
+  {
+   "id": "on-android",
+   "text": "On Android",
+   "level": 3
+  },
+  {
+   "id": "on-iphone",
+   "text": "On iPhone",
+   "level": 3
+  },
+  {
+   "id": "in-the-app-stores",
+   "text": "In the app stores",
+   "level": 3
+  },
+  {
+   "id": "what-a-native-app-adds-and-what-it-costs-every-year",
+   "text": "What a native app adds, and what it costs every year",
+   "level": 2
+  },
+  {
+   "id": "when-an-app-is-worth-it",
+   "text": "When an app is worth it",
+   "level": 2
+  },
+  {
+   "id": "how-to-decide-step-by-step",
+   "text": "How to decide, step by step",
+   "level": 2
+  },
+  {
+   "id": "a-decision-table",
+   "text": "A decision table",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-neighbourhood-grocery-store",
+   "text": "A neighbourhood grocery store",
+   "level": 3
+  },
+  {
+   "id": "a-clinic",
+   "text": "A clinic",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute",
+   "text": "A coaching institute",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes",
+   "text": "Common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-one-month-test-before-you-build",
+   "text": "A one-month test before you build",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Do I need an app for my small business in India?",
+   "a": "Usually not first. A free Google Business Profile, a WhatsApp Business catalogue and a fast mobile website cover how most customers find you and order. An app pays off when customers use it every week, need device features, or rely on notifications."
+  },
+  {
+   "q": "Is a PWA cheaper than an app?",
+   "a": "It is usually cheaper than building separate Android and iPhone apps, because a PWA is one website codebase, as web.dev puts it. You also avoid Apple's 99 USD yearly fee unless you list the PWA in the App Store."
+  },
+  {
+   "q": "Do PWAs work on iPhone?",
+   "a": "Yes, with limits. On iPhone they must be added to the home screen by hand from the Share menu, and Web Push works from iOS 16.4 only for web apps on the Home Screen, after a tap from the user."
+  },
+  {
+   "q": "Is the WhatsApp Business catalogue free?",
+   "a": "WhatsApp describes the Business app as free to download and free to use. The catalogue is part of the app and lets you list items with price, description and product code."
+  },
+  {
+   "q": "Is Google Business Profile free?",
+   "a": "Yes. Google's India page says creating a Business Profile and listing your business on Google is free."
+  },
+  {
+   "q": "Should I build for Android or iPhone first?",
+   "a": "StatCounter put Android at 94.84 percent of mobile OS share in India in October 2026, so Android first is the usual choice. Check your own customers, though: some businesses serve mostly iPhone users."
+  },
+  {
+   "q": "Can a PWA be on the Play Store?",
+   "a": "Yes. web.dev says a PWA can be listed in stores including Google Play, the Apple App Store and the Microsoft Store, subject to each store's requirements."
+  }
+ ],
+ "contentHtml": "<h2 id=\"do-you-need-an-app-or-a-website\">Do you need an app or a website?</h2><p><strong>In short:</strong> Most Indian small businesses do not need an app first. A free Google Business Profile, a WhatsApp Business catalogue and a fast mobile website cover how most customers find you, ask questions and order. Build an app when customers come back often enough to keep it on their phone, or when you need something a website cannot do well.</p><p>That is an odd thing for a company that builds apps to write, but I would rather you spend the app budget on something that pays back. An app nobody opens costs the same to maintain as one everybody uses.</p><p>If you want the options weighed for your business, with a written fixed quotation and timeline for whichever one makes sense, that is what our ₹3,500 requirement analysis is for (<a href=\"/book\">how it works</a>). The rest of this guide needs nothing from us.</p><p>This guide was checked in November 2026, against web.dev's PWA guides, WebKit's notes on web apps on iPhone, WhatsApp's own pages and Google's Business Profile page, all read on 16 November 2026.</p><h2 id=\"the-five-options-side-by-side\">The five options side by side</h2><p>Before cost, what each option is. They are not rivals; most businesses end up with three or four of them.</p><p><em>Five ways to be on your customer's phone, from cheapest to most expensive</em></p><table><thead><tr><th>Option</th><th>Cost to start</th><th>What the customer has to do</th><th>Good at</th></tr></thead><tbody><tr><td>Google Business Profile</td><td>Free, says Google</td><td>Nothing: it shows in Search and Maps</td><td>Being found, hours, reviews, photos, calls</td></tr><tr><td>WhatsApp Business catalogue</td><td>The app is free to download and use</td><td>Open your chat</td><td>Showing products with prices, taking orders by chat</td></tr><tr><td>Mobile website</td><td>Domain, hosting and build</td><td>Tap a link</td><td>Full information, payments, search traffic</td></tr><tr><td>Progressive web app (PWA)</td><td>A website build plus extra work</td><td>Optionally add it to the home screen</td><td>App-like repeat use without a store download</td></tr><tr><td>Native app</td><td>Build cost plus store fees</td><td>Find it in a store, download, sign in</td><td>Frequent use, device features, rich notifications</td></tr></tbody></table><p><em>Source: </em><a href=\"https://business.google.com/in/business-profile/\" rel=\"noopener noreferrer nofollow\"><em>Google Business Profile</em></a><em> and </em><a href=\"https://whatsappbusiness.com/resources/faq/\" rel=\"noopener noreferrer nofollow\"><em>WhatsApp for Business FAQ</em></a><em> and </em><a href=\"https://web.dev/articles/what-are-pwas\" rel=\"noopener noreferrer nofollow\"><em>web.dev</em></a><em>, read 16 November 2026.</em></p><p>Each step down the table costs more to build and asks more of the customer. The question is how far down you need to go.</p><figure><img src=\"/assets/blog/when-not-to-build-an-app/1.webp\" alt=\"Infographic of a five-step ladder from Google Business Profile to WhatsApp catalogue, mobile website, PWA and native app\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Climb only as far as your customers need. Most businesses stop at the third rung.</figcaption></figure><h2 id=\"google-business-profile-the-free-first-step\">Google Business Profile: the free first step</h2><p>Google's <a href=\"https://business.google.com/in/business-profile/\" rel=\"noopener noreferrer nofollow\">Business Profile page for India</a> says it plainly: creating a Business Profile and listing your business on Google is free. The profile appears on Google Search and Maps, and lets you show hours and contact details, photos, products and services, and respond to reviews. Google also gives you figures on calls, reviews and bookings.</p><p>For a clinic, a salon, a restaurant or a shop, this is where most new customers first see you. If it is missing, wrong or has no photos, an app will not fix that, because nobody searches the Play Store for a local tailor.</p><p>The work is small but ongoing: keep hours right on festival days, add new photos when the shop changes, and reply to reviews, good and bad. I would do this before spending a rupee on anything else on this list, because every other option still sends people back to search.</p><figure><img src=\"/assets/blog/when-not-to-build-an-app/2.webp\" alt=\"Google Business Profile India page stating that creating a Business Profile and listing your business on Google is free\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's own answer on cost: the profile is free.</figcaption></figure><h2 id=\"whatsapp-business-catalogue-a-storefront-in-a-chat\">WhatsApp Business catalogue: a storefront in a chat</h2><p>The WhatsApp Business app is, in WhatsApp's own <a href=\"https://whatsappbusiness.com/resources/faq/\" rel=\"noopener noreferrer nofollow\">FAQ</a> words, a free-to-download app that is free to use, with limited customisation and integration with other tools. Its catalogue feature, which WhatsApp <a href=\"https://blog.whatsapp.com/introducing-catalogs-for-small-businesses\" rel=\"noopener noreferrer nofollow\">launched in 2019</a> with India among the first countries, works as what WhatsApp called a mobile storefront: each item can carry a price, a description and a product code, and you can share items in a chat.</p><p>For a business whose customers already message it, this is often enough. The limits are real, though. WhatsApp says the app is for communicating from a single device and lets a business reach hundreds of customers, while its paid platform is for reaching millions. There is no checkout that takes payment for a basket the way a website does, and nothing to bring customers back except your messages.</p><h2 id=\"mobile-website-the-one-you-should-have-anyway\">Mobile website: the one you should have anyway</h2><p>A website is the only option on this list that a customer can reach from a Google search, an Instagram bio, a WhatsApp message and a printed QR code, with no install. It can take payments, hold every detail about your products, and rank for searches such as the name of your service and your area.</p><p>If it is slow on a cheap phone, customers leave before it loads, so the build matters more than the design. We wrote about this in <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a>. A good mobile website is also the base for the next option, so the work is not wasted if you go further later. Our <a href=\"/services/web-development\">web development</a> page covers what we build.</p><h2 id=\"what-a-pwa-can-and-cant-do-on-android-and-iphone\">What a PWA can and can't do on Android and iPhone</h2><p>A progressive web app is a website with extra abilities. web.dev, Google's guide for web developers, <a href=\"https://web.dev/articles/what-are-pwas\" rel=\"noopener noreferrer nofollow\">describes PWAs</a> as web apps built with modern APIs to give enhanced capabilities while still reaching any web user on any device with a single codebase. It lists push notifications, geolocation, badging and offline use among what they can do, and says installed PWAs launch from the home screen like other apps.</p><h3 id=\"on-android\">On Android</h3><p>According to web.dev's <a href=\"https://web.dev/learn/pwa/installation\" rel=\"noopener noreferrer nofollow\">installation guide</a>, on Android a PWA is installed as a WebAPK, a shortcut or a QuickApp depending on the device and browser. With Chrome on phones that have Google services, it is usually a WebAPK, which behaves much like a store app on the home screen.</p><p>That matters in India, because Android is most of the market. StatCounter's <a href=\"https://gs.statcounter.com/os-market-share/mobile/india\" rel=\"noopener noreferrer nofollow\">October 2026 figures</a> put Android at 94.84 percent of mobile operating system share in India and iOS at 5.1 percent. If a PWA works well on Android, it works for most of your customers.</p><h3 id=\"on-iphone\">On iPhone</h3><p>On iPhone and iPad, web.dev says PWAs have to be added to the home screen by hand from the browser's Share menu. There is no automatic install prompt. WebKit, the team behind Safari, <a href=\"https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/\" rel=\"noopener noreferrer nofollow\">announced in February 2023</a> that iOS and iPadOS 16.4 added Web Push for Home Screen web apps, along with the Badging API. Two conditions apply: the web app must already be added to the Home Screen, and the permission request must come in response to a direct user action, such as a tap.</p><p>So on iPhone, a PWA can send notifications, but only to customers who took the extra step of adding it. If push notifications are the whole reason you want an app, and a large share of your customers are on iPhone, test this before you decide.</p><figure><img src=\"/assets/blog/when-not-to-build-an-app/3.webp\" alt=\"web.dev installation guide explaining that on iOS and iPadOS, PWAs must be added to the home screen manually from the browser share menu\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>web.dev on iPhone: PWAs are added by hand from the Share menu.</figcaption></figure><figure><img src=\"/assets/blog/when-not-to-build-an-app/4.webp\" alt=\"WebKit blog post announcing Web Push for Home Screen web apps in iOS and iPadOS 16.4\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>WebKit's 2023 note: push works for web apps once they are on the Home Screen.</figcaption></figure><h3 id=\"in-the-app-stores\">In the app stores</h3><p>A PWA does not have to stay off the stores. web.dev says a PWA can be listed in app catalogues and stores, naming Google Play for Android and ChromeOS, the Apple App Store, and the Microsoft Store, and advises checking each store's requirements before submitting. Once listed, it takes on that store's rules and fees.</p><h2 id=\"what-a-native-app-adds-and-what-it-costs-every-year\">What a native app adds, and what it costs every year</h2><p>A native app is built for Android, iPhone or both, and downloaded from a store. It can use the phone more fully, run more reliably in the background and stay signed in. It is also the option with the most fixed cost.</p><p>Google Play charges a <a href=\"https://support.google.com/googleplay/android-developer/answer/6112435?hl=en\" rel=\"noopener noreferrer nofollow\">US$25 one-time registration fee</a>. Apple's <a href=\"https://developer.apple.com/support/purchase-activation/\" rel=\"noopener noreferrer nofollow\">Developer Program</a> costs 99 USD a year, in local currency where available. Then the stores move the goalposts every year. Since 31 August 2026, Google Play <a href=\"https://support.google.com/googleplay/android-developer/answer/11926878?hl=en\" rel=\"noopener noreferrer nofollow\">requires</a> new apps and updates to target Android 16 (API level 36), and existing apps that target Android 14 or lower are shown only to people on older phones. <a href=\"https://developer.apple.com/news/upcoming-requirements/\" rel=\"noopener noreferrer nofollow\">Apple requires</a> uploads since 28 April 2026 to be built with Xcode 26 using the iOS 26 SDK.</p><p>Development firms put yearly maintenance at 15 to 25 percent of the build cost (SolGuruz's figure). We go through that in <a href=\"/blogs/app-maintenance-budget\">how to budget for app maintenance</a>, and the build itself in <a href=\"/blogs/mobile-app-development-cost-india\">mobile app development cost in India</a>.</p><h2 id=\"when-an-app-is-worth-it\">When an app is worth it</h2><p>In my experience, an app earns its place when at least one of these is true:</p><ul><li><strong>Customers use it every week or more.</strong> A grocery reorder, a daily class schedule, a loyalty wallet. If they come back twice a year, a website is enough.</li><li><strong>It needs the phone in ways a website handles badly.</strong> Background location for deliveries, Bluetooth devices, heavy offline work. See <a href=\"/blogs/why-your-app-needs-offline-support\">why your app needs offline support</a>.</li><li><strong>Notifications are the product.</strong> Order status, appointment reminders, live updates, especially if many customers are on iPhone and will not add a PWA to the home screen.</li><li><strong>Customers stay signed in.</strong> Accounts, history, saved addresses and payments that people would not retype on a website each time.</li><li><strong>The app is the business,</strong> not a brochure for it: a booking platform, a marketplace, a service people pay for.</li></ul><p>If none of these is true, an app is probably a cost you do not need yet.</p><p>The reverse also holds. If two or three of these are true, putting the app off can cost you, because the customers who would have used it weekly end up in a competitor's app instead. The point is to build for a reason you can name, not to avoid apps.</p><h2 id=\"how-to-decide-step-by-step\">How to decide, step by step</h2><p><strong>Step 1. Fix your Google Business Profile.</strong> Claim it, check hours, add photos and products, answer reviews. It is free and it is where local customers start.</p><p><strong>Step 2. Set up the WhatsApp Business catalogue.</strong> Add your main products or services with prices. Share it with the next twenty customers who ask what you sell.</p><p><strong>Step 3. Count how customers come back.</strong> For a month, note how often the same people order, book or ask. Weekly is app territory. Monthly or less is website territory.</p><p><strong>Step 4. Build or fix the mobile website.</strong> Make it fast on a cheap Android phone, add payments if you sell, and link it from your profile and WhatsApp.</p><p><strong>Step 5. Add PWA features if repeat use is growing.</strong> Home screen install and push on Android cost far less than a separate app, and reach most Indian customers.</p><p><strong>Step 6. Build a native app only for a named reason.</strong> Write the reason down in one sentence, such as delivery tracking in the background or reminders for iPhone users who will not add a PWA. If you cannot write the sentence, wait.</p><h2 id=\"a-decision-table\">A decision table</h2><p><em>Which option fits which need</em></p><table><thead><tr><th>If what you need is...</th><th>Start with</th><th>Why</th></tr></thead><tbody><tr><td>To be found by people nearby</td><td>Google Business Profile</td><td>Free, and it appears in Search and Maps</td></tr><tr><td>To show products and take orders by chat</td><td>WhatsApp Business catalogue</td><td>Free app, customers already use WhatsApp</td></tr><tr><td>To sell online and appear in Google searches</td><td>Mobile website</td><td>No install, takes payments, can rank</td></tr><tr><td>Repeat customers on Android, with notifications</td><td>PWA</td><td>Installs as a WebAPK on Chrome; one codebase</td></tr><tr><td>Notifications for iPhone users without extra steps</td><td>Native app</td><td>PWA push on iPhone needs a home screen add first</td></tr><tr><td>Background GPS, Bluetooth or heavy offline use</td><td>Native app</td><td>Device features are where native apps are strongest</td></tr><tr><td>A platform that is the business</td><td>Native app plus website</td><td>Customers expect both</td></tr></tbody></table><p><em>Source: </em><a href=\"https://web.dev/learn/pwa/installation\" rel=\"noopener noreferrer nofollow\"><em>web.dev</em></a><em> and </em><a href=\"https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/\" rel=\"noopener noreferrer nofollow\"><em>WebKit</em></a><em> and </em><a href=\"https://business.google.com/in/business-profile/\" rel=\"noopener noreferrer nofollow\"><em>Google</em></a><em>, read 16 November 2026.</em></p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses below are illustrative, to show how the decision plays out. The numbers of customers are invented for the example.</p><h3 id=\"a-neighbourhood-grocery-store\">A neighbourhood grocery store</h3><p>Say a kirana store has about 200 regular households who order on WhatsApp several times a week (illustrative).</p><p>Weekly repeat use points towards an app, but the store's customers already have one: WhatsApp. A catalogue with prices handles most orders. The next step I would take is a simple mobile website with a reorder list and UPI payment, then PWA install on Android once enough households use it. A native app comes last, if ever.</p><figure><img src=\"/assets/blog/when-not-to-build-an-app/5.webp\" alt=\"Illustration of an Indian kirana store owner sharing a product catalogue with a customer on his phone at the counter\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a kirana store, the app customers already use is WhatsApp.</figcaption></figure><h3 id=\"a-clinic\">A clinic</h3><p>Say a clinic sees 40 patients a day, and most come a few times a year (illustrative).</p><p>That is not weekly use. A Business Profile with correct hours, a mobile website with online booking, and reminders by WhatsApp or SMS cover the need. An app only makes sense if the clinic offers something patients use often, such as ongoing care plans or reports.</p><h3 id=\"a-coaching-institute\">A coaching institute</h3><p>Say an institute runs batches of 300 students who check schedules, watch recorded classes and take tests every day (illustrative).</p><p>Daily, signed-in use is where an app pays off. Students also need reminders before tests, and parents may be on iPhones. I would still start with a PWA on Android if the budget is tight, since that reaches most students, and build native apps once the course content proves itself.</p><h2 id=\"common-mistakes\">Common mistakes</h2><p><strong>Building the app before the profile.</strong> If customers cannot find your hours on Google, they will not find your app either.</p><p><strong>Treating downloads as the goal.</strong> A download is a cost to the customer, not a win. What matters is whether they open it again next week.</p><p><strong>Assuming PWAs work the same on iPhone.</strong> They do not install automatically, and push works only after the customer adds the web app to the Home Screen, per web.dev and WebKit.</p><p><strong>Forgetting the yearly cost.</strong> Apple's fee and both stores' yearly requirements apply whether or not anyone uses the app.</p><p><strong>Copying a big brand.</strong> A national chain has customers who open its app daily. A single shop usually does not. Notifications also stop working if people mute them, so a muted app is as quiet as no app.</p><h2 id=\"a-one-month-test-before-you-build\">A one-month test before you build</h2><p>Run this before you pay for an app. It costs nothing but attention.</p><p><em>A four-week test of whether you need an app</em></p><table><thead><tr><th>Week</th><th>What to do</th><th>What to note</th></tr></thead><tbody><tr><td>Week 1</td><td>Complete your Google Business Profile with photos and products</td><td>Calls and direction requests from the profile</td></tr><tr><td>Week 2</td><td>Build the WhatsApp catalogue and share it with every enquiry</td><td>How many orders come through chat</td></tr><tr><td>Week 3</td><td>Note every repeat customer and how often they return</td><td>The share who come back weekly</td></tr><tr><td>Week 4</td><td>Ask ten regular customers whether they would install an app</td><td>Their reason, in their words</td></tr></tbody></table><p>If fewer than a few of your regulars come back weekly, or none of the ten has a reason, spend the money on the website. If many do, you have the reason for an app written down, and that sentence is the start of a good brief.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"do-i-need-an-app-for-my-small-business-in-india\">Do I need an app for my small business in India?</h3><p>Usually not first. A free Google Business Profile, a WhatsApp Business catalogue and a fast mobile website cover how most customers find you and order. An app pays off when customers use it every week, need device features, or rely on notifications.</p><h3 id=\"is-a-pwa-cheaper-than-an-app\">Is a PWA cheaper than an app?</h3><p>It is usually cheaper than building separate Android and iPhone apps, because a PWA is one website codebase, as web.dev puts it. You also avoid Apple's 99 USD yearly fee unless you list the PWA in the App Store.</p><h3 id=\"do-pwas-work-on-iphone\">Do PWAs work on iPhone?</h3><p>Yes, with limits. On iPhone they must be added to the home screen by hand from the Share menu, and Web Push works from iOS 16.4 only for web apps on the Home Screen, after a tap from the user.</p><h3 id=\"is-the-whatsapp-business-catalogue-free\">Is the WhatsApp Business catalogue free?</h3><p>WhatsApp describes the Business app as free to download and free to use. The catalogue is part of the app and lets you list items with price, description and product code.</p><h3 id=\"is-google-business-profile-free\">Is Google Business Profile free?</h3><p>Yes. Google's India page says creating a Business Profile and listing your business on Google is free.</p><h3 id=\"should-i-build-for-android-or-iphone-first\">Should I build for Android or iPhone first?</h3><p>StatCounter put Android at 94.84 percent of mobile OS share in India in October 2026, so Android first is the usual choice. Check your own customers, though: some businesses serve mostly iPhone users.</p><h3 id=\"can-a-pwa-be-on-the-play-store\">Can a PWA be on the Play Store?</h3><p>Yes. web.dev says a PWA can be listed in stores including Google Play, the Apple App Store and the Microsoft Store, subject to each store's requirements.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://web.dev/articles/what-are-pwas\" rel=\"noopener noreferrer nofollow\">What are Progressive Web Apps?, web.dev</a>, read 16 November 2026</li><li><a href=\"https://web.dev/learn/pwa/installation\" rel=\"noopener noreferrer nofollow\">Installation, Learn PWA, web.dev</a>, read 16 November 2026</li><li><a href=\"https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/\" rel=\"noopener noreferrer nofollow\">Web Push for Web Apps on iOS and iPadOS, WebKit</a>, read 16 November 2026</li><li><a href=\"https://whatsappbusiness.com/resources/faq/\" rel=\"noopener noreferrer nofollow\">Frequently Asked Questions about WhatsApp for Business, WhatsApp</a>, read 16 November 2026</li><li><a href=\"https://blog.whatsapp.com/introducing-catalogs-for-small-businesses\" rel=\"noopener noreferrer nofollow\">Introducing catalogs for small businesses, WhatsApp Blog</a>, read 16 November 2026</li><li><a href=\"https://business.google.com/in/business-profile/\" rel=\"noopener noreferrer nofollow\">Google Business Profile, Google</a>, read 16 November 2026</li><li><a href=\"https://gs.statcounter.com/os-market-share/mobile/india\" rel=\"noopener noreferrer nofollow\">Mobile operating system market share India, StatCounter Global Stats</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/11926878?hl=en\" rel=\"noopener noreferrer nofollow\">Target API level requirements for Google Play apps, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/6112435?hl=en\" rel=\"noopener noreferrer nofollow\">Get started with Play Console, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/news/upcoming-requirements/\" rel=\"noopener noreferrer nofollow\">Upcoming requirements, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/support/purchase-activation/\" rel=\"noopener noreferrer nofollow\">Program enrollment, Apple Developer Account Help</a>, read 16 November 2026</li><li><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\">App Development Cost in India 2026, SolGuruz</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian shop owner comparing a website and an app on her phone beside the words App or website",
+   "prompt": "16:9 cover. Warm cream background (#FBF6EC). Left half: flat warm editorial illustration in terracotta, mustard and sage of an Indian woman in her 30s in a kurta, owner of a small bakery, standing at her counter holding a phone in one hand and looking at a laptop with an abstract web page on it; shelves of bread behind; screens show only abstract shapes, no readable text, no logos. Face fully in frame. Right half: the title in very large bold black sans-serif, left-aligned, on two lines, exactly: \"App or\" / \"website?\". No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a five-step ladder from Google Business Profile to native app",
+   "prompt": "Clean flat explainer infographic, 16:9, warm cream background (#FBF6EC), simple flat illustration icons, dark-blue rounded label pills with white text, orange arrows, bold black sans-serif heading at the top, one-line bold black takeaway at the bottom. Use exactly the text given, spelled exactly, and no other text, logos or numbers. Heading: \"Climb only as far as you need\". A staircase of five steps rising left to right, each step with a dark-blue pill and a small icon, orange arrows between steps: \"Google Business Profile\" (map pin), \"WhatsApp catalogue\" (chat bubble with a tag, no logo), \"Mobile website\" (phone with browser bar), \"PWA\" (phone with a home-screen icon), \"Native app\" (phone with a download arrow). A small label under the first two steps: \"Free\". Bottom takeaway: \"Each step costs more and asks more of your customer.\""
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Google Business Profile India page stating that creating a Business Profile and listing your business on Google is free",
+   "url": "https://business.google.com/in/business-profile/",
+   "annotate": [
+    {
+     "text": "Yes, creating a Business Profile and listing your business on Google is free.",
+     "label": "Free"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "web.dev installation guide explaining that on iOS and iPadOS, PWAs must be added to the home screen manually from the browser share menu",
+   "url": "https://web.dev/learn/pwa/installation",
+   "annotate": [
+    {
+     "text": "These apps have to be added manually to the home screen using a browser share menu.",
+     "label": "iPhone"
+    },
+    {
+     "text": "Depending on the device and browser, your PWA will either be installed as a WebAPK, a shortcut, or a QuickApp.",
+     "label": "Android"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "WebKit blog post announcing Web Push for Home Screen web apps in iOS and iPadOS 16.4",
+   "url": "https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/",
+   "annotate": [
+    {
+     "text": "Now with iOS and iPadOS 16.4, we are adding support for Web Push to Home Screen web apps.",
+     "label": "iOS 16.4"
+    },
+    {
+     "text": "A web app that has been added to the Home Screen can request permission to receive push notifications",
+     "label": "Home Screen first"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian kirana store owner sharing a product catalogue with a customer on his phone at the counter",
+   "prompt": "3:2 scene illustration, warm cream background (#FBF6EC), flat warm editorial style, terracotta, mustard and sage palette, soft shadows. A middle-aged Indian kirana store owner behind a counter stacked with rice sacks, oil tins and biscuit packets, showing his phone to a woman customer holding a cloth shopping bag; the phone shows abstract product tiles, no readable text, no logos. Both faces fully in frame."
+  }
+ ]
+}

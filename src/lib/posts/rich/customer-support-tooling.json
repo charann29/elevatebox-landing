@@ -1,0 +1,171 @@
+{
+ "slug": "customer-support-tooling",
+ "locale": "en",
+ "title": "Customer support tools for small business in India",
+ "description": "Customer support tools for Indian small businesses: helpdesk prices, WhatsApp Business Platform rules, e-commerce complaint deadlines and when AI chat helps.",
+ "imageUrl": "/assets/blog/customer-support-tooling/cover.webp",
+ "imageAlt": "Illustration of an Indian support agent answering customer chats on a laptop and phone beside the words Support tools",
+ "ogImageUrl": null,
+ "tags": [
+  "Customer support",
+  "WhatsApp",
+  "Helpdesk",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-09-20T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-customer-support-tools-a-small-indian-business-needs",
+   "text": "What customer support tools a small Indian business needs",
+   "level": 2
+  },
+  {
+   "id": "helpdesk-and-ai-pricing-from-the-vendors-pages",
+   "text": "Helpdesk and AI pricing, from the vendors' pages",
+   "level": 2
+  },
+  {
+   "id": "whatsapp-support-the-rules-that-shape-your-costs",
+   "text": "WhatsApp support: the rules that shape your costs",
+   "level": 2
+  },
+  {
+   "id": "the-complaint-rules-indian-sellers-must-meet",
+   "text": "The complaint rules Indian sellers must meet",
+   "level": 2
+  },
+  {
+   "id": "how-to-choose-between-helpdesk-tools",
+   "text": "How to choose between helpdesk tools",
+   "level": 2
+  },
+  {
+   "id": "where-ai-chat-helps-and-where-it-hurts",
+   "text": "Where AI chat helps, and where it hurts",
+   "level": 2
+  },
+  {
+   "id": "how-to-set-up-support-tooling-step-by-step",
+   "text": "How to set up support tooling, step by step",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-skincare-brand-selling-on-its-own-site",
+   "text": "A D2C skincare brand selling on its own site",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-during-admissions",
+   "text": "A coaching institute during admissions",
+   "level": 3
+  },
+  {
+   "id": "a-home-services-company-booking-repairs",
+   "text": "A home-services company booking repairs",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-with-support-tools",
+   "text": "Common mistakes with support tools",
+   "level": 2
+  },
+  {
+   "id": "a-weekly-30-minute-support-review",
+   "text": "A weekly 30-minute support review",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is the best customer support tool for a small business in India?",
+   "a": "There is no single best tool. Start with a shared inbox that covers your top two channels, usually WhatsApp and email. Zoho Desk shows rupee pricing, with a free plan for three users and WhatsApp from its Standard plan at ₹800 a user a month, billed yearly."
+  },
+  {
+   "q": "Is Zoho Desk free?",
+   "a": "Zoho Desk's pricing page lists a Free Forever plan with three user licences. Paid plans start at ₹420 a user a month for Express, billed annually, with local taxes extra. WhatsApp and other messaging channels are listed from the Standard plan."
+  },
+  {
+   "q": "Are WhatsApp support replies free?",
+   "a": "Partly. Since 1 October 2026, Meta gives each business phone number 1,000 free service messages a month. After that, service messages are charged. Messages in a free entry point window, opened by a Click to WhatsApp ad, are not charged."
+  },
+  {
+   "q": "What is the WhatsApp 24-hour window?",
+   "a": "When a customer messages you, a 24-hour customer service window opens and resets with each new message from them. Inside it you can reply with normal messages. Outside it you can only send approved template messages."
+  },
+  {
+   "q": "How fast must an online seller respond to a complaint in India?",
+   "a": "Under the Consumer Protection (E-Commerce) Rules, 2020, the grievance officer must acknowledge a consumer complaint within forty-eight hours and redress it within one month. The 2026 amendment, in force from 1 January 2027, also requires giving the complainant a copy of the complaint as recorded."
+  },
+  {
+   "q": "Should I use an AI chatbot for customer support?",
+   "a": "Use one for repeat questions once you have a shared inbox and saved replies. Connect it to your order or booking data and hand refunds, complaints and angry customers to a person. Intercom, for example, charges $0.99 per Fin outcome on top of seats."
+  },
+  {
+   "q": "Do I need a helpdesk if I only use WhatsApp?",
+   "a": "If one person answers a few chats a day, the WhatsApp Business app may be enough. Once two or more people answer, or you sell online and must track complaints, a helpdesk connected to the WhatsApp Business Platform keeps ownership and response times visible."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-customer-support-tools-a-small-indian-business-needs\">What customer support tools a small Indian business needs</h2><p><strong>In short:</strong> Most Indian small businesses need three things: one shared inbox where email, WhatsApp and web chat land as tickets, WhatsApp on the official Business Platform rather than one staff phone, and only then an AI layer for repeat questions. A helpdesk costs from nothing (Zoho Desk's free plan has three users) to ₹800 an agent a month for WhatsApp on Zoho Desk Standard, billed yearly.</p><p>This guide was checked in November 2026, against Zoho's, Freshworks', Intercom's and Meta's own pricing pages and the Department of Consumer Affairs' e-commerce rules, all read on 16 November 2026.</p><p>The order matters. I see owners buy an AI chatbot first, wire it to a website nobody visits, and keep answering the real questions on a personal WhatsApp at 11 p.m. The tool that helps most is usually the boring one: a shared inbox where every customer message has an owner, a status and a time.</p><h2 id=\"helpdesk-and-ai-pricing-from-the-vendors-pages\">Helpdesk and AI pricing, from the vendors' pages</h2><p>I read the pricing pages of three tools Indian teams often shortlist. Zoho shows rupees; Freshworks and Intercom showed me dollars.</p><p><em>Published support tool prices, as shown on the vendors' own pages</em></p><table><thead><tr><th>Tool and plan</th><th>Price shown</th><th>What I noted</th></tr></thead><tbody><tr><td>Zoho Desk Free</td><td>Free forever</td><td>Three user licences</td></tr><tr><td>Zoho Desk Express</td><td>₹420 per user a month, billed annually</td><td>WhatsApp not listed on this plan</td></tr><tr><td>Zoho Desk Standard</td><td>₹800 per user a month, billed annually</td><td>WhatsApp, Instagram, Facebook Messenger, Telegram, WeChat and Line</td></tr><tr><td>Zoho Desk Professional</td><td>₹1,400 per user a month, billed annually</td><td>Everything in Standard, plus more</td></tr><tr><td>Zoho Desk Enterprise</td><td>₹2,400 per user a month, billed annually</td><td>Everything in Professional, plus more</td></tr><tr><td>Freshdesk Growth / Pro / Enterprise</td><td>$19 / $55 / $89 per agent a month, billed annually</td><td>14-day trial of Enterprise; no free plan shown to me</td></tr><tr><td>Intercom Essential / Advanced / Expert</td><td>$19 / $85 / $132 per seat a month</td><td>Essential shown at a new-customer discount</td></tr><tr><td>Intercom Fin AI agent</td><td>$0.99 per Fin outcome</td><td>Charged on top of seats</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.zoho.com/desk/pricing.html\" rel=\"noopener noreferrer nofollow\"><em>Zoho Desk pricing</em></a><em> and </em><a href=\"https://www.freshworks.com/freshdesk/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Freshdesk pricing</em></a><em> and </em><a href=\"https://www.intercom.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>Intercom pricing</em></a><em>, read 16 November 2026.</em></p><p>Read the small print before you compare totals. Zoho says applicable local taxes are charged on top. Freshworks' FAQ says offline payments follow USD pricing. Both show yearly prices; a monthly plan usually costs more. And per-agent pricing means the cost grows with your team, so count who actually needs a seat. A warehouse person who answers two tickets a week may not.</p><p>The AI line is priced differently. Intercom charges per outcome of its AI agent, so cost follows volume, not headcount. That is fair when the AI genuinely resolves questions, and expensive when it handles questions a saved reply would have answered.</p><figure><img src=\"/assets/blog/customer-support-tooling/4.webp\" alt=\"Annotated view of Intercom's pricing page showing the per-outcome price of its Fin AI agent\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>AI support priced per outcome: cost follows volume, not team size.</figcaption></figure><h2 id=\"whatsapp-support-the-rules-that-shape-your-costs\">WhatsApp support: the rules that shape your costs</h2><p>For most Indian customers, support means WhatsApp. If your team answers from one phone with the WhatsApp Business app, that works until two people need to reply at once or the phone leaves with the person holding it. The <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">WhatsApp Business Platform</a> is the version a helpdesk connects to, and Meta's pricing page sets the rules.</p><ul><li><strong>Customers write first, you reply free-form.</strong> A message from a customer opens a 24-hour customer service window, which resets with each new message from them. Inside it you can send normal text, images and files.</li><li><strong>Outside the window, templates only.</strong> To start a conversation, or reply after 24 hours, you need an approved template in the marketing, utility or authentication category.</li><li><strong>Service replies now have a monthly free tier.</strong> Since 1 October 2026, Meta gives each business phone number 1,000 free service messages a month, which do not roll over. From the 1,001st, service messages are charged.</li><li><strong>Ads can make replies free.</strong> When a customer starts a chat from a Click to WhatsApp ad, a free entry point window opens in which Meta does not charge for marketing, utility, authentication or service messages.</li><li><strong>INR billing has a deadline.</strong> Meta says eligible Indian businesses must move all their messaging accounts to INR billing by 31 December 2026, because from 1 January 2027 it will stop delivering messages from non-INR accounts.</li></ul><p>The practical effect: a support team that replies quickly, inside the 24-hour window, pays little or nothing for most conversations. A team that lets chats go cold has to restart them with a paid template. Speed is cheaper.</p><figure><img src=\"/assets/blog/customer-support-tooling/2.webp\" alt=\"Annotated view of Meta's WhatsApp pricing page showing the free tier of 1,000 service messages per business phone number\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Meta's free monthly tier for service replies, in effect since October 2026.</figcaption></figure><h2 id=\"the-complaint-rules-indian-sellers-must-meet\">The complaint rules Indian sellers must meet</h2><p>If you sell online, support is also a legal duty. The <a href=\"https://thc.nic.in/Central%20Governmental%20Rules/Consumer%20Protection%20(E-Commerce)%20Rules,%202020.pdf\" rel=\"noopener noreferrer nofollow\">Consumer Protection (E-Commerce) Rules, 2020</a> require a grievance officer who acknowledges a consumer complaint within forty-eight hours and redresses it within one month of receipt.</p><p>The Department of Consumer Affairs notified an <a href=\"https://consumeraffairs.gov.in/public/upload/files/E%20Commerce%20Amendment%20Rules%202026_1789127949.pdf\" rel=\"noopener noreferrer nofollow\">amendment on 9 September 2026</a>, in force from 1 January 2027. In the version I read, every e-commerce entity must:</p><ul><li>Display its legal name, headquarters and branch addresses, website details, and the email, landline and mobile numbers of customer care and of the grievance officer.</li><li>Have the grievance officer acknowledge a complaint within forty-eight hours, give the complainant a copy of the complaint as recorded, and redress it within one month.</li><li>Become a partner in the convergence process of the National Consumer Helpline.</li></ul><p>This is where a ticketing tool earns its money. A ticket has a received time, an acknowledgement time and a closed time. A personal WhatsApp chat has none of that in a form you can show anyone. I am not a lawyer, and you should check how the rules apply to your business with one, but the 48-hour clock alone is a good reason to have every complaint logged in one place.</p><figure><img src=\"/assets/blog/customer-support-tooling/1.webp\" alt=\"Explainer of the support stack for an Indian small business: shared inbox, WhatsApp Business Platform, then AI\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Build support in this order. Each layer depends on the one before it.</figcaption></figure><h2 id=\"how-to-choose-between-helpdesk-tools\">How to choose between helpdesk tools</h2><p>Once you know your channels, the shortlist gets short quickly. I compare tools on five questions, in this order, and I ask each vendor to show me the answer in a trial rather than a slide.</p><p><strong>Does it cover my top two channels on the plan I can afford?</strong> WhatsApp is often on a higher tier than email. On Zoho Desk it is listed from Standard, not Express. Check the exact plan, not the product page.</p><p><strong>Can I see the time a complaint arrived and the time we first replied?</strong> If you sell online, that is your 48-hour evidence. Confirm in the trial that the tool records both times and lets you export them.</p><p><strong>Who owns the WhatsApp number and the data?</strong> The number, the Meta business account and the helpdesk login should all be in your company's name, so you can change vendors without losing history.</p><p><strong>Does it work in the languages my customers use?</strong> Saved replies, AI answers and the customer-facing parts of the tool should handle the scripts your customers write in.</p><p><strong>What does it cost at twice my current team size?</strong> Per-seat prices look small for two people. Multiply by the team you expect in a year, add the AI usage line, and compare that number.</p><p>Run a two-week trial with real tickets before you pay for a year. Zoho Desk has a free plan and Freshdesk a 14-day trial, and a fortnight of real use tells you more than any feature comparison.</p><h2 id=\"where-ai-chat-helps-and-where-it-hurts\">Where AI chat helps, and where it hurts</h2><p>AI support tools are good at one thing: answering the same question for the hundredth time, quickly, at any hour. Where is my order. What are your timings. Do you deliver to my pin code. How do I reset my password. If those make up a large share of your tickets, an AI layer can take real load off the team.</p><p>It hurts in three situations. When the answer depends on data the AI cannot see, such as a live order status in a system it is not connected to, it guesses or deflects. When the customer is angry, a bot that keeps offering help articles makes it worse. And when the question is about money, such as a refund or a double charge, customers want a person and the 48-hour complaint clock is running.</p><p>So connect the AI to your real data before you switch it on, give it a clear handover to a human, and keep refunds, complaints and anything legal away from it. For phone support, the same logic applies to voice agents: we build one called <a href=\"https://agents.elevatebox.in\" rel=\"noopener noreferrer nofollow\">Roopa by ElevateBox</a> for appointment and enquiry calls, and the rule we follow is the same, a fast handover to a person when the call is not routine.</p><h2 id=\"how-to-set-up-support-tooling-step-by-step\">How to set up support tooling, step by step</h2><p><strong>Step 1. Count your channels and volume.</strong> For two weeks, tally every customer message by channel: phone, WhatsApp, email, Instagram, website. Note the top ten questions.</p><p><strong>Step 2. Pick one shared inbox.</strong> Choose a helpdesk that covers your top two channels. If WhatsApp is one of them, check the plan includes it; on Zoho Desk, that starts at Standard.</p><p><strong>Step 3. Move WhatsApp to the Business Platform.</strong> Connect your support number through the helpdesk or a Meta partner, in your company's name, with INR billing set up before the 31 December 2026 deadline.</p><p><strong>Step 4. Write saved replies for the top ten questions.</strong> Plain language, in the languages your customers write in. This alone cuts reply time sharply and costs nothing.</p><p><strong>Step 5. Set targets you can measure.</strong> First reply within the WhatsApp 24-hour window, acknowledgement of complaints within 48 hours, resolution within one month. Put them in the tool as rules or alerts.</p><p><strong>Step 6. Add AI for the top repeat questions only.</strong> Connect it to order or booking data, test it on last month's real questions, and set a handover to a human on any refund, complaint or second failed answer.</p><p><strong>Step 7. Review weekly for a month.</strong> Read twenty closed tickets each week. Fix saved replies, adjust the AI, and remove seats nobody uses.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses and volumes below are illustrative, made up to show the method. They are not real customers.</p><h3 id=\"a-d2c-skincare-brand-selling-on-its-own-site\">A D2C skincare brand selling on its own site</h3><p>A brand ships about 200 orders a day and gets most queries on WhatsApp and Instagram: order status, delivery delays and product questions. Two people answer from one phone.</p><p>The setup: a helpdesk plan that includes WhatsApp and Instagram, so both land as tickets with owners. The support number moves to the WhatsApp Business Platform. Saved replies cover order status and returns. An AI layer, connected to the order system, answers where is my order around the clock and hands anything about a damaged product or refund to a person. The grievance officer's details go on the website as the e-commerce rules require.</p><p>What this tells you: for an online seller, the e-commerce rules and the WhatsApp window set the targets. The tool is just how you meet them. Our post on <a href=\"/blogs/ecommerce-checkout-conversion\">checkout conversion</a> covers the questions that come before the order.</p><h3 id=\"a-coaching-institute-during-admissions\">A coaching institute during admissions</h3><p>A coaching institute gets a surge of enquiries for three months a year, mostly the same questions about fees, batch timings and the syllabus, from students and parents, often in Telugu or Hindi as well as English.</p><figure><img src=\"/assets/blog/customer-support-tooling/3.webp\" alt=\"Illustration of a coaching institute front desk answering parents' WhatsApp enquiries on a shared screen\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A shared inbox lets the front desk and counsellors answer the admissions rush together.</figcaption></figure><p>The setup: the free tier of a helpdesk is enough for three front-desk users most of the year. Enquiries from a Click to WhatsApp ad open a free entry point window, so replies in that window cost nothing on Meta's side. Saved replies in each language cover fees and timings. Counsellors take over for anything about a specific student.</p><p>What this tells you: seasonal demand favours tools priced per user with a free tier, plus saved replies, over a large AI contract.</p><h3 id=\"a-home-services-company-booking-repairs\">A home-services company booking repairs</h3><p>A company that repairs ACs and appliances takes most bookings by phone and WhatsApp, then sends technicians. Customers call back to ask when the technician will arrive.</p><p>The setup: bookings and status updates go out as utility templates on the WhatsApp Business Platform from the booking system, so customers rarely need to ask. The helpdesk holds complaints with the 48-hour acknowledgement as a rule. A voice agent can answer after-hours booking calls and pass anything unusual to the morning team.</p><p>What this tells you: the cheapest support message is the one the customer never has to send. Proactive updates reduce tickets more than any reply tool.</p><h2 id=\"common-mistakes-with-support-tools\">Common mistakes with support tools</h2><p><strong>Buying AI before the inbox.</strong> An AI with nowhere to hand over to, and no record of what it said, creates more work, not less.</p><p><strong>Support on a staff member's personal number.</strong> The history leaves when they do. Keep the number, the WhatsApp account and the helpdesk login in the company's name.</p><p><strong>Paying for seats nobody uses.</strong> Per-agent pricing rewards a careful seat count. Review it every quarter.</p><p><strong>Letting WhatsApp chats go cold.</strong> Past 24 hours you need a template to reply, and templates outside the free windows are charged. Reply fast.</p><p><strong>No grievance officer details on the site.</strong> For e-commerce sellers this is a rule, not a nice-to-have, and the 2027 amendment makes the list of details longer.</p><p><strong>Measuring only speed.</strong> A fast wrong answer reopens as a second ticket. Read a sample of closed tickets, not just the dashboard.</p><p><strong>Ignoring languages.</strong> If customers write in Telugu, Hindi or Tamil, saved replies and AI answers should too. Our post on <a href=\"/blogs/localisation-beyond-translation\">localisation beyond translation</a> goes deeper.</p><h2 id=\"a-weekly-30-minute-support-review\">A weekly 30-minute support review</h2><p><em>A weekly support check, split across 30 minutes</em></p><table><thead><tr><th>Time</th><th>What to check</th><th>What you write down</th></tr></thead><tbody><tr><td>First 10 minutes</td><td>Twenty closed tickets, read in full</td><td>Wrong or slow answers and their cause</td></tr><tr><td>Next 5 minutes</td><td>Complaints acknowledged after 48 hours</td><td>Each one and why it was late</td></tr><tr><td>Next 5 minutes</td><td>WhatsApp chats that went past 24 hours unanswered</td><td>Gaps in staffing or shifts</td></tr><tr><td>Next 5 minutes</td><td>AI answers handed over or rated poorly</td><td>Saved replies or data the AI is missing</td></tr><tr><td>Last 5 minutes</td><td>Seats, plan and message spend</td><td>Anything to drop or move to a cheaper plan</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\"><em>Meta WhatsApp pricing</em></a><em> and </em><a href=\"https://consumeraffairs.gov.in/public/upload/files/E%20Commerce%20Amendment%20Rules%202026_1789127949.pdf\" rel=\"noopener noreferrer nofollow\"><em>E-Commerce (Amendment) Rules, 2026</em></a><em>, read 16 November 2026.</em></p><p>If you want a support setup scoped and priced before you buy tools or build anything, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our page on <a href=\"/ai-solutions/ai-agents-and-automation\">AI agents and automation</a> covers WhatsApp and AI support work.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-the-best-customer-support-tool-for-a-small-business-in-india\">What is the best customer support tool for a small business in India?</h3><p>There is no single best tool. Start with a shared inbox that covers your top two channels, usually WhatsApp and email. Zoho Desk shows rupee pricing, with a free plan for three users and WhatsApp from its Standard plan at ₹800 a user a month, billed yearly.</p><h3 id=\"is-zoho-desk-free\">Is Zoho Desk free?</h3><p>Zoho Desk's pricing page lists a Free Forever plan with three user licences. Paid plans start at ₹420 a user a month for Express, billed annually, with local taxes extra. WhatsApp and other messaging channels are listed from the Standard plan.</p><h3 id=\"are-whatsapp-support-replies-free\">Are WhatsApp support replies free?</h3><p>Partly. Since 1 October 2026, Meta gives each business phone number 1,000 free service messages a month. After that, service messages are charged. Messages in a free entry point window, opened by a Click to WhatsApp ad, are not charged.</p><h3 id=\"what-is-the-whatsapp-24-hour-window\">What is the WhatsApp 24-hour window?</h3><p>When a customer messages you, a 24-hour customer service window opens and resets with each new message from them. Inside it you can reply with normal messages. Outside it you can only send approved template messages.</p><h3 id=\"how-fast-must-an-online-seller-respond-to-a-complaint-in-india\">How fast must an online seller respond to a complaint in India?</h3><p>Under the Consumer Protection (E-Commerce) Rules, 2020, the grievance officer must acknowledge a consumer complaint within forty-eight hours and redress it within one month. The 2026 amendment, in force from 1 January 2027, also requires giving the complainant a copy of the complaint as recorded.</p><h3 id=\"should-i-use-an-ai-chatbot-for-customer-support\">Should I use an AI chatbot for customer support?</h3><p>Use one for repeat questions once you have a shared inbox and saved replies. Connect it to your order or booking data and hand refunds, complaints and angry customers to a person. Intercom, for example, charges $0.99 per Fin outcome on top of seats.</p><h3 id=\"do-i-need-a-helpdesk-if-i-only-use-whatsapp\">Do I need a helpdesk if I only use WhatsApp?</h3><p>If one person answers a few chats a day, the WhatsApp Business app may be enough. Once two or more people answer, or you sell online and must track complaints, a helpdesk connected to the WhatsApp Business Platform keeps ownership and response times visible.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.zoho.com/desk/pricing.html\" rel=\"noopener noreferrer nofollow\">Zoho Desk pricing, Zoho</a>, read 16 November 2026</li><li><a href=\"https://www.freshworks.com/freshdesk/pricing/\" rel=\"noopener noreferrer nofollow\">Freshdesk pricing, Freshworks</a>, read 16 November 2026</li><li><a href=\"https://www.intercom.com/pricing\" rel=\"noopener noreferrer nofollow\">Intercom pricing, Intercom</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://thc.nic.in/Central%20Governmental%20Rules/Consumer%20Protection%20(E-Commerce)%20Rules,%202020.pdf\" rel=\"noopener noreferrer nofollow\">Consumer Protection (E-Commerce) Rules, 2020, Government of India</a>, read 16 November 2026</li><li><a href=\"https://consumeraffairs.gov.in/public/upload/files/E%20Commerce%20Amendment%20Rules%202026_1789127949.pdf\" rel=\"noopener noreferrer nofollow\">Consumer Protection (E-Commerce) (Amendment) Rules, 2026, Department of Consumer Affairs</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian support agent answering customer chats on a laptop and phone beside the words Support tools",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of a small Indian office: a young woman with a headset at a laptop showing an abstract list of chat bubbles, a phone beside her with abstract message bubbles, a colleague in the background carrying a parcel box. No readable text, no logos. Terracotta, mustard and sage palette, soft shadows, faces fully in frame. Right half: the title text 'Support tools' in very large bold black sans-serif, left-aligned, on two lines ('Support' / 'tools'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Explainer of the support stack for an Indian small business: shared inbox, WhatsApp Business Platform, then AI",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Build support in this order'. Three stacked layers from bottom to top, each a dark-blue rounded pill with white text and a flat icon on the left, joined by upward orange arrows: bottom 'Shared inbox' (inbox tray icon) with small grey note 'Every message has an owner'; middle 'WhatsApp Business Platform' (chat bubble icon) with note '24-hour reply window'; top 'AI for repeat questions' (spark icon) with note 'Hands over to a person'. On the right a clock icon with pill 'Complaints: acknowledge in 48 hours'. One-line bold takeaway at bottom: 'Inbox first. AI last.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Meta's WhatsApp pricing page showing the free tier of 1,000 service messages per business phone number",
+   "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+   "annotate": [
+    {
+     "text": "Free tier of monthly service messages",
+     "label": "Free monthly tier"
+    },
+    {
+     "text": "1,000 free service messages per month",
+     "label": "Per number"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a coaching institute front desk answering parents' WhatsApp enquiries on a shared screen",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. An Indian coaching institute reception: a front-desk staff member at a monitor showing abstract chat lists, a counsellor beside her on a phone, a parent and a teenage student waiting on a bench, a notice board with abstract shapes. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Intercom's pricing page showing the per-outcome price of its Fin AI agent",
+   "url": "https://www.intercom.com/pricing",
+   "annotate": [
+    {
+     "text": "per Fin outcome",
+     "label": "AI priced per outcome"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "slug": "ai-integration-existing-products",
+ "locale": "en",
+ "title": "How to add AI to an existing app in India",
+ "description": "Add AI to your existing app or business software in India: use cases, API prices from OpenAI, Claude and Gemini, India regions, DPDP rules, rollout.",
+ "imageUrl": "/assets/blog/ai-integration-existing-products/cover.webp",
+ "imageAlt": "Illustration of an Indian business owner adding an AI assistant to his app on a laptop beside the words Add AI to your app",
+ "ogImageUrl": null,
+ "tags": [
+  "AI integration",
+  "DPDP Act",
+  "LLM API pricing",
+  "India"
+ ],
+ "readingTimeMinutes": 17,
+ "publishedAt": "2026-07-11T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "adding-ai-to-an-existing-app-the-short-answer",
+   "text": "Adding AI to an existing app: the short answer",
+   "level": 2
+  },
+  {
+   "id": "what-the-model-apis-cost-in-november-2026",
+   "text": "What the model APIs cost in November 2026",
+   "level": 2
+  },
+  {
+   "id": "four-use-cases-that-fit-existing-software",
+   "text": "Four use cases that fit existing software",
+   "level": 2
+  },
+  {
+   "id": "support-chat-on-your-website-app-or-whatsapp",
+   "text": "Support chat on your website, app or WhatsApp",
+   "level": 3
+  },
+  {
+   "id": "document-extraction",
+   "text": "Document extraction",
+   "level": 3
+  },
+  {
+   "id": "search-over-your-own-data",
+   "text": "Search over your own data",
+   "level": 3
+  },
+  {
+   "id": "voice-calls-voice-notes-and-transcription",
+   "text": "Voice: calls, voice notes and transcription",
+   "level": 3
+  },
+  {
+   "id": "where-your-data-goes-india-regions",
+   "text": "Where your data goes: India regions",
+   "level": 2
+  },
+  {
+   "id": "the-dpdp-act-and-rules-what-applies-and-when",
+   "text": "The DPDP Act and Rules: what applies and when",
+   "level": 2
+  },
+  {
+   "id": "hallucinations-and-evaluation-basics",
+   "text": "Hallucinations and evaluation basics",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-a-phased-rollout",
+   "text": "Step by step: a phased rollout",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-multi-speciality-clinic",
+   "text": "A multi-speciality clinic",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-selling-on-its-own-website",
+   "text": "A D2C brand selling on its own website",
+   "level": 3
+  },
+  {
+   "id": "a-ca-firm-handling-client-documents",
+   "text": "A CA firm handling client documents",
+   "level": 3
+  },
+  {
+   "id": "five-ways-an-ai-rollout-goes-wrong",
+   "text": "Five ways an AI rollout goes wrong",
+   "level": 2
+  },
+  {
+   "id": "a-pre-launch-checklist",
+   "text": "A pre-launch checklist",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How much does it cost to add AI to an existing app in India?",
+   "a": "The API part is often small. On the cheapest models listed in November 2026 (OpenAI gpt-6-luna and Claude Haiku 5.5, at $0.10 input and $0.50 output per million tokens), a typical support conversation costs a fraction of a cent. The larger cost is the development work: connecting the model to your data, building the evaluation set and the human handover."
+  },
+  {
+   "q": "Which is cheaper: OpenAI, Claude or Gemini?",
+   "a": "At the low end OpenAI gpt-6-luna and Claude Haiku 5.5 have the same list price, and Gemini 3.5 Flash-Lite is $0.30 input and $2.50 output. Price per token is not the whole story: test two or three models on your own examples and pick the cheapest one that passes."
+  },
+  {
+   "q": "Can I keep AI processing inside India?",
+   "a": "Yes, with limits. Azure OpenAI Standard (regional) deployments in South India process prompts in that region, for the models Microsoft lists there. OpenAI lists an India data residency region through its sales team, where gpt-6-luna supports regional processing."
+  },
+  {
+   "q": "Does the DPDP Act apply to my AI chatbot?",
+   "a": "If the chatbot handles personal data of people in India, yes. The AI provider acts as your Data Processor and you remain the Data Fiduciary. Most of the DPDP Rules on notices, security and breach reporting come into force eighteen months after the November 2025 publication, so around May 2027."
+  },
+  {
+   "q": "Will the AI provider train on my customers' data?",
+   "a": "OpenAI says API data is not used for training unless you opt in. Google's Gemini pricing page says free-tier data is used to improve its products and paid-tier data is not. Read the current terms of whichever provider you choose."
+  },
+  {
+   "q": "How do I stop the AI from making things up?",
+   "a": "Let it say it does not know, make it answer only from documents or API results you supply, ask for citations, and test it on a fixed set of real examples before every change. Keep a human handover for anything involving money, health or legal matters."
+  },
+  {
+   "q": "Do I need to rebuild my app to add AI?",
+   "a": "No. The model is called from your existing backend through an API, like a payment gateway. You add a service that prepares the prompt, calls the model, checks the answer and logs the result."
+  }
+ ],
+ "contentHtml": "<h2 id=\"adding-ai-to-an-existing-app-the-short-answer\">Adding AI to an existing app: the short answer</h2><p><strong>In short:</strong> You add AI to an existing app by calling a model API (OpenAI, Anthropic, Google Gemini or Azure OpenAI) from your own backend, for one narrow job first: a support reply, a field pulled from a document, a search answer or a voice call. For most small Indian businesses the API bill is the smallest cost. The real work is choosing what data the model may see, testing its answers, and meeting the DPDP Rules that start applying in full in 2027.</p><p>You do not need to rebuild your app, switch your database or hire a research team. The model sits behind an API like a payment gateway or an SMS provider. Your app sends it text, an image or audio, and gets an answer back. What changes is that the answer is sometimes wrong, and your design has to plan for that.</p><p>This guide was checked in November 2026 against the official pricing pages of OpenAI, Anthropic and Google, Microsoft's Azure region tables, and the DPDP Rules, 2025 as published by MeitY. Prices on these pages change every few months, so treat every number here as a snapshot and check the page before you budget.</p><p>If you want someone to scope this with you, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline before any build starts (<a href=\"/book\">book it here</a>). Everything below works without us.</p><h2 id=\"what-the-model-apis-cost-in-november-2026\">What the model APIs cost in November 2026</h2><p>All four providers charge per token. A token is a piece of a word: a short English sentence is a few dozen tokens. You pay separately for what you send (input) and what the model writes back (output), and output is always the more expensive side.</p><p><em>Standard list prices per million tokens, in US dollars, for a cheap, a mid and a top model from each provider</em></p><table><thead><tr><th>Provider and model</th><th>Input</th><th>Output</th><th>Note from the pricing page</th></tr></thead><tbody><tr><td>OpenAI gpt-6-luna</td><td>$0.10</td><td>$0.50</td><td>Cheapest flagship model listed</td></tr><tr><td>OpenAI gpt-6.1-terra</td><td>$1.00</td><td>$5.00</td><td>Mid tier</td></tr><tr><td>OpenAI gpt-6.1-sol</td><td>$2.00</td><td>$10.00</td><td>Batch is half price</td></tr><tr><td>OpenAI gpt-6-astra</td><td>$10.00</td><td>$50.00</td><td>Top model</td></tr><tr><td>Anthropic Claude Haiku 5.5</td><td>$0.10</td><td>$0.50</td><td>Prompts up to 100,000 tokens; higher above that</td></tr><tr><td>Anthropic Claude Sonnet 5.5</td><td>$2.00</td><td>$10.00</td><td>Batch API is 50% off</td></tr><tr><td>Anthropic Claude Opus 5.5</td><td>$4.00</td><td>$20.00</td><td>Top model</td></tr><tr><td>Google Gemini 3.5 Flash-Lite</td><td>$0.30</td><td>$2.50</td><td>Free tier exists for this model</td></tr><tr><td>Google Gemini 3.8 Flash</td><td>$0.75</td><td>$3.75</td><td>Rises to $1.50 and $7.50 from 1 January 2027</td></tr><tr><td>Google Gemini 4 Carbon</td><td>$2.00</td><td>$10.00</td><td>Rises to $4.00 and $20.00 from 1 December 2026</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developers.openai.com/api/docs/pricing\" rel=\"noopener noreferrer nofollow\"><em>OpenAI API pricing</em></a><em> and </em><a href=\"https://platform.claude.com/docs/en/about-claude/pricing\" rel=\"noopener noreferrer nofollow\"><em>Claude Platform pricing</em></a><em> and </em><a href=\"https://ai.google.dev/gemini-api/docs/pricing\" rel=\"noopener noreferrer nofollow\"><em>Gemini Developer API pricing</em></a><em>, read 16 November 2026.</em></p><p>Three things on these pages matter more than the headline price.</p><ul><li><strong>Batch is half price.</strong> OpenAI's batch prices are half the standard ones, and Anthropic's Batch API gives a 50 percent discount on input and output. If a job can wait (tagging last month's tickets, summarising yesterday's calls), run it as a batch.</li><li><strong>Caching cuts repeat input.</strong> If every request starts with the same long instructions or the same product catalogue, cached input is billed at a fraction of the normal rate. Anthropic lists cache reads at 0.05 times the base input price on Opus 5.5 and Sonnet 5.5, and 0.1 times on other models.</li><li><strong>Some prices are about to move.</strong> Google's page already shows dated increases for Gemini 4 Carbon (1 December 2026) and Gemini 3.8 Flash (1 January 2027). Build your budget on the later price.</li></ul><p>Azure OpenAI sells OpenAI models through your Azure subscription, billed by Microsoft. I have not put Azure prices in the table because they are set per region and deployment type in the Azure calculator, not on a single page. What Azure does give you is a choice of where the model runs, which I cover below.</p><figure><img src=\"/assets/blog/ai-integration-existing-products/1.webp\" alt=\"Infographic showing what one illustrative support conversation costs on a cheap and a mid-tier model\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>One illustrative support chat: a cheap model costs a fraction of a cent, a mid model about 20 times more.</figcaption></figure><h2 id=\"four-use-cases-that-fit-existing-software\">Four use cases that fit existing software</h2><p>The jobs that work best are the ones where a person already reads text and makes a small decision. AI makes the first draft and a person, or a rule in your code, checks it.</p><h3 id=\"support-chat-on-your-website-app-or-whatsapp\">Support chat on your website, app or WhatsApp</h3><p>The model answers questions from your own help content, order data and policies. Done well, it answers \"where is my order\" by calling your order API, not by guessing. The cheap models in the table are usually enough for this. Start with a handover button to a human on every screen, and log every conversation so you can read the bad ones.</p><h3 id=\"document-extraction\">Document extraction</h3><p>Invoices, prescriptions, KYC forms, purchase orders, lab reports: the model reads a scan or PDF and returns fields in a fixed format (vendor name, GSTIN, total, date). Your code then checks those fields, for example that the GSTIN has 15 characters and the line items add up to the total. Never post extracted values straight into your accounts without that check.</p><h3 id=\"search-over-your-own-data\">Search over your own data</h3><p>Your customers or staff type a question in plain words, and the system finds the right product, policy or past ticket. This usually works by turning your content into embeddings (number lists that capture meaning) and searching those. Google lists Gemini Embedding at $0.15 per million input tokens, so indexing a few thousand product descriptions costs very little. The model then writes an answer using only what the search returned.</p><h3 id=\"voice-calls-voice-notes-and-transcription\">Voice: calls, voice notes and transcription</h3><p>Voice is the use case that fits India best, because many customers would rather speak than type. The cost is per minute rather than per word. OpenAI lists gpt-live-transcribe at $0.017 a minute. Google lists Gemini 3.5 Transcribe at $0.003 a minute of audio in and $0.002 a minute of text out, and Gemini 3.8 Live, for two-way voice conversations, at $0.005 a minute of audio in and $0.018 a minute of audio out. Our own voice agent, <a href=\"https://agents.elevatebox.in\" rel=\"noopener noreferrer nofollow\">Roopa by ElevateBox</a>, is built on this kind of pipeline. Whoever you build with, test it on real calls in Telugu, Hindi or Tamil with background noise, because a demo in a quiet room tells you little.</p><h2 id=\"where-your-data-goes-india-regions\">Where your data goes: India regions</h2><p>When your app sends a customer's message to a model, that message leaves your server. Where it is processed, and whether it is stored, depends on the provider and the settings you choose.</p><ul><li><strong>Azure OpenAI.</strong> Microsoft's region table has three kinds of deployment. Global Standard can process prompts in any Azure region. Data Zone Standard keeps processing inside a zone, and for South India that zone is Asia Pacific. Only Standard (regional) deployments process prompts in the region you deploy in. In the South India column of that regional table I found gpt-4.1, gpt-4.1-mini, gpt-4o, gpt-4o-mini, gpt-5, gpt-5-mini, gpt-5.1, gpt-5.4-mini and o3-mini, but not the gpt-6 models, which South India offers only as Global or Data Zone deployments. Central India did not appear in the table.</li><li><strong>OpenAI direct.</strong> OpenAI's data residency page lists India (in.api.openai.com) with both storage and processing, marked \"Contact sales to access this region\". It says that in Australia, India and Japan, only gpt-6-luna supports regional processing.</li><li><strong>OpenAI training.</strong> OpenAI says data sent to its API has not been used to train its models since 1 March 2023 unless you opt in, and that abuse monitoring logs are kept for up to 30 days by default.</li><li><strong>Google Gemini.</strong> The pricing page has a row titled \"Used to improve our products\". It says yes for the free tier and no for the paid tier. Do not put customer data through a free-tier key.</li><li><strong>Anthropic.</strong> The pricing page describes a US-only inference option (at 1.1 times the price). I did not find an India processing option on it.</li></ul><figure><img src=\"/assets/blog/ai-integration-existing-products/2.webp\" alt=\"Annotated view of OpenAI's data residency page showing the India endpoint and regional processing note\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>OpenAI's data residency page lists an India endpoint, available through sales.</figcaption></figure><p>If your contracts or your sector regulator require data to stay in India, Azure's regional deployments in South India, or OpenAI's India region through sales, are the documented routes I found. If they do not, a global deployment is usually cheaper and gets new models first. Write the choice down either way, because the DPDP Rules expect you to know where your processors handle personal data.</p><h2 id=\"the-dpdp-act-and-rules-what-applies-and-when\">The DPDP Act and Rules: what applies and when</h2><p>Parliament enacted the Digital Personal Data Protection Act on 11 August 2023. MeitY notified the DPDP Rules, 2025 in the Gazette dated 13 November 2025, and the government's PIB note gives 14 November 2025 as the date of notification. The Rules start in three stages:</p><p><em>When the DPDP Rules, 2025 come into force, from rule 1 of the published Rules</em></p><table><thead><tr><th>Rules</th><th>What they cover</th><th>In force</th></tr></thead><tbody><tr><td>Rules 1, 2 and 17 to 21</td><td>Definitions and the Data Protection Board</td><td>On publication, November 2025</td></tr><tr><td>Rule 4</td><td>Consent Managers</td><td>One year after publication</td></tr><tr><td>Rules 3, 5 to 16, 22 and 23</td><td>Notices, security safeguards, breach reporting, children's data, rights, transfers abroad</td><td>Eighteen months after publication, so around May 2027</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf\" rel=\"noopener noreferrer nofollow\"><em>DPDP Rules, 2025, MeitY Gazette notification</em></a><em> and </em><a href=\"https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf\" rel=\"noopener noreferrer nofollow\"><em>DPDP Rules, 2025 Notified, PIB</em></a><em>, read 16 November 2026.</em></p><p>For an AI feature, five parts matter most. The AI provider is your Data Processor: it handles personal data on your behalf, and you, the Data Fiduciary, stay responsible.</p><ul><li><strong>Notice and purpose (rule 3).</strong> Your consent notice has to say what personal data you collect and for what specific purpose. \"Improve our services\" is weak. \"We use your chat messages to answer your question with an AI assistant\" is clearer.</li><li><strong>Security safeguards (rule 6).</strong> At minimum: encryption, masking or tokens for personal data, access control, logs that let you detect and investigate unauthorised access, backups, a contract with your Data Processor that requires safeguards, and keeping those logs for one year.</li><li><strong>Breach reporting (rule 7).</strong> Tell each affected person without delay, and tell the Board without delay with a fuller report within 72 hours of becoming aware.</li><li><strong>Rights (rule 14 and the PIB note).</strong> People can ask to see, correct or erase their data, and PIB says Data Fiduciaries must respond within 90 days. If prompts and AI outputs are stored, they are part of what you may have to find.</li><li><strong>Transfers abroad (rule 15).</strong> Personal data may be transferred outside India, subject to requirements the central government may set by order for specific foreign states or entities. There is no blanket ban, but watch for those orders.</li></ul><p>The penalties are large. PIB lists up to ₹250 crore for failing to keep reasonable security safeguards, up to ₹200 crore each for failing to report a breach or for violations about children's data, and up to ₹50 crore for other violations.</p><aside data-callout=\"accent\"><p data-callout-title>This is not legal advice</p><p>I have summarised the published Rules and PIB's explainer. MeitY has issued further orders since, so check the MeitY DPDP page before you finalise a notice, and have a lawyer read anything that handles health, financial or children's data.</p></aside><h2 id=\"hallucinations-and-evaluation-basics\">Hallucinations and evaluation basics</h2><p>A model can write a confident answer that is wrong. Anthropic's own guide calls this hallucination and recommends a few habits that work with any provider:</p><ul><li>Give the model explicit permission to say \"I don't know\" when your documents do not cover the question.</li><li>For long documents, ask it to quote the exact lines first and answer only from those quotes.</li><li>Ask for a citation behind each claim, and drop any claim without one.</li><li>Run the same question more than once and compare. Answers that change between runs are a warning sign.</li></ul><p>None of these is a guarantee, which is why you also need an evaluation set: a fixed list of real questions or documents with the answers you expect. Anthropic's guide on building evals says to make them task-specific (include the awkward cases), automate grading where possible (exact match, code checks, or a second model grading against a rubric), and prefer many test cases with automated grading over a few graded by hand. In practice I would start with 50 to 100 real examples from your own tickets or files, and run them again every time you change the prompt, the model or the data.</p><h2 id=\"step-by-step-a-phased-rollout\">Step by step: a phased rollout</h2><p><strong>Step 1. Pick one job and one number.</strong> \"Draft replies for order-status questions, and cut first-response time\" is a job. \"Add AI\" is not. Choose the number you will judge it by before you start.</p><p><strong>Step 2. Map the data.</strong> List what the feature will send to the model: names, phone numbers, addresses, health details, payment data. Remove what it does not need. Mask the rest where you can, for example by replacing phone numbers with a token before the prompt leaves your server.</p><p><strong>Step 3. Choose the provider and region.</strong> Use the table above for price and the region notes for data location. Use a paid key, never a free tier, for anything with customer data.</p><p><strong>Step 4. Build the evaluation set.</strong> Collect 50 to 100 real examples with correct answers. Run two or three models against them. Pick the cheapest one that passes.</p><p><strong>Step 5. Ship to staff first.</strong> Let the AI draft and your team approve. This is where you learn what it gets wrong, without a customer seeing it.</p><p><strong>Step 6. Open to a small share of customers.</strong> Start with a slice of traffic, keep the human handover visible, and read a sample of conversations every day.</p><p><strong>Step 7. Watch cost, accuracy and complaints monthly.</strong> Set a spending limit in the provider dashboard. Re-run the evaluation set before every model or prompt change.</p><figure><img src=\"/assets/blog/ai-integration-existing-products/4.webp\" alt=\"Infographic of the seven-step phased rollout for adding AI to an existing app\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The seven steps, from one job to monthly review.</figcaption></figure><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses and volumes below are illustrative, to show the arithmetic. They are not clients. The token counts are assumptions too, so measure your own from the provider dashboard during step 4.</p><h3 id=\"a-multi-speciality-clinic\">A multi-speciality clinic</h3><p>The clinic gets a lot of repeat questions on WhatsApp: timings, doctor availability, how to prepare for a test. Suppose 3,000 conversations a month, each using about 10,000 input tokens (instructions, the clinic's FAQ and the chat) and 1,200 output tokens. On gpt-6-luna or Claude Haiku 5.5 at $0.10 and $0.50 per million, one conversation costs about $0.0016, so the month comes to about $4.80. On a mid model at $2 and $10 per million, the same month is about $96.</p><p>The bigger decision is data. Appointment questions are low risk. Anything about symptoms or reports is health data. I would keep the assistant to logistics, hand every clinical question to staff, and choose a regional deployment if the clinic's hospital partners require data in India.</p><figure><img src=\"/assets/blog/ai-integration-existing-products/5.webp\" alt=\"Illustration of a clinic receptionist checking AI-drafted replies before sending them\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Staff approve AI drafts before any patient sees them: step 5 of the rollout.</figcaption></figure><h3 id=\"a-d2c-brand-selling-on-its-own-website\">A D2C brand selling on its own website</h3><p>Most tickets are order status, returns and sizing. The useful design is a model that calls the brand's order API with the customer's order number and answers from the result, plus a search over the size guides. Product descriptions get embedded once; at $0.15 per million tokens on Gemini Embedding, a catalogue of 2,000 products at about 300 tokens each costs under a tenth of a dollar to index. Returns and refunds always go to a person, because a wrong refund promise costs real money.</p><h3 id=\"a-ca-firm-handling-client-documents\">A CA firm handling client documents</h3><p>The firm receives hundreds of purchase invoices each month as photos and PDFs. The model extracts vendor, GSTIN, invoice number, date, taxable value and tax, and code checks each field: GSTIN length and format, totals that add up, duplicates against last month. Anything that fails a check goes to a staff queue. Because the work can wait overnight, it runs as a batch at half the standard price. The firm's engagement letters should now mention that an AI processor reads client documents.</p><h2 id=\"five-ways-an-ai-rollout-goes-wrong\">Five ways an AI rollout goes wrong</h2><ul><li><strong>Starting with the most impressive use case.</strong> A voice agent that books, cancels and reschedules is harder than a reply drafter for staff. Start where a mistake is cheap.</li><li><strong>Testing only in English.</strong> If your customers write in Hinglish or Telugu, your evaluation set must too. Token counts and accuracy both change.</li><li><strong>Putting customer data through a free key.</strong> Google's own pricing page says free-tier data is used to improve its products.</li><li><strong>No spending limit.</strong> A loop in your code, or a bot hammering your chat, can run up a bill overnight. Set limits in the dashboard on day one.</li><li><strong>Treating the model as the database.</strong> Prices, stock, order status and policy must come from your systems at the moment of the question, not from the model's memory or a prompt written last quarter.</li></ul><h2 id=\"a-pre-launch-checklist\">A pre-launch checklist</h2><ul><li>One job, one success number, written down.</li><li>A data map: what is sent, what is masked, what is never sent.</li><li>Provider, model and region chosen, on a paid key, with a spending limit.</li><li>An evaluation set of 50 to 100 real cases, with a pass mark, run on the final prompt.</li><li>A visible human handover on every AI screen.</li><li>Consent notice updated to name the AI purpose.</li><li>Logs of prompts and outputs, access-controlled and kept for a year.</li><li>A written contract or terms with the AI provider covering security.</li><li>A breach plan: who tells customers, who tells the Board, within 72 hours.</li><li>A monthly review date in the calendar.</li></ul><p>If you are planning the wider build, our pages on <a href=\"/ai-solutions/generative-ai-development\">generative AI development</a> and <a href=\"/ai-solutions/ai-agents-and-automation\">AI agents and automation</a> explain how we approach it, and our post on <a href=\"/blogs/security-basics-for-startups\">security basics for startups</a> covers the access and logging side in more depth.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-much-does-it-cost-to-add-ai-to-an-existing-app-in-india\">How much does it cost to add AI to an existing app in India?</h3><p>The API part is often small. On the cheapest models listed in November 2026 (OpenAI gpt-6-luna and Claude Haiku 5.5, at $0.10 input and $0.50 output per million tokens), a typical support conversation costs a fraction of a cent. The larger cost is the development work: connecting the model to your data, building the evaluation set and the human handover.</p><h3 id=\"which-is-cheaper-openai-claude-or-gemini\">Which is cheaper: OpenAI, Claude or Gemini?</h3><p>At the low end OpenAI gpt-6-luna and Claude Haiku 5.5 have the same list price, and Gemini 3.5 Flash-Lite is $0.30 input and $2.50 output. Price per token is not the whole story: test two or three models on your own examples and pick the cheapest one that passes.</p><h3 id=\"can-i-keep-ai-processing-inside-india\">Can I keep AI processing inside India?</h3><p>Yes, with limits. Azure OpenAI Standard (regional) deployments in South India process prompts in that region, for the models Microsoft lists there. OpenAI lists an India data residency region through its sales team, where gpt-6-luna supports regional processing.</p><h3 id=\"does-the-dpdp-act-apply-to-my-ai-chatbot\">Does the DPDP Act apply to my AI chatbot?</h3><p>If the chatbot handles personal data of people in India, yes. The AI provider acts as your Data Processor and you remain the Data Fiduciary. Most of the DPDP Rules on notices, security and breach reporting come into force eighteen months after the November 2025 publication, so around May 2027.</p><h3 id=\"will-the-ai-provider-train-on-my-customers-data\">Will the AI provider train on my customers' data?</h3><p>OpenAI says API data is not used for training unless you opt in. Google's Gemini pricing page says free-tier data is used to improve its products and paid-tier data is not. Read the current terms of whichever provider you choose.</p><h3 id=\"how-do-i-stop-the-ai-from-making-things-up\">How do I stop the AI from making things up?</h3><p>Let it say it does not know, make it answer only from documents or API results you supply, ask for citations, and test it on a fixed set of real examples before every change. Keep a human handover for anything involving money, health or legal matters.</p><h3 id=\"do-i-need-to-rebuild-my-app-to-add-ai\">Do I need to rebuild my app to add AI?</h3><p>No. The model is called from your existing backend through an API, like a payment gateway. You add a service that prepares the prompt, calls the model, checks the answer and logs the result.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developers.openai.com/api/docs/pricing\" rel=\"noopener noreferrer nofollow\">Pricing, OpenAI API</a>, read 16 November 2026</li><li><a href=\"https://developers.openai.com/api/docs/guides/your-data\" rel=\"noopener noreferrer nofollow\">Data controls in the OpenAI platform, OpenAI API</a>, read 16 November 2026</li><li><a href=\"https://developers.openai.com/api/docs/guides/data-residency\" rel=\"noopener noreferrer nofollow\">Data residency, OpenAI API</a>, read 16 November 2026</li><li><a href=\"https://platform.claude.com/docs/en/about-claude/pricing\" rel=\"noopener noreferrer nofollow\">Pricing, Claude Platform Docs</a>, read 16 November 2026</li><li><a href=\"https://ai.google.dev/gemini-api/docs/pricing\" rel=\"noopener noreferrer nofollow\">Gemini Developer API pricing, Google AI for Developers</a>, read 16 November 2026</li><li><a href=\"https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure-region-availability\" rel=\"noopener noreferrer nofollow\">Region availability for Foundry Models sold by Azure, Microsoft Learn</a>, read 16 November 2026</li><li><a href=\"https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa\" rel=\"noopener noreferrer nofollow\">Digital Personal Data Protection Rules 2025, MeitY</a>, read 16 November 2026</li><li><a href=\"https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf\" rel=\"noopener noreferrer nofollow\">DPDP Rules, 2025, Gazette notification G.S.R. 846(E), MeitY</a>, read 16 November 2026</li><li><a href=\"https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf\" rel=\"noopener noreferrer nofollow\">DPDP Rules, 2025 Notified, Press Information Bureau</a>, read 16 November 2026</li><li><a href=\"https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations\" rel=\"noopener noreferrer nofollow\">Reduce hallucinations, Claude Platform Docs</a>, read 16 November 2026</li><li><a href=\"https://platform.claude.com/docs/en/test-and-evaluate/develop-tests\" rel=\"noopener noreferrer nofollow\">Define success criteria and build evaluations, Claude Platform Docs</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian business owner adding an AI assistant to his app on a laptop beside the words Add AI to your app",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. An Indian man in his 40s in a half-sleeve shirt, owner of a small distribution business, seated at an office desk in Hyderabad with a laptop and a phone; on the laptop an abstract chat panel with a small sparkle icon (no readable text, no logos); a cup of chai and files on the desk. Right half: the title text 'Add AI to your app' in very large bold black sans-serif, left-aligned, on two lines ('Add AI to' / 'your app'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing what one illustrative support conversation costs on a cheap and a mid-tier model",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'What one support chat costs'. Left: chat bubble icon with dark-blue rounded pill 'Illustrative chat: 10,000 tokens in, 1,200 out'. Orange arrow splits to two boxes. Upper box: small feather icon, dark-blue pill 'Cheap model: $0.10 in, $0.50 out per million', below it bold '$0.0016 per chat'. Lower box: rocket icon, dark-blue pill 'Mid model: $2 in, $10 out per million', below it bold '$0.032 per chat'. Small grey line: 'List prices, November 2026, US dollars'. One-line bold takeaway at bottom: 'Test the cheap model first.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of OpenAI's data residency page showing the India endpoint and regional processing note",
+   "url": "https://developers.openai.com/api/docs/guides/data-residency",
+   "annotate": [
+    {
+     "text": "In Australia, India, and Japan, gpt-6-luna supports regional processing.",
+     "label": "Only gpt-6-luna in India"
+    },
+    {
+     "text": "in.api.openai.com",
+     "label": "India endpoint"
+    },
+    {
+     "text": "Contact sales to access this region",
+     "label": "Through sales"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the seven-step phased rollout for adding AI to an existing app",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Adding AI in seven steps'. Seven steps in a row that wraps to two rows (four then three), each a flat icon above a dark-blue rounded label pill with white text, joined by orange arrows: 1) target icon, pill 'Pick one job'; 2) map icon, pill 'Map the data'; 3) globe icon, pill 'Choose provider and region'; 4) checklist icon, pill 'Build a test set'; 5) team icon, pill 'Staff first'; 6) small group icon, pill 'A few customers'; 7) calendar icon, pill 'Review monthly'. One-line bold takeaway at bottom: 'Start where a mistake is cheap.' No logos, no other text."
+  },
+  {
+   "file": "5.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a clinic receptionist checking AI-drafted replies before sending them",
+   "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. Reception desk of a small Indian multi-speciality clinic: a young woman receptionist in a sage uniform looks at a monitor showing abstract chat bubbles with a tick button (no readable text), a phone beside her, patients seated in the background, a potted plant. No readable text on any screen, no logos. Faces fully in frame."
+  }
+ ]
+}

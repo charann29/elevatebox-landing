@@ -1,0 +1,185 @@
+{
+ "slug": "dark-mode-properly",
+ "locale": "en",
+ "title": "Dark mode design best practices for apps and websites",
+ "description": "Dark mode done right: Material's #121212 and desaturated colours, Apple's rules, WCAG 4.5:1 contrast, India's GIGW 3.0, build steps, examples and a checklist.",
+ "imageUrl": "/assets/blog/dark-mode-properly/cover.webp",
+ "imageAlt": "Illustration of an Indian designer comparing light and dark versions of an app on two phones, beside the words Dark mode done right",
+ "ogImageUrl": null,
+ "tags": [
+  "dark mode",
+  "UI design",
+  "accessibility",
+  "WCAG"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-10-18T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-dark-mode-done-properly-means",
+   "text": "What dark mode done properly means",
+   "level": 2
+  },
+  {
+   "id": "the-rules-in-one-table",
+   "text": "The rules in one table",
+   "level": 2
+  },
+  {
+   "id": "what-material-design-says",
+   "text": "What Material Design says",
+   "level": 2
+  },
+  {
+   "id": "what-apple-says",
+   "text": "What Apple says",
+   "level": 2
+  },
+  {
+   "id": "where-google-and-apple-disagree-the-in-app-switch",
+   "text": "Where Google and Apple disagree: the in-app switch",
+   "level": 2
+  },
+  {
+   "id": "wcag-and-gigw-the-contrast-numbers-that-apply-in-india",
+   "text": "WCAG and GIGW: the contrast numbers that apply in India",
+   "level": 2
+  },
+  {
+   "id": "how-to-build-it-on-android-ios-and-the-web",
+   "text": "How to build it on Android, iOS and the web",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-add-dark-mode-to-an-existing-product",
+   "text": "Step by step: add dark mode to an existing product",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples-from-indian-businesses",
+   "text": "Three worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-billing-and-ledger-app-for-shopkeepers",
+   "text": "A billing and ledger app for shopkeepers",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brands-online-store",
+   "text": "A D2C brand's online store",
+   "level": 3
+  },
+  {
+   "id": "a-vendor-building-a-state-government-portal",
+   "text": "A vendor building a state government portal",
+   "level": 3
+  },
+  {
+   "id": "common-dark-mode-mistakes",
+   "text": "Common dark mode mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-dark-mode-test-checklist",
+   "text": "A dark mode test checklist",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What background colour should dark mode use?",
+   "a": "Material Design recommends #121212, a dark grey, rather than pure black. Google says shadows and elevation are easier to see on grey, and light text on dark grey has less contrast than on black, which reduces eye strain."
+  },
+  {
+   "q": "What contrast ratio does dark mode need?",
+   "a": "WCAG 1.4.3 requires at least 4.5:1 for text and 3:1 for large text, and 1.4.11 requires 3:1 for interface components and meaningful graphics. Apple also says no lower than 4.5:1 and to strive for 7:1 for custom colours in small text."
+  },
+  {
+   "q": "Should my app have its own dark mode toggle?",
+   "a": "Google and Apple differ. Android recommends offering Light, Dark and System default, with System default as the default. Apple advises against an app-specific appearance setting. Following the system by default works on both."
+  },
+  {
+   "q": "Is pure black better for battery?",
+   "a": "Material Design allows true black where battery matters, because OLED screens can turn off black pixels. It also cautions that switching pixels on and off on OLED screens can blur content while scrolling."
+  },
+  {
+   "q": "Does GIGW require dark mode for government websites?",
+   "a": "GIGW 3.0 sets contrast checkpoints of 4.5:1 for text and 3:1 for interface components and graphics, referencing WCAG 2.1. I did not find a GIGW rule requiring dark mode, but if you offer it, it should meet the same checkpoints."
+  },
+  {
+   "q": "How do I add dark mode to a website?",
+   "a": "Use the prefers-color-scheme media query to apply dark colours when the user has asked for them, define colours as CSS variables, and set the color-scheme property so form controls and scrollbars match the theme."
+  },
+  {
+   "q": "Can Android add dark mode automatically?",
+   "a": "Android 10 and higher offer Force Dark, which darkens a light-themed app automatically if the app opts in. Google says to test thoroughly and exclude views as needed. A proper DayNight theme gives you more control."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-dark-mode-done-properly-means\">What dark mode done properly means</h2><p><strong>In short:</strong> Dark mode done properly follows the user's system setting, uses dark grey surfaces rather than pure black, desaturates brand colours, and keeps text contrast at 4.5:1 or more, the WCAG level that India's GIGW 3.0 also uses. It is a second colour system designed with the first, not an inverted light theme.</p><p>This guide was checked in November 2026, against Material Design, Android Developers, Apple's Human Interface Guidelines, the W3C's WCAG 2.2 Understanding documents, MDN, web.dev and India's GIGW 3.0 guidelines.</p><p>Dark mode looks like a small feature. A toggle, some black backgrounds, done. In practice the quick version produces grey text nobody can read, a brand colour that glows, product photos in white boxes, and charts where red and green blur together. Users notice.</p><p>I will go through the rules from Google, Apple and W3C, where they agree and where they differ, how to build it for Android, iOS and the web, three worked examples from Indian businesses, the mistakes I see most, and a test checklist.</p><h2 id=\"the-rules-in-one-table\">The rules in one table</h2><p>Material Design, Apple and WCAG all publish numbers. Here they are together.</p><p><em>Official dark mode and contrast rules from Material Design, Apple, W3C and GIGW</em></p><table><thead><tr><th>Rule</th><th>Number or guidance</th><th>Source</th></tr></thead><tbody><tr><td>Recommended dark surface colour</td><td>#121212, dark grey rather than black</td><td>Material Design 2</td></tr><tr><td>White body text on dark surface</td><td>Contrast of at least 15.8:1</td><td>Material Design 2</td></tr><tr><td>Primary colour in dark theme</td><td>Desaturated, lighter tones (200 to 50) instead of saturated 900 to 500</td><td>Material Design 2</td></tr><tr><td>Light text opacity</td><td>87% high emphasis, 60% medium and hints, 38% disabled</td><td>Material Design 2</td></tr><tr><td>Minimum contrast between colours</td><td>No lower than 4.5:1; strive for 7:1 for custom colours, especially small text</td><td>Apple HIG</td></tr><tr><td>Text contrast (WCAG 1.4.3, AA)</td><td>4.5:1; large text 3:1</td><td>W3C WCAG 2.2</td></tr><tr><td>Non-text contrast (WCAG 1.4.11, AA)</td><td>3:1 for UI components and meaningful graphics</td><td>W3C WCAG 2.2</td></tr><tr><td>Indian government sites and apps</td><td>Same 4.5:1 text and 3:1 non-text checkpoints, referencing WCAG 2.1</td><td>GIGW 3.0</td></tr></tbody></table><p><em>Source: </em><a href=\"https://m2.material.io/design/color/dark-theme.html\" rel=\"noopener noreferrer nofollow\"><em>Material Design, Dark theme</em></a><em> and </em><a href=\"https://developer.apple.com/design/human-interface-guidelines/dark-mode\" rel=\"noopener noreferrer nofollow\"><em>Apple HIG, Dark Mode</em></a><em> and </em><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\" rel=\"noopener noreferrer nofollow\"><em>W3C Understanding 1.4.3</em></a><em> and </em><a href=\"https://guidelines.india.gov.in/guidelines/\" rel=\"noopener noreferrer nofollow\"><em>GIGW 3.0</em></a><em>, read 16 November 2026.</em></p><p>W3C notes that the 4.5:1 threshold should not be rounded: a computed 4.499:1 does not pass. That matters in dark mode, where many grey-on-grey combinations sit just under the line.</p><figure><img src=\"/assets/blog/dark-mode-properly/1.webp\" alt=\"Infographic comparing a correct dark theme with common mistakes: dark grey surface, desaturated accent, readable text\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The four rules that separate a proper dark theme from an inverted one.</figcaption></figure><h2 id=\"what-material-design-says\">What Material Design says</h2><p>Google's <a href=\"https://m2.material.io/design/color/dark-theme.html\" rel=\"noopener noreferrer nofollow\">Material Design dark theme guidance</a> describes a dark theme as a supplemental mode to a default light theme. Its main points:</p><ul><li><strong>Use dark grey, not black.</strong> The recommended surface colour is #121212. Material says shadows are easier to see on grey, and light text on dark grey has less contrast than on black, which reduces eye strain.</li><li><strong>Lighter means higher.</strong> In a dark theme, raised surfaces get lighter through a semi-transparent white overlay, from 0% at the base to 16% at the highest elevation (24dp). Don't use light glows instead of shadows.</li><li><strong>Check the lightest surface.</strong> Material says dark surfaces must support at least 15.8:1 with white text, so that body text still passes 4.5:1 on the highest, lightest surface.</li><li><strong>Desaturate colours.</strong> Saturated colours produce optical vibration against dark backgrounds. Material's baseline dark theme uses the 200 tone of the primary colour and recommends tones in the 200 to 50 range.</li><li><strong>Use colour sparingly.</strong> Large surfaces stay dark, with accents for key elements. A brand colour can stay at full saturation on one or two elements, such as a logo or one branded button.</li></ul><p>Material does allow true black where battery matters, such as OLED wearables, and adds a caution: on OLED screens, turning pixels on and off can cause a delay when scrolling, which blurs the pixels.</p><p>For Android apps built with Jetpack Compose, Google's <a href=\"https://developer.android.com/develop/ui/compose/designsystems/material3\" rel=\"noopener noreferrer nofollow\">Material 3 guide</a> adds dynamic colour: on Android 12 and above, colours can be derived from the user's wallpaper to generate light and dark schemes, with a custom scheme as fallback. If your brand colours matter, decide whether you want dynamic colour at all.</p><h2 id=\"what-apple-says\">What Apple says</h2><p>Apple's <a href=\"https://developer.apple.com/design/human-interface-guidelines/dark-mode\" rel=\"noopener noreferrer nofollow\">Dark Mode guidance</a> says people often choose Dark Mode as their default and generally expect all apps to respect it. The practical rules:</p><ul><li><strong>Look good in both modes,</strong> including Auto, which switches during the day, possibly while your app is open.</li><li><strong>Use semantic colours</strong> such as label and separator colours that adapt automatically. For custom colours, define light and dark variants in the asset catalogue. Avoid hard-coded colour values.</li><li><strong>Contrast no lower than 4.5:1,</strong> and strive for 7:1 for custom foreground and background colours, especially in small text.</li><li><strong>Soften white backgrounds in images,</strong> by darkening them slightly so they don't glow.</li><li><strong>Check icons and illustrations,</strong> which may need separate dark versions or a thin outline to stay visible.</li><li><strong>Test with Increase Contrast and Reduce Transparency</strong> turned on, separately and together.</li></ul><p>On iOS and iPadOS, Apple adds that Dark Mode uses two sets of background colours, base and elevated, so a popover or sheet in front appears brighter than the screen behind it. Apple recommends preferring the system background colours, because custom ones can hide that distinction.</p><figure><img src=\"/assets/blog/dark-mode-properly/2.webp\" alt=\"Annotated view of Apple's Dark Mode guidelines showing advice on app-specific settings and contrast\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple's Dark Mode guidance on settings and contrast.</figcaption></figure><h2 id=\"where-google-and-apple-disagree-the-in-app-switch\">Where Google and Apple disagree: the in-app switch</h2><p>This is the one place the platforms give different advice, and it affects your settings screen.</p><p>Apple says to avoid offering an app-specific appearance setting, because people then have to adjust more than one setting and may think your app is broken when it ignores the system choice. Android's <a href=\"https://developer.android.com/develop/ui/views/theming/darktheme\" rel=\"noopener noreferrer nofollow\">dark theme guide</a> recommends letting users choose in the app between Light, Dark and System default, with System default as the recommended default option.</p><p>My approach: always follow the system by default on both. On Android, add the three-way choice Google recommends. On iOS, think twice before adding one. If you do, make \"System\" the default and clearly labelled.</p><h2 id=\"wcag-and-gigw-the-contrast-numbers-that-apply-in-india\">WCAG and GIGW: the contrast numbers that apply in India</h2><p>The <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\" rel=\"noopener noreferrer nofollow\">WCAG success criterion 1.4.3</a> requires text and images of text to have a contrast ratio of at least 4.5:1, with large text at 3:1. W3C's explanation defines large as 18 point text or 14 point bold. Logos and purely decorative text are exempt.</p><p><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html\" rel=\"noopener noreferrer nofollow\">Criterion 1.4.11</a>, non-text contrast, requires 3:1 against adjacent colours for the visual parts needed to identify UI components and their states, and for graphics needed to understand content. In dark mode this catches thin input borders, toggle tracks, focus rings and chart lines.</p><p>For India, the <a href=\"https://guidelines.india.gov.in/guidelines/\" rel=\"noopener noreferrer nofollow\">Guidelines for Indian Government Websites and apps (GIGW 3.0)</a> include the same two checkpoints: text contrast of at least 4.5:1 with large text at 3:1, and 3:1 for user interface components and graphical objects, each referencing WCAG 2.1. If you build for a ministry, a state department or a public sector undertaking, both your light and dark themes should pass them. For private businesses they are a sensible floor anyway.</p><p>GIGW also has a checkpoint, referencing WCAG 2.1 criterion 1.4.1, that colour must not be the only visual means of conveying information, such as \"required fields are red\" or \"error is shown in red\". In my experience dark mode makes this more urgent, because desaturated reds, greens and ambers are easier to confuse than their saturated light-theme versions. Pair every status colour with a word, an icon or a shape.</p><figure><img src=\"/assets/blog/dark-mode-properly/3.webp\" alt=\"Annotated view of the W3C Understanding page for WCAG 1.4.3 contrast minimum\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>W3C's contrast minimum: 4.5:1, and 4.499:1 does not round up.</figcaption></figure><p>I would add one observation for Indian-language apps, from my own reading of screens rather than any standard: Devanagari, Telugu and other Indic scripts have fine strokes and small marks that thin out faster than Latin letters at medium contrast. Keep Indic body text at high emphasis in dark mode, not the medium-emphasis grey used for hints.</p><h2 id=\"how-to-build-it-on-android-ios-and-the-web\">How to build it on Android, iOS and the web</h2><p><strong>Android.</strong> Dark theme is available from Android 10 (API level 29). Google says to inherit from a DayNight theme, avoid hard-coded colours and icons, and use theme attributes such as colorSurface and colorOnSurface. Force Dark can automatically darken a light-themed app, but apps must opt in, and Google says to test thoroughly and exclude views as needed. I treat Force Dark as a stopgap, not a design. Google also lists benefits: reduced power use depending on screen technology, better visibility for users with low vision or light sensitivity, and easier use in low light.</p><p><strong>iOS.</strong> Use system and semantic colours, colour sets with light and dark variants in the asset catalogue, SF Symbols where possible, and image assets with dark variants where needed.</p><p><strong>Web.</strong> The <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme\" rel=\"noopener noreferrer nofollow\">prefers-color-scheme</a> media query detects whether the user has asked for a light or dark theme through their operating system or browser. MDN shows the common pattern: a light theme by default, overridden with prefers-color-scheme: dark. The <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme\" rel=\"noopener noreferrer nofollow\">color-scheme</a> property tells the browser which schemes your page supports, so form controls and scrollbars match; MDN notes color-scheme: only light can turn off Chrome's Auto Dark Theme on an element. Define colours as CSS variables so each theme is one set of values.</p><p>For a WebView inside an app, Android's guide points to its separate page on darkening web content in WebView, so check both the native screens and any web screens inside them.</p><h2 id=\"step-by-step-add-dark-mode-to-an-existing-product\">Step by step: add dark mode to an existing product</h2><p><strong>Step 1. List every colour in use.</strong> Most apps have far more than the design file shows: hard-coded hex values in old screens, images with white backgrounds, third-party widgets.</p><p><strong>Step 2. Replace colours with named roles.</strong> Background, surface, primary, on-surface, error, border. Every screen uses roles, never raw hex values. This is most of the work, and it pays off in every later redesign.</p><p><strong>Step 3. Define the dark values.</strong> Start from #121212 or close to it, lighter surfaces for raised elements, desaturated brand tones, and white text at 87%, 60% and 38% for the three emphasis levels.</p><p><strong>Step 4. Check every pair against WCAG.</strong> 4.5:1 for text, 3:1 for large text, borders, icons and chart lines. Check on the lightest elevated surface, not just the base background.</p><p><strong>Step 5. Fix images and illustrations.</strong> Darken white product backgrounds slightly, add outlines to dark icons, and create dark variants of illustrations that lose detail.</p><p><strong>Step 6. Follow the system setting.</strong> Default to it everywhere. Add an in-app choice on Android if you want, with System default first.</p><p><strong>Step 7. Test on real screens at night.</strong> An OLED phone and an LCD budget phone, at low brightness, in a dark room, with large font sizes and in Telugu or Hindi if you support them. Our post on <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a> covers why the budget phone matters.</p><h2 id=\"three-worked-examples-from-indian-businesses\">Three worked examples from Indian businesses</h2><p>These are illustrative. The businesses and colours are made up to show the decisions.</p><h3 id=\"a-billing-and-ledger-app-for-shopkeepers\">A billing and ledger app for shopkeepers</h3><p>A ledger app shows who owes the shop money, in red, and who has paid, in green. Shopkeepers often check it late at night after closing.</p><p>In the first dark version, the saturated red and green vibrated on black and were hard to tell apart. The fix uses desaturated tones that pass 4.5:1 on the elevated card surface, adds a minus sign and the word \"due\" so colour is not the only signal, and moves the brand's saturated colour to the one primary button. Amounts stay at high-emphasis white. Our page on <a href=\"/industries/fintech\">fintech apps</a> covers builds like this.</p><figure><img src=\"/assets/blog/dark-mode-properly/4.webp\" alt=\"Illustration of a shopkeeper checking a ledger app in dark mode on his phone after closing the shop at night\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Dark mode gets used at night, often after work, so test it there.</figcaption></figure><h3 id=\"a-d2c-brands-online-store\">A D2C brand's online store</h3><p>A jewellery brand's website follows the system theme on phones. In dark mode, every product photo sat in a bright white rectangle and the gold looked dull.</p><p>Following Apple's advice to soften white backgrounds, product images were reshot or processed onto a neutral backdrop that works in both themes. The site uses prefers-color-scheme with CSS variables, sets color-scheme so form fields match, and checks the price and \"add to cart\" button against 4.5:1. The brand gold stays saturated only on the logo. For store builds, see our <a href=\"/services/ecommerce-development\">ecommerce development</a> page.</p><h3 id=\"a-vendor-building-a-state-government-portal\">A vendor building a state government portal</h3><p>An IT vendor is building a citizen services portal and app for a state department, which must follow GIGW 3.0.</p><p>Because GIGW includes 4.5:1 text contrast and 3:1 for interface components and graphics, the vendor tests both themes against those checkpoints, not just the light one. Form fields get visible 3:1 borders in dark mode, focus rings are bright enough to see, and status badges pair colour with text. Charts on dashboards use lines thick enough to pass 3:1. Our post on <a href=\"/blogs/accessibility-is-cheaper-early\">accessibility</a> explains why this is cheaper to do early.</p><h2 id=\"common-dark-mode-mistakes\">Common dark mode mistakes</h2><p><strong>Inverting the light theme.</strong> Apple notes dark colours are not necessarily inversions of light ones. Inverted themes get elevation and emphasis backwards.</p><p><strong>Pure black everywhere.</strong> Material recommends dark grey because shadows and elevation are visible on it and contrast is gentler.</p><p><strong>Saturated brand colours on large areas.</strong> They vibrate and glow. Desaturate them and keep full saturation for one or two elements.</p><p><strong>Low-contrast grey text.</strong> Medium emphasis is for secondary text, not for body copy. Check it at 4.5:1.</p><p><strong>Forgetting borders and icons.</strong> WCAG 1.4.11 asks for 3:1 for the parts that identify a control. Thin dark-grey borders on dark backgrounds often fail.</p><p><strong>White-background images.</strong> They become glowing rectangles.</p><p><strong>Ignoring the system setting.</strong> Both Apple and Google treat the system choice as the default.</p><p><strong>Relying only on Force Dark.</strong> Automatic darkening is fast but needs thorough testing, by Google's own advice.</p><h2 id=\"a-dark-mode-test-checklist\">A dark mode test checklist</h2><ul><li>The app and site follow the system setting by default.</li><li>Every text and background pair passes 4.5:1, large text 3:1, on the lightest surface in use.</li><li>Borders, icons, toggles, focus rings and chart lines pass 3:1.</li><li>Brand colours are desaturated except on one or two elements.</li><li>No hard-coded colours remain; every screen uses named roles.</li><li>Images and illustrations have no glowing white backgrounds and keep their detail.</li><li>Tested with large fonts, Increase Contrast and Reduce Transparency on iOS.</li><li>Tested on an OLED phone and a budget LCD phone at low brightness.</li><li>Indic-script text checked for legibility in dark mode.</li><li>For government work, both themes checked against GIGW 3.0 checkpoints.</li></ul><p>If you want dark mode and accessibility written into the scope of a new build, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">book it here</a>). Code, cloud and credentials stay in your name.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-background-colour-should-dark-mode-use\">What background colour should dark mode use?</h3><p>Material Design recommends #121212, a dark grey, rather than pure black. Google says shadows and elevation are easier to see on grey, and light text on dark grey has less contrast than on black, which reduces eye strain.</p><h3 id=\"what-contrast-ratio-does-dark-mode-need\">What contrast ratio does dark mode need?</h3><p>WCAG 1.4.3 requires at least 4.5:1 for text and 3:1 for large text, and 1.4.11 requires 3:1 for interface components and meaningful graphics. Apple also says no lower than 4.5:1 and to strive for 7:1 for custom colours in small text.</p><h3 id=\"should-my-app-have-its-own-dark-mode-toggle\">Should my app have its own dark mode toggle?</h3><p>Google and Apple differ. Android recommends offering Light, Dark and System default, with System default as the default. Apple advises against an app-specific appearance setting. Following the system by default works on both.</p><h3 id=\"is-pure-black-better-for-battery\">Is pure black better for battery?</h3><p>Material Design allows true black where battery matters, because OLED screens can turn off black pixels. It also cautions that switching pixels on and off on OLED screens can blur content while scrolling.</p><h3 id=\"does-gigw-require-dark-mode-for-government-websites\">Does GIGW require dark mode for government websites?</h3><p>GIGW 3.0 sets contrast checkpoints of 4.5:1 for text and 3:1 for interface components and graphics, referencing WCAG 2.1. I did not find a GIGW rule requiring dark mode, but if you offer it, it should meet the same checkpoints.</p><h3 id=\"how-do-i-add-dark-mode-to-a-website\">How do I add dark mode to a website?</h3><p>Use the prefers-color-scheme media query to apply dark colours when the user has asked for them, define colours as CSS variables, and set the color-scheme property so form controls and scrollbars match the theme.</p><h3 id=\"can-android-add-dark-mode-automatically\">Can Android add dark mode automatically?</h3><p>Android 10 and higher offer Force Dark, which darkens a light-themed app automatically if the app opts in. Google says to test thoroughly and exclude views as needed. A proper DayNight theme gives you more control.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://m2.material.io/design/color/dark-theme.html\" rel=\"noopener noreferrer nofollow\">Dark theme, Material Design</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/develop/ui/views/theming/darktheme\" rel=\"noopener noreferrer nofollow\">Implement dark theme, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/develop/ui/compose/designsystems/material3\" rel=\"noopener noreferrer nofollow\">Material Design 3 in Compose, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/design/human-interface-guidelines/dark-mode\" rel=\"noopener noreferrer nofollow\">Dark Mode, Apple Human Interface Guidelines</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\" rel=\"noopener noreferrer nofollow\">Understanding SC 1.4.3 Contrast (Minimum), W3C WAI</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html\" rel=\"noopener noreferrer nofollow\">Understanding SC 1.4.11 Non-text Contrast, W3C WAI</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme\" rel=\"noopener noreferrer nofollow\">prefers-color-scheme, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme\" rel=\"noopener noreferrer nofollow\">color-scheme, MDN Web Docs</a>, read 16 November 2026</li><li><a href=\"https://web.dev/articles/prefers-color-scheme\" rel=\"noopener noreferrer nofollow\">prefers-color-scheme: Hello darkness, my old friend, web.dev</a>, read 16 November 2026</li><li><a href=\"https://guidelines.india.gov.in/guidelines/\" rel=\"noopener noreferrer nofollow\">Guidelines for Indian Government Websites and apps (GIGW 3.0), Government of India</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian designer comparing light and dark versions of an app on two phones, beside the words Dark mode done right",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. A young Indian woman product designer with her hair tied back, in a sage kurti, at a desk with a desk lamp in the evening, holding two phones side by side: one with a light abstract interface, one with a dark grey abstract interface with a soft mustard accent. Screens show only abstract shapes, no readable text, no logos. Face fully in frame. Right half: the title 'Dark mode done right' in very large bold black sans-serif, left-aligned, on three lines ('Dark mode' / 'done' / 'right'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic comparing a correct dark theme with common mistakes: dark grey surface, desaturated accent, readable text",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Dark mode: four rules'. Four cards in a row, each with a small swatch icon and dark-blue rounded pills with white text. Card 1: dark grey swatch, pill 'Surface #121212', grey note 'not pure black'. Card 2: pale purple swatch, pill 'Desaturate brand colours'. Card 3: text icon, pill 'Text 4.5:1 or more'. Card 4: toggle icon, pill 'Borders and icons 3:1'. Orange arrows link the cards left to right. One-line bold takeaway at bottom: 'Design a second palette, not an inverted one.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Apple's Dark Mode guidelines showing advice on app-specific settings and contrast",
+   "url": "https://developer.apple.com/design/human-interface-guidelines/dark-mode",
+   "annotate": [
+    {
+     "text": "Avoid offering an app-specific appearance setting.",
+     "label": "Follow the system"
+    },
+    {
+     "text": "strive for a contrast ratio of 7:1",
+     "label": "7:1 for small text"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the W3C Understanding page for WCAG 1.4.3 contrast minimum",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+   "annotate": [
+    {
+     "text": "of at least 4.5:1, except for the following:",
+     "label": "Text: 4.5:1"
+    },
+    {
+     "text": "4.499:1 would not meet the 4.5:1 threshold",
+     "label": "No rounding up"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a shopkeeper checking a ledger app in dark mode on his phone after closing the shop at night",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Night scene outside a small Indian shop with its shutter half down and a warm street lamp: a middle-aged shopkeeper in a shirt and dhoti sits on the step checking a phone showing a dark grey abstract interface with soft accent bars. A crescent moon in the sky. No readable text on the phone or shop, no logos. Face fully in frame."
+  }
+ ]
+}

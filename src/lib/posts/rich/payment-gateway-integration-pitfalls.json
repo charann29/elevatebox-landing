@@ -1,0 +1,212 @@
+{
+ "slug": "payment-gateway-integration-pitfalls",
+ "locale": "en",
+ "title": "Payment gateway integration in India: a 2026 guide",
+ "description": "Payment gateway integration for Indian apps and websites: Razorpay, PayU, Cashfree, PhonePe and Stripe rates, RBI e-mandate rules, webhooks and settlement.",
+ "imageUrl": "/assets/blog/payment-gateway-integration-pitfalls/cover.webp",
+ "imageAlt": "Illustration of an Indian shop owner checking online payments on a laptop beside the words Payment gateway integration",
+ "ogImageUrl": null,
+ "tags": [
+  "payment gateway",
+  "UPI",
+  "Razorpay",
+  "India"
+ ],
+ "readingTimeMinutes": 16,
+ "publishedAt": "2025-12-27T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-payment-gateway-integration-involves",
+   "text": "What payment gateway integration involves",
+   "level": 2
+  },
+  {
+   "id": "gateway-pricing-compared",
+   "text": "Gateway pricing compared",
+   "level": 2
+  },
+  {
+   "id": "what-the-headline-rate-hides",
+   "text": "What the headline rate hides",
+   "level": 2
+  },
+  {
+   "id": "zero-mdr-on-upi-is-not-zero-fees",
+   "text": "Zero MDR on UPI is not zero fees",
+   "level": 3
+  },
+  {
+   "id": "offers-end",
+   "text": "Offers end",
+   "level": 3
+  },
+  {
+   "id": "gst-is-on-top",
+   "text": "GST is on top",
+   "level": 3
+  },
+  {
+   "id": "settlement-times-when-the-money-reaches-your-bank",
+   "text": "Settlement times: when the money reaches your bank",
+   "level": 2
+  },
+  {
+   "id": "kyc-what-you-need-before-you-can-go-live",
+   "text": "KYC: what you need before you can go live",
+   "level": 2
+  },
+  {
+   "id": "rbi-rules-for-upi-autopay-recurring-payments-and-saved-cards",
+   "text": "RBI rules for UPI AutoPay, recurring payments and saved cards",
+   "level": 2
+  },
+  {
+   "id": "e-mandates-and-upi-autopay",
+   "text": "E-mandates and UPI AutoPay",
+   "level": 3
+  },
+  {
+   "id": "card-tokenisation",
+   "text": "Card tokenisation",
+   "level": 3
+  },
+  {
+   "id": "webhooks-and-reconciliation",
+   "text": "Webhooks and reconciliation",
+   "level": 2
+  },
+  {
+   "id": "refunds-and-failed-payments",
+   "text": "Refunds and failed payments",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-integrating-a-gateway-properly",
+   "text": "Step by step: integrating a gateway properly",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-taking-consultation-fees",
+   "text": "A clinic taking consultation fees",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-with-prepaid-orders",
+   "text": "A D2C brand with prepaid orders",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-with-monthly-fees",
+   "text": "A coaching institute with monthly fees",
+   "level": 3
+  },
+  {
+   "id": "common-integration-mistakes",
+   "text": "Common integration mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-daily-and-monthly-reconciliation-routine",
+   "text": "A daily and monthly reconciliation routine",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Which payment gateway is cheapest in India?",
+   "a": "On standard published rates, Cashfree lists a 1.95% platform fee, PhonePe PG 1.99%, and Razorpay and PayU 2%, all with GST extra. Several are running offers that cut fees to zero for a limited period. Compare the rate for the payment methods your customers actually use, and settlement time, not only the headline."
+  },
+  {
+   "q": "Are UPI payments free for merchants?",
+   "a": "UPI has zero MDR, meaning the bank does not charge the merchant. Gateways can still charge a platform fee. Razorpay's pricing FAQ says its 2% platform fee applies to standard UPI payments, and PayU says merchant UPI pricing varies by business type and volume. Ask for the rupee cost of a UPI payment in writing."
+  },
+  {
+   "q": "How long does settlement take?",
+   "a": "Razorpay's documentation gives T+2 working days as the standard domestic cycle, and PayU's page also says T+2. Cashfree gives T+1 by 8 PM IST during its current offer. Faster or instant settlement is priced separately."
+  },
+  {
+   "q": "Can I use Stripe in India?",
+   "a": "Stripe says its accounts are invite-only in India, so Indian businesses cannot sign up through its website and must request an invite. Its published India rates are 2% for Indian cards and 3% for cards issued outside India."
+  },
+  {
+   "q": "What is the e-mandate limit for recurring payments?",
+   "a": "Under RBI's E-mandate Framework, 2026, recurring payments up to ₹15,000 each can go through without additional authentication. Insurance premiums, mutual fund subscriptions and credit card bills can go up to ₹1,00,000. The customer gets a notice at least 24 hours before each debit."
+  },
+  {
+   "q": "Can my website save customers' cards?",
+   "a": "Not as card numbers. Since 1 October 2022, merchants cannot store the card number, CVV or expiry for online payments. Saved cards work through tokens created with the customer's consent, which your gateway handles."
+  },
+  {
+   "q": "Do I need webhooks if checkout already tells me the payment succeeded?",
+   "a": "Yes. Customers close apps mid-payment and banks respond late, so the checkout callback alone will miss some successful payments. Webhooks, verified on your server and safe to process twice, are how you catch them."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-payment-gateway-integration-involves\">What payment gateway integration involves</h2><p><strong>In short:</strong> For most Indian apps and websites, the choice is between Razorpay, PayU, Cashfree and PhonePe PG, whose standard plans list roughly 1.95% to 2% per domestic payment plus GST, with launch offers that cut this to zero for a while. Stripe is invite-only for Indian businesses. The harder part is the integration: verifying payments on your server, handling webhooks, refunds and settlement, and following RBI's rules for recurring payments and saved cards.</p><p>I read each gateway's own pricing page and developer docs, and the RBI directions that apply, and kept only what they say. Where two pages from the same company disagree, I say so, because that is exactly the kind of thing that surprises a business after launch.</p><p>This guide was checked in November 2026. Gateway pricing pages change often and most of them are running offers right now, so read the current page and the offer terms before you sign.</p><h2 id=\"gateway-pricing-compared\">Gateway pricing compared</h2><p>These are the standard, published rates for a small or mid business. Enterprise and high-volume businesses are offered custom pricing by all of them.</p><p><em>Published standard rates for domestic online payments, November 2026</em></p><table><thead><tr><th>Gateway</th><th>Standard domestic rate</th><th>Higher-rate methods</th><th>Offer on the page</th><th>Setup or annual fee</th></tr></thead><tbody><tr><td>Razorpay</td><td>2% + GST</td><td>Some methods priced separately on the page</td><td>0% for the first 90 days (\"down from 2%\")</td><td>None</td></tr><tr><td>PayU</td><td>2% (cards, net banking, wallets, BNPL), GST extra</td><td>3% for EMI, Amex, Diners and international</td><td>None shown</td><td>None</td></tr><tr><td>Cashfree</td><td>From 1.95% platform fee, excl. GST</td><td>International cards 2.99%, Amex 2.95%</td><td>0% on first ₹20 lakh GMV for new merchants, till 31 March 2027</td><td>None</td></tr><tr><td>PhonePe PG</td><td>1.99% standard plan</td><td>Not listed by method on the page I read</td><td>\"Super Savings Offer\", free with T&amp;C</td><td>None</td></tr><tr><td>Stripe India</td><td>2% for Indian Visa and Mastercard</td><td>3% for cards issued outside India</td><td>None shown</td><td>Invite-only in India</td></tr></tbody></table><p><em>Source: </em><a href=\"https://razorpay.com/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay pricing</em></a><em> and </em><a href=\"https://payu.in/pricing/\" rel=\"noopener noreferrer nofollow\"><em>PayU pricing</em></a><em> and </em><a href=\"https://www.cashfree.com/payment-gateway-charges/\" rel=\"noopener noreferrer nofollow\"><em>Cashfree pricing</em></a><em> and </em><a href=\"https://www.phonepe.com/business-solutions/payment-gateway/pricing/\" rel=\"noopener noreferrer nofollow\"><em>PhonePe PG pricing</em></a><em> and </em><a href=\"https://stripe.com/in/pricing\" rel=\"noopener noreferrer nofollow\"><em>Stripe India pricing</em></a><em>, read 16 November 2026.</em></p><p>Stripe's support page says businesses from India cannot sign up for a new account through its website and must request an invite. If you are building for Indian customers, plan around one of the Indian gateways unless Stripe has already invited you.</p><p>PhonePe's page notes that PhonePe Limited is an RBI authorised Payment Aggregator. Whichever gateway you choose, I would check the same thing: that it is authorised by RBI as a payment aggregator, because RBI's e-mandate directions, for one, make the acquirer responsible for its merchants' compliance.</p><figure><img src=\"/assets/blog/payment-gateway-integration-pitfalls/1.webp\" alt=\"Infographic of how an online payment moves from checkout to your bank account\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The money path: checkout, verification on your server, capture, then settlement to your bank.</figcaption></figure><h2 id=\"what-the-headline-rate-hides\">What the headline rate hides</h2><h3 id=\"zero-mdr-on-upi-is-not-zero-fees\">Zero MDR on UPI is not zero fees</h3><p>You will read that UPI is free for merchants. Razorpay's pricing FAQ explains the catch clearly: there is zero MDR (Merchant Discount Rate) on standard bank-to-bank UPI, so the bank does not charge you, but a platform or technology fee of 2% still applies for the gateway's dashboard, reporting and infrastructure. Razorpay says the same zero MDR applies to RuPay debit cards. PayU's page says UPI P2P has zero MDR and merchant UPI pricing varies by business type and volume. Cashfree says its UPI charges are \"as per the applicable law\".</p><p>So ask each gateway one direct question: what will I pay, in rupees, on a ₹1,000 UPI payment? Get the answer in writing.</p><h3 id=\"offers-end\">Offers end</h3><p>Razorpay's 0% applies for the first 90 days. Cashfree's festive offer covers new merchants on their first ₹20 lakh of GMV, until 31 March 2027, and the terms say it ends when you use it up, when the campaign ends, or on a fair-usage disqualification. PhonePe marks its offer with T&amp;C. Budget at the standard rate from day one and treat the offer as a bonus.</p><h3 id=\"gst-is-on-top\">GST is on top</h3><p>Razorpay quotes 2% + GST and says the fee and GST are deducted from each payment before settlement. PayU says GST is extra, and Cashfree's prices exclude GST. Your bank receives the payment minus fee minus GST on the fee, which is what your accounts team needs to reconcile.</p><h2 id=\"settlement-times-when-the-money-reaches-your-bank\">Settlement times: when the money reaches your bank</h2><p>Settlement is when the gateway pays captured money into your bank account. T is the day of capture, so T+2 means two working days later. Working days exclude bank holidays.</p><p>Razorpay's settlements documentation says the standard cycle for domestic payments is T+2 working days, and gives a T+7 example for international payments, which may also have part held as a reserve. Its pricing FAQ says money is settled \"typically T+1 or Instant\". Those two pages do not match, so ask for your settlement cycle in your agreement. Razorpay also says the cycle is subject to bank approval and can vary with your business vertical and risk.</p><p>PayU's pricing page says standard settlement is T+2, with same-day and priority settlement available for some business categories, sometimes for a fee. Cashfree's offer terms give T+1 settlement by 8:00 PM IST as the default during the campaign. Razorpay, PayU and Cashfree all price faster settlement separately.</p><figure><img src=\"/assets/blog/payment-gateway-integration-pitfalls/2.webp\" alt=\"Screenshot of Razorpay's settlements documentation showing the T+2 standard settlement cycle\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Razorpay's docs: T+2 working days is the standard domestic cycle.</figcaption></figure><h2 id=\"kyc-what-you-need-before-you-can-go-live\">KYC: what you need before you can go live</h2><p>Gateways will let you test in sandbox mode straight away, but live payments wait for KYC. The documents depend on your business type. Razorpay's list is typical of what I would expect elsewhere:</p><ul><li><strong>Individual or unregistered business:</strong> PAN, address proof (fetched from CKYC where possible) and bank account details.</li><li><strong>Proprietorship:</strong> two proofs of business, chosen from MSME/Udyam, GST, Shop &amp; Establishment, Import Export Code or a postpaid mobile bill, plus the owner's PAN, address proof and bank details.</li><li><strong>Private or public limited company:</strong> certificate of incorporation, MOA and AOA, business PAN, bank details, the authorised signatory's PAN and address proof, a board resolution or power of attorney, and a declaration of beneficial owners with more than 10% shareholding.</li></ul><p>Razorpay says the PAN and the signatory's address proof must belong to the same person, and if bank verification fails it asks for a video of a cancelled cheque. The common delay is a mismatch: the bank account name, PAN name and business name must line up. Fix that before you apply, not after.</p><p>I would also have the website ready before applying: clear pricing, contact details, terms, a privacy policy and a refund policy.</p><h2 id=\"rbi-rules-for-upi-autopay-recurring-payments-and-saved-cards\">RBI rules for UPI AutoPay, recurring payments and saved cards</h2><h3 id=\"e-mandates-and-upi-autopay\">E-mandates and UPI AutoPay</h3><p>RBI's Digital Payments, E-mandate Framework, 2026, dated 21 April 2026, consolidates the rules for recurring payments on cards, prepaid instruments and UPI. This is what applies to subscriptions, monthly fees and UPI AutoPay:</p><ul><li>Registration needs an additional factor of authentication (AFA), and so does the first transaction. They can be combined if the first payment happens at registration.</li><li>Every mandate has a validity period, and the customer can modify or withdraw it at any time.</li><li>The issuer sends a pre-transaction notification at least 24 hours before each debit, with the merchant name, amount, date and reason, and the customer can opt out of that debit.</li><li>Recurring transactions up to ₹15,000 each can go through without AFA. Above that, AFA is needed every time.</li><li>Insurance premiums, mutual fund subscriptions and credit card bill payments can go without AFA up to ₹1,00,000 per transaction.</li><li>No charges may be levied on the customer for using e-mandates, and the acquirer must ensure its merchants comply.</li></ul><figure><img src=\"/assets/blog/payment-gateway-integration-pitfalls/4.webp\" alt=\"Screenshot of RBI's E-mandate Framework 2026 showing the transaction limits section\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>RBI's own text: ₹15,000 without AFA, and notice at least 24 hours before each debit.</figcaption></figure><p>For your product, that means two things. A monthly plan above ₹15,000 will ask the customer to authenticate every month, so expect some payments to fail when they do not. And because customers get notified and can opt out, your app has to handle a skipped debit without cutting off a paying customer by mistake.</p><figure><img src=\"/assets/blog/payment-gateway-integration-pitfalls/3.webp\" alt=\"Explainer of RBI's e-mandate limits and the 24-hour pre-debit notice\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>RBI's e-mandate rules in one picture: AFA at registration, 24-hour notice, ₹15,000 and ₹1 lakh limits.</figcaption></figure><h3 id=\"card-tokenisation\">Card tokenisation</h3><p>Since 1 October 2022, merchants cannot store the clear card number, CVV, expiry date or other sensitive card data for online payments, as SBI's customer FAQ on RBI's card-on-file tokenisation explains. Saved cards now work through tokens: a 16-digit number unique to the card, the token requestor and the merchant. Customers choose whether to tokenise, and SBI says they pay nothing for it.</p><p>In practice, never build your own \"save card\" table. Use the gateway's saved-card or token feature, and keep card fields inside the gateway's checkout so card data never touches your server.</p><h2 id=\"webhooks-and-reconciliation\">Webhooks and reconciliation</h2><p>A payment can succeed after your customer has closed the app. The phone loses network, the bank responds late, or the customer switches to a UPI app and never comes back. Webhooks are how the gateway tells your server what really happened.</p><p>Razorpay's webhook best practices are specific, and I would design any integration to the same standard:</p><ul><li>Respond with a 2xx status within 5 seconds. Razorpay treats anything else, including a slow response, as a failed delivery and sends the event again.</li><li>Failed deliveries are retried with exponential backoff for 24 hours after the event was created.</li><li>Delivery is at least once, so the same event can arrive more than once. Use the x-razorpay-event-id header to ignore duplicates.</li><li>Events may arrive out of order.</li><li>Verify the webhook signature so you only trust events that really came from the gateway.</li><li>For business-critical cases, Razorpay suggests also polling its payment APIs, since webhooks are asynchronous.</li></ul><figure><img src=\"/assets/blog/payment-gateway-integration-pitfalls/5.webp\" alt=\"Illustration of a D2C brand owner and an accountant reconciling payments at a desk\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Reconciliation: orders, captured payments and bank settlements should agree every day.</figcaption></figure><p>Reconciliation is the daily check that three numbers agree: orders marked paid in your system, payments captured in the gateway dashboard, and money settled into your bank. If you only do one thing from this post, do this. We wrote more on the engineering side in <a href=\"/blogs/webhooks-you-can-rely-on\">webhooks you can rely on</a>.</p><h2 id=\"refunds-and-failed-payments\">Refunds and failed payments</h2><p>Razorpay offers normal refunds, which reach the customer in 5 to 7 working days, and instant refunds, which arrive almost immediately. There is a second kind of refund many teams do not plan for. A payment can sit in an \"authorized\" state, where the customer's money is blocked but the merchant has not captured it. Razorpay's capture settings say authorized payments that are not captured within the timeout, 3 days by default, are refunded automatically. If your order system waits for a capture that never comes, the customer is refunded and you ship nothing, or worse, ship anyway.</p><p>RBI's 2019 circular on turnaround times also sets limits for failed payments. For UPI, where the customer's account is debited but the merchant does not get confirmation, the amount must be auto-reversed within T+5 days, with ₹100 per day of compensation for any delay beyond that. Your support team should know it.</p><h2 id=\"step-by-step-integrating-a-gateway-properly\">Step by step: integrating a gateway properly</h2><p><strong>Step 1. Decide what you are charging for.</strong> One-time payments, subscriptions, split payments to vendors or refunds at scale each need different products from the gateway. If your app sells digital content, check the app store rules first; our post on <a href=\"/blogs/app-store-rejections\">app store rejections</a> covers when Apple and Google require their own billing.</p><p><strong>Step 2. Start KYC on day one.</strong> Put the website pages up and submit documents while development starts in sandbox mode.</p><p><strong>Step 3. Create the order on your server.</strong> The amount comes from your database, never from the app or browser. The customer's device can be tampered with.</p><p><strong>Step 4. Use the gateway's hosted checkout or SDK.</strong> Card details stay inside the gateway's screens, which keeps you out of card storage and tokenisation rules.</p><p><strong>Step 5. Verify on the server.</strong> When checkout returns, check the payment signature and the payment status through the gateway's API before you mark the order paid.</p><p><strong>Step 6. Add webhooks.</strong> Handle payment captured, failed and refunded events, respond within the gateway's time limit, and make every handler safe to run twice.</p><p><strong>Step 7. Set capture rules.</strong> Auto-capture unless you have a reason not to, and alert someone about payments stuck in authorized.</p><p><strong>Step 8. Test the bad paths.</strong> Closed app mid-payment, UPI app timeout, double tap on Pay, refund of a partly refunded order, a webhook arriving before the browser redirect. Then reconcile a test day end to end.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are illustrative businesses, not clients. The numbers are invented to show how the rules apply.</p><h3 id=\"a-clinic-taking-consultation-fees\">A clinic taking consultation fees</h3><p>A clinic charges ₹500 per online consultation and patients mostly pay by UPI. At a 2% platform fee, each payment costs about ₹10 plus GST on that fee, even though UPI itself has zero MDR. The main risk is refunds: cancelled appointments need a clear refund policy on the site and a quick way for the receptionist to refund from the dashboard. If the doctor calls a patient whose payment is stuck as authorized, the team should know it will auto-refund rather than promise a manual refund on top.</p><h3 id=\"a-d2c-brand-with-prepaid-orders\">A D2C brand with prepaid orders</h3><p>A clothing brand gets prepaid orders on its website and app. The danger is marking orders paid from the browser redirect. A customer closes the tab during a UPI payment, the payment succeeds a minute later, and the order sits as \"pending\" while the customer is charged. The fix is to fulfil only on a verified webhook, and to run a daily reconciliation of paid orders against captured payments and settlements. Our post on <a href=\"/blogs/ecommerce-checkout-conversion\">checkout conversion</a> covers the customer-facing side.</p><h3 id=\"a-coaching-institute-with-monthly-fees\">A coaching institute with monthly fees</h3><p>An institute wants to collect a ₹4,000 monthly fee through UPI AutoPay or card e-mandates. That is under RBI's ₹15,000 limit, so after the first authenticated payment, later debits can go through without AFA. Each student's parent will get a notice at least 24 hours before each debit and can opt out, so the institute's system must expect some months to fail and send a payment link instead of locking the student out. If it later moves to a ₹20,000 quarterly fee, every debit would need AFA.</p><h2 id=\"common-integration-mistakes\">Common integration mistakes</h2><p><strong>Trusting the client.</strong> Taking the amount or the success status from the app or browser. Both can be faked. The server decides the amount and checks the status.</p><p><strong>No idempotency.</strong> Webhooks arrive more than once. Without a check on the event or payment ID, one payment can create two orders or two wallet credits.</p><p><strong>Slow webhook handlers.</strong> Sending emails or generating invoices inside the webhook means you miss the 5-second response window on Razorpay, the gateway retries, and you do the work again. Acknowledge first, process in the background.</p><p><strong>Ignoring authorized payments.</strong> They auto-refund after the capture timeout, which confuses customers and support alike.</p><p><strong>Storing card data.</strong> Even the last four digits plus expiry in your own table is asking for trouble. Use the gateway's tokens.</p><p><strong>Live keys in the app.</strong> Secret API keys belong only on your server. The app and website get only the public key.</p><p><strong>Choosing on the offer.</strong> A 0% offer for 90 days matters less than settlement time, support quality and whether the gateway supports the payment products you need next year.</p><p>If you would rather have this built once and correctly, our team does <a href=\"/services/ecommerce-development\">ecommerce development</a> and payment integrations with the gateway account, code and cloud kept in the client's name. Our ₹3,500 requirement analysis is a call with the people who will build it and ends in a written fixed quotation and timeline before any build starts (<a href=\"/book\">book it here</a>).</p><h2 id=\"a-daily-and-monthly-reconciliation-routine\">A daily and monthly reconciliation routine</h2><p><em>A reconciliation routine for a small business</em></p><table><thead><tr><th>When</th><th>What to check</th><th>What a problem looks like</th></tr></thead><tbody><tr><td>Daily, 10 minutes</td><td>Orders marked paid vs payments captured in the dashboard</td><td>A captured payment with no paid order, or the reverse</td></tr><tr><td>Daily</td><td>Payments stuck in authorized</td><td>Any older than a day, before the auto-refund</td></tr><tr><td>On each settlement</td><td>Settlement amount vs captured payments minus fees and GST</td><td>A shortfall you cannot explain</td></tr><tr><td>Weekly</td><td>Refunds issued vs refunds requested</td><td>A refund promised but not processed</td></tr><tr><td>Monthly</td><td>Effective fee rate: total fees divided by total collected</td><td>Higher than your standard rate, or an offer that has ended</td></tr></tbody></table><p><em>Source: </em><a href=\"https://razorpay.com/docs/payments/settlements/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay settlements docs</em></a><em> and </em><a href=\"https://razorpay.com/docs/payments/payments/capture-settings/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay capture settings</em></a><em> and </em><a href=\"https://razorpay.com/docs/payments/refunds/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay refunds docs</em></a><em>, read 16 November 2026.</em></p><p>Keep one spreadsheet or one dashboard view for this. After a month, the effective fee rate tells you whether to ask for better pricing.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"which-payment-gateway-is-cheapest-in-india\">Which payment gateway is cheapest in India?</h3><p>On standard published rates, Cashfree lists a 1.95% platform fee, PhonePe PG 1.99%, and Razorpay and PayU 2%, all with GST extra. Several are running offers that cut fees to zero for a limited period. Compare the rate for the payment methods your customers actually use, and settlement time, not only the headline.</p><h3 id=\"are-upi-payments-free-for-merchants\">Are UPI payments free for merchants?</h3><p>UPI has zero MDR, meaning the bank does not charge the merchant. Gateways can still charge a platform fee. Razorpay's pricing FAQ says its 2% platform fee applies to standard UPI payments, and PayU says merchant UPI pricing varies by business type and volume. Ask for the rupee cost of a UPI payment in writing.</p><h3 id=\"how-long-does-settlement-take\">How long does settlement take?</h3><p>Razorpay's documentation gives T+2 working days as the standard domestic cycle, and PayU's page also says T+2. Cashfree gives T+1 by 8 PM IST during its current offer. Faster or instant settlement is priced separately.</p><h3 id=\"can-i-use-stripe-in-india\">Can I use Stripe in India?</h3><p>Stripe says its accounts are invite-only in India, so Indian businesses cannot sign up through its website and must request an invite. Its published India rates are 2% for Indian cards and 3% for cards issued outside India.</p><h3 id=\"what-is-the-e-mandate-limit-for-recurring-payments\">What is the e-mandate limit for recurring payments?</h3><p>Under RBI's E-mandate Framework, 2026, recurring payments up to ₹15,000 each can go through without additional authentication. Insurance premiums, mutual fund subscriptions and credit card bills can go up to ₹1,00,000. The customer gets a notice at least 24 hours before each debit.</p><h3 id=\"can-my-website-save-customers-cards\">Can my website save customers' cards?</h3><p>Not as card numbers. Since 1 October 2022, merchants cannot store the card number, CVV or expiry for online payments. Saved cards work through tokens created with the customer's consent, which your gateway handles.</p><h3 id=\"do-i-need-webhooks-if-checkout-already-tells-me-the-payment-succeeded\">Do I need webhooks if checkout already tells me the payment succeeded?</h3><p>Yes. Customers close apps mid-payment and banks respond late, so the checkout callback alone will miss some successful payments. Webhooks, verified on your server and safe to process twice, are how you catch them.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://razorpay.com/pricing/\" rel=\"noopener noreferrer nofollow\">Pricing, Razorpay</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/settlements/\" rel=\"noopener noreferrer nofollow\">Settlements, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/webhooks/best-practices/\" rel=\"noopener noreferrer nofollow\">Webhooks best practices, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/payments/capture-settings/\" rel=\"noopener noreferrer nofollow\">Payment capture settings, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/refunds/\" rel=\"noopener noreferrer nofollow\">Refunds, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/payments/business-types-kyc-documents/\" rel=\"noopener noreferrer nofollow\">KYC documents for business types, Razorpay Docs</a>, read 16 November 2026</li><li><a href=\"https://payu.in/pricing/\" rel=\"noopener noreferrer nofollow\">Payment gateway charges, PayU</a>, read 16 November 2026</li><li><a href=\"https://www.cashfree.com/payment-gateway-charges/\" rel=\"noopener noreferrer nofollow\">Payment gateway charges, Cashfree Payments</a>, read 16 November 2026</li><li><a href=\"https://www.phonepe.com/business-solutions/payment-gateway/pricing/\" rel=\"noopener noreferrer nofollow\">Payment gateway pricing, PhonePe PG</a>, read 16 November 2026</li><li><a href=\"https://stripe.com/in/pricing\" rel=\"noopener noreferrer nofollow\">Pricing and fees, Stripe India</a>, read 16 November 2026</li><li><a href=\"https://support.stripe.com/questions/stripe-accounts-are-invite-only-in-india\" rel=\"noopener noreferrer nofollow\">Stripe accounts are invite-only in India, Stripe Support</a>, read 16 November 2026</li><li><a href=\"https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=13374\" rel=\"noopener noreferrer nofollow\">Digital Payments, E-mandate Framework, 2026, Reserve Bank of India</a>, read 16 November 2026</li><li><a href=\"https://www.rbi.org.in/commonman/English/scripts/Notification.aspx?Id=3074\" rel=\"noopener noreferrer nofollow\">Harmonisation of turnaround time and customer compensation for failed transactions, Reserve Bank of India</a>, read 16 November 2026</li><li><a href=\"https://sbi.bank.in/documents/16012/78812/300922-FAQ+COFT+VER.pdf\" rel=\"noopener noreferrer nofollow\">FAQs on card-on-file tokenisation, State Bank of India</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian shop owner checking online payments on a laptop beside the words Payment gateway integration",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian small-business owner (woman in her 30s, saree with a cardigan) at the billing counter of a small home-goods shop, looking at a laptop showing abstract bar charts while a phone beside her shows a generic QR code and a tick icon (no readable text, no logos). Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Payment gateway integration' in very large bold black sans-serif, left-aligned, on three lines ('Payment' / 'gateway' / 'integration'). No other text, no logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of how an online payment moves from checkout to your bank account",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'How a payment reaches your bank'. Five steps left to right, each a flat icon with a dark-blue rounded label pill with white text, joined by orange arrows: 1) cart icon, pill 'Order created on server'; 2) phone with QR icon, pill 'Customer pays at checkout'; 3) shield icon, pill 'Server verifies signature'; 4) bell icon, pill 'Webhook confirms'; 5) bank icon, pill 'Settlement, e.g. T+2'. Small grey note under step 5: 'fee and GST deducted before settlement'. One-line bold takeaway at bottom: 'Mark an order paid only after your server checks it.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Screenshot of Razorpay's settlements documentation showing the T+2 standard settlement cycle",
+   "url": "https://razorpay.com/docs/payments/settlements/",
+   "annotate": [
+    {
+     "text": "The standard settlement cycle for domestic payments is T+2 working days",
+     "label": "Standard: T+2"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "infographic",
+   "alt": "Explainer of RBI's e-mandate limits and the 24-hour pre-debit notice",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'RBI rules for recurring payments'. A horizontal timeline: calendar icon with pill 'Register mandate + AFA' -> orange arrow -> bell icon with pill 'Notice 24 hours before debit' -> orange arrow -> pill 'Debit, or customer opts out'. Below the timeline, two side-by-side boxes with dark-blue pills: left pill 'Up to ₹15,000: no AFA', right pill 'Up to ₹1,00,000: insurance, mutual funds, credit card bills'. Small grey line: 'Digital Payments, E-mandate Framework, 2026 (RBI)'. One-line bold takeaway at bottom: 'Above ₹15,000, every debit needs authentication.' No logos, no other text."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Screenshot of RBI's E-mandate Framework 2026 showing the transaction limits section",
+   "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=13374",
+   "annotate": [
+    {
+     "text": "All recurring transactions may be authorised without AFA up to ₹15,000/- per transaction.",
+     "label": "₹15,000 limit"
+    },
+    {
+     "text": "at least 24 hours prior to the actual charge / debit",
+     "label": "24-hour notice"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a D2C brand owner and an accountant reconciling payments at a desk",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian D2C studio: a young brand owner in a kurta and an accountant with glasses sit at a desk with a laptop showing abstract table rows and a printed sheet with tick marks (no readable text), parcels stacked on a shelf behind, a phone showing a generic payment tick icon. No readable text on screens, no logos. Faces fully in frame."
+  }
+ ]
+}

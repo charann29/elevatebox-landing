@@ -1,0 +1,167 @@
+{
+ "slug": "design-systems-that-get-used",
+ "locale": "en",
+ "title": "Design system for startups: a small team guide",
+ "description": "How small Indian product teams build a design system that gets used: tokens, core components, WCAG 2.2 rules, Figma seat costs and a monthly check.",
+ "imageUrl": "/assets/blog/design-systems-that-get-used/cover.webp",
+ "imageAlt": "Illustration of an Indian designer and developer arranging interface components on a shared board beside the words Design systems",
+ "ogImageUrl": null,
+ "tags": [
+  "Design systems",
+  "UI design",
+  "Accessibility",
+  "Startups"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2026-03-07T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-a-design-system-is-and-what-a-small-team-actually-needs",
+   "text": "What a design system is, and what a small team actually needs",
+   "level": 2
+  },
+  {
+   "id": "the-parts-of-a-design-system-from-smallest-to-largest",
+   "text": "The parts of a design system, from smallest to largest",
+   "level": 2
+  },
+  {
+   "id": "what-the-tools-cost",
+   "text": "What the tools cost",
+   "level": 2
+  },
+  {
+   "id": "build-your-own-or-start-from-an-existing-one",
+   "text": "Build your own or start from an existing one",
+   "level": 2
+  },
+  {
+   "id": "accessibility-rules-to-build-in-from-day-one",
+   "text": "Accessibility rules to build in from day one",
+   "level": 2
+  },
+  {
+   "id": "type-scales-for-indian-languages",
+   "text": "Type scales for Indian languages",
+   "level": 2
+  },
+  {
+   "id": "how-to-build-a-design-system-that-gets-used-step-by-step",
+   "text": "How to build a design system that gets used, step by step",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-d2c-brand-with-a-store-and-a-mobile-app",
+   "text": "A D2C brand with a store and a mobile app",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-chains-patient-booking-app",
+   "text": "A clinic chain's patient booking app",
+   "level": 3
+  },
+  {
+   "id": "a-b2b-saas-startup-with-three-squads",
+   "text": "A B2B SaaS startup with three squads",
+   "level": 3
+  },
+  {
+   "id": "why-design-systems-go-unused",
+   "text": "Why design systems go unused",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-30-minute-design-system-check",
+   "text": "A monthly 30-minute design system check",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is a design system?",
+   "a": "A design system is the shared set of tokens, such as colours, font sizes and spacing, plus reusable components like buttons and inputs, and the rules for using them. Designers and developers both work from it, so screens look and behave the same across an app or website."
+  },
+  {
+   "q": "Does a small startup need a design system?",
+   "a": "It needs a small one. A short token list, the ten to fifteen components you use most, built once in code, and a one-page rule sheet are enough for one or two product teams. A full documentation website can wait until several teams share it."
+  },
+  {
+   "q": "Should a design system start in Figma or in code?",
+   "a": "In code. The code is what customers see, so put tokens and components there first and mirror them in Figma with the same names. A system that exists only in a design file tends to be rebuilt by developers slightly differently each time."
+  },
+  {
+   "q": "How much does Figma cost for a small team?",
+   "a": "Figma's pricing page showed a free Starter plan and a Professional plan at $16 a month for a Full seat, $12 for a Dev seat and $3 for a Collab seat. Professional lists team-wide design libraries, which Starter's description does not mention."
+  },
+  {
+   "q": "What contrast ratio should text have?",
+   "a": "WCAG 2.2 success criterion 1.4.3 asks for at least 4.5:1 between text and its background, with 3:1 for large text. Interface parts such as input borders and icons need at least 3:1 against adjacent colours under 1.4.11."
+  },
+  {
+   "q": "What is the minimum tap target size?",
+   "a": "WCAG 2.2 success criterion 2.5.8, Target Size (Minimum), a Level AA criterion, asks for targets of at least 24 by 24 CSS pixels, with some exceptions. Building this into the button and icon components means every screen meets it."
+  },
+  {
+   "q": "What are design tokens?",
+   "a": "Design tokens are named values, such as color-primary or spacing-4, used in place of raw numbers in both design files and code. The Design Tokens Community Group released the first stable version of its token specification, 2025.10, in October 2025."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-a-design-system-is-and-what-a-small-team-actually-needs\">What a design system is, and what a small team actually needs</h2><p><strong>In short:</strong> A design system is the shared set of colours, type, spacing and components that designers and developers both use, so every screen looks and behaves the same. A small team does not need a 200-page website for it. It needs a short list of tokens, ten to fifteen components built once in code, accessibility rules baked in, such as 4.5:1 text contrast from WCAG 2.2, and one person who owns it.</p><p>This guide was checked in November 2026, against Figma's pricing page, the W3C's WCAG 2.2, the Design Tokens Community Group and India's Guidelines for Government Websites, all read on 16 November 2026.</p><p>Most design systems I see in Indian startups and agencies fail the same way. Someone spends a month building a beautiful Figma library, the developers never use it, and six months later the app has eleven shades of blue and four different date pickers. The problem is rarely the design. It is that the system was built for the design file and not for the code.</p><h2 id=\"the-parts-of-a-design-system-from-smallest-to-largest\">The parts of a design system, from smallest to largest</h2><p>It helps to know the vocabulary before deciding how much of it you need.</p><p><em>The layers of a design system, and what a small team should build first</em></p><table><thead><tr><th>Layer</th><th>What it is</th><th>Build it first?</th></tr></thead><tbody><tr><td>Tokens</td><td>Named values: colours, font sizes, spacing, corner radius, shadows</td><td>Yes, before anything else</td></tr><tr><td>Components</td><td>Buttons, inputs, cards, dialogs, lists, built once and reused</td><td>Yes, the ten to fifteen you use most</td></tr><tr><td>Patterns</td><td>Combinations such as a login form, a checkout step, an empty state</td><td>Later, as they repeat</td></tr><tr><td>Rules</td><td>Accessibility minimums, writing style, when to use which component</td><td>Yes, a one-page version</td></tr><tr><td>Documentation site</td><td>A browsable website of all the above</td><td>Only when more than one team uses it</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.designtokens.org/\" rel=\"noopener noreferrer nofollow\"><em>Design Tokens Community Group</em></a><em> and </em><a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\"><em>W3C WCAG 2.2</em></a><em>, read 16 November 2026.</em></p><p>Tokens are the part that pays off fastest. If your brand blue is a named token, called something like color-primary, in both the Figma file and the code, changing it later is one edit. If it is a hex code typed into 300 places, it is 300 edits and some will be missed.</p><p>The Design Tokens Community Group, which <a href=\"https://www.designtokens.org/\" rel=\"noopener noreferrer nofollow\">describes itself</a> as a community of designers, developers and tooling vendors standardising how design tokens are defined and exchanged, released the first stable version of its specification, 2025.10, in October 2025. That matters for small teams because it means design tools and code tools can increasingly read the same token file, rather than someone copying values by hand.</p><figure><img src=\"/assets/blog/design-systems-that-get-used/2.webp\" alt=\"Annotated view of the Design Tokens Community Group website announcing the first stable version of the specification\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>A stable token format means design and code can share one source of values.</figcaption></figure><h2 id=\"what-the-tools-cost\">What the tools cost</h2><p>For most Indian product teams the design side lives in Figma. Its <a href=\"https://www.figma.com/pricing/\" rel=\"noopener noreferrer nofollow\">pricing page</a> showed me dollar prices per seat, with three seat types: Full for designers, Dev for developers and Collab for everyone else.</p><p><em>Figma plans and seat prices, as shown on Figma's pricing page</em></p><table><thead><tr><th>Plan</th><th>Full seat</th><th>Dev seat</th><th>Collab seat</th><th>Libraries, as described</th></tr></thead><tbody><tr><td>Starter</td><td>Free</td><td>Not listed</td><td>Not listed</td><td>UI kits and templates</td></tr><tr><td>Professional</td><td>$16 a month</td><td>$12 a month</td><td>$3 a month</td><td>Team-wide design libraries</td></tr><tr><td>Organization</td><td>$55 a month, billed annually</td><td>$25 a month</td><td>$5 a month</td><td>Shared libraries and fonts</td></tr><tr><td>Enterprise</td><td>$90 a month, billed annually</td><td>$35 a month</td><td>$5 a month</td><td>Design system theming and APIs</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.figma.com/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Figma pricing</em></a><em>, read 16 November 2026.</em></p><p>Two points for a small team. First, the plan description for Starter mentions UI kits and templates but not team libraries, which the Professional plan lists. If you want one shared component library that every file uses, budget for Professional. Second, not every developer needs a Full seat. A Dev seat costs less and is meant for people who inspect designs and pull values into code.</p><p>Count seats the way you would count any licence. A team of one designer, two developers and a founder who comments on screens is one Full seat, two Dev seats and one Collab seat on the Professional plan, which on the prices shown comes to $43 a month before tax. Giving everyone a Full seat would cost $64. The difference is small for one team and adds up as the company grows, so review seat types every quarter along with everything else.</p><p>The code side often costs nothing. Most teams build components in the framework they already use, whether that is React, Flutter or something else, and keep them in the same repository as the app.</p><h2 id=\"build-your-own-or-start-from-an-existing-one\">Build your own or start from an existing one</h2><p>A small team rarely needs to invent a design system from nothing. Most popular frameworks come with component libraries, and the platform makers publish their own design guidance for Android and iOS. Starting from one of these and changing the tokens to match your brand is often the fastest route.</p><p>I use three questions to decide.</p><p><strong>How different does the product need to look?</strong> An internal dashboard or a B2B tool can look close to a standard library and nobody minds. A consumer brand that competes on feel usually needs its own components, at least for the screens customers see most.</p><p><strong>Who will maintain it?</strong> An adopted library gets updates from its maintainers. A home-built one gets updates only when your team makes them. If you have no one to own it, adopting is safer.</p><p><strong>Does it meet the accessibility rules out of the box?</strong> Check contrast and target sizes in the library's default theme before you commit. If you then change the colours to match your brand, check again, because a brand palette can turn a passing component into a failing one.</p><p>Either way, the token layer is yours. Even an adopted library should read its colours, type and spacing from your token file, so that switching libraries later does not mean redesigning the brand.</p><h2 id=\"accessibility-rules-to-build-in-from-day-one\">Accessibility rules to build in from day one</h2><p>Accessibility is the cheapest thing to put into a design system and the most expensive thing to add later, because every screen built on bad components inherits the problem. Three rules from the W3C's <a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\">WCAG 2.2</a>, a W3C Recommendation since 12 December 2024, cover most of what a small team gets wrong:</p><ul><li><strong>Text contrast of at least 4.5:1</strong> against its background, under success criterion 1.4.3. Light grey text on white, a favourite in many startup designs, usually fails.</li><li><strong>Contrast of at least 3:1 for interface parts</strong> such as input borders, icons and focus rings, against the colours next to them, under 1.4.11.</li><li><strong>Targets of at least 24 by 24 CSS pixels</strong> for anything you tap or click, under 2.5.8 Target Size (Minimum), a Level AA criterion, with some exceptions set out in the <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html\" rel=\"noopener noreferrer nofollow\">W3C's explanation</a>.</li></ul><figure><img src=\"/assets/blog/design-systems-that-get-used/4.webp\" alt=\"Annotated view of the W3C explanation of WCAG 2.2 target size minimum showing the 24 by 24 CSS pixel rule\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The W3C's minimum target size. Build it into the button component once.</figcaption></figure><p>If you build for government clients in India, this is not optional. India's <a href=\"https://guidelines.india.gov.in/accessibility-guidelines-and-attributes/\" rel=\"noopener noreferrer nofollow\">Guidelines for Indian Government Websites and Apps</a> adopt these success criteria from WCAG 2.1, including the 4.5:1 text contrast and the 3:1 rule for interface components, and the rule that colour is not the only visual means of conveying information.</p><p>Put these into the tokens and components themselves. If the only grey text token passes 4.5:1 and the button component is never smaller than the minimum, nobody has to remember the rules screen by screen. Our post on <a href=\"/blogs/accessibility-is-cheaper-early\">why accessibility is cheaper early</a> covers the wider case.</p><figure><img src=\"/assets/blog/design-systems-that-get-used/1.webp\" alt=\"Explainer of how a small team's design system flows from tokens to components to screens\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Tokens feed components, components build screens. Change a token, and every screen follows.</figcaption></figure><h2 id=\"type-scales-for-indian-languages\">Type scales for Indian languages</h2><p>If your product runs in Hindi, Telugu, Tamil or another Indian language as well as English, the type scale needs extra care. Indian scripts often have taller marks above and below the line than Latin text, and the same sentence can run longer in one language than another.</p><p>Three habits help. Test every text component with the longest real string in each language, not with lorem ipsum. Give line height more room than an English-only design would, so marks do not clip. And pick a font family that covers every script you support at matching weights, so a Telugu heading does not look lighter than the English one beside it. Our post on <a href=\"/blogs/localisation-beyond-translation\">localisation beyond translation</a> covers the rest of the work.</p><h2 id=\"how-to-build-a-design-system-that-gets-used-step-by-step\">How to build a design system that gets used, step by step</h2><p><strong>Step 1. Audit what you already have.</strong> Take screenshots of every screen in your app or site and put them on one board. Group the buttons, the inputs, the colours and the font sizes. You will find more variations than you expect.</p><p><strong>Step 2. Pick the tokens.</strong> Reduce the variations to a short list: a handful of brand and neutral colours, five or six font sizes, a spacing scale and two or three corner radii. Check every text and background pair against 4.5:1 now.</p><p><strong>Step 3. Put the tokens in code first.</strong> Create the token file in the codebase, and mirror it as Figma variables. The code is the source of truth, because the code is what customers see.</p><p><strong>Step 4. Build the ten to fifteen components you use most.</strong> Usually button, text input, select, checkbox, card, list item, dialog, toast, tabs, top bar and empty state. Build each once in code, with its states: default, hover, pressed, disabled, error, loading.</p><p><strong>Step 5. Match them in Figma.</strong> Build the same components in the Figma library with the same names and the same states. When a designer drags in a button, it should be the button a developer can build in minutes.</p><p><strong>Step 6. Write one page of rules.</strong> Accessibility minimums, writing style, and when to use which component. One page that people read beats fifty that nobody opens.</p><p><strong>Step 7. Name an owner and a change process.</strong> One person approves new components and token changes. Anyone can propose; nobody adds a twelfth shade of blue on their own.</p><p><strong>Step 8. Replace old screens as you touch them.</strong> Do not stop feature work for a big migration. Each time a screen is changed for any reason, move it to the system components.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses and team sizes below are illustrative, made up to show the method. They are not real customers.</p><h3 id=\"a-d2c-brand-with-a-store-and-a-mobile-app\">A D2C brand with a store and a mobile app</h3><p>A brand sells through a Shopify store and a Flutter app built by different freelancers in different years. The app's buttons are rounded, the store's are square, and the brand colour is slightly different in each.</p><p>The approach: start with tokens only. One brand colour, one neutral scale, one type scale, shared between the store theme and the app. Then rebuild the five components customers touch most, the product card, add to cart button, price display, input and bottom sheet, in both. The rest can wait.</p><p>What this tells you: for a brand, consistency across channels is the main gain, and tokens deliver most of it before a single component is rebuilt.</p><h3 id=\"a-clinic-chains-patient-booking-app\">A clinic chain's patient booking app</h3><p>A chain of clinics has a patient app and a staff web dashboard, built by one small team of two developers and a part-time designer. Patients include older people, and the app has to work in English and Telugu.</p><figure><img src=\"/assets/blog/design-systems-that-get-used/3.webp\" alt=\"Illustration of a designer and developer at a clinic office comparing a phone app screen with a component sheet\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Building the component once, with large targets and readable contrast, fixes every screen that uses it.</figcaption></figure><p>The approach: accessibility rules go into the components first, with high-contrast text tokens, large tap targets and a type scale that stays readable when Telugu text runs longer than English. The same token file serves the app and the dashboard, though the dashboard gets denser spacing. Our post on <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a> covers the performance side of the same audience.</p><p>What this tells you: when your users include people with weaker eyesight or older phones, the design system is where you protect them once, instead of on every screen.</p><h3 id=\"a-b2b-saas-startup-with-three-squads\">A B2B SaaS startup with three squads</h3><p>A SaaS startup for accounting firms has grown to three small product squads, each shipping its own screens. Customers have started to notice that tables, filters and forms behave differently in each module.</p><p>The approach: this team is big enough for a proper library, with a part-time owner. The data table, filter bar and form components come first, because that is where the inconsistency hurts. A short documentation page, generated from the component code, appears only now, because three squads need a shared reference.</p><p>What this tells you: the documentation site comes last, when several teams need it. Before that, the code and a one-page rule sheet are enough.</p><h2 id=\"why-design-systems-go-unused\">Why design systems go unused</h2><p><strong>Built in Figma only.</strong> If the components do not exist in code, developers rebuild them from screenshots, slightly differently each time. Code first, then Figma.</p><p><strong>Too big on day one.</strong> Sixty components, most never used, and nobody can find the right one. Start with fifteen.</p><p><strong>No owner.</strong> Without one person to say yes or no, the system grows a new variant for every deadline.</p><p><strong>Names that differ between design and code.</strong> If the designer says primary button and the code says BtnMain, every handover becomes a translation exercise. Use the same names.</p><p><strong>Accessibility added later.</strong> Fixing contrast after 80 screens exist means 80 fixes. In the tokens, it is one.</p><p><strong>A freeze on features to migrate.</strong> Owners rarely approve a month of no new features. Migrate screens as you touch them instead.</p><p><strong>Treating it as finished.</strong> A design system is a product with users, your own team. It needs small, regular updates, not a launch and silence.</p><h2 id=\"a-monthly-30-minute-design-system-check\">A monthly 30-minute design system check</h2><p><em>A monthly check to keep a small design system alive</em></p><table><thead><tr><th>Time</th><th>What to check</th><th>What you write down</th></tr></thead><tbody><tr><td>First 10 minutes</td><td>Screens shipped this month that use one-off styles or components</td><td>Which components are missing or too hard to use</td></tr><tr><td>Next 5 minutes</td><td>New colour or font values added outside the token file</td><td>Values to fold back into tokens or remove</td></tr><tr><td>Next 5 minutes</td><td>Contrast and tap target spot-check on three new screens</td><td>Any failure against 4.5:1, 3:1 or 24 by 24 pixels</td></tr><tr><td>Next 5 minutes</td><td>Figma library against code components</td><td>Names or states that have drifted apart</td></tr><tr><td>Last 5 minutes</td><td>Requests for new components</td><td>Approve, reject, or ask for the existing one to be extended</td></tr></tbody></table><p><em>Source: </em><a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\"><em>W3C WCAG 2.2</em></a><em> and </em><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html\" rel=\"noopener noreferrer nofollow\"><em>Understanding target size (minimum), W3C</em></a><em>, read 16 November 2026.</em></p><p>If you want a design system, or the app it will serve, scoped and priced before anyone builds it, our ₹3,500 requirement analysis is a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our <a href=\"/services/ui-ux-design\">UI and UX design page</a> describes the wider work.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-a-design-system\">What is a design system?</h3><p>A design system is the shared set of tokens, such as colours, font sizes and spacing, plus reusable components like buttons and inputs, and the rules for using them. Designers and developers both work from it, so screens look and behave the same across an app or website.</p><h3 id=\"does-a-small-startup-need-a-design-system\">Does a small startup need a design system?</h3><p>It needs a small one. A short token list, the ten to fifteen components you use most, built once in code, and a one-page rule sheet are enough for one or two product teams. A full documentation website can wait until several teams share it.</p><h3 id=\"should-a-design-system-start-in-figma-or-in-code\">Should a design system start in Figma or in code?</h3><p>In code. The code is what customers see, so put tokens and components there first and mirror them in Figma with the same names. A system that exists only in a design file tends to be rebuilt by developers slightly differently each time.</p><h3 id=\"how-much-does-figma-cost-for-a-small-team\">How much does Figma cost for a small team?</h3><p>Figma's pricing page showed a free Starter plan and a Professional plan at $16 a month for a Full seat, $12 for a Dev seat and $3 for a Collab seat. Professional lists team-wide design libraries, which Starter's description does not mention.</p><h3 id=\"what-contrast-ratio-should-text-have\">What contrast ratio should text have?</h3><p>WCAG 2.2 success criterion 1.4.3 asks for at least 4.5:1 between text and its background, with 3:1 for large text. Interface parts such as input borders and icons need at least 3:1 against adjacent colours under 1.4.11.</p><h3 id=\"what-is-the-minimum-tap-target-size\">What is the minimum tap target size?</h3><p>WCAG 2.2 success criterion 2.5.8, Target Size (Minimum), a Level AA criterion, asks for targets of at least 24 by 24 CSS pixels, with some exceptions. Building this into the button and icon components means every screen meets it.</p><h3 id=\"what-are-design-tokens\">What are design tokens?</h3><p>Design tokens are named values, such as color-primary or spacing-4, used in place of raw numbers in both design files and code. The Design Tokens Community Group released the first stable version of its token specification, 2025.10, in October 2025.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://www.figma.com/pricing/\" rel=\"noopener noreferrer nofollow\">Figma pricing, Figma</a>, read 16 November 2026</li><li><a href=\"https://www.designtokens.org/\" rel=\"noopener noreferrer nofollow\">Design Tokens Community Group, W3C Community Group</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\">Web Content Accessibility Guidelines (WCAG) 2.2, W3C</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html\" rel=\"noopener noreferrer nofollow\">Understanding SC 2.5.8 Target Size (Minimum), W3C</a>, read 16 November 2026</li><li><a href=\"https://guidelines.india.gov.in/accessibility-guidelines-and-attributes/\" rel=\"noopener noreferrer nofollow\">Accessibility guidelines and attributes, Guidelines for Indian Government Websites and Apps</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian designer and developer arranging interface components on a shared board beside the words Design systems",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of a small Indian product team: a young woman designer with a stylus and a young man developer with a laptop, standing at a large board covered in abstract interface pieces (rounded buttons, toggles, cards, colour swatches) arranged in neat rows. No readable text, no logos. Terracotta, mustard and sage palette, soft shadows, faces fully in frame. Right half: the title text 'Design systems' in very large bold black sans-serif, left-aligned, on two lines ('Design' / 'systems'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Explainer of how a small team's design system flows from tokens to components to screens",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Tokens, then components, then screens'. A left-to-right flow of three dark-blue rounded pills with white text, joined by orange arrows, each with a flat icon above: 1) colour swatch icon, pill 'Tokens', small grey note 'Colours, type, spacing'; 2) button and toggle icon, pill 'Components', note 'Built once in code'; 3) phone and laptop icon, pill 'Screens', note 'Built from components'. Under the flow, a small row of three pills: 'Text contrast 4.5:1', 'UI contrast 3:1', 'Targets 24 x 24 px'. One-line bold takeaway at bottom: 'Change one token, every screen follows.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Design Tokens Community Group website announcing the first stable version of the specification",
+   "url": "https://www.designtokens.org/",
+   "annotate": [
+    {
+     "text": "First stable version 2025.10 now available",
+     "label": "Stable since Oct 2025"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a designer and developer at a clinic office comparing a phone app screen with a component sheet",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small office attached to an Indian clinic: a woman designer holding up a phone showing an abstract booking screen with large rounded buttons, a male developer at a monitor showing an abstract grid of component shapes, a framed abstract poster of a stethoscope on the wall. Screens show only abstract shapes, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the W3C explanation of WCAG 2.2 target size minimum showing the 24 by 24 CSS pixel rule",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+   "annotate": [
+    {
+     "text": "at least 24 by 24 CSS pixels",
+     "label": "Minimum tap target"
+    }
+   ]
+  }
+ ]
+}

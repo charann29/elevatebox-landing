@@ -1,0 +1,206 @@
+{
+ "slug": "flutter-vs-react-native",
+ "locale": "en",
+ "title": "Flutter vs React Native in 2026: which to choose",
+ "description": "Flutter vs React Native in 2026 for Indian businesses: versions, Impeller, the New Architecture, hiring pool, app size, web, desktop and a decision table.",
+ "imageUrl": "/assets/blog/flutter-vs-react-native/cover.webp",
+ "imageAlt": "Illustration of an Indian founder weighing two phone prototypes beside the words Flutter vs React Native",
+ "ogImageUrl": null,
+ "tags": [
+  "Flutter",
+  "React Native",
+  "cross-platform apps",
+  "app development"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-07-18T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "flutter-vs-react-native-in-2026-the-short-answer",
+   "text": "Flutter vs React Native in 2026: the short answer",
+   "level": 2
+  },
+  {
+   "id": "where-each-one-stands-in-november-2026",
+   "text": "Where each one stands in November 2026",
+   "level": 2
+  },
+  {
+   "id": "how-they-work-impeller-and-the-new-architecture",
+   "text": "How they work: Impeller and the New Architecture",
+   "level": 2
+  },
+  {
+   "id": "flutter-and-impeller",
+   "text": "Flutter and Impeller",
+   "level": 3
+  },
+  {
+   "id": "react-natives-new-architecture",
+   "text": "React Native's New Architecture",
+   "level": 3
+  },
+  {
+   "id": "performance-what-actually-differs",
+   "text": "Performance: what actually differs",
+   "level": 2
+  },
+  {
+   "id": "hiring-in-india-the-developer-pool",
+   "text": "Hiring in India: the developer pool",
+   "level": 2
+  },
+  {
+   "id": "app-size",
+   "text": "App size",
+   "level": 2
+  },
+  {
+   "id": "web-and-desktop-support",
+   "text": "Web and desktop support",
+   "level": 2
+  },
+  {
+   "id": "who-uses-each",
+   "text": "Who uses each",
+   "level": 2
+  },
+  {
+   "id": "decision-table",
+   "text": "Decision table",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-making-the-choice-for-your-app",
+   "text": "Step by step: making the choice for your app",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-diagnostic-lab-with-patient-and-staff-apps",
+   "text": "A diagnostic lab with patient and staff apps",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-with-a-react-website",
+   "text": "A D2C brand with a React website",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-with-a-tight-budget",
+   "text": "A coaching institute with a tight budget",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes",
+   "text": "Common mistakes",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-sign-off-on-a-framework",
+   "text": "A checklist before you sign off on a framework",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is Flutter or React Native better in 2026?",
+   "a": "Neither is better for every app. Flutter suits teams that want identical apps on mobile, web and desktop from one codebase. React Native suits teams that already write JavaScript or React, or want native platform controls. The developers you can hire usually decide it."
+  },
+  {
+   "q": "Which is faster, Flutter or React Native?",
+   "a": "Both rebuilt their internals recently. Flutter's Impeller precompiles shaders to avoid first-run stutter, and React Native's New Architecture replaced the old bridge with JSI. For a typical business app, test both on your customers' cheapest phone rather than trusting a benchmark."
+  },
+  {
+   "q": "What are the latest versions of Flutter and React Native?",
+   "a": "When I checked on 16 November 2026, Flutter 3.50 had been announced on 11 November 2026 with Dart 3.14, and React Native 0.88 had been announced on 19 October 2026, with 0.89 scheduled for December."
+  },
+  {
+   "q": "Is it easier to hire Flutter or React Native developers in India?",
+   "a": "Stack Overflow's 2024 survey shows similar shares for the two frameworks, about 9% each, but JavaScript is used by about ten times as many respondents as Dart. React Native can draw on web developers who know React. Check local job portals before deciding."
+  },
+  {
+   "q": "Can Flutter and React Native build web and desktop apps?",
+   "a": "Flutter officially supports web, Windows, macOS and Linux from the same codebase. React Native's core targets Android and iOS; Windows and macOS are maintained by Microsoft, and web through the React Native Web project."
+  },
+  {
+   "q": "Which big apps use Flutter and React Native?",
+   "a": "Flutter's showcase lists Google Pay, Dream11, NotebookLM, BMW and Toyota. React Native's showcase lists Facebook, Instagram, Microsoft Office, Amazon Shopping and Flipkart."
+  },
+  {
+   "q": "Does Flutter make apps bigger?",
+   "a": "Flutter's FAQ says its engine adds a few megabytes compressed, and most of an app's size comes from assets, fonts and packages. Build a release version and check the size Google Play reports, rather than relying on general claims."
+  }
+ ],
+ "contentHtml": "<h2 id=\"flutter-vs-react-native-in-2026-the-short-answer\">Flutter vs React Native in 2026: the short answer</h2><p><strong>In short:</strong> Both are mature, both are free, and either can build a good app for an Indian business. Choose Flutter when you want one team to ship pixel-identical apps on Android, iOS, web and desktop from one codebase. Choose React Native when your team already writes JavaScript or TypeScript, or when you want the app to use each platform's own native controls.</p><p>The difference in 2026 is not \"which one is faster\". Both rebuilt their insides in the last few years: Flutter with its Impeller rendering engine, React Native with its New Architecture. What decides it for most businesses is the team you can hire and keep, the platforms you need beyond the phone, and what your existing developers already know.</p><p>This guide was checked in November 2026, against the Flutter 3.50 announcement of 11 November 2026, the React Native 0.88 announcement of 19 October 2026, both projects' documentation and showcases, and the Stack Overflow Developer Survey. Both projects release every few months, so check the version numbers before you plan a build.</p><h2 id=\"where-each-one-stands-in-november-2026\">Where each one stands in November 2026</h2><p>Before the opinions, the facts from each project's own pages.</p><p><em>Flutter and React Native side by side, from official documentation</em></p><table><thead><tr><th></th><th>Flutter</th><th>React Native</th></tr></thead><tbody><tr><td>Latest release</td><td>3.50, announced 11 November 2026, with Dart 3.14</td><td>0.88, announced 19 October 2026</td></tr><tr><td>Language</td><td>Dart (framework); engine in C and C++</td><td>JavaScript or TypeScript, with React</td></tr><tr><td>How the UI is drawn</td><td>Its own engine draws every widget; it does not use the platform's widgets</td><td>Renders the platform's own native views</td></tr><tr><td>Engine or architecture</td><td>Impeller: the only renderer on iOS, default on Android API 29+, default on desktop since 3.47</td><td>New Architecture, on by default since 0.76; the old bridge replaced by JSI</td></tr><tr><td>Official targets</td><td>Android, iOS, web, Windows, macOS, Linux</td><td>Android and iOS; Windows and macOS maintained by Microsoft; web and others by partners</td></tr><tr><td>Minimum phones</td><td>Android 24 and up (Android 7), iOS 15 and up</td><td>Since 0.76: Android SDK 24, iOS 15.1</td></tr></tbody></table><p><em>Source: </em><a href=\"https://flutter.dev/blog/whats-new-in-flutter-3-50\" rel=\"noopener noreferrer nofollow\"><em>What's new in Flutter 3.50</em></a><em> and </em><a href=\"https://docs.flutter.dev/resources/faq\" rel=\"noopener noreferrer nofollow\"><em>Flutter FAQ</em></a><em> and </em><a href=\"https://docs.flutter.dev/perf/impeller\" rel=\"noopener noreferrer nofollow\"><em>Impeller docs</em></a><em> and </em><a href=\"https://docs.flutter.dev/reference/supported-platforms\" rel=\"noopener noreferrer nofollow\"><em>Flutter supported platforms</em></a><em> and </em><a href=\"https://reactnative.dev/blog/2026/10/19/react-native-0.88\" rel=\"noopener noreferrer nofollow\"><em>React Native 0.88</em></a><em> and </em><a href=\"https://reactnative.dev/releases/overview\" rel=\"noopener noreferrer nofollow\"><em>React Native releases overview</em></a><em> and </em><a href=\"https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture\" rel=\"noopener noreferrer nofollow\"><em>React Native 0.76</em></a><em> and </em><a href=\"https://reactnative.dev/docs/out-of-tree-platforms\" rel=\"noopener noreferrer nofollow\"><em>Out-of-tree platforms</em></a><em>, read 16 November 2026.</em></p><p>Two things matter more than they look. \"How the UI is drawn\" decides whether your app looks identical everywhere (Flutter) or looks like each platform (React Native). And upgrades: React Native maintains only the latest 3 minor series, and its releases page lists 0.88 and 0.87 as active and 0.86 at end of cycle, so an app left alone for a year falls out of support.</p><h2 id=\"how-they-work-impeller-and-the-new-architecture\">How they work: Impeller and the New Architecture</h2><h3 id=\"flutter-and-impeller\">Flutter and Impeller</h3><p>Flutter draws its own interface. Its FAQ says it \"doesn't rely on web browser views or system-provided platform widgets\" and renders its UI with its own engine, Impeller. That is why a Flutter screen looks the same on a budget Android phone and an iPhone.</p><p>Impeller exists to fix one old complaint: stutter the first time an animation runs, caused by shaders compiling at runtime. The <a href=\"https://docs.flutter.dev/perf/impeller\" rel=\"noopener noreferrer nofollow\">Impeller documentation</a> says it \"compiles all shaders and reflection offline at build time\" and builds its pipeline state up front. Today it is the only renderer on iOS, the default on Android API 29 and above (older or non-Vulkan phones fall back to OpenGL), and the default on Windows, macOS and Linux since Flutter 3.47. Flutter on the web still uses Skia.</p><figure><img src=\"/assets/blog/flutter-vs-react-native/1.webp\" alt=\"Annotated Flutter documentation page showing where Impeller is enabled by default\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Flutter's Impeller page: iOS only, Android API 29+ by default, desktop since 3.47.</figcaption></figure><p>Flutter 3.50 itself made <a href=\"https://flutter.dev/blog/whats-new-in-flutter-3-50\" rel=\"noopener noreferrer nofollow\">direct native interop stable</a>, so Dart code can call platform APIs directly, and sped up WebAssembly builds on Safari and Firefox.</p><h3 id=\"react-natives-new-architecture\">React Native's New Architecture</h3><p>React Native takes the opposite approach: your JavaScript describes the screen, and React Native renders real native views. The old design passed messages over an asynchronous bridge. The <a href=\"https://reactnative.dev/architecture/landing-page\" rel=\"noopener noreferrer nofollow\">New Architecture</a> \"removes the asynchronous bridge between JavaScript and native and replaces it with JavaScript Interface (JSI)\", which lets JavaScript hold references to native objects and call them without serialising data.</p><p>Two practical gains follow. Layout can be measured and applied in a single commit, so screens no longer \"jump\". And React's concurrent features, such as Suspense and Transitions, work in React Native as they do on the web. The New Architecture has been the default since 0.76 in October 2024. In 0.88, the legacy path still exists only behind an internal flag and the team says it expects to remove it.</p><p>How you start a React Native project has also changed. The <a href=\"https://reactnative.dev/docs/environment-setup\" rel=\"noopener noreferrer nofollow\">getting started guide</a> now says that for a new app \"we recommend using a Framework\", and names Expo, which provides file-based routing, a standard library of native modules and plugins that change native code without managing native files yourself. Expo projects get React Native 0.88 through Expo SDK 58. In practice, most new React Native apps in 2026 start as Expo apps.</p><p>Flutter's 3.50 release also moved its Android defaults: new projects target and compile against API 36, keep a minimum SDK of API 24, and need at least Java 17. None of that changes what your users see, but it is a sign of how often both toolchains move, and why an app nobody touches for a year becomes harder to update.</p><figure><img src=\"/assets/blog/flutter-vs-react-native/2.webp\" alt=\"Infographic comparing how Flutter and React Native put pixels on screen\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Flutter paints its own widgets; React Native drives the platform's native views.</figcaption></figure><figure><img src=\"/assets/blog/flutter-vs-react-native/4.webp\" alt=\"Annotated React Native releases overview showing active versions and the support policy\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>React Native maintains only the latest three minor series, so plan upgrades.</figcaption></figure><h2 id=\"performance-what-actually-differs\">Performance: what actually differs</h2><p>I have not found an independent, current benchmark I would trust for a business decision, so I will not quote one. What the official documents do say:</p><ul><li><strong>Flutter's first-run animations.</strong> Precompiled shaders in Impeller remove the main cause of first-run stutter on iOS and modern Android.</li><li><strong>React Native's interop.</strong> JSI removes the serialisation cost of the old bridge, which used to slow screens that move a lot of data between JavaScript and native code.</li><li><strong>Size and startup.</strong> React Native's 0.76 post reported that, in the team's benchmarks, app size fell by about 3.8 MB (20%) and median startup time by about 15 ms (8%).</li></ul><p>For Indian users, the phone matters more than the framework. Many of your customers use budget Android phones. Flutter's Impeller needs Android API 29 and Vulkan; below that it uses OpenGL. Test on the cheapest phone your customers actually own, not on the developer's flagship. Our guide on <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a> covers what to test.</p><h2 id=\"hiring-in-india-the-developer-pool\">Hiring in India: the developer pool</h2><p>The framework you choose is also the job advert you will post for years. The most recent survey figures I could find that ask about both frameworks in the same question come from Stack Overflow's 2024 Developer Survey.</p><p><em>Share of developers who said they worked with each technology in the past year, Stack Overflow 2024</em></p><table><thead><tr><th>Technology</th><th>All respondents</th><th>Professional developers</th></tr></thead><tbody><tr><td>Flutter</td><td>9.4%</td><td>9.4%</td></tr><tr><td>React Native</td><td>8.4%</td><td>9%</td></tr><tr><td>JavaScript (language)</td><td>62.3%</td><td>64.6%</td></tr><tr><td>TypeScript (language)</td><td>38.5%</td><td>43.4%</td></tr><tr><td>Dart (language)</td><td>6%</td><td>6%</td></tr></tbody></table><p><em>Source: </em><a href=\"https://survey.stackoverflow.co/2024/technology\" rel=\"noopener noreferrer nofollow\"><em>Stack Overflow Developer Survey 2024, Technology</em></a><em>, read 16 November 2026.</em></p><p>Read the framework rows as roughly level. The language rows are the real story: about ten times as many respondents had worked with JavaScript as with Dart. A React Native project can borrow from the much larger pool of web developers who already write React. A Flutter project needs people who know Dart, or are willing to learn it.</p><p>Two cautions. The survey is global and self-selected, not a census of Indian developers. And the <a href=\"https://survey.stackoverflow.co/2026/technology/data\" rel=\"noopener noreferrer nofollow\">2026 survey data page</a> I read lists Flutter only as a write-in under web frameworks and does not list React Native, so I could not get a newer like-for-like figure. Before you decide, search your city on two job portals for each framework and look at how many developers, not just jobs, are listed.</p><h2 id=\"app-size\">App size</h2><p>Both frameworks add a runtime to your app. Flutter's FAQ says the engine adds \"a small baseline footprint (a few megabytes compressed)\" and that size is mostly driven by assets, fonts and packages. It does not publish a single number for a minimal app, and neither does React Native.</p><p>The honest advice is to measure. Flutter gives you <a href=\"https://docs.flutter.dev/perf/app-size\" rel=\"noopener noreferrer nofollow\">flutter build apk --analyze-size</a> for a breakdown. For both, build a release version (debug builds are much larger) and check the download size Google Play reports. For a customer on a prepaid data pack, an extra 10 MB of images will matter far more than the framework.</p><h2 id=\"web-and-desktop-support\">Web and desktop support</h2><p>This is where the two differ most. Flutter's <a href=\"https://docs.flutter.dev/reference/supported-platforms\" rel=\"noopener noreferrer nofollow\">supported platforms page</a> lists Android, iOS, the latest two versions of Chrome, Firefox and Edge, Safari 15.6 and newer, Windows 10 and 11, macOS 12 and newer, and Debian and Ubuntu Linux. They are all maintained by the Flutter team.</p><p>React Native's core targets are Android and iOS. Its <a href=\"https://reactnative.dev/docs/out-of-tree-platforms\" rel=\"noopener noreferrer nofollow\">out-of-tree platforms page</a> lists Windows and macOS maintained by Microsoft, visionOS by Callstack, tvOS by a community project, and React Native Web by an independent maintainer. They work, and large apps use them, but you are depending on more than one team.</p><p>If you need a customer app and a desktop tool for staff from one codebase, Flutter is the simpler path. If your web presence is already a React site, React Native lets that team share knowledge and some code.</p><h2 id=\"who-uses-each\">Who uses each</h2><p>From each project's own showcase. These are claims by the projects, but they are public and specific. Flutter's <a href=\"https://flutter.dev/showcase\" rel=\"noopener noreferrer nofollow\">showcase</a> includes Google Pay, NotebookLM, BMW, Toyota, PUBG MOBILE, Zoho Tables and Dream11, described as \"supporting 50 million fantasy sports users in India\". React Native's <a href=\"https://reactnative.dev/showcase\" rel=\"noopener noreferrer nofollow\">showcase</a> includes Facebook, Instagram, Microsoft Office, Outlook and Teams, Amazon Shopping, Discord, Coinbase and Flipkart.</p><p>Both lists include Indian apps at very large scale. Neither framework will be the reason a small business app fails.</p><h2 id=\"decision-table\">Decision table</h2><p><em>Which to choose, by situation</em></p><table><thead><tr><th>If this is true for you</th><th>Lean towards</th><th>Why</th></tr></thead><tbody><tr><td>Your developers already write React for your website</td><td>React Native</td><td>Same language and concepts, larger hiring pool</td></tr><tr><td>You need Android, iOS and a desktop or web app from one codebase</td><td>Flutter</td><td>All six targets are maintained by one team</td></tr><tr><td>You want the app to look exactly the same on every phone</td><td>Flutter</td><td>It draws its own widgets</td></tr><tr><td>You want each platform's native look and controls</td><td>React Native</td><td>It renders native views</td></tr><tr><td>You are starting with no team and hiring freelancers</td><td>Either; check local supply first</td><td>The pool, not the framework, will limit you</td></tr><tr><td>You will not budget for regular upgrades</td><td>Neither, until you do</td><td>React Native supports only the latest 3 minor series; Flutter also moves fast</td></tr></tbody></table><p><em>Source: </em><a href=\"https://docs.flutter.dev/reference/supported-platforms\" rel=\"noopener noreferrer nofollow\"><em>Flutter supported platforms</em></a><em> and </em><a href=\"https://reactnative.dev/releases/overview\" rel=\"noopener noreferrer nofollow\"><em>React Native releases overview</em></a><em> and </em><a href=\"https://survey.stackoverflow.co/2024/technology\" rel=\"noopener noreferrer nofollow\"><em>Stack Overflow 2024</em></a><em>, read 16 November 2026.</em></p><h2 id=\"step-by-step-making-the-choice-for-your-app\">Step by step: making the choice for your app</h2><figure><img src=\"/assets/blog/flutter-vs-react-native/5.webp\" alt=\"Infographic of the six questions to ask before choosing Flutter or React Native\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Answer these six before anyone names a framework.</figcaption></figure><p><strong>Step 1. List every screen and every platform.</strong> Phone only, or also a web dashboard, a staff tablet, a Windows billing counter? Write it down before anyone says a framework's name.</p><p><strong>Step 2. List the phone features you need.</strong> Camera, Bluetooth printers, payment SDKs, maps, background location. Check each one has a maintained package for both frameworks, and read the last-updated date.</p><p><strong>Step 3. Look at the team you already have.</strong> In-house web developers using React tilt you to React Native. No team at all means the next step decides.</p><p><strong>Step 4. Check the hiring pool where you are.</strong> Search job portals for each framework in your city. Count candidates, not openings.</p><p><strong>Step 5. Build one hard screen as a test.</strong> The screen with the long list, the map or the camera. Run it on your customers' cheapest phone.</p><p><strong>Step 6. Plan upgrades from day one.</strong> Budget time every quarter to move to a supported version. Our guide to <a href=\"/blogs/app-maintenance-budget\">app maintenance budgets</a> covers what to set aside.</p><p>If you want this worked through with a written answer, our ₹3,500 requirement analysis is a call with the people who will build it that ends in a fixed quotation and timeline, including the framework choice and why (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name either way.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These businesses are illustrative, not clients.</p><h3 id=\"a-diagnostic-lab-with-patient-and-staff-apps\">A diagnostic lab with patient and staff apps</h3><p>A lab in Hyderabad wants a patient app for booking home collection, and a Windows app at the front desk for staff. One codebase for both is the deciding factor, so I would lean to Flutter. I would test report PDFs and the login flow on a low-cost Android phone first.</p><figure><img src=\"/assets/blog/flutter-vs-react-native/3.webp\" alt=\"Illustration of a diagnostic lab receptionist using a desktop app while a patient books on a phone\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>One codebase for a patient app and a front-desk desktop app is where Flutter shines.</figcaption></figure><h3 id=\"a-d2c-brand-with-a-react-website\">A D2C brand with a React website</h3><p>A skincare brand already has a React-based storefront and two in-house web developers. React Native lets those developers work on the app too, and shares concepts like components and state with the site. I would lean to React Native, started with Expo as the React Native docs recommend.</p><h3 id=\"a-coaching-institute-with-a-tight-budget\">A coaching institute with a tight budget</h3><p>An institute wants timed tests on Android and iOS, and has no developers. Here neither framework wins on paper. I would ask two or three local firms or freelancers which they have shipped live apps in, install those apps, and choose the framework the best of them already knows. Our <a href=\"/flutter-app-development-company-hyderabad\">Flutter app development</a> page covers how we approach Flutter builds.</p><h2 id=\"common-mistakes\">Common mistakes</h2><ol><li><strong>Choosing on an old benchmark.</strong> Articles comparing Flutter's old Skia renderer with React Native's old bridge describe apps that no longer exist.</li><li><strong>Ignoring the language.</strong> The framework is the smaller decision. Dart versus JavaScript decides who you can hire.</li><li><strong>Testing on a flagship phone.</strong> Your customers' phones are the test that counts.</li><li><strong>Assuming desktop and web are equal on both.</strong> On Flutter they are first-party. On React Native they depend on partner projects.</li><li><strong>Skipping upgrades.</strong> An app two versions behind becomes an expensive rescue job later.</li><li><strong>Letting the agency's preference decide silently.</strong> Ask why they recommend one, and what they would lose with the other.</li></ol><h2 id=\"a-checklist-before-you-sign-off-on-a-framework\">A checklist before you sign off on a framework</h2><ol><li>Every platform you need in the next two years is officially supported or backed by a named maintainer.</li><li>Each phone feature you need has a package updated in the last six months.</li><li>You have found at least three developers in your city who have shipped live apps in it.</li><li>The hard screen runs smoothly on your customers' cheapest phone.</li><li>There is a written upgrade plan and someone owns it.</li><li>The code repository, app store accounts and cloud are in your company's name.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-flutter-or-react-native-better-in-2026\">Is Flutter or React Native better in 2026?</h3><p>Neither is better for every app. Flutter suits teams that want identical apps on mobile, web and desktop from one codebase. React Native suits teams that already write JavaScript or React, or want native platform controls. The developers you can hire usually decide it.</p><h3 id=\"which-is-faster-flutter-or-react-native\">Which is faster, Flutter or React Native?</h3><p>Both rebuilt their internals recently. Flutter's Impeller precompiles shaders to avoid first-run stutter, and React Native's New Architecture replaced the old bridge with JSI. For a typical business app, test both on your customers' cheapest phone rather than trusting a benchmark.</p><h3 id=\"what-are-the-latest-versions-of-flutter-and-react-native\">What are the latest versions of Flutter and React Native?</h3><p>When I checked on 16 November 2026, Flutter 3.50 had been announced on 11 November 2026 with Dart 3.14, and React Native 0.88 had been announced on 19 October 2026, with 0.89 scheduled for December.</p><h3 id=\"is-it-easier-to-hire-flutter-or-react-native-developers-in-india\">Is it easier to hire Flutter or React Native developers in India?</h3><p>Stack Overflow's 2024 survey shows similar shares for the two frameworks, about 9% each, but JavaScript is used by about ten times as many respondents as Dart. React Native can draw on web developers who know React. Check local job portals before deciding.</p><h3 id=\"can-flutter-and-react-native-build-web-and-desktop-apps\">Can Flutter and React Native build web and desktop apps?</h3><p>Flutter officially supports web, Windows, macOS and Linux from the same codebase. React Native's core targets Android and iOS; Windows and macOS are maintained by Microsoft, and web through the React Native Web project.</p><h3 id=\"which-big-apps-use-flutter-and-react-native\">Which big apps use Flutter and React Native?</h3><p>Flutter's showcase lists Google Pay, Dream11, NotebookLM, BMW and Toyota. React Native's showcase lists Facebook, Instagram, Microsoft Office, Amazon Shopping and Flipkart.</p><h3 id=\"does-flutter-make-apps-bigger\">Does Flutter make apps bigger?</h3><p>Flutter's FAQ says its engine adds a few megabytes compressed, and most of an app's size comes from assets, fonts and packages. Build a release version and check the size Google Play reports, rather than relying on general claims.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://flutter.dev/blog/whats-new-in-flutter-3-50\" rel=\"noopener noreferrer nofollow\">What's new in Flutter 3.50, Flutter blog</a>, read 16 November 2026</li><li><a href=\"https://docs.flutter.dev/release/release-notes\" rel=\"noopener noreferrer nofollow\">Flutter release notes, Flutter docs</a>, read 16 November 2026</li><li><a href=\"https://docs.flutter.dev/perf/impeller\" rel=\"noopener noreferrer nofollow\">Impeller rendering engine, Flutter docs</a>, read 16 November 2026</li><li><a href=\"https://docs.flutter.dev/resources/faq\" rel=\"noopener noreferrer nofollow\">FAQ, Flutter docs</a>, read 16 November 2026</li><li><a href=\"https://docs.flutter.dev/perf/app-size\" rel=\"noopener noreferrer nofollow\">Measuring your app's size, Flutter docs</a>, read 16 November 2026</li><li><a href=\"https://docs.flutter.dev/reference/supported-platforms\" rel=\"noopener noreferrer nofollow\">Supported deployment platforms, Flutter docs</a>, read 16 November 2026</li><li><a href=\"https://flutter.dev/showcase\" rel=\"noopener noreferrer nofollow\">Showcase, Flutter</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/blog/2026/10/19/react-native-0.88\" rel=\"noopener noreferrer nofollow\">React Native 0.88, React Native blog</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/releases/overview\" rel=\"noopener noreferrer nofollow\">Releases overview, React Native</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/architecture/landing-page\" rel=\"noopener noreferrer nofollow\">About the New Architecture, React Native</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture\" rel=\"noopener noreferrer nofollow\">React Native 0.76: New Architecture by default, React Native blog</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/docs/environment-setup\" rel=\"noopener noreferrer nofollow\">Get started with React Native, React Native docs</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/docs/out-of-tree-platforms\" rel=\"noopener noreferrer nofollow\">Out-of-tree platforms, React Native docs</a>, read 16 November 2026</li><li><a href=\"https://reactnative.dev/showcase\" rel=\"noopener noreferrer nofollow\">Showcase, React Native</a>, read 16 November 2026</li><li><a href=\"https://survey.stackoverflow.co/2024/technology\" rel=\"noopener noreferrer nofollow\">2024 Developer Survey: Technology, Stack Overflow</a>, read 16 November 2026</li><li><a href=\"https://survey.stackoverflow.co/2026/technology/data\" rel=\"noopener noreferrer nofollow\">2026 Developer Survey: Technology data, Stack Overflow</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian founder weighing two phone prototypes beside the words Flutter vs React Native",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of a young Indian founder (woman in her late 20s, kurta and cardigan) at a co-working desk, holding two smartphones side by side, one showing abstract rounded blocks and the other abstract native-style list rows (no readable text, no logos), a laptop with abstract code lines behind her. Terracotta, mustard and sage palette, soft shadows, face fully in frame. Right half: the title text 'Flutter vs React Native' in very large bold black sans-serif, left-aligned, on two lines ('Flutter vs' / 'React Native'). No other text, no Flutter or React logos."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated Flutter documentation page showing where Impeller is enabled by default",
+   "url": "https://docs.flutter.dev/perf/impeller",
+   "annotate": [
+    {
+     "text": "only supported",
+     "label": "iOS: Impeller only"
+    },
+    {
+     "text": "available and enabled by default on Android API 29+",
+     "label": "Android default"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic comparing how Flutter and React Native put pixels on screen",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'How each one draws your app'. Two horizontal rows. Top row labelled 'Flutter': code icon with dark-blue pill 'Dart code' -> orange arrow -> engine icon with pill 'Flutter engine (Impeller)' -> orange arrow -> phone icon with pill 'Flutter draws every pixel'. Bottom row labelled 'React Native': code icon with pill 'JavaScript / TypeScript' -> orange arrow -> link icon with pill 'JSI (no bridge)' -> orange arrow -> phone icon with pill 'Native Android and iOS views'. One-line bold takeaway at bottom: 'Same look everywhere, or native look on each.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a diagnostic lab receptionist using a desktop app while a patient books on a phone",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian diagnostic lab front desk: a receptionist in a sage uniform using a desktop computer, a patient (older man) standing at the counter holding a phone, sample tubes rack and a wall clock in the background. Screens show only abstract blocks and bubbles, no readable text, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated React Native releases overview showing active versions and the support policy",
+   "url": "https://reactnative.dev/releases/overview",
+   "annotate": [
+    {
+     "text": "latest 3 minor series",
+     "label": "Support window"
+    },
+    {
+     "text": "0.88.x",
+     "label": "Current active release"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the six questions to ask before choosing Flutter or React Native",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Six questions before you pick'. Six flat icons in two rows of three, each above a dark-blue rounded label pill with white text: 1) devices icon 'Which platforms?'; 2) camera icon 'Which phone features?'; 3) people icon 'Who is on your team?'; 4) magnifier icon 'Who can you hire locally?'; 5) budget phone icon 'Smooth on a cheap phone?'; 6) calendar icon 'Who owns upgrades?'. Small orange arrows linking them in order. One-line bold takeaway at bottom: 'The team you can hire decides more than the framework.' No logos, no other text."
+  }
+ ]
+}

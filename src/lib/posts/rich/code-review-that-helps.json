@@ -1,0 +1,197 @@
+{
+ "slug": "code-review-that-helps",
+ "locale": "en",
+ "title": "Code review best practices: Google's guide and GitHub",
+ "description": "Code review best practices for Indian dev teams, from Google's eng-practices guide and GitHub Docs: small changes, one-day replies, required reviews.",
+ "imageUrl": "/assets/blog/code-review-that-helps/cover.webp",
+ "imageAlt": "Illustration of two Indian developers reviewing code together beside the words Code review that helps",
+ "ogImageUrl": null,
+ "tags": [
+  "code review",
+  "GitHub",
+  "engineering management",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-08-23T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-good-code-review-looks-like-in-one-paragraph",
+   "text": "What good code review looks like, in one paragraph",
+   "level": 2
+  },
+  {
+   "id": "the-standard-better-not-perfect",
+   "text": "The standard: better, not perfect",
+   "level": 2
+  },
+  {
+   "id": "what-the-rules-actually-say-in-one-table",
+   "text": "What the rules actually say, in one table",
+   "level": 2
+  },
+  {
+   "id": "what-a-reviewer-should-look-for",
+   "text": "What a reviewer should look for",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-setting-up-review-for-a-small-team",
+   "text": "Step by step: setting up review for a small team",
+   "level": 2
+  },
+  {
+   "id": "speed-the-part-most-teams-get-wrong",
+   "text": "Speed: the part most teams get wrong",
+   "level": 2
+  },
+  {
+   "id": "writing-comments-people-can-act-on",
+   "text": "Writing comments people can act on",
+   "level": 2
+  },
+  {
+   "id": "review-as-the-way-new-developers-learn",
+   "text": "Review as the way new developers learn",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinics-two-developer-team",
+   "text": "A clinic's two-developer team",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-with-an-outside-development-company",
+   "text": "A D2C brand with an outside development company",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institutes-team-of-eight",
+   "text": "A coaching institute's team of eight",
+   "level": 3
+  },
+  {
+   "id": "ways-code-review-goes-wrong",
+   "text": "Ways code review goes wrong",
+   "level": 2
+  },
+  {
+   "id": "if-an-outside-team-writes-your-code",
+   "text": "If an outside team writes your code",
+   "level": 2
+  },
+  {
+   "id": "a-code-review-checklist-for-your-team",
+   "text": "A code review checklist for your team",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What are code review best practices?",
+   "a": "From Google's engineering practices: approve once a change improves overall code health even if it is not perfect, keep changes small, respond within one business day, comment on the code rather than the person, and label optional comments. On GitHub, protect the main branch and require reviews."
+  },
+  {
+   "q": "How big should a pull request be?",
+   "a": "Google's guide says 100 lines is usually a reasonable size for a change and 1,000 lines is usually too large, though it is up to the reviewer's judgement. Smaller changes are reviewed faster and more thoroughly."
+  },
+  {
+   "q": "How quickly should code reviews be done?",
+   "a": "Google's guide says one business day is the maximum time it should take to respond to a review request. It also says not to interrupt focused work to review; review at a natural break instead."
+  },
+  {
+   "q": "What does Nit mean in a code review?",
+   "a": "It marks a minor point the author can choose to ignore. Google's comments guide suggests labels such as Nit, Optional or Consider, and FYI, so authors can tell required changes from suggestions."
+  },
+  {
+   "q": "How do I require code review on GitHub?",
+   "a": "Use a branch protection rule on your main branch and turn on required approving reviews before merging. You can also require review from code owners, dismiss stale approvals and require status checks to pass."
+  },
+  {
+   "q": "Is branch protection free on GitHub for private repositories?",
+   "a": "GitHub's docs say protected branches are available in public repositories on GitHub Free, and in public and private repositories on GitHub Pro, Team and Enterprise. For private company code, plan on a paid plan."
+  },
+  {
+   "q": "What is a CODEOWNERS file?",
+   "a": "A file in the .github folder, root or docs folder of a repository that names who owns which paths. GitHub then requests those people for review automatically when a pull request changes code they own."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-good-code-review-looks-like-in-one-paragraph\">What good code review looks like, in one paragraph</h2><p><strong>In short:</strong> Google's published engineering practices give the clearest standard: approve a change once it definitely improves the overall health of the code, even if it is not perfect. Keep changes small (around 100 lines is usually reasonable), respond within one business day at most, comment on the code and never the person, and label optional comments as such. On GitHub, enforce it with protected branches, required reviews and a CODEOWNERS file.</p><p>I wrote this for engineering managers, tech leads and founders in India running small teams, often with a mix of in-house developers and an outside company. It is built on two public sources: Google's code review guide, published as part of its engineering practices on GitHub, and GitHub's own documentation for pull requests and branch protection.</p><p>This guide was checked in November 2026, against Google's eng-practices pages on the review standard, speed, small changes, what to look for, writing comments, handling pushback and change descriptions, and against GitHub Docs and GitHub's pricing page.</p><h2 id=\"the-standard-better-not-perfect\">The standard: better, not perfect</h2><p>Google's guide calls this the senior principle. Reviewers should favour approving a change once it is in a state where it definitely improves the overall code health of the system, even if it is not perfect. And it says plainly that there is no such thing as perfect code, there is only better code.</p><p>This matters more in small Indian teams than it might seem. When the reviewer is the founder's most trusted senior developer and the author is a new hire six weeks into the job, review easily becomes a gate where the senior person rewrites everything in their own style. That slows the team and teaches the new hire to wait for approval rather than think. The better-not-perfect standard gives both people a shared rule.</p><figure><img src=\"/assets/blog/code-review-that-helps/1.webp\" alt=\"Annotated view of Google's code review standard page\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's code review standard: approve once the change improves code health. There is only better code.</figcaption></figure><p>The same page says that if a comment is not very important, the reviewer should prefix it with something like \"Nit:\", so the author knows it is polish they can choose to ignore.</p><h2 id=\"what-the-rules-actually-say-in-one-table\">What the rules actually say, in one table</h2><p><em>Code review rules from Google's engineering practices and GitHub's documentation</em></p><table><thead><tr><th>Topic</th><th>What the source says</th><th>Source</th></tr></thead><tbody><tr><td>When to approve</td><td>Once the change definitely improves overall code health, even if not perfect</td><td>Google, The Standard of Code Review</td></tr><tr><td>Size of a change</td><td>100 lines is usually reasonable; 1,000 lines is usually too large, at the reviewer's judgement</td><td>Google, Small CLs</td></tr><tr><td>Response time</td><td>One business day is the maximum time it should take to respond to a review request</td><td>Google, Speed of Code Reviews</td></tr><tr><td>Focused work</td><td>If you are in the middle of a focused task, do not interrupt yourself to review</td><td>Google, Speed of Code Reviews</td></tr><tr><td>Tone</td><td>Comment on the code, never on the developer</td><td>Google, How to write code review comments</td></tr><tr><td>Severity labels</td><td>Nit, Optional (or Consider), FYI</td><td>Google, How to write code review comments</td></tr><tr><td>Review outcomes on GitHub</td><td>Comment, Approve, or Request changes</td><td>GitHub Docs, About pull request reviews</td></tr><tr><td>Enforcing review</td><td>Protected branches can require a set number of approving reviews before merging</td><td>GitHub Docs, About protected branches</td></tr><tr><td>Automatic reviewers</td><td>Code owners are requested for review automatically when a pull request touches code they own</td><td>GitHub Docs, About code owners</td></tr></tbody></table><p><em>Source: </em><a href=\"https://google.github.io/eng-practices/review/reviewer/standard.html\" rel=\"noopener noreferrer nofollow\"><em>Google eng-practices</em></a><em> and </em><a href=\"https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews\" rel=\"noopener noreferrer nofollow\"><em>GitHub Docs, pull request reviews</em></a><em> and </em><a href=\"https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches\" rel=\"noopener noreferrer nofollow\"><em>GitHub Docs, protected branches</em></a><em> and </em><a href=\"https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners\" rel=\"noopener noreferrer nofollow\"><em>GitHub Docs, code owners</em></a><em>, read 16 November 2026.</em></p><h2 id=\"what-a-reviewer-should-look-for\">What a reviewer should look for</h2><p>Google's \"What to look for\" page lists the areas in order: design, functionality, complexity, tests, naming, comments, style, consistency and documentation. It also asks reviewers to look at every line they were asked to review, to consider the change in the context of the whole file and system, and to point out good things, not just problems.</p><p>For a small product team, I would collapse that into four questions a reviewer answers on every pull request:</p><ul><li><strong>Does it do what the ticket says, for the user?</strong> Including the unhappy paths: payment failed, OTP late, network gone.</li><li><strong>Is it the simplest design that works?</strong> Google's complexity check asks whether a change is more complex than it should be, including code built for needs nobody has yet.</li><li><strong>Will we know if it breaks?</strong> Tests for the logic, and logs or alerts for anything touching money or personal data.</li><li><strong>Can the next person read it?</strong> Names, comments that explain why, and docs updated if behaviour changed.</li></ul><p>Style should mostly be the job of a formatter and a linter in the build, not of a person. Every style comment a tool could have made is review time not spent on design and behaviour.</p><h2 id=\"step-by-step-setting-up-review-for-a-small-team\">Step by step: setting up review for a small team</h2><p>Here is the setup I would put in place for a team of two to fifteen developers on GitHub.</p><p><strong>Step 1. Put the repository in the company's name.</strong> A GitHub organisation owned by the business, with developers, in-house or outside, added as members. Review rules are worth little if the code sits in a contractor's personal account.</p><p><strong>Step 2. Protect the main branch.</strong> GitHub lets repository administrators require a specific number of approving reviews before a pull request merges into a protected branch. Start with one. Also turn on required status checks, so the build and tests must pass before merging.</p><p><strong>Step 3. Check your plan.</strong> GitHub's docs say protected branches are available in public repositories on GitHub Free, and in public and private repositories on GitHub Pro, Team and Enterprise. Most company code is private, so a team plan is usually needed. GitHub's pricing page listed Team at $4 per user per month when I checked.</p><p><strong>Step 4. Add a CODEOWNERS file.</strong> Put it in the .github folder, the repository root or the docs folder. Name who owns payments, authentication and infrastructure, and those people are requested for review automatically. You can then require review from code owners in the branch protection rule.</p><p><strong>Step 5. Dismiss stale approvals.</strong> GitHub can dismiss an approval when new commits change the diff, and can require that the most recent push is approved by someone other than the person who pushed it. Both stop \"approved, then quietly changed\" merges.</p><p><strong>Step 6. Agree a size limit and a response time.</strong> Write down Google's numbers as your starting point: aim for changes around 100 lines, treat 1,000 as too large, and respond within one business day.</p><p><strong>Step 7. Adopt comment labels.</strong> Nit, Optional and FYI, from Google's comments guide. Anything unlabelled is a required change. This one habit removes most review arguments.</p><p><strong>Step 8. Write a good description on every pull request.</strong> Google's guide on change descriptions asks for a first line that summarises what is being done, followed by a body that explains the problem and why this is the approach. The description is the first thing the reviewer reads.</p><figure><img src=\"/assets/blog/code-review-that-helps/2.webp\" alt=\"Infographic of an eight-step code review setup for a small team on GitHub\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Most of a good review process is settings and habits, set up once.</figcaption></figure><figure><img src=\"/assets/blog/code-review-that-helps/3.webp\" alt=\"Annotated view of GitHub Docs on protected branches and required reviews\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>GitHub's protected branches: require approving reviews before a pull request can merge.</figcaption></figure><h2 id=\"speed-the-part-most-teams-get-wrong\">Speed: the part most teams get wrong</h2><p>Google's speed page explains its reasoning: Google optimises for the speed at which a team of developers can produce a product together, not for how fast one developer writes code. A change waiting three days for review blocks its author, and usually the next change too.</p><p>The guide's rule is one business day at most. It also says not to interrupt focused work to review: finish the task, then review at a natural break, such as after lunch or a meeting. In practice, two review windows a day, late morning and late afternoon, meet the one-day rule without breaking anyone's concentration.</p><p>Small changes are what make that speed possible. Google's small CLs page lists the benefits: reviewed more quickly, reviewed more thoroughly, less likely to introduce bugs, less wasted work if rejected, easier to merge, easier to design well, less blocking on reviews and simpler to roll back. A 1,500-line pull request is not one review, it is a week of them.</p><figure><img src=\"/assets/blog/code-review-that-helps/4.webp\" alt=\"Annotated view of Google's page on the speed of code reviews\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's speed rule: one business day, at most, to respond to a review request.</figcaption></figure><h2 id=\"writing-comments-people-can-act-on\">Writing comments people can act on</h2><p>Google's comments guide has a simple rule and an example worth copying. Comment on the code, never on the developer. Its bad example is a question that implies the author was foolish to use threads. Its good example explains that the concurrency model adds complexity with no performance benefit the reviewer can see, so the code should be single-threaded.</p><p>The good version does three things: it names the problem, explains why, and says what would fix it. In mixed teams where English is a second language for some people, that clarity matters even more. A short, specific comment is less likely to be misread than a sarcastic one.</p><p>The pushback page has one more lesson for founders in a hurry. When an author says they will clean something up in a later change, Google's experience is that unless the clean-up happens immediately after, it usually never happens. If the issue is real, ask for it now, or file it as tracked work before you approve.</p><h2 id=\"review-as-the-way-new-developers-learn\">Review as the way new developers learn</h2><p>In a small company, code review is often the only structured feedback a junior developer gets. Used well, it does more for their growth than any training budget.</p><p>Google's comments guide has a useful rule here, under accepting explanations. If a reviewer asks the author to explain a piece of code they do not understand, that should usually lead to the code being rewritten more clearly, not to an explanation in the review tool that the next reader will never see. For a junior developer, that is a lesson in writing for the reader, repeated every week.</p><p>Three habits make review teach rather than grade:</p><ul><li><strong>Explain why, every time.</strong> The guide's own section is called Explain Why. \"Use a transaction here, because two writes to orders and payments can fail halfway\" teaches; \"use a transaction\" only instructs.</li><li><strong>Point out good things.</strong> Google's list of what to look for ends with good things. A specific note on a clean test or a clear name tells a new developer what to keep doing.</li><li><strong>Let juniors review seniors.</strong> They will catch less, but they learn the codebase, and seniors learn which of their own code is hard to read.</li></ul><p>If you are a team of one, you cannot get a second reviewer, but you can still review your own pull request the next morning, against the same four questions. Reading a change after a night's sleep catches more than reading it straight after writing it.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The teams and details below are illustrative, to show how the rules apply. The rules come from Google's and GitHub's documentation.</p><h3 id=\"a-clinics-two-developer-team\">A clinic's two-developer team</h3><p>Say a clinic group has two in-house developers maintaining its patient app. They push straight to main because \"there are only two of us\", and twice a change broke appointment reminders.</p><p>I would protect main with one required approval and required status checks, so each developer reviews the other. With only two people, CODEOWNERS adds little; the rule is simply that nobody merges their own work. Both developers agree to review within the day, and to keep changes small enough to review in one sitting.</p><h3 id=\"a-d2c-brand-with-an-outside-development-company\">A D2C brand with an outside development company</h3><p>Say a fashion brand's app is built by an outside company, and the brand's own new tech lead wants a say in what ships.</p><p>I would move the repository into the brand's GitHub organisation if it is not there already, and add a CODEOWNERS file naming the tech lead for the checkout and payments folders. Those changes then always request the tech lead's review, while other changes can be approved within the outside team. That is a light way to keep control of the parts where a bug costs money.</p><h3 id=\"a-coaching-institutes-team-of-eight\">A coaching institute's team of eight</h3><p>Say a coaching institute has eight developers across its website, app and test engine. Pull requests are large, sit for days, and the two seniors are bottlenecks.</p><p>I would introduce Google's size guidance, a two-window review rhythm, and the Nit, Optional and FYI labels in the same week. I would also spread review: juniors review each other's work first, and seniors are code owners only for the test engine and payments. The goal is to make a two-day wait unusual.</p><figure><img src=\"/assets/blog/code-review-that-helps/5.webp\" alt=\"Illustration of a small Indian development team discussing a pull request on a large screen\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Spread review across the team, so seniors are owners of the risky parts, not a queue for everything.</figcaption></figure><h2 id=\"ways-code-review-goes-wrong\">Ways code review goes wrong</h2><ul><li><strong>Gatekeeping for perfection.</strong> The reviewer blocks until the code matches their taste. Google's standard is better, not perfect.</li><li><strong>Rubber-stamping.</strong> Approve within seconds of a 900-line change. Required reviews do nothing if nobody reads.</li><li><strong>Style wars.</strong> Humans arguing about formatting a tool should enforce.</li><li><strong>Huge pull requests.</strong> Reviewed slowly and badly. Split them.</li><li><strong>Unlabelled comments.</strong> Every comment reads as mandatory, and authors burn time on nits.</li><li><strong>\"I'll fix it later\".</strong> Google's experience says later rarely comes.</li><li><strong>Code in a personal account.</strong> No branch protection, no audit trail, and a handover problem waiting to happen.</li></ul><p>Review culture is also a retention issue. Our post on <a href=\"/blogs/hiring-engineers-that-stay\">hiring engineers who stay</a> covers why, and <a href=\"/blogs/technical-debt-conversations\">technical debt conversations</a> covers the clean-up that review alone will not do.</p><h2 id=\"if-an-outside-team-writes-your-code\">If an outside team writes your code</h2><p>Ask any development company three things: whether every change goes through a pull request with review, whether main is protected, and whose GitHub organisation the code lives in. At ElevateBox, code, cloud and credentials stay in the client's name, so the client can see every pull request. Our ₹3,500 requirement analysis is a call with the people who will build it, ending in a written fixed quotation and timeline before any build starts (<a href=\"/book\">book here</a>).</p><h2 id=\"a-code-review-checklist-for-your-team\">A code review checklist for your team</h2><ol><li>Repository owned by the company's GitHub organisation.</li><li>Main branch protected: at least one approving review and required status checks.</li><li>Stale approvals dismissed on new commits; the last push approved by someone else.</li><li>CODEOWNERS file for payments, authentication and infrastructure.</li><li>Formatter and linter run in the build, so humans skip style.</li><li>Changes aimed at around 100 lines; anything near 1,000 split.</li><li>Every review answered within one business day, in two daily windows.</li><li>Comments about the code, with a reason and a fix.</li><li>Nit, Optional and FYI labels used; unlabelled means required.</li><li>Pull request descriptions: one-line summary, then the problem and the approach.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-are-code-review-best-practices\">What are code review best practices?</h3><p>From Google's engineering practices: approve once a change improves overall code health even if it is not perfect, keep changes small, respond within one business day, comment on the code rather than the person, and label optional comments. On GitHub, protect the main branch and require reviews.</p><h3 id=\"how-big-should-a-pull-request-be\">How big should a pull request be?</h3><p>Google's guide says 100 lines is usually a reasonable size for a change and 1,000 lines is usually too large, though it is up to the reviewer's judgement. Smaller changes are reviewed faster and more thoroughly.</p><h3 id=\"how-quickly-should-code-reviews-be-done\">How quickly should code reviews be done?</h3><p>Google's guide says one business day is the maximum time it should take to respond to a review request. It also says not to interrupt focused work to review; review at a natural break instead.</p><h3 id=\"what-does-nit-mean-in-a-code-review\">What does Nit mean in a code review?</h3><p>It marks a minor point the author can choose to ignore. Google's comments guide suggests labels such as Nit, Optional or Consider, and FYI, so authors can tell required changes from suggestions.</p><h3 id=\"how-do-i-require-code-review-on-github\">How do I require code review on GitHub?</h3><p>Use a branch protection rule on your main branch and turn on required approving reviews before merging. You can also require review from code owners, dismiss stale approvals and require status checks to pass.</p><h3 id=\"is-branch-protection-free-on-github-for-private-repositories\">Is branch protection free on GitHub for private repositories?</h3><p>GitHub's docs say protected branches are available in public repositories on GitHub Free, and in public and private repositories on GitHub Pro, Team and Enterprise. For private company code, plan on a paid plan.</p><h3 id=\"what-is-a-codeowners-file\">What is a CODEOWNERS file?</h3><p>A file in the .github folder, root or docs folder of a repository that names who owns which paths. GitHub then requests those people for review automatically when a pull request changes code they own.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://google.github.io/eng-practices/review/reviewer/standard.html\" rel=\"noopener noreferrer nofollow\">The Standard of Code Review, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://google.github.io/eng-practices/review/reviewer/speed.html\" rel=\"noopener noreferrer nofollow\">Speed of Code Reviews, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://google.github.io/eng-practices/review/developer/small-cls.html\" rel=\"noopener noreferrer nofollow\">Small CLs, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://google.github.io/eng-practices/review/reviewer/looking-for.html\" rel=\"noopener noreferrer nofollow\">What to look for in a code review, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://google.github.io/eng-practices/review/reviewer/comments.html\" rel=\"noopener noreferrer nofollow\">How to write code review comments, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://google.github.io/eng-practices/review/reviewer/pushback.html\" rel=\"noopener noreferrer nofollow\">Handling pushback in code reviews, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://google.github.io/eng-practices/review/developer/cl-descriptions.html\" rel=\"noopener noreferrer nofollow\">Writing good CL descriptions, Google Engineering Practices</a>, read 16 November 2026</li><li><a href=\"https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews\" rel=\"noopener noreferrer nofollow\">About pull request reviews, GitHub Docs</a>, read 16 November 2026</li><li><a href=\"https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches\" rel=\"noopener noreferrer nofollow\">About protected branches, GitHub Docs</a>, read 16 November 2026</li><li><a href=\"https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners\" rel=\"noopener noreferrer nofollow\">About code owners, GitHub Docs</a>, read 16 November 2026</li><li><a href=\"https://github.com/pricing\" rel=\"noopener noreferrer nofollow\">Pricing, GitHub</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of two Indian developers reviewing code together beside the words Code review that helps",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. Two Indian developers, a senior man with glasses and a younger woman, sit side by side at a desk in a Hyderabad office looking at a large monitor showing abstract coloured code lines and comment bubbles (no readable text); the woman points at the screen, both smiling. Faces fully in frame. No readable text, no logos. Right half: the title text 'Code review that helps' in very large bold black sans-serif, left-aligned, on three lines ('Code review' / 'that' / 'helps'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Google's code review standard page",
+   "url": "https://google.github.io/eng-practices/review/reviewer/standard.html",
+   "annotate": [
+    {
+     "text": "definitely improves the overall code health",
+     "label": "The approval bar"
+    },
+    {
+     "text": "there is only better code",
+     "label": "Not perfect, better"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of an eight-step code review setup for a small team on GitHub",
+   "prompt": "16:9 process infographic, cream background #FBF6EC, flat icons. Bold black heading at top: 'Set up code review in a week'. Eight steps in two rows of four joined by orange arrows, each a flat icon above a dark-blue rounded pill with white text: 1) building icon 'Repo in company name'; 2) shield icon 'Protect main branch'; 3) tag icon 'Check your plan'; 4) people icon 'Add CODEOWNERS'; 5) refresh icon 'Dismiss stale approvals'; 6) ruler icon 'Small changes'; 7) clock icon 'Reply within a day'; 8) label icon 'Nit, Optional, FYI'. One-line bold takeaway at bottom: 'Better code, not perfect code.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of GitHub Docs on protected branches and required reviews",
+   "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+   "annotate": [
+    {
+     "text": "Require pull request reviews before merging",
+     "label": "Required reviews"
+    },
+    {
+     "text": "Protected branches are available in public repositories with GitHub Free",
+     "label": "Plan matters"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Google's page on the speed of code reviews",
+   "url": "https://google.github.io/eng-practices/review/reviewer/speed.html",
+   "annotate": [
+    {
+     "text": "One business day is the maximum time it should take to respond to a code review request",
+     "label": "One business day"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a small Indian development team discussing a pull request on a large screen",
+   "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. A small Indian development team of four in a meeting corner of a bright office, looking at a wall screen showing an abstract pull request layout with green and red blocks and comment bubbles (no readable text), one person holding a laptop, relaxed and constructive mood. No readable text on screens, no logos. Faces fully in frame."
+  }
+ ]
+}

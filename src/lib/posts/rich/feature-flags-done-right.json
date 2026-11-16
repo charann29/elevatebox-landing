@@ -1,0 +1,180 @@
+{
+ "slug": "feature-flags-done-right",
+ "locale": "en",
+ "title": "Feature flags for mobile apps: Remote Config and open source",
+ "description": "Feature flags for apps, checked November 2026: Firebase Remote Config limits and cost, Unleash, Flagsmith, GrowthBook, rollouts and a clean-up routine.",
+ "imageUrl": "/assets/blog/feature-flags-done-right/cover.webp",
+ "imageAlt": "Illustration of an Indian product manager flipping switches on a control panel beside the words Feature flags",
+ "ogImageUrl": null,
+ "tags": [
+  "feature flags",
+  "Firebase",
+  "mobile apps",
+  "India"
+ ],
+ "readingTimeMinutes": 14,
+ "publishedAt": "2025-11-01T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-feature-flags-are-and-why-you-want-them",
+   "text": "What feature flags are and why you want them",
+   "level": 2
+  },
+  {
+   "id": "the-four-kinds-of-flag",
+   "text": "The four kinds of flag",
+   "level": 2
+  },
+  {
+   "id": "firebase-remote-config-as-a-flag-system",
+   "text": "Firebase Remote Config as a flag system",
+   "level": 2
+  },
+  {
+   "id": "open-source-flag-tools-compared",
+   "text": "Open-source flag tools compared",
+   "level": 2
+  },
+  {
+   "id": "when-a-database-table-is-enough",
+   "text": "When a database table is enough",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-set-up-flags-that-do-not-rot",
+   "text": "Step by step: set up flags that do not rot",
+   "level": 2
+  },
+  {
+   "id": "flags-and-store-rollouts-work-together",
+   "text": "Flags and store rollouts work together",
+   "level": 2
+  },
+  {
+   "id": "worked-examples-from-indian-businesses",
+   "text": "Worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-restaurant-chain-with-its-own-ordering-app",
+   "text": "A restaurant chain with its own ordering app",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-testing-a-new-test-series-screen",
+   "text": "A coaching institute testing a new test-series screen",
+   "level": 3
+  },
+  {
+   "id": "a-clinic-chain-enabling-video-consults-branch-by-branch",
+   "text": "A clinic chain enabling video consults branch by branch",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-with-feature-flags",
+   "text": "Common mistakes with feature flags",
+   "level": 2
+  },
+  {
+   "id": "a-monthly-flag-clean-up-routine",
+   "text": "A monthly flag clean-up routine",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is Firebase Remote Config free?",
+   "a": "Firebase's pricing page lists Remote Config fetch requests as no-cost up to 100,000 per day per project on the Blaze plan, with charges beyond that. A/B Testing is listed among the no-cost products."
+  },
+  {
+   "q": "Why does my Remote Config change take hours to show?",
+   "a": "Firebase's default minimum fetch interval on Android is 12 hours, so the app will not fetch new values more often than that. Use the real-time listener, addOnConfigUpdateListener() on Android SDK 21.3.0 and later, for changes that must arrive quickly."
+  },
+  {
+   "q": "Can I use Remote Config for paid features?",
+   "a": "Only to show or hide things in the app. Firebase says not to store confidential data in Remote Config, and values reach the device. The server must still check whether the user has paid."
+  },
+  {
+   "q": "What is the difference between a feature flag and a staged rollout?",
+   "a": "A staged rollout controls which users get a new app build. A flag controls what a build already on the phone does. Halting a Play staged rollout does not change phones that already have the version; turning off a flag does."
+  },
+  {
+   "q": "Which open-source feature flag tool should I use?",
+   "a": "Unleash (AGPL-3.0), Flagsmith (mostly BSD-3-Clause) and GrowthBook (open core, mostly MIT) are the common choices, and all can be self-hosted. GrowthBook leans towards experiments and analytics. I would code against OpenFeature so you can switch later."
+  },
+  {
+   "q": "How many flags can Remote Config hold?",
+   "a": "Firebase lists up to 3,000 parameters and 2,000 conditions per project, with keys up to 256 characters."
+  },
+  {
+   "q": "When should a feature flag be removed?",
+   "a": "A release flag should go once the feature is at 100 percent and stable, usually within weeks. Experiment flags go when the test has a result. Ops and permission flags can live longer, but each still needs an owner."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-feature-flags-are-and-why-you-want-them\">What feature flags are and why you want them</h2><p><strong>In short:</strong> A feature flag is a switch, read by your app at runtime, that turns a feature on or off without a new release. For most Indian startups, Firebase Remote Config is enough to start: free up to 100,000 fetches a day on Blaze, with percentage rollouts. Move to Unleash, Flagsmith or GrowthBook when you need audit trails, self-hosting or experiments on your own data.</p><p>This guide was checked in November 2026, against Firebase, Google Play, Apple and the open-source projects' own pages, listed at the end.</p><p>The reason flags matter more on mobile than on the web is simple. On the web you can undo a bad deploy in minutes. In an app, a bad build sits on phones until each user updates, and a fix has to pass store review first. A flag is the only undo button you have after the build ships.</p><h2 id=\"the-four-kinds-of-flag\">The four kinds of flag</h2><p>Pete Hodgson's article on <a href=\"https://martinfowler.com/articles/feature-toggles.html\" rel=\"noopener noreferrer nofollow\">feature toggles</a>, published on martinfowler.com on 9 October 2017, is still the clearest way to think about this. He splits flags into four categories, and the category tells you how long the flag should live and who should control it.</p><p><em>Four categories of feature flag and how long each should live</em></p><table><thead><tr><th>Category</th><th>What it is for</th><th>Typical lifetime</th><th>Who flips it</th></tr></thead><tbody><tr><td>Release toggle</td><td>Ship unfinished or untested code paths to production as latent code</td><td>Days to weeks, then delete</td><td>Engineering</td></tr><tr><td>Experiment toggle</td><td>Multivariate or A/B testing</td><td>Until the test has a result</td><td>Product or growth</td></tr><tr><td>Ops toggle</td><td>Control operational behaviour, such as a kill switch</td><td>Can be long-lived</td><td>On-call engineer</td></tr><tr><td>Permissioning toggle</td><td>Change what certain users get, such as premium or beta users</td><td>Long-lived</td><td>Product or support</td></tr></tbody></table><p><em>Source: </em><a href=\"https://martinfowler.com/articles/feature-toggles.html\" rel=\"noopener noreferrer nofollow\"><em>Feature Toggles by Pete Hodgson on martinfowler.com</em></a><em>, read 16 November 2026.</em></p><p>Most flag trouble comes from treating them all the same. A release toggle left in for two years becomes a permanent branch in the code that nobody dares remove. An ops kill switch that only one developer can flip is useless at 11 pm on a sale night.</p><h2 id=\"firebase-remote-config-as-a-flag-system\">Firebase Remote Config as a flag system</h2><p><a href=\"https://firebase.google.com/docs/remote-config\" rel=\"noopener noreferrer nofollow\">Firebase Remote Config</a> describes itself as a cloud service that lets you change the behaviour and appearance of your app or server. Its docs say to \"use Remote Config rollouts to release targeted updates using parameter values as feature flags.\" If your app already uses Firebase for Analytics or Cloud Messaging, there is nothing new to set up.</p><p><em>Firebase Remote Config limits and costs that matter for flags</em></p><table><thead><tr><th>Item</th><th>What the docs say</th></tr></thead><tbody><tr><td>Parameters</td><td>Up to 3,000 per project</td></tr><tr><td>Conditions</td><td>Up to 2,000 per project</td></tr><tr><td>Parameter keys</td><td>Up to 256 characters</td></tr><tr><td>Client targeting</td><td>App version, OS or platform, device language, country or region, Analytics audiences and user properties, user in random percentile, first app open, custom signals</td></tr><tr><td>Default fetch interval</td><td>12 hours on Android</td></tr><tr><td>Real-time updates</td><td>addOnConfigUpdateListener() on Android SDK 21.3.0 and later</td></tr><tr><td>Cost</td><td>Fetch requests no-cost up to 100,000 per day per project on Blaze; A/B Testing is a no-cost product</td></tr></tbody></table><p><em>Source: </em><a href=\"https://firebase.google.com/docs/remote-config/parameters\" rel=\"noopener noreferrer nofollow\"><em>Remote Config parameters and conditions</em></a><em> and </em><a href=\"https://firebase.google.com/docs/remote-config/android/get-started\" rel=\"noopener noreferrer nofollow\"><em>Android get-started guide</em></a><em> and </em><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>Firebase pricing</em></a><em>, read 16 November 2026.</em></p><p>Three details from those pages change how you build with it.</p><p><strong>The 12-hour default.</strong> Firebase's Android guide says the default minimum fetch interval is 12 hours, so configs are not fetched more than once in that window. If you flip a kill switch and expect it to work in a minute, it will not, unless you have used the real-time listener. The guide adds that very frequent fetching is for development only, and that the SDK throttles apps that fetch too often.</p><p><strong>Defaults in the app.</strong> The guide says you can set in-app default values so the app behaves as intended before it connects to the backend. Always do this. A new install on a train with no signal should get a safe default, which for a risky new feature means off.</p><p><strong>No secrets.</strong> Firebase says plainly: \"Don't store confidential data in Remote Config parameter keys or parameter values.\" Config values reach the device, where anyone curious can read them. A flag can hide a button; it cannot protect an API. The server must still check whether a user is allowed to use a feature.</p><figure><img src=\"/assets/blog/feature-flags-done-right/1.webp\" alt=\"Annotated view of Firebase's Remote Config Android guide showing the 12-hour fetch interval\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Firebase's default fetch interval is 12 hours. Use the real-time listener for kill switches.</figcaption></figure><h2 id=\"open-source-flag-tools-compared\">Open-source flag tools compared</h2><p>When Remote Config stops being enough, usually because you need a web dashboard for non-engineers, an audit log of who changed what, server-side evaluation, or data that stays on your own servers, these are the three open-source options I see most.</p><p><em>Open-source feature flag platforms and their licences</em></p><table><thead><tr><th>Tool</th><th>How it describes itself</th><th>Licence</th><th>Self-host</th></tr></thead><tbody><tr><td>Unleash</td><td>An open-source solution for feature management</td><td>AGPL-3.0</td><td>Docker Compose, then the UI on port 4242</td></tr><tr><td>Flagsmith</td><td>An open-source feature management platform with remote configuration and experimentation</td><td>Mostly BSD-3-Clause, some MIT</td><td>Free open-source build or a supported Enterprise edition</td></tr><tr><td>GrowthBook</td><td>Open source feature flags, experimentation and product analytics</td><td>Open core: most code MIT, some enterprise licence</td><td>Docker Compose, then localhost:3000</td></tr></tbody></table><p><em>Source: </em><a href=\"https://github.com/Unleash/unleash\" rel=\"noopener noreferrer nofollow\"><em>Unleash on GitHub</em></a><em> and </em><a href=\"https://github.com/Flagsmith/flagsmith\" rel=\"noopener noreferrer nofollow\"><em>Flagsmith on GitHub</em></a><em> and </em><a href=\"https://github.com/growthbook/growthbook\" rel=\"noopener noreferrer nofollow\"><em>GrowthBook on GitHub</em></a><em>, read 16 November 2026.</em></p><p>A note on licences, because founders often skip this. AGPL-3.0, Unleash's licence, has obligations if you modify the server and offer it over a network. Using it unmodified as an internal tool is the common case, but have whoever handles your legal paperwork read it before you fork it. BSD and MIT are permissive.</p><p>Whichever tool you pick, consider coding against <a href=\"https://openfeature.dev/\" rel=\"noopener noreferrer nofollow\">OpenFeature</a>. It describes itself as \"an open specification that provides a vendor-agnostic, community-driven API for feature flagging,\" and is a CNCF incubating project under the Apache 2 licence, with SDKs listed for Java, Node.js, .NET, Go, Python, PHP, Web, React, Kotlin, iOS, Dart and more. Your app calls one API; the provider behind it can change from Remote Config to Unleash without touching every if statement.</p><h2 id=\"when-a-database-table-is-enough\">When a database table is enough</h2><p>Before adopting any tool, it is worth asking whether you need one. For a backend-only flag, such as switching the SMS provider or turning off a slow report, a single flags table with a name, a value, an owner and an updated-at column, cached for a minute in your API, does the job. It costs nothing, it is in your own database, and every change can be written to an audit table with the name of the person who made it.</p><p>What a table does not give you is targeting by app version, country or random percentage on the phone itself, or real-time pushes to the app. That is the point where Remote Config, or one of the open-source tools, earns its place. My rule of thumb: server-only switches can live in a table; anything the mobile app must read, with percentages or targeting, goes into a proper flag service.</p><p>Whichever you choose, keep the number of live flags small. Every flag doubles the number of paths through that part of the code, and each path needs testing. Two independent flags on a checkout screen are four combinations. Five are thirty-two. Most teams test only the combination they expect, and the bug lives in one of the others.</p><p>This is also why a flag change deserves the same care as a code change. Write down who flipped what and when, in the tool's history or in your team chat, so that a sudden dip in orders can be matched to the switch that caused it.</p><h2 id=\"step-by-step-set-up-flags-that-do-not-rot\">Step by step: set up flags that do not rot</h2><p><strong>Step 1. Name each flag by what it does and its category.</strong> release_new_checkout, ops_disable_cod, exp_onboarding_v2. The prefix tells everyone how long it should live.</p><p><strong>Step 2. Write the removal date when you create it.</strong> Hodgson's article describes teams that set expiration dates on toggles, and some that add \"time bombs\" which fail a test once a flag passes its date. Even a calendar reminder is better than nothing.</p><p><strong>Step 3. Set safe in-app defaults.</strong> New features default to off. Kill switches default to the normal, working state.</p><p><strong>Step 4. Read flags in one place.</strong> Wrap the SDK in one small module that the rest of the app calls. That makes flags easy to find, easy to log and easy to replace.</p><p><strong>Step 5. Roll out by percentage, not by hope.</strong> Remote Config supports a user in random percentile condition. Start at 5 percent, watch crash reports and key numbers for a day, then 25, 50, 100.</p><p><strong>Step 6. Use real-time updates for ops flags.</strong> A kill switch that takes 12 hours to reach phones is not a kill switch. On Android, addOnConfigUpdateListener() fetches new values as they are published.</p><p><strong>Step 7. Enforce on the server too.</strong> If a flag gates something that costs money or exposes data, the API must check the same rule.</p><p><strong>Step 8. Log flag values with events.</strong> When a crash or a drop in orders happens, you need to know which flags that user had.</p><p><strong>Step 9. Delete the flag and the old code.</strong> Once a release flag is at 100 percent and stable, remove the flag, the condition and the losing code path in the same pull request.</p><figure><img src=\"/assets/blog/feature-flags-done-right/2.webp\" alt=\"Infographic of a feature flag's life from creation to deletion\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>A release flag should have an end date from the day it is born.</figcaption></figure><h2 id=\"flags-and-store-rollouts-work-together\">Flags and store rollouts work together</h2><p>Feature flags and app store rollouts solve different problems, and you want both.</p><p>Google Play's <a href=\"https://support.google.com/googleplay/android-developer/answer/6346149\" rel=\"noopener noreferrer nofollow\">staged rollouts</a> send an update to a percentage of users that you raise manually; it does not increase on its own. If you halt a staged rollout, no new users get that version, but users who already received it stay on it. Apple's <a href=\"https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/\" rel=\"noopener noreferrer nofollow\">phased release</a> runs over seven days, at 1, 2, 5, 10, 20, 50 and 100 percent, can be paused for up to 30 days, and anyone can still download the update manually from the App Store.</p><p>Notice the gap. Halting a store rollout does not undo the build on phones that already have it. A flag does. So the pattern I use is: ship the build with the new feature behind a flag set to off, let the staged rollout reach most users, then turn the flag on by percentage. If something breaks, the flag goes off for everyone in minutes, and the next build can fix it calmly.</p><figure><img src=\"/assets/blog/feature-flags-done-right/3.webp\" alt=\"Annotated view of Apple's phased release help page showing the seven-day schedule\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple's phased release: seven days from 1 percent to 100 percent, pausable for up to 30 days.</figcaption></figure><h2 id=\"worked-examples-from-indian-businesses\">Worked examples from Indian businesses</h2><p>These three cases are illustrative. The businesses and numbers are invented to show the reasoning.</p><h3 id=\"a-restaurant-chain-with-its-own-ordering-app\">A restaurant chain with its own ordering app</h3><p>A biryani chain with eight outlets takes orders in its own app, with UPI, cards and cash on delivery. One Friday night, its payment gateway has an outage for UPI collect requests. With an ops flag, ops_disable_upi_collect, read through Remote Config's real-time listener, the manager hides that option within minutes and shows a short note to pay by card or cash. No release, no store review. When the gateway recovers, the flag goes back.</p><p>The flag only hides the button. The server also rejects that payment method while the flag is on, so an old app version that ignores the flag cannot create stuck orders.</p><h3 id=\"a-coaching-institute-testing-a-new-test-series-screen\">A coaching institute testing a new test-series screen</h3><p>A coaching institute rebuilt its mock-test screen. Instead of releasing it to every student before a major exam, it ships the new screen behind release_new_test_player and turns it on for 10 percent of users using the random percentile condition. After a week of comparing completion rates and crash reports, it goes to 100 percent. A fortnight later, the flag and the old screen are deleted.</p><p>If the institute wanted a proper A/B test with a measured result, Firebase A/B Testing, a no-cost product, can sit on the same Remote Config parameter. Our post on <a href=\"/blogs/ab-testing-small-traffic\">A/B testing with small traffic</a> explains why a few thousand students may not be enough for a clear answer.</p><h3 id=\"a-clinic-chain-enabling-video-consults-branch-by-branch\">A clinic chain enabling video consults branch by branch</h3><p>A clinic chain adds video consultations, but only three of its branches have doctors trained for it. A permissioning flag keyed to a custom signal, the patient's chosen branch, shows the video option only where it is supported. As each branch is ready, support adds it to the list. This flag is long-lived by design, so it lives in the server's own configuration as well, where the booking API checks it.</p><figure><img src=\"/assets/blog/feature-flags-done-right/4.webp\" alt=\"Illustration of a restaurant manager switching off a payment option from a phone\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>An ops flag is a switch the person on duty can actually reach.</figcaption></figure><h2 id=\"common-mistakes-with-feature-flags\">Common mistakes with feature flags</h2><ul><li><strong>Never deleting release flags.</strong> Hodgson calls flags inventory with a carrying cost. Each one doubles the paths someone must reason about.</li><li><strong>Trusting the client.</strong> Remote Config values live on the device. Gate money and data on the server.</li><li><strong>Forgetting the 12-hour fetch.</strong> A kill switch read with the default interval is a slow switch.</li><li><strong>No in-app default.</strong> First launch without network falls back to whatever the code does when the value is missing. Decide that on purpose.</li><li><strong>Flags nobody on duty can flip.</strong> Give the on-call person access, and write down which flag does what.</li><li><strong>Nested flags.</strong> A flag inside another flag's code path creates combinations nobody tested. Keep them independent.</li><li><strong>Putting secrets in config.</strong> Firebase says not to store confidential data in parameter keys or values.</li></ul><h2 id=\"a-monthly-flag-clean-up-routine\">A monthly flag clean-up routine</h2><p>Thirty minutes once a month keeps the list short.</p><ul><li>Export the list of flags with their category, owner and removal date.</li><li>Any release flag at 100 percent for more than two weeks: open a pull request to delete it.</li><li>Any experiment flag with a result: pick the winner and delete the flag.</li><li>Any flag with no owner: find one or delete it.</li><li>Test each ops kill switch in staging and confirm it reaches a phone within a minute.</li><li>Check you are within Remote Config's limits and below 100,000 fetches a day, or know what you will pay above it.</li></ul><p>If you want a release process, flags and rollout plan worked out as part of scoping an app, that is part of what our ₹3,500 requirement analysis produces: a call with the people who would build it and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. Our <a href=\"/services/mobile-app-development\">mobile app development</a> page and our post on <a href=\"/blogs/app-store-rejections\">app store rejections</a> cover the rest of the release side.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-firebase-remote-config-free\">Is Firebase Remote Config free?</h3><p>Firebase's pricing page lists Remote Config fetch requests as no-cost up to 100,000 per day per project on the Blaze plan, with charges beyond that. A/B Testing is listed among the no-cost products.</p><h3 id=\"why-does-my-remote-config-change-take-hours-to-show\">Why does my Remote Config change take hours to show?</h3><p>Firebase's default minimum fetch interval on Android is 12 hours, so the app will not fetch new values more often than that. Use the real-time listener, addOnConfigUpdateListener() on Android SDK 21.3.0 and later, for changes that must arrive quickly.</p><h3 id=\"can-i-use-remote-config-for-paid-features\">Can I use Remote Config for paid features?</h3><p>Only to show or hide things in the app. Firebase says not to store confidential data in Remote Config, and values reach the device. The server must still check whether the user has paid.</p><h3 id=\"what-is-the-difference-between-a-feature-flag-and-a-staged-rollout\">What is the difference between a feature flag and a staged rollout?</h3><p>A staged rollout controls which users get a new app build. A flag controls what a build already on the phone does. Halting a Play staged rollout does not change phones that already have the version; turning off a flag does.</p><h3 id=\"which-open-source-feature-flag-tool-should-i-use\">Which open-source feature flag tool should I use?</h3><p>Unleash (AGPL-3.0), Flagsmith (mostly BSD-3-Clause) and GrowthBook (open core, mostly MIT) are the common choices, and all can be self-hosted. GrowthBook leans towards experiments and analytics. I would code against OpenFeature so you can switch later.</p><h3 id=\"how-many-flags-can-remote-config-hold\">How many flags can Remote Config hold?</h3><p>Firebase lists up to 3,000 parameters and 2,000 conditions per project, with keys up to 256 characters.</p><h3 id=\"when-should-a-feature-flag-be-removed\">When should a feature flag be removed?</h3><p>A release flag should go once the feature is at 100 percent and stable, usually within weeks. Experiment flags go when the test has a result. Ops and permission flags can live longer, but each still needs an owner.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://martinfowler.com/articles/feature-toggles.html\" rel=\"noopener noreferrer nofollow\">Feature Toggles (aka Feature Flags) by Pete Hodgson, martinfowler.com</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/remote-config\" rel=\"noopener noreferrer nofollow\">Firebase Remote Config, Firebase</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/remote-config/parameters\" rel=\"noopener noreferrer nofollow\">Remote Config parameters and conditions, Firebase</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/docs/remote-config/android/get-started\" rel=\"noopener noreferrer nofollow\">Get started with Remote Config on Android, Firebase</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">Firebase pricing, Firebase</a>, read 16 November 2026</li><li><a href=\"https://openfeature.dev/\" rel=\"noopener noreferrer nofollow\">OpenFeature</a>, read 16 November 2026</li><li><a href=\"https://github.com/Unleash/unleash\" rel=\"noopener noreferrer nofollow\">Unleash, GitHub</a>, read 16 November 2026</li><li><a href=\"https://github.com/Flagsmith/flagsmith\" rel=\"noopener noreferrer nofollow\">Flagsmith, GitHub</a>, read 16 November 2026</li><li><a href=\"https://github.com/growthbook/growthbook\" rel=\"noopener noreferrer nofollow\">GrowthBook, GitHub</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/6346149\" rel=\"noopener noreferrer nofollow\">Release app updates with staged rollouts, Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/\" rel=\"noopener noreferrer nofollow\">Release a version update in phases, App Store Connect Help</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian product manager flipping switches on a control panel beside the words Feature flags",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian woman product manager in her 30s in a salwar kameez at a desk, holding a phone, with a large stylised panel of toggle switches floating beside her, some on and some off, and a laptop showing abstract app screens. No readable text on any screen, no logos. Face fully in frame. Right half: the title text 'Feature flags' in very large bold black sans-serif, left-aligned, on two lines ('Feature' / 'flags'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Firebase's Remote Config Android guide showing the 12-hour fetch interval",
+   "url": "https://firebase.google.com/docs/remote-config/android/get-started",
+   "annotate": [
+    {
+     "text": "The default minimum fetch interval for Remote Config is 12 hours",
+     "label": "Slow by default"
+    },
+    {
+     "text": "addOnConfigUpdateListener()",
+     "label": "Real-time updates"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a feature flag's life from creation to deletion",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'The life of a release flag'. Left to right with orange arrows: toggle icon with dark-blue pill 'Create flag, default off' -> calendar icon with pill 'Set a removal date' -> phone icon with pill 'Ship build, flag off' -> percentage icon with pill '5% then 25% then 100%' -> bin icon with pill 'Delete flag and old code'. Under the arrow to the bin, small grey note: 'within weeks, not years'. A small side box with a red switch icon and pill 'Kill switch: use real-time updates'. One-line bold takeaway at bottom: 'Every release flag gets an end date.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Apple's phased release help page showing the seven-day schedule",
+   "url": "https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/",
+   "annotate": [
+    {
+     "text": "you may pause the release for up to 30 days",
+     "label": "Pause, not undo"
+    },
+    {
+     "text": "can be manually downloaded from the App Store by anyone at any time",
+     "label": "Not a hard gate"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a restaurant manager switching off a payment option from a phone",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Inside a busy small Indian biryani restaurant at night: a manager in his 30s in a polo shirt standing near the billing counter, looking at his phone and tapping a large toggle icon on it, delivery bags on the counter, a cook with a large handi in the background. Phone shows only an abstract toggle shape, no readable text, no logos. Faces fully in frame."
+  }
+ ]
+}

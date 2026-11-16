@@ -1,0 +1,186 @@
+{
+ "slug": "technical-debt-conversations",
+ "locale": "en",
+ "title": "What is technical debt? A guide for non-technical founders",
+ "description": "Technical debt explained for non-technical founders in India: the loan metaphor, Fowler's four kinds, Play and CERT-In deadlines, and a quarterly routine.",
+ "imageUrl": "/assets/blog/technical-debt-conversations/cover.webp",
+ "imageAlt": "Illustration of an Indian founder listening to a developer explain a diagram beside the words Technical debt explained",
+ "ogImageUrl": null,
+ "tags": [
+  "technical debt",
+  "founders",
+  "software quality",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-02-07T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-technical-debt-means-in-one-paragraph",
+   "text": "What technical debt means, in one paragraph",
+   "level": 2
+  },
+  {
+   "id": "where-the-metaphor-comes-from",
+   "text": "Where the metaphor comes from",
+   "level": 2
+  },
+  {
+   "id": "four-kinds-of-debt-and-which-ones-to-forgive",
+   "text": "Four kinds of debt, and which ones to forgive",
+   "level": 2
+  },
+  {
+   "id": "outside-deadlines-that-turn-debt-into-a-bill",
+   "text": "Outside deadlines that turn debt into a bill",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-running-the-debt-conversation",
+   "text": "Step by step: running the debt conversation",
+   "level": 2
+  },
+  {
+   "id": "numbers-a-founder-can-watch-doras-five-metrics",
+   "text": "Numbers a founder can watch: DORA's five metrics",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinics-booking-app-that-has-not-been-upgraded-in-three-years",
+   "text": "A clinic's booking app that has not been upgraded in three years",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-with-three-copies-of-the-discount-logic",
+   "text": "A D2C brand with three copies of the discount logic",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-whose-lms-has-no-central-logs",
+   "text": "A coaching institute whose LMS has no central logs",
+   "level": 3
+  },
+  {
+   "id": "ways-the-debt-conversation-goes-wrong",
+   "text": "Ways the debt conversation goes wrong",
+   "level": 2
+  },
+  {
+   "id": "questions-to-ask-before-you-approve-a-refactor",
+   "text": "Questions to ask before you approve a refactor",
+   "level": 2
+  },
+  {
+   "id": "when-to-bring-in-outside-help",
+   "text": "When to bring in outside help",
+   "level": 2
+  },
+  {
+   "id": "a-quarterly-checklist-for-founders",
+   "text": "A quarterly checklist for founders",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is technical debt in simple words?",
+   "a": "It is the extra effort every future change costs because of shortcuts or outdated choices in the code. The shortcut is a loan, slower work is the interest, and cleaning up is paying the principal. Ward Cunningham introduced the idea in 1992."
+  },
+  {
+   "q": "Is technical debt always bad?",
+   "a": "No. Martin Fowler separates prudent from reckless and deliberate from inadvertent debt. Taking a known shortcut to hit a launch, with a plan to repay it, can be the right business decision. Debt you never repay is the problem."
+  },
+  {
+   "q": "How do I explain technical debt to a non-technical founder or investor?",
+   "a": "Use the loan picture and one example with a cost: this shortcut saves two weeks now and costs three days on every pricing change until we fix it. Then show the register and the monthly budget for repayment."
+  },
+  {
+   "q": "How much time should a team spend on technical debt?",
+   "a": "There is no official number. I would agree a small standing share of each month, start with something like one day in ten, and adjust after a quarter based on DORA metrics and incidents. Avoid one large rewrite."
+  },
+  {
+   "q": "What outside deadlines force Indian companies to fix technical debt?",
+   "a": "Google Play's target API level rule is the most common: from 31 August 2026, new apps and updates must target API level 36. The CERT-In directions of April 2022 require 180 days of logs and incident reports within six hours for the entities they cover."
+  },
+  {
+   "q": "How do I know whether paying down debt is working?",
+   "a": "Watch DORA's five delivery metrics: change lead time, deployment frequency, failed deployment recovery time, change fail rate and deployment rework rate. For Android apps, also watch crash and ANR rates in Android vitals."
+  },
+  {
+   "q": "Should I rewrite the app from scratch?",
+   "a": "Rarely. A rewrite takes longer than expected and creates its own debt. Repaying debt steadily in the areas you are already changing is safer, unless the platform itself can no longer meet an outside requirement."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-technical-debt-means-in-one-paragraph\">What technical debt means, in one paragraph</h2><p><strong>In short:</strong> Technical debt is the extra effort every future change costs because of shortcuts or outdated choices in the code. The shortcut is the loan, the slower work afterwards is the interest, and cleaning it up is paying back the principal. As a founder you do not need to read code to manage it: ask your team for a written list of debts, each with its business cost and any outside deadline, and agree a fixed share of each month to pay it down.</p><p>This guide is for founders and business owners in India who did not come from engineering and keep hearing \"we need a sprint to refactor\" without knowing whether to say yes. It gives you the original idea in plain words, the questions to ask, and the outside deadlines (from Google Play and CERT-In) that turn debt from optional to urgent.</p><p>This guide was checked in November 2026, against Ward Cunningham's 1992 paper, Martin Fowler's articles on technical debt, DORA's metrics guide, Android's target API level page and the CERT-In directions of 28 April 2022.</p><h2 id=\"where-the-metaphor-comes-from\">Where the metaphor comes from</h2><p>Ward Cunningham introduced the idea in an experience report at the OOPSLA conference in 1992, about a portfolio management system called WyCash. His line was that shipping first-time code is like going into debt. A little debt speeds development, as long as it is paid back promptly with a rewrite. The danger is when it is never repaid.</p><p>Martin Fowler's later explanation is the one I use with founders. He calls the problem cruft: deficiencies in internal quality that make it harder than it would ideally be to modify and extend the system. The extra effort it takes to add new features is the interest. Spending, say, five days cleaning up the structure is paying off the principal.</p><p>The metaphor is useful because it makes two things clear to a non-engineer. Debt is not always bad: you borrowed to ship before a launch or a funding round, and that may have been the right call. And debt is never free: you pay interest on every feature until you repay it.</p><figure><img src=\"/assets/blog/technical-debt-conversations/1.webp\" alt=\"Infographic showing a shortcut as a loan, slower features as interest and clean-up as paying the principal\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The metaphor in one picture: the shortcut is a loan, every later feature pays interest.</figcaption></figure><h2 id=\"four-kinds-of-debt-and-which-ones-to-forgive\">Four kinds of debt, and which ones to forgive</h2><p>Fowler's technical debt quadrant, from October 2009, sorts debt on two axes: reckless or prudent, and deliberate or inadvertent. It is the most useful way I know to have the conversation without anyone getting defensive.</p><ul><li><strong>Deliberate and reckless:</strong> a team decides to go quick and dirty because it thinks it cannot afford the time for clean code. This is the one to stop.</li><li><strong>Deliberate and prudent:</strong> the team knows it is taking on debt, for a reason, and has a plan for repaying it. \"We will hard-code the two clinic branches for launch and build branch settings next month.\" This is often good business.</li><li><strong>Inadvertent and reckless:</strong> a team that does not know good design practice takes on debt without noticing. The fix is skills and review, not a refactoring sprint.</li><li><strong>Inadvertent and prudent:</strong> a good team only learns the better design after building it. Fowler's view is that this kind is inevitable and should be expected.</li></ul><p>When an engineer asks for time to fix something, ask which of the four it is. Prudent debt, deliberate or not, deserves a repayment plan, not blame. Reckless debt deserves a conversation about how work is done, or it will come back.</p><h2 id=\"outside-deadlines-that-turn-debt-into-a-bill\">Outside deadlines that turn debt into a bill</h2><p>Some debt you can carry for years. Some has a due date set by someone else. In India, two outside rules come up most often for small companies with apps and web products.</p><p><em>Outside rules that force debt repayment for Indian apps and web products</em></p><table><thead><tr><th>Rule</th><th>What it requires</th><th>What happens if you carry the debt</th></tr></thead><tbody><tr><td>Google Play target API level, from 31 August 2026</td><td>New apps and app updates must target Android 16 (API level 36) or higher</td><td>You cannot submit updates until the app is upgraded, unless you get an extension</td></tr><tr><td>Google Play, existing apps</td><td>Must target Android 15 (API level 35) or higher to stay available to new users on newer Android versions</td><td>The app becomes unavailable to new users of devices running newer Android versions</td></tr><tr><td>Play extension window</td><td>An extension can be requested to 1 November 2026</td><td>Buys weeks, not a way out</td></tr><tr><td>CERT-In directions, 28 April 2022: logs</td><td>Enable logs of all ICT systems and keep them securely for a rolling 180 days, within Indian jurisdiction</td><td>No logs to hand over when CERT-In asks or an incident happens</td></tr><tr><td>CERT-In directions: reporting</td><td>Report listed cyber incidents within 6 hours of noticing them</td><td>Without monitoring, you may not notice in time</td></tr><tr><td>CERT-In directions: clocks</td><td>Connect to NIC or NPL time servers, or ones traceable to them</td><td>Logs from different servers that do not line up</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developer.android.com/google/play/requirements/target-sdk\" rel=\"noopener noreferrer nofollow\"><em>Android Developers, target API level requirements</em></a><em> and </em><a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\"><em>CERT-In directions under section 70B(6), 28 April 2022</em></a><em>, read 16 November 2026.</em></p><p>The Play rule is the classic case. An app written three years ago and never upgraded carries debt in its build tools and libraries. Most of the time nobody notices. Then the target API deadline arrives, the upgrade touches every dependency at once, and a \"small update\" becomes a project. Android's page says plainly that out-of-date apps are unavailable to new users of devices running newer versions of Android.</p><figure><img src=\"/assets/blog/technical-debt-conversations/2.webp\" alt=\"Annotated view of the Android Developers page on Google Play target API level requirements\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google Play's target API rule: the date that turns old build debt into a deadline.</figcaption></figure><p>The CERT-In directions apply to service providers, intermediaries, data centres, body corporates and government organisations. If your product has no central logging, that is debt too, and it has been due since the directions took effect. Ask your lawyer how they apply to you, and ask your engineers whether you could produce 180 days of logs tomorrow.</p><h2 id=\"step-by-step-running-the-debt-conversation\">Step by step: running the debt conversation</h2><p>This is the routine I would set up with any team, in-house or an outside company.</p><p><strong>Step 1. Ask for a debt register in business words.</strong> One line per item: what it is, what it slows down, and what would break if it stays. \"Payments code is copied in three places, so every pricing change takes three days and has broken checkout twice\" is a good line. \"Need to refactor services layer\" is not.</p><p><strong>Step 2. Put a rough cost on the interest.</strong> Not exact. Hours lost per month, incidents per quarter, features that cannot be built at all. If nobody can name a cost, the item may not be worth repaying yet.</p><p><strong>Step 3. Sort each item into the quadrant.</strong> Deliberate or inadvertent, prudent or reckless. This keeps blame out of the room and makes the reckless items visible.</p><p><strong>Step 4. Mark the items with an outside deadline.</strong> Play target API, store policy, CERT-In logging, a payment gateway retiring an old API. These go to the top regardless of interest.</p><p><strong>Step 5. Agree a standing budget.</strong> I would rather give a team a fixed share of every month for debt than approve a big refactoring project once a year. Start small, perhaps one day in ten, and adjust after a quarter. Big rewrites are where debt work goes wrong.</p><p><strong>Step 6. Pay debt where you are already working.</strong> If the next feature touches checkout, repay checkout debt in the same piece of work. Debt in code nobody touches can wait.</p><p><strong>Step 7. Measure whether it is working.</strong> DORA's software delivery metrics give you numbers a founder can follow without reading code (next section).</p><p><strong>Step 8. Review the register every quarter.</strong> Remove what was paid, add what was borrowed, and ask what was borrowed on purpose.</p><figure><img src=\"/assets/blog/technical-debt-conversations/3.webp\" alt=\"Illustration of a founder and a developer reviewing a debt list together in a small Indian office\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>The debt register works best as a shared, plain-language list, reviewed together.</figcaption></figure><h2 id=\"numbers-a-founder-can-watch-doras-five-metrics\">Numbers a founder can watch: DORA's five metrics</h2><p>DORA publishes five software delivery metrics. Its guide was last updated on 5 January 2026 and moved from the original four keys to five:</p><ul><li><strong>Change lead time:</strong> how long a change takes to go from committed to version control to deployed in production.</li><li><strong>Deployment frequency:</strong> the number of deployments over a period, or the time between them.</li><li><strong>Failed deployment recovery time:</strong> how long it takes to recover from a deployment that fails and needs immediate intervention.</li><li><strong>Change fail rate:</strong> the share of deployments that need immediate intervention afterwards.</li><li><strong>Deployment rework rate:</strong> the share of deployments that are unplanned and happen because of an incident in production.</li></ul><p>Debt shows up in all of these. Lead time grows when every change touches tangled code. Change fail rate and rework rate climb when there are no tests. If the debt budget is working, you should see these move the right way over a few quarters. If they do not, ask why.</p><figure><img src=\"/assets/blog/technical-debt-conversations/4.webp\" alt=\"Annotated view of DORA's software delivery metrics guide\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>DORA's five delivery metrics, including the newer deployment rework rate.</figcaption></figure><p>For a mobile app, add one more source: Android vitals in the Play Console. Google Play's bad behaviour threshold for user-perceived crash rate is 1.09% overall, and 0.47% for user-perceived ANR rate. Android's page says that if an app exceeds a bad behaviour threshold, Play may reduce its visibility and may show users a warning on the store listing. Debt that causes crashes costs you installs, not only engineering time.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses below and their numbers are illustrative, to show the reasoning. The rules quoted are from the sources above.</p><h3 id=\"a-clinics-booking-app-that-has-not-been-upgraded-in-three-years\">A clinic's booking app that has not been upgraded in three years</h3><p>Say a dermatology clinic in Hyderabad has an Android booking app an agency built three years ago. It works. The team wants to add online payments, and the developer says they first need to upgrade the target API level and several libraries.</p><p>This is prudent, inadvertent debt with an outside deadline. From 31 August 2026, updates must target API level 36, so the payment feature cannot ship until the upgrade is done anyway. I would approve the upgrade as its own piece of work, ask for a test plan on a few real phones, and then build payments on top.</p><h3 id=\"a-d2c-brand-with-three-copies-of-the-discount-logic\">A D2C brand with three copies of the discount logic</h3><p>Say a home décor brand runs its own website and app. During festive sales the team copied discount code into the website, the app and the order system to hit a deadline. Now every new offer takes days and wrong prices have reached customers twice.</p><p>This was deliberate and prudent at the time, and the interest is now high: lost days and real refunds. I would put it at the top of the register, repay it in the next piece of work that touches pricing, and set a rule that new offers do not ship until there is one source of truth.</p><h3 id=\"a-coaching-institute-whose-lms-has-no-central-logs\">A coaching institute whose LMS has no central logs</h3><p>Say a coaching institute runs its own learning platform with video lectures and test series. Servers write logs locally and delete them after a week. Nobody has needed them so far.</p><p>This debt is invisible until there is an incident, and CERT-In's directions ask for 180 days of logs and reporting within six hours. I would ask the team to set up central logging with synced clocks first, before any new features, and confirm with a lawyer how the directions apply.</p><h2 id=\"ways-the-debt-conversation-goes-wrong\">Ways the debt conversation goes wrong</h2><ul><li><strong>Treating all debt as bad.</strong> Prudent, deliberate debt is a normal business decision. Banning shortcuts slows launches without making the code better.</li><li><strong>Approving a big rewrite.</strong> Rewrites take longer than estimated and carry new debt of their own. Steady repayment beats a big bang.</li><li><strong>No business cost on the list.</strong> If an item cannot be linked to slower work, failures or a deadline, it may be taste, not debt.</li><li><strong>Blaming the last developer.</strong> Most inherited debt was prudent when it was taken. Blame makes your current team hide new debt.</li><li><strong>Measuring nothing.</strong> Without lead time or failure rates, you cannot tell whether the debt budget is buying anything.</li><li><strong>Forgetting outside deadlines.</strong> Play and CERT-In do not care about your roadmap. Check them every quarter.</li></ul><p>If your product is an older web stack, our post on <a href=\"/blogs/migrating-off-legacy-php\">migrating off legacy PHP</a> covers one common form of debt in detail, and <a href=\"/blogs/security-basics-for-startups\">security basics for startups</a> covers the logging and access side.</p><h2 id=\"questions-to-ask-before-you-approve-a-refactor\">Questions to ask before you approve a refactor</h2><p>When an engineer asks for a week to clean something up, you do not need to judge the code. You need answers to five questions, and a good engineer will be glad you asked them.</p><ul><li><strong>What gets faster or safer afterwards?</strong> Name the next two features or the failure that stops happening.</li><li><strong>What does it cost us each month if we wait?</strong> Hours, incidents, refunds, a blocked release.</li><li><strong>Is there an outside date?</strong> A store rule, a provider retiring an API, a compliance requirement.</li><li><strong>Can it be done in slices?</strong> If the answer is only all at once, ask why. Big pieces of work are where estimates go wrong.</li><li><strong>How will we know it worked?</strong> Shorter lead time, fewer failed deployments, fewer crashes in Android vitals.</li></ul><p>If the answers are vague, the honest decision is often \"not yet\": write it on the register, and revisit it when the next feature touches that area. If the answers are concrete and the interest is high, approve it and protect the time. Saying yes and then pulling the engineer onto urgent features halfway through is the worst outcome, because you pay for half a repair and get none of the benefit.</p><h2 id=\"when-to-bring-in-outside-help\">When to bring in outside help</h2><p>Sometimes the honest answer is that nobody on the current team can tell you how much debt there is, because the people who wrote the code have left. An outside review can produce the register for you.</p><p>ElevateBox does this as part of its ₹3,500 requirement analysis: a call with the people who would do the work, the requirements and the current state worked through, and a written fixed quotation and timeline before anything starts (<a href=\"/book\">book here</a>). Whoever does the work, keep the code, cloud and credentials in your company's name, so the debt register is about your system and not about who holds the keys.</p><figure><img src=\"/assets/blog/technical-debt-conversations/5.webp\" alt=\"Infographic of a quarterly technical debt routine for founders\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>A quarterly routine: list, cost, sort, deadline, budget, measure.</figcaption></figure><h2 id=\"a-quarterly-checklist-for-founders\">A quarterly checklist for founders</h2><ol><li>Debt register exists, in business words, with an owner for each line.</li><li>Each item has a rough interest cost: hours, incidents or blocked features.</li><li>Each item is sorted into the quadrant: deliberate or inadvertent, prudent or reckless.</li><li>Outside deadlines checked: Google Play target API level, store policies, CERT-In logging and reporting, payment or SMS provider changes.</li><li>A standing share of each month is reserved for debt, and was actually used.</li><li>Debt repaid in the areas the next features touch.</li><li>DORA metrics reviewed: lead time, deployment frequency, recovery time, change fail rate, rework rate.</li><li>Android vitals checked against the crash and ANR thresholds.</li><li>New deliberate debt from this quarter written down, with a repayment date.</li></ol><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-is-technical-debt-in-simple-words\">What is technical debt in simple words?</h3><p>It is the extra effort every future change costs because of shortcuts or outdated choices in the code. The shortcut is a loan, slower work is the interest, and cleaning up is paying the principal. Ward Cunningham introduced the idea in 1992.</p><h3 id=\"is-technical-debt-always-bad\">Is technical debt always bad?</h3><p>No. Martin Fowler separates prudent from reckless and deliberate from inadvertent debt. Taking a known shortcut to hit a launch, with a plan to repay it, can be the right business decision. Debt you never repay is the problem.</p><h3 id=\"how-do-i-explain-technical-debt-to-a-non-technical-founder-or-investor\">How do I explain technical debt to a non-technical founder or investor?</h3><p>Use the loan picture and one example with a cost: this shortcut saves two weeks now and costs three days on every pricing change until we fix it. Then show the register and the monthly budget for repayment.</p><h3 id=\"how-much-time-should-a-team-spend-on-technical-debt\">How much time should a team spend on technical debt?</h3><p>There is no official number. I would agree a small standing share of each month, start with something like one day in ten, and adjust after a quarter based on DORA metrics and incidents. Avoid one large rewrite.</p><h3 id=\"what-outside-deadlines-force-indian-companies-to-fix-technical-debt\">What outside deadlines force Indian companies to fix technical debt?</h3><p>Google Play's target API level rule is the most common: from 31 August 2026, new apps and updates must target API level 36. The CERT-In directions of April 2022 require 180 days of logs and incident reports within six hours for the entities they cover.</p><h3 id=\"how-do-i-know-whether-paying-down-debt-is-working\">How do I know whether paying down debt is working?</h3><p>Watch DORA's five delivery metrics: change lead time, deployment frequency, failed deployment recovery time, change fail rate and deployment rework rate. For Android apps, also watch crash and ANR rates in Android vitals.</p><h3 id=\"should-i-rewrite-the-app-from-scratch\">Should I rewrite the app from scratch?</h3><p>Rarely. A rewrite takes longer than expected and creates its own debt. Repaying debt steadily in the areas you are already changing is safer, unless the platform itself can no longer meet an outside requirement.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"http://c2.com/doc/oopsla92.html\" rel=\"noopener noreferrer nofollow\">The WyCash Portfolio Management System, Ward Cunningham, OOPSLA 1992</a>, read 16 November 2026</li><li><a href=\"https://martinfowler.com/bliki/TechnicalDebt.html\" rel=\"noopener noreferrer nofollow\">Technical Debt, Martin Fowler</a>, read 16 November 2026</li><li><a href=\"https://martinfowler.com/bliki/TechnicalDebtQuadrant.html\" rel=\"noopener noreferrer nofollow\">Technical Debt Quadrant, Martin Fowler</a>, read 16 November 2026</li><li><a href=\"https://dora.dev/guides/dora-metrics/\" rel=\"noopener noreferrer nofollow\">DORA's software delivery performance metrics, DORA</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/google/play/requirements/target-sdk\" rel=\"noopener noreferrer nofollow\">Meet Google Play's target API level requirement, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/topic/performance/vitals\" rel=\"noopener noreferrer nofollow\">Android vitals, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf\" rel=\"noopener noreferrer nofollow\">Directions under sub-section (6) of section 70B of the IT Act, 2000, CERT-In</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian founder listening to a developer explain a diagram beside the words Technical debt explained",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. An Indian woman founder in her 40s in a saree sits at a meeting table in a small Hyderabad office while a young Indian developer points to a simple whiteboard sketch of boxes and arrows (no readable words); a laptop and two chai glasses on the table. Faces fully in frame. No readable text, no logos. Right half: the title text 'Technical debt explained' in very large bold black sans-serif, left-aligned, on three lines ('Technical' / 'debt' / 'explained'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing a shortcut as a loan, slower features as interest and clean-up as paying the principal",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Technical debt works like a loan'. Three items left to right joined by orange arrows: 1) a shortcut road sign icon, dark-blue rounded pill with white text 'Shortcut = the loan'; 2) a slow snail with a gear icon, pill 'Slower features = interest'; 3) a broom and clean code brackets icon, pill 'Clean-up = paying principal'. One-line bold takeaway at bottom: 'Borrow on purpose. Repay on a schedule.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of the Android Developers page on Google Play target API level requirements",
+   "url": "https://developer.android.com/google/play/requirements/target-sdk",
+   "annotate": [
+    {
+     "text": "Starting August 31 2026:",
+     "label": "The deadline"
+    },
+    {
+     "text": "request an extension to November 1, 2026",
+     "label": "Extension window"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a founder and a developer reviewing a debt list together in a small Indian office",
+   "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. A small Indian startup office: a middle-aged Indian founder in a kurta and a young Indian developer sit side by side at a desk, looking at a printed list with tick marks and coloured dots (no readable words), a laptop open showing abstract shapes. Calm, collaborative mood. No readable text on screens, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of DORA's software delivery metrics guide",
+   "url": "https://dora.dev/guides/dora-metrics/",
+   "annotate": [
+    {
+     "text": "Change lead time",
+     "label": "Speed of change"
+    },
+    {
+     "text": "Deployment rework rate",
+     "label": "Newest metric"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "infographic",
+   "alt": "Infographic of a quarterly technical debt routine for founders",
+   "prompt": "16:9 process infographic, cream background #FBF6EC, flat icons. Bold black heading at top: 'A quarterly debt routine'. Six steps in a row joined by orange arrows, each a flat icon above a dark-blue rounded pill with white text: 1) list icon 'List the debts'; 2) rupee coin icon 'Cost the interest'; 3) four-square grid icon 'Sort into quadrant'; 4) calendar icon 'Mark outside deadlines'; 5) pie chart icon 'Set a monthly budget'; 6) gauge icon 'Measure delivery'. One-line bold takeaway at bottom: 'Small, steady repayments beat a big rewrite.' No logos, no other text."
+  }
+ ]
+}

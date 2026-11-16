@@ -1,0 +1,190 @@
+{
+ "slug": "building-for-bharat",
+ "locale": "en",
+ "title": "Building apps for Bharat: Tier 2 and Tier 3 India",
+ "description": "How to build apps for Bharat and Tier 2-3 India users: Indian languages, low-end Android phones, data costs, UPI, voice and WhatsApp-first design.",
+ "imageUrl": "/assets/blog/building-for-bharat/cover.webp",
+ "imageAlt": "Illustration of a small-town Indian shop owner using an app in her own language beside the words Building for Bharat",
+ "ogImageUrl": null,
+ "tags": [
+  "Bharat",
+  "Indian languages",
+  "Android",
+  "UPI"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2025-08-30T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "building-apps-for-bharat-the-short-answer",
+   "text": "Building apps for Bharat: the short answer",
+   "level": 2
+  },
+  {
+   "id": "the-numbers-that-shape-a-bharat-app",
+   "text": "The numbers that shape a Bharat app",
+   "level": 2
+  },
+  {
+   "id": "cheap-data-does-not-mean-a-heavy-app-is-fine",
+   "text": "Cheap data does not mean a heavy app is fine",
+   "level": 2
+  },
+  {
+   "id": "indian-languages-unicode-android-and-ios",
+   "text": "Indian languages: Unicode, Android and iOS",
+   "level": 2
+  },
+  {
+   "id": "what-androids-localisation-docs-warn-you-about",
+   "text": "What Android's localisation docs warn you about",
+   "level": 3
+  },
+  {
+   "id": "on-ios",
+   "text": "On iOS",
+   "level": 3
+  },
+  {
+   "id": "voice-first-patterns",
+   "text": "Voice-first patterns",
+   "level": 2
+  },
+  {
+   "id": "whatsapp-first-patterns",
+   "text": "WhatsApp-first patterns",
+   "level": 2
+  },
+  {
+   "id": "upi-as-the-default-checkout",
+   "text": "UPI as the default checkout",
+   "level": 2
+  },
+  {
+   "id": "accessibility-that-also-helps-first-time-users",
+   "text": "Accessibility that also helps first-time users",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-building-for-tier-2-and-tier-3-users",
+   "text": "Step by step: building for Tier 2 and Tier 3 users",
+   "level": 2
+  },
+  {
+   "id": "indian-apps-doing-this-from-their-own-pages",
+   "text": "Indian apps doing this, from their own pages",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "an-fmcg-distributor-taking-orders-from-village-shops",
+   "text": "An FMCG distributor taking orders from village shops",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-in-a-tier-2-town",
+   "text": "A coaching institute in a Tier 2 town",
+   "level": 3
+  },
+  {
+   "id": "a-diagnostic-lab-with-rural-collection-centres",
+   "text": "A diagnostic lab with rural collection centres",
+   "level": 3
+  },
+  {
+   "id": "five-mistakes-teams-make",
+   "text": "Five mistakes teams make",
+   "level": 2
+  },
+  {
+   "id": "a-pre-launch-checklist",
+   "text": "A pre-launch checklist",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "What does building for Bharat mean?",
+   "a": "It is an industry phrase, with no official definition, for building products for India beyond the big metros: Tier 2 and Tier 3 towns and villages, often first-time internet users who prefer their own language, use Android and pay by UPI."
+  },
+  {
+   "q": "Should I build for Android or iOS first for Tier 2 and Tier 3 India?",
+   "a": "Android. StatCounter puts Android at 94.84% of mobile OS use in India in October 2026, against 5.1% for iOS. Build the iOS version later or with a cross-platform framework, but test on cheap Android phones first."
+  },
+  {
+   "q": "How many Indian languages should my app support at launch?",
+   "a": "As many as your actual users need and you can maintain properly. Two languages done well are better than many done badly. Store all text as Unicode from day one so adding the next language is a translation job, not a rebuild."
+  },
+  {
+   "q": "Is mobile data still expensive for rural users?",
+   "a": "TRAI reports the average revenue per GB of wireless data at ₹7.13 in the quarter ending June 2026, and average use of 28.39 GB a month per data subscriber. Data is cheap on average, but phone memory, storage and patchy networks still make heavy apps a problem."
+  },
+  {
+   "q": "Do I need a separate app if I already use WhatsApp?",
+   "a": "Not always. WhatsApp Flows can handle forms, catalogues and bookings, and Meta's Payments India documentation covers UPI payments in chat. A separate app makes sense when users need history, a large catalogue or offline use."
+  },
+  {
+   "q": "How do I make an app usable for first-time smartphone users?",
+   "a": "Use big tap targets (Android recommends at least 48dp), icons with words, the user's own language, voice input on search, and spoken confirmation of key events like payments."
+  },
+  {
+   "q": "Can I add Indian-language voice features without building my own model?",
+   "a": "Yes. MeitY's Bhashini offers speech recognition, translation and text-to-speech, and commercial AI providers offer transcription. Test any of them on real recordings with local accents before you rely on it."
+  }
+ ],
+ "contentHtml": "<h2 id=\"building-apps-for-bharat-the-short-answer\">Building apps for Bharat: the short answer</h2><p><strong>In short:</strong> Building for Bharat means designing for an Android phone, a user who may prefer Telugu, Hindi or Marathi to English, and a habit of paying by UPI and talking on WhatsApp. In practice that is four decisions: proper Indian-language support from day one, an app that runs on low-RAM phones, voice and WhatsApp as first-class ways in, and UPI as the default checkout.</p><p>\"Bharat\" in product talk usually means India beyond the big metros: Tier 2 and Tier 3 towns and villages, first-time internet users and people who use their phone mostly in their own language. There is no official definition, so I use it loosely here. The numbers below are national figures, and I say where a figure is rural.</p><p>This guide was checked in November 2026 against TRAI's latest quarterly telecom report, StatCounter's India data for October 2026, Android and Apple's localisation documentation, W3C's accessibility guidelines and the public pages of a few Indian apps. Figures change every quarter, so check the source before you quote them in a pitch deck.</p><p>If you are planning such an app and want a written scope first, our ₹3,500 requirement analysis gives you a call with the people who would build it and a fixed quotation and timeline before any build starts (<a href=\"/book\">book it here</a>). The rest of this guide works for any team.</p><h2 id=\"the-numbers-that-shape-a-bharat-app\">The numbers that shape a Bharat app</h2><p><em>Facts about Indian phone users that change design decisions, with the period each figure covers</em></p><table><thead><tr><th>What</th><th>Figure</th><th>Period</th><th>Source</th></tr></thead><tbody><tr><td>Android share of mobile OS use in India</td><td>94.84% (iOS 5.1%)</td><td>October 2026</td><td>StatCounter</td></tr><tr><td>Average mobile data used per data subscriber</td><td>28.39 GB a month</td><td>Quarter ending June 2026</td><td>TRAI</td></tr><tr><td>Average revenue per GB of wireless data</td><td>₹7.13</td><td>Quarter ending June 2026</td><td>TRAI</td></tr><tr><td>Monthly wireless ARPU</td><td>₹187.12</td><td>Quarter ending June 2026</td><td>TRAI</td></tr><tr><td>Rural tele-density (urban)</td><td>60.89% (153.43%)</td><td>End of June 2026</td><td>TRAI</td></tr><tr><td>Rural share of all telephone subscriptions</td><td>41.24%</td><td>End of June 2026</td><td>TRAI</td></tr><tr><td>UPI transactions in a month</td><td>25.47 billion, worth ₹31.53 lakh crore</td><td>October 2026</td><td>NPCI data, as reported by Entrackr</td></tr></tbody></table><p><em>Source: </em><a href=\"https://gs.statcounter.com/os-market-share/mobile/india\" rel=\"noopener noreferrer nofollow\"><em>StatCounter mobile OS share, India</em></a><em> and </em><a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322388\" rel=\"noopener noreferrer nofollow\"><em>TRAI performance indicator report, via PIB</em></a><em> and </em><a href=\"https://entrackr.com/news/upi-hits-record-2547-bn-transactions-in-october-daily-value-crosses-rs-1-lakh-crore-12772871\" rel=\"noopener noreferrer nofollow\"><em>Entrackr on NPCI's October 2026 UPI data</em></a><em>, read 16 November 2026.</em></p><p>Two notes on reading this table. StatCounter measures share of page views from sites running its tracker, not share of phones sold, so treat 94.84% as \"almost everyone you reach is on Android\", not as a census. And I could not read NPCI's own UPI statistics page, which refused automated access, so the UPI line comes from Entrackr's report of NPCI's release. Check NPCI's page in a browser before you quote it.</p><p>The rural tele-density gap is the one I would think about longest. Urban tele-density is above 100% because it counts connections, not people. Rural tele-density is about 61%, which means a large group of people in the places \"Bharat\" apps target is still coming online. Many will be new to apps in general, not only to yours.</p><figure><img src=\"/assets/blog/building-for-bharat/1.webp\" alt=\"Infographic of four facts about Indian phone users: Android share, data use, data price and UPI volume\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Four numbers to keep in front of the design team.</figcaption></figure><h2 id=\"cheap-data-does-not-mean-a-heavy-app-is-fine\">Cheap data does not mean a heavy app is fine</h2><p>At ₹7.13 a GB and 28 GB a month on average, mobile data in India is cheap and plentiful for many users. It is tempting to conclude that app size no longer matters. I would not, for three reasons.</p><ul><li><strong>Phones have little memory.</strong> Android's Go edition, made for entry-level phones, has a minimum of 512MB of RAM on Android 8.1 to 10, 1GB on Android 11 and 12, and 2GB on Android 13. An app that keeps big images and several screens in memory gets killed and restarts, which users experience as \"the app keeps closing\".</li><li><strong>Storage fills up.</strong> On a low-storage phone, the user deletes the biggest app that they used least. A large first download is a reason to be that app.</li><li><strong>Networks drop.</strong> Average usage says nothing about the bus ride between towns. Your app should save what the user typed and retry when the signal comes back.</li></ul><p>The simplest wins: publish as an Android App Bundle so Google Play serves each phone only the code and resources it needs, compress images on the server, load lists in pages, and test on a cheap phone, not only on the developer's flagship. Our posts on <a href=\"/blogs/designing-for-low-end-devices\">designing for low-end devices</a> and <a href=\"/blogs/why-your-app-needs-offline-support\">offline support</a> go deeper into both.</p><h2 id=\"indian-languages-unicode-android-and-ios\">Indian languages: Unicode, Android and iOS</h2><p>Every major Indian script has its own block in the Unicode standard: Devanagari starts at U+0900, Bengali at U+0980, Gurmukhi at U+0A00, Gujarati at U+0A80, Odia at U+0B00, Tamil at U+0B80, Telugu at U+0C00, Kannada at U+0C80 and Malayalam at U+0D00. Ol Chiki, used for Santali, has its own block too. The practical rule is simple: store and send all text as Unicode (UTF-8), never as images of text or old font-based encodings, so that search, copy and paste, and screen readers all work.</p><p>Android handles the hard parts of rendering and formatting through the ICU library and the CLDR project, which is why dates, numbers and sorting can follow the user's locale if you use the platform's formatting functions instead of building strings by hand.</p><h3 id=\"what-androids-localisation-docs-warn-you-about\">What Android's localisation docs warn you about</h3><ul><li><strong>Always ship default strings.</strong> Android loads res/values/strings.xml when it has no translation for the user's language. If that default file or a string in it is missing, the docs say the app does not run and shows an error.</li><li><strong>Language folders are separate.</strong> Hindi strings go in res/values-hi/, Telugu in res/values-te/, and so on.</li><li><strong>Watch out for resources keyed to the network.</strong> Android's own example: an app with a folder for Indian mobile networks (MCC 404) and a Hindi folder, on a phone set to Hindi with an Indian SIM, loads the English text from the network folder. Resource precedence can surprise you.</li><li><strong>Let people choose a language per app.</strong> Since Android 13 users can set a language for one app in system settings while keeping the phone in English. You configure your app to appear there.</li></ul><figure><img src=\"/assets/blog/building-for-bharat/2.webp\" alt=\"Annotated view of Android's per-app language preferences documentation\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Android 13 lets a user run your app in Telugu while the phone stays in English.</figcaption></figure><h3 id=\"on-ios\">On iOS</h3><p>Apple's localisation tools use String Catalogs in Xcode, which collect the strings to translate after each build. Apple notes the App Store is available in 175 regions and 50 languages, but for most Indian businesses iOS is the smaller audience, so I would get Android right first and keep iOS strings in the same catalogue process.</p><p>Translation is only half of it. A Telugu label is often longer than its English version, a Hindi user may type in Roman letters (Hinglish), and the word your customers use may not be the dictionary word. Our post on <a href=\"/blogs/localisation-beyond-translation\">localisation beyond translation</a> covers that side.</p><h2 id=\"voice-first-patterns\">Voice-first patterns</h2><p>Voice helps two groups at once: people who are not comfortable typing, and people who are busy with their hands. The pattern that works is voice as an option on every input, not a separate voice mode.</p><ul><li><strong>A microphone next to every search and text box</strong>, so the user can speak a product name or a question.</li><li><strong>Spoken confirmation of important events.</strong> PhonePe's own site describes its SmartSpeaker for shopkeepers announcing payment alerts in 21 languages. The shopkeeper does not need to look at a screen to know the money arrived.</li><li><strong>Audio content in the user's language.</strong> Kuku FM's site lists its catalogue in Hindi, English, Marathi, Bengali, Telugu, Tamil and Malayalam, which shows how far a business can go with listening instead of reading.</li><li><strong>Public speech services for Indian languages.</strong> MeitY's Bhashini, the National Language Translation Mission, offers speech recognition, translation and text-to-speech services. Commercial model providers also offer transcription; test any of them on real recordings with local accents and background noise.</li></ul><figure><img src=\"/assets/blog/building-for-bharat/3.webp\" alt=\"Illustration of a shopkeeper in a small town hearing a payment confirmation while serving a customer\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Voice confirmation: the shopkeeper hears the payment without looking at a screen.</figcaption></figure><h2 id=\"whatsapp-first-patterns\">WhatsApp-first patterns</h2><p>For many users WhatsApp is already on the phone and already open. Meeting them there removes the install step entirely. Three things from Meta's developer documentation shape how this works:</p><ul><li><strong>Flows.</strong> WhatsApp Flows let a business build structured interactions inside a chat, such as a form, a product picker or a booking, so the user does not have to type free text.</li><li><strong>The 24-hour window.</strong> Free-form replies are allowed only within 24 hours of the user's last message. After that you need an approved template.</li><li><strong>Ads that open a chat.</strong> When a user messages you from a click-to-WhatsApp ad on the Android or iOS app and you reply within the window, the docs describe a free entry point window that can stay open for up to 7 days.</li></ul><p>Meta's documentation also has a Payments India section that covers UPI intent and payment links, so a WhatsApp order can end in a UPI payment without leaving the chat. A good split for many small businesses is: discovery and repeat orders on WhatsApp, account history and bigger catalogues in the app.</p><h2 id=\"upi-as-the-default-checkout\">UPI as the default checkout</h2><p>At over 25 billion transactions a month, UPI is the payment habit most of your users already have. Design around it:</p><ul><li>Put UPI first on the payment screen, not under \"more options\" after cards.</li><li>On Android, open the user's UPI app directly with an intent, so they pay in the app they trust and come back to yours.</li><li>Show a clear pending state. A user whose money left their bank and whose order shows \"failed\" will call you, or post a review.</li><li>Confirm the payment on your server from the gateway's webhook before you mark the order paid, never from the app's screen alone.</li></ul><h2 id=\"accessibility-that-also-helps-first-time-users\">Accessibility that also helps first-time users</h2><p>Accessibility rules were written for people with disabilities, but in Bharat they also help a much larger group: first-time smartphone users, older parents, people with cracked screens and people using the phone in bright sunlight.</p><ul><li><strong>Big tap targets.</strong> Android recommends a touch target of at least 48dp by 48dp. W3C's WCAG 2.2 (the current version is dated 12 December 2024) sets 24 by 24 CSS pixels as the minimum at level AA for websites.</li><li><strong>Labels for screen readers.</strong> Give icons a content description so TalkBack can read them. Describe what the button does, not what it looks like.</li><li><strong>Icons with words.</strong> An icon alone is a puzzle for a new user. An icon with a one-word label in their language is not.</li><li><strong>Contrast and text size.</strong> Respect the phone's font size setting. Do not lock text in images.</li></ul><p>Doing this from the first screen is cheaper than adding it later, as our post on <a href=\"/blogs/accessibility-is-cheaper-early\">why accessibility is cheaper early</a> explains.</p><h2 id=\"step-by-step-building-for-tier-2-and-tier-3-users\">Step by step: building for Tier 2 and Tier 3 users</h2><p><strong>Step 1. Meet ten real users.</strong> Sit with people in the town you are building for. Note their phone model, the languages they read and type, and how they pay today.</p><p><strong>Step 2. Choose launch languages from your users, not from a list.</strong> Two languages done well beat eight done badly.</p><p><strong>Step 3. Set up Unicode strings and language folders before the first screen is built.</strong> Retrofitting later means hunting down every hard-coded string.</p><p><strong>Step 4. Set a budget for the phone.</strong> Pick a cheap reference phone, and make it the test device for every release.</p><p><strong>Step 5. Add voice and WhatsApp entry points.</strong> A microphone on search, spoken confirmations for key events, and a WhatsApp number that does real work, not just \"contact us\".</p><p><strong>Step 6. Make UPI the default checkout,</strong> with server-side confirmation and a clear pending state.</p><p><strong>Step 7. Test with users in their language, then watch crash and uninstall rates</strong> by phone model in the Play Console after launch.</p><figure><img src=\"/assets/blog/building-for-bharat/4.webp\" alt=\"Infographic of the seven steps for building an app for Tier 2 and Tier 3 users\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Seven steps, from ten real users to post-launch monitoring.</figcaption></figure><h2 id=\"indian-apps-doing-this-from-their-own-pages\">Indian apps doing this, from their own pages</h2><ul><li><strong>ShareChat.</strong> Its about page says the app launched in October 2015 in four languages (Hindi, Telugu, Malayalam and Marathi) and added Bhojpuri, Haryanvi, Rajasthani and Assamese in March 2018. It started in regional languages rather than adding them later.</li><li><strong>PhonePe.</strong> Its SmartSpeaker gives shopkeepers payment alerts in 21 languages, and its app store (PhonePe Appstore, formerly Indus Appstore) pitches developers on 12+ languages.</li><li><strong>Kuku FM.</strong> Its site organises audio stories and courses by language, from Hindi to Malayalam, which suits users who prefer listening to reading.</li></ul><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses below are illustrative, to show how the decisions apply. They are not clients, and the numbers are assumptions.</p><h3 id=\"an-fmcg-distributor-taking-orders-from-village-shops\">An FMCG distributor taking orders from village shops</h3><p>A distributor supplies a few hundred kirana shops in its district. The shopkeepers already send orders by WhatsApp voice note. The app I would build keeps WhatsApp as the front door: a Flow for the repeat order (pick items, quantities, confirm), a Telugu and English catalogue, UPI or credit at checkout, and a spoken confirmation in Telugu when the order is accepted. The separate app is for the distributor's salespeople, tested on the cheap phones they actually carry, and it keeps working offline in shops with weak signal.</p><h3 id=\"a-coaching-institute-in-a-tier-2-town\">A coaching institute in a Tier 2 town</h3><p>Students study on shared or hand-me-down phones, often a parent's. Recorded lectures in the local language plus English, downloadable in low quality for the bus, matter more than live video. Fees go by UPI with a receipt on WhatsApp. Big buttons and a Telugu or Hindi interface help the parent who pays the fees as much as the student.</p><h3 id=\"a-diagnostic-lab-with-rural-collection-centres\">A diagnostic lab with rural collection centres</h3><p>Patients book home sample collection and receive reports. Many are older and not confident readers. The design points: booking by WhatsApp, a report summary read aloud in their language, a PDF for the doctor, and payment by UPI at collection. Because this is health data, the lab also needs a clear consent notice and careful access control.</p><h2 id=\"five-mistakes-teams-make\">Five mistakes teams make</h2><ul><li><strong>Translating at the end.</strong> Hard-coded English strings take weeks to find and break layouts when Telugu text is longer.</li><li><strong>Testing on the developer's phone.</strong> A flagship hides memory leaks that crash an entry-level phone.</li><li><strong>Treating WhatsApp as a support line only.</strong> It can carry the order itself, with Flows and payment links.</li><li><strong>Hiding UPI behind cards.</strong> UPI is the payment habit your users already have; make it the first thing they see.</li><li><strong>Reading national averages as your user.</strong> 28 GB a month is an average across all data subscribers. Your users in one district may have less data, older phones or a shared device.</li></ul><h2 id=\"a-pre-launch-checklist\">A pre-launch checklist</h2><ul><li>Launch languages chosen from user research, with all strings in Unicode resource files and a complete default file.</li><li>Per-app language support configured for Android 13 and later.</li><li>Tested on a cheap reference phone: cold start, memory use, crash-free sessions.</li><li>Published as an Android App Bundle; images compressed on the server.</li><li>Forms save drafts and retry on a dropped network.</li><li>Microphone on search; spoken confirmation for payments and orders.</li><li>WhatsApp number that can take a real order, with templates approved.</li><li>UPI first at checkout, confirmed from the server.</li><li>Tap targets of at least 48dp, content descriptions on icons, labels next to icons.</li><li>A plan to read Play Console crash and uninstall data by phone model each week after launch.</li></ul><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"what-does-building-for-bharat-mean\">What does building for Bharat mean?</h3><p>It is an industry phrase, with no official definition, for building products for India beyond the big metros: Tier 2 and Tier 3 towns and villages, often first-time internet users who prefer their own language, use Android and pay by UPI.</p><h3 id=\"should-i-build-for-android-or-ios-first-for-tier-2-and-tier-3-india\">Should I build for Android or iOS first for Tier 2 and Tier 3 India?</h3><p>Android. StatCounter puts Android at 94.84% of mobile OS use in India in October 2026, against 5.1% for iOS. Build the iOS version later or with a cross-platform framework, but test on cheap Android phones first.</p><h3 id=\"how-many-indian-languages-should-my-app-support-at-launch\">How many Indian languages should my app support at launch?</h3><p>As many as your actual users need and you can maintain properly. Two languages done well are better than many done badly. Store all text as Unicode from day one so adding the next language is a translation job, not a rebuild.</p><h3 id=\"is-mobile-data-still-expensive-for-rural-users\">Is mobile data still expensive for rural users?</h3><p>TRAI reports the average revenue per GB of wireless data at ₹7.13 in the quarter ending June 2026, and average use of 28.39 GB a month per data subscriber. Data is cheap on average, but phone memory, storage and patchy networks still make heavy apps a problem.</p><h3 id=\"do-i-need-a-separate-app-if-i-already-use-whatsapp\">Do I need a separate app if I already use WhatsApp?</h3><p>Not always. WhatsApp Flows can handle forms, catalogues and bookings, and Meta's Payments India documentation covers UPI payments in chat. A separate app makes sense when users need history, a large catalogue or offline use.</p><h3 id=\"how-do-i-make-an-app-usable-for-first-time-smartphone-users\">How do I make an app usable for first-time smartphone users?</h3><p>Use big tap targets (Android recommends at least 48dp), icons with words, the user's own language, voice input on search, and spoken confirmation of key events like payments.</p><h3 id=\"can-i-add-indian-language-voice-features-without-building-my-own-model\">Can I add Indian-language voice features without building my own model?</h3><p>Yes. MeitY's Bhashini offers speech recognition, translation and text-to-speech, and commercial AI providers offer transcription. Test any of them on real recordings with local accents before you rely on it.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://gs.statcounter.com/os-market-share/mobile/india\" rel=\"noopener noreferrer nofollow\">Mobile Operating System Market Share India, StatCounter Global Stats</a>, read 16 November 2026</li><li><a href=\"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322388\" rel=\"noopener noreferrer nofollow\">Indian Telecom Services Performance Indicator Report for April to June 2026, Press Information Bureau</a>, read 16 November 2026</li><li><a href=\"https://entrackr.com/news/upi-hits-record-2547-bn-transactions-in-october-daily-value-crosses-rs-1-lakh-crore-12772871\" rel=\"noopener noreferrer nofollow\">UPI hits record 25.47 billion transactions in October, Entrackr</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/androidgo\" rel=\"noopener noreferrer nofollow\">Android (Go edition), Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/app-bundle\" rel=\"noopener noreferrer nofollow\">About Android App Bundles, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://www.unicode.org/charts/\" rel=\"noopener noreferrer nofollow\">Unicode code charts, Unicode Consortium</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/internationalization\" rel=\"noopener noreferrer nofollow\">Unicode and internationalization support, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/localization\" rel=\"noopener noreferrer nofollow\">Localize your app, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/resources/app-languages\" rel=\"noopener noreferrer nofollow\">Per-app language preferences, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/localization/\" rel=\"noopener noreferrer nofollow\">Localization, Apple Developer</a>, read 16 November 2026</li><li><a href=\"https://www.w3.org/TR/WCAG22/\" rel=\"noopener noreferrer nofollow\">Web Content Accessibility Guidelines (WCAG) 2.2, W3C</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/topics/ui/accessibility/apps\" rel=\"noopener noreferrer nofollow\">Make apps more accessible, Android Developers</a>, read 16 November 2026</li><li><a href=\"https://bhashini.gov.in/\" rel=\"noopener noreferrer nofollow\">Bhashini, National Language Translation Mission</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/flows\" rel=\"noopener noreferrer nofollow\">WhatsApp Flows, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://www.phonepe.com/\" rel=\"noopener noreferrer nofollow\">PhonePe business products, PhonePe</a>, read 16 November 2026</li><li><a href=\"https://www.indusappstore.com/\" rel=\"noopener noreferrer nofollow\">PhonePe Appstore, Indus Appstore</a>, read 16 November 2026</li><li><a href=\"https://sharechat.com/about\" rel=\"noopener noreferrer nofollow\">About ShareChat, ShareChat</a>, read 16 November 2026</li><li><a href=\"https://kukufm.com/\" rel=\"noopener noreferrer nofollow\">Kuku FM home page, Kuku FM</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a small-town Indian shop owner using an app in her own language beside the words Building for Bharat",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. An Indian woman in her 40s in a cotton saree running a small general store in a Tier 3 town, holding an inexpensive Android phone and speaking into it, shelves of packets and a sack of rice behind her, a QR code stand on the counter (no readable text, no logos). Right half: the title text 'Building for Bharat' in very large bold black sans-serif, left-aligned, on two lines ('Building for' / 'Bharat'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of four facts about Indian phone users: Android share, data use, data price and UPI volume",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Who you are building for'. Four columns, each with a flat icon above a dark-blue rounded pill with white text and a bold figure below: 1) phone icon, pill 'Android share, Oct 2026', figure '94.84%'; 2) signal icon, pill 'Data per user, Apr-Jun 2026', figure '28.39 GB a month'; 3) rupee tag icon, pill 'Price per GB, Apr-Jun 2026', figure '₹7.13'; 4) QR code icon, pill 'UPI payments, Oct 2026', figure '25.47 billion'. Thin orange arrows link the columns. Small grey line: 'Sources: StatCounter, TRAI, NPCI'. One-line bold takeaway at bottom: 'Android, cheap data, UPI: design for all three.' No logos, no other text."
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Android's per-app language preferences documentation",
+   "url": "https://developer.android.com/guide/topics/resources/app-languages",
+   "annotate": [
+    {
+     "text": "Android 13 introduces the following features for apps that support multiple languages",
+     "label": "Since Android 13"
+    },
+    {
+     "text": "System settings",
+     "label": "Language per app"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a shopkeeper in a small town hearing a payment confirmation while serving a customer",
+   "prompt": "3:2 scene illustration, flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows, cream background #FBF6EC. A small-town Indian shop counter: an older shopkeeper with a moustache in a white kurta hands a bag to a young woman customer, while a small speaker box beside a QR code stand shows sound waves; the customer holds a phone. Shelves of packets behind. No readable text anywhere, no logos. Faces fully in frame."
+  },
+  {
+   "file": "4.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the seven steps for building an app for Tier 2 and Tier 3 users",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Building for Tier 2 and Tier 3 users'. Seven steps in two rows (four then three), each a flat icon above a dark-blue rounded label pill with white text, joined by orange arrows: 1) people icon, pill 'Meet ten real users'; 2) speech bubble icon, pill 'Pick launch languages'; 3) text icon, pill 'Unicode strings first'; 4) phone icon, pill 'Test on a cheap phone'; 5) microphone icon, pill 'Add voice and WhatsApp'; 6) QR code icon, pill 'UPI as default'; 7) chart icon, pill 'Watch crashes by phone'. One-line bold takeaway at bottom: 'Design for the phone in their hand.' No logos, no other text."
+  }
+ ]
+}

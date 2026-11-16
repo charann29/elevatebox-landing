@@ -1,0 +1,185 @@
+{
+ "slug": "api-design-that-ages-well",
+ "locale": "en",
+ "title": "API versioning best practices for Indian startups",
+ "description": "API versioning best practices, checked November 2026: path or header versions, breaking changes, Deprecation and Sunset headers, Razorpay and Cashfree.",
+ "imageUrl": "/assets/blog/api-design-that-ages-well/cover.webp",
+ "imageAlt": "Illustration of an Indian startup founder reviewing API versions on a laptop beside the words API versioning",
+ "ogImageUrl": null,
+ "tags": [
+  "API design",
+  "versioning",
+  "backend",
+  "India"
+ ],
+ "readingTimeMinutes": 15,
+ "publishedAt": "2026-03-21T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-api-versioning-actually-means",
+   "text": "What API versioning actually means",
+   "level": 2
+  },
+  {
+   "id": "how-the-big-apis-version-compared",
+   "text": "How the big APIs version, compared",
+   "level": 2
+  },
+  {
+   "id": "what-counts-as-a-breaking-change",
+   "text": "What counts as a breaking change",
+   "level": 2
+  },
+  {
+   "id": "step-by-step-version-an-api-so-it-ages-well",
+   "text": "Step by step: version an API so it ages well",
+   "level": 2
+  },
+  {
+   "id": "path-header-or-date-choosing-a-scheme",
+   "text": "Path, header or date: choosing a scheme",
+   "level": 2
+  },
+  {
+   "id": "path-version-like-razorpay-and-google",
+   "text": "Path version, like Razorpay and Google",
+   "level": 3
+  },
+  {
+   "id": "dated-version-like-stripe-and-cashfree",
+   "text": "Dated version, like Stripe and Cashfree",
+   "level": 3
+  },
+  {
+   "id": "query-parameter-like-azure",
+   "text": "Query parameter, like Azure",
+   "level": 3
+  },
+  {
+   "id": "worked-examples-from-indian-businesses",
+   "text": "Worked examples from Indian businesses",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-chain-with-a-patient-app",
+   "text": "A clinic chain with a patient app",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-brand-integrating-payments-and-shipping",
+   "text": "A D2C brand integrating payments and shipping",
+   "level": 3
+  },
+  {
+   "id": "a-logistics-company-opening-an-api-to-partners",
+   "text": "A logistics company opening an API to partners",
+   "level": 3
+  },
+  {
+   "id": "common-mistakes-that-make-apis-age-badly",
+   "text": "Common mistakes that make APIs age badly",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-every-api-release",
+   "text": "A checklist before every API release",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Should I put the API version in the URL or a header?",
+   "a": "Either works if you pick one and stick to it. A path version such as /v1/ is easy to see in logs and is what Razorpay and Google use. A dated header is what Stripe and Cashfree use, and suits APIs with many outside developers. For a startup with one app, I would start with /v1/ in the path."
+  },
+  {
+   "q": "Is adding a new field to a response a breaking change?",
+   "a": "Not if clients are written to ignore fields they do not know, which they should be. Removing, renaming or retyping a field is breaking, and so is making an optional request field required."
+  },
+  {
+   "q": "How long should I keep an old API version running?",
+   "a": "Google recommends 180 days before removing a deprecated beta. For a stable version that partners depend on, I would treat 180 days as the minimum and check logs for remaining callers before switching it off."
+  },
+  {
+   "q": "What are the Deprecation and Sunset headers?",
+   "a": "They are HTTP response headers. Deprecation, defined in RFC 9745 in March 2025, says a resource is or will be deprecated. Sunset, defined in RFC 8594, gives the date it is likely to stop responding. The Sunset date must not be earlier than the Deprecation date."
+  },
+  {
+   "q": "Does Razorpay version its API?",
+   "a": "Razorpay's docs give the gateway URL as https://api.razorpay.com/v1 and say certain APIs, such as Route linked accounts, are on v2. There is no dated version header like Cashfree's."
+  },
+  {
+   "q": "What format should API errors use?",
+   "a": "RFC 9457 Problem Details is the standard: a JSON body with type, title, status, detail and instance, served as application/problem+json. Using it everywhere means one error parser in your app."
+  },
+  {
+   "q": "How do I stop old app versions from breaking when the API changes?",
+   "a": "Make changes additive, log the app version on each request, and keep the old behaviour until those versions fade. On Android, Play's in-app updates offer flexible and immediate prompts for Android 5.0 and above, for the cases where an old build really cannot keep working."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-api-versioning-actually-means\">What API versioning actually means</h2><p><strong>In short:</strong> Good API versioning means you almost never ship a breaking change, and when you must, you run old and new side by side with a written end date. Put a major version in the path (/v1/) or a dated version in a header, add fields without removing any, and announce retirements with the Deprecation and Sunset headers.</p><p>This guide was checked in November 2026, against the official pages listed at the end. Where a rule comes from Google, Microsoft, Stripe, Razorpay, Cashfree or an IETF RFC, I link it.</p><p>Most API trouble I see in Indian startups is not a bad first design. It is a reasonable first design that nobody planned to change. The founder ships an app, a partner integrates, a year passes, and now the order object needs a new shape while ten thousand phones still run last year's build. This post is about planning for that day from the start.</p><h2 id=\"how-the-big-apis-version-compared\">How the big APIs version, compared</h2><p>Before choosing a scheme, it helps to see what large API providers, including two Indian payment gateways, actually do. These are not theories. They are the schemes their developers live with every day.</p><p><em>How five well-known APIs carry their version</em></p><table><thead><tr><th>API</th><th>Where the version lives</th><th>What it looks like</th><th>Breaking-change rule</th></tr></thead><tbody><tr><td>Google APIs (AIP-185)</td><td>First part of the URL path</td><td>/v1/, /v1beta/</td><td>No minor or patch numbers exposed; beta removed after deprecation, 180 days recommended</td></tr><tr><td>Microsoft Azure guidelines</td><td>Required query parameter</td><td>api-version=2026-01-01, -preview suffix for previews</td><td>Do not introduce breaking changes; required fields only in the first version</td></tr><tr><td>Stripe</td><td>Stripe-Version header, else account default</td><td>2026-10-28.endive</td><td>Monthly releases with no breaking changes; a major release twice a year</td></tr><tr><td>Razorpay</td><td>URL path</td><td>https://api.razorpay.com/v1, some APIs on v2</td><td>Most APIs on v1; certain APIs such as Route accounts on v2</td></tr><tr><td>Cashfree Payments</td><td>Required x-api-version header</td><td>2026-01-01 (format YYYY-MM-DD)</td><td>Older dated versions listed: 2025-01-01, 2023-08-01 and earlier</td></tr></tbody></table><p><em>Source: </em><a href=\"https://google.aip.dev/185\" rel=\"noopener noreferrer nofollow\"><em>Google AIP-185</em></a><em> and </em><a href=\"https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md\" rel=\"noopener noreferrer nofollow\"><em>Microsoft API guidelines</em></a><em> and </em><a href=\"https://docs.stripe.com/api/versioning\" rel=\"noopener noreferrer nofollow\"><em>Stripe API reference</em></a><em> and </em><a href=\"https://razorpay.com/docs/api/\" rel=\"noopener noreferrer nofollow\"><em>Razorpay API docs</em></a><em> and </em><a href=\"https://www.cashfree.com/docs/api-reference/payments/latest/orders/create\" rel=\"noopener noreferrer nofollow\"><em>Cashfree API reference</em></a><em>, read 16 November 2026.</em></p><p>Two patterns stand out. Path versions (/v1/) are coarse and rarely change: Razorpay has kept most of its API on v1. Dated versions (Stripe, Cashfree, Azure) change often but in small, documented steps, and each client says which date it was built against.</p><p>Neither is wrong. For a startup with one app and a handful of partners, I would start with a path version and the discipline to keep it at v1 for years. Date-based versioning pays off when you have many outside developers and a team that can maintain a changelog and translation layers.</p><figure><img src=\"/assets/blog/api-design-that-ages-well/1.webp\" alt=\"Annotated view of Google's AIP-185 page on API versioning\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google's AIP-185 puts the major version in the path and recommends 180 days before removing a deprecated beta.</figcaption></figure><h2 id=\"what-counts-as-a-breaking-change\">What counts as a breaking change</h2><p>Versioning only matters for breaking changes, so you need a shared list of what breaks a client. Microsoft's guidelines are blunt: it is a breaking change to introduce required fields in a later version, and to remove a required field or make an optional field required, or the reverse.</p><p>Here is the list I use, built from those guidelines and Stripe's notes on enums:</p><ul><li><strong>Safe:</strong> adding a new endpoint, adding an optional request field, adding a new field to a response, adding a new value to an enum the docs mark as open or extensible.</li><li><strong>Breaking:</strong> removing or renaming a field, changing a field's type (a number becoming a string, a rupee amount moving from paise to rupees), making an optional field required, removing an enum value, changing what an error code means, changing default sort order or page size.</li><li><strong>Sneaky:</strong> tightening validation (a phone field that used to accept spaces now rejects them), changing a timestamp's timezone, returning null where you used to omit the field.</li></ul><p>Stripe's reference makes a useful distinction between closed enums, whose values never change, and open enums, which Stripe can grow \"as a backward-compatible change without requiring an API version upgrade.\" It tells client developers to keep a safe fallback, such as a default branch in a switch statement. Microsoft says the same in its own words: use extensible enumerations unless you are positive the set will never change. <a href=\"https://docs.stripe.com/api/versioning\" rel=\"noopener noreferrer nofollow\">Stripe</a> and <a href=\"https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md\" rel=\"noopener noreferrer nofollow\">Microsoft</a> agree, which is a good sign.</p><p>The amount field deserves its own warning in India. Razorpay's Orders API takes the amount in the smallest currency sub-unit, so ₹299 is sent as 29900 paise. If your own API ever returns amount: 499 meaning rupees in one place and paise in another, you have created a bug that no version number can save. Pick one unit, write it in the field name if you can (amount_paise), and never change it.</p><h2 id=\"step-by-step-version-an-api-so-it-ages-well\">Step by step: version an API so it ages well</h2><p>This is the order I would do it in for a new product, or retrofit into an existing one.</p><p><strong>Step 1. Decide where the version lives, once.</strong> Path (/v1/orders) or header (Api-Version: 2026-11-16). Path versions show up in logs, browser address bars and proxy rules, which helps a small team. Header versions keep URLs stable. Do not mix both for the same thing.</p><p><strong>Step 2. Write the contract down before the code.</strong> An OpenAPI file is the usual choice. The specification is maintained in the open, and the latest version shown on the spec site today is 3.2.1. The file becomes the thing you review in pull requests, and the thing you diff to spot breaking changes.</p><p><strong>Step 3. Make additive change the default.</strong> New needs become new optional fields or new endpoints. Clients are told to ignore fields they do not know. This one habit is why Razorpay can still say most of its APIs are on v1.</p><p><strong>Step 4. Use one error format everywhere.</strong> <a href=\"https://www.rfc-editor.org/rfc/rfc9457.html\" rel=\"noopener noreferrer nofollow\">RFC 9457</a>, published in July 2023 and replacing RFC 7807, defines Problem Details: a JSON body with type, title, status, detail and instance, served as application/problem+json. Your mobile developer will thank you, because one parser covers every error.</p><p><strong>Step 5. Make writes safe to retry.</strong> Mobile connections drop requests mid-flight, and the app retries. Accept an Idempotency-Key header on POST requests that create things, the way <a href=\"https://docs.stripe.com/api/idempotent_requests\" rel=\"noopener noreferrer nofollow\">Stripe does</a>: Stripe suggests V4 UUIDs, allows keys up to 255 characters, and lets keys be pruned after they are at least 24 hours old. A repeated key returns the first result instead of creating a second order.</p><p><strong>Step 6. Log the client version on every request.</strong> Send the app version in a header (X-App-Version: 4.2.0) and store it in your logs. Without it, you cannot answer the only question that matters before a retirement: who is still calling the old endpoint?</p><p><strong>Step 7. Announce retirement in the response itself.</strong> <a href=\"https://www.rfc-editor.org/rfc/rfc9745.html\" rel=\"noopener noreferrer nofollow\">RFC 9745</a>, published in March 2025, defines a Deprecation header whose value is a date such as @1688169599. <a href=\"https://www.rfc-editor.org/rfc/rfc8594.html\" rel=\"noopener noreferrer nofollow\">RFC 8594</a> defines Sunset, the date a resource is likely to stop responding. RFC 9745 says the Sunset date must not be earlier than the Deprecation date. Client libraries and API gateways can log or alert on these headers automatically.</p><p><strong>Step 8. Set a deprecation window and keep it.</strong> Google recommends 180 days before removing a deprecated beta. For a stable version used by partners, I would not go shorter than that, and I would email every partner key that called the old version in the last 30 days.</p><p><strong>Step 9. Force-update old apps only as a last resort.</strong> On Android, Google Play's <a href=\"https://developer.android.com/guide/playcore/in-app-updates\" rel=\"noopener noreferrer nofollow\">in-app updates</a> feature offers a flexible flow, which downloads in the background, and an immediate flow, a full-screen prompt the user must accept to keep using the app. It works on Android 5.0 and above. Use the immediate flow when an old build will genuinely break, not as a shortcut around keeping v1 alive.</p><figure><img src=\"/assets/blog/api-design-that-ages-well/2.webp\" alt=\"Infographic showing safe and breaking API changes and the path from deprecation to sunset\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Additive changes ship any day. Breaking changes need a new version, a Deprecation header, a Sunset date and a window.</figcaption></figure><h2 id=\"path-header-or-date-choosing-a-scheme\">Path, header or date: choosing a scheme</h2><p>People argue about this more than it deserves. What matters is that the scheme is explicit and that you can run two versions at once. Still, the choice has real trade-offs.</p><h3 id=\"path-version-like-razorpay-and-google\">Path version, like Razorpay and Google</h3><p>You get a version a human can see in any log line, and you can route /v1/ and /v2/ to different services if you ever need to. The cost is that every breaking change is a big event, so teams tend to batch them, and a v2 becomes a rewrite. Google's AIP-185 accepts v1 for the stable channel and v1beta or v1alpha for pre-release work, and says APIs must not expose minor or patch numbers.</p><h3 id=\"dated-version-like-stripe-and-cashfree\">Dated version, like Stripe and Cashfree</h3><p>Stripe pins each account to the newest version on its first request. Its 2017 engineering post explains that \"the first time a user makes an API request, their account is automatically pinned to the most recent version available,\" and that each backwards-incompatible change lives in a \"version change module\" that translates responses for older versions (<a href=\"https://stripe.com/blog/api-versioning\" rel=\"noopener noreferrer nofollow\">Stripe blog</a>). Since the 2024-09-30.acacia release, Stripe ships monthly versions with no breaking changes and a major release twice a year.</p><p>This is the most polite scheme for outside developers. It is also the most expensive to build, because every old version needs its translation layer and tests. Cashfree's required x-api-version header is a lighter version of the same idea: the client must say which dated contract it wants.</p><h3 id=\"query-parameter-like-azure\">Query parameter, like Azure</h3><p>Microsoft's guidelines require an api-version query parameter on every operation, with YYYY-MM-DD values and a -preview suffix for previews. It works well behind gateways and is easy to test in a browser. For a startup, it is mostly a matter of taste compared with a header.</p><figure><img src=\"/assets/blog/api-design-that-ages-well/3.webp\" alt=\"Annotated view of Stripe's API versioning reference\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Stripe's versioning section: monthly releases with no breaking changes, and a header to override the account default.</figcaption></figure><h2 id=\"worked-examples-from-indian-businesses\">Worked examples from Indian businesses</h2><p>The three cases below are illustrative. The businesses and numbers are invented to show the reasoning, not taken from real clients.</p><h3 id=\"a-clinic-chain-with-a-patient-app\">A clinic chain with a patient app</h3><p>Imagine a chain of five clinics in Hyderabad with an Android and iOS app for booking slots and downloading reports. The first API returned a doctor field as a plain name string. Now each slot needs the doctor's registration number and photo too.</p><p>The ageing-well move is to add a new field, doctor_details, as an object, and leave doctor as it is. The new app reads the object; the old app keeps reading the string. Six months later, logs show only a small share of requests from builds older than 3.0, so the team sets a Deprecation header on the old field's endpoint, adds a Sunset date 180 days out, and turns on Play's flexible in-app update prompt for those builds. No patient is ever shown a broken screen.</p><h3 id=\"a-d2c-brand-integrating-payments-and-shipping\">A D2C brand integrating payments and shipping</h3><p>A skincare brand selling on its own site and app talks to Razorpay or Cashfree for payments and to a courier aggregator for shipping. Here the brand is the client, not the provider, and the lesson runs the other way.</p><p>With Cashfree, every request must carry x-api-version. The brand should pin that value in one config constant, not in twenty call sites, and read the changelog before bumping it. With Razorpay, the brand should treat v1 as stable but write its code to ignore unknown fields and unknown status values, because a gateway can add a new payment state without a new version. A switch statement with no default branch is where these integrations usually break. For the money side of this, see our post on <a href=\"/blogs/payment-gateway-integration-pitfalls\">payment gateway integration pitfalls</a>.</p><h3 id=\"a-logistics-company-opening-an-api-to-partners\">A logistics company opening an API to partners</h3><p>A regional logistics firm wants partner shops to create pickups through an API. This is the case where versioning is a product decision, because outside developers will build on it and will not update on your schedule.</p><p>I would start with /v1/, an OpenAPI file published to partners, Problem Details errors, idempotency keys on pickup creation, and webhook events for status changes. Every response would carry the API version it was served under. When the firm later needs to split address into structured fields for PIN code validation, it adds address_structured alongside the old string, rather than starting /v2/. A v2 is saved for the day the whole pickup model changes.</p><figure><img src=\"/assets/blog/api-design-that-ages-well/4.webp\" alt=\"Illustration of an Indian engineering team reviewing an API change on a whiteboard\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>A breaking change is a team decision with a date on it, not a quiet deploy.</figcaption></figure><h2 id=\"common-mistakes-that-make-apis-age-badly\">Common mistakes that make APIs age badly</h2><ul><li><strong>Versioning too early and too often.</strong> A startup that is on /v4/ after two years usually shipped breaking changes it could have made additive. Each live version is code you must keep running and testing.</li><li><strong>Exposing the database.</strong> When column names become field names, every schema change becomes an API change. Keep a small mapping layer between tables and responses.</li><li><strong>No version on webhooks.</strong> Stripe sends webhook events using the account's default API version unless one is set on the endpoint. If your own webhooks have no version, you cannot change their payload safely. More on this in our post on <a href=\"/blogs/webhooks-you-can-rely-on\">webhooks you can rely on</a>.</li><li><strong>Silent removals.</strong> Removing a field without a Deprecation header, an email and a Sunset date is how partner integrations break on a Friday evening.</li><li><strong>Offset pagination on large lists.</strong> Page numbers break when rows are inserted between requests. Stripe's list endpoints use cursors (starting_after, ending_before), which stay correct as data changes. Switching later is a breaking change, so choose cursors early.</li><li><strong>Mixed money units.</strong> Rupees in one endpoint and paise in another. Pick one and name it.</li><li><strong>Assuming the app updates.</strong> Many users do not update promptly. Plan for old builds to call your API for months after a release.</li></ul><h2 id=\"a-checklist-before-every-api-release\">A checklist before every API release</h2><p>I keep this short enough to paste into a pull request template.</p><ul><li>Does the OpenAPI diff show any removed field, renamed field, type change or new required field? If yes, it needs a new version or a rethink.</li><li>Are new enum values on an enum we documented as open?</li><li>Do new error cases use the same Problem Details shape?</li><li>Do new create endpoints accept an idempotency key?</li><li>Is the client app version being logged for the endpoints that changed?</li><li>If anything is being retired: is the Deprecation header set, is a Sunset date at least 180 days out, and have callers from the last 30 days been told?</li><li>Is the changelog entry written, with the date and an example request?</li></ul><p>If you want the API contract, its versioning plan and the build cost worked out before anyone writes code, that is what our ₹3,500 requirement analysis produces: a call with the people who would build it, requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">how it works</a>). Code, cloud and credentials stay in your name. For a sense of what keeping an API alive costs after launch, our post on <a href=\"/blogs/app-maintenance-budget\">app maintenance budgets</a> covers it, and our <a href=\"/services/saas-paas-development\">SaaS development</a> page shows the kind of products where partner APIs matter most.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"should-i-put-the-api-version-in-the-url-or-a-header\">Should I put the API version in the URL or a header?</h3><p>Either works if you pick one and stick to it. A path version such as /v1/ is easy to see in logs and is what Razorpay and Google use. A dated header is what Stripe and Cashfree use, and suits APIs with many outside developers. For a startup with one app, I would start with /v1/ in the path.</p><h3 id=\"is-adding-a-new-field-to-a-response-a-breaking-change\">Is adding a new field to a response a breaking change?</h3><p>Not if clients are written to ignore fields they do not know, which they should be. Removing, renaming or retyping a field is breaking, and so is making an optional request field required.</p><h3 id=\"how-long-should-i-keep-an-old-api-version-running\">How long should I keep an old API version running?</h3><p>Google recommends 180 days before removing a deprecated beta. For a stable version that partners depend on, I would treat 180 days as the minimum and check logs for remaining callers before switching it off.</p><h3 id=\"what-are-the-deprecation-and-sunset-headers\">What are the Deprecation and Sunset headers?</h3><p>They are HTTP response headers. Deprecation, defined in RFC 9745 in March 2025, says a resource is or will be deprecated. Sunset, defined in RFC 8594, gives the date it is likely to stop responding. The Sunset date must not be earlier than the Deprecation date.</p><h3 id=\"does-razorpay-version-its-api\">Does Razorpay version its API?</h3><p>Razorpay's docs give the gateway URL as https://api.razorpay.com/v1 and say certain APIs, such as Route linked accounts, are on v2. There is no dated version header like Cashfree's.</p><h3 id=\"what-format-should-api-errors-use\">What format should API errors use?</h3><p>RFC 9457 Problem Details is the standard: a JSON body with type, title, status, detail and instance, served as application/problem+json. Using it everywhere means one error parser in your app.</p><h3 id=\"how-do-i-stop-old-app-versions-from-breaking-when-the-api-changes\">How do I stop old app versions from breaking when the API changes?</h3><p>Make changes additive, log the app version on each request, and keep the old behaviour until those versions fade. On Android, Play's in-app updates offer flexible and immediate prompts for Android 5.0 and above, for the cases where an old build really cannot keep working.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://google.aip.dev/185\" rel=\"noopener noreferrer nofollow\">AIP-185: API Versioning, Google API Improvement Proposals</a>, read 16 November 2026</li><li><a href=\"https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md\" rel=\"noopener noreferrer nofollow\">Azure REST API Guidelines, Microsoft on GitHub</a>, read 16 November 2026</li><li><a href=\"https://docs.stripe.com/api/versioning\" rel=\"noopener noreferrer nofollow\">API reference: Versioning, Stripe</a>, read 16 November 2026</li><li><a href=\"https://stripe.com/blog/api-versioning\" rel=\"noopener noreferrer nofollow\">APIs as infrastructure: future-proofing Stripe with versioning, Stripe blog</a>, read 16 November 2026</li><li><a href=\"https://docs.stripe.com/api/idempotent_requests\" rel=\"noopener noreferrer nofollow\">API reference: Idempotent requests, Stripe</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/api/\" rel=\"noopener noreferrer nofollow\">API documentation, Razorpay</a>, read 16 November 2026</li><li><a href=\"https://www.cashfree.com/docs/api-reference/payments/latest/overview\" rel=\"noopener noreferrer nofollow\">Payment Gateway API reference overview, Cashfree Payments</a>, read 16 November 2026</li><li><a href=\"https://www.cashfree.com/docs/api-reference/payments/latest/orders/create\" rel=\"noopener noreferrer nofollow\">Create Order API reference, Cashfree Payments</a>, read 16 November 2026</li><li><a href=\"https://www.rfc-editor.org/rfc/rfc9745.html\" rel=\"noopener noreferrer nofollow\">RFC 9745: The Deprecation HTTP Response Header Field, IETF</a>, read 16 November 2026</li><li><a href=\"https://www.rfc-editor.org/rfc/rfc8594.html\" rel=\"noopener noreferrer nofollow\">RFC 8594: The Sunset HTTP Header Field, IETF</a>, read 16 November 2026</li><li><a href=\"https://www.rfc-editor.org/rfc/rfc9457.html\" rel=\"noopener noreferrer nofollow\">RFC 9457: Problem Details for HTTP APIs, IETF</a>, read 16 November 2026</li><li><a href=\"https://spec.openapis.org/oas/latest.html\" rel=\"noopener noreferrer nofollow\">OpenAPI Specification, OpenAPI Initiative</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/docs/api/orders/create/\" rel=\"noopener noreferrer nofollow\">Create an order API, Razorpay</a>, read 16 November 2026</li><li><a href=\"https://developer.android.com/guide/playcore/in-app-updates\" rel=\"noopener noreferrer nofollow\">In-app updates, Android Developers</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian startup founder reviewing API versions on a laptop beside the words API versioning",
+   "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration, terracotta, mustard and sage palette, soft shadows. An Indian woman tech lead in her 30s in a kurta, sitting at a desk in a small startup office with a laptop and a phone, a sticky-note wall behind her with blank notes connected by lines like a version timeline. Screens show only abstract code blocks and boxes, no readable text, no logos. Face fully in frame. Right half: the title text 'API versioning' in very large bold black sans-serif, left-aligned, on two lines ('API' / 'versioning'). No other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Google's AIP-185 page on API versioning",
+   "url": "https://google.aip.dev/185",
+   "annotate": [
+    {
+     "text": "Google APIs must not expose minor or patch version numbers.",
+     "label": "Major version only"
+    },
+    {
+     "text": "we recommend 180 days",
+     "label": "Deprecation window"
+    }
+   ]
+  },
+  {
+   "file": "2.webp",
+   "kind": "infographic",
+   "alt": "Infographic showing safe and breaking API changes and the path from deprecation to sunset",
+   "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'Will this change break my app?'. Left column with a green tick icon and dark-blue pill 'Safe any day', under it three smaller dark-blue pills: 'Add an endpoint', 'Add an optional field', 'Add a response field'. Right column with a red cross icon and dark-blue pill 'Needs a new version', under it three pills: 'Remove or rename a field', 'Change a field type', 'Make a field required'. Below, a horizontal timeline with orange arrows: pill 'Ship new version' -> pill 'Deprecation header' -> pill 'Sunset date' -> pill 'Old version off'. Small grey note under the timeline: 'Google recommends 180 days for a deprecated beta'. One-line bold takeaway at bottom: 'Add, do not change. Retire with a date.' No logos, no other text."
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Annotated view of Stripe's API versioning reference",
+   "url": "https://docs.stripe.com/api/versioning",
+   "annotate": [
+    {
+     "text": "we release new API versions monthly with no breaking changes",
+     "label": "Small safe steps"
+    },
+    {
+     "text": "Stripe-Version",
+     "label": "Per-request override"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian engineering team reviewing an API change on a whiteboard",
+   "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. Three Indian engineers in a small Hyderabad office, one man pointing at a whiteboard with boxes and arrows (no readable words), a woman holding a laptop, another man with a phone, a window with a city view and a potted plant. No readable text, no logos. Faces fully in frame."
+  }
+ ]
+}

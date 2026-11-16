@@ -3,6 +3,7 @@
 // publish in Studio calls /api/revalidate (src/app/api/revalidate/route.ts), which starts a Vercel rebuild.
 // A network error or 5xx throws and fails the build, so the last good deploy stays live (guide 9a).
 const CMS = `${process.env.CMS_API_URL ?? "https://cms.gcombinator.co"}/api/v1/sites/elevatebox`;
+import { RICH_POSTS } from "./posts/rich";
 export const BLOG_PATH = "/blogs"; // owner's choice: Studio posts join the existing /blogs
 
 export interface CmsPostMeta {
@@ -46,11 +47,18 @@ export const getStudioPosts = once(async () => {
     const r = await cms<{ pages: number; items: CmsPostMeta[] }>(`/blog?page=${page}&limit=500`);
     if (!r) throw new Error("Studio site 'elevatebox' not found");
     out.push(...r.items);
-    if (page >= r.pages) return out;
+    if (page >= r.pages) break;
   }
+  // Our own long-form posts, written in Studio's shape so they share its layout, list and sitemap.
+  // On a slug clash Studio's post wins.
+  const taken = new Set(out.map((p) => p.slug));
+  return [...out, ...RICH_POSTS.filter((p) => !taken.has(p.slug))].sort((a, b) =>
+    (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
+  );
 });
 
-export const getStudioPost = (slug: string) => cms<CmsPost>(`/blog/${encodeURIComponent(slug)}`);
+export const getStudioPost = async (slug: string) =>
+  (await cms<CmsPost>(`/blog/${encodeURIComponent(slug)}`)) ?? RICH_POSTS.find((p) => p.slug === slug) ?? null;
 
 /** Pages at any address (guide section 10): published paths outside the blog folder. */
 export const getStudioPaths = once(async () => {

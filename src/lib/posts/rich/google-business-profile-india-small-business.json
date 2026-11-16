@@ -1,0 +1,244 @@
+{
+ "slug": "google-business-profile-india-small-business",
+ "locale": "en",
+ "title": "Google Business Profile for small businesses in India",
+ "description": "Set up, verify and rank a free Google Business Profile in India: verification methods, categories, reviews, suspensions and a 15-minute weekly routine.",
+ "imageUrl": "/assets/blog/google-business-profile-india-small-business/cover.webp",
+ "imageAlt": "Indian shop owner checking their business listing on Google Maps on a phone",
+ "ogImageUrl": null,
+ "tags": [
+  "Google Business Profile",
+  "local SEO",
+  "small business",
+  "India"
+ ],
+ "readingTimeMinutes": 17,
+ "publishedAt": "2026-11-16T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-a-google-business-profile-is",
+   "text": "What a Google Business Profile is",
+   "level": 2
+  },
+  {
+   "id": "what-a-profile-controls-and-what-it-does-not",
+   "text": "What a profile controls and what it does not",
+   "level": 2
+  },
+  {
+   "id": "check-you-are-eligible-first",
+   "text": "Check you are eligible first",
+   "level": 2
+  },
+  {
+   "id": "storefront-service-area-or-both",
+   "text": "Storefront, service-area or both",
+   "level": 2
+  },
+  {
+   "id": "set-it-up-step-by-step",
+   "text": "Set it up step by step",
+   "level": 2
+  },
+  {
+   "id": "verification-the-methods-google-offers-today",
+   "text": "Verification: the methods Google offers today",
+   "level": 2
+  },
+  {
+   "id": "how-google-ranks-local-results",
+   "text": "How Google ranks local results",
+   "level": 2
+  },
+  {
+   "id": "categories-the-field-that-does-the-most-work",
+   "text": "Categories: the field that does the most work",
+   "level": 2
+  },
+  {
+   "id": "reviews-asking-replying-and-what-google-bans",
+   "text": "Reviews: asking, replying and what Google bans",
+   "level": 2
+  },
+  {
+   "id": "photos-posts-products-and-services",
+   "text": "Photos, posts, products and services",
+   "level": 2
+  },
+  {
+   "id": "what-google-has-switched-off",
+   "text": "What Google has switched off",
+   "level": 2
+  },
+  {
+   "id": "suspensions-and-what-triggers-them",
+   "text": "Suspensions and what triggers them",
+   "level": 2
+  },
+  {
+   "id": "indian-specifics-languages-and-branches",
+   "text": "Indian specifics: languages and branches",
+   "level": 2
+  },
+  {
+   "id": "telugu-hindi-and-the-business-name",
+   "text": "Telugu, Hindi and the business name",
+   "level": 3
+  },
+  {
+   "id": "multiple-branches",
+   "text": "Multiple branches",
+   "level": 3
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-dental-clinic",
+   "text": "A dental clinic",
+   "level": 3
+  },
+  {
+   "id": "a-biryani-restaurant",
+   "text": "A biryani restaurant",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute",
+   "text": "A coaching institute",
+   "level": 3
+  },
+  {
+   "id": "five-ways-this-goes-wrong",
+   "text": "Five ways this goes wrong",
+   "level": 2
+  },
+  {
+   "id": "a-15-minute-weekly-routine",
+   "text": "A 15-minute weekly routine",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is Google Business Profile free in India?",
+   "a": "Yes. Google says you can add or claim your business at no charge. You pay only if you hire someone to manage it, or if you choose to run Google ads, which are separate from the free listing."
+  },
+  {
+   "q": "How long does verification take?",
+   "a": "Google says its review takes up to 5 business days after you complete the steps, occasionally longer. Postcard codes usually arrive within 14 days and expire after 30. Some profiles are verified instantly, for example when the website is already verified in Google Search Console."
+  },
+  {
+   "q": "Can I choose video verification instead of a postcard?",
+   "a": "No. Google picks the methods automatically from your business type, region, public information and hours, and they can't be changed. If video is offered, Google recommends it."
+  },
+  {
+   "q": "Can I list my business from home?",
+   "a": "Yes, if you travel to customers. Set it up as a service-area business and hide the home address. If customers come to your home for the service, it needs to be staffed and open to them during your stated hours."
+  },
+  {
+   "q": "Can I write my business name in Telugu and English?",
+   "a": "Not both together. Google's guidelines no longer allow the same name repeated in two scripts, even if your signboard shows both. Choose one script for the name, and use either language in your description, posts and replies."
+  },
+  {
+   "q": "Can I offer a discount for Google reviews?",
+   "a": "No. Google's policy names payment, discounts and free goods or services in exchange for reviews as fake engagement. Ask every customer with a link or QR code and give nothing in return."
+  },
+  {
+   "q": "How do I get a suspended profile back?",
+   "a": "Fix whatever broke the guidelines, then appeal through Google's appeals tool with documents whose name and address match the profile. An appeal can only be submitted once, so include everything. Don't create a new profile for the same business."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-a-google-business-profile-is\">What a Google Business Profile is</h2><p><strong>In short:</strong> A Google Business Profile is the free listing that shows your shop, clinic or restaurant on Google Maps and in local search results. You add or claim it at business.google.com, verify that you run the business, and then keep it accurate. Google ranks local results on relevance, distance and prominence, and you cannot pay to move up.</p><p>Google's help centre says you can add or claim your business at no charge. Anyone charging you for \"registering on Google Maps\" is charging for their time, not the listing.</p><p>This guide was checked in November 2026 against Google's own help pages. Google renames buttons and retires features often, so if a label below has moved, look for the nearest one.</p><h2 id=\"what-a-profile-controls-and-what-it-does-not\">What a profile controls and what it does not</h2><p>Before any steps, the limits.</p><p><em>What your Business Profile gives you, and what stays out of your hands</em></p><table><thead><tr><th>What you want</th><th>Can you control it from the profile?</th></tr></thead><tbody><tr><td>Your name, address or service area, phone, website and hours</td><td>Yes, once verified</td></tr><tr><td>Your categories, services, photos and posts</td><td>Yes, within Google's content rules</td></tr><tr><td>Replying to reviews</td><td>Yes</td></tr><tr><td>Removing a fair but negative review</td><td>No</td></tr><tr><td>Which photo Google shows first</td><td>Partly: Google may show a customer photo instead of your cover</td></tr><tr><td>Your position in the map results</td><td>No: there is no way to request or pay for a better local ranking</td></tr><tr><td>Chatting with customers inside the profile</td><td>No: chat was switched off on 31 July 2024</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.google.com/business/answer/7091?hl=en\" rel=\"noopener noreferrer nofollow\"><em>Google's local ranking tips</em></a><em>, </em><a href=\"https://support.google.com/business/answer/6103862?hl=en\" rel=\"noopener noreferrer nofollow\"><em>Google's photo help page</em></a><em> and </em><a href=\"https://www.seroundtable.com/google-business-profile-call-history-deprecating-37465.html\" rel=\"noopener noreferrer nofollow\"><em>Search Engine Roundtable</em></a><em>, read 16 November 2026.</em></p><p>Think of the profile as your signboard on Google. You decide what is painted on it. Google decides how many people walk past.</p><p>If you would rather have the website and local search work scoped and priced before you spend on it, our ₹3,500 requirement analysis gives you a call with the people who would build it and a written quotation and timeline (<a href=\"/book\">how it works</a>). Everything below works without us.</p><h2 id=\"check-you-are-eligible-first\">Check you are eligible first</h2><p>Google's eligibility rule: a business must make in-person contact with customers during its stated hours.</p><p>Google lists online-only businesses, lead generation agents, and rental or for-sale properties such as vacant flats as ineligible.</p><p>Google's guidelines say a rented mailing address you don't operate from, a virtual office, is not eligible. An office in a co-working space only counts if it has clear signage, receives customers during business hours, and is staffed by your own people in those hours. P.O. boxes are out too.</p><h2 id=\"storefront-service-area-or-both\">Storefront, service-area or both</h2><p>Pick the right type before you fill anything in.</p><p><strong>Storefront.</strong> Customers come to you: a pharmacy, salon or clinic. Your address shows, and Google expects permanent signage with your name there.</p><p><strong>Service-area.</strong> You go to customers: a plumber, a home tutor, an AC repair service. Google says to hide your address and list the areas you serve instead.</p><p><strong>Hybrid.</strong> Both. You can show the address and add a service area, but only if the address is staffed and receives customers during your stated hours.</p><figure><img src=\"/assets/blog/google-business-profile-india-small-business/1.webp\" alt=\"Infographic comparing storefront, service-area and hybrid Google Business Profiles\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Pick the type that matches how customers actually meet you.</figcaption></figure><p>Google's service-area help page adds three limits. You can have up to 20 service areas. You can't draw a radius around your business. And the overall area shouldn't extend more than about 2 hours of driving time from where you are based.</p><h2 id=\"set-it-up-step-by-step\">Set it up step by step</h2><p>Here is the order I would do it in.</p><p><strong>Step 1. Use a Google Account you will keep.</strong> Google's verification page says you need a Google Account, and it can be a Gmail address or any email you prefer. Use one the business owns, not a staff member's personal Gmail.</p><p><strong>Step 2. Search before you add.</strong> Your business may already be on Maps. Search your name and city in Google Maps and look for \"Claim this business\", then \"Manage now\" (in the app, it sits under About). If someone else already verified it, you request ownership instead.</p><p><strong>Step 3. If nothing exists, add it.</strong> Go to business.google.com/add, choose \"Add your business to Google\", and follow the screens.</p><figure><img src=\"/assets/blog/google-business-profile-india-small-business/2.webp\" alt=\"Google's help page showing how to add or claim a Business Profile\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Steps 2 and 3: claim an existing listing, or add a new one.</figcaption></figure><p><strong>Step 4. Type the name exactly as your signboard reads.</strong> Google wants your real-world name as used on your storefront and stationery. No taglines, phone numbers or added city names. More on this under suspensions.</p><p><strong>Step 5. Pick a category, then the address or service area.</strong> One primary category, as specific as possible. Then your address, or your service areas with the address hidden. If Google can't find your street number, drop a pin.</p><p><strong>Step 6. Add phone, website and hours.</strong> The phone must connect to that location and be under your direct control; premium-rate numbers are not allowed. Use special hours for Diwali, Sankranti or any day you close.</p><h2 id=\"verification-the-methods-google-offers-today\">Verification: the methods Google offers today</h2><p>Until you verify, you can't edit your information or reply to customers. Google chooses the methods automatically, from your business type, public information, region and hours, and you can't change them. Some businesses must complete more than one.</p><figure><img src=\"/assets/blog/google-business-profile-india-small-business/3.webp\" alt=\"Google's help page listing the verification options for a Business Profile\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The verification methods, as Google's help page lists them.</figcaption></figure><ul><li><strong>Video recording.</strong> Google recommends this one if you are offered it. The recording must be at least 30 seconds, live, unedited and continuous. Show street signs or nearby businesses, your signboard, and something only staff can reach, such as the billing counter. A service business shows its tools and itself at work.</li><li><strong>Live video call.</strong> A support representative watches while you show the same things. It is only available during your business hours.</li><li><strong>Phone or SMS.</strong> Google sends a code. Automated phone menus (IVR) won't receive it, so make sure a person or a phone that takes texts is on that number.</li><li><strong>Email.</strong> You follow the steps in an email sent to the address shown on the verification screen.</li><li><strong>Postcard.</strong> Not available to every business. Most codes arrive within 14 days and expire after 30. While you wait, don't edit your name, address or category, and don't request a new code, or the one in the post stops working.</li></ul><p>After you finish, Google says the review takes up to 5 business days. It can be instant if your website is already verified in Google Search Console. Google says it will never ask for your code.</p><h2 id=\"how-google-ranks-local-results\">How Google ranks local results</h2><p>Google names the factors itself. Its ranking page says local results are mainly based on relevance, distance and popularity, then explains them under three headings.</p><p><strong>Relevance</strong> is how well your profile matches what someone searched for. Complete, detailed information helps Google understand what you do.</p><p><strong>Distance</strong> is how far you are from the person searching. If they don't share their location, Google uses what it knows about it. You can't change it, beyond placing your pin correctly.</p><p><strong>Prominence</strong> is how well-known the business is. Google says this draws on things like how many websites link to you and how many reviews you have, and that more reviews and positive ratings can help.</p><figure><img src=\"/assets/blog/google-business-profile-india-small-business/4.webp\" alt=\"Infographic of Google's three local ranking factors: relevance, distance and prominence\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Google's three named factors. None of them can be bought.</figcaption></figure><p>Google adds that there is no way to request or pay for a better local ranking.</p><p>Whitespark's 2026 Local Search Ranking Factors survey of 47 local search specialists rated the primary category as the top map pack factor, then searcher distance, then keywords in the business name. That last one is the trap: it breaks Google's name rules. Treat the survey as expert opinion, not Google's word.</p><h2 id=\"categories-the-field-that-does-the-most-work\">Categories: the field that does the most work</h2><p>Google's guidelines give a neat test: choose categories that complete the sentence \"this business IS a\", not \"this business HAS a\". A clinic IS a dental clinic. It HAS a waiting room with Wi-Fi, which is an attribute, not a category.</p><p>Use as few categories as you need, as specific as possible. A specific category already covers the general ones behind it. Don't add categories as keywords, or for a different business inside yours.</p><p>If your exact trade isn't in the list, choose the nearest more general one. Google also reads category information from your website and mentions elsewhere on the web.</p><h2 id=\"reviews-asking-replying-and-what-google-bans\">Reviews: asking, replying and what Google bans</h2><p><strong>Asking.</strong> Google's review help page says you can ask customers to visit a Google link or scan a QR code, both created from your profile. Print the QR at the counter and add the link to your bill message.</p><p><strong>What is banned.</strong> Google's prohibited content policy is specific. It lists as fake engagement reviews \"paid for, directly or in kind\", and offering incentives \"such as payment, discounts, free goods and/or services\" for any review. It also bans content based on a conflict of interest, including current or former employment, so staff should not review their own workplace. And it bans selectively asking only happy customers while discouraging negative reviews. Ask everyone, the same way.</p><p><strong>Replying.</strong> Google's advice: keep it short, use the reviewer's name, refer to what they said, and reply promptly. For a negative review, apologise where you were wrong, never share private details, and don't advertise offers.</p><aside data-callout=\"accent\"><p data-callout-title>One rule for review requests</p><p>Ask every customer, in the same words, with nothing given in return. If your request would change depending on whether they liked you, or comes with a discount, it breaks Google's policy.</p></aside><h2 id=\"photos-posts-products-and-services\">Photos, posts, products and services</h2><p><strong>Photos.</strong> Google accepts JPG or PNG between 10 KB and 5 MB, recommends 720 by 720 pixels, and takes videos up to 30 seconds. Your cover photo is a request, not a guarantee: Google says a low-quality cover may be replaced with a customer's photo.</p><p><strong>Posts.</strong> There are three kinds: updates, offers and events. Posts older than six months are archived unless you set a date range, and a phone number in a post may be rejected if Google can't link it to you.</p><p><strong>Services.</strong> Businesses in some categories, mostly service businesses, can list services with an optional price and description. Custom service names must not contain prices, phone numbers or personal information.</p><p><strong>Products.</strong> The in-store products feature, which shows what is on your shelves, is limited by Google's guidelines to the US, Canada, the UK and Ireland.</p><h2 id=\"what-google-has-switched-off\">What Google has switched off</h2><p>Old guides still mention features that no longer exist.</p><ul><li><strong>Chat and call history.</strong> Search Engine Roundtable reported Google's notice in May 2024: chat ended and call history reports stopped on 31 July 2024. Customers can still call you from Maps. Put your WhatsApp number on your website instead.</li><li><strong>Free Business Profile websites.</strong> The sites made from profile information stopped working on 5 March 2024 and redirected to the Maps listing, and the redirects ended on 10 June 2024.</li><li><strong>Public Q&amp;A.</strong> In December 2025 Google confirmed to Search Engine Roundtable that it was essentially removing Q&amp;A from Maps in favour of an AI-powered Ask button. I could not confirm from Google when Ask reaches every Indian user, so I would not plan around it.</li></ul><h2 id=\"suspensions-and-what-triggers-them\">Suspensions and what triggers them</h2><p>A suspended profile can't be seen by the public or managed by you. The commonest trigger is the name.</p><p><em>Business names Google's guidelines do not accept, with Indian-style examples</em></p><table><thead><tr><th>What Google forbids in the name</th><th>Not acceptable</th><th>Acceptable</th></tr></thead><tbody><tr><td>Marketing taglines</td><td>Sri Sai Sweets, Taste of Tradition</td><td>Sri Sai Sweets</td></tr><tr><td>Service or product words</td><td>Smile Dental Root Canal Specialists</td><td>Smile Dental</td></tr><tr><td>Location words not on your signboard</td><td>Paradise Tiffins Near Ameerpet Metro</td><td>Paradise Tiffins</td></tr><tr><td>Phone numbers or website addresses</td><td>Quick Movers 98xxxxxxxx</td><td>Quick Movers</td></tr><tr><td>Hours</td><td>Nandu's Pharmacy Open 24 Hours</td><td>Nandu's Pharmacy</td></tr><tr><td>The same name repeated in two scripts</td><td>Lakshmi Silks / లక్ష్మి సిల్క్స్</td><td>Lakshmi Silks</td></tr></tbody></table><p><em>Source: </em><a href=\"https://support.google.com/business/answer/3038177?hl=en\" rel=\"noopener noreferrer nofollow\"><em>Google's guidelines for representing your business</em></a><em>, read 16 November 2026. The business names are invented examples, following the rule categories in Google's own table.</em></p><p>The other common triggers, all from the same guidelines: a virtual office or unstaffed co-working desk as your address, more than one profile for the same location, and a service-area business showing a home address it doesn't receive customers at.</p><p>Why is a competitor's stuffed name still live? A December 2020 Sterling Sky study of 50 reported keyword-stuffed listings found 60% got only a warning, 20% a soft suspension and 20% a hard one, with enforcement depending on reports. It is old, but it explains the gap.</p><p><strong>If you are suspended.</strong> Fix the problem, gather documents whose name and address match the profile (registration, licence, tax certificate or utility bill), and use the appeals tool. An appeal can only be submitted once.</p><h2 id=\"indian-specifics-languages-and-branches\">Indian specifics: languages and branches</h2><h3 id=\"telugu-hindi-and-the-business-name\">Telugu, Hindi and the business name</h3><p>Google's Business Profile help centre is available in Telugu and Hindi, if you or your manager would rather read the rules that way.</p><p>The name itself has a newer rule. Google's guidelines now list \"Repeated Bilingual Names / Script Transliterations\" as not allowed: the same name in two scripts, even when your signboard shows both. PinMeTo reported the change being spotted around 10 August 2026. Pick one script and use it consistently. Your description, posts and replies can use any language.</p><h3 id=\"multiple-branches\">Multiple branches</h3><p>One profile per location, never more. Google's chain rules say all branches should carry the same name and share the category that best represents the business, unless a branch is genuinely signed differently.</p><p>With 10 or more locations from the same business, you can apply for bulk verification from Business Profile Manager, by filling in a form.</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>The businesses here are made up to show the method. They are not real businesses or real results.</p><h3 id=\"a-dental-clinic\">A dental clinic</h3><p>Say you run a two-chair dental clinic in Kukatpally. Name: exactly what the signboard says, with no \"Root Canal and Implant Centre\" added. Category: the most specific dental one Google offers.</p><p>Doctors are individual practitioners in Google's rules, and the guidelines allow a doctor's profile to include a title such as Dr. With several doctors, the clinic has its own profile and each public-facing doctor may have one, with only their name. A solo dentist at a branded clinic shares one profile named \"brand: practitioner name\".</p><figure><img src=\"/assets/blog/google-business-profile-india-small-business/5.webp\" alt=\"Illustration of an Indian dentist showing a patient a review QR code at a clinic front desk\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>The review request belongs at the desk, asked the same way of every patient.</figcaption></figure><p>Reviews: a QR code at the front desk and the link in the appointment reminder. Never offer a free cleaning for one. Our <a href=\"/industries/healthcare-appointments\">healthcare appointments</a> page covers the booking side.</p><h3 id=\"a-biryani-restaurant\">A biryani restaurant</h3><p>A dine-in biryani place with a delivery counter. Google says restaurants should use the hours diners can sit and eat, or takeout hours if there is no dining.</p><p>Menu: Google says a menu link can't go straight to a third-party ordering or delivery service, and a sample menu of \"popular items\" shouldn't be submitted. Put your full menu on your own website and link that. Photos: your kitchen, dining room and real plates.</p><p>A cloud kitchen brand from the same kitchen needs distinct packaging and website, a hidden address and service areas, per Google's guidelines.</p><figure><img src=\"/assets/blog/google-business-profile-india-small-business/6.webp\" alt=\"Illustration of an Indian restaurant owner photographing a biryani dish for the restaurant's Google listing\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>Real photos of your own food and dining room, not stock pictures.</figcaption></figure><h3 id=\"a-coaching-institute\">A coaching institute</h3><p>A NEET and JEE coaching centre with one classroom building. The temptation is the name: \"Vidya Academy Best NEET Coaching in Hyderabad\". That is service and location information in the name, which Google's guidelines don't allow.</p><p>Google says businesses with varied schedules, naming classes, shouldn't enter those as hours. Don't type batch timings into the hours box; post each new batch with its start date instead.</p><p>Reviews from students and parents are fine. Reviews from your faculty are not, because current or former employment is a conflict of interest in Google's policy.</p><h2 id=\"five-ways-this-goes-wrong\">Five ways this goes wrong</h2><p>Keywords in the name. It may rank for a while, then a competitor reports it.</p><p>Editing during verification. Changing the name, address or category while a postcard is in the post makes the code useless, per Google's own warning.</p><p>Listing a virtual office. A rented address with no staff or signage is ineligible, and it is a common reason service businesses lose their profiles.</p><p>Buying reviews or trading them for discounts. Both are named in Google's fake engagement policy.</p><p>Setting it up once and forgetting it. Wrong festival hours send people to a closed shutter.</p><h2 id=\"a-15-minute-weekly-routine\">A 15-minute weekly routine</h2><p>Set a timer.</p><p><em>A weekly Business Profile check, split across 15 minutes</em></p><table><thead><tr><th>Time</th><th>What to do</th><th>What you write down</th></tr></thead><tbody><tr><td>First 5 minutes</td><td>Reply to every new review, good or bad</td><td>Any complaint that repeats</td></tr><tr><td>Next 5 minutes</td><td>Check hours, phone and special hours for the coming week's holidays</td><td>Anything Google or a user changed</td></tr><tr><td>Last 5 minutes</td><td>Add one real photo or one post, such as a new batch, dish or service</td><td>What you posted, dated</td></tr></tbody></table><p>Once a month, search your own category on Maps from your phone and see who appears around you, much as the <a href=\"/blogs/meta-ads-library-india-small-business\">Meta Ads Library check</a> looks at rivals' ads.</p><p>The profile is one part of local search. A website that names your services and area, and local links, feed relevance and prominence. If you want help with that side, our <a href=\"/services/seo-services\">SEO services</a> page explains what we do.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-google-business-profile-free-in-india\">Is Google Business Profile free in India?</h3><p>Yes. Google says you can add or claim your business at no charge. You pay only if you hire someone to manage it, or if you choose to run Google ads, which are separate from the free listing.</p><h3 id=\"how-long-does-verification-take\">How long does verification take?</h3><p>Google says its review takes up to 5 business days after you complete the steps, occasionally longer. Postcard codes usually arrive within 14 days and expire after 30. Some profiles are verified instantly, for example when the website is already verified in Google Search Console.</p><h3 id=\"can-i-choose-video-verification-instead-of-a-postcard\">Can I choose video verification instead of a postcard?</h3><p>No. Google picks the methods automatically from your business type, region, public information and hours, and they can't be changed. If video is offered, Google recommends it.</p><h3 id=\"can-i-list-my-business-from-home\">Can I list my business from home?</h3><p>Yes, if you travel to customers. Set it up as a service-area business and hide the home address. If customers come to your home for the service, it needs to be staffed and open to them during your stated hours.</p><h3 id=\"can-i-write-my-business-name-in-telugu-and-english\">Can I write my business name in Telugu and English?</h3><p>Not both together. Google's guidelines no longer allow the same name repeated in two scripts, even if your signboard shows both. Choose one script for the name, and use either language in your description, posts and replies.</p><h3 id=\"can-i-offer-a-discount-for-google-reviews\">Can I offer a discount for Google reviews?</h3><p>No. Google's policy names payment, discounts and free goods or services in exchange for reviews as fake engagement. Ask every customer with a link or QR code and give nothing in return.</p><h3 id=\"how-do-i-get-a-suspended-profile-back\">How do I get a suspended profile back?</h3><p>Fix whatever broke the guidelines, then appeal through Google's appeals tool with documents whose name and address match the profile. An appeal can only be submitted once, so include everything. Don't create a new profile for the same business.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://support.google.com/business/answer/2911778?hl=en\" rel=\"noopener noreferrer nofollow\">Add or claim your Business Profile, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/7107242?hl=en\" rel=\"noopener noreferrer nofollow\">Verify your business on Google, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/14271705?hl=en\" rel=\"noopener noreferrer nofollow\">Verify your business with a video recording, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/4490296?hl=en\" rel=\"noopener noreferrer nofollow\">Verify Business Profiles in bulk, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/7091?hl=en\" rel=\"noopener noreferrer nofollow\">Tips to improve your local ranking on Google, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/3038177?hl=en\" rel=\"noopener noreferrer nofollow\">Guidelines for representing your business on Google, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/13763036?hl=en\" rel=\"noopener noreferrer nofollow\">Business eligibility and ownership guidelines, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/9157481?hl=en\" rel=\"noopener noreferrer nofollow\">Manage your service area, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/3474122?hl=en\" rel=\"noopener noreferrer nofollow\">Get more Google reviews, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/contributionpolicy/answer/7400114?hl=en\" rel=\"noopener noreferrer nofollow\">Prohibited and restricted content, Google Maps User Contributed Content Policy</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/6103862?hl=en\" rel=\"noopener noreferrer nofollow\">Manage photos and videos, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/7342169?hl=en\" rel=\"noopener noreferrer nofollow\">Create posts on Google, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/9455399?hl=en\" rel=\"noopener noreferrer nofollow\">Manage your services on your Business Profile, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/business/answer/4569145?hl=en\" rel=\"noopener noreferrer nofollow\">Fix a suspended or disabled Business Profile, Google Business Profile Help</a>, read 16 November 2026</li><li><a href=\"https://www.seroundtable.com/google-business-profile-call-history-deprecating-37465.html\" rel=\"noopener noreferrer nofollow\">Google Business Profile call history and chat going away, Search Engine Roundtable</a>, read 16 November 2026</li><li><a href=\"https://www.seroundtable.com/google-business-profiles-websites-now-shut-down-36999.html\" rel=\"noopener noreferrer nofollow\">Google shut down Google Business Profiles websites, Search Engine Roundtable</a>, read 16 November 2026</li><li><a href=\"https://www.seroundtable.com/google-maps-qa-feature-ask-40594.html\" rel=\"noopener noreferrer nofollow\">Google removing Q&amp;A feature in Google Maps for AI-powered Ask button, Search Engine Roundtable</a>, read 16 November 2026</li><li><a href=\"https://whitespark.ca/local-search-ranking-factors/\" rel=\"noopener noreferrer nofollow\">2026 Local Search Ranking Factors, Whitespark</a>, read 16 November 2026</li><li><a href=\"https://www.sterlingsky.ca/50-cases-of-keyword-spam/\" rel=\"noopener noreferrer nofollow\">50 cases of keyword spam, Sterling Sky</a>, read 16 November 2026</li><li><a href=\"https://www.pinmeto.com/news/google-business-profile-bilingual-names-disallowed-2026/\" rel=\"noopener noreferrer nofollow\">Google Business Profile bans repeated bilingual names, PinMeTo</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "Indian shop owner checking their business listing on Google Maps on a phone",
+   "prompt": "16:9 cover. Warm cream background (#FBF6EC). Left half: flat warm editorial illustration of a smiling Indian shop owner standing at the counter of a small store, looking at a phone showing a simple map with a single location pin (no readable text, no logos on the screen), terracotta, mustard and sage palette, face fully in frame. Right half: the title in very large bold black sans-serif, left-aligned, on two lines, exact text: \"Google Business Profile\". No other text, no Google logo, no brand marks."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic comparing storefront, service-area and hybrid Google Business Profiles",
+   "prompt": "Clean explainer infographic, 16:9, warm cream background (#FBF6EC), flat illustration icons, dark-blue rounded label pills with white bold text, orange arrows connecting elements, bold black sans-serif heading at top, one-line bold black takeaway at the bottom, generous spacing, no logos, no other text than specified. Heading exact text: \"Storefront, service-area or hybrid?\". Three columns, each with a flat icon above a dark-blue pill. Column 1 icon: small shop with signboard; pill text: \"Storefront\"; caption under it: \"Customers visit you. Address shown.\" Column 2 icon: technician with toolbox on a scooter heading to a house; pill: \"Service-area\"; caption: \"You go to customers. Address hidden.\" Column 3 icon: garage with a van outside; pill: \"Hybrid\"; caption: \"Staffed address plus a service area.\" Orange arrows from a small central phone-with-map-pin icon at top to each column. Bottom takeaway exact text: \"Up to 20 service areas, within about 2 hours' drive.\""
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "url": "https://support.google.com/business/answer/2911778?hl=en",
+   "alt": "Google's help page showing how to add or claim a Business Profile",
+   "annotate": [
+    {
+     "label": "1",
+     "what": "The 'Add your business' section with the business.google.com/add link"
+    },
+    {
+     "label": "2",
+     "what": "The 'Claim an unverified business' section and the 'Claim this business' then 'Manage now' step"
+    },
+    {
+     "label": "3",
+     "what": "The tip that you can add or claim your business at no charge"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "url": "https://support.google.com/business/answer/7107242?hl=en",
+   "alt": "Google's help page listing the verification options for a Business Profile",
+   "annotate": [
+    {
+     "label": "1",
+     "what": "The note 'Verification methods are automatically determined by Google and can't be changed'"
+    },
+    {
+     "label": "2",
+     "what": "The tip recommending video verification if eligible"
+    },
+    {
+     "label": "3",
+     "what": "The expandable method headings: Phone or text, Email, Live video call, Mail"
+    },
+    {
+     "label": "4",
+     "what": "Step 3: 'Wait up to 5 business days to be verified'"
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "infographic",
+   "alt": "Infographic of Google's three local ranking factors: relevance, distance and prominence",
+   "prompt": "Clean explainer infographic, 16:9, warm cream background (#FBF6EC), flat illustration icons, dark-blue rounded label pills with white bold text, orange arrows connecting elements, bold black sans-serif heading at top, one-line bold black takeaway at the bottom, generous spacing, no logos, no other text than specified. Heading exact text: \"How Google ranks local results\". Three flat icons in a row, each above a dark-blue pill and a one-line caption. Icon 1: magnifying glass over a shop card; pill: \"Relevance\"; caption: \"How well your profile matches the search\". Icon 2: map with two pins and a dotted path; pill: \"Distance\"; caption: \"How far you are from the searcher\". Icon 3: storefront with review stars and link chain; pill: \"Prominence\"; caption: \"How well-known you are: reviews, links\". Orange arrows from the three pills converge on a small map pack icon on the right. Bottom takeaway exact text: \"You can't pay for a better local ranking.\""
+  },
+  {
+   "file": "5.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian dentist showing a patient a review QR code at a clinic front desk",
+   "prompt": "3:2 scene. Flat warm editorial illustration on a warm cream background (#FBF6EC), terracotta, mustard and sage palette with soft shading, Indian people, natural proportions, faces fully in frame, no logos, no brand marks, no readable UI text or numbers on screens. A small, bright Indian dental clinic reception: a woman dentist in a white coat at the front desk points to a printed QR code stand (plain square pattern, no text) while a middle-aged patient holds up a phone to scan it. Dental chair visible through a doorway behind, potted plant, calm daylight."
+  },
+  {
+   "file": "6.webp",
+   "kind": "illustration",
+   "alt": "Illustration of an Indian restaurant owner photographing a biryani dish for the restaurant's Google listing",
+   "prompt": "3:2 scene. Flat warm editorial illustration on a warm cream background (#FBF6EC), terracotta, mustard and sage palette with soft shading, Indian people, natural proportions, faces fully in frame, no logos, no brand marks, no readable UI text or numbers on screens. Inside a modest Indian biryani restaurant: the owner, a man in an apron, photographs a handi of biryani on a wooden table with his phone, a cook visible at the open kitchen behind, a few diners at tables, warm afternoon light."
+  }
+ ]
+}
