@@ -743,7 +743,7 @@ export default function Home() {
         <section aria-labelledby="start" className="bg-navy py-[72px] text-white">
           <div className={`${COL} flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-center`}>
             <div>
-              <h2 id="start" className="max-w-[20ch] text-3xl font-semibold leading-[1.15] text-white lg:text-[40px]">Start with a ₹3,500 requirement analysis</h2>
+              <h2 id="start" className="max-w-[20ch] text-3xl font-semibold leading-[1.15] text-white lg:text-[40px]">Start with a ₹3,499 requirement analysis</h2>
               <p className="mt-2.5 text-[17px] text-white/75">A written quotation and timeline before you commit to anything.</p>
             </div>
             <Link href="/book" className="inline-flex h-[52px] shrink-0 items-center rounded-full bg-amber px-[26px] text-base font-semibold text-amber-ink hover:bg-[#ffbf47]">

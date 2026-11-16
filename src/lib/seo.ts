@@ -1,6 +1,6 @@
 // Page meta from one set of values, so title, description, canonical, Open Graph and Twitter never drift.
 // Facts in the tails come only from content.ts / the company profile: 380+ apps, 175+ organisations,
-// 3,000+ processes automated, ₹3,500 analysis, code in your name, bugs answered in under 6 hours.
+// 3,000+ processes automated, ₹3,499 analysis, code in your name, bugs answered in under 6 hours.
 import type { Metadata } from "next";
 import { OG_IMG, type Category, type Entry } from "@/lib/content";
 
@@ -31,10 +31,10 @@ export const pageMeta = (
 
 // Longest first; withTail takes the first that fits, so every base length lands in the window.
 export const BUILD_TAILS = [
-  "We have shipped 380+ apps, code, cloud and credentials stay in your name, and every project starts with a ₹3,500 requirement analysis.",
-  "380+ apps shipped, code and cloud in your name, bugs answered in under 6 hours. Start with a ₹3,500 requirement analysis.",
-  "380+ apps shipped, code in your name, bugs answered in under 6 hours. Start with a ₹3,500 analysis.",
-  "380+ apps shipped and code in your name. Start with a ₹3,500 requirement analysis.",
+  "We have shipped 380+ apps, code, cloud and credentials stay in your name, and every project starts with a ₹3,499 requirement analysis.",
+  "380+ apps shipped, code and cloud in your name, bugs answered in under 6 hours. Start with a ₹3,499 requirement analysis.",
+  "380+ apps shipped, code in your name, bugs answered in under 6 hours. Start with a ₹3,499 analysis.",
+  "380+ apps shipped and code in your name. Start with a ₹3,499 requirement analysis.",
   "380+ apps shipped, code and cloud in your name from day one.",
   "Code in your name, bugs answered in under 6 hours.",
   "380+ apps shipped, code in your name.",
