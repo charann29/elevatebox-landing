@@ -1,0 +1,232 @@
+{
+ "slug": "mobile-app-development-cost-india",
+ "locale": "en",
+ "title": "Mobile app development cost in India: what you pay for",
+ "description": "What an app costs to build in India in 2026: published ranges, hourly rates, Play and Apple fees, SMS, payment and upkeep costs, and how to get a fixed quote.",
+ "imageUrl": "/assets/blog/mobile-app-development-cost-india/cover.webp",
+ "imageAlt": "An Indian business owner reviewing a mobile app quotation on a laptop",
+ "ogImageUrl": null,
+ "tags": [
+  "app development cost",
+  "mobile apps",
+  "small business",
+  "India"
+ ],
+ "readingTimeMinutes": 17,
+ "publishedAt": "2026-11-16T09:00:00.000Z",
+ "updatedAt": "2026-11-16T09:00:00.000Z",
+ "heading": null,
+ "eyebrow": null,
+ "standfirst": null,
+ "faqHeading": "Frequently asked questions",
+ "headline": null,
+ "breadcrumbLabel": null,
+ "faqPlacement": "body",
+ "toc": [
+  {
+   "id": "what-an-app-costs-to-build-in-india",
+   "text": "What an app costs to build in India",
+   "level": 2
+  },
+  {
+   "id": "what-published-estimates-say",
+   "text": "What published estimates say",
+   "level": 2
+  },
+  {
+   "id": "what-actually-drives-the-cost",
+   "text": "What actually drives the cost",
+   "level": 2
+  },
+  {
+   "id": "freelancer-agency-or-in-house",
+   "text": "Freelancer, agency or in-house",
+   "level": 2
+  },
+  {
+   "id": "hourly-rates-in-india",
+   "text": "Hourly rates in India",
+   "level": 2
+  },
+  {
+   "id": "the-costs-people-forget",
+   "text": "The costs people forget",
+   "level": 2
+  },
+  {
+   "id": "store-accounts",
+   "text": "Store accounts",
+   "level": 3
+  },
+  {
+   "id": "hosting",
+   "text": "Hosting",
+   "level": 3
+  },
+  {
+   "id": "otp-and-sms",
+   "text": "OTP and SMS",
+   "level": 3
+  },
+  {
+   "id": "payment-gateway-fees",
+   "text": "Payment gateway fees",
+   "level": 3
+  },
+  {
+   "id": "maintenance",
+   "text": "Maintenance",
+   "level": 3
+  },
+  {
+   "id": "how-fixed-price-quotes-work",
+   "text": "How fixed-price quotes work",
+   "level": 2
+  },
+  {
+   "id": "how-to-scope-and-get-a-reliable-quote",
+   "text": "How to scope and get a reliable quote",
+   "level": 2
+  },
+  {
+   "id": "three-worked-examples",
+   "text": "Three worked examples",
+   "level": 2
+  },
+  {
+   "id": "a-clinic-booking-app",
+   "text": "A clinic booking app",
+   "level": 3
+  },
+  {
+   "id": "a-d2c-shopping-app",
+   "text": "A D2C shopping app",
+   "level": 3
+  },
+  {
+   "id": "a-coaching-institute-app",
+   "text": "A coaching institute app",
+   "level": 3
+  },
+  {
+   "id": "four-ways-cost-estimates-mislead-you",
+   "text": "Four ways cost estimates mislead you",
+   "level": 2
+  },
+  {
+   "id": "a-checklist-before-you-sign",
+   "text": "A checklist before you sign",
+   "level": 2
+  },
+  {
+   "id": "frequently-asked-questions",
+   "text": "Frequently asked questions",
+   "level": 2
+  }
+ ],
+ "faq": [
+  {
+   "q": "How much does a simple app cost in India?",
+   "a": "Published agency estimates for a basic or MVP app range from ₹3 lakh to ₹5 lakh (Zartek, for 3 to 5 core features on one platform) up to ₹7.6 lakh to ₹19 lakh (SolGuruz, for login, profiles and static content). The spread comes from what each source calls simple. Get a quote against your own feature list."
+  },
+  {
+   "q": "Is it cheaper to build for Android only?",
+   "a": "Yes, one platform is cheaper than two. Building both from one shared codebase sits in between: Riolabz says cross-platform can cut initial build cost by 25 to 40 percent compared with separate native apps. Start with the platform your customers actually use."
+  },
+  {
+   "q": "What are the yearly costs after launch?",
+   "a": "Apple's developer program at 99 USD a year in local currency, hosting, SMS for OTPs, payment gateway fees on every sale, and maintenance. SolGuruz puts maintenance at 15 to 25 percent of the build cost a year, and Zartek at 15 to 20 percent. Google Play's US$25 fee is paid once."
+  },
+  {
+   "q": "Should I hire a freelancer or an agency?",
+   "a": "A freelancer suits a small, clearly defined app and costs less per hour: SolGuruz lists ₹1,425 to ₹3,800 an hour for freelancers against ₹2,375 to ₹5,700 for Indian agencies. An agency gives you a team and cover if someone leaves. In both cases, keep the code and accounts in your name."
+  },
+  {
+   "q": "How long does it take to build an app?",
+   "a": "SolGuruz gives 1 to 3 months for a basic app, 3 to 7 months for mid-complexity and 7 to 14 months for complex builds. Riolabz says 8 to 12 weeks for simple apps."
+  },
+  {
+   "q": "What is a fixed-price quote?",
+   "a": "A price agreed up front for a written scope, with the builder carrying the risk of going over. It works only when the scope lists every screen and feature, the milestones, and how changes are priced."
+  },
+  {
+   "q": "Can I get an exact price without a requirements document?",
+   "a": "Not a reliable one. Without a written list of features, users and integrations, any number is a guess. Work through the seven steps above, then ask every builder to price the same document."
+  }
+ ],
+ "contentHtml": "<h2 id=\"what-an-app-costs-to-build-in-india\">What an app costs to build in India</h2><p><strong>In short:</strong> Published estimates from Indian agencies put a basic app at roughly ₹3 lakh to ₹19 lakh, a mid-complexity app with payments and live features at ₹19 lakh to ₹57 lakh, and complex builds well above that. Where you land depends on features, platforms and backend, not on the city. Then budget every year for store fees, hosting, SMS, payment fees and maintenance.</p><p>The range is wide on purpose. A one-room flat and a three-floor building are both houses. The useful question is what you are paying for, and this post goes through it piece by piece.</p><p>If you want your own scope priced in writing before you commit, that is what our ₹3,500 requirement analysis produces: a call with the people who would build it, the requirements worked through, and a written fixed quotation and timeline (<a href=\"/book\">book one here</a>). The rest of this post needs nothing from us or anyone else.</p><p>Every figure here was checked in November 2026. Prices on official pages change, so if a number below no longer matches the page it came from, trust the page.</p><h2 id=\"what-published-estimates-say\">What published estimates say</h2><p>There is no official price list for app development in India. What exists are estimates published by agencies, and they do not agree with each other. Here are four, with each source's own numbers. None of them are ElevateBox prices.</p><p><em>Published cost estimates for building a mobile app in India, 2026</em></p><table><thead><tr><th>Source and date</th><th>Basic or MVP</th><th>Mid-level</th><th>Complex</th></tr></thead><tbody><tr><td>SolGuruz, updated 17 August 2026</td><td>₹7.6 lakh to ₹19 lakh (login, profiles, static content), 1 to 3 months</td><td>₹19 lakh to ₹57 lakh (payments, real-time, APIs), 3 to 7 months</td><td>₹57 lakh to ₹1.43 crore and up, 7 to 14 months</td></tr><tr><td>Riolabz, 24 March 2026</td><td>₹6 lakh to ₹18 lakh (lean MVP, one platform)</td><td>₹20 lakh to ₹55 lakh (iOS and Android)</td><td>₹60 lakh to ₹1.5 crore and up</td></tr><tr><td>Zartek, updated 2026</td><td>₹3 lakh to ₹5 lakh (MVP, 3 to 5 core features, one platform, no complex backend)</td><td>Not given in rupees</td><td>Not given in rupees</td></tr><tr><td>eCorpIT, updated 11 November 2026, citing Clutch</td><td>Under $10,000 buys a single-platform prototype</td><td>$10,000 to $49,999, described as Clutch's typical band</td><td>$100,000 and above for regulated, multi-role builds</td></tr></tbody></table><p><em>Source: </em><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\"><em>SolGuruz</em></a><em>, </em><a href=\"https://www.riolabz.com/blogs/cost-of-mobile-app-development-in-india-in-2026\" rel=\"noopener noreferrer nofollow\"><em>Riolabz</em></a><em>, </em><a href=\"https://www.zartek.in/app-development-cost-in-india-2026/\" rel=\"noopener noreferrer nofollow\"><em>Zartek</em></a><em> and </em><a href=\"https://ecorpit.com/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\"><em>eCorpIT</em></a><em>, read 16 November 2026.</em></p><p>Read the table for its shape, not its exact edges. The sources overlap, they define \"basic\" differently, and SolGuruz's own headline range (₹9.5 lakh to ₹2.85 crore and up) does not quite match its own table. eCorpIT also notes that Clutch's figures are self-reported ranges from listed firms, not audited prices.</p><p>What they agree on: a small, single-platform app with a simple backend starts in the low lakhs. Payments, real-time features and both platforms take you into the tens of lakhs.</p><h2 id=\"what-actually-drives-the-cost\">What actually drives the cost</h2><p>Almost every quote is hours multiplied by a rate. The hours come from six places.</p><figure><img src=\"/assets/blog/mobile-app-development-cost-india/1.webp\" alt=\"Infographic of the six things that drive mobile app development cost: features, platforms, design, backend and admin panel, integrations, and testing\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Six things set the hours, and the hours set the price.</figcaption></figure><p><strong>Features.</strong> Each screen and each rule is work. Riolabz prices a basic login at ₹50,000 to ₹1.5 lakh and in-app payments at ₹1 lakh to ₹3 lakh, and puts real-time chat at ₹3 lakh to ₹10 lakh or more per module.</p><p><strong>Platforms.</strong> Android only, iPhone only, or both, depending on what your customers carry. Building both from one shared codebase (Flutter or React Native) is the usual middle path. Riolabz says cross-platform can cut the initial build by 25 to 40 percent. Zartek, looking at it from the other side, says a Flutter build costs about 30 percent more than a single platform alone. Both can be true: one codebase for two apps is cheaper than two codebases, and dearer than one app. We compare the two frameworks in <a href=\"/blogs/flutter-vs-react-native\">Flutter vs React Native</a>.</p><p><strong>Design.</strong> A template look is cheap. A custom design with your brand, careful flows and tested screens is not. Riolabz puts design at 15 to 30 percent of total budget for consumer apps, and Zartek says advanced UI work adds 20 to 40 percent to the design budget.</p><p><strong>Backend and admin panel.</strong> The app on the phone is the part you see. Behind it sit a server, a database, and the admin panel your staff use to manage bookings, orders or students. Riolabz says backend, integrations and QA are often 40 to 60 percent of the budget for anything non-trivial.</p><p><strong>Integrations.</strong> Payments, maps, OTP login, WhatsApp messages, your accounting software. Zartek puts third-party integrations such as payments, maps, WhatsApp Business APIs and CRMs at ₹50,000 to ₹2 lakh each. Each also brings a running cost.</p><p><strong>Testing.</strong> Users run everything from new flagships to old budget phones on patchy networks. Testing across that range takes time, and cheap quotes often cut it.</p><h2 id=\"freelancer-agency-or-in-house\">Freelancer, agency or in-house</h2><p>The same app can be built three ways, and the price differs as much as the risk.</p><p><em>Published cost of the three ways to build an app in India</em></p><table><thead><tr><th>Who builds it</th><th>Published cost</th><th>What you are buying</th></tr></thead><tbody><tr><td>Freelancer</td><td>₹1,425 to ₹3,800 an hour ($15 to $40), varies widely</td><td>One person's time. Design, backend and testing depend on what that person can do.</td></tr><tr><td>Agency in India</td><td>₹2,375 to ₹5,700 an hour ($25 to $60), blended</td><td>A team: designer, developers, tester, project manager.</td></tr><tr><td>In-house team</td><td>₹76 lakh to ₹2.4 crore and up a year ($80,000 to $250,000), salaries and overhead</td><td>People who stay after launch, plus the job of hiring and managing them.</td></tr></tbody></table><p><em>Source: </em><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\"><em>SolGuruz, App Development Cost in India</em></a><em>, read 16 November 2026.</em></p><p>A freelancer is a good fit for a small, well-defined app, or for one piece of a larger project. The risk is concentration. If one person falls ill or takes a bigger client, everything stops. An agency costs more per hour, but buys cover and a wider set of skills. In-house makes sense once the app is the business.</p><p>Whichever you choose, one thing matters more than the hourly rate: who owns the code, the cloud account and the store accounts. Ask for all three to be in your company's name from day one. That is how we work: code, cloud and credentials sit in the client's name. We wrote more on the trade-off in <a href=\"/blogs/freelance-vs-app-development-company-hyderabad\">freelancer vs app development company</a>.</p><h2 id=\"hourly-rates-in-india\">Hourly rates in India</h2><p>Rates vary by role and seniority. SolGuruz publishes a range for each role, from junior to senior, in rupees an hour:</p><ul><li>Project manager: ₹1,425 to ₹5,700</li><li>UI and UX designer: ₹1,140 to ₹5,225</li><li>iOS or Android developer: ₹1,710 to ₹7,600</li><li>Flutter developer: ₹1,425 to ₹7,125</li><li>Backend developer: ₹1,710 to ₹8,075</li><li>QA tester: ₹950 to ₹4,750</li><li>AI or ML engineer: ₹2,375 to ₹11,400</li></ul><p>Zartek puts Indian firms at $10 to $40 an hour, against $80 to $150 for US agencies. On Clutch's India listing, firms state their own rate bands, and the ones I saw sat in \"under $25\" or \"$25 to $49\" an hour.</p><p>A cheap rate often means juniors, who take longer. A ₹1,500-an-hour developer who needs 600 hours costs more than a ₹3,000-an-hour developer who needs 250.</p><h2 id=\"the-costs-people-forget\">The costs people forget</h2><p>The build quote gets you to launch day. After that, the app keeps costing money whether or not anyone changes it. Here are the official figures.</p><p><em>One-time and recurring costs after the build, from official pages</em></p><table><thead><tr><th>Cost</th><th>What the official page says</th><th>How often</th></tr></thead><tbody><tr><td>Google Play developer account</td><td>US$25 registration fee</td><td>Once</td></tr><tr><td>Apple Developer Program</td><td>99 USD, in local currency where available</td><td>Every year</td></tr><tr><td>OTP and SMS (MSG91, India to India)</td><td>₹0.25 per SMS at 5,000 SMS, falling to ₹0.16 at 9,62,500, plus 18% GST</td><td>Per message</td></tr><tr><td>Payment gateway (Razorpay standard)</td><td>2% plus GST on successful payments, no setup fee or annual maintenance charge</td><td>Per payment</td></tr><tr><td>Hosting (Firebase)</td><td>Free tier with daily limits, then pay as you go</td><td>Monthly, by usage</td></tr><tr><td>Maintenance</td><td>15 to 25% of the build cost a year (SolGuruz); 15 to 20% (Zartek)</td><td>Every year</td></tr></tbody></table><p><em>Source: Google Play Console Help, Apple Developer Account Help, MSG91, Razorpay and Firebase pricing pages, plus SolGuruz and Zartek, read 16 November 2026.</em></p><h3 id=\"store-accounts\">Store accounts</h3><p>Google's Play Console help page says it plainly: there is a US$25 one-time registration fee. Register the account to your business, not to the developer.</p><figure><img src=\"/assets/blog/mobile-app-development-cost-india/2.webp\" alt=\"Google Play Console help page showing the US$25 one-time registration fee\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Google Play: a one-time US$25 registration fee.</figcaption></figure><p>Apple is yearly. Apple's account help page says the Apple Developer Program annual fee is 99 USD, in local currency where available, and that prices are listed in local currency during enrolment. It also notes that enrolment in India is only available through the Apple Developer app. I could not find a rupee figure printed on an official Apple page, so check the amount the app shows you at enrolment.</p><figure><img src=\"/assets/blog/mobile-app-development-cost-india/3.webp\" alt=\"Apple Developer account help page showing the 99 USD annual Apple Developer Program fee and the note on enrolling in India\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Apple: 99 USD a year, charged in local currency, and enrolment in India goes through the Apple Developer app.</figcaption></figure><h3 id=\"hosting\">Hosting</h3><p>Every app with logins, bookings or orders needs a server and a database. Small apps often start on Firebase, Google's app backend. Its free Spark plan needs no payment method and includes, for Cloud Firestore, 1 GiB of stored data, 50,000 document reads and 20,000 writes a day. Above that, the Blaze plan bills by use. AWS is the other common choice: eCorpIT lists AWS Lightsail's prices at $5 a month for a Linux instance and $15 a month for a managed database, as checked on 11 November 2026.</p><p>Hosting is usually small at launch and grows with use, faster with video and real-time features. Ask for an estimate at 1,000 users and at 50,000.</p><h3 id=\"otp-and-sms\">OTP and SMS</h3><p>Most Indian apps log people in with a one-time password by SMS. Each OTP is a paid message. MSG91's India SMS price page lists ₹0.25 a message for a 5,000-message pack (₹1,250 before GST), coming down to ₹0.16 at 9,62,500 messages, with 18% GST on top.</p><p>A few paise sounds like nothing, but every login, resend and failed attempt is a message. Rate limits on the OTP screen are cheaper than the SMS they save.</p><h3 id=\"payment-gateway-fees\">Payment gateway fees</h3><p>If the app takes money, the payment gateway takes a share. Razorpay's India pricing page states a standard 2% plus GST per successful transaction, with zero setup fees and no annual maintenance charge. The same page says there is zero MDR (merchant discount rate) on standard bank-to-bank UPI payments, but that a 2% platform fee still applies. On a ₹1,000 order, that is ₹20 plus GST.</p><figure><img src=\"/assets/blog/mobile-app-development-cost-india/4.webp\" alt=\"Razorpay pricing page showing the standard 2% rate struck out for a 90-day 0% offer to new accounts\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Razorpay's standard rate is 2% plus GST on successful payments. When I checked, new accounts were offered 0% for their first 90 days.</figcaption></figure><h3 id=\"maintenance\">Maintenance</h3><p>This is the big one. Phone operating systems update, libraries go out of date, the stores change their rules, and bugs turn up only once real people use the app. SolGuruz says to budget 15 to 25 percent of the initial build cost a year. Zartek says 15 to 20 percent. On a ₹10 lakh build, that is ₹1.5 lakh to ₹2.5 lakh a year by SolGuruz's range, before you add a single feature. Zartek also suggests adding 25 to 30 percent to the quoted build cost to get a first-year total that includes store fees, maintenance and basic marketing. We go further into this in <a href=\"/blogs/app-maintenance-budget\">how to budget for app maintenance</a>.</p><figure><img src=\"/assets/blog/mobile-app-development-cost-india/5.webp\" alt=\"Infographic comparing one-time app costs with recurring yearly and per-use costs\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>The build is paid once. Store fees, hosting, SMS, payment fees and maintenance keep coming.</figcaption></figure><h2 id=\"how-fixed-price-quotes-work\">How fixed-price quotes work</h2><p>Time and materials means you pay for hours as they are worked. Fixed price means you agree a scope and price up front, and the builder carries the risk of going over.</p><p>Fixed price suits most small businesses, because you know the number before you start. But a fixed quote is really a fixed quote for a document. If the document says \"booking system\", every later argument is about what that phrase meant.</p><p>A good fixed quote has four parts. A written list of screens and features, with what each one does. Milestones, each with a payment and something you can test. A change process, so that new ideas are priced before they are built, not after. And a clear line on what is not included: content, store listings, hosting bills, third-party fees.</p><p>Riolabz recommends a 10 to 15 percent contingency for iteration and edge cases.</p><h2 id=\"how-to-scope-and-get-a-reliable-quote\">How to scope and get a reliable quote</h2><p>This is the order I would do it in, before talking to anyone who will quote.</p><p><strong>Step 1. Write down who uses it.</strong> Customers, staff, delivery partners, doctors, parents. Each kind of user usually means a separate set of screens.</p><p><strong>Step 2. List what each user must do on day one.</strong> Only what makes the app worth opening. Mark everything else \"later\".</p><p><strong>Step 3. Pick platforms.</strong> Android only, iPhone only, or both. Look at what your customers carry, not at what you carry.</p><p><strong>Step 4. List every outside service.</strong> Payments, OTP, maps, WhatsApp, your billing or inventory software. Each one is integration work plus a running cost.</p><p><strong>Step 5. Describe the admin side.</strong> What your staff need to see and change: bookings, orders, refunds, reports. This is often half the work.</p><p><strong>Step 6. Ask for a written quote against that list.</strong> Ask every builder to price the same document, broken down by feature or milestone, with the hours behind it. Two quotes on one scope beat five quotes on five guesses.</p><p><strong>Step 7. Ask about year two.</strong> Who maintains it, at what cost, and what the hosting and third-party bills will be at your expected number of users.</p><p>If you would rather do these steps with the people who would build it, that is what our requirement analysis is: the requirements worked through on a call, then a written fixed quotation and timeline before any build starts (<a href=\"/services/mobile-app-development\">how our app work runs</a>).</p><h2 id=\"three-worked-examples\">Three worked examples</h2><p>These are not quotes. They break an idea into components and show which published band each points to.</p><h3 id=\"a-clinic-booking-app\">A clinic booking app</h3><p>Say you run a clinic with four doctors and want patients to book slots by phone.</p><p>The patient side needs OTP login, a list of doctors, open slots, booking and cancellation, reminders, and perhaps advance payment. The clinic side needs an admin panel where reception sees the day's appointments, blocks a doctor's leave and marks no-shows.</p><p>Map the pieces. Login and payments are in Riolabz's per-feature figures (₹50,000 to ₹1.5 lakh and ₹1 lakh to ₹3 lakh). Payments plus live slot availability put the whole app in SolGuruz's mid-complexity description, \"payments, real-time, APIs\". If it is Android only and you keep payments out of version one, it moves towards the basic band.</p><figure><img src=\"/assets/blog/mobile-app-development-cost-india/6.webp\" alt=\"Illustration of a clinic receptionist and doctor reviewing the day's patient appointments\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>In a clinic app, the reception's admin panel is half the product.</figcaption></figure><p>Running costs: one OTP per login at MSG91's listed rates, reminders by SMS or WhatsApp, Razorpay's 2% plus GST on any advance payments, and small hosting. If patient records come in, SolGuruz's healthcare range starts at ₹19 lakh.</p><h3 id=\"a-d2c-shopping-app\">A D2C shopping app</h3><p>Say you sell sarees or snacks online and want an app alongside your website.</p><p>The shopper side is a catalogue, search, cart, checkout, order tracking and returns. The admin side is products, stock, orders, coupons and refunds. The integrations are the payment gateway, a shipping partner, and probably your existing store or inventory software.</p><p>This sits firmly in mid-level territory: payments plus several integrations. Zartek's ₹50,000 to ₹2 lakh per integration adds up fast when there are four of them. If most orders come from Instagram and WhatsApp, ask whether a fast mobile website would do the job first.</p><p>The running cost to watch is the payment fee: at 2% plus GST, it grows with every sale.</p><h3 id=\"a-coaching-institute-app\">A coaching institute app</h3><p>Say you run a coaching centre and want recorded lessons, tests and fee payment in one app.</p><p>Students need login, a course list, video lessons, practice tests with scores, and notices. The institute needs an admin panel to upload videos, set tests and track fees. Lessons in Telugu or Hindi mean planning for more than one language from the start.</p><p>Video is what changes the budget. Storing and streaming video costs more as more students watch: Firebase's pricing page, for example, charges per GB downloaded once you pass the free allowance. Live classes are real-time features, which Zartek says add 25 to 50 percent to server-side cost. With tests, payments and video, expect SolGuruz's mid-complexity band. A first version with recorded videos only, no live classes, stays closer to the bottom of it.</p><h2 id=\"four-ways-cost-estimates-mislead-you\">Four ways cost estimates mislead you</h2><p><strong>The build is quoted, the year is not.</strong> A ₹6 lakh quote is not a ₹6 lakh app. Add store fees, hosting, SMS, payment fees and 15 to 25 percent a year for maintenance, and the first two years look very different.</p><p><strong>The admin panel is missing.</strong> Many low quotes price the customer app and quietly leave out the staff side. Ask directly whether the admin panel is included, and what it does.</p><p><strong>The same word means different things.</strong> \"Chat\" can mean a WhatsApp link or a full messaging system with read receipts. One is an afternoon, the other is Riolabz's ₹3 lakh to ₹10 lakh module. Without a written list of what each feature does, two quotes are not comparable.</p><p><strong>A blog range is not a quote.</strong> This one included. Published ranges cannot see your features, users or integrations. Use them to sanity-check a quote, never to replace one.</p><aside data-callout=\"accent\"><p data-callout-title>Ask for hours, not just a total</p><p>A quote with hours per feature lets you see where the money goes, and lets you drop a feature with a known saving. A single total gives you nothing to negotiate with.</p></aside><h2 id=\"a-checklist-before-you-sign\">A checklist before you sign</h2><ul><li>A written list of every screen and feature, for every type of user.</li><li>Platforms named: Android, iPhone, or both, and how they are built.</li><li>The admin panel included and described.</li><li>Every integration listed, with who pays its running fees.</li><li>Milestones, each with a payment and something you can test.</li><li>A change process: new ideas priced before they are built.</li><li>Code, cloud account and store accounts in your company's name.</li><li>A maintenance offer for year two, in writing.</li><li>An estimate of hosting, SMS and payment fees at your expected users.</li><li>A 10 to 15 percent contingency set aside.</li></ul><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"how-much-does-a-simple-app-cost-in-india\">How much does a simple app cost in India?</h3><p>Published agency estimates for a basic or MVP app range from ₹3 lakh to ₹5 lakh (Zartek, for 3 to 5 core features on one platform) up to ₹7.6 lakh to ₹19 lakh (SolGuruz, for login, profiles and static content). The spread comes from what each source calls simple. Get a quote against your own feature list.</p><h3 id=\"is-it-cheaper-to-build-for-android-only\">Is it cheaper to build for Android only?</h3><p>Yes, one platform is cheaper than two. Building both from one shared codebase sits in between: Riolabz says cross-platform can cut initial build cost by 25 to 40 percent compared with separate native apps. Start with the platform your customers actually use.</p><h3 id=\"what-are-the-yearly-costs-after-launch\">What are the yearly costs after launch?</h3><p>Apple's developer program at 99 USD a year in local currency, hosting, SMS for OTPs, payment gateway fees on every sale, and maintenance. SolGuruz puts maintenance at 15 to 25 percent of the build cost a year, and Zartek at 15 to 20 percent. Google Play's US$25 fee is paid once.</p><h3 id=\"should-i-hire-a-freelancer-or-an-agency\">Should I hire a freelancer or an agency?</h3><p>A freelancer suits a small, clearly defined app and costs less per hour: SolGuruz lists ₹1,425 to ₹3,800 an hour for freelancers against ₹2,375 to ₹5,700 for Indian agencies. An agency gives you a team and cover if someone leaves. In both cases, keep the code and accounts in your name.</p><h3 id=\"how-long-does-it-take-to-build-an-app\">How long does it take to build an app?</h3><p>SolGuruz gives 1 to 3 months for a basic app, 3 to 7 months for mid-complexity and 7 to 14 months for complex builds. Riolabz says 8 to 12 weeks for simple apps.</p><h3 id=\"what-is-a-fixed-price-quote\">What is a fixed-price quote?</h3><p>A price agreed up front for a written scope, with the builder carrying the risk of going over. It works only when the scope lists every screen and feature, the milestones, and how changes are priced.</p><h3 id=\"can-i-get-an-exact-price-without-a-requirements-document\">Can I get an exact price without a requirements document?</h3><p>Not a reliable one. Without a written list of features, users and integrations, any number is a guess. Work through the seven steps above, then ask every builder to price the same document.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://solguruz.com/blog/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\">App Development Cost in India, SolGuruz</a>, read 16 November 2026</li><li><a href=\"https://www.riolabz.com/blogs/cost-of-mobile-app-development-in-india-in-2026\" rel=\"noopener noreferrer nofollow\">Cost of Mobile App Development in India in 2026, Riolabz</a>, read 16 November 2026</li><li><a href=\"https://www.zartek.in/app-development-cost-in-india-2026/\" rel=\"noopener noreferrer nofollow\">App Development Cost in India 2026, Zartek</a>, read 16 November 2026</li><li><a href=\"https://ecorpit.com/app-development-cost-in-india/\" rel=\"noopener noreferrer nofollow\">App Development Cost in India 2026: What Each Band Actually Buys, eCorpIT</a>, read 16 November 2026</li><li><a href=\"https://clutch.co/in/developers\" rel=\"noopener noreferrer nofollow\">Top Software Developers in India, Clutch</a>, read 16 November 2026</li><li><a href=\"https://support.google.com/googleplay/android-developer/answer/6112435?hl=en\" rel=\"noopener noreferrer nofollow\">Get started with Play Console, Google Play Console Help</a>, read 16 November 2026</li><li><a href=\"https://developer.apple.com/support/purchase-activation/\" rel=\"noopener noreferrer nofollow\">Purchase and activation, Apple Developer Account Help</a>, read 16 November 2026</li><li><a href=\"https://msg91.com/in/pricing/sms\" rel=\"noopener noreferrer nofollow\">SMS pricing, MSG91</a>, read 16 November 2026</li><li><a href=\"https://razorpay.com/pricing/\" rel=\"noopener noreferrer nofollow\">Pricing, Razorpay</a>, read 16 November 2026</li><li><a href=\"https://firebase.google.com/pricing\" rel=\"noopener noreferrer nofollow\">Firebase pricing plans, Firebase</a>, read 16 November 2026</li></ul></aside>",
+ "images": [
+  {
+   "file": "cover.webp",
+   "kind": "illustration",
+   "alt": "An Indian business owner reviewing a mobile app quotation on a laptop",
+   "prompt": "16:9 cover. Warm cream background (#FBF6EC). Left half: flat warm editorial illustration in terracotta, mustard and sage of an Indian woman business owner in her shop office, a laptop open on a wooden desk with a printed quotation sheet and a phone beside it, studying the figures thoughtfully; screen and paper show only abstract lines, no readable text. Right half: the title in very large bold black sans-serif, left-aligned, on three lines, exactly: \"App cost in India\". No logos, no other text."
+  },
+  {
+   "file": "1.webp",
+   "kind": "infographic",
+   "alt": "Infographic of the six things that drive mobile app development cost: features, platforms, design, backend and admin panel, integrations, and testing",
+   "prompt": "Clean flat explainer infographic, 16:9, warm cream background (#FBF6EC), simple flat illustration icons, dark-blue rounded label pills with white text, orange arrows, bold black sans-serif heading at the top, one-line bold black takeaway at the bottom. Use exactly the text given, spelled exactly, and no other text, logos or numbers. Heading: \"What drives app cost\". Centre: a phone icon with orange arrows pointing in from six labelled pills, each with a small icon: \"Features\" (list icon), \"Platforms: Android, iOS or both\" (two phones), \"Design\" (pen and palette), \"Backend and admin panel\" (server and dashboard), \"Integrations: payments, maps, OTP\" (card, pin, message bubble), \"Testing\" (magnifier over phone). Bottom takeaway: \"More hours, higher price: scope sets the cost.\""
+  },
+  {
+   "file": "2.webp",
+   "kind": "screenshot",
+   "alt": "Google Play Console help page showing the US$25 one-time registration fee",
+   "url": "https://support.google.com/googleplay/android-developer/answer/6112435?hl=en",
+   "annotate": [
+    {
+     "label": "1",
+     "highlight": "The sentence \"There is a US$25 one-time registration fee.\""
+    },
+    {
+     "label": "2",
+     "highlight": "The page title \"Get started with Play Console\" so readers know which page it is"
+    }
+   ]
+  },
+  {
+   "file": "3.webp",
+   "kind": "screenshot",
+   "alt": "Apple Developer account help page showing the 99 USD annual Apple Developer Program fee and the note on enrolling in India",
+   "url": "https://developer.apple.com/support/purchase-activation/",
+   "annotate": [
+    {
+     "label": "1",
+     "highlight": "\"The Apple Developer Program annual fee is 99 USD ... in local currency where available\""
+    },
+    {
+     "label": "2",
+     "highlight": "The footnote \"Enrollment in India is only available through the Apple Developer app.\""
+    }
+   ]
+  },
+  {
+   "file": "4.webp",
+   "kind": "screenshot",
+   "alt": "Razorpay pricing page showing the standard 2% rate struck out for a 90-day 0% offer to new accounts",
+   "url": "https://razorpay.com/pricing/",
+   "annotate": [
+    {
+     "label": "1",
+     "highlight": "The standard 2% plus GST per transaction rate (capture with an India location so the India page loads, not the US one)"
+    },
+    {
+     "label": "2",
+     "highlight": "The text saying zero setup fees and zero annual maintenance charges"
+    }
+   ]
+  },
+  {
+   "file": "5.webp",
+   "kind": "infographic",
+   "alt": "Infographic comparing one-time app costs with recurring yearly and per-use costs",
+   "prompt": "Clean flat explainer infographic, 16:9, warm cream background (#FBF6EC), simple flat illustration icons, dark-blue rounded label pills with white text, orange arrows, bold black sans-serif heading at the top, one-line bold black takeaway at the bottom. Use exactly the text given, spelled exactly, and no other text, logos or numbers. Heading: \"One-time vs recurring app costs\". Two columns separated by an orange arrow pointing right. Left column titled \"Once\": pills \"Build\" (hammer and phone icon) and \"Google Play: US$25\" (play triangle shape without logo). Right column titled \"Again and again\": pills \"Apple: 99 USD a year\" (calendar icon, no Apple logo), \"Hosting: monthly, by usage\" (cloud icon), \"OTP SMS: per message\" (message bubble), \"Payments: 2% + GST per sale\" (card icon), \"Maintenance: 15-25% of build a year\" (wrench icon). Bottom takeaway: \"Budget for year two before you sign for year one.\""
+  },
+  {
+   "file": "6.webp",
+   "kind": "illustration",
+   "alt": "Illustration of a clinic receptionist and doctor reviewing the day's patient appointments",
+   "prompt": "3:2 scene. Flat warm editorial illustration on a warm cream background (#FBF6EC), terracotta, mustard and sage palette with soft shadows, Indian people, real setting, no logos, no brand names, no readable UI text or numbers on screens. A small Indian neighbourhood clinic reception: a receptionist at a desk with a monitor showing an abstract calendar grid of appointment blocks (no readable text), a doctor in a white coat leaning in to look, a patient waiting on a bench with a phone in hand, potted plant, warm daylight."
+  }
+ ]
+}

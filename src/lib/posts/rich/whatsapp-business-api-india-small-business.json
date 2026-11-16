@@ -1,0 +1,215 @@
+{
+  "slug": "whatsapp-business-api-india-small-business",
+  "locale": "en",
+  "title": "WhatsApp Business API in India: cost and setup",
+  "description": "WhatsApp Business API in India: Meta's rupee rates by category, provider plans, setup steps, templates, opt-in and the blue tick, checked November 2026.",
+  "imageUrl": "/assets/blog/whatsapp-business-api-india-small-business/cover.webp",
+  "imageAlt": "Illustration of an Indian shop owner sending WhatsApp updates from a laptop beside the words WhatsApp Business API",
+  "ogImageUrl": null,
+  "tags": [
+    "WhatsApp Business API",
+    "pricing",
+    "small business",
+    "India"
+  ],
+  "readingTimeMinutes": 17,
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "updatedAt": "2026-11-16T09:00:00.000Z",
+  "heading": null,
+  "eyebrow": null,
+  "standfirst": null,
+  "faqHeading": "Frequently asked questions",
+  "headline": null,
+  "breadcrumbLabel": null,
+  "faqPlacement": "body",
+  "toc": [
+    {
+      "id": "what-the-whatsapp-business-api-is",
+      "text": "What the WhatsApp Business API is",
+      "level": 2
+    },
+    {
+      "id": "app-or-api-what-each-can-and-cant-do",
+      "text": "App or API: what each can and can't do",
+      "level": 2
+    },
+    {
+      "id": "what-it-costs-in-india-in-rupees",
+      "text": "What it costs in India, in rupees",
+      "level": 2
+    },
+    {
+      "id": "what-changed-in-2025-and-2026",
+      "text": "What changed in 2025 and 2026",
+      "level": 2
+    },
+    {
+      "id": "when-meta-does-not-charge-you",
+      "text": "When Meta does not charge you",
+      "level": 2
+    },
+    {
+      "id": "going-to-meta-directly-or-through-a-provider",
+      "text": "Going to Meta directly or through a provider",
+      "level": 2
+    },
+    {
+      "id": "step-by-step-getting-set-up",
+      "text": "Step by step: getting set up",
+      "level": 2
+    },
+    {
+      "id": "templates-approval-and-categories",
+      "text": "Templates: approval and categories",
+      "level": 2
+    },
+    {
+      "id": "opt-in-the-rule-most-people-skip",
+      "text": "Opt-in: the rule most people skip",
+      "level": 2
+    },
+    {
+      "id": "the-green-tick-is-now-a-blue-checkmark",
+      "text": "The green tick is now a blue checkmark",
+      "level": 2
+    },
+    {
+      "id": "three-worked-examples-at-metas-india-rates",
+      "text": "Three worked examples at Meta's India rates",
+      "level": 2
+    },
+    {
+      "id": "a-clinic",
+      "text": "A clinic",
+      "level": 3
+    },
+    {
+      "id": "a-d2c-brand",
+      "text": "A D2C brand",
+      "level": 3
+    },
+    {
+      "id": "a-coaching-institute",
+      "text": "A coaching institute",
+      "level": 3
+    },
+    {
+      "id": "five-traps-that-cost-indian-businesses-money",
+      "text": "Five traps that cost Indian businesses money",
+      "level": 2
+    },
+    {
+      "id": "a-monthly-20-minute-cost-check",
+      "text": "A monthly 20-minute cost check",
+      "level": 2
+    },
+    {
+      "id": "frequently-asked-questions",
+      "text": "Frequently asked questions",
+      "level": 2
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is the WhatsApp Business API free in India?",
+      "a": "No. Setting it up through Meta costs nothing that I could find, but Meta charges for delivered messages. In India, from 1 October 2026, a marketing message is ₹0.8631 and a utility, authentication or service message is ₹0.115, before GST. The first 1,000 service messages each month on each number are free. Providers add their own plan fee on top."
+    },
+    {
+      "q": "Can I use the same number on the WhatsApp Business app and the API?",
+      "a": "Sometimes. Meta lets partners onboard an existing WhatsApp Business app number so it can send in bulk through the API while staff still chat one to one in the app, with history kept in sync. Meta's page did not say which countries it covers, so ask your provider whether it works for your Indian number before you move anything."
+    },
+    {
+      "q": "How long does template approval take?",
+      "a": "Meta says review can take up to 24 hours. In my reading, most delays come from rejections, not from waiting. Keep templates plain, put your business name in them and label promotions as marketing."
+    },
+    {
+      "q": "How do I get the green tick on WhatsApp?",
+      "a": "Meta calls it an Official Business Account, and the mark is a blue checkmark. You need a verified business portfolio, an approved display name, two-step verification on the number and at least 30 days on the platform. You request it in WhatsApp Manager. If it is refused, you can ask again after 30 days."
+    },
+    {
+      "q": "How many messages can I send on day one?",
+      "a": "A newly created business portfolio can reach 250 unique people in a rolling 24-hour period outside an open customer service window. The limit rises through 2,000, 10,000 and 100,000 to unlimited. Business verification and steady, good-quality sending are what move it up."
+    },
+    {
+      "q": "Do I pay GST on WhatsApp API charges?",
+      "a": "Yes. Meta's help page on India billing says WhatsApp messaging billed by Facebook India carries 18% GST. Providers bill their plans separately, and their pages are not always clear on whether GST is included, so ask for a sample invoice."
+    },
+    {
+      "q": "Do I need a provider, or can I go to Meta directly?",
+      "a": "You can go directly through Meta's Cloud API, but then someone has to build or connect the inbox, the sending tool and the links to your other systems. A provider gives you those ready-made for a monthly fee and usually a markup on each message. Small teams without a developer usually start with a provider."
+    }
+  ],
+  "contentHtml": "<h2 id=\"what-the-whatsapp-business-api-is\">What the WhatsApp Business API is</h2><p><strong>In short:</strong> The WhatsApp Business API (Meta now calls it the WhatsApp Business Platform) lets a business send messages from software instead of a single phone. You need it when you want to message hundreds of people, run reminders automatically or share one number across a team. In India it costs ₹0.8631 per marketing message and ₹0.115 per utility, authentication or service message, plus GST and any provider fee.</p><p>The free WhatsApp Business app is still the right answer for a lot of shops. The API is a different tool, with rules that the app does not have: approved templates, opt-in, message limits and a bill for every message delivered.</p><p>If you want the scope and cost of a WhatsApp setup written down before you commit, this is what our ₹3,500 requirement analysis produces: a written quotation and timeline (<a href=\"/book\">how it works</a>). The rest of this post is about the API itself, and it needs nothing from us or anyone else.</p><p>This guide was checked in November 2026, against Meta's pricing page dated 30 September 2026 and its India rate card effective 1 October 2026. Meta can change rates on the first day of each quarter, so check the rate card before you budget for next year.</p><h2 id=\"app-or-api-what-each-can-and-cant-do\">App or API: what each can and can't do</h2><p>Before any prices, the difference. A lot of owners pay for the API when the app would do, and a lot more stay on the app long after it has stopped working for them.</p><p><em>The free app and the paid platform, side by side</em></p><table><thead><tr><th>What you want to do</th><th>WhatsApp Business app</th><th>WhatsApp Business Platform (API)</th></tr></thead><tbody><tr><td>Chat one to one with customers</td><td>Yes, free</td><td>Yes, inside a 24-hour window after the customer writes</td></tr><tr><td>Send one message to many people</td><td>Broadcast lists of up to 256 contacts, and only people who saved your number receive it</td><td>Yes, using approved templates, to people who opted in</td></tr><tr><td>Message someone who has not written to you recently</td><td>Yes, as an ordinary chat</td><td>Only with an approved template, charged per message</td></tr><tr><td>Automatic reminders, order updates, OTPs from your software</td><td>No</td><td>Yes</td></tr><tr><td>Several staff answering from one number</td><td>Limited</td><td>Yes, through an inbox tool</td></tr><tr><td>Cost</td><td>Free app</td><td>Per delivered message, plus any provider fee</td></tr></tbody></table><p><em>Source: </em><a href=\"https://faq.whatsapp.com/861663048350950\" rel=\"noopener noreferrer nofollow\"><em>WhatsApp Help Centre on broadcast lists</em></a><em> and </em><a href=\"https://faq.whatsapp.com/653415899610349\" rel=\"noopener noreferrer nofollow\"><em>on broadcast lists in the Business app</em></a><em> and </em><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\"><em>Meta's pricing page</em></a><em>, read 16 November 2026.</em></p><p>The broadcast rule is the one that pushes most businesses to the API. WhatsApp's own help page says only contacts who have added your number to their phone's address book will receive a broadcast. If half your customers never saved the number, half your offer never arrives, and nothing tells you which half.</p><p>The 'Limited' entry for staff is my reading, not a Meta figure.</p><h2 id=\"what-it-costs-in-india-in-rupees\">What it costs in India, in rupees</h2><p>Meta charges per delivered message, not per message sent, and never for messages a customer sends you. The rate depends on two things: the category of the message and the country code of the person receiving it. For a +91 number, these are Meta's list rates in rupees.</p><p><em>Meta's India rates per delivered message, effective 1 October 2026, before GST</em></p><table><thead><tr><th>Category</th><th>What it is for</th><th>Rate to an Indian (+91) number</th></tr></thead><tbody><tr><td>Marketing</td><td>Offers, announcements, cart reminders, anything promotional</td><td>₹0.8631</td></tr><tr><td>Utility</td><td>Order updates, appointment reminders, payment confirmations</td><td>₹0.115</td></tr><tr><td>Authentication</td><td>One-time passwords and login codes</td><td>₹0.115</td></tr><tr><td>Authentication-international</td><td>OTPs where Meta applies its international rate</td><td>₹2.4971</td></tr><tr><td>Service</td><td>Free-form replies inside the 24-hour window</td><td>₹0.115, first 1,000 a month free per number</td></tr></tbody></table><p><em>Source: </em><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\"><em>Meta's pricing page and its INR rate card</em></a><em>, read 16 November 2026.</em></p><p>Two things stand out. A marketing message costs about seven and a half times a utility message. And service replies, which were free for most of 2025, are charged again from 1 October 2026 once you pass 1,000 in a month.</p><p>GST comes on top. Meta's <a href=\"https://www.facebook.com/business/help/2301408543603167\" rel=\"noopener noreferrer nofollow\">help page on billing localization in India</a> says WhatsApp messaging billed by Facebook India is subject to 18% GST. From January 2026, new Indian customers can only open accounts in rupees, and Meta says it will stop delivering messages from non-INR accounts of eligible Indian businesses from 1 January 2027. If your account is still billed in dollars, that is a December job.</p><figure><img src=\"/assets/blog/whatsapp-business-api-india-small-business/1.webp\" alt=\"Explainer of the four WhatsApp message categories and their India rates\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>Four categories, two very different prices: marketing costs far more than the rest.</figcaption></figure><h2 id=\"what-changed-in-2025-and-2026\">What changed in 2025 and 2026</h2><p>If you read a guide from 2024, its numbers are wrong. Meta's pricing page lists these changes.</p><p><strong>1 July 2025.</strong> Meta moved from charging per 24-hour conversation to charging per delivered message. Old posts that quote a 'conversation' price are describing a model that no longer exists.</p><p><strong>1 January 2026.</strong> Meta raised the marketing rate for India. The page lists the increase without the old figure, so I have not quoted one.</p><p><strong>1 October 2026.</strong> Service messages became chargeable again, with the free tier of 1,000 a month per business phone number. Utility messages sent inside an open customer service window, free since July 2025, are charged again too. Meta also said it would stop delivering service messages for accounts with no payment method on file.</p><p>Meta has also published a calendar: rates can change only on 1 January, 1 April, 1 July or 1 October, with at least one month's notice for a rate change. That gives you four dates a year to recheck your budget, and no others.</p><h2 id=\"when-meta-does-not-charge-you\">When Meta does not charge you</h2><p>There are two free cases, and both are worth designing around.</p><p><strong>The free entry point window.</strong> If a customer messages you by tapping a Click to WhatsApp ad on Facebook or Instagram, and you reply within the 24-hour customer service window, Meta does not charge for that reply. It also opens a window of up to 7 days in which marketing, utility, authentication and service messages to that person are free.</p><p><strong>The first 1,000 service messages each month.</strong> Every business phone number gets 1,000 free service messages a month. They do not roll over.</p><p>A third rule decides what you are allowed to send. When a customer messages you, a 24-hour customer service window opens, and it resets each time they write again. Inside it you can reply freely. Outside it you can only send an approved template, which is charged by its category.</p><figure><img src=\"/assets/blog/whatsapp-business-api-india-small-business/2.webp\" alt=\"Explainer of the 24-hour customer service window and the 7-day free entry point window\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"900\" /><figcaption>A customer's message opens a 24-hour window. An ad click opens a longer free one.</figcaption></figure><h2 id=\"going-to-meta-directly-or-through-a-provider\">Going to Meta directly or through a provider</h2><p>You can reach the platform two ways.</p><p><strong>Meta's Cloud API directly.</strong> You create the account in Meta's tools, connect a number and pay Meta's rates. What you do not get is a screen to work in. Someone has to build or plug in the inbox your staff reply from, the tool that sends campaigns and the links to your billing or booking software. If you have a developer, this is the cheapest per message.</p><p><strong>A Business Solution Provider (BSP).</strong> Companies such as Interakt, AiSensy, Wati and Gupshup sell a ready-made dashboard on top of the same platform: shared inbox, campaign sender, chatbot builder, Shopify and payment integrations. You pay a monthly plan, and usually a little more per message than Meta charges.</p><p>Here is what I found on two providers' public pricing pages today.</p><p><em>Two Indian-market providers' published prices, as shown to me on 16 November 2026</em></p><table><thead><tr><th>Provider</th><th>Monthly plans shown</th><th>Per-message prices shown for India</th></tr></thead><tbody><tr><td>AiSensy</td><td>Free plan, then Basic ₹1,500, Pro ₹3,200, Premium ₹9,100, Unlimited ₹45,000 a month</td><td>Marketing ₹1.09, utility ₹0.145, authentication ₹0.145, service ₹0.145, first 1,000 service messages free</td></tr><tr><td>Wati</td><td>Growth ₹2,699, Pro ₹5,799, Business ₹16,799 a month, billed quarterly</td><td>Not listed on the plan page; it says template messages are charged extra by category</td></tr></tbody></table><p><em>Source: </em><a href=\"https://aisensy.com/pricing\" rel=\"noopener noreferrer nofollow\"><em>AiSensy pricing</em></a><em> and </em><a href=\"https://www.wati.io/pricing/\" rel=\"noopener noreferrer nofollow\"><em>Wati pricing</em></a><em>, read 16 November 2026.</em></p><p>Set AiSensy's ₹1.09 next to Meta's ₹0.8631 and the provider charges about ₹0.23 more per marketing message, roughly 26% above Meta's list rate. On utility it is ₹0.145 against ₹0.115. Neither page said clearly whether GST is included, so ask before you compare totals.</p><p>Interakt's <a href=\"https://www.interakt.shop/pricing/\" rel=\"noopener noreferrer nofollow\">pricing page</a> sent me to a dollar version, priced per quarter, and linked out for India message rates, so I have left its numbers out. I did not check Gupshup's prices.</p><h2 id=\"step-by-step-getting-set-up\">Step by step: getting set up</h2><p>This is the order I would do it in. Provider sign-up screens differ, but the Meta steps underneath are the same.</p><p><strong>Step 1. Choose the number.</strong> Pick a number you control for the long term, ideally one your customers already know. If it is already on the WhatsApp Business app, ask your provider about moving it with chat history kept in sync, which Meta supports through its partners. Meta's page did not say which countries this covers, so get a yes for India in writing.</p><p><strong>Step 2. Set up a Meta business portfolio.</strong> This is the account in Meta's Business Manager that will own the number. Use your registered business name exactly as it appears on your GST or incorporation papers, because you will need to verify it.</p><p><strong>Step 3. Verify the business.</strong> Business verification is what lifts your sending limit above the starting level and is required for the checkmark later. Do it early, because it can hold up everything else.</p><p><strong>Step 4. Get the display name approved.</strong> The display name is what customers see. Meta approves it, and an approved display name on a verified portfolio raises your template allowance from 250 to up to 6,000 per account, according to <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview\" rel=\"noopener noreferrer nofollow\">Meta's template page</a>.</p><p><strong>Step 5. Add a payment method in rupees.</strong> Without one, Meta now stops delivering service messages after the free 1,000. Add your GSTIN in the billing details.</p><figure><img src=\"/assets/blog/whatsapp-business-api-india-small-business/3.webp\" alt=\"Annotated view of Meta's WhatsApp pricing page showing the India rate card links and free message rules\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>Step 5: check Meta's rate card for India before you add a payment method.</figcaption></figure><p><strong>Step 6. Write and submit your first templates.</strong> Start with three: an order or appointment update, a reminder, and one offer. Meta says review can take up to 24 hours.</p><p><strong>Step 7. Collect opt-in and start small.</strong> A newly created business portfolio can reach 250 unique people in a rolling 24-hour period outside an open customer service window. The limit then rises through 2,000, 10,000 and 100,000 to unlimited, based on verification, quality and how much you use it. Send to your most engaged customers first.</p><h2 id=\"templates-approval-and-categories\">Templates: approval and categories</h2><p>A template is a pre-approved message with blanks for names, dates and order numbers. Every message you start, as opposed to a reply, has to be one.</p><p>The category you choose matters more than the wording, because it sets the price. Meta's <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization\" rel=\"noopener noreferrer nofollow\">categorization page</a> defines utility templates as follow-ups to a user's action or request, and marketing templates as anything aimed at awareness, sales or retargeting. A mixed message, such as an order update with a discount code at the bottom, counts as marketing.</p><p>Since 9 April 2025, if you file a template as utility and WhatsApp decides it is marketing, it is approved as marketing. Since 16 April 2025, a business that has been warned for category misuse loses the one-day notice and the change is instant. So the discount line you added to your order confirmation can turn a ₹0.115 message into a ₹0.8631 one.</p><p>You can request a review of a category decision within 60 days.</p><h2 id=\"opt-in-the-rule-most-people-skip\">Opt-in: the rule most people skip</h2><p>Meta's <a href=\"https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in\" rel=\"noopener noreferrer nofollow\">opt-in page</a> sets out two conditions before you message anyone: they gave you their number, and they agreed to receive messages from your business. The opt-in has to name your business and make clear what they are agreeing to. It does not have to mention WhatsApp specifically, as long as you follow local law.</p><p>Meta lists ways to collect it: a website form, SMS, a phone call with an IVR flow, or on paper in person. A tick box on your booking form that says 'Send me appointment updates from [your clinic] on WhatsApp' does the job.</p><p>Meta also recommends separate opt-ins by message type, so a customer can say yes to order updates and no to offers. That is advice, not a rule, but it is good advice: customers who did not expect your offer block you, and Meta says it will rate-limit businesses whose quality stays low.</p><h2 id=\"the-green-tick-is-now-a-blue-checkmark\">The green tick is now a blue checkmark</h2><p>Most owners ask for the 'green tick'. Meta's term is an Official Business Account, and its page describes a blue checkmark beside the business name in the contacts view.</p><p>The requirements on <a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts\" rel=\"noopener noreferrer nofollow\">Meta's page</a> are specific: follow the WhatsApp Business Messaging Policy, be on the platform for at least 30 days, have a verified business portfolio, enable two-step verification on the number and have an approved display name. You request it in WhatsApp Manager under the phone number's profile. If you are refused, you can ask again after 30 days.</p><figure><img src=\"/assets/blog/whatsapp-business-api-india-small-business/4.webp\" alt=\"Annotated view of Meta's Official Business Accounts page showing the eligibility list\" loading=\"lazy\" decoding=\"async\" width=\"1600\" height=\"1310\" /><figcaption>The checkmark has a fixed list of requirements. Tick them all before you apply.</figcaption></figure><h2 id=\"three-worked-examples-at-metas-india-rates\">Three worked examples at Meta's India rates</h2><p>The volumes in these are made up to show the method. They are not real figures from any real business. All prices are Meta's list rates before GST and before any provider fee.</p><h3 id=\"a-clinic\">A clinic</h3><p>A two-doctor clinic sends 1,200 appointment reminders a month as utility templates, and patients reply with about 1,500 questions that staff answer inside the 24-hour window.</p><p>Reminders: 1,200 × ₹0.115 = ₹138. Service replies: the first 1,000 are free, the next 500 cost 500 × ₹0.115 = ₹57.50. Meta's charge for the month is ₹195.50 before GST.</p><p>What this tells you: for a clinic, the message bill is small. The real cost is the software that books, reminds and answers, which is where most of the work is if you build it into your <a href=\"/industries/healthcare-appointments\">appointment system</a>. Keep reminders strictly factual so they stay utility.</p><figure><img src=\"/assets/blog/whatsapp-business-api-india-small-business/5.webp\" alt=\"Illustration of a clinic receptionist sending appointment reminders from a laptop\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a clinic, reminders are cheap. The software around them is the real cost.</figcaption></figure><h3 id=\"a-d2c-brand\">A D2C brand</h3><p>A brand selling online sends 3,000 order and shipping updates a month (utility) and one festival offer to 5,000 opted-in customers (marketing).</p><p>Order updates: 3,000 × ₹0.115 = ₹345. Offer: 5,000 × ₹0.8631 = ₹4,315.50. Total ₹4,660.50, or about ₹5,499 with 18% GST. At AiSensy's displayed rates the same volume would be 3,000 × ₹0.145 plus 5,000 × ₹1.09, which is ₹5,885 before GST and before the plan fee.</p><p>What this tells you: marketing is over 90% of the bill. Running Click to WhatsApp ads, where the follow-up messages fall inside the free window, can change that sum more than any provider discount. If your store is on Shopify, the order updates usually come from an integration rather than by hand (<a href=\"/services/shopify-development\">Shopify work</a> often starts here).</p><figure><img src=\"/assets/blog/whatsapp-business-api-india-small-business/6.webp\" alt=\"Illustration of a D2C brand owner packing orders while a phone shows delivery updates\" loading=\"lazy\" decoding=\"async\" width=\"1500\" height=\"1000\" /><figcaption>For a D2C brand, offers dominate the bill. Order updates barely register.</figcaption></figure><h3 id=\"a-coaching-institute\">A coaching institute</h3><p>An institute sends 2,000 login OTPs a month from its student app (authentication) and 1,500 messages about a new batch (marketing).</p><p>OTPs: 2,000 × ₹0.115 = ₹230. Batch announcement: 1,500 × ₹0.8631 = ₹1,294.65. Total ₹1,524.65, about ₹1,799 with GST.</p><p>What this tells you: check whether you will be charged the authentication-international rate of ₹2.4971, which Meta applies in some cases; its page explains eligibility. And keep the batch announcement to students and parents who opted in, because coaching messages that arrive out of nowhere are exactly the kind people block. More on apps for institutes is on our <a href=\"/industries/education\">education page</a>.</p><h2 id=\"five-traps-that-cost-indian-businesses-money\">Five traps that cost Indian businesses money</h2><p>The platform is predictable. The mistakes are usually ours.</p><p><strong>Old prices.</strong> Any guide that quotes a price 'per conversation' predates July 2025. Any that says service replies are free predates October 2026. Check the date on what you read, including this post.</p><p><strong>Promotions inside utility messages.</strong> One discount line can move a template into marketing at more than seven times the price. Send the offer separately, to people who opted in to offers.</p><p><strong>Comparing plan fees, not totals.</strong> A cheaper plan with a higher per-message markup can cost more once you send a few thousand marketing messages. Work out a month at your real volume, the way the examples above do.</p><p><strong>Buying contact lists.</strong> Messaging people who never opted in breaks Meta's rules and drags your quality down, which is what gets numbers rate-limited. A small list of real customers is worth more than a large list of strangers.</p><p><strong>Leaving billing in dollars.</strong> Meta says non-INR accounts of eligible Indian businesses stop delivering from 1 January 2027. If your provider set you up in USD, ask them now.</p><h2 id=\"a-monthly-20-minute-cost-check\">A monthly 20-minute cost check</h2><p>Set a timer, on the same day each month, after the bill arrives.</p><p><em>A monthly WhatsApp cost check, split across 20 minutes</em></p><table><thead><tr><th>Time</th><th>What to do</th><th>What you write down</th></tr></thead><tbody><tr><td>First 5 minutes</td><td>Open the invoice and split charges by category</td><td>Marketing, utility, authentication and service totals</td></tr><tr><td>Next 5 minutes</td><td>Check which templates Meta moved to marketing</td><td>Any template to rewrite or split</td></tr><tr><td>Next 5 minutes</td><td>Look at quality rating, blocks and opt-outs</td><td>Any campaign that caused a spike</td></tr><tr><td>Last 5 minutes</td><td>Check Meta's rate card if a quarter has just started</td><td>Any rate change and its effect on next month</td></tr></tbody></table><p>After three months you will know your real cost per customer reached, which is the number that decides whether WhatsApp is paying for itself.</p><p>If you would rather the replies inside the window were handled automatically, that is an <a href=\"/ai-solutions/ai-agents-and-automation\">AI agent</a> job, and it changes your service message count, so watch that line on the bill.</p><section data-block=\"faq\"><h2 id=\"frequently-asked-questions\">Frequently asked questions</h2><h3 id=\"is-the-whatsapp-business-api-free-in-india\">Is the WhatsApp Business API free in India?</h3><p>No. Setting it up through Meta costs nothing that I could find, but Meta charges for delivered messages. In India, from 1 October 2026, a marketing message is ₹0.8631 and a utility, authentication or service message is ₹0.115, before GST. The first 1,000 service messages each month on each number are free. Providers add their own plan fee on top.</p><h3 id=\"can-i-use-the-same-number-on-the-whatsapp-business-app-and-the-api\">Can I use the same number on the WhatsApp Business app and the API?</h3><p>Sometimes. Meta lets partners onboard an existing WhatsApp Business app number so it can send in bulk through the API while staff still chat one to one in the app, with history kept in sync. Meta's page did not say which countries it covers, so ask your provider whether it works for your Indian number before you move anything.</p><h3 id=\"how-long-does-template-approval-take\">How long does template approval take?</h3><p>Meta says review can take up to 24 hours. In my reading, most delays come from rejections, not from waiting. Keep templates plain, put your business name in them and label promotions as marketing.</p><h3 id=\"how-do-i-get-the-green-tick-on-whatsapp\">How do I get the green tick on WhatsApp?</h3><p>Meta calls it an Official Business Account, and the mark is a blue checkmark. You need a verified business portfolio, an approved display name, two-step verification on the number and at least 30 days on the platform. You request it in WhatsApp Manager. If it is refused, you can ask again after 30 days.</p><h3 id=\"how-many-messages-can-i-send-on-day-one\">How many messages can I send on day one?</h3><p>A newly created business portfolio can reach 250 unique people in a rolling 24-hour period outside an open customer service window. The limit rises through 2,000, 10,000 and 100,000 to unlimited. Business verification and steady, good-quality sending are what move it up.</p><h3 id=\"do-i-pay-gst-on-whatsapp-api-charges\">Do I pay GST on WhatsApp API charges?</h3><p>Yes. Meta's help page on India billing says WhatsApp messaging billed by Facebook India carries 18% GST. Providers bill their plans separately, and their pages are not always clear on whether GST is included, so ask for a sample invoice.</p><h3 id=\"do-i-need-a-provider-or-can-i-go-to-meta-directly\">Do I need a provider, or can I go to Meta directly?</h3><p>You can go directly through Meta's Cloud API, but then someone has to build or connect the inbox, the sending tool and the links to your other systems. A provider gives you those ready-made for a monthly fee and usually a markup on each message. Small teams without a developer usually start with a provider.</p></section><aside data-callout=\"sources\"><p data-callout-title>Sources</p><ul><li><a href=\"https://developers.facebook.com/docs/whatsapp/pricing\" rel=\"noopener noreferrer nofollow\">Pricing on the WhatsApp Business Platform and INR rate card, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://www.facebook.com/business/help/2301408543603167\" rel=\"noopener noreferrer nofollow\">About billing localization in India for WhatsApp Business Messaging customers, Meta Business Help Centre</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/messaging-limits\" rel=\"noopener noreferrer nofollow\">Messaging limits, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview\" rel=\"noopener noreferrer nofollow\">Template fundamentals, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization\" rel=\"noopener noreferrer nofollow\">Template categorization, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in\" rel=\"noopener noreferrer nofollow\">Get opt-in for WhatsApp, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts\" rel=\"noopener noreferrer nofollow\">Official Business Accounts, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users\" rel=\"noopener noreferrer nofollow\">Onboard WhatsApp Business app users, Meta for Developers</a>, read 16 November 2026</li><li><a href=\"https://faq.whatsapp.com/653415899610349\" rel=\"noopener noreferrer nofollow\">How to use broadcast lists on the WhatsApp Business app, WhatsApp Help Centre</a>, read 16 November 2026</li><li><a href=\"https://faq.whatsapp.com/861663048350950\" rel=\"noopener noreferrer nofollow\">How to use broadcast lists, WhatsApp Help Centre</a>, read 16 November 2026</li><li><a href=\"https://aisensy.com/pricing\" rel=\"noopener noreferrer nofollow\">WhatsApp Business API pricing in India, AiSensy</a>, read 16 November 2026</li><li><a href=\"https://www.wati.io/pricing/\" rel=\"noopener noreferrer nofollow\">Wati pricing, Wati</a>, read 16 November 2026</li><li><a href=\"https://www.interakt.shop/pricing/\" rel=\"noopener noreferrer nofollow\">WhatsApp API pricing, Interakt</a>, read 16 November 2026</li></ul></aside>",
+  "images": [
+    {
+      "file": "cover.webp",
+      "kind": "illustration",
+      "alt": "Illustration of an Indian shop owner sending WhatsApp updates from a laptop beside the words WhatsApp Business API",
+      "prompt": "16:9 cover. Warm cream background #FBF6EC. Left half: flat warm editorial illustration of an Indian small-business owner (woman in her 30s, kurta) at the counter of a small clothing shop, typing on a laptop while a phone beside her shows a chat bubble icon (no readable text, no logos). Terracotta, mustard and sage palette, soft shadows. Right half: the title text 'WhatsApp Business API' in very large bold black sans-serif, left-aligned, on two lines ('WhatsApp' / 'Business API'). No other text, no WhatsApp or Meta logos."
+    },
+    {
+      "file": "1.webp",
+      "kind": "infographic",
+      "alt": "Explainer of the four WhatsApp message categories and their India rates",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'What each WhatsApp message costs in India'. Four columns, each with a flat icon and a dark-blue label pill: 1) megaphone icon, pill 'Marketing', below it '₹0.8631'; 2) parcel icon, pill 'Utility', below '₹0.115'; 3) key/lock icon, pill 'Authentication', below '₹0.115'; 4) chat-reply icon, pill 'Service', below '₹0.115' and small line 'first 1,000 a month free'. Small grey line under the columns: 'Per delivered message to +91 numbers, from 1 Oct 2026, before 18% GST'. Orange arrow from Utility to Marketing labelled 'add a promo and it becomes this'. One-line bold takeaway at bottom: 'Marketing costs about 7.5x a utility message.' No logos, no other text."
+    },
+    {
+      "file": "2.webp",
+      "kind": "infographic",
+      "alt": "Explainer of the 24-hour customer service window and the 7-day free entry point window",
+      "prompt": "16:9 explainer infographic, cream background #FBF6EC, flat illustration icons. Bold black heading at top: 'When you can reply, and when it is free'. Two horizontal timelines. Top timeline: phone icon with pill 'Customer messages you' -> orange arrow -> dark-blue pill '24-hour window opens' -> note 'reply freely; resets each time they write' -> at the end pill 'After 24 hours: templates only'. Bottom timeline: ad icon with pill 'Customer taps a Click to WhatsApp ad' -> orange arrow -> pill 'You reply within 24 hours' -> orange arrow -> pill 'Free window up to 7 days'. One-line bold takeaway at bottom: 'Ad-started chats can be free to follow up for a week.' No logos, no other text."
+    },
+    {
+      "file": "3.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Meta's WhatsApp pricing page showing the India rate card links and free message rules",
+      "url": "https://developers.facebook.com/docs/whatsapp/pricing",
+      "annotate": [
+        {
+          "label": "1",
+          "highlight": "The 'Rate cards and volume tiers' table row for INR (INR list rates link)"
+        },
+        {
+          "label": "2",
+          "highlight": "The 'When Meta does not charge' section: free entry point window and first 1,000 service messages"
+        },
+        {
+          "label": "3",
+          "highlight": "The 'Billing localization for India' bullet with the 31 December 2026 INR migration deadline"
+        }
+      ]
+    },
+    {
+      "file": "4.webp",
+      "kind": "screenshot",
+      "alt": "Annotated view of Meta's Official Business Accounts page showing the eligibility list",
+      "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts",
+      "annotate": [
+        {
+          "label": "1",
+          "highlight": "The eligibility bullet list (policy, 30 days, Business Verification, two-step verification, approved display name)"
+        },
+        {
+          "label": "2",
+          "highlight": "The WhatsApp Manager steps ending in the Submit Request button"
+        },
+        {
+          "label": "3",
+          "highlight": "The line saying a rejected request can be resubmitted after 30 days"
+        }
+      ]
+    },
+    {
+      "file": "5.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a clinic receptionist sending appointment reminders from a laptop",
+      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A small Indian clinic reception: a receptionist in a sage uniform at a desk with a laptop and a phone, a doctor visible through a doorway, two patients waiting on a bench, a wall calendar with blank boxes. The phone screen shows only abstract chat bubbles, no readable text, no logos. Faces fully in frame."
+    },
+    {
+      "file": "6.webp",
+      "kind": "illustration",
+      "alt": "Illustration of a D2C brand owner packing orders while a phone shows delivery updates",
+      "prompt": "3:2 scene illustration, cream background #FBF6EC, flat warm editorial style, terracotta, mustard and sage palette. A young Indian D2C brand owner in a small home studio packing parcels with tissue paper, shelves of folded fabric behind, a phone propped on a box showing abstract chat bubbles and a small parcel icon, no readable text, no logos. Faces fully in frame."
+    }
+  ]
+}
