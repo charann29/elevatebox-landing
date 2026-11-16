@@ -54,7 +54,7 @@ function VoiceCard() {
         {`Roopa by ${COMPANY.name}`}
       </span>
       <span>
-        <span className="block text-xl font-semibold leading-snug text-white">India&apos;s best conversational voice agent</span>
+        <span className="block text-xl font-semibold leading-snug text-white">India&apos;s most natural-sounding AI telecalling software</span>
         <span className="mt-1.5 block text-xs text-white/70">8 lakh calls a day · Telugu, Hindi, English</span>
         <span className="mt-4 inline-flex items-center gap-1 rounded-full bg-live px-4 py-2 text-sm font-semibold text-[#04210f]">
           Try it free <span aria-hidden="true">→</span>
