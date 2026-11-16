@@ -2,6 +2,7 @@ export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { getStudioPaths, getStudioPosts } from "@/lib/cms";
 import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
+import { GLOBAL_PAGES } from "@/lib/global";
 import { COMPANIES, PROPOSALS, citySlug, companyHref, industrySlug, proposalCities, proposalIndustries } from "@/lib/proposals";
 
 const base = COMPANY.site;
@@ -21,6 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/mvp-development-company-hyderabad",
     "/ai-development-company-hyderabad",
     "/app-development-company-telangana",
+    "/global",
+    ...GLOBAL_PAGES.map((p) => p.path),
     "/careers",
     "/blogs",
     "/contact",
@@ -33,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/sitemap-page",
   ].map((p) => ({
     url: `${base}${p}`,
-    priority: p === "" ? 1 : /hyderabad|telangana/.test(p) ? 0.9 : 0.7,
+    priority: p === "" ? 1 : /hyderabad|telangana|global/.test(p) ? 0.9 : 0.7,
   }));
 
   const categoryPages = CATEGORIES.flatMap((c) => [

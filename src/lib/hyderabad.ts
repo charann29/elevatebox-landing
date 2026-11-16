@@ -26,6 +26,8 @@ export type HydPage = {
   related: { label: string; href: string }[];
   /** Places named in the ProfessionalService schema; defaults to Hyderabad and AREAS. */
   areas?: string[];
+  /** Pages for clients outside India (lib/global.ts): no prices, book-a-call CTA, own local band. */
+  intl?: { country: string; local: { h2: string; body: string; chips: string[] } };
 };
 
 export const AREAS = ["HITEC City", "Madhapur", "Gachibowli", "Jubilee Hills", "Kondapur", "Kukatpally", "Secunderabad", "Banjara Hills"];
