@@ -253,14 +253,14 @@ export function DiscoveryOffer() {
       </ul>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <a href={DISCOVERY.pay} className="rounded-full bg-amber px-6 py-3.5 text-center text-sm font-semibold text-amber-ink transition-colors hover:bg-[#ffbf47]">
-          {`Pay ${DISCOVERY.price} and pick a time`}
+          Book a call
         </a>
         <a href={wa} className="rounded-full border border-line px-6 py-3.5 text-center text-sm font-semibold text-navy hover:border-navy/40">
           Ask a question first
         </a>
       </div>
       <p className="mt-4 text-xs text-ink-4">
-        Secure payment on Razorpay. The calendar opens as soon as it goes through.
+        Pick your time, then pay securely by Razorpay.
       </p>
     </div>
   );

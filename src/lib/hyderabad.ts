@@ -123,11 +123,11 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Case studies: apps we built and still run", slugs: ["vamshi-farms", "8meds", "medibag"] },
     cost: {
       h2: "How much does mobile app development cost in Hyderabad?",
-      lead: "The cost of an app depends on six things, below. We price yours in writing after a ₹3,500 requirement analysis, so you know the full build cost before development starts.",
+      lead: "The cost of an app depends on six things, below. We price yours in writing after a ₹3,499 requirement analysis, so you know the full build cost before development starts.",
       drivers: COST_DRIVERS,
     },
     faqs: [
-      { q: "How much does mobile app development cost in Hyderabad?", a: "It depends on the platforms, the number of screens, integrations such as payments, the backend and any AI features. We start with a ₹3,500 requirement analysis that ends in a written quotation, so you know the full cost before any development starts." },
+      { q: "How much does mobile app development cost in Hyderabad?", a: "It depends on the platforms, the number of screens, integrations such as payments, the backend and any AI features. We start with a ₹3,499 requirement analysis that ends in a written quotation, so you know the full cost before any development starts." },
       { q: "How long does it take to build an iOS or Android app?", a: "Design takes about two to three weeks, then the build runs in two-week sprints, each ending in an app you can install. Your quotation fixes the timeline for your scope; store review adds one to two weeks at launch." },
       { q: "Do you build iOS and Android together with Flutter or React Native?", a: "Yes, for most business apps. One Flutter or React Native codebase ships to both stores. We pick native Kotlin and Swift when the app leans on the device: background work, Bluetooth, widgets or heavy media." },
       { q: "Can you build an app for my existing website or software?", a: "Yes. We connect the app to your current website, database, CRM or ERP through APIs, and add the missing APIs when there are none." },
@@ -277,7 +277,7 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Web products we built", slugs: ["vamshi-farms", "medibag", "oneasy"] },
     cost: {
       h2: "How much does web development cost in Hyderabad?",
-      lead: "We quote in writing after a ₹3,500 requirement analysis. What decides the cost:",
+      lead: "We quote in writing after a ₹3,499 requirement analysis. What decides the cost:",
       drivers: [
         ["Pages and templates", "How many page types, and how many pages of content."],
         ["Features", "Accounts, search, booking, payments, dashboards."],
@@ -287,7 +287,7 @@ export const HYD_PAGES: HydPage[] = [
       ],
     },
     faqs: [
-      { q: "How much does a website cost in Hyderabad?", a: "It depends on the number of page types, features such as booking or payments, integrations and content. We quote in writing after a ₹3,500 requirement analysis." },
+      { q: "How much does a website cost in Hyderabad?", a: "It depends on the number of page types, features such as booking or payments, integrations and content. We quote in writing after a ₹3,499 requirement analysis." },
       { q: "Do you build websites that rank on Google?", a: "Yes. Every site ships with unique titles and descriptions, schema, a sitemap and fast load times, and we can add SEO pages built from your own data." },
       { q: "Can my team edit the website after launch?", a: "Yes. We set up a CMS so your team edits pages, posts and images without a developer." },
       { q: "Do you build e-commerce sites with UPI payments?", a: "Yes. Razorpay with UPI, cards and netbanking, with signed webhooks so no order is charged twice." },
@@ -355,7 +355,7 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Software we built and still run", slugs: ["oneasy", "8meds", "vamshi-farms"] },
     cost: {
       h2: "How much does custom software development cost in Hyderabad?",
-      lead: "We quote in writing after a ₹3,500 requirement analysis. What decides the cost:",
+      lead: "We quote in writing after a ₹3,499 requirement analysis. What decides the cost:",
       drivers: [
         ["Workflows", "How many processes the software runs, and how many roles use it."],
         ["Integrations", "Existing tools, databases, payment gateways and government APIs."],
@@ -365,7 +365,7 @@ export const HYD_PAGES: HydPage[] = [
       ],
     },
     faqs: [
-      { q: "How much does custom software cost in Hyderabad?", a: "It depends on the workflows, the roles, integrations and data migration. We quote in writing after a ₹3,500 requirement analysis, before any development starts." },
+      { q: "How much does custom software cost in Hyderabad?", a: "It depends on the workflows, the roles, integrations and data migration. We quote in writing after a ₹3,499 requirement analysis, before any development starts." },
       { q: "Can you replace our spreadsheets with software?", a: "Yes. We map how the spreadsheets are used today, build the software around that, and migrate the existing records." },
       { q: "Can the software connect to our existing tools?", a: "Yes. We integrate with CRMs, ERPs, accounting tools, payment gateways and WhatsApp through their APIs." },
       ...SHARED_FAQS,
@@ -417,11 +417,11 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Apps we built and still run", slugs: ["8meds", "medibag", "vamshi-farms"] },
     cost: {
       h2: "How much does Android app development cost in Hyderabad?",
-      lead: "An Android app's cost comes down to the six things below. We price yours in writing after a ₹3,500 requirement analysis, before development starts.",
+      lead: "An Android app's cost comes down to the six things below. We price yours in writing after a ₹3,499 requirement analysis, before development starts.",
       drivers: COST_DRIVERS,
     },
     faqs: [
-      { q: "How much does it cost to build an Android app in Hyderabad?", a: "It depends on the screens, integrations such as UPI and maps, the backend and any AI features. A ₹3,500 requirement analysis ends in a written quotation, so you know the full cost before development starts." },
+      { q: "How much does it cost to build an Android app in Hyderabad?", a: "It depends on the screens, integrations such as UPI and maps, the backend and any AI features. A ₹3,499 requirement analysis ends in a written quotation, so you know the full cost before development starts." },
       { q: "Should I build Android first or Android and iOS together?", a: "In India most users are on Android, so many businesses launch there first. If you build it in Flutter, the same code ships to iPhone later without a rewrite." },
       { q: "Kotlin or Flutter for an Android app?", a: "Flutter for most business apps, because it keeps the iPhone option open. Kotlin when the app depends on background work, Bluetooth, widgets or heavy camera use." },
       { q: "Will my app work on cheap Android phones?", a: "Yes. We test on low-RAM phones and slow networks in every sprint, not just on flagship devices." },
@@ -473,11 +473,11 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Apps we built and still run", slugs: ["8meds", "medibag", "vamshi-farms"] },
     cost: {
       h2: "How much does iOS app development cost in Hyderabad?",
-      lead: "An iPhone app's cost comes down to the six things below. We price yours in writing after a ₹3,500 requirement analysis, before development starts.",
+      lead: "An iPhone app's cost comes down to the six things below. We price yours in writing after a ₹3,499 requirement analysis, before development starts.",
       drivers: COST_DRIVERS,
     },
     faqs: [
-      { q: "How much does iOS app development cost in Hyderabad?", a: "It depends on the screens, integrations, the backend and any AI features. A ₹3,500 requirement analysis ends in a written quotation before development starts. Apple's developer account costs $99 a year on top, paid by you to Apple." },
+      { q: "How much does iOS app development cost in Hyderabad?", a: "It depends on the screens, integrations, the backend and any AI features. A ₹3,499 requirement analysis ends in a written quotation before development starts. Apple's developer account costs $99 a year on top, paid by you to Apple." },
       { q: "Do I need a Mac or an Apple developer account?", a: "You need an Apple developer account in your company's name; we help you set it up. You don't need a Mac. We build and sign the app on ours." },
       { q: "How long does App Store review take?", a: "Usually one to three days. We plan one to two weeks for launch in case Apple asks for changes, and handle those replies for you." },
       { q: "Can you build the iPhone and Android apps together?", a: "Yes. With Flutter, one codebase ships to both stores. We pick native Swift when the app depends on Apple-only features such as widgets, HealthKit or Apple Watch." },
@@ -528,13 +528,13 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Apps we built for both stores", slugs: ["vamshi-farms", "8meds", "medibag"] },
     cost: {
       h2: "How much does Flutter app development cost in Hyderabad?",
-      lead: "One codebase usually costs less than two native apps. What decides your price is below; we quote in writing after a ₹3,500 requirement analysis.",
+      lead: "One codebase usually costs less than two native apps. What decides your price is below; we quote in writing after a ₹3,499 requirement analysis.",
       drivers: COST_DRIVERS,
     },
     faqs: [
       { q: "Is Flutter good enough for a serious business app?", a: "Yes, for most business apps: commerce, booking, healthcare, education and internal tools. We pick native code only when the app depends heavily on device features such as background work, Bluetooth or widgets." },
       { q: "Flutter or React Native?", a: "Flutter when the design must match exactly on both platforms. React Native when your team already writes React for the web and wants to share code and people." },
-      { q: "Does a Flutter app cost less than two native apps?", a: "Usually, because one team builds, tests and maintains one codebase. We quote in writing after a ₹3,500 requirement analysis, so you can compare." },
+      { q: "Does a Flutter app cost less than two native apps?", a: "Usually, because one team builds, tests and maintains one codebase. We quote in writing after a ₹3,499 requirement analysis, so you can compare." },
       { q: "Can you move our two native apps to Flutter?", a: "Yes. We migrate screen by screen, so the existing apps keep working until the Flutter version replaces them." },
       ...SHARED_FAQS,
     ],
@@ -571,7 +571,7 @@ export const HYD_PAGES: HydPage[] = [
       h2: "Why Hyderabad founders build their MVP with ElevateBox",
       points: [
         { t: "Engineers who have founded and scaled", d: "Founding engineers at ClickPe (YC W23) and an AI startup acquired by Microsoft." },
-        { t: "Price known before you start", d: "A ₹3,500 requirement analysis ends in a written quotation and timeline." },
+        { t: "Price known before you start", d: "A ₹3,499 requirement analysis ends in a written quotation and timeline." },
         { t: "Code in your name", d: "Repository, cloud and store accounts are yours from day one, ready for due diligence." },
         { t: "Built to grow", d: "The same codebase carries you past the MVP, so you don't pay for a rewrite at seed stage." },
       ],
@@ -592,7 +592,7 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Products we took from idea to live", slugs: ["oneasy", "8meds", "vamshi-farms"] },
     cost: {
       h2: "How much does MVP development cost in Hyderabad?",
-      lead: "An MVP's cost is mostly scope. These decide it; we fix it in writing after a ₹3,500 requirement analysis.",
+      lead: "An MVP's cost is mostly scope. These decide it; we fix it in writing after a ₹3,499 requirement analysis.",
       drivers: [
         ["The one thing to prove", "The narrower the first version, the faster and cheaper it ships."],
         ["Platforms", "Web only, mobile only, or both from one codebase."],
@@ -603,7 +603,7 @@ export const HYD_PAGES: HydPage[] = [
     },
     faqs: [
       { q: "How long does it take to build an MVP?", a: "It depends on scope. The requirement analysis fixes the timeline in writing; the build then runs in two-week sprints, each ending in something you can use." },
-      { q: "How much does an MVP cost for a startup in Hyderabad?", a: "Scope decides it. A ₹3,500 requirement analysis ends in a written quotation, so you know the full cost before development starts." },
+      { q: "How much does an MVP cost for a startup in Hyderabad?", a: "Scope decides it. A ₹3,499 requirement analysis ends in a written quotation, so you know the full cost before development starts." },
       { q: "Will we have to rebuild the MVP after we raise?", a: "No. We build on the same stack a scaled product would use, so the MVP becomes version one instead of a throwaway." },
       { q: "Do you sign an NDA?", a: "Yes, before the first workshop." },
       { q: "Who owns the code and IP?", a: "You do, from the first commit. Everything is created in your company's accounts, which keeps investor due diligence simple." },
@@ -671,7 +671,7 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "AI products we built and run", slugs: ["oneasy", "8meds", "medibag"] },
     cost: {
       h2: "How much does AI development cost in Hyderabad?",
-      lead: "Cost depends on the data, the integrations and how much a person must review. We fix it in writing after a ₹3,500 requirement analysis.",
+      lead: "Cost depends on the data, the integrations and how much a person must review. We fix it in writing after a ₹3,499 requirement analysis.",
       drivers: [
         ["The task", "Answering, reading, calling or acting, and how many steps each one takes."],
         ["Your data", "How clean it is, where it lives, and whether it is in Telugu, Hindi or English."],
@@ -724,7 +724,7 @@ export const HYD_PAGES: HydPage[] = [
         { t: "Talk in Telugu", d: "Requirement calls, demos and training in Telugu, Hindi or English, whichever your team prefers." },
         { t: "Built for local customers", d: "Apps tested on budget Android phones and weak networks, the way users outside the city use them." },
         { t: "380+ apps shipped", d: "Across healthcare, commerce, education and AI, by the team that quotes it." },
-        { t: "Price known before you start", d: "A ₹3,500 requirement analysis ends in a written quotation and timeline." },
+        { t: "Price known before you start", d: "A ₹3,499 requirement analysis ends in a written quotation and timeline." },
       ],
     },
     ai: { h2: "AI that works in Telugu", lead: "Our own product, Roopa by ElevateBox, makes AI calls in Telugu. We build the same into your app or business.", items: AI_ITEMS },
@@ -734,14 +734,14 @@ export const HYD_PAGES: HydPage[] = [
     cases: { h2: "Products we built and still run", slugs: ["vamshi-farms", "8meds", "medibag"] },
     cost: {
       h2: "How much does app development cost in Telangana?",
-      lead: "The cost depends on the six things below, not on your city. We quote in writing after a ₹3,500 requirement analysis.",
+      lead: "The cost depends on the six things below, not on your city. We quote in writing after a ₹3,499 requirement analysis.",
       drivers: COST_DRIVERS,
     },
     faqs: [
       { q: "Do you work with businesses outside Hyderabad?", a: "Yes. We work with businesses across Telangana, including Warangal, Karimnagar, Nizamabad, Khammam and Mahbubnagar, over video calls and WhatsApp, and meet in person in Hyderabad or on site when the project needs it." },
       { q: "Can we discuss the project in Telugu?", a: "Yes. Requirement calls, demos and training can be in Telugu, Hindi or English." },
       { q: "Can the app itself be in Telugu?", a: "Yes. We build apps and websites in Telugu and English, and AI phone calls in Telugu through our own product, Roopa by ElevateBox." },
-      { q: "How much does app development cost in Telangana?", a: "The same as in Hyderabad: it depends on the screens, integrations, backend and AI features. A ₹3,500 requirement analysis ends in a written quotation before development starts." },
+      { q: "How much does app development cost in Telangana?", a: "The same as in Hyderabad: it depends on the screens, integrations, backend and AI features. A ₹3,499 requirement analysis ends in a written quotation before development starts." },
       ...SHARED_FAQS,
     ],
     related: [

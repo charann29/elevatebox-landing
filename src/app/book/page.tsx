@@ -10,8 +10,8 @@ const DESCRIPTION = `Book a ${DISCOVERY.price} ${DISCOVERY.title} with ElevateBo
 export const metadata: Metadata = pageMeta(`${TITLE} | ElevateBox`, DESCRIPTION, "/book");
 
 const STEPS = [
-  { t: `Pay ${DISCOVERY.price}`, d: "On our Razorpay page — UPI, cards and net banking. You get a receipt by email." },
-  { t: "Pick your time", d: "The calendar opens straight after payment. Choose any open slot that suits you." },
+  { t: "Tell us about your project", d: "A few quick questions, under a minute." },
+  { t: `Pick your time and pay ${DISCOVERY.price}`, d: "Choose any open slot, then pay by UPI, card or net banking on Razorpay." },
   { t: "Leave with a quotation", d: "We work through your requirements on the call, then send the quotation and timeline in writing." },
 ];
 
@@ -29,7 +29,7 @@ export default function BookPage() {
         <PageHero
           eyebrow={`${DISCOVERY.price} · Requirement analysis and quotation`}
           title="Book your product requirement analysis"
-          lead="Pay, then pick a time. You talk to the people who will build it, and leave with a quotation and timeline in writing."
+          lead="Pick a time, then pay. You talk to the people who will build it, and leave with a quotation and timeline in writing."
           crumbs={[{ label: "Book a call" }]}
         />
         <Section>

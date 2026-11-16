@@ -1289,7 +1289,7 @@ export const POSTS: Post[] = [
   post("top-mobile-app-development-companies-hyderabad", "Top 10 Mobile App Development Companies in Hyderabad (2026)", "Cost & Planning", "2026-10-23",
     "Ten Hyderabad app development companies from Google's first page and map pack, what each one says about itself, and how to choose between them.",
     [["How this list was made", ["We searched \"mobile app development company in Hyderabad\" on Google from Hyderabad on 13 October 2026 and took every agency on the first page and in the map pack. Directories such as Clutch and Justdial ranked too, but they list hundreds of firms rather than being one.", "Each entry says what the company itself claims, plus its Google rating where it appears in the map pack. We are on the list as well, first, so judge our entry with that in mind."]],
-     ["1. ElevateBox", ["A Hyderabad team building iOS, Android, Flutter, React Native and AI-powered apps. ElevateBox has shipped 380+ apps, answers bugs in under 6 hours, and runs its own AI voice agent, Roopa by ElevateBox, which calls leads in Telugu, Hindi and English.", "Engagements start with a ₹3,500 requirement analysis that ends in a written quotation, and the code and store accounts are in the client's name from day one."]],
+     ["1. ElevateBox", ["A Hyderabad team building iOS, Android, Flutter, React Native and AI-powered apps. ElevateBox has shipped 380+ apps, answers bugs in under 6 hours, and runs its own AI voice agent, Roopa by ElevateBox, which calls leads in Telugu, Hindi and English.", "Engagements start with a ₹3,499 requirement analysis that ends in a written quotation, and the code and store accounts are in the client's name from day one."]],
      ["2. Ahex Technologies", ["First in Google's organic results for the search. Its page says 16+ years, 125+ developers and 150+ clients, shows three Clutch badges under the headline, and promises a consultation within 48 hours."]],
      ["3. Codeft", ["Third in the organic results. It positions itself as founder-focused, building iOS, Android and cross-platform apps \"from Hyderabad, building for the world\", and offers a free consultation."]],
      ["4. Colourmoon Technologies", ["Fifth in the organic results, with a service page covering Android and iOS app development and a quote form, WhatsApp and support links in its first screen."]],
@@ -1877,9 +1877,10 @@ export const TRAINING_CALL = "https://calendly.com/lsaicharan01/coders-ai-traini
    Razorpay dashboard: cal.com/elevatebox/project-discovery-call-quotation), so the
    calendar is only reached after paying. */
 export const DISCOVERY = {
-  price: "₹3,500",
+  price: "₹3,499",
   title: "Product Requirement Analysis",
-  pay: "https://pages.razorpay.com/elevatebox-prd",
+  // owner 2026-11-16: same booking form as the ads (details, pick a time, pay); was a Razorpay Payment Page
+  pay: "/project-assessment/form",
   includes: [
     "A call with the people who will build it, not a sales desk",
     "Your requirements worked through screen by screen",
@@ -2084,7 +2085,7 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [];
 
 export const FAQS = [
-  { q: "How do we start, and what does it cost?", a: "With a Product Requirement Analysis for ₹3,500: a call with the people who will build it, your requirements worked through, and a written quotation and timeline. Pay on our Razorpay page, then pick a time at elevatebox.in/book." },
+  { q: "How do we start, and what does it cost?", a: "With a Product Requirement Analysis for ₹3,499: a call with the people who will build it, your requirements worked through, and a written quotation and timeline. Book at elevatebox.in/book: tell us about the project, pick a time, then pay on Razorpay." },
   { q: "How do you price engagements?", a: "Fixed-price for well-defined scopes, and time-and-materials for evolving products. We recommend fixed-price discovery first so the build estimate is based on evidence rather than assumption." },
   { q: "Who owns the code and infrastructure?", a: "You do, throughout. Repository, cloud accounts, and deployment credentials are in your name from the first commit, not transferred at the end." },
   { q: "How long does a typical project take?", a: "A focused MVP is usually eight to sixteen weeks. Platform work and multi-app products run longer. We give a range with a confidence level, and narrow it as unknowns resolve." },
