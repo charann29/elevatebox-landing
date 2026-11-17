@@ -1927,7 +1927,7 @@ export const CONSULTS: Consult[] = [
     headline: "Find where your business can grow faster, in one short call.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
-    price: "₹99",
+    price: "₹499",
     title: "45-minute Business Strategy Call",
     lead: "Tell us how your business runs today. We find what you can automate, what you can scale, and how ads or tech can bring in more customers.",
     pay: "",
