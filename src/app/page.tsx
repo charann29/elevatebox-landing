@@ -168,11 +168,13 @@ const FOUNDER_QUOTES = [
   {
     q: "Sai Charan didn't just write code. He brought ideas to life. At OnEasy, we were building AI agents from the ground up, designed to serve 1,500+ businesses, and Sai Charan was the person who made that vision technically real.",
     who: "CA Abhishek Boddu",
+    photo: "/assets/people/abhishek-boddu.webp",
     role: "Chartered Accountant, Virtual CFO, building OnEasy.Ai",
   },
   {
     q: "Charan is one of the most enthusiastic problem solvers I have worked with. He takes his work very responsibly. His talent for programming, implementing features and solving the problem in hand very fast keeps him far ahead of his peers.",
     who: "Ayan Kalyan",
+    photo: "/assets/people/ayan-kalyan.webp",
     role: "Designer at Dribbble, ex-Microsoft and Unacademy",
   },
 ];
@@ -416,12 +418,12 @@ export default function Home() {
                   <small className="mt-2.5 block text-[13px] text-ink-2">Products built</small>
                 </li>
               </ul>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href={LINKEDIN.founder} target="_blank" rel="noopener" className="inline-flex h-11 items-center gap-2 rounded-full bg-[#0A66C2] px-5 text-[15px] font-semibold text-white hover:bg-[#004182]">
-                  <LinkedInIcon /> Sai Charan on LinkedIn
+              <div className="mt-6 flex gap-3">
+                <a href={LINKEDIN.founder} target="_blank" rel="noopener" className="inline-flex h-11 items-center gap-2 rounded-full bg-[#0A66C2] px-4 sm:px-5 text-[15px] font-semibold text-white hover:bg-[#004182]">
+                  <LinkedInIcon /> Sai Charan<span className="-ml-1 max-sm:hidden">on LinkedIn</span>
                 </a>
-                <a href={LINKEDIN.company} target="_blank" rel="noopener" className="inline-flex h-11 items-center gap-2 rounded-full px-5 text-[15px] font-semibold text-[#0A66C2] ring-[1.5px] ring-inset ring-[#0A66C2] hover:bg-[#0A66C2]/5">
-                  <LinkedInIcon /> ElevateBox on LinkedIn
+                <a href={LINKEDIN.company} target="_blank" rel="noopener" className="inline-flex h-11 items-center gap-2 rounded-full px-4 sm:px-5 text-[15px] font-semibold text-[#0A66C2] ring-[1.5px] ring-inset ring-[#0A66C2] hover:bg-[#0A66C2]/5">
+                  <LinkedInIcon /> ElevateBox<span className="-ml-1 max-sm:hidden">on LinkedIn</span>
                 </a>
               </div>
             </div>
@@ -439,9 +441,7 @@ export default function Home() {
                   <blockquote className="text-[19px] leading-normal">{`“${q.q}”`}</blockquote>
                   <figcaption className="flex items-center justify-between gap-4">
                     <span className="flex items-center gap-3.5">
-                      <span aria-hidden="true" className="grid size-[52px] shrink-0 place-items-center rounded-full bg-sky text-lg font-semibold text-navy">
-                        {q.who.replace("CA ", "").split(" ").map((w) => w[0]).join("")}
-                      </span>
+                      <Image src={q.photo} alt="" width={52} height={52} className="size-[52px] shrink-0 rounded-full bg-sky object-cover" />
                       <span>
                         <b className="block text-[15px] font-semibold">{q.who}</b>
                         <small className="text-[13px] text-ink-2">{q.role}</small>
