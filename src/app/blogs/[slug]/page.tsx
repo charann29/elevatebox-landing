@@ -9,7 +9,9 @@ import { FOUNDER, JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 import { BLOG_PATH, getStudioPost, getStudioPosts } from "@/lib/cms";
 import { StudioArticle, studioMetadata } from "@/components/studio-article";
 
-export const dynamicParams = false;
+// New WordPress slugs render on first visit; unknown slugs still 404 (notFound below).
+export const dynamicParams = true;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const slugs = new Set([...POSTS.map((p) => p.slug), ...(await getStudioPosts()).map((s) => s.slug)]);

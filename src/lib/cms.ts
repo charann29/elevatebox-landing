@@ -4,6 +4,7 @@
 // A network error or 5xx throws and fails the build, so the last good deploy stays live (guide 9a).
 const CMS = `${process.env.CMS_API_URL ?? "https://cms.gcombinator.co"}/api/v1/sites/elevatebox`;
 import { RICH_POSTS } from "./posts/rich";
+import { getWpPost, getWpPosts } from "./wordpress";
 export const BLOG_PATH = "/blogs"; // owner's choice: Studio posts join the existing /blogs
 
 export interface CmsPostMeta {
@@ -41,7 +42,7 @@ async function cms<T>(path: string): Promise<T | null> {
 // ponytail: English only (the site has one language); other locales are ignored.
 const once = <T,>(f: () => Promise<T>) => { let p: Promise<T> | undefined; return () => (p ??= f()); };
 
-export const getStudioPosts = once(async () => {
+const studioPosts = once(async () => {
   const out: CmsPostMeta[] = [];
   for (let page = 1; ; page++) {
     const r = await cms<{ pages: number; items: CmsPostMeta[] }>(`/blog?page=${page}&limit=500`);
@@ -57,7 +58,19 @@ export const getStudioPosts = once(async () => {
   );
 });
 
+// WordPress wins on a slug clash, then Studio, then our rich/POSTS posts.
+// Not memoised with once(): WordPress is re-read at runtime, its fetch cache (60 s) dedupes calls.
+// TODO: remove fallback once all posts are migrated to WordPress
+export const getStudioPosts = async () => {
+  const wp = await getWpPosts();
+  const taken = new Set(wp.map((p) => p.slug));
+  return [...wp, ...(await studioPosts()).filter((p) => !taken.has(p.slug))].sort((a, b) =>
+    (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
+  );
+};
+
 export const getStudioPost = async (slug: string) =>
+  (await getWpPost(slug)) ??
   (await cms<CmsPost>(`/blog/${encodeURIComponent(slug)}`)) ?? RICH_POSTS.find((p) => p.slug === slug) ?? null;
 
 /** Pages at any address (guide section 10): published paths outside the blog folder. */

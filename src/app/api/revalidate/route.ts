@@ -1,7 +1,10 @@
 // Growth Studio calls this on publish, unpublish and edit (connect guide section 5 / 9a).
 // Pages are prerendered from Studio at build time, so a real event starts a Vercel rebuild
 // through the project's deploy hook; a "ping" (Check my website) never builds.
+// WordPress instead calls /api/revalidate?secret=<REVALIDATE_SECRET> with {"slug": "..."}: that refreshes
+// /blogs (and the post) at once, no rebuild.
 import { timingSafeEqual } from "node:crypto";
+import { revalidatePath } from "next/cache";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +14,17 @@ const secretsMatch = (given: string, expected: string) => {
 };
 
 export async function POST(request: Request) {
+  const wpSecret = new URL(request.url).searchParams.get("secret");
+  if (wpSecret !== null) {
+    const expected = process.env.REVALIDATE_SECRET;
+    if (!expected || !secretsMatch(wpSecret, expected)) return Response.json({ ok: false }, { status: 401 });
+    let slug: unknown;
+    try { slug = ((await request.json()) as { slug?: unknown })?.slug; } catch {}
+    revalidatePath("/blogs");
+    if (typeof slug === "string" && slug) revalidatePath(`/blogs/${slug}`);
+    return Response.json({ ok: true });
+  }
+
   const secret = process.env.CMS_REVALIDATE_SECRET;
   const hook = process.env.CMS_DEPLOY_HOOK_URL;
   if (!secret || !hook) return Response.json({ ok: false }, { status: 503 }); // fail closed
