@@ -139,7 +139,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   const minutes = c.title.split("-")[0];
   const kind = c.kind ?? "strategic consultation";
   const join = `Join for a ${kind}`;
-  // ponytail: only the ₹99 tech call shows its price on the page (owner 2026-11-15); others unchanged.
+  // ponytail: only the tech call (₹499 since 2026-11-17) shows its price on the page; others unchanged.
   const showPrice = c.slug === "499";
   const note = showPrice ? `${c.price} to book. ${GUARANTEE}` : GUARANTEE;
   const photos = c.photos ?? PHOTOS;
