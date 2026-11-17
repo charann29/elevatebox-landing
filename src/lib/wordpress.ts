@@ -52,7 +52,15 @@ const LIST_FIELDS = `title slug excerpt date: dateGmt modified: modifiedGmt cont
   categories { nodes { name slug } }
   author { node { name } }`;
 
-const text = (html: string | null) => sanitizeHtml(html ?? "", { allowedTags: [], allowedAttributes: {} }).replace(/\s+/g, " ").trim();
+const ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
+// Plain text for React (which escapes it again), so WordPress entities such as &amp; and &#8217; are decoded.
+const text = (html: string | null) =>
+  sanitizeHtml(html ?? "", { allowedTags: [], allowedAttributes: {} })
+    .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e: string) =>
+      e[0] !== "#" ? (ENTITIES[e.toLowerCase()] ?? m) : String.fromCodePoint(e[1] === "x" || e[1] === "X" ? parseInt(e.slice(2), 16) : Number(e.slice(1))),
+    )
+    .replace(/\s+/g, " ")
+    .trim();
 const minutes = (html: string | null) => Math.max(1, Math.round(text(html).split(" ").length / 200));
 const iso = (d: string | null) => (d ? `${d.replace(/Z$/, "")}Z` : null); // *Gmt dates come without "Z"
 
@@ -90,12 +98,12 @@ const inCategory = (p: WpListPost) => !CATEGORY || p.categories.nodes.some((c) =
 
 // WordPress posts in Growth Studio's shape, so StudioArticle and the blog list render them unchanged.
 const meta = (p: WpListPost): CmsPostMeta => ({
-  slug: p.slug, locale: "en", title: p.title, description: text(p.excerpt),
+  slug: p.slug, locale: "en", title: text(p.title), description: text(p.excerpt),
   imageUrl: p.featuredImage?.node.sourceUrl ?? null, imageAlt: p.featuredImage?.node.altText || null,
   ogImageUrl: p.featuredImage?.node.sourceUrl ?? null,
   tags: p.categories.nodes.map((c) => c.name), readingTimeMinutes: minutes(p.content),
   publishedAt: iso(p.date), updatedAt: iso(p.modified),
-  heading: p.title, eyebrow: p.categories.nodes[0]?.name ?? null, standfirst: null, faqHeading: null,
+  heading: text(p.title), eyebrow: p.categories.nodes[0]?.name ?? null, standfirst: null, faqHeading: null,
 });
 
 export async function getWpPosts(): Promise<CmsPostMeta[]> {
@@ -128,11 +136,11 @@ export async function getWpPost(slug: string): Promise<CmsPost | null> {
   return {
     ...m,
     // Yoast's SEO title and description feed <title>/meta; the page's H1 stays the post title.
-    title: p.seo?.title || p.title,
-    description: p.seo?.metaDesc || m.description,
+    title: text(p.seo?.title || p.title),
+    description: text(p.seo?.metaDesc ?? null) || m.description,
     ogImageUrl: p.seo?.opengraphImage?.sourceUrl ?? m.imageUrl,
     standfirst: m.description || null,
     contentHtml: html, toc, faq: [], faqPlacement: "body",
-    headline: p.title, breadcrumbLabel: p.title,
+    headline: text(p.title), breadcrumbLabel: text(p.title),
   };
 }
