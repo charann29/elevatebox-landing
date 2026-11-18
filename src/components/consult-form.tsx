@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { cleanPhone, slotDays, SLOT_CONFIG } from "@/lib/booking.mjs";
 import type { Question } from "@/lib/content";
 
@@ -80,6 +80,8 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   const [msg, setMsg] = useState("");
   const [done, setDone] = useState(false);
   const [step, setStep] = useState(1);
+  // step 1 saves name + phone at once, so people who drop off at step 2 can still be called back
+  const early = useRef<Promise<string>>(Promise.resolve(""));
 
   const loadSlots = () => {
     setSlots(null);
@@ -96,7 +98,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
     if (!next.phone) return setMsg("Please enter a 10-digit Indian mobile number.");
     setBusy(true);
     setMsg("");
-    const r = await post("lead", { tier: offer.slug, answers: next, tracking: tracking() }).catch(() => null);
+    const r = await post("lead", { tier: offer.slug, answers: next, lead_id: await early.current, tracking: tracking() }).catch(() => null);
     const d = r?.ok ? await r.json() : null;
     setBusy(false);
     if (!d?.lead_id) return setMsg("Could not save your answers. Please check your connection and try again.");
@@ -236,6 +238,10 @@ export function ConsultForm({ offer }: { offer: Offer }) {
             if (!f.reportValidity()) return;
             if (!cleanPhone(String(new FormData(f).get("phone") ?? ""))) return setMsg("Please enter a 10-digit Indian mobile number.");
             setMsg("");
+            const fd = new FormData(f);
+            const part = Object.fromEntries(qs.map((x) => [x.k, String(fd.get(x.k) ?? "").trim()]));
+            early.current = post("lead", { tier: offer.slug, answers: part, tracking: tracking() })
+              .then((r) => (r.ok ? r.json() : null)).then((d) => d?.lead_id || "").catch(() => "");
             setStep(2);
           }}>
           Continue ›
