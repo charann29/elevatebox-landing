@@ -1921,12 +1921,12 @@ export const CONSULTS: Consult[] = [
   {
     slug: "499",
     path: "/tech-consultation",
-    headline: "Leave with a plan to get more customers and cut manual work, in 45 minutes.",
+    headline: "Your growth plan in 45 minutes.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Find the first 3 things to fix in your business to grow faster.",
     price: "₹499",
     title: "45-minute Business Strategy Call",
-    lead: "A 45-minute Google Meet with the team that runs ads and builds apps and AI for businesses. You leave knowing what to automate, where to get more customers and what it will cost.",
+    lead: "More customers, less manual work. A Google Meet with our team that runs ads and builds apps and AI for businesses.",
     pay: "",
     includes: [
       "45 minutes on Google Meet with the team that runs ads and builds systems for businesses",
