@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { cleanPhone, slotDays, SLOT_CONFIG } from "@/lib/booking.mjs";
 import type { Question } from "@/lib/content";
 
-/* Ad booking flow: 7 questions -> pick a time -> Razorpay -> booked.
+/* Ad booking flow: 7 questions in 2 steps (Hormozi: more than 5 fields -> break into steps) -> pick a time -> Razorpay -> booked.
    Backend is the ElevateBox booking Worker (elevatebox-consult), proxied same-origin at /api/consult/* (vercel.json).
    It saves every lead + booking to D1 (its /admin page), creates the Razorpay order (price from the tier only),
    verifies payment and sends the server-side Purchase to Meta. Pixel events here reuse the Worker's event ids
@@ -79,6 +79,9 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
   const [done, setDone] = useState(false);
+  const [step, setStep] = useState(1);
+  // step 1 saves name + phone at once, so people who drop off at step 2 can still be called back
+  const early = useRef<Promise<string>>(Promise.resolve(""));
 
   const loadSlots = () => {
     setSlots(null);
@@ -95,7 +98,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
     if (!next.phone) return setMsg("Please enter a 10-digit Indian mobile number.");
     setBusy(true);
     setMsg("");
-    const r = await post("lead", { tier: offer.slug, answers: next, tracking: tracking() }).catch(() => null);
+    const r = await post("lead", { tier: offer.slug, answers: next, lead_id: await early.current, tracking: tracking() }).catch(() => null);
     const d = r?.ok ? await r.json() : null;
     setBusy(false);
     if (!d?.lead_id) return setMsg("Could not save your answers. Please check your connection and try again.");
@@ -199,21 +202,24 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   }
 
   const field = "mt-1.5 block w-full rounded-xl border border-black/15 bg-white px-3.5 py-3 text-base text-ink outline-none focus:border-[#ff7701] focus:ring-2 focus:ring-[#ff7701]/20";
+  // ponytail: step 1 = first 3 questions (what, name, WhatsApp), step 2 = the rest; one POST at the end, Worker unchanged.
+  // Later-step fields stay mounted but hidden and not required until shown, so step 1 validates on its own.
   return (
     <form className={`grid gap-5 ${card}`} onSubmit={submit}>
-      {qs.map((x) => (
-        <label key={x.k} className="block text-sm font-semibold text-ink">
+      <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">{`Step ${step} of 2`}</p>
+      {qs.map((x, i) => (
+        <label key={x.k} className={`block text-sm font-semibold text-ink ${(i < 3) === (step === 1) ? "" : "hidden"}`}>
           {x.q}
           {x.note && <span className="mt-0.5 block text-xs font-normal text-ink-3">{x.note}</span>}
           {x.opts ? (
-            <select name={x.k} required defaultValue="" className={field}>
+            <select name={x.k} required={(i < 3) === (step === 1)} defaultValue="" className={field}>
               <option value="" disabled>Select</option>
               {x.opts.map((o) => <option key={o}>{o}</option>)}
             </select>
           ) : (
             <input
               name={x.k}
-              required
+              required={(i < 3) === (step === 1)}
               type={x.type}
               autoComplete={x.type === "tel" ? "tel" : "name"}
               inputMode={x.type === "tel" ? "tel" : undefined}
@@ -225,9 +231,26 @@ export function ConsultForm({ offer }: { offer: Offer }) {
         </label>
       ))}
       {msg && <p role="alert" className="text-sm font-semibold text-red-700">{msg}</p>}
-      <button type="submit" disabled={busy} className={primary}>
-        {busy ? "Saving…" : "Continue ›"}
-      </button>
+      {step === 1 ? (
+        <button type="button" className={primary}
+          onClick={(e) => {
+            const f = e.currentTarget.form!;
+            if (!f.reportValidity()) return;
+            if (!cleanPhone(String(new FormData(f).get("phone") ?? ""))) return setMsg("Please enter a 10-digit Indian mobile number.");
+            setMsg("");
+            const fd = new FormData(f);
+            const part = Object.fromEntries(qs.map((x) => [x.k, String(fd.get(x.k) ?? "").trim()]));
+            early.current = post("lead", { tier: offer.slug, answers: part, tracking: tracking() })
+              .then((r) => (r.ok ? r.json() : null)).then((d) => d?.lead_id || "").catch(() => "");
+            setStep(2);
+          }}>
+          Continue ›
+        </button>
+      ) : (
+        <button type="submit" disabled={busy} className={primary}>
+          {busy ? "Saving…" : "Continue to pick a time ›"}
+        </button>
+      )}
       {/* Consent for the abandoned-checkout call (Roopa lead source states this): keep the wording. */}
       <p className="text-center text-xs text-ink-3">By continuing, you agree that we may call or WhatsApp you about this booking.</p>
     </form>

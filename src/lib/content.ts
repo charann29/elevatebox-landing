@@ -1905,37 +1905,39 @@ export const CONSULT_RESULTS = [
 ];
 
 export type Question = { k: string; q: string; opts?: string[]; note?: string; type?: string };
-type Item = { i: string; t: string; d: string };
 /* One paid call per entry at /book/<slug>. Optional fields override the page's default ElevateBox
    sections, so a product (Roopa) can reuse the same layout, booking Worker and Razorpay flow. */
 export type Consult = {
   slug: string; headline: string; headlineB?: string; price: string; title: string; lead: string; pay: string; includes: string[];
   path?: string; // neutral ad URL; falls back to /book/<slug>
   kind?: string; // "strategic consultation" by default
-  who?: string; // FAQ "Who will I talk to?"
   photos?: { src: string; alt: string }[]; caption?: string;
-  pain?: string[]; painHit?: string; painClose?: string;
-  outcomes?: Item[]; audience?: Item[];
+  objections: { t: string; d: string }[]; // Hormozi: 3 bullets, the 3 biggest objections, most common first
   questions?: Question[]; // keys must be the Worker's lead columns: build name phone business revenue investment stance
-  focused?: boolean; // hide the ElevateBox-wide sections (engagement models, results)
+  focused?: boolean; // hide the ElevateBox-wide results
 };
 
 export const CONSULTS: Consult[] = [
   {
     slug: "499",
     path: "/tech-consultation",
-    headline: "Find where your business can grow faster, in one short call.",
+    headline: "Leave with a plan to get more customers and cut manual work, in 45 minutes.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
-    headlineB: "Grow your business. Talk to us.",
+    headlineB: "Find the first 3 things to fix in your business to grow faster.",
     price: "₹499",
     title: "45-minute Business Strategy Call",
-    lead: "Tell us how your business runs today. We find what you can automate, what you can scale, and how ads or tech can bring in more customers.",
+    lead: "A 45-minute Google Meet with the team that runs ads and builds apps and AI for businesses. You leave knowing what to automate, where to get more customers and what it will cost.",
     pay: "",
     includes: [
       "45 minutes on Google Meet with the team that runs ads and builds systems for businesses",
       "How your sales, team, tools and spend work today",
       "What to automate first, and where to scale",
       "The ads or tech move that can pay back within six months",
+    ],
+    objections: [
+      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is this a sales pitch?", d: "No. You talk to the engineers who build for our clients, and you leave with a plan you can use with or without us." },
+      { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
     ],
   },
   {
@@ -1954,6 +1956,11 @@ export const CONSULTS: Consult[] = [
       "Where to automate, where to run ads, where to build",
       "A short written plan after the call",
     ],
+    objections: [
+      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is this a sales pitch?", d: "No. You talk to the engineers who build for our clients, and you leave with a plan you can use with or without us." },
+      { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
+    ],
   },
   {
     slug: "3499",
@@ -1971,14 +1978,21 @@ export const CONSULTS: Consult[] = [
       "What existing tools can do for you, and what is worth building",
       "A written quotation and timeline you can take anywhere",
     ],
+    objections: [
+      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is this a sales pitch?", d: "No. You talk to the engineers who build for our clients, and you leave with a plan you can use with or without us." },
+      { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
+    ],
   },
   {
     slug: "roopa",
-    headline: "Let Roopa call every lead for you, in your customers' language.",
+    headline: "Get every lead called back in minutes, in Telugu, Hindi or English.",
+    // A/B test (worker /admin/ab.html): B is shown to half of visitors
+    headlineB: "Stop losing leads to calls nobody made.",
     price: "₹499",
     title: "30-minute Roopa Consultation",
     kind: "Roopa consultation",
-    lead: "Tell us how your business handles calls today. We map which calls Roopa, our AI telecaller, can make for you in Telugu, Hindi or English, and what it costs at your volume.",
+    lead: "A 30-minute Google Meet where we set up Roopa, our AI telecaller, with your business details, you hear her call, and we show what it costs at your call volume.",
     pay: "",
     includes: [
       "30 minutes on Google Meet with the team that builds Roopa",
@@ -1986,25 +2000,12 @@ export const CONSULTS: Consult[] = [
       "A demo call set up with your own business details",
       "Your monthly cost at your call volume",
     ],
-    who: "Someone from the team that builds and runs Roopa, not a sales caller.",
     photos: [{ src: "/assets/real-voice.jpg", alt: "Roopa by ElevateBox" }],
     caption: "Roopa by ElevateBox: AI telecaller in Telugu, Hindi and English",
-    pain: ["Leads that came in at night, called back next morning.", "Telecallers who leave after two months.", "Follow-ups nobody had time for."],
-    painHit: "Every missed call is a customer lost.",
-    painClose: "One 30-minute call shows how Roopa can take these calls for you.",
-    outcomes: [
-      { i: "map", t: "Which calls to hand over", d: "New enquiries, follow-ups, COD confirmations, appointment reminders: we list yours." },
-      { i: "clock", t: "How leads get called right away", d: "Roopa calls new leads as they come in, day or night, instead of the next morning." },
-      { i: "target", t: "What Roopa should say", d: "A call script in Telugu, Hindi or English, built from your brochure and website." },
-      { i: "cut", t: "What stays with your team", d: "The calls a person should still take, and how Roopa hands them over." },
-      { i: "rupee", t: "What it costs", d: "Your monthly cost at your call volume, next to what a telecaller costs you." },
-      { i: "money", t: "When it pays back", d: "A six-month view of leads followed up and hours saved." },
-    ],
-    audience: [
-      { i: "home", t: "Builders and real estate", d: "Every site-visit enquiry called back, not left for tomorrow." },
-      { i: "heart", t: "Clinics and hospitals", d: "Appointment reminders and follow-ups in the patient's language." },
-      { i: "shop", t: "Shops with COD orders", d: "Orders confirmed by phone before dispatch." },
-      { i: "rocket", t: "Any team with a call list", d: "Loans, insurance, coaching, events: if your team dials, Roopa can help." },
+    objections: [
+      { t: "Will it sound like a robot?", d: "Hear for yourself. On the call Roopa phones you with your own business details, in Telugu, Hindi or English, before you decide anything." },
+      { t: "What will it cost me?", d: "We work out your monthly cost at your call volume on the call, next to what a telecaller costs you. No commitment." },
+      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
     ],
     questions: [
       { k: "build", q: "What should Roopa handle first?", opts: ["Call back new enquiries", "Follow up old leads", "Confirm COD orders", "Appointment booking and reminders", "Payment or renewal reminders", "Answer incoming calls"] },
