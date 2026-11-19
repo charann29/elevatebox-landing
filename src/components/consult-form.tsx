@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Dropdown } from "./dropdown";
 import { cleanPhone, slotDays, SLOT_CONFIG } from "@/lib/booking.mjs";
 import type { Question } from "@/lib/content";
 
@@ -208,21 +209,13 @@ export function ConsultForm({ offer }: { offer: Offer }) {
     <form className={`grid gap-5 ${card}`} onSubmit={submit}>
       <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">{`Step ${step} of 2`}</p>
       {qs.map((x, i) => {
-        // ponytail: choices are tap buttons (native radios), not a <select>, so no OS popup/wheel on any phone
         const Tag = x.opts ? "div" : "label";
         return (
         <Tag key={x.k} className={`block text-sm font-semibold text-ink ${(i < 3) === (step === 1) ? "" : "hidden"}`}>
           {x.q}
           {x.note && <span className="mt-0.5 block text-xs font-normal text-ink-3">{x.note}</span>}
           {x.opts ? (
-            <div role="radiogroup" aria-label={x.q} className="mt-1.5 grid gap-2">
-              {x.opts.map((o) => (
-                <label key={o} className="flex cursor-pointer items-center gap-3 rounded-xl border border-black/15 bg-white px-3.5 py-2.5 text-[15px] leading-snug font-medium text-ink has-[:checked]:border-[#ff7701] has-[:checked]:bg-[#ff7701]/5 has-[:checked]:ring-2 has-[:checked]:ring-[#ff7701]/20">
-                  <input type="radio" name={x.k} value={o} required={(i < 3) === (step === 1)} className="size-4 shrink-0 accent-[#ff7701]" />
-                  {o}
-                </label>
-              ))}
-            </div>
+            <Dropdown name={x.k} opts={x.opts} required={(i < 3) === (step === 1)} className={field.replace("mt-1.5 block ", "")} />
           ) : (
             <input
               name={x.k}

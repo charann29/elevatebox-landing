@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { COMPANY } from "@/lib/company";
+import { Dropdown } from "./dropdown";
 
 // ponytail: no backend on this static site, so an enquiry goes to the team's WhatsApp,
 // with a correctly encoded email as the fallback. Point it at a lead API when one exists.
@@ -75,19 +76,9 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
           </label>
           <input id="qf-phone" name="phone" type="tel" autoComplete="tel" className={field} />
         </div>
-        <div role="radiogroup" aria-labelledby="qf-budget" className="grid gap-1.5 sm:col-span-2">
-          <span id="qf-budget" className="text-sm font-medium text-ink">
-            Budget range
-          </span>
-          {/* ponytail: tap buttons (native radios), not a <select>, so no OS popup/wheel on phones */}
-          <div className="flex flex-wrap gap-2">
-            {BUDGETS.map((b) => (
-              <label key={b} className="flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-black/15 bg-white px-3.5 py-2 text-sm font-medium text-ink has-[:checked]:border-electric has-[:checked]:bg-electric/5 has-[:checked]:ring-2 has-[:checked]:ring-electric/20">
-                <input type="radio" name="budget" value={b} className="size-4 shrink-0 accent-electric" />
-                {b}
-              </label>
-            ))}
-          </div>
+        <div className="grid gap-1.5">
+          <span className="text-sm font-medium text-ink">Budget range</span>
+          <Dropdown name="budget" opts={BUDGETS} placeholder="Select a range" accent="#2f5cf0" className={field} />
         </div>
       </div>
       <div className="grid gap-1.5">
