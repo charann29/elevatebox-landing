@@ -75,18 +75,19 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
           </label>
           <input id="qf-phone" name="phone" type="tel" autoComplete="tel" className={field} />
         </div>
-        <div className="grid gap-1.5">
-          <label htmlFor="qf-budget" className="text-sm font-medium text-ink">
+        <div role="radiogroup" aria-labelledby="qf-budget" className="grid gap-1.5 sm:col-span-2">
+          <span id="qf-budget" className="text-sm font-medium text-ink">
             Budget range
-          </label>
-          <select id="qf-budget" name="budget" className={field} defaultValue="">
-            <option value="" disabled>
-              Select a range
-            </option>
+          </span>
+          {/* ponytail: tap buttons (native radios), not a <select>, so no OS popup/wheel on phones */}
+          <div className="flex flex-wrap gap-2">
             {BUDGETS.map((b) => (
-              <option key={b}>{b}</option>
+              <label key={b} className="flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-black/15 bg-white px-3.5 py-2 text-sm font-medium text-ink has-[:checked]:border-electric has-[:checked]:bg-electric/5 has-[:checked]:ring-2 has-[:checked]:ring-electric/20">
+                <input type="radio" name="budget" value={b} className="size-4 shrink-0 accent-electric" />
+                {b}
+              </label>
             ))}
-          </select>
+          </div>
         </div>
       </div>
       <div className="grid gap-1.5">
