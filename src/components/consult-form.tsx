@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Dropdown } from "./dropdown";
 import { cleanPhone, slotDays, SLOT_CONFIG } from "@/lib/booking.mjs";
 import type { Question } from "@/lib/content";
 
@@ -207,15 +208,14 @@ export function ConsultForm({ offer }: { offer: Offer }) {
   return (
     <form className={`grid gap-5 ${card}`} onSubmit={submit}>
       <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">{`Step ${step} of 2`}</p>
-      {qs.map((x, i) => (
-        <label key={x.k} className={`block text-sm font-semibold text-ink ${(i < 3) === (step === 1) ? "" : "hidden"}`}>
+      {qs.map((x, i) => {
+        const Tag = x.opts ? "div" : "label";
+        return (
+        <Tag key={x.k} className={`block text-sm font-semibold text-ink ${(i < 3) === (step === 1) ? "" : "hidden"}`}>
           {x.q}
           {x.note && <span className="mt-0.5 block text-xs font-normal text-ink-3">{x.note}</span>}
           {x.opts ? (
-            <select name={x.k} required={(i < 3) === (step === 1)} defaultValue="" className={field}>
-              <option value="" disabled>Select</option>
-              {x.opts.map((o) => <option key={o}>{o}</option>)}
-            </select>
+            <Dropdown name={x.k} opts={x.opts} required={(i < 3) === (step === 1)} className={field.replace("mt-1.5 block ", "")} />
           ) : (
             <input
               name={x.k}
@@ -228,8 +228,9 @@ export function ConsultForm({ offer }: { offer: Offer }) {
               className={field}
             />
           )}
-        </label>
-      ))}
+        </Tag>
+        );
+      })}
       {msg && <p role="alert" className="text-sm font-semibold text-red-700">{msg}</p>}
       {step === 1 ? (
         <button type="button" className={primary}

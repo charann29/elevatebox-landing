@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { COMPANY } from "@/lib/company";
+import { Dropdown } from "./dropdown";
 
 // ponytail: no backend on this static site, so an enquiry goes to the team's WhatsApp,
 // with a correctly encoded email as the fallback. Point it at a lead API when one exists.
@@ -76,17 +77,8 @@ export function QuoteForm({ dark }: { dark?: boolean }) {
           <input id="qf-phone" name="phone" type="tel" autoComplete="tel" className={field} />
         </div>
         <div className="grid gap-1.5">
-          <label htmlFor="qf-budget" className="text-sm font-medium text-ink">
-            Budget range
-          </label>
-          <select id="qf-budget" name="budget" className={field} defaultValue="">
-            <option value="" disabled>
-              Select a range
-            </option>
-            {BUDGETS.map((b) => (
-              <option key={b}>{b}</option>
-            ))}
-          </select>
+          <span className="text-sm font-medium text-ink">Budget range</span>
+          <Dropdown name="budget" opts={BUDGETS} placeholder="Select a range" accent="#2f5cf0" className={field} />
         </div>
       </div>
       <div className="grid gap-1.5">
