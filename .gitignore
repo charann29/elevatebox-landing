@@ -43,3 +43,6 @@ next-env.d.ts
 
 # wrangler local secrets
 .dev.vars*
+
+# WordPress export (scripts/export-posts-to-wp.mjs)
+wp-export.xml
