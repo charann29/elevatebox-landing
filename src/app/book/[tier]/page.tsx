@@ -49,6 +49,30 @@ const abScript = (tier: string) =>
   `document.documentElement.setAttribute("data-ab",v);var k="eb_abv_${tier}";try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1")}catch(e){}` +
   `navigator.sendBeacon&&navigator.sendBeacon("/api/consult/ab-view",JSON.stringify({tier:"${tier}",variant:v}))})()`;
 
+// The ad's utm_content says which industry the visitor came from; they see their own headline.
+// Same trick as the headline A/B: every variant is in the HTML, an attribute on <html> picks one
+// before paint, so React hydration never fights it. Unknown tag: the page stays as is.
+const INDUSTRY: { tags: string[]; h: string; lead: string; wa: string }[] = [
+  { tags: ["biz_B07", "static499_14", "static499_13", "static499_05"], h: "Every patient call answered, in Telugu.", lead: "Bookings, reminders and follow-ups that run without extra staff. We map it for your hospital or clinic in 45 minutes on Google Meet.", wa: "hospital or clinic" },
+  { tags: ["biz_B05", "static499_11", "static499_06"], h: "Every site-visit enquiry called back in minutes.", lead: "Calls, follow-ups and a sales system for builders and developers, in Telugu, Hindi or English. We map it with you in 45 minutes.", wa: "real estate business" },
+  { tags: ["biz_B06"], h: "Fill your premium calendar without discounting.", lead: "Ads, follow-up and bookings built for clients who pay ₹2 lakh. We map it with you in 45 minutes on Google Meet.", wa: "premium wellness business" },
+  { tags: ["biz_B02"], h: "Every admission enquiry called back the same day.", lead: "Admissions, fee reminders and parent calls for schools and coaching centres. We map it with you in 45 minutes.", wa: "school or coaching centre" },
+  { tags: ["static499_17", "static499_18"], h: "Cut your CA practice's paperwork from hours to minutes.", lead: "We took one CA practice from 3 hours to 15 minutes per return. We map yours in 45 minutes on Google Meet.", wa: "CA practice" },
+  { tags: ["biz_B01"], h: "Get your regulars ordering direct.", lead: "Your own ordering app, repeat-order calls and WhatsApp offers for restaurants and cloud kitchens. We map it in 45 minutes.", wa: "restaurant" },
+  { tags: ["biz_B03", "static499_15", "static499_16"], h: "Bring every jewellery customer back.", lead: "Savings schemes, festival offers and reminder calls that run on their own. We map it with you in 45 minutes.", wa: "jewellery business" },
+  { tags: ["biz_B04", "static499_19", "static499_20"], h: "Turn every interior quote into a site visit.", lead: "Every lead followed up and every quote chased, without extra staff. We map it with you in 45 minutes.", wa: "interior design business" },
+  { tags: ["biz_B08"], h: "Reply to every buyer enquiry in minutes.", lead: "Buyer calls, quote tracking and order systems for manufacturers. We map it with you in 45 minutes on Google Meet.", wa: "manufacturing business" },
+];
+const industryScript = () =>
+  `(function(){try{var t=new URLSearchParams(location.search).get("utm_content")||"";var m=${JSON.stringify(INDUSTRY.map((x) => x.tags))};` +
+  `for(var i=0;i<m.length;i++)if(m[i].indexOf(t)>-1){document.documentElement.setAttribute("data-ind",String(i));return}}catch(e){}})()`;
+const industryCss = () =>
+  ".ind{display:none}html[data-ind] .ind-def{display:none}" +
+  INDUSTRY.map((_, i) => `html[data-ind="${i}"] .ind-${i}{display:inline}html[data-ind="${i}"] a.ind-${i}{display:block}`).join("");
+const waHref = (what: string) =>
+  `https://wa.me/${COMPANY.whatsapp.replace("+", "")}?text=${encodeURIComponent(`Hi ElevateBox, I want to grow my ${what}. Can we talk before I book?`)}`;
+const WA_CLASS = "mt-3 text-center text-sm font-semibold text-[#0b1a3c] underline underline-offset-4";
+
 const PHOTOS = [
   { src: "/assets/real-vamshi-farms.jpg", alt: "Vamshi Farms app" },
   { src: "/assets/real-8meds.jpg", alt: "8Meds app" },
@@ -86,11 +110,23 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${minutes}-minute ${kind} on Google Meet`}</p>
               {/* Headline A/B: runs before the h1 paints, so no flicker. Sticky per browser; one view counted per session. */}
               <script dangerouslySetInnerHTML={{ __html: abScript(c.slug) }} />
+              {c.slug === "499" && (
+                <>
+                  <style>{industryCss()}</style>
+                  <script dangerouslySetInnerHTML={{ __html: industryScript() }} />
+                </>
+              )}
               <h1 className="mt-3 text-[2rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl">
-                <span className="ab-a">{c.headline}</span>
-                <span className="ab-b">{c.headlineB ?? c.headline}</span>
+                <span className="ind-def">
+                  <span className="ab-a">{c.headline}</span>
+                  <span className="ab-b">{c.headlineB ?? c.headline}</span>
+                </span>
+                {c.slug === "499" && INDUSTRY.map((x, i) => <span key={i} className={`ind ind-${i}`}>{x.h}</span>)}
               </h1>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#424242] sm:text-base">{c.lead}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-[#424242] sm:text-base">
+                <span className="ind-def">{c.lead}</span>
+                {c.slug === "499" && INDUSTRY.map((x, i) => <span key={i} className={`ind ind-${i}`}>{x.lead}</span>)}
+              </p>
             </div>
             <div>
               <ul className="flex justify-center px-2 pb-3">
@@ -105,6 +141,17 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             <div className="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-md">
               <a href="#book" className={`block rounded-md px-4 py-4 text-center text-base font-bold text-white shadow-sm transition-colors ${ORANGE}`}>{cta}</a>
               <p className="mt-2 text-center text-sm text-[#424242]">{REFUND}</p>
+              {/* Proof next to the decision, not only at the bottom of the page. */}
+              {!c.focused && (
+                <p className="mt-3 text-center text-xs leading-relaxed text-[#424242] sm:text-sm">
+                  253 leads for a solar installer · 3 hrs to 15 min for a CA · 0 to 3 sales a day for a wellness centre
+                </p>
+              )}
+              {/* Owners who want to talk before paying: one tap to WhatsApp. */}
+              <a href={waHref("business")} target="_blank" rel="noopener" className={`ind-def block ${WA_CLASS}`}>Or chat with us on WhatsApp first</a>
+              {c.slug === "499" && INDUSTRY.map((x, i) => (
+                <a key={i} href={waHref(x.wa)} target="_blank" rel="noopener" className={`ind ind-${i} ${WA_CLASS}`}>Or chat with us on WhatsApp first</a>
+              ))}
             </div>
           </div>
         </section>
