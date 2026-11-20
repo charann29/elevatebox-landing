@@ -1,6 +1,6 @@
 // Studio connect guide: version 6 · blocks guide: version 1.4
 // Growth Studio (Growth Combinator's CMS) is read at BUILD time: pages are prerendered, so a
-// publish in Studio calls /api/revalidate (src/app/api/revalidate/route.ts), which starts a Vercel rebuild.
+// publish in Studio calls /api/revalidate (src/app/api/revalidate/route.ts), which starts a rebuild.
 // A network error or 5xx throws and fails the build, so the last good deploy stays live (guide 9a).
 const CMS = `${process.env.CMS_API_URL ?? "https://cms.gcombinator.co"}/api/v1/sites/elevatebox`;
 import { RICH_POSTS } from "./posts/rich";

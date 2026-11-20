@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// Vercel builds and serves this site (git integration on main). Pages are still prerendered at
+// Railway builds and serves this site (`next start`, deploys from main). Pages are still prerendered at
 // build time; the only server code is /api/revalidate, which Growth Studio calls to start a rebuild.
 // Public URLs of the paid-call ad pages -> internal tier (owner: no prices in URLs).
 // ponytail: duplicated from CONSULTS[].path in src/lib/content.ts; change both together.
@@ -25,10 +25,17 @@ const nextConfig: NextConfig = {
   },
   // Old price URLs (live ads, shared links) move to the neutral ones; query strings carry over.
   async redirects() {
-    return AD_PAGES.flatMap(([path, tier]) => [
+    return [
+      // Moved here from vercel.json so they work off Vercel too.
+      { source: "/voice", destination: "https://agents.elevatebox.in/", permanent: true },
+      { source: "/voice/:path*", destination: "https://agents.elevatebox.in/", permanent: true },
+      { source: "/voiceagents", destination: "https://agents.elevatebox.in/", permanent: true },
+      { source: "/digitalmarketing", destination: "/services/digital-marketing", permanent: true },
+      ...AD_PAGES.flatMap(([path, tier]) => [
       { source: `/book/${tier}`, destination: path, permanent: true },
       { source: `/book/${tier}/form`, destination: `${path}/form`, permanent: true },
-    ]);
+      ]),
+    ];
   },
 };
 
