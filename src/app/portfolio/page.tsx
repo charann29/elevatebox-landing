@@ -12,6 +12,7 @@ import {
   projectImg,
 } from "@/lib/content";
 import { Header, Footer } from "@/components/site";
+import { SHOWCASE } from "@/lib/showcase";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
 export const metadata: Metadata = pageMeta("Portfolio: Apps & Platforms We've Shipped | ElevateBox", "Apps and platforms ElevateBox has shipped from Hyderabad: AI calling, healthcare, commerce and automation, including Roopa by ElevateBox. 380+ apps in all.", "/portfolio");
@@ -112,6 +113,16 @@ export default function PortfolioPage() {
             ))}
           </div>
         </Section>
+
+        {/* Ready-to-launch products: our own product line by industry, linked, never shown as client work. */}
+        <Section tinted eyebrow="Ready-to-launch products" title="Pick your industry. We launch it for you." lead={`${SHOWCASE.length} products we have designed for hospitals, schools, builders, stores, delivery, fintech, devotional brands and more.`}>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {SHOWCASE.slice(0, 9).map((x) => (
+              <li key={x.slug}><Link href={`/products/${x.slug}`} className="block rounded-xl bg-white p-5 ring-1 ring-black/10 hover:ring-brand/40"><span className="text-xs font-semibold uppercase text-brand/60">{x.domain}</span><span className="mt-1 block font-bold text-brand">{x.name}</span><span className="mt-1 block text-sm text-ink-muted">{x.tagline}</span></Link></li>
+            ))}
+          </ul>
+          <p className="mt-6"><Link href="/products" className="font-semibold text-brand underline">{`See all ${SHOWCASE.length} products`}</Link></p>
+</Section>
 
         <Section
           tinted

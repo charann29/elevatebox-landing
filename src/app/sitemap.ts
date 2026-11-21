@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { getStudioPaths, getStudioPosts } from "@/lib/cms";
 import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
 import { GLOBAL_PAGES } from "@/lib/global";
+import { SHOWCASE } from "@/lib/showcase";
 import { COMPANIES, PROPOSALS, citySlug, companyHref, industrySlug, proposalCities, proposalIndustries } from "@/lib/proposals";
 
 const base = COMPANY.site;
@@ -12,6 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "",
     "/about",
     "/portfolio",
+    "/products",
+    ...SHOWCASE.map((p) => `/products/${p.slug}`),
     "/mobile-app-development-company-hyderabad",
     "/hire-mobile-app-developers-hyderabad",
     "/web-development-company-hyderabad",
