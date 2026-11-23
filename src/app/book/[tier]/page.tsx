@@ -18,6 +18,7 @@ export const generateStaticParams = () => CONSULTS.map((c) => ({ tier: c.slug })
 
 const ORANGE = "bg-[#ff7701] hover:bg-[#f57100]";
 const REFUND = "Not useful? Tell us after the call and we refund you in full.";
+const FREE_NOTE = "Free. Roopa, our AI assistant, calls you first to understand what you need.";
 
 const find = (tier: string) => CONSULTS.find((c) => c.slug === tier);
 
@@ -88,7 +89,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   const minutes = c.title.split("-")[0];
   const kind = c.kind ?? "strategic consultation";
   // CTA = what they get + how they get it, nothing else
-  const cta = `Book my ${minutes}-min call · ${c.price}`;
+  const cta = c.price ? `Book my ${minutes}-min call · ${c.price}` : `Book my free ${minutes}-min call`;
   const photos = c.photos ?? PHOTOS;
 
   return (
@@ -140,7 +141,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             </div>
             <div className="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-md">
               <a href="#book" className={`block rounded-md px-4 py-4 text-center text-base font-bold text-white shadow-sm transition-colors ${ORANGE}`}>{cta}</a>
-              <p className="mt-2 text-center text-sm text-[#424242]">{REFUND}</p>
+              <p className="mt-2 text-center text-sm text-[#424242]">{c.price ? REFUND : FREE_NOTE}</p>
               {/* Proof next to the decision, not only at the bottom of the page. */}
               {!c.focused && (
                 <p className="mt-3 text-center text-xs leading-relaxed text-[#424242] sm:text-sm">
@@ -207,7 +208,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
 
       <footer className="bg-[#0b1a3c] px-5 py-6 text-center text-xs text-white/70">
         <p>{`© ${COMPANY.legal} · ${COMPANY.address}`}</p>
-        <p className="mt-2">Payments by Razorpay. Refunds are processed within fifteen working days.</p>
+        {c.price && <p className="mt-2">Payments by Razorpay. Refunds are processed within fifteen working days.</p>}
         <p className="mt-2 space-x-4">
           <Link href="/privacy-policy" className="underline">Privacy</Link>
           <Link href="/terms-and-conditions" className="underline">Terms</Link>
@@ -219,7 +220,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <div>
           <p className="whitespace-nowrap text-lg font-semibold leading-none tracking-tight">{kind[0].toUpperCase() + kind.slice(1)}</p>
-          <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet, ${c.price}`}</p>
+          <p className="mt-1 whitespace-nowrap text-[11px] text-[#424242]">{`${minutes} minutes, Google Meet, ${c.price || "free"}`}</p>
         </div>
         <a href="#book" className={`shrink-0 whitespace-nowrap rounded-md px-5 py-3 text-sm font-bold uppercase text-white ${ORANGE}`}>Book now</a>
       </div>

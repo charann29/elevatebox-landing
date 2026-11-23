@@ -1924,7 +1924,7 @@ export const CONSULTS: Consult[] = [
     headline: "Your growth plan in 45 minutes.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Find the first 3 things to fix in your business to grow faster.",
-    price: "₹499",
+    price: "", // owner 2026-11-24: free call, Roopa qualifies first
     title: "45-minute Business Strategy Call",
     lead: "More customers, less manual work. A Google Meet with our team that runs ads and builds apps and AI for businesses.",
     pay: "",
@@ -1935,7 +1935,7 @@ export const CONSULTS: Consult[] = [
       "The ads or tech move that can pay back within six months",
     ],
     objections: [
-      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is it really free?", d: "Yes, no payment. Roopa, our AI assistant, calls you first to understand what you need, then our team fixes a time with you on WhatsApp." },
       { t: "Is this a sales pitch?", d: "No. You talk to the engineers who build for our clients, and you leave with a plan you can use with or without us." },
       { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
     ],
@@ -1946,7 +1946,7 @@ export const CONSULTS: Consult[] = [
     headline: "Map your business and leave with a growth plan, from the people who will run it.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
-    price: "₹1,499",
+    price: "", // owner 2026-11-24: free call, Roopa qualifies first
     title: "45-minute Growth Planning Call",
     lead: "45 minutes going through your sales, operations and marketing, then a written plan: what to automate, what to scale and in what order.",
     pay: "",
@@ -1957,7 +1957,7 @@ export const CONSULTS: Consult[] = [
       "A short written plan after the call",
     ],
     objections: [
-      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is it really free?", d: "Yes, no payment. Roopa, our AI assistant, calls you first to understand what you need, then our team fixes a time with you on WhatsApp." },
       { t: "Is this a sales pitch?", d: "No. You talk to the engineers who build for our clients, and you leave with a plan you can use with or without us." },
       { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
     ],
@@ -1968,7 +1968,7 @@ export const CONSULTS: Consult[] = [
     headline: "Know exactly what to automate, what to build, what it costs and when it pays back.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Grow your business. Talk to us.",
-    price: "₹3,499",
+    price: "", // owner 2026-11-24: free call, Roopa qualifies first
     title: "45-minute Requirement Analysis",
     lead: "45 minutes on your business and requirements with the people who would do the work, ending in a written quotation and timeline.",
     pay: "",
@@ -1979,7 +1979,7 @@ export const CONSULTS: Consult[] = [
       "A written quotation and timeline you can take anywhere",
     ],
     objections: [
-      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is it really free?", d: "Yes, no payment. Roopa, our AI assistant, calls you first to understand what you need, then our team fixes a time with you on WhatsApp." },
       { t: "Is this a sales pitch?", d: "No. You talk to the engineers who build for our clients, and you leave with a plan you can use with or without us." },
       { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
     ],
@@ -1989,7 +1989,7 @@ export const CONSULTS: Consult[] = [
     headline: "Get every lead called back in minutes, in Telugu, Hindi or English.",
     // A/B test (worker /admin/ab.html): B is shown to half of visitors
     headlineB: "Stop losing leads to calls nobody made.",
-    price: "₹499",
+    price: "", // owner 2026-11-24: free call, Roopa qualifies first
     title: "30-minute Roopa Consultation",
     kind: "Roopa consultation",
     lead: "A 30-minute Google Meet where we set up Roopa, our AI telecaller, with your business details, you hear her call, and we show what it costs at your call volume.",
@@ -2005,7 +2005,7 @@ export const CONSULTS: Consult[] = [
     objections: [
       { t: "Will it sound like a robot?", d: "Hear for yourself. On the call Roopa phones you with your own business details, in Telugu, Hindi or English, before you decide anything." },
       { t: "What will it cost me?", d: "We work out your monthly cost at your call volume on the call, next to what a telecaller costs you. No commitment." },
-      { t: "What if the call is not useful?", d: "Tell us after the call and we refund the full fee. You keep the advice." },
+      { t: "Is it really free?", d: "Yes, no payment. Roopa, our AI assistant, calls you first to understand what you need, then our team fixes a time with you on WhatsApp." },
     ],
     questions: [
       { k: "build", q: "What should Roopa handle first?", opts: ["Call back new enquiries", "Follow up old leads", "Confirm COD orders", "Appointment booking and reminders", "Payment or renewal reminders", "Answer incoming calls"] },

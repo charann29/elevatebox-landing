@@ -99,13 +99,17 @@ export function ConsultForm({ offer }: { offer: Offer }) {
     if (!next.phone) return setMsg("Please enter a 10-digit Indian mobile number.");
     setBusy(true);
     setMsg("");
-    const r = await post("lead", { tier: offer.slug, answers: next, lead_id: await early.current, tracking: tracking() }).catch(() => null);
+    // ponytail: free offers (no price) go to the Worker's lead-only tiers; call_now hands the lead to Roopa at once.
+    const free = !offer.price;
+    const tier = free ? (offer.slug === "roopa" ? "roopa_free" : "free") : offer.slug;
+    const r = await post("lead", { tier, answers: next, lead_id: await early.current, tracking: tracking(), call_now: free }).catch(() => null);
     const d = r?.ok ? await r.json() : null;
     setBusy(false);
     if (!d?.lead_id) return setMsg("Could not save your answers. Please check your connection and try again.");
     setLeadId(d.lead_id);
     track("Lead", `lead_${d.lead_id}`, { content_name: offer.title });
     setA(next);
+    if (free) return setDone(true);
     loadSlots();
     // the form is long; bring the time picker into view instead of leaving the user at the footer
     requestAnimationFrame(() => document.getElementById("eb-book")?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -140,6 +144,16 @@ export function ConsultForm({ offer }: { offer: Offer }) {
       setBusy(false);
       setMsg("Payment could not start. Please try again in a minute.");
     }
+  }
+
+  if (done && !offer.price) {
+    return (
+      <div className={`${card} text-center`}>
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">Request received</p>
+        <h2 className="mt-2 text-2xl font-bold">{`Thanks, ${a?.name}.`}</h2>
+        <p className="mt-2 text-sm text-ink-3">Roopa, our AI assistant, will call you shortly on your number to understand what you need. If it is a fit, our team will WhatsApp you to fix a time for the call.</p>
+      </div>
+    );
   }
 
   if (done) {
@@ -241,7 +255,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
             setMsg("");
             const fd = new FormData(f);
             const part = Object.fromEntries(qs.map((x) => [x.k, String(fd.get(x.k) ?? "").trim()]));
-            early.current = post("lead", { tier: offer.slug, answers: part, tracking: tracking() })
+            early.current = post("lead", { tier: offer.price ? offer.slug : (offer.slug === "roopa" ? "roopa_free" : "free"), answers: part, tracking: tracking() })
               .then((r) => (r.ok ? r.json() : null)).then((d) => d?.lead_id || "").catch(() => "");
             setStep(2);
           }}>
@@ -249,7 +263,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
         </button>
       ) : (
         <button type="submit" disabled={busy} className={primary}>
-          {busy ? "Saving…" : "Continue to pick a time ›"}
+          {busy ? "Saving…" : offer.price ? "Continue to pick a time ›" : "Request my free call ›"}
         </button>
       )}
       {/* Consent for the abandoned-checkout call (Roopa lead source states this): keep the wording. */}
