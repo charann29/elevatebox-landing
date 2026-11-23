@@ -10,6 +10,9 @@ import { getStudioPosts } from "@/lib/cms";
 import { Header, Footer } from "@/components/site";
 import { CtaBand, PageHero, Section } from "@/components/blocks";
 
+// WordPress posts appear within a minute of publishing (src/lib/wordpress.ts).
+export const revalidate = 60;
+
 export const metadata: Metadata = pageMeta("Tech & App Development Blog | ElevateBox", "Practical writing on app development cost, tech choices, delivery and AI from ElevateBox, the Hyderabad team behind 380+ apps for 175+ organisations.", "/blogs");
 
 const fmt = (iso: string) =>

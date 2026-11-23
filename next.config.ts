@@ -11,7 +11,7 @@ const AD_PAGES: [string, string][] = [
 ];
 
 const nextConfig: NextConfig = {
-  images: { unoptimized: true },
+  images: { unoptimized: true, remotePatterns: [{ protocol: "https", hostname: "cms.elevatebox.in" }] },
   // /book/<tier>/form talks to the booking Worker (leads, Razorpay, admin, Meta CAPI) same-origin.
   // ponytail: workers.dev host until the Worker moves to the elevatebox.in Cloudflare account.
   async rewrites() {

@@ -1,4 +1,4 @@
-export const dynamic = "force-static";
+export const revalidate = 3600; // picks up new WordPress posts hourly
 import type { MetadataRoute } from "next";
 import { getStudioPaths, getStudioPosts } from "@/lib/cms";
 import { CATEGORIES, COMPANY, JOBS, POSTS } from "@/lib/content";
@@ -48,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...c.items.map((i) => ({ url: `${base}${c.base}/${i.slug}`, priority: 0.7 })),
   ]);
 
-  // Growth Studio posts (a Studio slug replaces ours) and its indexable pages at any address.
+  // WordPress + Growth Studio posts (WordPress, then Studio, replaces ours; lastModified = WP modified) and its indexable pages at any address.
   const studio = await getStudioPosts();
   const taken = new Set(studio.map((s) => s.slug));
   const posts = [
