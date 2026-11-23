@@ -25,10 +25,14 @@ const nextConfig: NextConfig = {
   },
   // Old price URLs (live ads, shared links) move to the neutral ones; query strings carry over.
   async redirects() {
-    return AD_PAGES.flatMap(([path, tier]) => [
+    return [
+      // Free-call static ads (Meta campaign "Free call with Charan") link here; /book/499 is the free call now.
+      { source: "/book/free", destination: "/tech-consultation", permanent: false },
+      ...AD_PAGES.flatMap(([path, tier]) => [
       { source: `/book/${tier}`, destination: path, permanent: true },
       { source: `/book/${tier}/form`, destination: `${path}/form`, permanent: true },
-    ]);
+    ]),
+    ];
   },
 };
 
