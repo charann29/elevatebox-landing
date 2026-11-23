@@ -7,11 +7,11 @@ import { Header, Footer } from "@/components/site";
 import { CtaBand } from "@/components/blocks";
 import { JsonLd, ORG, breadcrumb, ld } from "@/lib/schema";
 
-// ponytail: ~4,800 pages render on first visit and stay cached (ISR), so builds stay fast.
-export const dynamicParams = true;
-export const revalidate = false;
+// ponytail: all ~4,800 plans prerender at build as static files. Rendering them on first
+// visit (ISR) burned the Hobby ISR Writes quota: every deploy, crawlers re-wrote every page.
+export const dynamicParams = false;
 export function generateStaticParams() {
-  return [];
+  return COMPANIES.map((c) => ({ slug: c.slug }));
 }
 
 const get = (slug: string) => COMPANIES.find((c) => c.slug === slug);
