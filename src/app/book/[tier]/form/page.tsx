@@ -36,7 +36,7 @@ export default async function ConsultFormPage({ params }: { params: Promise<{ ti
           <Link href={c.path ?? `/book/${c.slug}`} className="text-sm text-ink-3 hover:text-ink">‹ Back to details</Link>
           <p className="mt-6 text-sm font-semibold text-[#ff7701]">{`${c.title.split(" ")[0]} ${c.kind ?? "strategic consultation"}`}</p>
           <h1 className="mt-1 text-3xl font-bold sm:text-4xl">Tell us about your project</h1>
-          <p className="mt-2 text-ink-3">Two short steps, under a minute. Then pick your time and pay.</p>
+          <p className="mt-2 text-ink-3">{c.slug === "free" ? "Two short steps, under a minute. Then we call you to fix your time." : "Two short steps, under a minute. Then pick your time and pay."}</p>
           <div className="mt-8">
             <ConsultForm offer={c} />
           </div>

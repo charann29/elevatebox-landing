@@ -90,6 +90,9 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
   // CTA = what they get + how they get it, nothing else
   const cta = `Book my ${minutes}-min call · ${c.price}`;
   const photos = c.photos ?? PHOTOS;
+  const free = c.slug === "free";
+  // Industry headlines from the ad's utm_content: the paid and the free call run the same static ads.
+  const ind = c.slug === "499" || free;
 
   return (
     <div className={`contents ${LEXEND}`}>
@@ -110,7 +113,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               <p className="inline-block bg-[#f8e71c] px-3 py-1 text-xs font-bold sm:text-sm">{`${minutes}-minute ${kind} on Google Meet`}</p>
               {/* Headline A/B: runs before the h1 paints, so no flicker. Sticky per browser; one view counted per session. */}
               <script dangerouslySetInnerHTML={{ __html: abScript(c.slug) }} />
-              {c.slug === "499" && (
+              {ind && (
                 <>
                   <style>{industryCss()}</style>
                   <script dangerouslySetInnerHTML={{ __html: industryScript() }} />
@@ -121,11 +124,11 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
                   <span className="ab-a">{c.headline}</span>
                   <span className="ab-b">{c.headlineB ?? c.headline}</span>
                 </span>
-                {c.slug === "499" && INDUSTRY.map((x, i) => <span key={i} className={`ind ind-${i}`}>{x.h}</span>)}
+                {ind && INDUSTRY.map((x, i) => <span key={i} className={`ind ind-${i}`}>{x.h}</span>)}
               </h1>
               <p className="mt-3 text-[15px] leading-relaxed text-[#424242] sm:text-base">
                 <span className="ind-def">{c.lead}</span>
-                {c.slug === "499" && INDUSTRY.map((x, i) => <span key={i} className={`ind ind-${i}`}>{x.lead}</span>)}
+                {ind && INDUSTRY.map((x, i) => <span key={i} className={`ind ind-${i}`}>{x.lead}</span>)}
               </p>
             </div>
             <div>
@@ -140,7 +143,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
             </div>
             <div className="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-md">
               <a href="#book" className={`block rounded-md px-4 py-4 text-center text-base font-bold text-white shadow-sm transition-colors ${ORANGE}`}>{cta}</a>
-              <p className="mt-2 text-center text-sm text-[#424242]">{REFUND}</p>
+              <p className="mt-2 text-center text-sm text-[#424242]">{free ? "Free. No payment, no card." : REFUND}</p>
               {/* Proof next to the decision, not only at the bottom of the page. */}
               {!c.focused && (
                 <p className="mt-3 text-center text-xs leading-relaxed text-[#424242] sm:text-sm">
@@ -149,7 +152,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
               )}
               {/* Owners who want to talk before paying: one tap to WhatsApp. */}
               <a href={waHref("business")} target="_blank" rel="noopener" className={`ind-def block ${WA_CLASS}`}>Or chat with us on WhatsApp first</a>
-              {c.slug === "499" && INDUSTRY.map((x, i) => (
+              {ind && INDUSTRY.map((x, i) => (
                 <a key={i} href={waHref(x.wa)} target="_blank" rel="noopener" className={`ind ind-${i} ${WA_CLASS}`}>Or chat with us on WhatsApp first</a>
               ))}
             </div>
@@ -160,7 +163,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
         <section id="book" className="scroll-mt-4 bg-[#f7f7f5] px-5 py-10 sm:py-14">
           <div className="mx-auto max-w-xl">
             <h2 className="text-center text-2xl font-semibold tracking-tight sm:text-3xl">Book your call</h2>
-            <p className="mt-1 text-center text-sm text-[#424242]">Two short steps, under a minute. Then pick your time and pay.</p>
+            <p className="mt-1 text-center text-sm text-[#424242]">{free ? "Two short steps, under a minute. Then we call you to fix your time." : "Two short steps, under a minute. Then pick your time and pay."}</p>
             <div className="mt-6"><ConsultForm offer={c} /></div>
           </div>
         </section>
@@ -207,7 +210,7 @@ export default async function ConsultPage({ params }: { params: Promise<{ tier: 
 
       <footer className="bg-[#0b1a3c] px-5 py-6 text-center text-xs text-white/70">
         <p>{`© ${COMPANY.legal} · ${COMPANY.address}`}</p>
-        <p className="mt-2">Payments by Razorpay. Refunds are processed within fifteen working days.</p>
+        {!free && <p className="mt-2">Payments by Razorpay. Refunds are processed within fifteen working days.</p>}
         <p className="mt-2 space-x-4">
           <Link href="/privacy-policy" className="underline">Privacy</Link>
           <Link href="/terms-and-conditions" className="underline">Terms</Link>

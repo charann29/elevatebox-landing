@@ -72,6 +72,8 @@ const primary = "rounded-full bg-[#ff7701] px-6 py-4 text-base font-semibold tex
 
 export function ConsultForm({ offer }: { offer: Offer }) {
   const qs = offer.questions ?? Q;
+  // Free call: the form is the whole booking. Roopa calls to fix a time (Worker roopaFollowUp); no payment.
+  const free = offer.slug === "free";
   const [a, setA] = useState<Record<string, string> | null>(null);
   const [leadId, setLeadId] = useState("");
   const [slots, setSlots] = useState<{ taken: Record<string, string[]>; now: number; week?: number } | null>(null);
@@ -106,7 +108,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
     setLeadId(d.lead_id);
     track("Lead", `lead_${d.lead_id}`, { content_name: offer.title });
     setA(next);
-    loadSlots();
+    if (!free) loadSlots();
     // the form is long; bring the time picker into view instead of leaving the user at the footer
     requestAnimationFrame(() => document.getElementById("eb-book")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
@@ -148,6 +150,16 @@ export function ConsultForm({ offer }: { offer: Offer }) {
         <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">Payment received</p>
         <h2 className="mt-2 text-2xl font-bold">{`You're booked, ${a?.name}.`}</h2>
         <p className="mt-2 text-sm text-ink-3">{`${offer.title} on ${dayLabel(date)} at ${timeLabel(time)} IST. We'll send the Google Meet link to your WhatsApp before the call.`}</p>
+      </div>
+    );
+  }
+
+  if (a && free) {
+    return (
+      <div id="eb-book" className={`${card} scroll-mt-24 text-center`}>
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#ff7701]">Request received</p>
+        <h2 className="mt-2 text-2xl font-bold">{`Thanks, ${a.name}. Your call with Charan is free.`}</h2>
+        <p className="mt-2 text-sm text-ink-3">We will call you soon to fix a time that suits you. The call is 45 minutes on Google Meet.</p>
       </div>
     );
   }
@@ -249,7 +261,7 @@ export function ConsultForm({ offer }: { offer: Offer }) {
         </button>
       ) : (
         <button type="submit" disabled={busy} className={primary}>
-          {busy ? "Saving…" : "Continue to pick a time ›"}
+          {busy ? "Saving…" : free ? "Book my free call ›" : "Continue to pick a time ›"}
         </button>
       )}
       {/* Consent for the abandoned-checkout call (Roopa lead source states this): keep the wording. */}

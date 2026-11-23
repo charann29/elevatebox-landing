@@ -21,6 +21,10 @@ export const SLOT_CONFIG = {
   holdMinutes: 10, // a pending (unpaid) order holds its slot this long
 };
 
+// Lead-only tiers: the form is saved and Roopa calls to fix a time; there is no price, so no order.
+export const FREE_TIERS = ["free"];
+export const isTier = (tier) => priceFor(tier) !== null || FREE_TIERS.includes(String(tier));
+
 export function priceFor(tier) {
   const k = String(tier);
   return Object.hasOwn(PRICES_PAISE, k) ? PRICES_PAISE[k] : null;

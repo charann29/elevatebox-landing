@@ -1919,6 +1919,29 @@ export type Consult = {
 
 export const CONSULTS: Consult[] = [
   {
+    // Ad offer (owner, 23 Nov 2026): free 1:1 with Charan to find where the business leaks money;
+    // the bigger work is offered after the call. Lead-only tier in the booking Worker: no price, no payment.
+    slug: "free",
+    kind: "call with Charan",
+    headline: "Find where your business is leaking money.",
+    headlineB: "One free call to find the first 3 things to fix in your business.",
+    price: "Free",
+    title: "45-minute Business Strategy Call",
+    lead: "A free 45-minute Google Meet with Charan from ElevateBox. We go through your enquiries, follow-ups, tools and ads, and you leave knowing what to fix first.",
+    pay: "",
+    includes: [
+      "45 minutes on Google Meet with Charan, one to one",
+      "Where enquiries, customers and hours slip away today",
+      "What to automate first, and where ads or tech can pay back",
+      "A clear next step you can take with or without us",
+    ],
+    objections: [
+      { t: "Why is it free?", d: "Some owners go on to work with us after the call. If you don't, you still keep the plan." },
+      { t: "Is this a sales pitch?", d: "No. You talk through your business with Charan and leave with what to fix first, whether or not you hire us." },
+      { t: "Is my business too small?", d: "No. The call is for shops, clinics, builders and startups too. We start from how your business runs today." },
+    ],
+  },
+  {
     slug: "499",
     path: "/tech-consultation",
     headline: "Your growth plan in 45 minutes.",
